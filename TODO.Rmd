@@ -1,0 +1,11 @@
+---
+title: "TODO LIST"
+output: pdf_document
+---
+
+- Scope/mission statement (512 material or also 511?)
+- Define Learning Objectives
+- Outline/Chapter headings
+- Learn how Bookdown works
+- research how to write a text book
+- Reconsider the name
