@@ -16,13 +16,18 @@ The goal in creating this book is to provide a thorough treatment of applied sta
 - Reconsider the name
 
 
-Matt to-do:  
+### Matt to do:  
  - get a basic book in bookdown format going in our repo  
  - Rough outline of topics/sequence (if time)   
 
-Justin to-do:  
+### Justin to do:  
  - Rough outline of topics/sequence (if time)   
  
+### Jason to do:  
+ - Nothing until spring!  
+ 
+### Ryan to do:  
+ - Nothing for now, just keeping in the loop!
  
 
 Old stuff to keep around:  
