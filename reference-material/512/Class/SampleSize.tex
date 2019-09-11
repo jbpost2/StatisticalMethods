@@ -1,0 +1,199 @@
+
+\cu{Sample size computations for one-way ANOVA} 
+\bigkn
+Now consider the null hypothesis in a balanced experiment using
+one-way ANOVA to compare $t$ treatment means and $\alpha=0.05$:
+$$H_0:\mu_1=\mu_2=\cdots=\mu_t=\mu$$
+versus the alternative
+$$H_1:\mu_i \neq \mu_j \mbox{ for some }i\neq j$$
+%at level $\alpha$.
+\bigkn
+%Recall the model
+%$$Y_{ij}=\mu_j+E_{ij}$$
+%where $E_{ij}$ are i.i.d. normal random variables with mean 0 and
+%common variance $\sigma^2$.
+%\bigkn
+Q: Suppose that we intend to use a balanced design. How big does
+our sample size $n_1=n_2=\ldots=n_t=n$ need to be?
+\bigkn
+Of course, the answer depends on lots of things, namely, $\sigma^2$
+and how many treatment groups $t$ we have and how much of a difference
+among the means we hope to be able to detect, and with how big a
+probability.
+\bigkn
+Given $\alpha$, $\mu_1,\ldots,\mu_t$, and $\sigma^2$, we can choose
+$n$ to ensure a \fbox{power} of at least $\beta$ using the {\em noncentral
+F distribution}.
+\bigkn
+%Recall the alternative parameterization for the one-way linear model
+%$$Y_{ij}=\mu + \tau_j+E_{ij}$$
+%for which the null hypothesis looks like
+%$H_0: \tau_1=0, \tau_2=0, \ldots, \tau_t=0.$
+Recall that the critical region for the statistic $F=MS[T]/MS[E]$ is
+everything bigger than $F(\alpha,t-1,N-t)=F^*$.
+\bigkn
+The power of the $F$-test conducted using $\alpha=0.05$ to reject
+$H_0$ under this alternative is given by
+\begin{equation}
+1-\beta  = \Pr(MS[T]/MS[E] > F^*;H_1 \mbox{ is true}).
+\end{equation}
+\newpage
+Let $\tau_i=\mu_i-\mu$ for each treatment $i$ so that
+%where the $\tau_j$s are not necessarily 0:
+%given by
+$$ H_0: \tau_1=\tau_2=\cdots=\tau_t=0$$
+When some $H_1$ is true and the sample size $n$ is used in each group, it can 
+be shown that the $F$ ratio has the noncentral $F$ distribution with 
+noncentrality parameter
+$$ \gamma = \sum_{j=1}^t n_j \left(\frac{\tau_j}{\sigma}\right)^2 = n \sum_{j=1}^t \left(\frac{\tau_j}{\sigma}\right)^2 $$
+%$$ E(MS[T];H_1) = 
+This is the parameterization for the $F$ distribution used
+in both SAS and S+.  %$$ \lambda = \sum n_j \frac{\tau_j^2}{\sigma^2} $$
+%It is a little different from the expression given in Rao
+%$$ \lambda=n t \frac{\sigma_{\mu0}^2}{2\sigma^2}.$$
+%where
+%$$ \sigma_{\mu 0}^2=\frac{1}{t}\sum (\mu_j-\bar{\mu})^2 \mbox{ and } \bar{\mu}=\frac{1}{t} \sum \mu_j$$
+\bigkn
+One way to obtain an adequate sample size is trial and error.  Software
+packages can be used to get probabilities of the form (1) for various values
+of $n$.  Russ Lenth's website is also terrific and helpful:
+\bigkn
+{\tt http://www.stat.uiowa.edu/\~{}rlenth/Power/}
+\bigkn
+We'll write SAS code to do some computations but one could also use the
+procedure {\tt PROC POWER} or other software such as R.
+
+\newpage
+\bigkn
+An example: suppose that a balanced completely randomized design (CRD) is to be
+used to test for a difference in the number of contaminant particles 
+in IV fluid for three pharmaceutical companies.  It is believed that
+the standard deviation on a given observation is about 100 particles
+for each company.  In order to test $H_0: \mu_1=\mu_2=\mu_3$ at level
+$\alpha=0.05$, how large does the common sample size, $n$, need to be?
+\bigkn
+Q: ``What alternative to $H_0$ would be meaningful?  What is $\sigma$? " 
+\bigkn
+A: The alternative $H_1:\mu_1=\mu_2=(\mu-30)=230, \mu_3=\mu+60=320$ would be meaningful.  Assume $\sigma \approx 100$.
+\bigkn
+Q: ``What is an acceptable type II error rate, or what kind of power are we
+looking for?" 
+\bigkn
+A: Suppose that $1-\beta=0.8$ should be good enough.
+\bigkn
+To obtain probabilities of the form $(1)$ we need the noncentrality parameter
+$\gamma:$
+$$ \gamma=n [(\frac{\tau_1}{\sigma})^2 +(\frac{\tau_2}{\sigma})^2 +(\frac{\tau_3}{\sigma})^2]=n [-30^2+-30^2+(60)^2]/100^2=0.54n $$
+The $\alpha=0.05$ critical value for $H_0$ is given by
+$$ F^*=F(3-1,3(n-1),0.05).$$
+We need the area to the right of $F^*$ for the noncentral $F$ distribution
+with degrees of freedom $2$ and $3(n-1)$ and noncentrality parameter 
+%$\gamma=0.49n.$  
+%$\blue{\gamma=0.54n.}$  
+$\gamma=0.54n.$  
+The following printout suggests the sufficiency of $n=19$ for power
+of $1-\beta=0.8$
+%THE TAUs NEED FIXING 
+\newpage
+\begin{large}
+\begin{verbatim}
+data one;
+   do n=3 to 25; output; end;
+run;
+data one;
+   set one;
+   t=3;
+   nu1=t-1;
+   nu2=t*(n-1);
+   sumtau2=(-30)**2 + (-30)**2 + 60**2;
+   sigma2=10000;
+   *sigma2u=(2/3)*var(100,100,190);
+   *ncp=t*sigma2u/(2*sigma2);
+   ncp=n*sumtau2/sigma2;
+   qf=finv(0.95,nu1,nu2);
+   pf=probf(qf,nu1,nu2,ncp);
+   power=1-pf;
+run;
+
+proc print;run;
+   OBS  N T NU1 NU2 SUMTAU2 SIGMA2 SIGMA2U  NCP     QF      PF    POWER
+
+     1  3 3  2    6   5400   10000   1800   1.62 5.14325 0.86663 0.13337
+     2  4 3  2    9   5400   10000   1800   2.16 4.25649 0.81604 0.18396
+     3  5 3  2   12   5400   10000   1800   2.70 3.88529 0.76402 0.23598
+     4  6 3  2   15   5400   10000   1800   3.24 3.68232 0.71152 0.28848
+     5  7 3  2   18   5400   10000   1800   3.78 3.55456 0.65935 0.34065
+     6  8 3  2   21   5400   10000   1800   4.32 3.46680 0.60817 0.39183
+     7  9 3  2   24   5400   10000   1800   4.86 3.40283 0.55853 0.44147
+     8 10 3  2   27   5400   10000   1800   5.40 3.35413 0.51085 0.48915
+     9 11 3  2   30   5400   10000   1800   5.94 3.31583 0.46546 0.53454
+    10 12 3  2   33   5400   10000   1800   6.48 3.28492 0.42257 0.57743
+    11 13 3  2   36   5400   10000   1800   7.02 3.25945 0.38233 0.61767
+    12 14 3  2   39   5400   10000   1800   7.56 3.23810 0.34481 0.65519
+    13 15 3  2   42   5400   10000   1800   8.10 3.21994 0.31002 0.68998
+    14 16 3  2   45   5400   10000   1800   8.64 3.20432 0.27795 0.72205
+    15 17 3  2   48   5400   10000   1800   9.18 3.19073 0.24850 0.75150
+    16 18 3  2   51   5400   10000   1800   9.72 3.17880 0.22160 0.77840
+    17 19 3  2   54   5400   10000   1800  10.26 3.16825 0.19712 0.80288
+    18 20 3  2   57   5400   10000   1800  10.80 3.15884 0.17493 0.82507
+    19 21 3  2   60   5400   10000   1800  11.34 3.15041 0.15489 0.84511
+    20 22 3  2   63   5400   10000   1800  11.88 3.14281 0.13684 0.86316
+    21 23 3  2   66   5400   10000   1800  12.42 3.13592 0.12065 0.87935
+    22 24 3  2   69   5400   10000   1800  12.96 3.12964 0.10616 0.89384
+    23 25 3  2   72   5400   10000   1800  13.50 3.12391 0.09324 0.90676
+\end{verbatim}
+\end{large}
+%\bigkn
+%Therefore take $n_1=n_2=n_3=19$ to get a test with level of significance
+%$0.05$ and power at least $0.8$ against alternatives at least as {\em large}
+%as $H_1$.
+\newpage
+\noindent
+Another example: suppose we want to test equal mean binding fractions among
+antibiotics against the alternative
+$$H_1: \mu_P=\mu+3, \mu_T=\mu+3,\mu_S=\mu-6,\mu_E=\mu,\mu_C=\mu$$
+so that
+$$ \tau_1=3, \tau_2=3, \tau_3=-6, \tau_4=\tau_5=0.$$
+Assume $\sigma=3$ and we need to use $\alpha=\beta=0.05$.
+\bigkn
+The noncentrality parameter is given by
+$$ \gamma=n [(\frac{3}{3})^2 + (\frac{3}{3})^2 +(\frac{-6}{3})^2].$$ 
+The following code should do the trick
+\begin{large}
+\begin{verbatim}
+data one;
+   do n=2 to 10; output; end;
+run;
+data one;
+   set one;
+   t=5; nu1=t-1; nu2=t*(n-1);
+   sumtau2=3**2+3**2+(-6)**2;
+   sigma2=9;
+   ncp=n*sumtau2/sigma2;
+   qf=finv(0.95,nu1,nu2);
+   pf=probf(qf,nu1,nu2,ncp);
+   power=1-pf;
+run;
+proc print;run;
+
+   OBS   N  T  NU1  NU2  SUMTAU2  SIGMA2  NCP     QF       PF     POWER
+    1    2  5   4     5     54       9     12  5.19217  0.59246  0.40754
+    2    3  5   4    10     54       9     18  3.47805  0.22465  0.77535
+    3    4  5   4    15     54       9     24  3.05557  0.06437  0.93563
+    4    5  5   4    20     54       9     30  2.86608  0.01533  0.98467
+    5    6  5   4    25     54       9     36  2.75871  0.00319  0.99681
+    6    7  5   4    30     54       9     42  2.68963  0.00060  0.99940
+    7    8  5   4    35     54       9     48  2.64147  0.00010  0.99990
+    8    9  5   4    40     54       9     54  2.60597  0.00002  0.99998
+    9   10  5   4    45     54       9     60  2.57874  0.00000  1.00000
+\end{verbatim}
+\end{large}
+
+
+
+
+
+
+
+
+

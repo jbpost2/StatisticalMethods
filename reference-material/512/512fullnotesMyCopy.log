@@ -1,0 +1,6550 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.5.19)  8 MAY 2015 15:22
+entering extended mode
+**512fullnotesMyCopy.tex
+("G:\NCSU classes\ST 512\Notes\512fullnotesMyCopy.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, arabic, armenian, assamese, basque, bengali
+, bokmal, bulgarian, catalan, coptic, croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, galic
+ian, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, icelandic, indonesian, interlingua, irish, italian,
+ kannada, kurmanji, lao, latin, latvian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, ng
+erman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, romanian, russian, sanskrit, serbian, slovak, s
+lovenian, spanish, swedish, swissgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usenglishm
+ax, welsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls"
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count88
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+\epsfxsize=\dimen105
+\epsfysize=\dimen106
+)
+(\\stat.ad.ncsu.edu\Redirect\jbpost2\AppData\Roaming\MiKTeX\2.9\tex\latex\fancybox\fancybox.sty
+Package: fancybox 2010/05/15 1.4
+
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+\@fancybox=\box26
+\shadowsize=\dimen107
+\@Sbox=\box27
+\do@VerbBox=\toks15
+\the@fancyput=\toks16
+\this@fancyput=\toks17
+\EndVerbatimTokens=\toks18
+\Verbatim@Outfile=\write3
+\Verbatim@Infile=\read1
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks19
+\ex@=\dimen108
+)) ("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen109
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count89
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count90
+\leftroot@=\count91
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen110
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
+\dotsspace@=\muskip10
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks20
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks21
+\eqnshift@=\dimen111
+\alignsep@=\dimen112
+\tagshift@=\dimen113
+\tagwidth@=\dimen114
+\totwidth@=\dimen115
+\lineht@=\dimen116
+\@envbody=\toks22
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2011/08/19 v6.82h Hypertext links for LaTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2011/04/23 v1.4 Bundle oberdiek, subset hyperref (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2011/04/23 v1.4 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2011/04/23 v1.4 Subsetting bundle oberdiek (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/04/04 v1.12 Provides string conversions (HO)
+Package: bigintcalc 2011/01/30 v1.2 Expandable big integer calculations (HO)
+Package: bitset 2011/01/30 v1.1 Data type bit set (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provides unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/01/30 v1.0 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/04/23 v1.7 Hooks at very end of document (HO)
+Package: atbegshi 2011/01/30 v1.15 At begin shipout hook (HO)
+Package: refcount 2010/12/01 v3.2 Data extraction from references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options of hyperref/bookmark (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+)
+\@linkdim=\dimen117
+\Hy@linkcounter=\count101
+\Hy@pagecounter=\count102
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2011/08/19 v6.82h Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count103
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4053.
+Package hyperref Info: Link nesting OFF on input line 4058.
+Package hyperref Info: Hyper index ON on input line 4061.
+Package hyperref Info: Plain pages OFF on input line 4068.
+Package hyperref Info: Backreferencing OFF on input line 4073.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4291.
+\c@Hy@tempcnt=\count104
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4644.
+\Fld@menulength=\count105
+\Field@Width=\dimen118
+\Fld@charsize=\dimen119
+Package hyperref Info: Hyper figures OFF on input line 5730.
+Package hyperref Info: Link nesting OFF on input line 5735.
+Package hyperref Info: Hyper index ON on input line 5738.
+Package hyperref Info: backreferencing OFF on input line 5745.
+Package hyperref Info: Link coloring OFF on input line 5750.
+Package hyperref Info: Link coloring with OCG OFF on input line 5755.
+Package hyperref Info: PDF/A mode OFF on input line 5760.
+LaTeX Info: Redefining \ref on input line 5800.
+LaTeX Info: Redefining \pageref on input line 5804.
+\Hy@abspage=\count106
+\c@Item=\count107
+\c@Hfootnote=\count108
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2011/08/19 v6.82h Hyperref driver for pdfTeX
+\Fld@listcount=\count109
+\c@bookmark@seq@number=\count110
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
+)
+\Hy@SectionHShift=\skip46
+)
+(\\stat.ad.ncsu.edu\Redirect\jbpost2\AppData\Roaming\MiKTeX\2.9\tex\latex\ulem\ulem.sty
+\UL@box=\box30
+\UL@hyphenbox=\box31
+\UL@skip=\skip47
+\UL@hook=\toks24
+\UL@height=\dimen120
+\UL@pe=\count111
+\UL@pixel=\dimen121
+\ULC@box=\box32
+Package: ulem 2012/05/18
+\ULdepth=\dimen122
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen123
+\extrarowheight=\dimen124
+\NC@list=\toks25
+\extratabsurround=\skip48
+\backup@length=\skip49
+)
+\TX@col@width=\dimen125
+\TX@old@table=\dimen126
+\TX@old@col=\dimen127
+\TX@target=\dimen128
+\TX@delta=\dimen129
+\TX@cols=\count112
+\TX@ftn=\toks26
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen130
+)
+(\\stat.ad.ncsu.edu\Redirect\jbpost2\AppData\Roaming\MiKTeX\2.9\tex\latex\colortbl\colortbl.sty
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+\everycr=\toks27
+\minrowclearance=\skip50
+)
+(\\stat.ad.ncsu.edu\Redirect\jbpost2\AppData\Roaming\MiKTeX\2.9\tex\latex\soul\soul.sty
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks28
+\SOUL@lasttoken=\toks29
+\SOUL@cmds=\toks30
+\SOUL@buffer=\toks31
+\SOUL@token=\toks32
+\SOUL@spaceskip=\skip51
+\SOUL@ttwidth=\dimen131
+\SOUL@uldp=\dimen132
+\SOUL@ulht=\dimen133
+)
+("G:\NCSU classes\ST 512\Notes\mymacs.tex") ("G:\NCSU classes\ST 512\Notes\512fullnotesMyCopy.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+
+(\\stat.ad.ncsu.edu\Redirect\jbpost2\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count113
+\scratchdimen=\dimen134
+\scratchbox=\box33
+\nofMPsegments=\count114
+\nofMParguments=\count115
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count116
+\MPscratchDim=\dimen135
+\MPnumerator=\count117
+\makeMPintoPDFobject=\count118
+\everyMPtoPDFconversion=\toks34
+)
+\AtBeginShipoutBox=\box34
+Package hyperref Info: Link coloring OFF on input line 26.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count119
+)
+LaTeX Info: Redefining \ref on input line 26.
+LaTeX Info: Redefining \pageref on input line 26.
+LaTeX Info: Redefining \nameref on input line 26.
+
+("G:\NCSU classes\ST 512\Notes\512fullnotesMyCopy.out") ("G:\NCSU classes\ST 512\Notes\512fullnotesMyCopy.out")
+\@outlinefile=\write4
+
+("G:\NCSU classes\ST 512\Notes\512fullnotesMyCopy.toc")
+\tf@toc=\write5
+ [1
+
+
+{C:/Users/jbpost2/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Chapter 1.
+("G:\NCSU classes\ST 512\Notes\ReviewMyCopy.tex"
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--13
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--13
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--17
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--17
+
+ []
+
+<paradigm.png, id=72, 513.41812pt x 335.75438pt>
+File: paradigm.png Graphic file (type png)
+ <use paradigm.png>
+Package pdftex.def Info: paradigm.png used on input line 24.
+(pdftex.def)             Requested size: 179.69902pt x 117.5158pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--32
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--32
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.33 \newpage
+              [1
+
+ <G:/NCSU classes/ST 512/Notes/paradigm.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
+
+ []
+
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 39.
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--46
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--46
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--61
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--61
+
+ []
+
+<Exponential_pdf.jpg, id=84, 271.0125pt x 216.81pt>
+File: Exponential_pdf.jpg Graphic file (type jpg)
+ <use Exponential_pdf.jpg>
+Package pdftex.def Info: Exponential_pdf.jpg used on input line 68.
+(pdftex.def)             Requested size: 203.25887pt x 162.60709pt.
+
+<binomialpmf.png, id=85, 386.94562pt x 448.67625pt>
+File: binomialpmf.png Graphic file (type png)
+ <use binomialpmf.png>
+Package pdftex.def Info: binomialpmf.png used on input line 68.
+(pdftex.def)             Requested size: 154.7755pt x 179.46732pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--71
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--76
+
+ []
+
+[2 <G:/NCSU classes/ST 512/Notes/Exponential_pdf.jpg> <G:/NCSU classes/ST 512/Notes/binomialpmf.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--90
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--90
+
+ []
+
+<histogram.png, id=94, 191.21437pt x 149.05687pt>
+File: histogram.png Graphic file (type png)
+ <use histogram.png>
+Package pdftex.def Info: histogram.png used on input line 96.
+(pdftex.def)             Requested size: 191.2139pt x 149.0565pt.
+ <boxplot.png, id=95, 405.76593pt x 284.56313pt>
+File: boxplot.png Graphic file (type png)
+
+<use boxplot.png>
+Package pdftex.def Info: boxplot.png used on input line 96.
+(pdftex.def)             Requested size: 202.88246pt x 142.2812pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--104
+
+ []
+
+[3 <G:/NCSU classes/ST 512/Notes/histogram.png> <G:/NCSU classes/ST 512/Notes/boxplot.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--132
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--143
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--154
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
+
+ []
+
+[5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 194--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--202
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--202
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--236
+
+ []
+
+) [7]
+Chapter 2.
+("G:\NCSU classes\ST 512\Notes\ContrastsMyCopy.tex"
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+[8
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 96--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--106
+
+ []
+
+[11] <BindFracANOVA.png, id=146, 504.38437pt x 599.23875pt>
+File: BindFracANOVA.png Graphic file (type png)
+ <use BindFracANOVA.png>
+Package pdftex.def Info: BindFracANOVA.png used on input line 135.
+(pdftex.def)             Requested size: 302.63295pt x 359.54602pt.
+
+<BindFracBoxplot2.png, id=147, 531.48563pt x 743.77875pt>
+File: BindFracBoxplot2.png Graphic file (type png)
+ <use BindFracBoxplot2.png>
+Package pdftex.def Info: BindFracBoxplot2.png used on input line 135.
+(pdftex.def)             Requested size: 212.59048pt x 297.50623pt.
+
+Overfull \hbox (45.46844pt too wide) in paragraph at lines 135--135
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+ []
+
+[12 <G:/NCSU classes/ST 512/Notes/BindFracANOVA.png> <G:/NCSU classes/ST 512/Notes/BindFracBoxplot2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--173
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 187--191
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--206
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--226
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 237--242
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--242
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--250
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 254--260
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--260
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--260
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--260
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--260
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 276--278
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 276--278
+
+ []
+
+<BindFracContrasts.pdf, id=177, page=4, 614.295pt x 794.97pt>
+File: BindFracContrasts.pdf Graphic file (type pdf)
+ <use BindFracContrasts.pdf, page 4>
+Package pdftex.def Info: BindFracContrasts.pdf, page4 used on input line 279.
+(pdftex.def)             Requested size: 232.84038pt x 516.72438pt.
+
+<BindFracContrasts.pdf, id=178, page=5, 614.295pt x 794.97pt>
+File: BindFracContrasts.pdf Graphic file (type pdf)
+ <use BindFracContrasts.pdf, page 5>
+Package pdftex.def Info: BindFracContrasts.pdf, page5 used on input line 279.
+(pdftex.def)             Requested size: 232.84038pt x 516.72438pt.
+ [18]
+<BindFracContrasts.pdf, id=184, page=6, 614.295pt x 794.97pt>
+File: BindFracContrasts.pdf Graphic file (type pdf)
+ <use BindFracContrasts.pdf, page 6>
+Package pdftex.def Info: BindFracContrasts.pdf, page6 used on input line 280.
+(pdftex.def)             Requested size: 232.84038pt x 368.7718pt.
+
+<BindFracContrasts.pdf, id=185, page=8, 614.295pt x 794.97pt>
+File: BindFracContrasts.pdf Graphic file (type pdf)
+ <use BindFracContrasts.pdf, page 8>
+Package pdftex.def Info: BindFracContrasts.pdf, page8 used on input line 280.
+(pdftex.def)             Requested size: 232.84038pt x 368.7718pt.
+ [19 <G:/NCSU classes/ST 512/Notes/BindFracContrasts.pdf> <G:/NCSU classes/ST 512/Notes/BindFracContrasts.pdf>]
+Overfull \hbox (38.36024pt too wide) detected at line 291
+[] \OMS/cmsy/m/n/12   []  \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 13[]
+ []
+
+[20 <G:/NCSU classes/ST 512/Notes/BindFracContrasts.pdf> <G:/NCSU classes/ST 512/Notes/BindFracContrasts.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 294--296
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--296
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 297--299
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 297--299
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--309
+
+ []
+
+[21] <BindFracMixedEstimate.png, id=215, 601.4972pt x 298.86656pt>
+File: BindFracMixedEstimate.png Graphic file (type png)
+ <use BindFracMixedEstimate.png>
+Package pdftex.def Info: BindFracMixedEstimate.png used on input line 339.
+(pdftex.def)             Requested size: 481.19841pt x 239.09355pt.
+
+Overfull \hbox (11.44342pt too wide) in paragraph at lines 339--339
+ [] 
+ []
+
+<BindFracGLMEstimate.png, id=216, 523.20468pt x 115.18031pt>
+File: BindFracGLMEstimate.png Graphic file (type png)
+ <use BindFracGLMEstimate.png>
+Package pdftex.def Info: BindFracGLMEstimate.png used on input line 340.
+(pdftex.def)             Requested size: 418.56432pt x 92.14435pt.
+ [22 <G:/NCSU classes/ST 512/Notes/BindFracMixedEstimate.png> <G:/NCSU classes/ST 512/Notes/BindFracGLMEstimate.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 345--347
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--347
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--347
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--379
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 384--390
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--392
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--396
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--396
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 412--414
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 414--418
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 414--418
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 420--423
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--433
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 437--439
+
+ []
+
+
+Overfull \hbox (4.11482pt too wide) in paragraph at lines 470--470
+ []\OT1/cmtt/m/n/9 model bindfrac=antibiotic/clparm alpha=0.0125;  *Can drop intercept since it has 0 coefficient;[] 
+ []
+
+
+Overfull \hbox (4.11482pt too wide) in paragraph at lines 470--470
+ []\OT1/cmtt/m/n/9 estimate 'theta 1' antibiotic 1 -1;             *Note these are different thetas than previous;[] 
+ []
+
+[26] <BindFracBon.png, id=241, 502.87875pt x 124.21407pt>
+File: BindFracBon.png Graphic file (type png)
+ <use BindFracBon.png>
+Package pdftex.def Info: BindFracBon.png used on input line 491.
+(pdftex.def)             Requested size: 402.30354pt x 99.37137pt.
+
+<BindFracBonMixed.png, id=242, 608.2725pt x 143.78719pt>
+File: BindFracBonMixed.png Graphic file (type png)
+ <use BindFracBonMixed.png>
+Package pdftex.def Info: BindFracBonMixed.png used on input line 495.
+(pdftex.def)             Requested size: 486.61867pt x 115.02989pt.
+
+Overfull \hbox (16.86368pt too wide) in paragraph at lines 495--496
+ [] 
+ []
+
+<BindFracTukeyMixed.png, id=243, 754.31813pt x 252.945pt>
+File: BindFracTukeyMixed.png Graphic file (type png)
+ <use BindFracTukeyMixed.png>
+Package pdftex.def Info: BindFracTukeyMixed.png used on input line 500.
+(pdftex.def)             Requested size: 490.30098pt x 164.4123pt.
+
+Overfull \hbox (20.54599pt too wide) in paragraph at lines 500--501
+ [] 
+ []
+
+[27 <G:/NCSU classes/ST 512/Notes/BindFracBon.png> <G:/NCSU classes/ST 512/Notes/BindFracBonMixed.png> <G:/NCSU classes/
+ST 512/Notes/BindFracTukeyMixed.png>] <BindFracTukey.png, id=251, 259.7203pt x 609.77812pt>
+File: BindFracTukey.png Graphic file (type png)
+ <use BindFracTukey.png>
+Package pdftex.def Info: BindFracTukey.png used on input line 507.
+(pdftex.def)             Requested size: 207.77652pt x 487.82315pt.
+
+[28 <G:/NCSU classes/ST 512/Notes/BindFracTukey.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 512--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 514--515
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 514--515
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 521--524
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 521--524
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 521--524
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--534
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--534
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--534
+
+ []
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 537--542
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--542
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--542
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--542
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--542
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--542
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--542
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--542
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 545--547
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 545--547
+
+ []
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 566--570
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 570--573
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 570--573
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 570--573
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 570--573
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 570--573
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 580--582
+
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 585--587
+
+ []
+
+<BindFracContrastSS.png, id=270, 312.41719pt x 168.63pt>
+File: BindFracContrastSS.png Graphic file (type png)
+ <use BindFracContrastSS.png>
+Package pdftex.def Info: BindFracContrastSS.png used on input line 608.
+(pdftex.def)             Requested size: 234.3123pt x 126.47218pt.
+
+<BindFracContrastMixed.png, id=271, 335.75438pt x 134.00063pt>
+File: BindFracContrastMixed.png Graphic file (type png)
+ <use BindFracContrastMixed.png>
+Package pdftex.def Info: BindFracContrastMixed.png used on input line 609.
+(pdftex.def)             Requested size: 235.02646pt x 93.79977pt.
+ [32 <G:/NCSU classes/ST 512/Notes/BindFracContrastSS.png> <G:/NCSU classes/ST 512/Notes/BindFracContrastMixed.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 646--653
+
+ []
+
+
+Overfull \hbox (11.39793pt too wide) detected at line 653
+[] \OT1/cmr/m/n/12 = 273\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 8 \OMS/cmsy/m/n/12   [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12  \O
+T1/cmr/m/n/12 26\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 75  =[]\OMS/cmsy/m/n/12 )  \OML/cmm/m/it/12 SS\OT1/cmr/m/n/12 ([]) = [
+] = 2862\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 25
+ []
+
+[33] <PharmGLM1.png, id=282, 232.61906pt x 103.13531pt>
+File: PharmGLM1.png Graphic file (type png)
+ <use PharmGLM1.png>
+Package pdftex.def Info: PharmGLM1.png used on input line 668.
+(pdftex.def)             Requested size: 162.83221pt x 72.1942pt.
+
+<PharmGLM2.png, id=283, 462.22687pt x 409.53pt>
+File: PharmGLM2.png Graphic file (type png)
+ <use PharmGLM2.png>
+Package pdftex.def Info: PharmGLM2.png used on input line 669.
+(pdftex.def)             Requested size: 323.5566pt x 286.66904pt.
+ <PharmGLM3.png, id=284, 520.94624pt x 98.61844pt>
+File: PharmGLM3.png Graphic file (type png)
+
+<use PharmGLM3.png>
+Package pdftex.def Info: PharmGLM3.png used on input line 670.
+(pdftex.def)             Requested size: 364.65988pt x 69.03241pt.
+) [34 <G:/NCSU classes/ST 512/Notes/PharmGLM1.png> <G:/NCSU classes/ST 512/Notes/PharmGLM2.png> <G:/NCSU classes/ST 512/
+Notes/PharmGLM3.png>]
+Chapter 3.
+("G:\NCSU classes\ST 512\Notes\MultiwayANOVAMyCopy.tex"
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--25
+
+ []
+
+[35
+
+] <CholOneWay.png, id=296, 361.35pt x 261.97874pt>
+File: CholOneWay.png Graphic file (type png)
+ <use CholOneWay.png>
+Package pdftex.def Info: CholOneWay.png used on input line 47.
+(pdftex.def)             Requested size: 234.87471pt x 170.28416pt.
+
+<CholOneWay2.png, id=297, 238.64156pt x 402.00188pt>
+File: CholOneWay2.png Graphic file (type png)
+ <use CholOneWay2.png>
+Package pdftex.def Info: CholOneWay2.png used on input line 47.
+(pdftex.def)             Requested size: 190.91348pt x 321.60193pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+[36 <G:/NCSU classes/ST 512/Notes/CholOneWay.png> <G:/NCSU classes/ST 512/Notes/CholOneWay2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+
+ []
+
+<CholIntPlot1.png, id=305, 492.33937pt x 369.63094pt>
+File: CholIntPlot1.png Graphic file (type png)
+ <use CholIntPlot1.png>
+Package pdftex.def Info: CholIntPlot1.png used on input line 58.
+(pdftex.def)             Requested size: 270.78748pt x 203.29764pt.
+
+<CholIntPlot2.png, id=306, 490.83376pt x 369.63094pt>
+File: CholIntPlot2.png Graphic file (type png)
+ <use CholIntPlot2.png>
+Package pdftex.def Info: CholIntPlot2.png used on input line 58.
+(pdftex.def)             Requested size: 269.9594pt x 203.29764pt.
+
+Overfull \hbox (70.99188pt too wide) in paragraph at lines 58--59
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--70
+
+ []
+
+[37 <G:/NCSU classes/ST 512/Notes/CholIntPlot1.png> <G:/NCSU classes/ST 512/Notes/CholIntPlot2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--78
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--78
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--78
+
+ []
+
+
+Overfull \hbox (2.53485pt too wide) in paragraph at lines 80--85
+\OT1/cmr/m/n/12 Age and Gen-der main ef-fects: (-1/2)*(1/2)+(-1/2)*(-1/2)+(1/2)*(1/2)+(1/2)*(-1/2)=0 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--85
+
+ []
+
+
+Overfull \hbox (45.4719pt too wide) in paragraph at lines 80--85
+\OT1/cmr/m/n/12 Age main ef-fect and in-ter-ac-tion ef-fect: (-1/2)*(1/2)+(-1/2)*(-1/2)+(1/2)*(-1/2)+(1/2)*(1/2)=0 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--100
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 103--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
+
+ []
+
+
+Overfull \hbox (2.22838pt too wide) in paragraph at lines 121--125
+\OT1/cmr/m/n/12 Very sim-i-lar to par-ti-tion-ing the $\OML/cmm/m/it/12 SS\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Tot\OT1/cmr/
+m/n/12 )$ into $\OML/cmm/m/it/12 SS\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Trt\OT1/cmr/m/n/12 )$ and $\OML/cmm/m/it/12 SS\OT1/
+cmr/m/n/12 (\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 )$, we've par-ti-tioned $\OML/cmm/m/it/12 SS\OT1/cmr/m/n/12 (\OML/cmm/m/it
+/12 Trt\OT1/cmr/m/n/12 )$,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--125
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--125
+
+ []
+
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 128--130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--138
+
+ []
+
+<CholContrasts.png, id=327, 452.4403pt x 185.94469pt>
+File: CholContrasts.png Graphic file (type png)
+ <use CholContrasts.png>
+Package pdftex.def Info: CholContrasts.png used on input line 153.
+(pdftex.def)             Requested size: 339.3294pt x 139.45816pt.
+
+<CholThreeContrasts.png, id=328, 341.77687pt x 47.42719pt>
+File: CholThreeContrasts.png Graphic file (type png)
+ <use CholThreeContrasts.png>
+Package pdftex.def Info: CholThreeContrasts.png used on input line 167.
+(pdftex.def)             Requested size: 256.33202pt x 35.5703pt.
+ [40 <G:/NCSU classes/ST 512/Notes/CholContrasts.png> <G:/NCSU classes/ST 512/Notes/CholThreeContrasts.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 171--174
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--174
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
+
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
+
+ []
+
+<CholTwoWay.png, id=339, 368.1253pt x 338.01282pt>
+File: CholTwoWay.png Graphic file (type png)
+ <use CholTwoWay.png>
+Package pdftex.def Info: CholTwoWay.png used on input line 214.
+(pdftex.def)             Requested size: 276.09329pt x 253.50897pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--219
+
+ []
+
+[42 <G:/NCSU classes/ST 512/Notes/CholTwoWay.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--251
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--261
+
+ []
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 271--275
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--275
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--277
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--281
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--286
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--286
+
+ []
+
+[44] <interact.jpg, id=364, 433.62pt x 411.78844pt>
+File: interact.jpg Graphic file (type jpg)
+ <use interact.jpg>
+Package pdftex.def Info: interact.jpg used on input line 299.
+(pdftex.def)             Requested size: 361.36676pt x 245.71774pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--306
+
+ []
+
+[45 <G:/NCSU classes/ST 512/Notes/interact.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 380--382
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--384
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--387
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--387
+
+ []
+
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 390--392
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--392
+
+ []
+
+
+Overfull \hbox (42.09329pt too wide) in paragraph at lines 415--423
+ [][] 
+ []
+
+[47]
+Underfull \hbox (badness 10000) in paragraph at lines 434--439
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--439
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--439
+
+ []
+
+[48]
+Overfull \hbox (35.81413pt too wide) in paragraph at lines 462--462
+[]\OT1/cmtt/m/n/9 model Energy=Temp|Suc; *Vertical Bar fits all combinations of Temp and Suc (main effects and interacti
+ons);[] 
+ []
+
+<Ent.png, id=388, 357.58594pt x 338.01282pt>
+File: Ent.png Graphic file (type png)
+ <use Ent.png>
+Package pdftex.def Info: Ent.png used on input line 466.
+(pdftex.def)             Requested size: 214.5532pt x 202.80925pt.
+ [49 <G:/NCSU classes/ST 512/Notes/Ent.png>]
+<EntMeans.png, id=398, 201.00093pt x 179.92218pt>
+File: EntMeans.png Graphic file (type png)
+ <use EntMeans.png>
+Package pdftex.def Info: EntMeans.png used on input line 492.
+(pdftex.def)             Requested size: 180.89915pt x 161.92845pt.
+ <Ent2.png, id=399, 487.8225pt x 368.87813pt>
+File: Ent2.png Graphic file (type png)
+
+<use Ent2.png>
+Package pdftex.def Info: Ent2.png used on input line 492.
+(pdftex.def)             Requested size: 292.69576pt x 221.32857pt.
+
+Overfull \hbox (3.83992pt too wide) in paragraph at lines 492--493
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 495--497
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 497--498
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--501
+
+ []
+
+[50 <G:/NCSU classes/ST 512/Notes/EntMeans.png> <G:/NCSU classes/ST 512/Notes/Ent2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 520--522
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 520--522
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 524--526
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 524--526
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 524--526
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 528--529
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 528--529
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 530--531
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 530--531
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 532--533
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 532--533
+
+ []
+
+[51] <EntDiffs2.png, id=410, 326.72063pt x 525.46312pt>
+File: EntDiffs2.png Graphic file (type png)
+ <use EntDiffs2.png>
+Package pdftex.def Info: EntDiffs2.png used on input line 547.
+(pdftex.def)             Requested size: 228.70287pt x 367.82167pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 550--552
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 550--552
+
+ []
+
+[52 <G:/NCSU classes/ST 512/Notes/EntDiffs2.png>] <Tomato1.png, id=416, 356.83313pt x 337.26pt>
+File: Tomato1.png Graphic file (type png)
+ <use Tomato1.png>
+Package pdftex.def Info: Tomato1.png used on input line 600.
+(pdftex.def)             Requested size: 231.93877pt x 219.2164pt.
+
+<Tomato2.png, id=417, 489.32813pt x 365.11406pt>
+File: Tomato2.png Graphic file (type png)
+ <use Tomato2.png>
+Package pdftex.def Info: Tomato2.png used on input line 600.
+(pdftex.def)             Requested size: 244.66345pt x 182.55658pt.
+
+Overfull \hbox (6.84723pt too wide) in paragraph at lines 600--601
+ [][] 
+ []
+
+[53 <G:/NCSU classes/ST 512/Notes/Tomato1.png> <G:/NCSU classes/ST 512/Notes/Tomato2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 618--619
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 621--624
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 621--624
+
+ []
+
+
+Overfull \hbox (34.24348pt too wide) detected at line 627
+\OML/cmm/m/it/12 [] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 [] [] [] [] [][] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 [] [] [
+] [] [][] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 [] [] [] [] [][] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 []
+ []
+
+
+Overfull \hbox (34.24348pt too wide) detected at line 630
+\OML/cmm/m/it/12 [] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 [] [] [] [] [][] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 [] [] [
+] [] [][] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 [] [] [] [] [][] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 633--635
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 638--640
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 641--642
+
+ []
+
+[54] <Tomato3.png, id=438, 321.45094pt x 502.12593pt>
+File: Tomato3.png Graphic file (type png)
+ <use Tomato3.png>
+Package pdftex.def Info: Tomato3.png used on input line 648.
+(pdftex.def)             Requested size: 225.01411pt x 351.48576pt.
+ [55 <G:/NCSU classes/ST 512/Notes/Tomato3.png>]
+<Tomato4.png, id=444, 322.95656pt x 619.56468pt>
+File: Tomato4.png Graphic file (type png)
+ <use Tomato4.png>
+Package pdftex.def Info: Tomato4.png used on input line 657.
+(pdftex.def)             Requested size: 226.06804pt x 433.6923pt.
+ [56 <G:/NCSU classes/ST 512/Notes/Tomato4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 678--680
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--682
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--682
+
+ []
+
+[57] <Shrimp.png, id=454, 356.83313pt x 495.35063pt>
+File: Shrimp.png Graphic file (type png)
+ <use Shrimp.png>
+Package pdftex.def Info: Shrimp.png used on input line 696.
+(pdftex.def)             Requested size: 249.78148pt x 346.74307pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--700
+
+ []
+
+[58 <G:/NCSU classes/ST 512/Notes/Shrimp.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 710--711
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 710--711
+
+ []
+
+<Shrimp1.png, id=460, 610.53094pt x 465.23813pt>
+File: Shrimp1.png Graphic file (type png)
+ <use Shrimp1.png>
+Package pdftex.def Info: Shrimp1.png used on input line 712.
+(pdftex.def)             Requested size: 213.68903pt x 162.83577pt.
+ <Shrimp2.png, id=461, 612.03656pt x 461.47406pt>
+File: Shrimp2.png Graphic file (type png)
+
+<use Shrimp2.png>
+Package pdftex.def Info: Shrimp2.png used on input line 712.
+(pdftex.def)             Requested size: 214.216pt x 161.51833pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 747--748
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 747--748
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 747--748
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 747--748
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 747--748
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 747--748
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 747--748
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 747--748
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 747--748
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 749--750
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 751--759
+
+ []
+
+<flowchart.png, id=462, 389.95688pt x 514.17094pt>
+File: flowchart.png Graphic file (type png)
+ <use flowchart.png>
+Package pdftex.def Info: flowchart.png used on input line 760.
+(pdftex.def)             Requested size: 389.95592pt x 514.1697pt.
+) [59 <G:/NCSU classes/ST 512/Notes/Shrimp1.png> <G:/NCSU classes/ST 512/Notes/Shrimp2.png>] [60 <G:/NCSU classes/ST 512
+/Notes/flowchart.png>]
+Chapter 4.
+("G:\NCSU classes\ST 512\Notes\CorrelationMyCopy.tex"
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
+
+ []
+
+[61
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+<biomasshist.png, id=479, 481.8pt x 361.35pt>
+File: biomasshist.png Graphic file (type png)
+ <use biomasshist.png>
+Package pdftex.def Info: biomasshist.png used on input line 18.
+(pdftex.def)             Requested size: 168.63252pt x 126.4744pt.
+ <biomassboxplot.png, id=480, 481.8pt x 361.35pt>
+File: biomassboxplot.png Graphic file (type png)
+
+<use biomassboxplot.png>
+Package pdftex.def Info: biomassboxplot.png used on input line 18.
+(pdftex.def)             Requested size: 168.63252pt x 126.4744pt.
+ <logbiodieselhist.png, id=481, 481.8pt x 361.35pt>
+File: logbiodieselhist.png Graphic file (type png)
+ <use logbiodieselhist.png>
+Package pdftex.def Info: logbiodieselhist.png used on input line 19.
+(pdftex.def)             Requested size: 168.63252pt x 126.4744pt.
+
+<logbiodieselboxplot.png, id=482, 481.8pt x 361.35pt>
+File: logbiodieselboxplot.png Graphic file (type png)
+ <use logbiodieselboxplot.png>
+Package pdftex.def Info: logbiodieselboxplot.png used on input line 19.
+(pdftex.def)             Requested size: 168.63252pt x 126.4744pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--20
+
+ []
+
+<scatterbiomasslogbiodiesel.png, id=483, 481.8pt x 361.35pt>
+File: scatterbiomasslogbiodiesel.png Graphic file (type png)
+ <use scatterbiomasslogbiodiesel.png>
+Package pdftex.def Info: scatterbiomasslogbiodiesel.png used on input line 23.
+(pdftex.def)             Requested size: 240.8994pt x 180.67456pt.
+ [62 <G:/NCSU classes/ST 512/Notes/biomasshist.png (PNG copy)> <G:/NCSU classes/ST 512/Notes/biomassboxplot.png (PNG cop
+y)> <G:/NCSU classes/ST 512/Notes/logbiodieselhist.png (PNG copy)> <G:/NCSU classes/ST 512/Notes/logbiodieselboxplot.png
+ (PNG copy)> <G:/NCSU classes/ST 512/Notes/scatterbiomasslogbiodiesel.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--33
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--36
+
+ []
+
+<scattermatch.png, id=488, 774.64406pt x 581.17125pt>
+File: scattermatch.png Graphic file (type png)
+ <use scattermatch.png>
+Package pdftex.def Info: scattermatch.png used on input line 42.
+(pdftex.def)             Requested size: 343.27937pt x 252.94934pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+
+ []
+
+[63 <G:/NCSU classes/ST 512/Notes/scattermatch.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 51--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--63
+
+ []
+
+[64]
+Underfull \hbox (badness 10000) in paragraph at lines 83--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+<scatterexamples.png, id=501, 517.18219pt x 347.79938pt>
+File: scatterexamples.png Graphic file (type png)
+ <use scatterexamples.png>
+Package pdftex.def Info: scatterexamples.png used on input line 103.
+(pdftex.def)             Requested size: 258.59045pt x 173.89926pt.
+ [65 <G:/NCSU classes/ST 512/Notes/scatterexamples.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+File: scattermatch.png Graphic file (type png)
+<use scattermatch.png>
+Package pdftex.def Info: scattermatch.png used on input line 119.
+(pdftex.def)             Requested size: 343.27937pt x 252.94934pt.
+ [66] <res5k_nomodel.pdf, id=511, 794.97pt x 614.295pt>
+File: res5k_nomodel.pdf Graphic file (type pdf)
+ <use res5k_nomodel.pdf>
+Package pdftex.def Info: res5k_nomodel.pdf used on input line 126.
+(pdftex.def)             Requested size: 238.49284pt x 184.28992pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+[67 <G:/NCSU classes/ST 512/Notes/res5k_nomodel.pdf, page is rotated 90 degrees>]
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--166
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--166
+
+ []
+
+[68]
+Underfull \hbox (badness 10000) in paragraph at lines 172--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+[69]
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--200
+
+ []
+
+[70]
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
+
+ []
+
+<corrbiodiesel.pdf, id=536, 614.295pt x 794.97pt>
+File: corrbiodiesel.pdf Graphic file (type pdf)
+ <use corrbiodiesel.pdf>
+Package pdftex.def Info: corrbiodiesel.pdf used on input line 213.
+(pdftex.def)             Requested size: 460.72011pt x 404.17044pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--217
+
+ []
+
+[71 <G:/NCSU classes/ST 512/Notes/corrbiodiesel.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 220--222
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+
+ []
+
+[72]
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
+
+ []
+
+<scattercancer.png, id=563, 630.85687pt x 505.13719pt>
+File: scattercancer.png Graphic file (type png)
+ <use scattercancer.png>
+Package pdftex.def Info: scattercancer.png used on input line 249.
+(pdftex.def)             Requested size: 315.42766pt x 252.56798pt.
+) [73 <G:/NCSU classes/ST 512/Notes/scattercancer.png>]
+Chapter 5.
+("G:\NCSU classes\ST 512\Notes\SLRMyCopy.tex"
+Underfull \hbox (badness 10000) in paragraph at lines 3--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--17
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--17
+
+ []
+
+[74
+
+] <regnorm.png, id=574, 370.38374pt x 254.45062pt>
+File: regnorm.png Graphic file (type png)
+ <use regnorm.png>
+Package pdftex.def Info: regnorm.png used on input line 45.
+(pdftex.def)             Requested size: 259.26685pt x 178.11421pt.
+ [75 <G:/NCSU classes/ST 512/Notes/regnorm.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 51--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--59
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--61
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--61
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--72
+
+ []
+
+[76]
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+
+ []
+
+[77]
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+
+ []
+
+[78]
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--142
+
+ []
+
+<SLRbiodieselparameterestimates.png, id=595, 749.80125pt x 229.60782pt>
+File: SLRbiodieselparameterestimates.png Graphic file (type png)
+ <use SLRbiodieselparameterestimates.png>
+Package pdftex.def Info: SLRbiodieselparameterestimates.png used on input line 149.
+(pdftex.def)             Requested size: 299.91519pt x 91.84149pt.
+
+[79 <G:/NCSU classes/ST 512/Notes/SLRbiodieselparameterestimates.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
+
+ []
+
+<slopes.png, id=601, 1030.60031pt x 529.22719pt>
+File: slopes.png Graphic file (type png)
+ <use slopes.png>
+Package pdftex.def Info: slopes.png used on input line 158.
+(pdftex.def)             Requested size: 412.23282pt x 211.68712pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+
+ []
+
+[80 <G:/NCSU classes/ST 512/Notes/slopes.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 190--192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
+
+ []
+
+[81]
+Underfull \hbox (badness 10000) in paragraph at lines 207--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--219
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--219
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--219
+
+ []
+
+[82]
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+
+ []
+
+<slrbiodiesel.pdf, id=615, 614.295pt x 794.97pt>
+File: slrbiodiesel.pdf Graphic file (type pdf)
+ <use slrbiodiesel.pdf>
+Package pdftex.def Info: slrbiodiesel.pdf used on input line 233.
+(pdftex.def)             Requested size: 445.91222pt x 374.21117pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
+
+ []
+
+[83 <G:/NCSU classes/ST 512/Notes/slrbiodiesel.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 240--243
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 240--243
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 240--243
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 240--243
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 240--243
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 240--243
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 240--243
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--258
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--258
+
+ []
+
+[84]
+Overfull \hbox (46.0926pt too wide) in alignment at lines 263--267
+ [][][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--272
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--272
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--272
+
+ []
+
+<biofitpred.png, id=642, 481.8pt x 361.35pt>
+File: biofitpred.png Graphic file (type png)
+ <use biofitpred.png>
+Package pdftex.def Info: biofitpred.png used on input line 277.
+(pdftex.def)             Requested size: 289.08221pt x 216.81168pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+
+ []
+
+[85 <G:/NCSU classes/ST 512/Notes/biofitpred.png (PNG copy)>] [86]
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 319--321
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 319--321
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
+
+ []
+
+[87]
+Underfull \hbox (badness 10000) in paragraph at lines 334--335
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
+
+ []
+
+<hetero.png, id=662, 235.63031pt x 164.11313pt>
+File: hetero.png Graphic file (type png)
+ <use hetero.png>
+Package pdftex.def Info: hetero.png used on input line 346.
+(pdftex.def)             Requested size: 188.5045pt x 131.29066pt.
+ <homo.png, id=663, 235.63031pt x 162.6075pt>
+File: homo.png Graphic file (type png)
+
+<use homo.png>
+Package pdftex.def Info: homo.png used on input line 346.
+(pdftex.def)             Requested size: 212.0653pt x 146.3454pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
+
+ []
+
+<qq.png, id=664, 595.22375pt x 300.12125pt>
+File: qq.png Graphic file (type png)
+ <use qq.png>
+Package pdftex.def Info: qq.png used on input line 350.
+(pdftex.def)             Requested size: 267.84822pt x 135.05331pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--357
+
+ []
+
+[88 <G:/NCSU classes/ST 512/Notes/hetero.png> <G:/NCSU classes/ST 512/Notes/homo.png> <G:/NCSU classes/ST 512/Notes/qq.p
+ng>]
+Underfull \hbox (badness 10000) in paragraph at lines 367--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--372
+
+ []
+
+<qqplot.png, id=674, 551.05875pt x 404.26031pt>
+File: qqplot.png Graphic file (type png)
+ <use qqplot.png>
+Package pdftex.def Info: qqplot.png used on input line 384.
+(pdftex.def)             Requested size: 247.97414pt x 181.91545pt.
+ [89 <G:/NCSU classes/ST 512/Notes/qqplot.png>]
+<slrbiodiesel.pdf, id=684, page=2, 614.295pt x 794.97pt>
+File: slrbiodiesel.pdf Graphic file (type pdf)
+ <use slrbiodiesel.pdf, page 2>
+Package pdftex.def Info: slrbiodiesel.pdf, page2 used on input line 390.
+(pdftex.def)             Requested size: 362.29889pt x 368.77184pt.
+
+<slrbiodiesel.pdf, id=685, page=3, 614.295pt x 794.97pt>
+File: slrbiodiesel.pdf Graphic file (type pdf)
+ <use slrbiodiesel.pdf, page 3>
+Package pdftex.def Info: slrbiodiesel.pdf, page3 used on input line 391.
+(pdftex.def)             Requested size: 222.95186pt x 192.79247pt.
+ [90 <G:/NCSU classes/ST 512/Notes/slrbiodiesel.pdf> <G:/NCSU classes/ST 512/Notes/slrbiodiesel.pdf>] <ybyx_handout.pdf,
+ id=708, 794.97pt x 614.295pt>
+File: ybyx_handout.pdf Graphic file (type pdf)
+
+<use ybyx_handout.pdf>
+Package pdftex.def Info: ybyx_handout.pdf used on input line 398.
+(pdftex.def)             Requested size: 216.80396pt x 180.67178pt.
+ <resbypred_handout.pdf, id=709, 794.97pt x 614.295pt>
+File: resbypred_handout.pdf Graphic file (type pdf)
+ <use resbypred_handout.pdf>
+Package pdftex.def Info: resbypred_handout.pdf used on input line 399.
+(pdftex.def)             Requested size: 216.80396pt x 180.67178pt.
+
+<qqnorm_handout.pdf, id=710, 794.97pt x 614.295pt>
+File: qqnorm_handout.pdf Graphic file (type pdf)
+ <use qqnorm_handout.pdf>
+Package pdftex.def Info: qqnorm_handout.pdf used on input line 400.
+(pdftex.def)             Requested size: 216.80396pt x 180.67178pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--404
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--406
+
+ []
+
+) [91 <G:/NCSU classes/ST 512/Notes/ybyx_handout.pdf, page is rotated 90 degrees> <G:/NCSU classes/ST 512/Notes/resbypre
+d_handout.pdf, page is rotated 90 degrees> <G:/NCSU classes/ST 512/Notes/qqnorm_handout.pdf, page is rotated 90 degrees>
+]
+Chapter 6.
+("G:\NCSU classes\ST 512\Notes\MLRMyCopy.tex"
+Underfull \hbox (badness 10000) in paragraph at lines 3--6
+
+ []
+
+[92
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+<scattermlr.png, id=728, 968.11688pt x 517.18219pt>
+File: scattermlr.png Graphic file (type png)
+ <use scattermlr.png>
+Package pdftex.def Info: scattermlr.png used on input line 47.
+(pdftex.def)             Requested size: 290.4373pt x 155.15585pt.
+
+<scatter3dmlr.png, id=729, 584.93532pt x 517.18219pt>
+File: scatter3dmlr.png Graphic file (type png)
+ <use scatter3dmlr.png>
+Package pdftex.def Info: scatter3dmlr.png used on input line 48.
+(pdftex.def)             Requested size: 233.96997pt x 206.8692pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+[93 <G:/NCSU classes/ST 512/Notes/scattermlr.png> <G:/NCSU classes/ST 512/Notes/scatter3dmlr.png>]
+<adsorptionplot3d.png, id=736, 706.13812pt x 526.21594pt>
+File: adsorptionplot3d.png Graphic file (type png)
+ <use adsorptionplot3d.png>
+Package pdftex.def Info: adsorptionplot3d.png used on input line 54.
+(pdftex.def)             Requested size: 317.75922pt x 236.79498pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+ []
+
+<adsorptionplot3dNull.png, id=737, 707.64375pt x 521.69907pt>
+File: adsorptionplot3dNull.png Graphic file (type png)
+ <use adsorptionplot3dNull.png>
+Package pdftex.def Info: adsorptionplot3dNull.png used on input line 60.
+(pdftex.def)             Requested size: 318.43675pt x 234.7624pt.
+ [94 <G:/NCSU classes/ST 512/Notes/adsorptionplot3d.png> <G:/NCSU classes/ST 512/Notes/adsorptionplot3dNull.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 65--67
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--67
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
+
+ []
+
+<mlradexp.pdf, id=744, page=1, 614.295pt x 794.97pt>
+File: mlradexp.pdf Graphic file (type pdf)
+ <use mlradexp.pdf, page 1>
+Package pdftex.def Info: mlradexp.pdf, page1 used on input line 76.
+(pdftex.def)             Requested size: 330.41962pt x 377.22409pt.
+ [95 <G:/NCSU classes/ST 512/Notes/mlradexp.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 83--85
+
+ []
+
+<surfaces.png, id=766, 1197.72469pt x 1005.00468pt>
+File: surfaces.png Graphic file (type png)
+ <use surfaces.png>
+Package pdftex.def Info: surfaces.png used on input line 86.
+(pdftex.def)             Requested size: 359.32018pt x 301.50372pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+ []
+
+[96 <G:/NCSU classes/ST 512/Notes/surfaces.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--106
+
+ []
+
+<adsorptioninteraction.png, id=773, 456.20438pt x 456.95718pt>
+File: adsorptioninteraction.png Graphic file (type png)
+ <use adsorptioninteraction.png>
+Package pdftex.def Info: adsorptioninteraction.png used on input line 117.
+(pdftex.def)             Requested size: 296.52931pt x 297.01865pt.
+ [97 <G:/NCSU classes/ST 512/Notes/adsorptioninteraction.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--134
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+[98]
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
+
+[99]
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
+
+ []
+
+[100]
+Underfull \hbox (badness 10000) in paragraph at lines 208--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--221
+
+ []
+
+[101]
+Underfull \hbox (badness 10000) in paragraph at lines 235--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--261
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--261
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--261
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 262--265
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 262--265
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 262--265
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 262--265
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--273
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--273
+
+ []
+
+[102]
+Underfull \hbox (badness 10000) in paragraph at lines 280--283
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--287
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--287
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--292
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--292
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--292
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--292
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--300
+
+ []
+
+[103]
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--330
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 332--334
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
+
+ []
+
+[104]
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--351
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--362
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--362
+
+ []
+
+[105]
+Underfull \hbox (badness 10000) in paragraph at lines 367--368
+
+ []
+
+[106]
+Underfull \hbox (badness 10000) in paragraph at lines 431--432
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--432
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--436
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--436
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--436
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+
+ []
+
+[107]
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--460
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--460
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--462
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--462
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 462--464
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 462--464
+
+ []
+
+[108]
+Underfull \hbox (badness 10000) in paragraph at lines 474--476
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 476--478
+
+ []
+
+[109]
+Underfull \hbox (badness 10000) in paragraph at lines 494--496
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--496
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--497
+
+ []
+
+[110]
+Underfull \hbox (badness 10000) in paragraph at lines 512--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 515--518
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--529
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--529
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--529
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--529
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 530--531
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 530--531
+
+ []
+
+[111] [112] <adsorptionCIPI.png, id=855, 487.8225pt x 328.22626pt>
+File: adsorptionCIPI.png Graphic file (type png)
+ <use adsorptionCIPI.png>
+Package pdftex.def Info: adsorptionCIPI.png used on input line 582.
+(pdftex.def)             Requested size: 341.47342pt x 229.7568pt.
+
+<adsorptionPI.png, id=856, 186.6975pt x 325.96782pt>
+File: adsorptionPI.png Graphic file (type png)
+ <use adsorptionPI.png>
+Package pdftex.def Info: adsorptionPI.png used on input line 582.
+(pdftex.def)             Requested size: 130.68735pt x 228.1759pt.
+
+Overfull \hbox (2.40578pt too wide) in paragraph at lines 582--582
+[][]  
+ []
+
+<mlradexp.pdf, id=857, page=2, 614.295pt x 794.97pt>
+File: mlradexp.pdf Graphic file (type pdf)
+ <use mlradexp.pdf, page 2>
+Package pdftex.def Info: mlradexp.pdf, page2 used on input line 586.
+(pdftex.def)             Requested size: 275.26704pt x 312.04236pt.
+ [113 <G:/NCSU classes/ST 512/Notes/adsorptionCIPI.png> <G:/NCSU classes/ST 512/Notes/adsorptionPI.png>] <mlradexp.pdf, 
+id=864, page=3, 614.295pt x 794.97pt>
+File: mlradexp.pdf Graphic file (type pdf)
+
+<use mlradexp.pdf, page 3>
+Package pdftex.def Info: mlradexp.pdf, page3 used on input line 588.
+(pdftex.def)             Requested size: 200.19005pt x 158.64977pt.
+ [114 <G:/NCSU classes/ST 512/Notes/mlradexp.pdf> <G:/NCSU classes/ST 512/Notes/mlradexp.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 593--594
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 596--597
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 596--597
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 596--597
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 599--601
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 611--612
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 611--612
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 620--625
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 620--625
+
+ []
+
+[115]
+Underfull \hbox (badness 10000) in paragraph at lines 634--635
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 634--635
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 634--635
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 639--640
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 639--640
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 642--643
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 644--647
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 644--647
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 644--647
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 644--647
+
+ []
+
+[116]
+Underfull \hbox (badness 10000) in paragraph at lines 685--686
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 694--699
+
+ []
+
+[117] <bodyfatexample.pdf, id=906, page=1, 614.295pt x 794.97pt>
+File: bodyfatexample.pdf Graphic file (type pdf)
+ <use bodyfatexample.pdf, page 1>
+Package pdftex.def Info: bodyfatexample.pdf, page1 used on input line 710.
+(pdftex.def)             Requested size: 266.14914pt x 408.69856pt.
+
+<bodyfatexample.pdf, id=907, page=5, 614.295pt x 794.97pt>
+File: bodyfatexample.pdf Graphic file (type pdf)
+ <use bodyfatexample.pdf, page 5>
+Package pdftex.def Info: bodyfatexample.pdf, page5 used on input line 710.
+(pdftex.def)             Requested size: 266.14914pt x 408.69856pt.
+
+Overfull \hbox (86.54329pt too wide) in paragraph at lines 709--712
+ [] 
+ []
+
+<bodyfatexampletriceps.pdf, id=908, page=4, 614.295pt x 794.97pt>
+File: bodyfatexampletriceps.pdf Graphic file (type pdf)
+ <use bodyfatexampletriceps.pdf, page 4>
+Package pdftex.def Info: bodyfatexampletriceps.pdf, page4 used on input line 723.
+(pdftex.def)             Requested size: 278.69408pt x 98.73083pt.
+ [118 <G:/NCSU classes/ST 512/Notes/bodyfatexample.pdf> <G:/NCSU classes/ST 512/Notes/bodyfatexample.pdf> <G:/NCSU class
+es/ST 512/Notes/bodyfatexampletriceps.pdf>] <bodyfatsnip.png, id=947, 271.76532pt x 301.8778pt>
+File: bodyfatsnip.png Graphic file (type png)
+ <use bodyfatsnip.png>
+Package pdftex.def Info: bodyfatsnip.png used on input line 737.
+(pdftex.def)             Requested size: 203.82349pt x 226.40779pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 749--751
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 752--754
+
+ []
+
+[119 <G:/NCSU classes/ST 512/Notes/bodyfatsnip.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 761--766
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 761--766
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 761--766
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 761--766
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 767--768
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 767--768
+
+ []
+
+<bodyfat.png, id=953, 418.56375pt x 408.77719pt>
+File: bodyfat.png Graphic file (type png)
+ <use bodyfat.png>
+Package pdftex.def Info: bodyfat.png used on input line 779.
+(pdftex.def)             Requested size: 339.66705pt x 339.6904pt.
+ [120 <G:/NCSU classes/ST 512/Notes/bodyfat.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 814--816
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 814--816
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 814--816
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 817--818
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 817--818
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 819--821
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 819--821
+
+ []
+
+[121]
+Underfull \hbox (badness 10000) in paragraph at lines 824--825
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 826--828
+
+ []
+
+[122] <bodyfatmallows.png, id=983, 304.13625pt x 392.21532pt>
+File: bodyfatmallows.png Graphic file (type png)
+ <use bodyfatmallows.png>
+Package pdftex.def Info: bodyfatmallows.png used on input line 881.
+(pdftex.def)             Requested size: 167.27545pt x 215.71909pt.
+
+<bodyfatadjr2.png, id=984, 210.03468pt x 217.5628pt>
+File: bodyfatadjr2.png Graphic file (type png)
+ <use bodyfatadjr2.png>
+Package pdftex.def Info: bodyfatadjr2.png used on input line 886.
+(pdftex.def)             Requested size: 210.03416pt x 217.56227pt.
+ [123 <G:/NCSU classes/ST 512/Notes/bodyfatmallows.png> <G:/NCSU classes/ST 512/Notes/bodyfatadjr2.png>] <bodyfatbackwar
+d1.png, id=991, 252.19218pt x 404.26031pt>
+File: bodyfatbackward1.png Graphic file (type png)
+
+<use bodyfatbackward1.png>
+Package pdftex.def Info: bodyfatbackward1.png used on input line 893.
+(pdftex.def)             Requested size: 201.75401pt x 323.40869pt.
+ <bodyfatbackward2.png, id=992, 283.81032pt x 215.30438pt>
+File: bodyfatbackward2.png Graphic file (type png)
+ <use bodyfatbackward2.png>
+Package pdftex.def Info: bodyfatbackward2.png used on input line 894.
+(pdftex.def)             Requested size: 227.04855pt x 172.24373pt.
+ [124 <G:/NCSU classes/ST 512/Notes/bodyfatbackward1.png> <G:/NCSU classes/ST 512/Notes/bodyfatbackward2.png>]
+<bodyfatforward.png, id=999, 292.09125pt x 319.94531pt>
+File: bodyfatforward.png Graphic file (type png)
+ <use bodyfatforward.png>
+Package pdftex.def Info: bodyfatforward.png used on input line 901.
+(pdftex.def)             Requested size: 233.6733pt x 255.95659pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 903--905
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 903--905
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 903--905
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 903--905
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 903--905
+
+ []
+
+[125 <G:/NCSU classes/ST 512/Notes/bodyfatforward.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 908--909
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 910--911
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 910--911
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 912--913
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 925--926
+
+ []
+
+
+Overfull \hbox (4.04686pt too wide) in paragraph at lines 932--933
+\OT1/cmr/m/n/12 con-tain-ing a func-tion of that vari-able are ac-counted for (i.e. in-ter-ac-tions/quadratics/etc).
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 937--939
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 937--939
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 937--939
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 940--941
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 940--941
+
+ []
+
+[126]
+Underfull \hbox (badness 10000) in paragraph at lines 944--945
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 946--948
+
+ []
+
+<bodyfatexampletypeIglm.pdf, id=1010, page=2, 614.295pt x 794.97pt>
+File: bodyfatexampletypeIglm.pdf Graphic file (type pdf)
+ <use bodyfatexampletypeIglm.pdf, page 2>
+Package pdftex.def Info: bodyfatexampletypeIglm.pdf, page2 used on input line 956.
+(pdftex.def)             Requested size: 390.17pt x 417.05768pt.
+ [127 <G:/NCSU classes/ST 512/Notes/bodyfatexampletypeIglm.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 962--965
+
+ []
+
+<res5k_quadratic.png, id=1032, 417.05812pt x 382.42876pt>
+File: res5k_quadratic.png Graphic file (type png)
+ <use res5k_quadratic.png>
+Package pdftex.def Info: res5k_quadratic.png used on input line 981.
+(pdftex.def)             Requested size: 291.93869pt x 267.69829pt.
+ [128 <G:/NCSU classes/ST 512/Notes/res5k_quadratic.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 990--994
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 990--994
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 990--994
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 990--994
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 990--994
+
+ []
+
+<resrunquadratic.png, id=1038, 352.31625pt x 385.44pt>
+File: resrunquadratic.png Graphic file (type png)
+ <use resrunquadratic.png>
+Package pdftex.def Info: resrunquadratic.png used on input line 1008.
+(pdftex.def)             Requested size: 281.85338pt x 308.35242pt.
+ [129 <G:/NCSU classes/ST 512/Notes/resrunquadratic.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1027--1028
+
+ []
+
+<resrunquadraticplot.png, id=1044, 487.06969pt x 365.11406pt>
+File: resrunquadraticplot.png Graphic file (type png)
+ <use resrunquadraticplot.png>
+Package pdftex.def Info: resrunquadraticplot.png used on input line 1032.
+(pdftex.def)             Requested size: 340.94644pt x 255.5781pt.
+ [130 <G:/NCSU classes/ST 512/Notes/resrunquadraticplot.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1038--1039
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1038--1039
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1040--1041
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1040--1041
+
+ []
+
+<xpxinverse.png, id=1050, 315.42844pt x 128.73094pt>
+File: xpxinverse.png Graphic file (type png)
+ <use xpxinverse.png>
+Package pdftex.def Info: xpxinverse.png used on input line 1058.
+(pdftex.def)             Requested size: 220.79839pt x 90.11102pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1070--1071
+
+ []
+
+[131 <G:/NCSU classes/ST 512/Notes/xpxinverse.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1094--1096
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1094--1096
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1094--1096
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1097--1098
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1099--1101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1099--1101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1099--1101
+
+ []
+
+[132] <Testoutput.png, id=1061, 301.125pt x 382.42876pt>
+File: Testoutput.png Graphic file (type png)
+ <use Testoutput.png>
+Package pdftex.def Info: Testoutput.png used on input line 1118.
+(pdftex.def)             Requested size: 271.00998pt x 344.1827pt.
+
+<Testoutput2.png, id=1062, 255.95625pt x 80.55093pt>
+File: Testoutput2.png Graphic file (type png)
+ <use Testoutput2.png>
+Package pdftex.def Info: Testoutput2.png used on input line 1119.
+(pdftex.def)             Requested size: 230.35847pt x 72.49516pt.
+ [133 <G:/NCSU classes/ST 512/Notes/Testoutput.png> <G:/NCSU classes/ST 512/Notes/Testoutput2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1129--1131
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1129--1131
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1143--1145
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1143--1145
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1146--1147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1146--1147
+
+ []
+
+[134]
+Underfull \hbox (badness 10000) in paragraph at lines 1153--1155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1153--1155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1156--1157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1156--1157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1158--1159
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1158--1159
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1160--1161
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1160--1161
+
+ []
+
+[135] <ChickensGLM.png, id=1077, 335.00156pt x 235.63031pt>
+File: ChickensGLM.png Graphic file (type png)
+ <use ChickensGLM.png>
+Package pdftex.def Info: ChickensGLM.png used on input line 1194.
+(pdftex.def)             Requested size: 335.00073pt x 235.62973pt.
+
+<ChickensBoxPlot.png, id=1078, 475.7775pt x 355.3275pt>
+File: ChickensBoxPlot.png Graphic file (type png)
+ <use ChickensBoxPlot.png>
+Package pdftex.def Info: ChickensBoxPlot.png used on input line 1195.
+(pdftex.def)             Requested size: 237.88815pt x 177.6633pt.
+ [136 <G:/NCSU classes/ST 512/Notes/ChickensGLM.png> <G:/NCSU classes/ST 512/Notes/ChickensBoxPlot.png>]
+<ChickensGLM2.png, id=1085, 348.55219pt x 432.11438pt>
+File: ChickensGLM2.png Graphic file (type png)
+ <use ChickensGLM2.png>
+Package pdftex.def Info: ChickensGLM2.png used on input line 1201.
+(pdftex.def)             Requested size: 278.8421pt x 345.69196pt.
+
+<ChickensScatter.png, id=1086, 475.7775pt x 354.57469pt>
+File: ChickensScatter.png Graphic file (type png)
+ <use ChickensScatter.png>
+Package pdftex.def Info: ChickensScatter.png used on input line 1201.
+(pdftex.def)             Requested size: 237.88815pt x 177.28691pt.
+
+Overfull \hbox (46.97527pt too wide) in paragraph at lines 1201--1202
+[][]  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1204--1206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1204--1206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1204--1206
+
+ []
+
+[137 <G:/NCSU classes/ST 512/Notes/ChickensGLM2.png> <G:/NCSU classes/ST 512/Notes/ChickensScatter.png>]
+<ChickensGLM3.png, id=1093, 320.69812pt x 91.84312pt>
+File: ChickensGLM3.png Graphic file (type png)
+ <use ChickensGLM3.png>
+Package pdftex.def Info: ChickensGLM3.png used on input line 1249.
+(pdftex.def)             Requested size: 256.55884pt x 73.47458pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1252--1254
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1252--1254
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1252--1254
+
+ []
+
+[138 <G:/NCSU classes/ST 512/Notes/ChickensGLM3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1264--1265
+
+ []
+
+) [139]
+Chapter 7.
+("G:\NCSU classes\ST 512\Notes\GLMMyCopy.tex"
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+[140
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 22--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
+
+ []
+
+[141]
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--102
+
+ []
+
+[142]
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
+
+[143] <BindFracGLM.png, id=1122, 363.60844pt x 468.24937pt>
+File: BindFracGLM.png Graphic file (type png)
+ <use BindFracGLM.png>
+Package pdftex.def Info: BindFracGLM.png used on input line 159.
+(pdftex.def)             Requested size: 254.52417pt x 327.77231pt.
+
+<BindFracGLMInverse.png, id=1123, 472.76625pt x 195.73125pt>
+File: BindFracGLMInverse.png Graphic file (type png)
+ <use BindFracGLMInverse.png>
+Package pdftex.def Info: BindFracGLMInverse.png used on input line 160.
+(pdftex.def)             Requested size: 330.93411pt x 137.01093pt.
+
+<BindFracMeans.png, id=1124, 207.02344pt x 155.83218pt>
+File: BindFracMeans.png Graphic file (type png)
+ <use BindFracMeans.png>
+Package pdftex.def Info: BindFracMeans.png used on input line 161.
+(pdftex.def)             Requested size: 144.9154pt x 109.08177pt.
+ [144 <G:/NCSU classes/ST 512/Notes/BindFracGLM.png> <G:/NCSU classes/ST 512/Notes/BindFracGLMInverse.png> <G:/NCSU clas
+ses/ST 512/Notes/BindFracMeans.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 169--171
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--171
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
+
+ []
+
+
+Overfull \hbox (12.08664pt too wide) in paragraph at lines 186--187
+[]\OT1/cmr/m/n/12 For stan-dard er-rors of the $[]$'s we still have our variance-covariance ma-trix $[] = \OML/cmm/m/it/
+12 MS\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 )([][][])[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--199
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--199
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--199
+
+ []
+
+[145]
+Overfull \hbox (16.67207pt too wide) detected at line 217
+[]\OT1/cmr/m/n/12 ([] + []) = []([]) + []([]) + 2[]([]\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 ) = 2\OML/cmm/m/it/12 :\OT1/c
+mr/m/n/12 264 + 4\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 527 + 2 \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12  \OT1/cm
+r/m/n/12 2\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 264) = 2\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 263 [] [] [](\OML/cmm/m/it/12 roun
+ding\OT1/cmr/m/n/12 )
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--227
+
+ []
+
+[146]
+Underfull \hbox (badness 10000) in paragraph at lines 232--234
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--251
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--254
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--257
+
+ []
+
+[147]
+Underfull \hbox (badness 10000) in paragraph at lines 264--266
+
+ []
+
+[148] <ResRunGLM.pdf, id=1157, page=2, 614.295pt x 794.97pt>
+File: ResRunGLM.pdf Graphic file (type pdf)
+ <use ResRunGLM.pdf, page 2>
+Package pdftex.def Info: ResRunGLM.pdf, page2 used on input line 299.
+(pdftex.def)             Requested size: 468.67445pt x 431.11678pt.
+
+<ResRunGLM.pdf, id=1158, page=3, 614.295pt x 794.97pt>
+File: ResRunGLM.pdf Graphic file (type pdf)
+ <use ResRunGLM.pdf, page 3>
+Package pdftex.def Info: ResRunGLM.pdf, page3 used on input line 300.
+(pdftex.def)             Requested size: 410.0868pt x 347.3489pt.
+
+<ResRunGLM.pdf, id=1159, page=5, 614.295pt x 794.97pt>
+File: ResRunGLM.pdf Graphic file (type pdf)
+ <use ResRunGLM.pdf, page 5>
+Package pdftex.def Info: ResRunGLM.pdf, page5 used on input line 301.
+(pdftex.def)             Requested size: 468.67445pt x 374.21117pt.
+
+<ResRunGLM.pdf, id=1160, page=6, 614.295pt x 794.97pt>
+File: ResRunGLM.pdf Graphic file (type pdf)
+ <use ResRunGLM.pdf, page 6>
+Package pdftex.def Info: ResRunGLM.pdf, page6 used on input line 302.
+(pdftex.def)             Requested size: 468.67445pt x 283.16223pt.
+
+<ResRunGLM.pdf, id=1161, page=8, 614.295pt x 794.97pt>
+File: ResRunGLM.pdf Graphic file (type pdf)
+ <use ResRunGLM.pdf, page 8>
+Package pdftex.def Info: ResRunGLM.pdf, page8 used on input line 303.
+(pdftex.def)             Requested size: 468.67445pt x 431.11678pt.
+
+<ResRunGLM.pdf, id=1162, page=9, 614.295pt x 794.97pt>
+File: ResRunGLM.pdf Graphic file (type pdf)
+ <use ResRunGLM.pdf, page 9>
+Package pdftex.def Info: ResRunGLM.pdf, page9 used on input line 304.
+(pdftex.def)             Requested size: 468.67445pt x 283.16223pt.
+
+<ResRunGLM.pdf, id=1163, page=11, 614.295pt x 794.97pt>
+File: ResRunGLM.pdf Graphic file (type pdf)
+ <use ResRunGLM.pdf, page 11>
+Package pdftex.def Info: ResRunGLM.pdf, page11 used on input line 305.
+(pdftex.def)             Requested size: 468.67445pt x 431.11678pt.
+
+<ResRunGLM.pdf, id=1164, page=12, 614.295pt x 794.97pt>
+File: ResRunGLM.pdf Graphic file (type pdf)
+ <use ResRunGLM.pdf, page 12>
+Package pdftex.def Info: ResRunGLM.pdf, page12 used on input line 306.
+(pdftex.def)             Requested size: 468.67445pt x 283.16223pt.
+
+<ResRunGLM.pdf, id=1165, page=14, 614.295pt x 794.97pt>
+File: ResRunGLM.pdf Graphic file (type pdf)
+ <use ResRunGLM.pdf, page 14>
+Package pdftex.def Info: ResRunGLM.pdf, page14 used on input line 307.
+(pdftex.def)             Requested size: 468.67445pt x 431.11678pt.
+
+<ResRunGLM.pdf, id=1166, page=15, 614.295pt x 794.97pt>
+File: ResRunGLM.pdf Graphic file (type pdf)
+ <use ResRunGLM.pdf, page 15>
+Package pdftex.def Info: ResRunGLM.pdf, page15 used on input line 308.
+(pdftex.def)             Requested size: 468.67445pt x 613.21468pt.
+
+<ResRunGLM.pdf, id=1167, page=17, 614.295pt x 794.97pt>
+File: ResRunGLM.pdf Graphic file (type pdf)
+ <use ResRunGLM.pdf, page 17>
+Package pdftex.def Info: ResRunGLM.pdf, page17 used on input line 309.
+(pdftex.def)             Requested size: 468.67445pt x 613.21468pt.
+
+<ResRunGLM.pdf, id=1168, page=18, 614.295pt x 794.97pt>
+File: ResRunGLM.pdf Graphic file (type pdf)
+ <use ResRunGLM.pdf, page 18>
+Package pdftex.def Info: ResRunGLM.pdf, page18 used on input line 310.
+(pdftex.def)             Requested size: 468.67445pt x 613.21468pt.
+
+<ResRunGLM.pdf, id=1169, page=20, 614.295pt x 794.97pt>
+File: ResRunGLM.pdf Graphic file (type pdf)
+ <use ResRunGLM.pdf, page 20>
+Package pdftex.def Info: ResRunGLM.pdf, page20 used on input line 311.
+(pdftex.def)             Requested size: 468.67445pt x 613.21468pt.
+
+<ResRunGLM.pdf, id=1170, page=21, 614.295pt x 794.97pt>
+File: ResRunGLM.pdf Graphic file (type pdf)
+ <use ResRunGLM.pdf, page 21>
+Package pdftex.def Info: ResRunGLM.pdf, page21 used on input line 312.
+(pdftex.def)             Requested size: 468.67445pt x 613.21468pt.
+ [149 <G:/NCSU classes/ST 512/Notes/ResRunGLM.pdf>] [150 <G:/NCSU classes/ST 512/Notes/ResRunGLM.pdf>] [151 <G:/NCSU cla
+sses/ST 512/Notes/ResRunGLM.pdf>]
+[152 <G:/NCSU classes/ST 512/Notes/ResRunGLM.pdf>] [153 <G:/NCSU classes/ST 512/Notes/ResRunGLM.pdf>] [154 <G:/NCSU clas
+ses/ST 512/Notes/ResRunGLM.pdf>] [155 <G:/NCSU classes/ST 512/Notes/ResRunGLM.pdf>] [156 <G:/NCSU classes/ST 512/Notes/R
+esRunGLM.pdf>] [157 <G:/NCSU classes/ST 512/Notes/ResRunGLM.pdf>] [158 <G:/NCSU classes/ST 512/Notes/ResRunGLM.pdf>]
+[159 <G:/NCSU classes/ST 512/Notes/ResRunGLM.pdf>] [160 <G:/NCSU classes/ST 512/Notes/ResRunGLM.pdf>] [161 <G:/NCSU clas
+ses/ST 512/Notes/ResRunGLM.pdf>] [162 <G:/NCSU classes/ST 512/Notes/ResRunGLM.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 337--340
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--340
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--340
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--355
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--355
+
+ []
+
+[163]
+Underfull \hbox (badness 10000) in paragraph at lines 368--371
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--371
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--371
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--371
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--375
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
+
+ []
+
+[164] <DietsANOVA.png, id=1256, 366.61969pt x 102.3825pt>
+File: DietsANOVA.png Graphic file (type png)
+ <use DietsANOVA.png>
+Package pdftex.def Info: DietsANOVA.png used on input line 396.
+(pdftex.def)             Requested size: 366.61879pt x 102.38225pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--416
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--416
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--416
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 417--425
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 417--425
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
+
+ []
+
+[165 <G:/NCSU classes/ST 512/Notes/DietsANOVA.png>] <DietsANCOVA.pdf, id=1262, page=2, 614.295pt x 794.97pt>
+File: DietsANCOVA.pdf Graphic file (type pdf)
+
+<use DietsANCOVA.pdf, page 2>
+Package pdftex.def Info: DietsANCOVA.pdf, page2 used on input line 437.
+(pdftex.def)             Requested size: 410.0868pt x 307.51534pt.
+ <DietsANCOVA.pdf, id=1263, page=3, 614.295pt x 794.97pt>
+File: DietsANCOVA.pdf Graphic file (type pdf)
+ <use DietsANCOVA.pdf, page 3>
+Package pdftex.def Info: DietsANCOVA.pdf, page3 used on input line 438.
+(pdftex.def)             Requested size: 292.92043pt x 176.97572pt.
+
+[166 <G:/NCSU classes/ST 512/Notes/DietsANCOVA.pdf> <G:/NCSU classes/ST 512/Notes/DietsANCOVA.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 443--445
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--445
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 447--449
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 447--449
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 450--453
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 450--453
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 450--453
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--456
+
+ []
+
+[167]
+Underfull \hbox (badness 10000) in paragraph at lines 459--461
+
+ []
+
+<DietsMeans.png, id=1289, 321.45094pt x 139.27031pt>
+File: DietsMeans.png Graphic file (type png)
+ <use DietsMeans.png>
+Package pdftex.def Info: DietsMeans.png used on input line 465.
+(pdftex.def)             Requested size: 321.45015pt x 139.26996pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--470
+
+ []
+
+[168 <G:/NCSU classes/ST 512/Notes/DietsMeans.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 479--480
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--480
+
+ []
+
+<DietsEstimates.png, id=1298, 317.68687pt x 154.32657pt>
+File: DietsEstimates.png Graphic file (type png)
+ <use DietsEstimates.png>
+Package pdftex.def Info: DietsEstimates.png used on input line 492.
+(pdftex.def)             Requested size: 317.68608pt x 154.32617pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 503--504
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 503--504
+
+ []
+
+[169 <G:/NCSU classes/ST 512/Notes/DietsEstimates.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 506--509
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--509
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--509
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 513--514
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--517
+
+ []
+
+
+Overfull \hbox (31.83061pt too wide) in paragraph at lines 518--519
+[]\OT1/cmr/m/n/12 By the nor-mal-ity, we can now form a CI for the lsmean us-ing the usual $\OML/cmm/m/it/12 Estimate []
+ \OMS/cmsy/m/n/12   []\OML/cmm/m/it/12 t [][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Estimate\OT1/cmr/m/n/12 )$. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 518--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 518--519
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 521--522
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 521--522
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 523--524
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 523--524
+
+ []
+
+[170]
+Underfull \hbox (badness 10000) in paragraph at lines 527--528
+
+ []
+
+<DietsInverse.png, id=1308, 520.19344pt x 198.7425pt>
+File: DietsInverse.png Graphic file (type png)
+ <use DietsInverse.png>
+Package pdftex.def Info: DietsInverse.png used on input line 541.
+(pdftex.def)             Requested size: 390.1441pt x 149.0565pt.
+
+<DietsLSMeans.png, id=1309, 231.11343pt x 225.84375pt>
+File: DietsLSMeans.png Graphic file (type png)
+ <use DietsLSMeans.png>
+Package pdftex.def Info: DietsLSMeans.png used on input line 547.
+(pdftex.def)             Requested size: 173.33464pt x 169.38239pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 550--553
+
+ []
+
+[171 <G:/NCSU classes/ST 512/Notes/DietsInverse.png> <G:/NCSU classes/ST 512/Notes/DietsLSMeans.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 556--558
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 556--558
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 559--561
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 559--561
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 570--571
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 572--573
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 572--573
+
+ []
+
+
+Overfull \hbox (17.5002pt too wide) in paragraph at lines 576--579
+[] \OT1/cmr/m/n/12 We can now form a CI for this dif-fer-ence in lsmeans us-ing the usual $\OML/cmm/m/it/12 Estimate [] 
+\OMS/cmsy/m/n/12   []\OML/cmm/m/it/12 t [][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Estimate\OT1/cmr/m/n/12 )$. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 576--579
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--581
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--581
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--581
+
+ []
+
+[172] <DietsTukey.png, id=1320, 318.43968pt x 622.57594pt>
+File: DietsTukey.png Graphic file (type png)
+ <use DietsTukey.png>
+Package pdftex.def Info: DietsTukey.png used on input line 594.
+(pdftex.def)             Requested size: 254.75209pt x 498.06143pt.
+ [173 <G:/NCSU classes/ST 512/Notes/DietsTukey.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 599--600
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 599--600
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 601--603
+
+ []
+
+<DietsCaloricANOVA.png, id=1326, 362.10281pt x 93.34875pt>
+File: DietsCaloricANOVA.png Graphic file (type png)
+ <use DietsCaloricANOVA.png>
+Package pdftex.def Info: DietsCaloricANOVA.png used on input line 614.
+(pdftex.def)             Requested size: 362.10191pt x 93.34851pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 617--618
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 617--618
+
+ []
+
+) [174 <G:/NCSU classes/ST 512/Notes/DietsCaloricANOVA.png>]
+Chapter 8.
+("G:\NCSU classes\ST 512\Notes\RandomEffectsMyCopy.tex"
+Underfull \hbox (badness 10000) in paragraph at lines 3--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--30
+
+ []
+
+[175
+
+] [176]
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+[177]
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+[178]
+Underfull \hbox (badness 10000) in paragraph at lines 121--124
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--144
+
+ []
+
+[179]
+Underfull \hbox (badness 10000) in paragraph at lines 150--153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--157
+
+ []
+
+[180]
+Underfull \hbox (badness 10000) in paragraph at lines 163--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--177
+
+ []
+
+[181]
+Underfull \hbox (badness 10000) in paragraph at lines 189--191
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--191
+
+ []
+
+<Sire1.png, id=1365, 357.58594pt x 238.64156pt>
+File: Sire1.png Graphic file (type png)
+ <use Sire1.png>
+Package pdftex.def Info: Sire1.png used on input line 201.
+(pdftex.def)             Requested size: 286.06912pt x 190.91348pt.
+ <Sire2.png, id=1366, 569.12625pt x 192.72pt>
+File: Sire2.png Graphic file (type png)
+
+<use Sire2.png>
+Package pdftex.def Info: Sire2.png used on input line 215.
+(pdftex.def)             Requested size: 455.30162pt x 154.1762pt.
+ [182 <G:/NCSU classes/ST 512/Notes/Sire1.png> <G:/NCSU classes/ST 512/Notes/Sire2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 223--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--246
+
+ []
+
+<Sire3.png, id=1373, 399.74344pt x 72.27pt>
+File: Sire3.png Graphic file (type png)
+ <use Sire3.png>
+Package pdftex.def Info: Sire3.png used on input line 247.
+(pdftex.def)             Requested size: 319.79517pt x 57.81606pt.
+ [183 <G:/NCSU classes/ST 512/Notes/Sire3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 257--265
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--265
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--274
+
+ []
+
+[184]
+Underfull \hbox (badness 10000) in paragraph at lines 283--285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--285
+
+ []
+
+<Sire4.png, id=1383, 247.67531pt x 93.34875pt>
+File: Sire4.png Graphic file (type png)
+ <use Sire4.png>
+Package pdftex.def Info: Sire4.png used on input line 295.
+(pdftex.def)             Requested size: 222.90572pt x 84.01308pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--301
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--301
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--306
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--306
+
+ []
+
+[185 <G:/NCSU classes/ST 512/Notes/Sire4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
+
+ []
+
+
+Overfull \hbox (1.39813pt too wide) in paragraph at lines 354--359
+\OT1/cmr/m/n/12 Exercise: match up the for-mu-las for con-fi-dence in-ter-vals be-low with their tar-gets, $\OML/cmm/m/i
+t/12 []; []; []; $\OT1/cmr/m/n/12 : 
+ []
+
+) [186]
+Chapter 9.
+("G:\NCSU classes\ST 512\Notes\NestedMyCopy.tex"
+Underfull \hbox (badness 10000) in paragraph at lines 3--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--10
+
+ []
+
+[187
+
+]
+Overfull \hbox (24.85063pt too wide) in paragraph at lines 21--31
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--36
+
+ []
+
+[188]
+Underfull \hbox (badness 10000) in paragraph at lines 41--44
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--44
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--44
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--46
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--46
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--49
+
+ []
+
+[189]
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--95
+
+ []
+
+[190]
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--122
+
+ []
+
+[191]
+Underfull \hbox (badness 10000) in paragraph at lines 126--128
+
+ []
+
+<NestedSAS1.png, id=1414, 352.31625pt x 295.85532pt>
+File: NestedSAS1.png Graphic file (type png)
+ <use NestedSAS1.png>
+Package pdftex.def Info: NestedSAS1.png used on input line 137.
+(pdftex.def)             Requested size: 229.00284pt x 192.30367pt.
+
+<NestedSAS2.png, id=1415, 488.57532pt x 368.1253pt>
+File: NestedSAS2.png Graphic file (type png)
+ <use NestedSAS2.png>
+Package pdftex.def Info: NestedSAS2.png used on input line 138.
+(pdftex.def)             Requested size: 195.42667pt x 147.24751pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--143
+
+ []
+
+[192 <G:/NCSU classes/ST 512/Notes/NestedSAS1.png> <G:/NCSU classes/ST 512/Notes/NestedSAS2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 145--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--159
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--159
+
+ []
+
+
+Overfull \hbox (8.83977pt too wide) in paragraph at lines 170--170
+ []\OT1/cmtt/m/n/9 estimate 'effect of Tech 1/2 within Time=AM' intercept 0 time 0 0 technician(time) 1 -1 0 0 0 0;[] 
+ []
+
+
+Overfull \hbox (8.83977pt too wide) in paragraph at lines 170--170
+ []\OT1/cmtt/m/n/9 estimate 'effect of Tech 1/3 within Time=AM' intercept 0 time 0 0 technician(time) 1 0 -1 0 0 0;[] 
+ []
+
+
+Overfull \hbox (13.56471pt too wide) in paragraph at lines 170--170
+ []\OT1/cmtt/m/n/9 estimate 'effect of Tech 2/3 within Time=AM' intercept 0 time 0 0 technician(time) 0 1 -1  0 0 0;[] 
+ []
+
+
+Overfull \hbox (8.83977pt too wide) in paragraph at lines 170--170
+ []\OT1/cmtt/m/n/9 estimate 'effect of Tech 1/2 within Time=PM' intercept 0 time 0 0 technician(time) 0 0 0 1 -1 0;[] 
+ []
+
+
+Overfull \hbox (8.83977pt too wide) in paragraph at lines 170--170
+ []\OT1/cmtt/m/n/9 estimate 'effect of Tech 1/3 within Time=PM' intercept 0 time 0 0 technician(time) 0 0 0 1 0 -1;[] 
+ []
+
+
+Overfull \hbox (32.4645pt too wide) in paragraph at lines 170--170
+ []\OT1/cmtt/m/n/9 estimate 'effect of Tech 2/3 within Time=PM' intercept 0 time 0 0 technician(time) 0 0 0 0 1 -1; run;
+[] 
+ []
+
+[193] <NestedSAS5.png, id=1432, 473.51906pt x 155.83218pt>
+File: NestedSAS5.png Graphic file (type png)
+ <use NestedSAS5.png>
+Package pdftex.def Info: NestedSAS5.png used on input line 178.
+(pdftex.def)             Requested size: 331.46106pt x 109.08177pt.
+
+<NestedSAS3.png, id=1433, 315.42844pt x 303.38344pt>
+File: NestedSAS3.png Graphic file (type png)
+ <use NestedSAS3.png>
+Package pdftex.def Info: NestedSAS3.png used on input line 185.
+(pdftex.def)             Requested size: 220.79839pt x 212.36694pt.
+
+<NestedSAS4.png, id=1434, 216.05719pt x 344.78813pt>
+File: NestedSAS4.png Graphic file (type png)
+ <use NestedSAS4.png>
+Package pdftex.def Info: NestedSAS4.png used on input line 185.
+(pdftex.def)             Requested size: 216.05664pt x 344.78728pt.
+) [194 <G:/NCSU classes/ST 512/Notes/NestedSAS5.png> <G:/NCSU classes/ST 512/Notes/NestedSAS3.png> <G:/NCSU classes/ST 5
+12/Notes/NestedSAS4.png>]
+Chapter 10.
+("G:\NCSU classes\ST 512\Notes\MixedModelsMyCopy.tex"
+Underfull \hbox (badness 10000) in paragraph at lines 3--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+[195
+
+] [196] [197] [198]
+Underfull \hbox (badness 10000) in paragraph at lines 225--229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--271
+
+ []
+
+[199]
+Underfull \hbox (badness 10000) in paragraph at lines 274--278
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--278
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--278
+
+ []
+
+[200]
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
+
+ []
+
+<MilkGLM.png, id=1475, 355.3275pt x 333.49594pt>
+File: MilkGLM.png Graphic file (type png)
+ <use MilkGLM.png>
+Package pdftex.def Info: MilkGLM.png used on input line 317.
+(pdftex.def)             Requested size: 248.72754pt x 233.44556pt.
+ <MilkGLM2.png, id=1476, 490.08093pt x 370.38374pt>
+File: MilkGLM2.png Graphic file (type png)
+
+<use MilkGLM2.png>
+Package pdftex.def Info: MilkGLM2.png used on input line 317.
+(pdftex.def)             Requested size: 245.03987pt x 185.1914pt.
+
+Overfull \hbox (24.01242pt too wide) in paragraph at lines 317--318
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+
+ []
+
+
+Overfull \hbox (4.87161pt too wide) in paragraph at lines 322--325
+\OML/cmm/m/it/12 MS\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 ]\OML/cmm/m/it/12 =MS\OT1/cmr/m/n/12 [\OML/cmm/m/i
+t/12 AB\OT1/cmr/m/n/12 ]$. Un-der $\OML/cmm/m/it/12 H[]$\OT1/cmr/m/n/12 , $\OML/cmm/m/it/12 F \OMS/cmsy/m/n/12  \OML/cm
+m/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a \OMS/cmsy/m/n/12   \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 (\
+OML/cmm/m/it/12 a \OMS/cmsy/m/n/12   \OT1/cmr/m/n/12 1)(\OML/cmm/m/it/12 b \OMS/cmsy/m/n/12   \OT1/cmr/m/n/12 1)) = \OML
+/cmm/m/it/12 F\OT1/cmr/m/n/12 (4\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 12)$, which has $\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (0
+\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 05\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 4\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 12) =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--327
+
+ []
+
+[201 <G:/NCSU classes/ST 512/Notes/MilkGLM.png> <G:/NCSU classes/ST 512/Notes/MilkGLM2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
+
+ []
+
+<MilkGLM3.png, id=1486, 311.66437pt x 101.62968pt>
+File: MilkGLM3.png Graphic file (type png)
+ <use MilkGLM3.png>
+Package pdftex.def Info: MilkGLM3.png used on input line 341.
+(pdftex.def)             Requested size: 218.16356pt x 71.14027pt.
+
+<MilkGLM4.png, id=1487, 375.65344pt x 103.88812pt>
+File: MilkGLM4.png Graphic file (type png)
+ <use MilkGLM4.png>
+Package pdftex.def Info: MilkGLM4.png used on input line 341.
+(pdftex.def)             Requested size: 262.9556pt x 72.72118pt.
+
+Overfull \hbox (11.36417pt too wide) in paragraph at lines 341--342
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 344--345
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 344--345
+
+ []
+
+[202 <G:/NCSU classes/ST 512/Notes/MilkGLM3.png> <G:/NCSU classes/ST 512/Notes/MilkGLM4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 374--378
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--378
+
+ []
+
+<MilkMixed.png, id=1494, 691.83469pt x 264.23718pt>
+File: MilkMixed.png Graphic file (type png)
+ <use MilkMixed.png>
+Package pdftex.def Info: MilkMixed.png used on input line 388.
+(pdftex.def)             Requested size: 484.28098pt x 184.96475pt.
+
+Overfull \hbox (14.52599pt too wide) in paragraph at lines 388--389
+ [] 
+ []
+
+[203 <G:/NCSU classes/ST 512/Notes/MilkMixed.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 414--416
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--426
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--426
+
+ []
+
+[204] <MilkMixed2.png, id=1505, 404.26031pt x 69.25874pt>
+File: MilkMixed2.png Graphic file (type png)
+ <use MilkMixed2.png>
+Package pdftex.def Info: MilkMixed2.png used on input line 449.
+(pdftex.def)             Requested size: 282.98029pt x 48.48077pt.
+ [205 <G:/NCSU classes/ST 512/Notes/MilkMixed2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 469--473
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--473
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--473
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--476
+
+ []
+
+
+Overfull \hbox (2.73952pt too wide) in paragraph at lines 483--483
+[]\OT1/cmtt/m/n/9 model ly=location; *ly=log(y) was used as non-constant variance was evident when using y as response[]
+ 
+ []
+
+<Campy1.png, id=1511, 493.845pt x 367.3725pt>
+File: Campy1.png Graphic file (type png)
+ <use Campy1.png>
+Package pdftex.def Info: Campy1.png used on input line 487.
+(pdftex.def)             Requested size: 345.68913pt x 257.15898pt.
+ <Campy2.png, id=1512, 493.845pt x 374.14781pt>
+File: Campy2.png Graphic file (type png)
+
+<use Campy2.png>
+Package pdftex.def Info: Campy2.png used on input line 487.
+(pdftex.def)             Requested size: 345.68913pt x 261.90167pt.
+ [206 <G:/NCSU classes/ST 512/Notes/Campy1.png>] <Campy3.png, id=1518, 709.90219pt x 253.69781pt>
+File: Campy3.png Graphic file (type png)
+
+<use Campy3.png>
+Package pdftex.def Info: Campy3.png used on input line 493.
+(pdftex.def)             Requested size: 496.92815pt x 177.58725pt.
+
+Overfull \hbox (27.17316pt too wide) in paragraph at lines 493--493
+ [] 
+ []
+
+<Campy5.png, id=1519, 715.17188pt x 382.42876pt>
+File: Campy5.png Graphic file (type png)
+ <use Campy5.png>
+Package pdftex.def Info: Campy5.png used on input line 494.
+(pdftex.def)             Requested size: 500.6169pt x 267.69829pt.
+
+Overfull \hbox (30.86191pt too wide) in paragraph at lines 494--494
+ [][] 
+ []
+
+[207 <G:/NCSU classes/ST 512/Notes/Campy2.png> <G:/NCSU classes/ST 512/Notes/Campy3.png>]
+<Campy4.png, id=1526, 493.0922pt x 372.64218pt>
+File: Campy4.png Graphic file (type png)
+ <use Campy4.png>
+Package pdftex.def Info: Campy4.png used on input line 500.
+(pdftex.def)             Requested size: 345.16219pt x 260.84775pt.
+ [208 <G:/NCSU classes/ST 512/Notes/Campy5.png> <G:/NCSU classes/ST 512/Notes/Campy4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 513--516
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 513--516
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 513--516
+
+ []
+
+[209]
+Underfull \hbox (badness 10000) in paragraph at lines 544--547
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--547
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--547
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--547
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--547
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--547
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 547--550
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 552--555
+
+ []
+
+[210]
+Underfull \hbox (badness 10000) in paragraph at lines 570--573
+
+ []
+
+[211]
+Underfull \hbox (badness 10000) in paragraph at lines 602--604
+
+ []
+
+<Plant.png, id=1546, 658.71094pt x 409.53pt>
+File: Plant.png Graphic file (type png)
+ <use Plant.png>
+Package pdftex.def Info: Plant.png used on input line 616.
+(pdftex.def)             Requested size: 461.09451pt x 286.66904pt.
+ [212 <G:/NCSU classes/ST 512/Notes/Plant.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 629--631
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--631
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 633--635
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 633--635
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 636--637
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 636--637
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 636--637
+
+ []
+
+[213] [214]
+Underfull \hbox (badness 10000) in paragraph at lines 700--702
+
+ []
+
+<Heights.png, id=1560, 733.23938pt x 394.47375pt>
+File: Heights.png Graphic file (type png)
+ <use Heights.png>
+Package pdftex.def Info: Heights.png used on input line 715.
+(pdftex.def)             Requested size: 513.26407pt x 276.12973pt.
+
+Overfull \hbox (43.50908pt too wide) in paragraph at lines 715--715
+ [] 
+ []
+
+[215] <Heights2.png, id=1565, 743.77875pt x 407.27156pt>
+File: Heights2.png Graphic file (type png)
+ <use Heights2.png>
+Package pdftex.def Info: Heights2.png used on input line 716.
+(pdftex.def)             Requested size: 520.64157pt x 285.08813pt.
+
+Overfull \hbox (50.88658pt too wide) in paragraph at lines 716--717
+ [][] 
+ []
+
+[216 <G:/NCSU classes/ST 512/Notes/Heights.png> <G:/NCSU classes/ST 512/Notes/Heights2.png>]) [217]
+Chapter 11.
+("G:\NCSU classes\ST 512\Notes\BlockMyCopy.tex"
+Underfull \hbox (badness 10000) in paragraph at lines 3--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--22
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--22
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--22
+
+ []
+
+[218
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 43--45
+
+ []
+
+<mice.png, id=1581, 685.05937pt x 417.05812pt>
+File: mice.png Graphic file (type png)
+ <use mice.png>
+Package pdftex.def Info: mice.png used on input line 58.
+(pdftex.def)             Requested size: 294.56978pt x 179.3315pt.
+ [219 <G:/NCSU classes/ST 512/Notes/mice.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
+
+ []
+
+[220]
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+[221]
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
+
+ []
+
+[222]
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--181
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
+
+ []
+
+[223] <layout1.png, id=1606, 572.1375pt x 341.77687pt>
+File: layout1.png Graphic file (type png)
+ <use layout1.png>
+Package pdftex.def Info: layout1.png used on input line 201.
+(pdftex.def)             Requested size: 257.45949pt x 153.79816pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--207
+
+ []
+
+[224 <G:/NCSU classes/ST 512/Notes/layout1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 231--234
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--234
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--234
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
+
+ []
+
+<ResidualPanel.png, id=1611, 462.528pt x 346.896pt>
+File: ResidualPanel.png Graphic file (type png)
+ <use ResidualPanel.png>
+Package pdftex.def Info: ResidualPanel.png used on input line 255.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+<ResidualPanel1.png, id=1612, 462.528pt x 346.896pt>
+File: ResidualPanel1.png Graphic file (type png)
+ <use ResidualPanel1.png>
+Package pdftex.def Info: ResidualPanel1.png used on input line 255.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+ [225 <G:/NCSU classes/ST 512/Notes/ResidualPanel.png (PNG copy)> <G:/NCSU classes/ST 512/Notes/ResidualPanel1.png (PNG 
+copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+
+ []
+
+) [226]
+Chapter 12.
+("G:\NCSU classes\ST 512\Notes\RMandSPMyCopy.tex"
+Underfull \hbox (badness 10000) in paragraph at lines 3--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--37
+
+ []
+
+[227
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 49--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--53
+
+ []
+
+[228]
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--81
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+
+ []
+
+[229]
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+ []
+
+[230]
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
+
+ []
+
+[231]
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
+
+ []
+
+<CornSp1.png, id=1642, 673.76718pt x 253.69781pt>
+File: CornSp1.png Graphic file (type png)
+ <use CornSp1.png>
+Package pdftex.def Info: CornSp1.png used on input line 204.
+(pdftex.def)             Requested size: 471.6338pt x 177.58725pt.
+
+Overfull \hbox (1.87881pt too wide) in paragraph at lines 204--204
+ [] 
+ []
+
+[232] <CornSp2.png, id=1652, 671.50874pt x 119.69719pt>
+File: CornSp2.png Graphic file (type png)
+ <use CornSp2.png>
+Package pdftex.def Info: CornSp2.png used on input line 205.
+(pdftex.def)             Requested size: 470.05292pt x 83.78745pt.
+
+Overfull \hbox (0.29793pt too wide) in paragraph at lines 205--205
+ [][] 
+ []
+
+<CornSp3.png, id=1653, 659.46375pt x 310.91156pt>
+File: CornSp3.png Graphic file (type png)
+ <use CornSp3.png>
+Package pdftex.def Info: CornSp3.png used on input line 206.
+(pdftex.def)             Requested size: 461.62148pt x 217.6366pt.
+ [233 <G:/NCSU classes/ST 512/Notes/CornSp1.png> <G:/NCSU classes/ST 512/Notes/CornSp2.png> <G:/NCSU classes/ST 512/Note
+s/CornSp3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 211--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--228
+
+ []
+
+[234] <CornSp4.png, id=1666, 788.9475pt x 329.73187pt>
+File: CornSp4.png Graphic file (type png)
+ <use CornSp4.png>
+Package pdftex.def Info: CornSp4.png used on input line 241.
+(pdftex.def)             Requested size: 465.47498pt x 194.5401pt.
+
+<CornSp5.png, id=1667, 726.46407pt x 418.56375pt>
+File: CornSp5.png Graphic file (type png)
+ <use CornSp5.png>
+Package pdftex.def Info: CornSp5.png used on input line 242.
+(pdftex.def)             Requested size: 508.52138pt x 292.99261pt.
+
+Overfull \hbox (38.76639pt too wide) in paragraph at lines 242--242
+ [][] 
+ []
+
+[235 <G:/NCSU classes/ST 512/Notes/CornSp4.png> <G:/NCSU classes/ST 512/Notes/CornSp5.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 247--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--253
+
+ []
+
+
+Overfull \hbox (20.28386pt too wide) in paragraph at lines 255--264
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--267
+
+ []
+
+[236]
+Underfull \hbox (badness 10000) in paragraph at lines 292--294
+
+ []
+
+[237]
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
+
+ []
+
+<CornSP6.png, id=1682, 797.22844pt x 370.38374pt>
+File: CornSP6.png Graphic file (type png)
+ <use CornSP6.png>
+Package pdftex.def Info: CornSP6.png used on input line 327.
+(pdftex.def)             Requested size: 478.34076pt x 222.23195pt.
+
+Overfull \hbox (8.58577pt too wide) in paragraph at lines 327--328
+ [] 
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
+ [238 <G:/NCSU classes/ST 512/Notes/CornSP6.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
+ ("G:\NCSU classes\ST 512\Notes\512fullnotesMyCopy.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 58.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
+Package rerunfilecheck Info: File `512fullnotesMyCopy.out' has not changed.
+(rerunfilecheck)             Checksum: 5C1E8413589173350D5FC04BFE13F2D0;824.
+ ) 
+Here is how much of TeX's memory you used:
+ 7334 strings out of 494045
+ 106524 string characters out of 3148324
+ 196836 words of memory out of 3000000
+ 9992 multiletter control sequences out of 15000+200000
+ 15644 words of font info for 57 fonts, out of 3000000 for 9000
+ 715 hyphenation exceptions out of 8191
+ 34i,15n,22p,787b,496s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex8
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on 512fullnotesMyCopy.pdf (239 pages, 7396128 bytes).
+PDF statistics:
+ 1863 PDF objects out of 2073 (max. 8388607)
+ 382 named destinations out of 1000 (max. 500000)
+ 887 words of extra memory for PDF output out of 10000 (max. 10000000)
+

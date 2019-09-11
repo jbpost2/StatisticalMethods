@@ -1,0 +1,22 @@
+
+\documentclass{article}
+\usepackage{epsfig,graphics,fancybox,amsmath,hyperref,ulem,tabularx,color,graphicx}
+
+\begin{document}
+
+\begin{enumerate}
+\item \textcolor{red}{The CI for the slope is $\hat{\beta}_1 \pm t(n-2,\alpha/2) \sqrt{\frac{MS[E]}{S_{xx}}}$ or more simply $\hat{\beta}_1 \pm t(n-2,\alpha/2)SE(\hat{\beta}_1)$.  \\
+Let`s pretend we don't know the standard error.  We have $\hat{\beta}_1=0.1977$, the $t$ multiplier can be found using a table or software giving $t(n-2,\alpha/2)=2.0181$, from the ANOVA table $MS(E)=1.2663$, and that leaves $S_{XX}$.  We know that $SS(R)=\hat{\beta_1}^2S_{XX}$ implying that $S_{XX}=26.7651/0.1977^2 = 684.787$.  Thus, we are 95\% confident that $\beta_1$ is in the interval
+$$0.1977 \pm 2.0181\sqrt(1.2663/684.787)=(0.1109, 0.2845).$$
+\item The CI for a mean response is given by $\hat\beta_0 +\hat\beta_1 x_0 \pm t(n-2,\alpha/2) \sqrt{MS[E]\left(\frac{1}{n}+\frac{(x_0-\bar{x})^2}{S_{xx}}\right)} $.  \\
+We already have most of the things we need from (1).  Our prediction for a biomass of 12 is $0.2798+0.1977*12=2.6522$, the sample size is $n=44$, and we can find $\bar{x}$= 11.0523 from the correlation output on page \pageref{corrbio}.  Thus, we are 95\% confident that the true mean log biodiesel for a plant with a biomass of 12 is in the interval
+$$2.6522 \pm 2.0181\sqrt{1.2663(1/44+(12-11.0523)^2/684.787)}=(2.3001,3.0043).$$
+\item The PI for a future response is given by $\hat\beta_0 +\hat\beta_1 x_0 \pm t(n-2,\alpha/2) \sqrt{MS[E]\left(1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{S_{xx}}\right)} $.\\
+Thus, we are 95\% confident that a future log biodiesel measurement for a plant with a biomass of 12 is in the interval
+$$2.6522 \pm 2.0181\sqrt{1.2663(1+1/44+(12-11.0523)^2/684.787)}=(0.3541,4.9503).$$
+Note: To make these intervals more meaningful we may want to exponentiate the end points of the intervals to put them on the scale of the original data.}
+\end{enumerate}
+
+For the matching up of graphs: a=heteroskedasticity, b=nonnormality, c=nonlinearity, and d=model fits.
+
+\end{document}

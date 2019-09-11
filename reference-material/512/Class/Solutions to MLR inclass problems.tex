@@ -1,0 +1,36 @@
+
+\documentclass{article}
+\usepackage{epsfig,graphics,fancybox,amsmath,hyperref,ulem,tabularx,color,graphicx}
+
+\begin{document}
+
+The parameter estimates and the variance-covariance matrix are very useful for making inference about our intercept and partial slope parameters (done very similary to SLR).  Let`s use the above to find the following
+\begin{enumerate}
+\item What is the estimate for $\beta_2$?  What is the interpretation?
+\item What is the standard error of $\hat\beta_2$?  
+\item Conduct a test to determine if $\beta_2=0$ plausible (technically, after accounting for the linear association between extractable aluminum and adsorption index).  Hint: $t(0.025, 10)=2.228$
+\item Estimate the mean adsorption index among the population of ALL soil with extractable aluminum = 100 and extractable iron = 150.  Report a standard error for this estimate and a $95\%$ confidence interval and a 95\% prediction interval.
+\end{enumerate}
+
+Answers:
+\begin{enumerate}
+\item $\hat\beta_2 =0.1127$, which represents the estimated change in adsorption for a one unit increase in extractable iron while holding the amount of extractable aluminum constant.
+\item $\sqrt{0.00088}=0.0297$ (square root of (3,3) element of $\widehat{\boldsymbol{\Sigma}}$)
+\item $H_0: \beta_2=0 ~~ vs ~~ H_A: \beta_2\ne 0$, T-statistic: $t=(\hat\beta_2 - 0)/SE(\hat\beta_2) = 0.1127/0.0297 = 3.795$ \\
+Since our obsered test statistic is greater than 2.228, we reject $H_0$ in favor of $H_A$, that is, at the 5\% significance level, extractable iron has a significant linear association with adsorption (even after accounting for extractable aluminum).
+\item  Unknown population mean: $\theta=\beta_0+\beta_1(100) +\beta_1(150)$ \\
+Estimate : $\hat\theta=(1,100,150)* \hat\beta = 44.454$\\
+To find the standard error, find the variance and take the square root:
+$$Var((1,100,150) * \hat{\boldsymbol{\beta}}) = (1,100,150)Var(\hat{\boldsymbol{\beta}}) (1,100,150)'$$
+estimated as
+$$= (1,100,150)\widehat{\boldsymbol{\Sigma}} (1,100,150)'=19.832$$
+Which implies $SE(\hat\theta) = \sqrt{19.832}=4.453$.  Thus, we are 95\% confident that the true mean adsorption index among the population of ALL soil with extractable aluminum = 100 and extractable iron = 150 is between 
+$$(44.454-2.228(4.453), 44.454-2.228(4.453)) = (34.533, 54.375)$$
+To find the variance of a future value we need to find
+$$Var((1,100,150) * \hat{\boldsymbol{\beta}}+E_{new})=(1,100,150)Var(\hat{\boldsymbol{\beta}}) (1,100,150)'+Var(E_{new})$$
+since we have independence of observations.  We can use $MS(E)$ as an estimate of the error variance.  The estimated variance of a future value is then $19.832+19.17897=39.01097$ and our SE is the square root $ = 6.2459$.  Therefore, we are 95\% confident that a future absorption index for soil with extractable aluminum = 100 and extractable iron = 150 is between 
+$$(44.454-2.228(6.2459), 44.454-2.228(6.2459)) = (30.538, 58.370)$$
+\end{enumerate}
+
+
+\end{document}

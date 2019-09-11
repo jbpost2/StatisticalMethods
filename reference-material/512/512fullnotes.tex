@@ -1,0 +1,69 @@
+\documentclass{report}
+\usepackage{epsfig,graphics,fancybox,amsmath,hyperref,ulem,tabularx,color,graphicx,multirow,colortbl,soul}
+\newcommand{\hili}[1]{\colorbox{yellow}{#1}}
+
+
+\normalem
+%\input /home/jaosborn/research/mymacs.tex
+\input mymacs.tex
+\def\defn{\noindent\underline{Definition}: }
+\def\gmeanb{\bar{y}_{+++}}
+\def\tmean#1{\bar{y}_{#1+}}
+\def\Tmean#1{\bar{Y}_{#1+}} 
+\def\h0sim{\stackrel{H_0}{\sim}}
+\def\abg#1{(\alpha\beta\gamma)_{#1}}
+
+\makeatletter
+\def\hlinewd#1{%
+\noalign{\ifnum0=`}\fi\hrule \@height #1 %
+\futurelet\reserved@a\@xhline} 
+\makeatother
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\setlength{\topmargin}{0pt}
+\setlength{\oddsidemargin}{0pt}
+\tableofcontents
+
+\newpage
+\markright{Post (altered from Osborne), ST512, Spring 2015}
+\pagenumbering{arabic}
+
+
+\chapter{ST 512 - Review}
+\input Review
+\chapter{ST 512 - Contrasts and Multiple Comparisons}
+\input Contrasts
+\chapter{ST 512 - Analysis of Factorial Designs (Multiway ANOVA)}
+\input MultiwayANOVA
+\chapter{ST 512 - Correlation}
+\input Correlation
+\chapter{ST 512 - Simple Linear Regression}
+\input SLR
+\chapter{ST 512 - Multiple Linear Regression}
+\input MLR
+\chapter{ST 512 - General Linear Models}
+\input GLM
+\chapter{ST 512 - Random Effects Models}
+\input RandomEffects
+\chapter{ST 512 - Nested Designs}
+\input Nested
+\chapter{ST 512 - Mixed Models}
+\input MixedModels
+\chapter{ST 512 - Block Designs}
+\input Block
+\chapter{ST 512 - Repeated Measure and Split Plot Designs}
+\input RMandSP
+\end{document}
+
+
+
+
+
+
+
+%\chapter{ST 512 - Extra Correlation and Regression Questions}
+%\input ExtracorrregQs

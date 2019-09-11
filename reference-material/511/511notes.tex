@@ -1,0 +1,85 @@
+\documentclass{report}
+\usepackage{epsfig,graphics,fancybox,amsmath,hyperref,ulem,tabularx,color,graphicx,multirow,colortbl,soul,undertilde,wrapfig,multicol}
+\newcommand{\hili}[1]{\colorbox{yellow}{#1}}
+\newcommand{\Yb}{\mathbf{Y}}
+\newcommand{\Xb}{\mathbf{X}}
+\newcommand{\ind}{\mbox{\large $I$}}
+\newcommand{\sumi}{\sum_{i=1}^n}
+\newcommand{\betaB}{\mbox{\boldmath$\beta$}}
+\newcommand{\alphaB}{\mbox{\boldmath$\alpha$}}
+\newcommand{\Rhotau}{\mbox{\large$\rho$}_{\tau}}
+\newcommand{\CinP}{\stackrel{P}{\longrightarrow}}
+\newcommand{\To}{\longrightarrow}	
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\head}{\textbf{\blue{}}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+
+
+\normalem
+%\input /home/jaosborn/research/mymacs.tex
+\def\defn{\noindent\underline{Definition}: }
+\def\gmeanb{\bar{y}_{+++}}
+\def\tmean#1{\bar{y}_{#1+}}
+\def\Tmean#1{\bar{Y}_{#1+}} 
+\def\h0sim{\stackrel{H_0}{\sim}}
+\def\abg#1{(\alpha\beta\gamma)_{#1}}
+
+\makeatletter
+\def\hlinewd#1{%
+\noalign{\ifnum0=`}\fi\hrule \@height #1 %
+\futurelet\reserved@a\@xhline} 
+\makeatother
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\setlength{\topmargin}{0pt}
+\setlength{\oddsidemargin}{0pt}
+%\tableofcontents
+
+\newpage
+\markright{Post, ST511, Fall 2014}
+\pagenumbering{arabic}
+\setcounter{chapter}{0}
+\chapter{ST 511 - Introduction}
+\input Intro
+\setcounter{chapter}{1}
+\chapter{ST 511 - Sampling and Experiments}
+\input Experiments
+\setcounter{chapter}{2}
+\chapter{ST 511 - Descriptive Statistics}
+\input DataDescriptions
+\setcounter{chapter}{3}
+\chapter{ST 511 - Probability and Distributions}
+\input chapter4/Probability
+\input chapter4/DiscreteRVs
+\input chapter4/ContRVs
+\input chapter4/SamplingDistributions
+\setcounter{chapter}{4}
+\chapter{ST 511 - Inferences About Population Central Values}
+\input InferenceAboutCentralValues
+\input InferenceAboutCentralValues2	
+\setcounter{chapter}{5}
+\chapter{ST 511 - Inferences Comparing Two Population Central Values}
+\input InferenceAboutDifferenceOfCentralValues
+\setcounter{chapter}{6}
+\chapter{ST 511 - Inferences About Variances}
+\input InferenceAboutVariances
+setcounter{chapter}{7}
+\chapter{ST 511 - Analysis of Variance for Comparing Means}
+\input ANOVA
+
+\end{document}
+
+
+
+\chapter{ST 511 - Review}
+\input Review
+
+
+
+

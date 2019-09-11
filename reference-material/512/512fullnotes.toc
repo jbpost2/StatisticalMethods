@@ -1,0 +1,12 @@
+\contentsline {chapter}{\numberline {1}ST 512 - Review}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}ST 512 - Contrasts and Multiple Comparisons}{8}{chapter.2}
+\contentsline {chapter}{\numberline {3}ST 512 - Analysis of Factorial Designs (Multiway ANOVA)}{35}{chapter.3}
+\contentsline {chapter}{\numberline {4}ST 512 - Correlation}{61}{chapter.4}
+\contentsline {chapter}{\numberline {5}ST 512 - Simple Linear Regression}{74}{chapter.5}
+\contentsline {chapter}{\numberline {6}ST 512 - Multiple Linear Regression}{92}{chapter.6}
+\contentsline {chapter}{\numberline {7}ST 512 - General Linear Models}{140}{chapter.7}
+\contentsline {chapter}{\numberline {8}ST 512 - Random Effects Models}{175}{chapter.8}
+\contentsline {chapter}{\numberline {9}ST 512 - Nested Designs}{187}{chapter.9}
+\contentsline {chapter}{\numberline {10}ST 512 - Mixed Models}{195}{chapter.10}
+\contentsline {chapter}{\numberline {11}ST 512 - Block Designs}{218}{chapter.11}
+\contentsline {chapter}{\numberline {12}ST 512 - Repeated Measure and Split Plot Designs}{227}{chapter.12}

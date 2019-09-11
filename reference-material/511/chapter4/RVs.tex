@@ -1,0 +1,452 @@
+\huge Random Variables\\\normalsize
+
+\textbf{Motivating Ex.:}\\
+Assume that all men’s basketball teams playing this season are equally strong. We are interested in 
+$$Y = \mbox{\# of points scored by NC State in a game.}$$
+\bi
+\item Before each game, we know the population of possible values.
+\item Each value occurs with some probability.  
+\item However, we do not know what will be the number of points scored by NC State during the next game. 
+\ei
+The outcome is random, hence the \# of points scored in a game is a \textbf{random variable}.\\~\\
+
+\bi
+\item A \textbf{Random Variable (RV)} is a real-valued function\\
+\bi
+\item Domain (values it takes in) = \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\\~\\
+\item Range (values it outputs) = \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}
+\ei
+An RV assigns a real number to each outcome in a sample space.\\~\\
+\ei
+Two Types of RVs we'll discuss\\
+\bi
+\item \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}: takes on finite or countably infinite \# of values\\~\\
+\item \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}: takes on a subset of intervals of real numbers
+\ei
+~\\
+Why do we need to distinguish between these two types of RVs?
+
+\pagebreak
+
+\huge Basic Definition and Probability Distributions \\\normalsize
+\textbf{Discrete Random Variables - An Example}
+\bi
+\item{\textbf{\textcolor{red}{Discrete random variable}} assumes only a finite or countably infinite \# of values}
+\item{Ex: Flip a coin 3 times - Let $Y$ = \# of heads from the 3 tosses}
+\bi
+\item Range of $Y$?\\~\\
+\item Called \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} of the RV\\~\\
+\ei
+\item Each outcome has a \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\\~\\
+To describe the distribution, we need to describe the probability for each outcome in the support!\\~\\
+\item Function $P(y)=P(Y=y)$ is called the \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} 
+\item Can be represented as a table:
+\begin{center}
+\begin{table}[h]
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Possible Values of $Y$ & $y_1$ & $y_2$& ... & $y_n$\\\hline
+Probability for each value & $P(y_1)=P(Y=y_1)$ & $P(y_2)=P(Y=y_2)$ & ... &$P(y_n)=P(Y=y_n)$\\
+\hline
+\end{tabular}
+\end{table}
+\end{center}
+Let's find the probability distribution for $Y$ = \# of heads from 3 tosses using a table:
+
+\newpage
+
+Some other examples of discrete random variables:\\
+\begin{itemize}
+\item Y = \# of textbooks purchased in a semester. Support: \\~\\
+\item X = \# of plants that bloom from a group of 20 plants. Support:\\~\\
+\item Y = \# of flips of a coin before first head.  Support:\\~\\~\\
+\end{itemize}
+
+Probability distribution for a discrete random variable must follow the following rules:\\~\\
+\begin{itemize}
+\item For every y in the support of the RV Y, \\~\\
+\item The sum of the probabilities over the entire support must be 1.  \\~\\~\\
+\end{itemize}
+
+Let's check for the coin example.\\~\\~\\~\\~\\~\\
+
+Rules of probability still apply.  For any two distinct values in the support, call them $y_1$ and $y_2$\\~\\~\\~\\~\\~\\
+Let's compute $P(Y\geq 2)$ for the coin example.
+
+\newpage
+
+\large Summary Characteristics of RVs\normalsize\\
+Just as in the numerical summaries section we will want to summarize characteristics of the distribution.  What are the two major characteristics?\\~\\~\\~\\
+
+To find the \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} of a \textbf{discrete RV}\\~\\~\\~\\~\\~\\~\\
+
+Let's find the mean of $Y$ from the coin example.\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+
+To find the \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} of a \textbf{discrete RV}\\~\\~\\~\\~\\~\\~\\
+
+Let's find the variance of $Y$ from the coin example.
+
+\newpage
+
+
+Let $X$ (Any capital can be used to denote a RV) denote the \# of male children if a family has 2 children (assume a the probability of a male child is 0.4 and that the children are independent).
+\bi
+\item{Determine the support of $X$}\\~\\~\\~\\~\\
+\item{Find $P(x)$, the probability distribution of $X$ using a table}\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+\item{Show that $P(x)$ meets the two conditions to be a probability distribution for a discrete RV.}\\~\\~\\~\\~\\~\\~\\
+\item{Find $P(X=0~or~X=2)$}\\~\\~\\~\\~\\~\\
+\item Find the average number of male children.\\~\\~\\~\\~\\~\\
+\item Find the variance of the number of male children.
+\ei
+
+\newpage
+
+\huge Binomial Distribution \\\normalsize
+
+\textbf{Recognizing a Distribution}
+\bi
+\item Note: \# of Heads example and the \# of male children example are similar.\\~\\
+\item Similar experiments with similarly defined RV's yield the same \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\\~\\
+\item This particular distribution so common, it is called the \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}
+\item Knowing and being able to recognize common distributions will save us from having to derive things over and over!
+\ei
+
+\large\textbf{When does a RV follow the Binomial Distr.?}\normalsize\\
+Consider the following experiments:
+\bi
+\item a coin is flipped, the outcome is either a head or a tail.
+\item a baby is born, the baby is either born in March or is not.\\~\\
+\ei
+In each of these examples, an event has two \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}. \\~\\
+For convenience, one of the outcomes can be labeled \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} and the other \\~\\
+outcome \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\\~\\
+\textbf{Bernoulli Trials}
+\bi
+\item An experiment with only two possible mutually exclusive outcomes (such as S or F) is called a Bernoulli Trial
+\bi 
+\item Bernoulli trials are the basis of three `families' of distributions:\\~\\
+\bi
+\item \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} distribution\\~\\
+\item \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} distribution\\~\\
+\item \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} distribution\\
+\ei
+\ei 
+\item For a trial denote the probability of success as \\~\\
+\item Then the probability of failure is\\~\\~\\
+\ei
+
+\pagebreak
+
+We have a \textbf{\textcolor{red}{Binomial Experiment}} if:
+\be
+\item Full experiment consists of a sequence of \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\\~\\
+\item \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} on each trial (Bernoulli Trials)\\~\\
+\item Probability of success $P(S) = \pi$ is \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}, where $0 \leq \pi \leq 1$\\~\\
+\ee
+\textbf{Define the RV} $Y$ = \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\\~\\
+Then $Y$ is said to follow a binomial distribution.\\~\\
+We write \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} for convenience.\\~\\
+
+For $Y=$ \# of heads in three tosses\\~\\~\\
+For $X=$ \# of male children from the two\\~\\
+(see example 4.5 and example 4.6 on pages 159/160 for practice picking out binomial experiments)\\~\\
+\large\textbf{General form of the Probability Distribution for a Binomial RV}\normalsize\\~\\
+Ex: Suppose we have a Binomial Experiment with $n=3$ trials and $P(S)=\pi$ where $\pi$ is an unknown parameter\\
+\bi
+\item Let $Y$ be the \# of successes -- \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}
+\ei
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+ Outcome & ~~~~~~~~~~~~~$P$(Outcome)~~~~~~~~~~~~~ &~~ $y$~~ & ~~~Reps~~~ &~~~~~~~~~~ $P(Y=y)$~~~~~~~~~~\\
+ \hline
+ SSS & $\pi\pi\pi=\pi^3$ & 3 & 1 & $\pi^3$\\
+ \hline
+ SSF & &&&\\
+& &&&\\
+ SFS &&&&\\
+& &&&\\
+ FSS &&&&\\
+& &&&\\
+ \hline
+ SFF &&&&\\
+& &&&\\
+ FSF&&&&\\
+& &&&\\
+ FFS&&&&\\
+& &&&\\
+ \hline
+ FFF&&&&\\
+& &&&\\
+ \hline
+\end{tabular}
+
+\newpage
+
+For general $n$, the event $Y=y$ occurs when there are exactly \\~\\~\\
+\bi
+\item Consider one such outcome w/$1^{st}~y$ trials successful last $n-y$ failures:
+$$SSS\cdots SFFF\cdots  F$$
+\item Probability of this outcome?\\~\\~\\~\\~\\
+\item How many different sequences with exactly $y$ successes in $n$ trials? \\~\\~\\~\\~\\~\\~\\~\\
+\ei
+\large The Probability distribution for $Y\sim Bin(n,\pi)$ is:\\~\\~\\~\\~\\~\\
+$$ ~~~ y=0,1,2,\cdots,n, ~ 0 \leq \pi \leq 1$$~\\
+
+\pagebreak
+
+\textbf{Binomial Distribution Example}\\
+Suppose 60\% of NCSU students favor closed-book exams. A random sample (outcomes independent) of 5 NCSU students is drawn.
+\be
+\item Define Success/Failure, $n$, $\pi$, and a RV $Y$ that follows the Binomial distribution\\~\\~\\
+\item Calculate $P(exactly~1~in~favor)$\\~\\~\\~\\
+\item Calculate $P(less~than~2~in~favor)$\\~\\~\\~\\
+\item Calculate $P(4~or~more~in~favor)$\\~\\~\\~\\
+\ee
+(see examples 4.7 and 4.8 on page 162 for more practice with the binomial pmf)\\~\\
+
+We will want to have general formulas for the mean and variance of a binomial. Consider the following plots:
+\begin{center}
+\includegraphics[width=220pt, height=180pt]{chapter4/binomial}\includegraphics[scale=0.5]{chapter4/binomialdist}
+\end{center}
+
+\newpage
+
+\textbf{Binomial Expected Value} - If $Y \sim Bin(n,\pi)$, then \\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+
+\textbf{Binomial Variance} - If $Y \sim Bin(n,\pi)$, then \\~\\~\\~\\
+
+\textbf{Binomial Standard Deviation} = \\~\\~\\
+
+\textbf{Multiple Choice Test Example}\\
+Consider a multiple choice test with 20 questions, each with five possible answers (a,b,c,d,e), only one of which is correct. Let $Y$= \# of questions guessed correctly.
+\be
+\item Let's verify $Y$ follows a binomial, calculate $E(Y)$, and calculate $Var(Y)$.\\~\\~\\~\\
+\item If scores of 50\% and higher are passing, find the formula (i.e. don't simplify) for the probability of passing by guessing.\\~\\~\\~\\~\\~\\~\\
+\ee
+
+Many other common discrete distributions exist.
+
+\pagebreak
+
+\textbf{Connection with making Inference}
+\textbf{Hypothesis Testing Idea:} \\
+You love Pepsico and their products.  They are having a promotion where their bottle caps are either winners (a free Pepsico product) or losers.  Your friend claims you will hardly ever win, in fact he thinks only 1 in 20 bottles is a winner.  You think the chance of winning is much higher than that.  \\~\\
+To prove him wrong you grab 50 randomly selected Pepsico bottles and find that 12 of your caps are winners.  How can we show your friend you are most likely correct?
+
+\pagebreak
+
+\huge Chapter 4 - Continuous Random Variables\\\normalsize~\\
+A \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} has an interval or collection of intervals as its support\\
+Ex:
+\bi
+\item $Y$=maximum daily temperature (interval $[-40^\circ F, 130^\circ F]$).
+\item $Y$=lifetime (in years) of electronic equipment $0 <Y <\infty$
+\item $Y$=weight loss (or gain) after a 6 month period $-\infty < Y < \infty$.
+\ei
+
+For Discrete RVs we had the pmf, $f(y)=P(Y=y)$.\\~\\
+For Continuous RVs we have the pdf, or \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\\
+\bi
+\item A pdf, f(x), describes the probability distribution of a continuous random variable.  
+\item Probability a randomly chosen value will lie between any 2 given values is represented in terms of the area between the two values under the pdf.
+\ei
+\begin{center}
+\includegraphics[width=3.5in, height=1in]{pdf.jpg}\\
+\end{center}
+
+\textbf{A function $f(y)$ is a pdf if}
+\be
+\item $f(y)$ is a \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}, i.e. $f(y)\geq 0$ for all $y$
+\item The area under $f(y)$ is unity, i.e.\\~\\~\\
+\ee
+Similar to pmf property $\sum_{y}f(y)=1$\\~\\
+We can find probabilities using integrals:
+
+\pagebreak
+
+\large Relationship of PDF to CDF:\\\normalsize
+Recall: For a RV $Y$ the \textbf{cumulative distribution function (CDF)} is\\~\\~\\~\\~\\
+As with discrete RV's cdf, either the CDF or PDF will uniquely define the RV's distribution.\\
+
+\large\textbf{Definition of a Probability Density Function (PDF)}\\\normalsize
+If the distribution function $F(y)$ of a random variable $Y$ has a derivative, the following relationship holds:
+\begin{center}
+\fbox{$f(y) = \frac{dF(y)}{dy} = F'(y)$}
+\end{center}
+\begin{center}
+\fbox{$F(y) = \int_{-\infty}^y  f(t) dt$}
+\end{center}
+~\\
+For any two constants $a$ and $b$,
+\begin{center}
+\fbox{$P(a \leq Y \leq b) = F(b)-F(a) = \int_{-\infty}^{b}f(t)dt-\int_{-\infty}^{a}f(t)dt = \int_a^b f(t)dt.$}
+\end{center}
+
+Note: No probability is given to single points!\\~\\
+
+\textbf{Example:  Obtain CDF from PDF}\\
+Let $Y$ be a random variable with $pdf$:
+\[ f(y) = \begin{cases} cy & 0<y<2 \\ 0 &\text{else}\end{cases}
+\]
+\be
+\item Find the value of $c$ that makes $f(y)$ a pdf\\~\\~\\~\\
+\item Find the cdf $F(y)$
+\pagebreak
+\item Graph the pdf and cdf\\~\\~\\~\\~\\~\\
+\item Find $P(1\leq Y\leq 2)$\\~\\~\\~\\~\\~\\
+\ee
+
+\textbf{Example: Obtain the pdf from the cdf}\\
+Suppose $Y$ has CDF
+$$F(y) = \left\{\begin{array}{lc}
+           0 & -\infty<y\leq0 \\
+           y^3 & 0< y < 1\\
+           1 & 1 \leq y < \infty\\
+         \end{array}\right..$$
+Recall: $Y$ is a continuous r.v. with CDF $F(y)$ then $f(y) = \frac{dF(y)}{dy} = F'(y)$.  Derive the $pdf$ $f(y)$.
+
+\pagebreak
+
+\textbf{Named Distributions}\\
+How do we use continuous RVs?
+\bi
+\item As with discrete RVs, many scenarios lead to similar distributions
+\item We will discuss two continuous distributions
+\bi
+\item Normal and Uniform distributions
+\ei
+\item As before, we assume a distribution and find characteristics of interest (probabilities, means, variances, etc)
+\ei
+
+\huge \textbf{Expectations} \normalsize\\~\\
+\textbf{Definition of Expectation}\\
+For a RV $Y$ with $pdf$ $f(y)$, the \textbf{expected value} of $Y$ is defined as\\~\\~\\
+$E(Y)$ is then a \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}  of all possible values of $Y$, with weighting function $f(y)$.\\~\\
+In general, the expectation of a {function} of $Y$, $g(Y)$, can be evaluated as\\~\\~\\
+
+\textbf{Variance of a Continuous RV}\\
+Definition of Variance is still the same\\~\\~\\~\\
+Example:  Let $Y$ be a random variable with $pdf$:
+$$f(y) = \left\{\begin{array}{lc}
+           3y^2 & 0<y<1 \\
+           0 & \mbox{otherwise}\\
+         \end{array}\right.$$
+Calculate $E(Y)$ and $Var(Y)$.
+
+\pagebreak
+
+\huge Named Distributions \normalsize\\
+\textbf{Uniform Distribution} is a reasonable approximation when any value in an interval seems to be equally likely.\\
+
+\large \textbf{The Uniform Distribution $U(\theta_1,\theta_2)$}\normalsize\\
+The RV $Y$ has a \textbf{uniform distribution} on the interval $(\theta_1,\theta_2)$ if the $pdf$ of $Y$
+is given by\\~\\~\\~\\~\\
+
+The constants $\theta_1,\theta_2$ are called the \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} of the uniform distribution.\\~\\
+We write  \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} \\
+
+\textbf{Properties of $Y \sim U(\theta_1,\theta_2)$}
+\be
+\item CDF given by\\~\\~\\
+\item $E(Y)$ =  \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} \\~\\
+\item $Var(Y)$ =  \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\\~\\~\\
+\ee
+
+Uniform Example:  Let the continuous random variable X denote the current measured in a thin copper wire.  Suppose the current is equally likely to occur anywhere in the interval 0 to 20.  \\
+Let's find the PDF, CDF, E(Y), Var(Y), and the probability that the current measurement is between 5 and 10 mA.
+\pagebreak
+
+\huge \textbf{Normal Distribution}\normalsize\\
+\textbf{The Normal Distribution $N(\mu,\sigma^2)$}\\
+A RV $Y$ has a \textbf{normal distribution} with mean $\mu$ and variance $\sigma^2$ if the $pdf$ of $Y$ is\\~\\~\\
+where $-\infty < y < \infty$ and $\sigma>0$.\\~\\
+The constants  \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}  are the parameters of the distribution.\\~\\
+We write $Y \sim N(\mu, \sigma^2)$.\\
+Most Famous Bell-Shaped Curve\\~\\
+\begin{center}
+\includegraphics[height=2.5in,width=3.2in]{normaldistribution.jpg}
+\end{center}
+
+
+
+\textbf{Properties of the $N(\mu,\sigma^2)$ RV}
+\bi
+\item  \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} 
+\item  \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} 
+\item  \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} 
+\ei
+\textbf{Expectation and Variance of $N(\mu,\sigma^2)$.}:\\
+$$E(Y) = \underbar{~~~~~~~~~~~~~~~~} , ~~~ Var(Y) = \underbar{~~~~~~~~~~~~~~~~~~~} .$$
+Note: these are the parameters of the distribution - (i.e. the distribution is  \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}  by its mean and variance)
+\pagebreak
+
+ \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} \\
+A random variable $Z\sim N(0,1)$ (i.e. a normal distribution with $\mu=0$ and $\sigma^2=1$) is said to follow a \textbf{Standard Normal Distribution}\\~\\
+The standard normal is centered at zero and its density is concentrated between (-3,+3).
+\begin{center}
+\vspace{-10pt}
+\includegraphics[height=2in,width=2.5in]{stdnormaldistribution.jpg}
+\end{center}
+
+
+\textbf{Standardization of Normal Random Variables}\\
+\textbf{Theorem}\\
+If $Y \sim N(\mu, \sigma^2)$, then  \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}  follows the std normal distribution:\\~\\~\\~\\~\\
+Suppose that $Y \sim N(\mu, \sigma^2)$. By standardizing $Y$, we have\\~\\~\\~\\~\\
+Likewise,  \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} \\~\\
+
+\textbf{CDF of $Z \sim N(0, 1)$: $\Phi(z)$}\\
+The CDF (cumulative distribution function) of the standard normal random variable $Z$ is by definition:\\~\\~\\~\\
+No closed form, has to be calculated through  \underbar{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} .\\~\\
+Tables or calculators often used.
+
+\pagebreak
+
+\textbf{Bottle Example}\\
+A company that manufactures and bottles apple juice uses a machine that automatically fills 16-ounce bottles.  There is some variation, however, in the amounts of liquid dispensed into the bottles.  The amount dispensed has been observed to be approximately normally distributed with mean 16 ounces and standard deviation 1 ounce. \\
+What is the probability a randomly selected bottle will:
+\bi
+\item have more than 17.5 ounces?\\~\\~\\~\\~\\~\\
+\item have between 15.2 and 16 ounces?\\~\\~\\~\\~\\~\\
+\item have less than 15 ounces?\\~\\~\\~\\~\\~\\
+\ei
+
+\pagebreak
+
+\textbf{Percentiles of the Normal Distribution}\\
+The \textbf{$(100p)$th percentile} of $Y$ is y, the value that solves $P(Y \leq y) = F(y)= p$. \\~\\
+Suppose $Z \sim N(0,1)$. Find
+\be
+\item the 97.5th percentile of $Z$: $z=$\\~\\~\\
+\item the 0.025 percentile of $Z$: $z=$\\~\\~\\
+\ee
+Suppose $Y \sim N(100, 9)$. Then find
+\be
+\item the 97.5th percentile of $Y$: $y=$\\~\\~\\~\\~\\
+\item the 0.025 percentile of $Y$: $y=$
+\ee
+
+\pagebreak
+
+\textbf{SAT/ACT Example}\\
+The mathematics portion of the SAT and ACT exams produce scores that are approximately normally distributed.  The SAT scores have averaged 480 with a S.D. of 100.  The ACT scores average 18 with a S.D. of 6.
+\be
+\item An engineering school sets 550 as the minimum SAT math score for students.  What percentage of students will score below 550 typically?
+\pagebreak
+\item What score should the engineering school set as a comparable standard on the ACT?\\~\\~\\~\\~\\
+\ee
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
