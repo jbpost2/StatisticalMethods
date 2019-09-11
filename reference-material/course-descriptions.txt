@@ -1,0 +1,18 @@
+
+511
+This first course in statistics for graduate students is intended to give students a background in the statistical methods that will assist them in the analysis of data generated from research in the biological sciences. Students will learn several methods for summarizing and describing data in addition to techniques for using sample data to make inferences about a larger population. This is a non-calculus-based course. Students will be introduced to statistical software; however, there is not a lab associated with this course.
+
+
+
+ST512 is an applied course that introduces statistical methods based on linear models for continuous response variables commonly used in designed experiments. Examples include multiple linear regression, factorial designs, and split-plot experiments. It is a prerequisite for most advanced courses in statistics.
+Simple and multiple regression. One- and two-factor ANOVA. Blocked and split-plot designs. A new section of ST 512 beginning Fall 2014 will add a focus on categorical data analysis including regression with binary response Y (logistic regression) and analysis of data with multiple sources of error such as longitudinal data collected over time.
+
+
+517 This first course in statistics for graduate students is intended to give students a background in the statistical methods that will assist them in the analysis of data.  Course covers basic methods for summarizing and describing data, accounting for variability in data, and techniques for inference. Topics include basic exploratory data analysis, probability distributions, confidence intervals, hypothesis testing, and regression analysis. This is a calculus-based course. Statistical software is used, however, there is no lab associated with the course
+
+518 This second course in statistics for graduate students is intended to further expand students’ background in the statistical methods that will assist them in the analysis of data.  Course covers many fundamental analysis methods currently used to analyze a wide array of data, mostly arising from designed experiments. Topics include multiple regression models, factorial effects models, general linear models, mixed effect models, logistic regression analysis, and basic repeated measures analysis. This is a calculus-based course. Statistical software is used, however, there is no lab associated with the course.
+
+513 Basic introduction to methods of statistical inference and modeling. SAS is introduced. Analysis of data to represent facts, guide decisions and test opinions in managing systems and processes. Graphical and numerical data analysis for descriptive and predictive decisions. Scatter plot smoothing and regression analysis. Basic statistical inference. Integrated use of computer.
+
+514 Regression analysis is a flexible statistical problem solving methodology. Students will learn the about regression analysis in depth from topics on basic regression through more advanced techniques. Students will gain considerable experience working with data. Data from examples and problems in the text. Students will use SAS to do most homework assignments.
+Simple linear regression, Regression analysis using linear algebra, multiple linear regression, model building techniques and strategies, variable selection techniques, common pitfalls of regression, residual analysis, logistic regression.

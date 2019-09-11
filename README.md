@@ -18,7 +18,6 @@ The goal in creating this book is to provide a thorough treatment of applied sta
 
 
 ### Matt to do:  
- - get a basic book in bookdown format going in our repo  
  - Rough outline of topics/sequence (if time)   
 
 ### Justin to do:  
