@@ -1,0 +1,11 @@
+# Appendix - Notation {#notation}
+
+Variables are denoted with Roman letters, such as $X$ and $y$. Lower case letters denote random variables while capital letters denote fixed variables. Note that these vectors may be of length 1 depending on context. Bolded values (**$X$**) denote matrices, and in the case of **$y$**, possibly single-column matrices.
+
+Unknown parameters are denoted with Greek letters, with boldface font indicating vectors/matrices. 
+
+
+In most models, $y$ will denote the univariate response, **$X$** will describe a matrix of predictor variables, and $e$ a vector of random errors. The Greek letter $\beta$ will be commonly used for regression parameters (either with subscripts for each values as in $\beta_0 + \beta_1 X_1$ or as a vector (as in **$X\beta$**). The letters $i, j, k,$ and $l$ will be most commonly used as subscripts or indices. 
+
+In the effects formulation of ANOVA models, additional greek letters ($\alpha$, $\gamma$, etc.) will appear as parameter effects, as will $\mu$, which will typically represent the grand mean. Group-specfic means will be denoted via subscripts:  $\mu_{ij}$. 
+
