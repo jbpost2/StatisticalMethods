@@ -6,4 +6,28 @@ Introduction/Foreword/prologue
 - math focus/appendix
 
 
+Chapters (This is harder than I thought!  Seems like doing this without focusing on all the fundamentals to start will just make the first couple inference chapters huge...)
+- Exploratory Data Analysis
+- Inference Ideas, Sampling, and Sources of Variability & Experimental Design Fundamentals
+- Inference on a Mean 
+    + Continuous RVs 
+    + CLT
+    + Confidence Interval Fundamentals 
+    + Hypothesis Testing Fundaments
+    + Linear Model Framework
+- Inference on a Proportion  
+    + Discrete RVs & Normal Approximation
+    + Confidence Intervals Fundamentals
+    + Hypothesis Testing Fundamentals
+    + Linear Model Framework
+- Inference on Multiple Means  
+    + Multiple Comparison Corrections
+- Inference on Two Categorical Variables  
+    + Difference of Two Proportions
+    + Chi-Square Tests  
+- Linear Regression  
+- General Linear Model
+- Mixed Models
+- Repeated Measures
+
 
