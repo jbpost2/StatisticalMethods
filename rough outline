@@ -31,3 +31,14 @@ Chapters (This is harder than I thought!  Seems like doing this without focusing
 - Repeated Measures
 
 
+
+
+
+
+General Chapter Structure
+- Motivating Problem/Problem Idea/What Data to Try to Collect
+- EDA to explore and further motivate new topic
+- Explanation of what a good model might be (or maybe this goes in with the data to try and collect?)
+- Background needed for the model/inference
+- Culmination of intro example
+- Second example to put it all together
