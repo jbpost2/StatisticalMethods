@@ -7,15 +7,15 @@ Introduction/Foreword/prologue
 
 
 Chapters (This is harder than I thought!  Seems like doing this without focusing on all the fundamentals to start will just make the first couple inference chapters huge...)
+#Point Estimation
 - Inference on a proportion  
     + Inference Ideas, Sampling, and Sources of Variability & Experimental Design Fundamentals
     + Data set with a good number of variables
     + Exploratory Data Analysis
     + Discrete RVs & Normal Approximation (CLT)
-    + Confidence Intervals Fundamentals
-    + Hypothesis Testing Fundamentals
     + Linear Model Framework
     + Come back to problem in logistic regression setting
+#Accounting for Uncertainty in Estimation
 - Inference on a Mean 
     + Inference Ideas, Sampling, and Sources of Variability & Experimental Design Fundamentals
     + Exploratory Data Analysis
@@ -42,8 +42,9 @@ Chapters (This is harder than I thought!  Seems like doing this without focusing
 
 General Chapter Structure
 - Motivating Problem/Problem Idea/What Data to Try to Collect
-- EDA to explore and further motivate new topic
 - Explanation of what a good model might be (or maybe this goes in with the data to try and collect?)
+- EDA to explore and further motivate new topic
 - Background needed for the model/inference
 - Culmination of intro example
 - Second example to put it all together
+- Resources for when shit hits the fan
