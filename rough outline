@@ -7,18 +7,22 @@ Introduction/Foreword/prologue
 
 
 Chapters (This is harder than I thought!  Seems like doing this without focusing on all the fundamentals to start will just make the first couple inference chapters huge...)
-- Exploratory Data Analysis
-- Inference Ideas, Sampling, and Sources of Variability & Experimental Design Fundamentals
+- Inference on a proportion  
+    + Inference Ideas, Sampling, and Sources of Variability & Experimental Design Fundamentals
+    + Data set with a good number of variables
+    + Exploratory Data Analysis
+    + Discrete RVs & Normal Approximation (CLT)
+    + Confidence Intervals Fundamentals
+    + Hypothesis Testing Fundamentals
+    + Linear Model Framework
+    + Come back to problem in logistic regression setting
 - Inference on a Mean 
+    + Inference Ideas, Sampling, and Sources of Variability & Experimental Design Fundamentals
+    + Exploratory Data Analysis
     + Continuous RVs 
     + CLT
     + Confidence Interval Fundamentals 
     + Hypothesis Testing Fundaments
-    + Linear Model Framework
-- Inference on a Proportion  
-    + Discrete RVs & Normal Approximation
-    + Confidence Intervals Fundamentals
-    + Hypothesis Testing Fundamentals
     + Linear Model Framework
 - Inference on Multiple Means  
     + Multiple Comparison Corrections
@@ -26,9 +30,10 @@ Chapters (This is harder than I thought!  Seems like doing this without focusing
     + Difference of Two Proportions
     + Chi-Square Tests  
 - Linear Regression  
-- General Linear Model
+- Logistic Regression
 - Mixed Models
 - Repeated Measures
+- General Linear Model
 
 
 
