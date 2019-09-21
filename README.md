@@ -17,6 +17,7 @@ The goal in creating this book is to provide a thorough treatment of applied sta
 
 ### Matt to do:  
  - Put together notation section (elem stat learn)
+ - Add "seven DOE steps" from IDA trainings and see if that translates into a good chapter format
 
 ### Justin to do:  
  - Rough outline of topics/sequence (if time)   
