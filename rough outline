@@ -7,8 +7,18 @@ Introduction/Foreword/prologue
 - math focus/appendix
 
 #Chapter 2 - Sampling, Design, and Exploratory Data Analysis
+ - Frame still with question of interest.  Maybe pilot study or study where we mainly care about summary stats.
+ - How does data look in the wild and how do we deal with it in the wild.  How could it be modeled via distributions?  Sample representing the larger group.
+ - Not too much math here, save that for later mostly.
+ - Simulation/Randomization based hypothesis testing.
 #Chapter 3 - Point Estimation
+ - Bias
+ - MLE here a bit for binomial (I think).  Why does it matter to do this estimation in this way?  i.e. for harder problems it won't be so intuitive as sample proportion for estimating the true proportion
 #Chapter 4 - Accounting for Uncertainty in Estimation
+ - SE stuff
+ - Simulation for sampling distributions
+ - Some theory
+ - Bootstrap? (If we do a parametric bootstrap and did a good job in chapter 2 that might work.  Then do a nonparametric.)
 #Chapter 5 - Inference via Hypothesis Testing for a Proportion or Mean
 #Chapter 6 - Inference via Confidence Intervals for a Proportion or Mean
 #Chapter 7 - Inference on Two Categorical Variables
@@ -17,10 +27,10 @@ Introduction/Foreword/prologue
 #Chapter 10 - Block Designs
 #Chapter 11 - Regression 
 #Chapter 12 - The General Linear Model
-#Chapter 13 - Logistic Regression and Generalized Linear Models
-#Chapter 14 - Mixed Models
-#Chapter 15 - Generalized Linear Mixed Models
-#Chapter 16 - Repeated Measures and Split Plot Designs 
+#Chapter 13 - Mixed Models
+#Chapter 14 - Repeated Measures and Split Plot Designs 
+#Chapter 15 - Logistic Regression and Generalized Linear Models
+#Chapter 16 - Generalized Linear Mixed Models
 
 
 Chapters (This is harder than I thought!  Seems like doing this without focusing on all the fundamentals to start will just make the first couple inference chapters huge...)
