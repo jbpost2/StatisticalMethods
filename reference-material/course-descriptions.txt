@@ -2,8 +2,6 @@
 511
 This first course in statistics for graduate students is intended to give students a background in the statistical methods that will assist them in the analysis of data generated from research in the biological sciences. Students will learn several methods for summarizing and describing data in addition to techniques for using sample data to make inferences about a larger population. This is a non-calculus-based course. Students will be introduced to statistical software; however, there is not a lab associated with this course.
 
-
-
 ST512 is an applied course that introduces statistical methods based on linear models for continuous response variables commonly used in designed experiments. Examples include multiple linear regression, factorial designs, and split-plot experiments. It is a prerequisite for most advanced courses in statistics.
 Simple and multiple regression. One- and two-factor ANOVA. Blocked and split-plot designs. A new section of ST 512 beginning Fall 2014 will add a focus on categorical data analysis including regression with binary response Y (logistic regression) and analysis of data with multiple sources of error such as longitudinal data collected over time.
 
