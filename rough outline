@@ -1,9 +1,26 @@
 Rough outline
 
+#Prologue
 Introduction/Foreword/prologue
 - Structure of the book
 - structure of papers
 - math focus/appendix
+
+#Chapter 2 - Sampling, Design, and Exploratory Data Analysis
+#Chapter 3 - Point Estimation
+#Chapter 4 - Accounting for Uncertainty in Estimation
+#Chapter 5 - Inference via Hypothesis Testing for a Proportion or Mean
+#Chapter 6 - Inference via Confidence Intervals for a Proportion or Mean
+#Chapter 7 - Inference on Two Categorical Variables
+#Chapter 8 - Inference for Multiple Means
+#Chapter 9 - Multiway ANOVA
+#Chapter 10 - Block Designs
+#Chapter 11 - Regression 
+#Chapter 12 - The General Linear Model
+#Chapter 13 - Logistic Regression and Generalized Linear Models
+#Chapter 14 - Mixed Models
+#Chapter 15 - Generalized Linear Mixed Models
+#Chapter 16 - Repeated Measures and Split Plot Designs 
 
 
 Chapters (This is harder than I thought!  Seems like doing this without focusing on all the fundamentals to start will just make the first couple inference chapters huge...)
