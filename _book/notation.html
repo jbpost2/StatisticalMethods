@@ -25,7 +25,7 @@
 <meta name="author" content="Yihui Xie">
 
 
-<meta name="date" content="2019-09-21">
+<meta name="date" content="2019-09-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -140,7 +140,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="chapter" data-level="7" data-path="notation.html"><a href="notation.html"><i class="fa fa-check"></i><b>7</b> Appendix - Notation</a></li>
+<li class="chapter" data-level="7" data-path="notation.html"><a href="notation.html"><i class="fa fa-check"></i><b>7</b> Appendix - Notation</a><ul>
+<li class="chapter" data-level="7.1" data-path="notation.html"><a href="notation.html#standard-notation"><i class="fa fa-check"></i><b>7.1</b> Standard notation</a></li>
+<li class="chapter" data-level="7.2" data-path="notation.html"><a href="notation.html#mixed-models"><i class="fa fa-check"></i><b>7.2</b> Mixed models</a></li>
+<li class="chapter" data-level="7.3" data-path="notation.html"><a href="notation.html#effects-model-representation"><i class="fa fa-check"></i><b>7.3</b> Effects model representation</a></li>
+<li class="chapter" data-level="7.4" data-path="notation.html"><a href="notation.html#estimators-vs.-estimates"><i class="fa fa-check"></i><b>7.4</b> Estimators vs. Estimates</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -163,10 +168,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="notation" class="section level1">
 <h1><span class="header-section-number">Chapter 7</span> Appendix - Notation</h1>
-<p>Variables are denoted with Roman letters, such as <span class="math inline">\(X\)</span> and <span class="math inline">\(y\)</span>. Lower case letters denote random variables while capital letters denote fixed variables. Note that these vectors may be of length 1 depending on context. Bolded values (<strong><span class="math inline">\(X\)</span></strong>) denote matrices, and in the case of <strong><span class="math inline">\(y\)</span></strong>, possibly single-column matrices.</p>
+<div id="standard-notation" class="section level2">
+<h2><span class="header-section-number">7.1</span> Standard notation</h2>
+<p>Variables are denoted with Roman letters, such as <span class="math inline">\(x\)</span> and <span class="math inline">\(Y\)</span>. Lower case letters denote random variables while capital letters denote fixed variables. Note that these vectors may be of length 1 depending on context. Bolded values (<strong><span class="math inline">\(x\)</span></strong>) denote matrices, and in the case of <strong><span class="math inline">\(Y\)</span></strong>, possibly single-column matrices.</p>
 <p>Unknown parameters are denoted with Greek letters, with boldface font indicating vectors/matrices.</p>
-<p>In most models, <span class="math inline">\(y\)</span> will denote the univariate response, <strong><span class="math inline">\(X\)</span></strong> will describe a matrix of predictor variables, and <span class="math inline">\(e\)</span> a vector of random errors. The Greek letter <span class="math inline">\(\beta\)</span> will be commonly used for regression parameters (either with subscripts for each values as in <span class="math inline">\(\beta_0 + \beta_1 X_1\)</span> or as a vector (as in <strong><span class="math inline">\(X\beta\)</span></strong>). The letters <span class="math inline">\(i, j, k,\)</span> and <span class="math inline">\(l\)</span> will be most commonly used as subscripts or indices.</p>
-<p>In the effects formulation of ANOVA models, additional greek letters (<span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\gamma\)</span>, etc.) will appear as parameter effects, as will <span class="math inline">\(\mu\)</span>, which will typically represent the grand mean. Group-specfic means will be denoted via subscripts: <span class="math inline">\(\mu_{ij}\)</span>.</p>
+<p>In most models, <span class="math inline">\(Y\)</span> will denote the univariate response, <strong><span class="math inline">\(x\)</span></strong> will describe a matrix of predictor variables, and <span class="math inline">\(e\)</span> a vector of random errors. The Greek letter <span class="math inline">\(\beta\)</span> will be commonly used for regression parameters (either with subscripts for each values as in <span class="math inline">\(\beta_0 + \beta_1 X_1\)</span> or as a vector (as in <strong><span class="math inline">\(X\beta\)</span></strong>). The letters <span class="math inline">\(i, j, k,\)</span> and <span class="math inline">\(l\)</span> will be most commonly used as subscripts or indices. <span class="math inline">\(N\)</span> will typically denote a sample size, with subscripted versions (<span class="math inline">\(N_i\)</span>) describing the number of observations in a group, and <span class="math inline">\(p\)</span> describing the number of parameters in a model beyodn the intercept.</p>
+<p>We may therefore describe a simple linear regresion model as:</p>
+<p><span class="math display">\[Y = x\beta + E\]</span></p>
+<p>In this model, <strong><span class="math inline">\(Y\)</span></strong> is a <span class="math inline">\(N\times 1\)</span> random vector, <strong><span class="math inline">\(x\)</span></strong> is a <span class="math inline">\(N\times (p + 1)\)</span> matrix of fixed values, and <span class="math inline">\(E\)</span> is a <span class="math inline">\(N \times 1\)</span> vector.</p>
+<p><span class="math inline">\(\pi\)</span> is typically used to describe probability parameters, as in Bernoulli or binomial random variables.</p>
+</div>
+<div id="mixed-models" class="section level2">
+<h2><span class="header-section-number">7.2</span> Mixed models</h2>
+<p>Still need to add something for this</p>
+</div>
+<div id="effects-model-representation" class="section level2">
+<h2><span class="header-section-number">7.3</span> Effects model representation</h2>
+<p>In the effects formulation of ANOVA models, additional greek letters (<span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\gamma\)</span>, etc.) will appear as parameter effects, as will <span class="math inline">\(\mu\)</span>, which will typically represent the grand mean. Group-specfic means will be denoted via subscripts: <span class="math inline">\(\mu_{ij}\)</span>. When using this representation, it is convenient to describe a single observation as <span class="math inline">\(Y_{ijk}\)</span>, which is the <span class="math inline">\(k\)</span>th observation from the group with with the <span class="math inline">\(i\)</span>th level of the first factor and the <span class="math inline">\(j\)</span>th level of the second factor. In the main effects version of this model, we have:</p>
+<p><span class="math display">\[Y_{ijk} = \mu + \alpha_i + \gamma_j + E_{ijk}\]</span></p>
+<p>We can therefore estimate <span class="math inline">\(\mu_{ij}\)</span> as <span class="math inline">\(\hat \mu_{ij} = \frac{1}{n}\sum_{k = 1}^n Y_{ijk} = \bar{Y}_{ij\cdot}\)</span>. This “dot” notation can be extended to any subscript and indicates summing over the index that has been replaced by the dot. Further note that the “hat” over a paremeter value denotes the estimator for that parameter value, and the “bar” indicates an average. These features are used generally throughout this book.</p>
+</div>
+<div id="estimators-vs.-estimates" class="section level2">
+<h2><span class="header-section-number">7.4</span> Estimators vs. Estimates</h2>
+<p>If we want to get pedantic, we can differentiate between estimates and estimators in our notation. Estimators are functions of random variables used to estimate parameters. Estimates are realized values of estimators. To differentiate these, we use Roman letters with hats to represent estimators (<span class="math inline">\(\hat B = (x&#39;x )^{-1}x&#39;Y\)</span>) and Greek letters with hats to represent estimates (<span class="math inline">\(\hat \beta = 1.52\)</span>).</p>
 
 <div id="refs" class="references">
 <div>
@@ -174,6 +198,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div>
 <p>———. 2019. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
+</div>
 </div>
 </div>
 </div>

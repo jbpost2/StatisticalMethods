@@ -3,18 +3,18 @@
 
 ## Standard notation
 
-Variables are denoted with Roman letters, such as $x$ and $Y$. Lower case letters denote random variables while capital letters denote fixed variables. Note that these vectors may be of length 1 depending on context. Bolded values (**$x$**) denote matrices, and in the case of **$Y$**, possibly single-column matrices.
+Vectors of variables are denoted with Roman letters, such as $x$ and $Y$. Capital letters denote random variables while lower case letters denote fixed variables. Note that these vectors may be of length 1 depending on context. Bolded values (**$x$**) denote matrices, and in the case of **$Y$**, possibly single-column matrices.
 
-Unknown parameters are denoted with Greek letters, with boldface font indicating vectors/matrices. 
+Unknown parameters are denoted with Greek letters, with boldface font indicating matrices. 
 
 
-In most models, $Y$ will denote the univariate response, **$x$** will describe a matrix of predictor variables, and $e$ a vector of random errors. The Greek letter $\beta$ will be commonly used for regression parameters (either with subscripts for each values as in $\beta_0 + \beta_1 X_1$ or as a vector (as in **$X\beta$**). The letters $i, j, k,$ and $l$ will be most commonly used as subscripts or indices. $N$ will typically denote a sample size, with subscripted versions ($N_i$) describing the number of observations in a group, and $p$ describing the number of parameters in a model beyodn the intercept. 
+In most models, $Y$ will denote the univariate response, **$x$** will describe a matrix of predictor variables, and $E$ a vector of random errors. The Greek letter $\beta$ will be commonly used for regression parameters (either with subscripts for each values as in $\beta_0 + \beta_1 X_1$ or as a vector (as in $X\beta$). The letters $i, j, k,$ and $l$ will be most commonly used as subscripts or indices. $N$ will typically denote a sample size (not a random vector), with subscripted versions ($n_i$) describing the number of observations in a group, and $p$ describing the number of parameters in a model beyond the intercept. 
 
 We may therefore describe a simple linear regresion model as: 
 
 $$Y = x\beta + E$$
 
-In this model, **$Y$** is a $N\times 1$ random vector, **$x$** is a $N\times (p + 1)$ matrix of fixed values, and $E$ is a $N \times 1$ vector. 
+In this model, $Y$ is a $N\times 1$ random vector, **$x$** is a $N\times (p + 1)$ matrix of fixed values, and $E$ is a $N \times 1$ vector. 
 
 $\pi$ is typically used to describe probability parameters, as in Bernoulli or binomial random variables. 
 
