@@ -27,10 +27,10 @@ Introduction/Foreword/prologue
 #Chapter 10 - Block Designs
 #Chapter 11 - Regression 
 #Chapter 12 - The General Linear Model
-#Chapter 13 - Logistic Regression and Generalized Linear Models
-#Chapter 14 - Mixed Models
-#Chapter 15 - Generalized Linear Mixed Models
-#Chapter 16 - Repeated Measures and Split Plot Designs 
+#Chapter 13 - Mixed Models
+#Chapter 14 - Repeated Measures and Split Plot Designs 
+#Chapter 15 - Logistic Regression and Generalized Linear Models
+#Chapter 16 - Generalized Linear Mixed Models
 
 
 Chapters (This is harder than I thought!  Seems like doing this without focusing on all the fundamentals to start will just make the first couple inference chapters huge...)
