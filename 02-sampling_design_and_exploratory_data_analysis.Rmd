@@ -22,3 +22,31 @@ Learning Objectives:
 # Sampling, Experiments, and Exploratory Data Analysis{#sampling}
 
 
+
+
+
+
+<!-- - Frame still with question of interest.  Maybe pilot study or study where we mainly care about summary stats.
+ - How does data look in the wild and how do we deal with it in the wild.  How could it be modeled via distributions?  Sample representing the larger group.
+ - Not too much math here, save that for later mostly.
+ - Simulation/Randomization based hypothesis testing. 
+. 
+.
+Thoughts:
+Inference ideas - pop, sample, etc.
+how we get our units important
+  SRS
+Good vs bad sampling and the traits
+experiment ideas/fundamentals
+  CRD
+can do experiment or observational
+conclusions to make from those (matrix of things)
+.
+Sample of Random Variable's realizations, sample distribution vs populaton, modeling ideas
+Approx probabilities and quantiles vs theoretical
+Summaries of distributions (center, spread, graphs)
+.
+Components of a research study or maybe the general process of a research study
+Things to do before and after data collection
+Real vs conceptual populations (finite vs infinite)
+-->
