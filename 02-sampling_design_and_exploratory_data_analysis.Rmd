@@ -50,13 +50,19 @@ Maybe talk about how in the future you could do alternate email ads or something
 
 Get the data from google analytics or whatever, have a plan for updating each month?
 
-### Explore the Data  <!-- I think we need to add this as a much needed step!  If nothing else than for data validation.  I'm assuming perform the test now means collect the data. Perhaps this could fall into the Statistically analyze the data part though... Might be good to separate out the exploring/validating part though.  -->
+### Look at the Data  <!-- I think we need to add this as a much needed step!  If nothing else than for data validation.  I'm assuming perform the test now means collect the data. Perhaps this could fall into the Statistically analyze the data part though... Might be good to separate out the exploring/validating part though.  -->
+
+Careful discussion of not selecting a modeling technique based on this unless it is a pilot study or an exploratory study else we have increased our nominal type I error rate... 
+
+(sometimes EDA sometimes data validation only/cleaning - more formal experiments)
 
 Spend a lot of time here talking about graphs of different types.  Sample means, sample variances, etc.
 
 Discuss population curves vs sample histograms and the relationship.
 
 ### Statistically Analyze the Data  
+
+New variables as functions of old?
 
 Not a formal test here but comparisons of interest etc.
 
@@ -72,6 +78,8 @@ What can we conclude realistically from this data?  To what population are we ta
 ### Experiment Background 
 
 This example would lend itself to a reasonably easy randomization test or simulation based test.  Maybe an AB type study where we swap labels and do that with a nice visual.
+
+Maybe third example with simulation test.
 
 ### Selecting Response Variables
 
@@ -91,6 +99,7 @@ Recap benefits of doing an experiment vs an observational study.
 
 ### Explore the Data  
 
+NHST paradigm with false discovery?
 
 ### Statistically Analyze the Data  
 
