@@ -23,6 +23,8 @@ Learning Objectives:
 
 ## Data in the Wild  
 
+Words
+
 ### Experiment Background  
 
 Marketing example.  Goal to describe the customers, how they tend to purchase/shop, and maybe find some shared qualities in order to adverstise curated packages to folks.
