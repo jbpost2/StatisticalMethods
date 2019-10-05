@@ -41,3 +41,7 @@ Old stuff to keep around:
      + Make book more problem focused than the more traditional theory, math, etc. approach.  Start with the **why**.  
 
  
+ 
+ ## Good resource for mixed models
+ http://mfviz.com/hierarchical-models/?fbclid=IwAR074-goLDlzwMwWmq86qINQRGIEclsm_SAfXin4JulC_RSGZU6MJlDBXTc  
+ 
