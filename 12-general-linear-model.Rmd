@@ -1,0 +1,3 @@
+# The General Linear Model {#glm}
+
+We have finished a nice book.

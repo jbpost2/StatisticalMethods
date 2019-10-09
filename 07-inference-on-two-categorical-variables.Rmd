@@ -1,0 +1,3 @@
+# Inference for Two Categorical Variables {#twocategorical}
+
+We have finished a nice book.

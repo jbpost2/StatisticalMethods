@@ -1,0 +1,155 @@
+# Appendix - Learning Objectives {#learningobj}
+
+## Book-level  
+
+After reading this book you will be able to:  
+ - illicit relevent sources of variability for a potential study  
+ - utilize principles of design to plan a reasonable experiment to help answer questions of interest
+ - compare and contrast methods for sampling from a population and designing an experiment when the goal of a study is prediction versus when the goal is statistical inference
+ - articulate the scope of inferential conclusions in light of the method of data collection and the experimental design used
+ - choose appropriate numerical summaries and graphical displays for a set of data and create these using software
+ - explain the general concept of point estimation and how to account for sampling variability
+ - explain the importance of statistical distributiosn when conducting statistical inference
+ - describe the fundamental inferential techniques of hypothesis testing and confidence intervals
+ - compare and contrast the use of and intrepretations from hypothesis tests and confidence intervals
+ - fit statistical models in software and interpret their output
+
+
+## Topic-level
+
+### Chapter 2 - Sampling, Design, and Exploratory Data Analysis
+
+### Chapter 3 - Point Estimation
+
+### Chapter 4 - Accounting for Uncertainty in Estimation
+
+### Chapter 5 - Inference via Hypothesis Testing for a Proportion or Mean
+
+### Chapter 6 - Inference via Confidence Intervals for a Proportion or Mean
+
+### Chapter 7 - Inference on Two Categorical Variables
+
+### Chapter 8 - Inference for Multiple Means
+
+### Chapter 9 - Multiway ANOVA
+
+### Chapter 10 - Block Designs
+
+### Chapter 11 - Regression 
+
+### Chapter 12 - The General Linear Model
+
+### Chapter 13 - Mixed Models
+
+### Chapter 14 - Repeated Measures and Split Plot Designs 
+
+### Chapter 15 - Logistic Regression and Generalized Linear Models
+
+### Chapter 16 - Generalized Linear Mixed Models
+
+
+
+## From ST512
+
+WE NEED TO ORGANIZE THESE UNDER DIFFERENT CHAPTERS AT SOME POINT
+Learning Objectives
+
+1. Recognize a completely randomized design with one treatment factor and write the corresponding one-way analysis of variance model, with assumptions
+2. Estimate treatment means
+3. Estimate the variance among replicates within a treatment
+4. Construct the analysis of variance table for a one factor analysis of variance, including computing degrees of freedom, sums of squares, mean squares, and F-ratios
+5. Interpret results and draw conclusions from a one-factor analysis of variance
+6. Estimate differences between two treatment means in a one factor analysis of variance
+7. Test differences between two treatment means in a one factor analysis of variance
+8. Construct a contrast to estimate or test a linear combination of treatment means
+9. Estimate the standard error of a linear combination of treatment means
+10. Make inferences about linear combinations of treatment means, including contrasts.
+11. Obtain and understand SAS output for linear combinations of treatment means, including contrasts.
+12. Explain when and why corrections for multiple comparisons are needed
+13. Know when and how to use Tukey's correction for all pairwise comparisons
+14. Compute Bonferroni confidence intervals
+15. Create and interpret orthogonal contrasts.
+16. Define main effects and interactions
+17. Write contrasts to estimate main effects and interactions
+18. Estimate these contrasts and their standard errors
+19. Compute sums of squares associated with these contrasts
+20. Test hypotheses about the main effects and interactions.
+21. Identify and define simple effects.
+22. Identify and define interaction effects.
+23. Identify and define main effects.
+24. Understand when to use simple, interaction, and main effects when drawing inferences in a two-way ANOVA.
+25. Write the analysis of variance model and SAS code for a completely randomized design with two factors
+26. Test hypotheses and interpret the analysis of variance for a factorial experiment.
+
+
+1. Explain the appropriate use of correlations and compute the correlation coefficient
+2. Read and interpret a scatterplot and guess the correlation coefficient by examination of a scatter plot
+3. Interpret the strength and direction of association indicated by the correlation coefficient and judge when a correlation coefficient provides an appropriate summary of a bivariate relationship
+4. Test the hypothesis that the correlation coefficient is zero using either a t-test or the Fisher z transformation, Compute confidence intervals using Fisher's z transformation
+5. Write a statistical model for a straight line regression or a multiple regression and explain what all the terms of the model represent
+6. Explain the assumptions underlying regression models, evaluate whether the assumptions are met 
+7. Estimate the intercept, slope and variance for a simple linear regression model
+8. Fit a multiple regression model in SAS and interpret the output, use the coefficient of determination to evaluate model fit
+9. Use a regression model to predict Y for new values of X
+10. Estimate the variance and standard error of parameters in regression models, test hypotheses about the parameters, and construct confidence intervals for the parameters.
+11. Explain the difference between a confidence interval and a prediction interval and know when to use each of them
+12. Construct a confidence interval for the expected value of Y at a given value of X
+13. Construct a prediction interval for a new value of Y at a given value of X
+14. Write a linear model in matrix notation
+15. Find the expectation and variance of a linear combination of random variables, a'Y
+16. Set up the expressions to calculate parameter estimates and predicted values using the matrix form of the model 
+17. Estimate standard errors for parameter estimates and predicted values
+18. Use extra sums of squares to test hypotheses about subsets of parameters
+19. Construct indicator variables for including categorical regressor variables in a linear model
+20. Understand how to interpret parameters of a general linear model with indicator variables
+21. Estimate contrasts of treatment means and their standard errors using the general linear model notation and matrix form of the model
+22. Compare nested models with a lack of fit test to select a model
+23. Explain what a covariate is and how they are used
+24. Explain the assumptions of the analysis of covariance model and determine when these assumptions are met
+25. Fit an analysis of covariance model in SAS and conduct appropriate tests for treatment effects
+26. Estimate and interpret treatment means and their standard errors adjusted for covariates using SAS, Construct confidence intervals for adjusted treatment means
+27. Construct and estimate contrasts of treatment means adjusted for covariates and estimate the standard errors and confidence intervals of such contrasts.
+
+
+Analysis of variance and design of experiments
+Recognize each of the following types of experimental designs and determine when each type would be advantageous. 
+1. completely randomized design
+2. randomized complete block design
+3. split plot design
+Recognize whether factors should be considered fixed effects or random effects and explain the scope of inference for each case.
+Recognize whether factors are crossed or nested.
+For all of the designs listed and for experiments with crossed and/or nested fixed factors, random factors, or a combination of fixed and random effects, be able to
+1. Write the corresponding analysis of variance model, with assumptions, and define all terms
+2. Estimate treatment means and their standard errors
+3. Construct the analysis of variance table, including computing degrees of freedom, sums of squares, mean squares, and F-ratios
+4. Determine whether the assumptions of the model are satisfied
+5. Interpret results and draw conclusions 
+6. Construct and estimate linear combinations of treatment means and their standard errors
+7. Test hypotheses and construct confidence intervals about linear combinations of treatment means
+8. Explain when and why corrections for multiple comparisons are needed, know  when and how to use Tukey's correction for all pairwise comparisons, compute Bonferroni confidence intervals
+9. Create and interpret orthogonal contrasts.
+10. Define and interpret main effects, simple effects and interactions
+11. Use a table of expected mean squares to estimate variance components and determine appropriate F-statistics for testing effects in the analysis of variance
+12. Interpret variance components and estimate and interpret the intraclass correlation coefficient.
+Regression and correlation
+Explain the appropriate use of correlations and compute the correlation coefficient, read and interpret a scatterplot and guess the correlation coefficient by examination of a scatter plot, test the hypothesis that the correlation coefficient is zero using either a t-test or the Fisher z transformation, compute confidence intervals using Fisher's z transformation
+You should be able to do the following for fitting models to describe the relationships of one or several variables to a response variable. The regressor variables may be continuous or categorical or a mix of the two (e.g., analysis of covariance models)
+1. Write a general linear model, including assumptions, in standard or matrix notation, and explain what all the terms and assumptions represent. Be able to handle models that contain interaction terms, polynomial terms, and dummy variables.
+2. Evaluate whether the model assumptions are met 
+3. Fit a general linear model in SAS and interpret the output
+4. Work with the general linear model in matrix form, including finding the expectation and variance of a linear combination of regression coefficients or treatment means
+5. Test hypotheses and construct confidence intervals for linear combinations of the parameters
+6. Construct and interpret a confidence interval for the expected value of Y at a given value of X
+7. Construct and interpret a prediction interval for a new value of Y at a given value of X
+8. Use extra sums of squares to test hypotheses about subsets of parameters. 
+9. Explain what a covariate is and how covariates are used
+
+
+## For Point Estimates Chapter
+- Definitions for Mean, Median, Quantile, Percentile
+- Explain uses for the above
+- Identify the correct point estimate to use for a given test
+
+- Define Systematic Random Sample and Convenience Sample
+- Explain strengths and weaknesses of each
+- Identify conditions when Systematic and Convenience Sampling may not provide representitive samples

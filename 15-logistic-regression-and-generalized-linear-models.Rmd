@@ -1,0 +1,5 @@
+# Logistic Regression and Generalized Linear Models {#logistic}  
+
+## Stuff here  
+
+We have finished a nice book.  
