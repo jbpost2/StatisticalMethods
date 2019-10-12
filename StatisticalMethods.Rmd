@@ -173,7 +173,7 @@ Things to do before and after data collection
 Real vs conceptual populations (finite vs infinite)
 -->
 
-<!--chapter:end:02-samplingdesignandexploratorydataanalysis.Rmd-->
+<!--chapter:end:02-sampling-design-and-exploratory-data-analysis.Rmd-->
 
 # Point Estimates 
 
@@ -261,7 +261,7 @@ Based on this study, the Engineer concludes that a cookie sleeve large enough fo
 
 
 
-<!--chapter:end:03-pointestimates.Rmd-->
+<!--chapter:end:03-point-estimates.Rmd-->
 
 # Accounting for Uncertainty 
 
@@ -352,17 +352,31 @@ We have finished a nice book.
 ## Book-level  
 
 After reading this book you will be able to:  
- - illicit relevent sources of variability for a potential study  
- - utilize principles of design to plan a reasonable experiment to help answer questions of interest
- - compare and contrast methods for sampling from a population and designing an experiment when the goal of a study is prediction versus when the goal is statistical inference
- - articulate the scope of inferential conclusions in light of the method of data collection and the experimental design used
- - choose appropriate numerical summaries and graphical displays for a set of data and create these using software
- - explain the general concept of point estimation and how to account for sampling variability
- - explain the importance of statistical distributiosn when conducting statistical inference
- - describe the fundamental inferential techniques of hypothesis testing and confidence intervals
- - compare and contrast the use of and intrepretations from hypothesis tests and confidence intervals
- - fit statistical models in software and interpret their output
 
+ - illicit relevent sources of variability for a potential study  
+ 
+ - utilize principles of design to plan a reasonable experiment to help answer questions of interest  
+   
+ - compare and contrast methods for sampling from a population and designing an experiment when the goal of a study is prediction versus when the goal is statistical inference  
+ 
+ - articulate the scope of inferential conclusions in light of the method of data collection, the experimental design used, and the statistical analysis applied  
+ 
+ - choose appropriate numerical summaries and graphical displays for a set of data and create these using software  
+ 
+ - explain the general concept of point estimation and how to account for sampling variability  
+ 
+ - explain the importance of statistical distributions when conducting statistical inference  
+ 
+ - describe the fundamental inferential techniques of hypothesis testing and confidence intervals  
+ 
+ - compare and contrast the use of and interpretations from hypothesis tests and confidence intervals  
+ 
+ - fit statistical models in software and interpret their output  
+
+ - Something about understanding the relationships between the models (linear model framework)  
+ 
+ - Maybe another bit about data types you see, how the assumptions we make impact things  
+   
 
 ## Topic-level
 
