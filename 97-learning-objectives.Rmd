@@ -77,12 +77,31 @@ After reading this book you will be able to:
         - CLT
     - costs and benefits of using nonparametric approaches
     
+ - Describe relevant properties of random variables and probabilities
+    - Distinguish between mutually exclusive and independent events.
+    - Calculate probability for a given scenario, either numerically or using a Venn diagram.
+    - Apply the General Addition Rule to solve probability problems.
+    - Apply the Rules for Probability Distributions to create a probability distribution for a given scenario.
+    - Use the complement of an event to solve probability problems.
+    - Apply the Multiplication Rule for Independent Processes to solve probability problems.
+     - random variables
+        - have a defined set of possible outcomes ("sample space")
+        - Discrete vs. continuous RVs
+        - others???
+    - probabilities/PDFs
+        - between 0 and 1 inclusive
+        - sum of probability of all possible events is 1
+        - $P(A) + P(A^c) = 1$, where $A$ is an event and $A^c$ is the complement of A
+ 
  - describe the fundamental inferential techniques of hypothesis testing and confidence intervals  
     - identify a null and alternative for a given problem
     - interpret hypotheses
     - characterize the test statistic under the null
     - explain what a rejection region and be able to identify one
-    - ????
+    - define statistical power
+    - calculate statistical power for one- and two-sample tests of continuous and binary random variables
+    - define statistical confidence
+    
  
  - compare and contrast the use of and interpretations from hypothesis tests and confidence intervals  
     - identify when using a CI and NSHT will result in the same conclusion
