@@ -22,7 +22,34 @@
 
 ## Data in the Wild  
 
-Words
+Data is a collection of information about a group, which may include both quantitative and qualitative variables.  Data is ubiquitous in today's society.  Healthcare, marketing, history, biology, ... basically every field has a quantitative aspect.  The quality of data varies greatly from study to study.  
+
+Some data comes from a well-designed experiment where a researcher uses sound principles to select units and conduct interventions.  For example, ... 
+
+<<Call out with designed experiment and the 'pillars' of design listed>>
+
+Other data comes from observations studies where ...  For example, ... 
+
+<<call out with observational study>>
+ 
+The implications for the conclusions that can be made from a set of data varies greatly with the quality of the data and study design.
+
+<<call out with conclusions table>>
+ 
+Statistics is the science of learning from data. 
+
+<<call out about statistics, general usage vs this type of definition>>
+
+Statistical methods are needed because data is variable.  For example... The full statistical process begins with ... 
+- Define the objective of the experiment  
+- Select appropriate response variables   
+- Identify sources of variation   
+- Choose experimental design  
+- Perform the test  
+- Statistically analyze the data  
+- Draw conclusions  
+
+We'll focus on the entire process of a study and mostly investigate designed experiments.  We attempt to tackle each topioc in this text with a problem-based approach.  That is, we identify a real-world problem and discuss the relevant statistical ideas in context.  Summaries at the end of each chapter recap the main statistical ideas.  
 
 ### Experiment Background  
 
