@@ -17,10 +17,9 @@ The goal in creating this book is to provide a thorough treatment of applied sta
 
 ### Matt to do:  
  - Put together notation section (elem stat learn)
- - Put together an outline for Chapter 8
+ - Put together an outline for Chapter 8 and others!
  - Example using Likert-like data to illustrate ordinal data 
- - Flesh out 'top level' learning objectives IDed by Justin
- 
+
 ### Justin to do:  
  - Put together an outline for Chapters 2 & 7   
  
