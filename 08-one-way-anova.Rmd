@@ -1,3 +1,80 @@
 # One-Way ANOVA {#anova}
 
-We have finished a nice book.
+<!-- General Chapter Structure -->
+<!-- - Motivating Problem/Problem Idea/What Data to Try to Collect -->
+<!-- - Explanation of what a good model might be (or maybe this goes in with the data to try and collect?) -->
+<!-- - EDA to explore and further motivate new topic -->
+<!-- - Background needed for the model/inference -->
+<!-- - Culmination of intro example -->
+<!-- - Second example to put it all together -->
+<!-- - Resources for when shit hits the fan -->
+
+<!-- Alternative: -->
+<!-- - Define the objective of the experiment -->
+<!-- - Select appropriate response variables -->
+<!-- - Identify sources of variation -->
+<!-- - Choose experimental design -->
+<!-- - Perform the test -->
+<!-- - Statistically analyze the data -->
+<!-- - Draw conclusions -->
+
+<!-- I'm assuming the previous chapter defined terms like "sample" and "population" -->
+
+Learning objectives for this lesson:
+- Write one-way ANOVA model
+  - Define terms
+  - state assumptions
+  - interpret results
+- Interpret ANOVA table
+  - Describe SSE, SST, MSE
+  - F-statistic
+  - degrees of freedom
+  - understand how all of these interrelate
+- Understand how to compare mulitple group means how ANOVA is similar/different to t-tests
+- Understand partitioning of variation and coefficient of determination
+
+<!-- how important is it for this example to be truly "fixed effects"? If you're really doing fixed effects, you're typically interested in direct comparisons between treatments rather than whether there's 'at least one' differece across all the treatments? -->
+
+# Motivating example 
+
+The United States Air Force Academy has 24 sections of Calculus I, taught by three different types of instructors:  In-uniform instructors, full-time civilian instructors, and visiting faculty. The Dean of Students wants to give students the best experience possible and make sure that all three types of instructors are doing a good job. There are plausible reasons why any one of the three could be doing well:  In-uniform instructors are all members of the Air Force, and students may be extra attention in these classes because they know that these instructors rank above them in their chain of command. On the other hand, full-time instructors have been aroudn the Academy for many years and understand the Cadets and their workloads. Alternatively, visiting facutly tend to come from prestigeous institutions and may be familiar with more recently-developed pedagogical techniques. Regardless, the Dean wants to understand if there is any variation in end-of-semester grades of classes taught by these three types of instructors. At the end of the semester, she collects the average grades from each of the 24 sections. How can she go about investigating this question? 
+
+Recall from Chapter 6 that we can use t-tests to compare two group means. In this case, we'd like to do a comparison across three groups, and instead of looking at a direct comparison of one group to another, what the Dean is interested in is whether there's an *overall* difference across the three groups. 
+
+One option might be to just do a bunch of different t-tests. We could first compare classes taught by in-uniform instructors to classes taught by  full-time civilians, then compare the classes taught by the in-uniform instructors to the classes taugth by the visiting instructors, and then finally compare the classes taugth by the full-time civilains with the classes taught by the visiting facutly. We'd end up with three p-values, each addressing different questions than the one we initially set out to answer. 
+
+We could do the same thing, except comparing courses taught by one type of instructor to the combined group of courses taught by the other two, and this gets a bit closer to the mark. But we're still doing three tests that individually fail to answer the Dean's question. 
+
+What we'd like instead is a single hypothesis that we could test that direclty gets at the Dean's concern about whether the three types of instructors were producing end-of-semester grades that were, on average, the same. [Need to make that motivation clearer above.]
+
+# Simple model for the data
+
+Narrative explanation that instructor type might matter, there shold be some variation from class to class. 
+- write some things in greek, including model without any difference by instructor type
+- wirte model with differences by instructor type
+- note that we can use Gaussian errors b/c Academy grades do actually tend to be centered around a C, particularly for classes like Calc
+- discuss model assumptions in general sense
+
+# exploratory analysis
+
+- course-to-course variability is expected
+- maybe show a plot of it or something
+- visualize groups using box-and-whisker plots
+
+# sources of variation
+
+Things like student population, time of day, etc. But we'll throw this all into an error term and focus on the main one, instructor type
+
+# statistical model and analysis
+
+- ANVOA model explicit w/ assumptions
+- variation around overall mean w/ no groups
+- variation around group means
+- introduce idea of reference level
+
+# compare analyses
+
+- t-test methods from above
+- ANOVA method
+- compare and contrast results, interpretations, etc.
+
