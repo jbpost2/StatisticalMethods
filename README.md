@@ -13,12 +13,14 @@ The goal in creating this book is to provide a thorough treatment of applied sta
 - Learn how Bookdown works
 - research how to write a text book
 - Reconsider the name
-
+- Think about what data sets we want the intern to find for us
 
 ### Matt to do:  
  - Put together notation section (elem stat learn)
- - Put together an outline for Chapter 8 and others!
+ - Outline Chapter 8.1 (Multiple Comparissons of Means ... and proportions?) 
+ - Outline Chapter 4 and/or 5
  - Example using Likert-like data to illustrate ordinal data 
+ 
 
 ### Justin to do:  
  - Put together an outline for Chapters 2 & 7   
