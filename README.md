@@ -55,5 +55,7 @@ Old stuff to keep around:
  
  $20/hour
  
- Creating an index, bibliography, 
+ Creating an index, bibliography.
  
+ Open textbook library may be a landing place.  Check out how the books are reviewed there.
+ Oasis is similar.
