@@ -59,3 +59,5 @@ Old stuff to keep around:
  
  Open textbook library may be a landing place.  Check out how the books are reviewed there.
  Oasis is similar.
+
+Rebus guide to publishing open text books (so far)
