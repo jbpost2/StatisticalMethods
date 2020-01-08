@@ -48,3 +48,12 @@ Old stuff to keep around:
  ## Good resource for mixed models
  http://mfviz.com/hierarchical-models/?fbclid=IwAR074-goLDlzwMwWmq86qINQRGIEclsm_SAfXin4JulC_RSGZU6MJlDBXTc  
  
+ 
+ ## Grant meeting info
+ 
+ Finance will release to department and we can use from there.
+ 
+ $20/hour
+ 
+ Creating an index, bibliography, 
+ 
