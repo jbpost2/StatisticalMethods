@@ -8,25 +8,33 @@ The goal in creating this book is to provide a thorough treatment of applied sta
 
 ## General to do:  
 
-- Outline/Chapter headings  
+ - Outline/Chapter headings  
      + Look at other books and identify what we like/don't like  
-- Learn how Bookdown works
-- research how to write a text book
-- Reconsider the name
-- Think about what data sets we want the intern to find for us
+ - Reconsider the name
+
+### Minji to do:  
+ - Find data sets that might be reasonable  
+     + https://twitter.com/berkouwers/status/1215048826714591232?s=12  
+ - Citations for where those were and found/published  
+ - Look through books provided and chapters to make a list of tests/methods covered   
+
 
 ### Matt to do:  
- - Put together notation section (elem stat learn)
- - Outline Chapter 8.1 (Multiple Comparissons of Means ... and proportions?) 
- - Outline Chapter 4 and/or 5
+ - Find raw data that should be available from IDA stuff
  - Example using Likert-like data to illustrate ordinal data 
  
-
+ 
 ### Justin to do:  
- - Put together an outline for Chapters 2 & 7   
+ - Finish writing chapter 2  
+ - Outline chapters  
+ 
  
 ### Jason to do:  
- - Nothing until spring!  
+ - Find data sets from consulting experience that are relevant   
+ - Especially any data sets that provide interesting challenges  
+ - Look through our mission statement, book outline, chapter structures, and notation section  
+ - Things that you've seen in your experience for both stat folks and non-stat folks that we are overlooking
+ 
  
 ### Ryan to do:  
  - Nothing for now, just keeping in the loop!
@@ -51,13 +59,11 @@ Old stuff to keep around:
  
  ## Grant meeting info
  
- Finance will release to department and we can use from there.
+- $20/hour
  
- $20/hour
+- Creating an index, bibliography.
  
- Creating an index, bibliography.
- 
- Open textbook library may be a landing place.  Check out how the books are reviewed there.
+- Open textbook library may be a landing place.  Check out how the books are reviewed there.
  Oasis is similar.
 
-Rebus guide to publishing open text books (so far)
+- Rebus guide to publishing open text books (so far)
