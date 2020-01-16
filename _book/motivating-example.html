@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | A Minimal Book Example</title>
+  <title>Chapter 9 Motivating example | A Minimal Book Example</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | A Minimal Book Example" />
+  <meta property="og:title" content="Chapter 9 Motivating example | A Minimal Book Example" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | A Minimal Book Example" />
+  <meta name="twitter:title" content="Chapter 9 Motivating example | A Minimal Book Example" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="learningobj.html"/>
-<link rel="next" href="notation.html"/>
+<link rel="prev" href="anova.html"/>
+<link rel="next" href="simple-model-for-the-data.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -217,17 +217,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
-
+<div id="motivating-example" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Motivating example</h1>
+<p>The United States Air Force Academy has 24 sections of Calculus I, taught by three different types of instructors: In-uniform instructors, full-time civilian instructors, and visiting faculty. The Dean of Students wants to give students the best experience possible and make sure that all three types of instructors are doing a good job. There are plausible reasons why any one of the three could be doing well: In-uniform instructors are all members of the Air Force, and students may be extra attention in these classes because they know that these instructors rank above them in their chain of command. On the other hand, full-time instructors have been aroudn the Academy for many years and understand the Cadets and their workloads. Alternatively, visiting facutly tend to come from prestigeous institutions and may be familiar with more recently-developed pedagogical techniques. Regardless, the Dean wants to understand if there is any variation in end-of-semester grades of classes taught by these three types of instructors. At the end of the semester, she collects the average grades from each of the 24 sections. How can she go about investigating this question?</p>
+<p>Recall from Chapter 6 that we can use t-tests to compare two group means. In this case, we’d like to do a comparison across three groups, and instead of looking at a direct comparison of one group to another, what the Dean is interested in is whether there’s an <em>overall</em> difference across the three groups.</p>
+<p>One option might be to just do a bunch of different t-tests. We could first compare classes taught by in-uniform instructors to classes taught by full-time civilians, then compare the classes taught by the in-uniform instructors to the classes taugth by the visiting instructors, and then finally compare the classes taugth by the full-time civilains with the classes taught by the visiting facutly. We’d end up with three p-values, each addressing different questions than the one we initially set out to answer.</p>
+<p>We could do the same thing, except comparing courses taught by one type of instructor to the combined group of courses taught by the other two, and this gets a bit closer to the mark. But we’re still doing three tests that individually fail to answer the Dean’s question.</p>
+<p>What we’d like instead is a single hypothesis that we could test that direclty gets at the Dean’s concern about whether the three types of instructors were producing end-of-semester grades that were, on average, the same. [Need to make that motivation clearer above.]</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="learningobj.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="notation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="simple-model-for-the-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

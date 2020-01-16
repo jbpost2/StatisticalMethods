@@ -2,10 +2,6 @@
 
 ## Book-level  
 
-META-QUESTION:
-How much do we want to use the "treatment means"-type language from ST512? Do we want to use this throughout the text? Do we want to focus on it specifically when we use some examples and otherwise not? 
-
-
 After reading this book you will be able to:  
 
  - identify relevent sources of variability for a potential study and, if applicable, utilize principles of design to plan a reasonable experiment to help answer questions of interest
