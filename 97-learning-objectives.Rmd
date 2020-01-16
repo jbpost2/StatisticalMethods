@@ -8,13 +8,12 @@ How much do we want to use the "treatment means"-type language from ST512? Do we
 
 After reading this book you will be able to:  
 
- - identify relevent sources of variability for a potential study  
+ - identify relevent sources of variability for a potential study and, if applicable, utilize principles of design to plan a reasonable experiment to help answer questions of interest
+
     - covariates
     - noise variables
     - random effects
     - variance of indidvidual observations vice variance of summary statistics
- 
- - utilize principles of design to plan a reasonable experiment to help answer questions of interest  
     - randomization
     - systematic variation of factors/covariates
     - factor identifiability
@@ -22,33 +21,7 @@ After reading this book you will be able to:
         - Bonferroni correction
         - at least one other method (Tukey?)
     - tradeoffs from replication within groups vice getting more groups
-    
-    
- - compare and contrast methods for designing an experiment when the goal of a study is prediction versus when the goal is statistical inference  
-    
- 
- - articulate the scope of inferential conclusions in light of the method of data collection, the experimental design used, and the statistical analysis applied  
-    - limitations due to sampling/sample frame
-    - missing data
-    - modeling assumptions
-    - sampling assumptions
-    - requirements for causal inference
- 
- - choose appropriate numerical summaries and graphical displays for a set of data and create these using software  
-    - when to use tables vs. a picture
-    - types of graphical displays
-        - bar charts
-        - pie charts
-        - plotting data vice just predictions/conclusions
-        - when to include uncertainty bounds
-        - five-number summaries
-        - means vs. medians
-        - general plotting recommendations
-        - use of colors in you plots (discrete vs. divergent vs. continuous color scales, gray-scale, color-blind-friendly scales)
-    - use of annotations
-    - general graphical design philosophy (building a chart to illustrate a conclusion)
-    - trade-offs between detail and interpretability
-    - not screwing up your axes
+    - compare and contrast methods for designing an experiment when the goal of a study is prediction versus when the goal is statistical inference  
     
  - explain the general concept of point estimation and how to account for sampling variability
     - definition
@@ -68,16 +41,8 @@ After reading this book you will be able to:
         - probabilities
         - parameters of a distribution
         - model parameters
-  
-
- - explain the importance of statistical distributions when conducting statistical inference  
-    - normal distribution and approximations plus properties
-        - robustness
-        - generality
-        - CLT
-    - costs and benefits of using nonparametric approaches
     
- - Describe relevant properties of random variables and probabilities
+ - describe relevant properties of random variables and probabilities
     - Distinguish between mutually exclusive and independent events.
     - Calculate probability for a given scenario, either numerically or using a Venn diagram.
     - Apply the General Addition Rule to solve probability problems.
@@ -92,27 +57,48 @@ After reading this book you will be able to:
         - between 0 and 1 inclusive
         - sum of probability of all possible events is 1
         - $P(A) + P(A^c) = 1$, where $A$ is an event and $A^c$ is the complement of A
+
+ - explain the importance of statistical distributions when conducting statistical inference  
+    - normal distribution and approximations plus properties
+        - robustness
+        - generality
+        - CLT
+    - costs and benefits of using nonparametric approaches
  
- - describe the fundamental inferential techniques of hypothesis testing and confidence intervals  
-    - identify a null and alternative for a given problem
+  - describe the fundamental inferential techniques of hypothesis testing and confidence intervals as well as compare and contrast their uses and interpretations
+   - identify a null and alternative for a given problem
     - interpret hypotheses
     - characterize the test statistic under the null
     - explain what a rejection region and be able to identify one
     - define statistical power
     - calculate statistical power for one- and two-sample tests of continuous and binary random variables
-    - define statistical confidence
-    
- 
- - compare and contrast the use of and interpretations from hypothesis tests and confidence intervals  
+    - define statistical confidence    
     - identify when using a CI and NSHT will result in the same conclusion
     - explain when you can use a confidence interval to test for differences (e.g., comparing a single point estimate to a threshold)  and when you can't (e.g., when you have CIs for two different means)
  
- - fit statistical models in software and interpret their output  
+
+ - choose appropriate numerical summaries and graphical displays for a set of data and create these using software  
+    - when to use tables vs. a picture
+    - types of graphical displays
+        - bar charts
+        - pie charts
+        - plotting data vice just predictions/conclusions
+        - when to include uncertainty bounds
+        - five-number summaries
+        - means vs. medians
+        - general plotting recommendations
+        - use of colors in you plots (discrete vs. divergent vs. continuous color scales, gray-scale, color-blind-friendly scales)
+    - use of annotations
+    - general graphical design philosophy (building a chart to illustrate a conclusion)
+    - trade-offs between detail and interpretability
+    - not screwing up your axes
+    
+- fit statistical models in software and interpret their output  
     - Which PROCs from SAS? REG, GLM, MIXED, GLIMMIX, others??
     - `lm()`, `glm()`, `anova()` .... `broom`? `modelr`? `ciTools`?
     - p-values, point estimates, standard errors, f-statistics, chi-square-statistics, degrees of freedom, SS/MS, residual plots
-    
- - Something about understanding the relationships between the models (linear model framework)  
+   
+ - connect common statistical methods under the linear model framework
     - Write statistical models using matrix representaiton
     - identify models written in matrix representation with their representation in software
     - identify when models written in different notation are the same or different
@@ -124,8 +110,14 @@ After reading this book you will be able to:
         - logistic regression w/ categorical factors vice contingency table analysis
     - discuss differences in assumptions associated with ANOVA vice SLR/MLR
     
-  - Maybe another bit about data types you see, how the assumptions we make impact things  
-   
+ - articulate the scope of inferential conclusions in light of the method of data collection, the experimental design used, the assumptions made, and the statistical analysis applied
+
+    - limitations due to sampling/sample frame
+    - missing data
+    - modeling assumptions
+    - sampling assumptions
+    - requirements for causal inference
+
 
 ## Topic-level
 
