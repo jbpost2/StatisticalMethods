@@ -1,7 +1,7 @@
 --- 
 title: "A Minimal Book Example"
 author: "Yihui Xie"
-date: "`r Sys.Date()`"
+date: "2020-01-22"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -14,7 +14,7 @@ description: "This is a minimal example of using the bookdown package to write a
 --- 
 title: "A Minimal Book Example"
 author: "Yihui Xie"
-date: "`r Sys.Date()`"
+date: "2020-01-22"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -29,12 +29,7 @@ description: "This is a minimal example of using the bookdown package to write a
 
 Stuff
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
+
 
 <!--chapter:end:index.Rmd-->
 
@@ -203,9 +198,9 @@ Placeholder
 
 <!--chapter:end:97-learning-objectives.Rmd-->
 
-`r if (knitr::is_html_output()) '
+
 # References {-}
-'`
+
 
 <!--chapter:end:98-references.Rmd-->
 

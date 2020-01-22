@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>A Minimal Book Example</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown #bookdown:version# and GitBook 2.6.7" />
+
+  <meta property="og:title" content="A Minimal Book Example" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="A Minimal Book Example" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Yihui Xie" />
+
+
+<meta name="date" content="2020-01-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+<!--bookdown:title:start-->
+<div id="header">
+<h1 class="title">A Minimal Book Example</h1>
+<p class="author"><em>Yihui Xie</em></p>
+<p class="date"><em>2020-01-22</em></p>
+</div>
+<!--bookdown:title:end-->
+
+<!--bookdown:toc:start-->
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+<!--bookdown:toc2:start-->
+<ul>
+<li><a href="#prerequisites"><span class="toc-section-number">1</span> Prerequisites</a></li>
+<li><a href="#sampling-experiments-and-exploratory-data-analysis"><span class="toc-section-number">2</span> Sampling, Experiments, and Exploratory Data Analysis</a><ul>
+<li><a href="#data-in-the-wild"><span class="toc-section-number">2.1</span> Data in the Wild</a><ul>
+<li><a href="#data-from-experiments"><span class="toc-section-number">2.1.1</span> Data from Experiments</a></li>
+<li><a href="#data-from-observational-studies"><span class="toc-section-number">2.1.2</span> Data from Observational Studies</a></li>
+<li><a href="#experiment-background"><span class="toc-section-number">2.1.3</span> Experiment Background</a></li>
+<li><a href="#selecting-response-variables"><span class="toc-section-number">2.1.4</span> Selecting Response Variables</a></li>
+<li><a href="#identifying-sources-of-variation"><span class="toc-section-number">2.1.5</span> Identifying Sources of Variation</a></li>
+<li><a href="#choose-an-experimental-design"><span class="toc-section-number">2.1.6</span> Choose an Experimental Design <!-- Is this intended to include any sampling considerations?--></a></li>
+<li><a href="#peform-the-test"><span class="toc-section-number">2.1.7</span> Peform the Test <!-- Wait, does this mean to actually execute the experiment? --></a></li>
+<li><a href="#look-at-the-data"><span class="toc-section-number">2.1.8</span> Look at the Data <!-- I think we need to add this as a much needed step!  If nothing else than for data validation.  I'm assuming perform the test now means collect the data. Perhaps this could fall into the Statistically analyze the data part though... Might be good to separate out the exploring/validating part though.  --></a></li>
+<li><a href="#statistically-analyze-the-data"><span class="toc-section-number">2.1.9</span> Statistically Analyze the Data</a></li>
+<li><a href="#draw-conclusions"><span class="toc-section-number">2.1.10</span> Draw conclusions</a></li>
+</ul></li>
+<li><a href="#statistical-testing-ideas"><span class="toc-section-number">2.2</span> Statistical Testing Ideas</a><ul>
+<li><a href="#experiment-background-1"><span class="toc-section-number">2.2.1</span> Experiment Background</a></li>
+<li><a href="#selecting-response-variables-1"><span class="toc-section-number">2.2.2</span> Selecting Response Variables</a></li>
+<li><a href="#identifying-sources-of-variation-1"><span class="toc-section-number">2.2.3</span> Identifying Sources of Variation</a></li>
+<li><a href="#choose-an-experimental-design-1"><span class="toc-section-number">2.2.4</span> Choose an Experimental Design</a></li>
+<li><a href="#peform-the-test-1"><span class="toc-section-number">2.2.5</span> Peform the Test</a></li>
+<li><a href="#explore-the-data"><span class="toc-section-number">2.2.6</span> Explore the Data</a></li>
+<li><a href="#statistically-analyze-the-data-1"><span class="toc-section-number">2.2.7</span> Statistically Analyze the Data</a></li>
+<li><a href="#draw-conclusions-1"><span class="toc-section-number">2.2.8</span> Draw conclusions</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#point-estimates"><span class="toc-section-number">3</span> Point Estimates</a><ul>
+<li><a href="#estiamte-with-means"><span class="toc-section-number">3.1</span> Estiamte with means</a><ul>
+<li><a href="#experiment-background-2"><span class="toc-section-number">3.1.1</span> Experiment background</a></li>
+</ul></li>
+<li><a href="#estimate-with-quantiles"><span class="toc-section-number">3.2</span> Estimate with quantiles</a><ul>
+<li><a href="#experiment-background-3"><span class="toc-section-number">3.2.1</span> Experiment background</a></li>
+<li><a href="#define-the-object-of-the-experiment"><span class="toc-section-number">3.2.2</span> Define the object of the experiment</a></li>
+<li><a href="#select-appropriate-response-variables"><span class="toc-section-number">3.2.3</span> Select appropriate response variables</a></li>
+<li><a href="#identify-sources-of-variation"><span class="toc-section-number">3.2.4</span> IDentify sources of variation</a></li>
+<li><a href="#choose-an-experimental-design-2"><span class="toc-section-number">3.2.5</span> Choose an experimental design</a></li>
+<li><a href="#perform-the-test"><span class="toc-section-number">3.2.6</span> Perform the test</a></li>
+<li><a href="#statistically-analyze-the-data-2"><span class="toc-section-number">3.2.7</span> Statistically analyze the data</a></li>
+<li><a href="#draw-conclusions-2"><span class="toc-section-number">3.2.8</span> Draw conclusions</a></li>
+<li><a href="#discussion"><span class="toc-section-number">3.2.9</span> Discussion</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#accounting-for-uncertainty"><span class="toc-section-number">4</span> Accounting for Uncertainty</a><ul>
+<li><a href="#example-one"><span class="toc-section-number">4.1</span> Example one</a></li>
+<li><a href="#example-two"><span class="toc-section-number">4.2</span> Example two</a></li>
+</ul></li>
+<li><a href="#HT"><span class="toc-section-number">5</span> Inference via Hypothesis Tests for One Sample</a></li>
+<li><a href="#CI"><span class="toc-section-number">6</span> Inference via Confidence Intervals for One Sample</a></li>
+<li><a href="#twocategorical"><span class="toc-section-number">7</span> Inference for Two Categorical Variables</a></li>
+<li><a href="#anova"><span class="toc-section-number">8</span> One-Way ANOVA</a></li>
+<li><a href="#multiway"><span class="toc-section-number">9</span> Multi-way ANOVA</a></li>
+<li><a href="#block"><span class="toc-section-number">10</span> Block Designs</a></li>
+<li><a href="#regression"><span class="toc-section-number">11</span> Regression Models</a></li>
+<li><a href="#glm"><span class="toc-section-number">12</span> The General Linear Model</a></li>
+<li><a href="#mixedmodels"><span class="toc-section-number">13</span> Mixed Models</a></li>
+<li><a href="#repeatedmeasures"><span class="toc-section-number">14</span> Split Plot and Repeated Measures Designs</a></li>
+<li><a href="#logistic"><span class="toc-section-number">15</span> Logistic Regression and Generalized Linear Models</a><ul>
+<li><a href="#stuff-here"><span class="toc-section-number">15.1</span> Stuff here</a></li>
+</ul></li>
+<li><a href="#glmm"><span class="toc-section-number">16</span> Generalized Linear Mixed Models</a></li>
+<li><a href="#learningobj"><span class="toc-section-number">17</span> Appendix - Learning Objectives</a><ul>
+<li><a href="#book-level"><span class="toc-section-number">17.1</span> Book-level</a></li>
+<li><a href="#topic-level"><span class="toc-section-number">17.2</span> Topic-level</a><ul>
+<li><a href="#chapter-2---sampling-design-and-exploratory-data-analysis"><span class="toc-section-number">17.2.1</span> Chapter 2 - Sampling, Design, and Exploratory Data Analysis</a></li>
+<li><a href="#chapter-3---point-estimation"><span class="toc-section-number">17.2.2</span> Chapter 3 - Point Estimation</a></li>
+<li><a href="#chapter-4---accounting-for-uncertainty-in-estimation"><span class="toc-section-number">17.2.3</span> Chapter 4 - Accounting for Uncertainty in Estimation</a></li>
+<li><a href="#chapter-5---inference-via-hypothesis-testing-for-a-proportion-or-mean"><span class="toc-section-number">17.2.4</span> Chapter 5 - Inference via Hypothesis Testing for a Proportion or Mean</a></li>
+<li><a href="#chapter-6---inference-via-confidence-intervals-for-a-proportion-or-mean"><span class="toc-section-number">17.2.5</span> Chapter 6 - Inference via Confidence Intervals for a Proportion or Mean</a></li>
+<li><a href="#chapter-7---inference-on-two-categorical-variables"><span class="toc-section-number">17.2.6</span> Chapter 7 - Inference on Two Categorical Variables</a></li>
+<li><a href="#chapter-8---inference-for-multiple-means"><span class="toc-section-number">17.2.7</span> Chapter 8 - Inference for Multiple Means</a></li>
+<li><a href="#chapter-9---multiway-anova"><span class="toc-section-number">17.2.8</span> Chapter 9 - Multiway ANOVA</a></li>
+<li><a href="#chapter-10---block-designs"><span class="toc-section-number">17.2.9</span> Chapter 10 - Block Designs</a></li>
+<li><a href="#chapter-11---regression"><span class="toc-section-number">17.2.10</span> Chapter 11 - Regression</a></li>
+<li><a href="#chapter-12---the-general-linear-model"><span class="toc-section-number">17.2.11</span> Chapter 12 - The General Linear Model</a></li>
+<li><a href="#chapter-13---mixed-models"><span class="toc-section-number">17.2.12</span> Chapter 13 - Mixed Models</a></li>
+<li><a href="#chapter-14---repeated-measures-and-split-plot-designs"><span class="toc-section-number">17.2.13</span> Chapter 14 - Repeated Measures and Split Plot Designs</a></li>
+<li><a href="#chapter-15---logistic-regression-and-generalized-linear-models"><span class="toc-section-number">17.2.14</span> Chapter 15 - Logistic Regression and Generalized Linear Models</a></li>
+<li><a href="#chapter-16---generalized-linear-mixed-models"><span class="toc-section-number">17.2.15</span> Chapter 16 - Generalized Linear Mixed Models</a></li>
+</ul></li>
+<li><a href="#from-st512"><span class="toc-section-number">17.3</span> From ST512</a></li>
+<li><a href="#for-point-estimates-chapter"><span class="toc-section-number">17.4</span> For Point Estimates Chapter</a></li>
+</ul></li>
+<li><a href="#references">References</a></li>
+<li><a href="#notation"><span class="toc-section-number">18</span> Appendix - Notation</a><ul>
+<li><a href="#standard-notation"><span class="toc-section-number">18.1</span> Standard notation</a></li>
+<li><a href="#mixed-models"><span class="toc-section-number">18.2</span> Mixed models</a></li>
+<li><a href="#effects-model-representation"><span class="toc-section-number">18.3</span> Effects model representation</a></li>
+<li><a href="#estimators-vs.-estimates"><span class="toc-section-number">18.4</span> Estimators vs. Estimates</a></li>
+</ul></li>
+</ul>
+<!--bookdown:toc2:end-->
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:toc:end-->
+<!--bookdown:body:start-->
+<div id="prerequisites" class="section level1">
+<h1><span class="header-section-number">1</span> Prerequisites</h1>
+<p>Stuff</p>
+<!--chapter:end:index.Rmd-->
+</div>
+<div id="sampling-experiments-and-exploratory-data-analysis" class="section level1">
+<h1><span class="header-section-number">2</span> Sampling, Experiments, and Exploratory Data Analysis</h1>
+<p>Placeholder</p>
+<div id="data-in-the-wild" class="section level2">
+<h2><span class="header-section-number">2.1</span> Data in the Wild</h2>
+<div id="data-from-experiments" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Data from Experiments</h3>
+</div>
+<div id="data-from-observational-studies" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Data from Observational Studies</h3>
+</div>
+<div id="experiment-background" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Experiment Background</h3>
+</div>
+<div id="selecting-response-variables" class="section level3">
+<h3><span class="header-section-number">2.1.4</span> Selecting Response Variables</h3>
+</div>
+<div id="identifying-sources-of-variation" class="section level3">
+<h3><span class="header-section-number">2.1.5</span> Identifying Sources of Variation</h3>
+</div>
+<div id="choose-an-experimental-design" class="section level3">
+<h3><span class="header-section-number">2.1.6</span> Choose an Experimental Design <!-- Is this intended to include any sampling considerations?--></h3>
+</div>
+<div id="peform-the-test" class="section level3">
+<h3><span class="header-section-number">2.1.7</span> Peform the Test <!-- Wait, does this mean to actually execute the experiment? --></h3>
+</div>
+<div id="look-at-the-data" class="section level3">
+<h3><span class="header-section-number">2.1.8</span> Look at the Data <!-- I think we need to add this as a much needed step!  If nothing else than for data validation.  I'm assuming perform the test now means collect the data. Perhaps this could fall into the Statistically analyze the data part though... Might be good to separate out the exploring/validating part though.  --></h3>
+</div>
+<div id="statistically-analyze-the-data" class="section level3">
+<h3><span class="header-section-number">2.1.9</span> Statistically Analyze the Data</h3>
+</div>
+<div id="draw-conclusions" class="section level3">
+<h3><span class="header-section-number">2.1.10</span> Draw conclusions</h3>
+</div>
+</div>
+<div id="statistical-testing-ideas" class="section level2">
+<h2><span class="header-section-number">2.2</span> Statistical Testing Ideas</h2>
+<div id="experiment-background-1" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Experiment Background</h3>
+</div>
+<div id="selecting-response-variables-1" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Selecting Response Variables</h3>
+</div>
+<div id="identifying-sources-of-variation-1" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Identifying Sources of Variation</h3>
+</div>
+<div id="choose-an-experimental-design-1" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> Choose an Experimental Design</h3>
+</div>
+<div id="peform-the-test-1" class="section level3">
+<h3><span class="header-section-number">2.2.5</span> Peform the Test</h3>
+</div>
+<div id="explore-the-data" class="section level3">
+<h3><span class="header-section-number">2.2.6</span> Explore the Data</h3>
+</div>
+<div id="statistically-analyze-the-data-1" class="section level3">
+<h3><span class="header-section-number">2.2.7</span> Statistically Analyze the Data</h3>
+</div>
+<div id="draw-conclusions-1" class="section level3">
+<h3><span class="header-section-number">2.2.8</span> Draw conclusions</h3>
+<!--chapter:end:02-sampling-design-and-exploratory-data-analysis.Rmd-->
+</div>
+</div>
+</div>
+<div id="point-estimates" class="section level1">
+<h1><span class="header-section-number">3</span> Point Estimates</h1>
+<p>Placeholder</p>
+<div id="estiamte-with-means" class="section level2">
+<h2><span class="header-section-number">3.1</span> Estiamte with means</h2>
+<div id="experiment-background-2" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Experiment background</h3>
+</div>
+</div>
+<div id="estimate-with-quantiles" class="section level2">
+<h2><span class="header-section-number">3.2</span> Estimate with quantiles</h2>
+<div id="experiment-background-3" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Experiment background</h3>
+</div>
+<div id="define-the-object-of-the-experiment" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Define the object of the experiment</h3>
+</div>
+<div id="select-appropriate-response-variables" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Select appropriate response variables</h3>
+</div>
+<div id="identify-sources-of-variation" class="section level3">
+<h3><span class="header-section-number">3.2.4</span> IDentify sources of variation</h3>
+</div>
+<div id="choose-an-experimental-design-2" class="section level3">
+<h3><span class="header-section-number">3.2.5</span> Choose an experimental design</h3>
+</div>
+<div id="perform-the-test" class="section level3">
+<h3><span class="header-section-number">3.2.6</span> Perform the test</h3>
+</div>
+<div id="statistically-analyze-the-data-2" class="section level3">
+<h3><span class="header-section-number">3.2.7</span> Statistically analyze the data</h3>
+</div>
+<div id="draw-conclusions-2" class="section level3">
+<h3><span class="header-section-number">3.2.8</span> Draw conclusions</h3>
+</div>
+<div id="discussion" class="section level3">
+<h3><span class="header-section-number">3.2.9</span> Discussion</h3>
+<!--chapter:end:03-point-estimates.Rmd-->
+</div>
+</div>
+</div>
+<div id="accounting-for-uncertainty" class="section level1">
+<h1><span class="header-section-number">4</span> Accounting for Uncertainty</h1>
+<p>Some <em>significant</em> applications are demonstrated in this chapter.</p>
+<div id="example-one" class="section level2">
+<h2><span class="header-section-number">4.1</span> Example one</h2>
+</div>
+<div id="example-two" class="section level2">
+<h2><span class="header-section-number">4.2</span> Example two</h2>
+<!--chapter:end:04-accounting-for-uncertainty.Rmd-->
+</div>
+</div>
+<div id="HT" class="section level1">
+<h1><span class="header-section-number">5</span> Inference via Hypothesis Tests for One Sample</h1>
+<p>We have finished a nice book.</p>
+<!--chapter:end:05-inference-via-hypothesis-testing-mean-proportion.Rmd-->
+</div>
+<div id="CI" class="section level1">
+<h1><span class="header-section-number">6</span> Inference via Confidence Intervals for One Sample</h1>
+<p>We have finished a nice book.</p>
+<!--chapter:end:06-inference-via-confidence-intervals-mean-proportion.Rmd-->
+</div>
+<div id="twocategorical" class="section level1">
+<h1><span class="header-section-number">7</span> Inference for Two Categorical Variables</h1>
+<p>We have finished a nice book.</p>
+<!--chapter:end:07-inference-on-two-categorical-variables.Rmd-->
+</div>
+<div id="anova" class="section level1">
+<h1><span class="header-section-number">8</span> One-Way ANOVA</h1>
+<p>Placeholder</p>
+<!--chapter:end:08-one-way-anova.Rmd-->
+</div>
+<div id="multiway" class="section level1">
+<h1><span class="header-section-number">9</span> Multi-way ANOVA</h1>
+<p>We have finished a nice book.</p>
+<!--chapter:end:09-multiway-anova.Rmd-->
+</div>
+<div id="block" class="section level1">
+<h1><span class="header-section-number">10</span> Block Designs</h1>
+<p>We have finished a nice book.</p>
+<!--chapter:end:10-block-designs.Rmd-->
+</div>
+<div id="regression" class="section level1">
+<h1><span class="header-section-number">11</span> Regression Models</h1>
+<p>We have finished a nice book.</p>
+<!--chapter:end:11-regression.Rmd-->
+</div>
+<div id="glm" class="section level1">
+<h1><span class="header-section-number">12</span> The General Linear Model</h1>
+<p>We have finished a nice book.</p>
+<!--chapter:end:12-general-linear-model.Rmd-->
+</div>
+<div id="mixedmodels" class="section level1">
+<h1><span class="header-section-number">13</span> Mixed Models</h1>
+<p>We have finished a nice book.</p>
+<!--chapter:end:13-mixed-models.Rmd-->
+</div>
+<div id="repeatedmeasures" class="section level1">
+<h1><span class="header-section-number">14</span> Split Plot and Repeated Measures Designs</h1>
+<p>We have finished a nice book.</p>
+<!--chapter:end:14-repeated-measures-and-split-plots.Rmd-->
+</div>
+<div id="logistic" class="section level1">
+<h1><span class="header-section-number">15</span> Logistic Regression and Generalized Linear Models</h1>
+<div id="stuff-here" class="section level2">
+<h2><span class="header-section-number">15.1</span> Stuff here</h2>
+<p>We have finished a nice book.</p>
+<!--chapter:end:15-logistic-regression-and-generalized-linear-models.Rmd-->
+</div>
+</div>
+<div id="glmm" class="section level1">
+<h1><span class="header-section-number">16</span> Generalized Linear Mixed Models</h1>
+<p>We have finished a nice book.</p>
+<!--chapter:end:16-generalized-linear-mixed-models.Rmd-->
+</div>
+<div id="learningobj" class="section level1">
+<h1><span class="header-section-number">17</span> Appendix - Learning Objectives</h1>
+<p>Placeholder</p>
+<div id="book-level" class="section level2">
+<h2><span class="header-section-number">17.1</span> Book-level</h2>
+</div>
+<div id="topic-level" class="section level2">
+<h2><span class="header-section-number">17.2</span> Topic-level</h2>
+<div id="chapter-2---sampling-design-and-exploratory-data-analysis" class="section level3">
+<h3><span class="header-section-number">17.2.1</span> Chapter 2 - Sampling, Design, and Exploratory Data Analysis</h3>
+</div>
+<div id="chapter-3---point-estimation" class="section level3">
+<h3><span class="header-section-number">17.2.2</span> Chapter 3 - Point Estimation</h3>
+</div>
+<div id="chapter-4---accounting-for-uncertainty-in-estimation" class="section level3">
+<h3><span class="header-section-number">17.2.3</span> Chapter 4 - Accounting for Uncertainty in Estimation</h3>
+</div>
+<div id="chapter-5---inference-via-hypothesis-testing-for-a-proportion-or-mean" class="section level3">
+<h3><span class="header-section-number">17.2.4</span> Chapter 5 - Inference via Hypothesis Testing for a Proportion or Mean</h3>
+</div>
+<div id="chapter-6---inference-via-confidence-intervals-for-a-proportion-or-mean" class="section level3">
+<h3><span class="header-section-number">17.2.5</span> Chapter 6 - Inference via Confidence Intervals for a Proportion or Mean</h3>
+</div>
+<div id="chapter-7---inference-on-two-categorical-variables" class="section level3">
+<h3><span class="header-section-number">17.2.6</span> Chapter 7 - Inference on Two Categorical Variables</h3>
+</div>
+<div id="chapter-8---inference-for-multiple-means" class="section level3">
+<h3><span class="header-section-number">17.2.7</span> Chapter 8 - Inference for Multiple Means</h3>
+</div>
+<div id="chapter-9---multiway-anova" class="section level3">
+<h3><span class="header-section-number">17.2.8</span> Chapter 9 - Multiway ANOVA</h3>
+</div>
+<div id="chapter-10---block-designs" class="section level3">
+<h3><span class="header-section-number">17.2.9</span> Chapter 10 - Block Designs</h3>
+</div>
+<div id="chapter-11---regression" class="section level3">
+<h3><span class="header-section-number">17.2.10</span> Chapter 11 - Regression</h3>
+</div>
+<div id="chapter-12---the-general-linear-model" class="section level3">
+<h3><span class="header-section-number">17.2.11</span> Chapter 12 - The General Linear Model</h3>
+</div>
+<div id="chapter-13---mixed-models" class="section level3">
+<h3><span class="header-section-number">17.2.12</span> Chapter 13 - Mixed Models</h3>
+</div>
+<div id="chapter-14---repeated-measures-and-split-plot-designs" class="section level3">
+<h3><span class="header-section-number">17.2.13</span> Chapter 14 - Repeated Measures and Split Plot Designs</h3>
+</div>
+<div id="chapter-15---logistic-regression-and-generalized-linear-models" class="section level3">
+<h3><span class="header-section-number">17.2.14</span> Chapter 15 - Logistic Regression and Generalized Linear Models</h3>
+</div>
+<div id="chapter-16---generalized-linear-mixed-models" class="section level3">
+<h3><span class="header-section-number">17.2.15</span> Chapter 16 - Generalized Linear Mixed Models</h3>
+</div>
+</div>
+<div id="from-st512" class="section level2">
+<h2><span class="header-section-number">17.3</span> From ST512</h2>
+</div>
+<div id="for-point-estimates-chapter" class="section level2">
+<h2><span class="header-section-number">17.4</span> For Point Estimates Chapter</h2>
+<!--chapter:end:97-learning-objectives.Rmd-->
+</div>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<!--chapter:end:98-references.Rmd-->
+</div>
+<div id="notation" class="section level1">
+<h1><span class="header-section-number">18</span> Appendix - Notation</h1>
+<p>Placeholder</p>
+<div id="standard-notation" class="section level2">
+<h2><span class="header-section-number">18.1</span> Standard notation</h2>
+</div>
+<div id="mixed-models" class="section level2">
+<h2><span class="header-section-number">18.2</span> Mixed models</h2>
+</div>
+<div id="effects-model-representation" class="section level2">
+<h2><span class="header-section-number">18.3</span> Effects model representation</h2>
+</div>
+<div id="estimators-vs.-estimates" class="section level2">
+<h2><span class="header-section-number">18.4</span> Estimators vs. Estimates</h2>
+<!--chapter:end:99-notation.Rmd-->
+</div>
+</div>
+<!--bookdown:body:end-->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+    </div>
+  </div>
+<!--bookdown:config-->
+
+</body>
+
+</html>
