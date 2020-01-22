@@ -57,11 +57,15 @@ Experiment - researchers manipulate the conditions in which the study is done.
 
 ```
 
+```{block2, type = 'definition'}
+
 Pillars of experimental design:  
 
  - Randomization - treatments are randomly assigned to the experimental units   
  - Replication - multiple (independent) experimental units are assigned the same treatment  
  - Control - study conditions are held constant where possible to reduce variability in the response    
+
+```
 
 
 ### Data from Observational Studies  
