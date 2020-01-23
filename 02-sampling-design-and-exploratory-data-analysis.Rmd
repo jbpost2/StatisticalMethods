@@ -31,7 +31,7 @@ Some data comes from a well-designed experiment where a researcher uses sound pr
 
 For example, a mechanical engineer wants to determine which variables influence overall gas mileage of a certain year and model of a car.  Gas mileage would be referred to as the **response** variable for this study.  
 
-After careful consideration, the engineer chooses to investigate the following **factors** that may affect the overall gas mileage:  
+After careful consideration, the engineer chooses to investigate a few **explanatory variables**.  They looked at the following **factors** that they believed may affect the overall gas mileage:  
 
 - Tire pressure (low, standard)  
 - Octane rating of fuel (regular, midgrade, premium)  
@@ -82,7 +82,7 @@ Pillars of experimental design: (Put an outer block around this)
 
 Some data comes from an observational study where the researcher collects data without imposing any changes.   
 
-For example, an economist wants to investigate the effects of recently added tariffs on agricultural products to the amount of and value of those products that are traded between the United States and Asia.  This study would have two **response** variables, amount and value of each product traded between the two parties.  
+For example, an economist wants to investigate the effects of recently added tariffs on agricultural products to the amount and value of such products that are traded between the United States and Asia.  This study would have two **response** variables, amount and value of each product traded between the two parties.  
 
 In order to take into account season variation and time of year, the economist decides to compare the two response variables from the current year - 6 months worth of data - to the *average* values of the two response variables during the same 6 month periods for the past 5 years.  We would refer to the time frame of the data as an **explanatory variable**.  This time frame could be labeled to take on one of two values: no-tariff (past) or tariff (current).  
 
@@ -97,20 +97,42 @@ Observational Study - researchers collects data without imposing any changes on 
 ```
 
 
-### Observational vs Experimental: Similarities and Differences  
+### Observational vs Experimental  
 
-You may have noticed that both types of studies have some things in common.  For instance, 
+You may have noticed that both types of studies have some things in common.  For instance, both studies have **response** (??? so I was thinking about maybe bolding most stats words as we go to point them out to students... thoughts???) variables that characterizes the performance of the study in some sense.  Importantly, these response variables have variation.  That is, observing the variable is non-deterministic even under identical situations.  There are also **explanatory variables** that the researcher is interested in with regard to their relationship with the response variable.  
 
-Both studies have some things in common - popu sample...
+Beyond that, both studies hope to make conclusions about a larger group using data.  This is the idea of **statistical inference** (??? Do we want to talk about the differences between prediction and inference here? - later???).  More formally the group of values, items, or individuals defines the a **population** of interest and the data collected represents the **sample**.  For the gas mileage example, the population would be all cars of the year and make in question and the sample would be the data on the 24 cars.  For the tariff example, the population would be a **conceptual population** of all future agricultural products traded between the United States and Asia and the sample would be the information from the six years of trade data.   
 
-Doing an observational study doesn't mean that your study is bad! For the tariff example, there really isn't a way to conduct an experiment.  The implications that we can draw will differ greatly between experiments and observational studies.   
+```{block2, type = "definition"}
 
- 
+Population - Group of units of interest  
+
+```
+```{block2, type = "definition"}
+
+Sample - Subset of the population on which we observe data  
+
+```
+```{block2, type = "definition"}
+
+Statistical Inference - Process of using sample data to make statements or claims about a population (???Usually with the goal of determing which variables are important for a response???)  
+
+```
+
+
+Sampling scheme
+Random assignment and its importance
+
+
+The major difference is of course 
+
 The implications for the conclusions that can be made from a set of data varies greatly with the quality of the data and study design.
 
-Observational study is sometimes done out of necessity when an experiment wouldn't be ethical.  
+```{r scopeTable, out.width="650px", fig.cap="Scope of Inference, cite: Khan Academy", echo = FALSE}
+knitr::include_graphics("img/ScopeOfInferenceTable.png")
+```
 
-<<call out with conclusions table>>
+Doing an observational study doesn't mean that your study is bad!  An observational study is sometimes done out of necessity when an experiment wouldn't be ethical or feasible.  For the tariff example, there really isn't a way to conduct an experiment.  If we wanted to design an experiment to see if smoking causes lung cancer, that would be unethical because we can't force people to smoke.  The key point is that the implications we can draw will differ greatly between experimental and observational studies.   
 
 
 ### The Role of Statistics  
