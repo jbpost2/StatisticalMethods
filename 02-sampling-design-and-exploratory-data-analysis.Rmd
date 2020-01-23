@@ -1,25 +1,5 @@
 # Sampling, Experiments, and Exploratory Data Analysis 
 
-<!-- General Chapter Structure -->
-<!-- - Motivating Problem/Problem Idea/What Data to Try to Collect -->
-<!-- - Explanation of what a good model might be (or maybe this goes in with the data to try and collect?) -->
-<!-- - EDA to explore and further motivate new topic -->
-<!-- - Background needed for the model/inference -->
-<!-- - Culmination of intro example -->
-<!-- - Second example to put it all together -->
-<!-- - Resources for when shit hits the fan -->
-
-<!-- Alternative: -->
-<!-- - Define the objective of the experiment -->
-<!-- - Select appropriate response variables -->
-<!-- - Identify sources of variation -->
-<!-- - Choose experimental design -->
-<!-- - Perform the test -->
-<!-- - Statistically analyze the data -->
-<!-- - Draw conclusions -->
-
-
-
 ## Data in the Wild  
 
 Data is a collection of information about a group, which may include both quantitative and qualitative variables.  Data is ubiquitous in today's society.  Healthcare, marketing, history, biology, ... basically every field has a quantitative aspect.  The quality of data varies greatly from study to study.  
@@ -105,7 +85,7 @@ Beyond that, both studies hope to make conclusions about a larger group using da
 
 ```{block2, type = "definition"}
 
-Population - Group of units of interest  
+Population - (Possibly conceptual) group of units of interest  
 
 ```
 ```{block2, type = "definition"}
@@ -119,20 +99,17 @@ Statistical Inference - Process of using sample data to make statements or claim
 
 ```
 
+Both of these studies had to determine how to obtain their observations.  For the experiment, 24 cars were used.  For the observational study, six years of data were collected.  How this data is collected can be extremely important in terms of the types of conclusions that can be made.  Data needs to be **unbiased** and **representative** of the population in which the researcher hopes to make inference otherwise the conclusions made are likely invalid.  We'll discuss the idea of what makes a good and bad **sampling scheme** later. 
 
-Sampling scheme
-Random assignment and its importance
+The major difference between the two studies was the active (experimental) and passive (observational) roles played by the researcher.  This difference is also of vital importance to the types of conclusions that can be made from the study.  A well-designed experiment can often infer causation to the treatments where an observational study cannot.  
 
-
-The major difference is of course 
-
-The implications for the conclusions that can be made from a set of data varies greatly with the quality of the data and study design.
+The conclusions a researcher can make based on how the data were collected and the type of study are outlined in the table below.  (??? Probably just remake this table ourselves with our own words.  This isn't exactly 'their' original thought or something we need to attribute. ???)
 
 ```{r scopeTable, out.width="650px", fig.cap="Scope of Inference, cite: Khan Academy", echo = FALSE}
 knitr::include_graphics("img/ScopeOfInferenceTable.png")
 ```
 
-Doing an observational study doesn't mean that your study is bad!  An observational study is sometimes done out of necessity when an experiment wouldn't be ethical or feasible.  For the tariff example, there really isn't a way to conduct an experiment.  If we wanted to design an experiment to see if smoking causes lung cancer, that would be unethical because we can't force people to smoke.  The key point is that the implications we can draw will differ greatly between experimental and observational studies.   
+Doing an observational study doesn't mean that your study is bad!  An observational study is sometimes done out of necessity when an experiment wouldn't be ethical or feasible.  For the tariff example, there really isn't a way to conduct an experiment.  If we wanted to design an experiment to see if smoking causes lung cancer, that would be unethical because we can't force people to smoke.  The key point is that the implications we can draw will differ greatly between experimental and observational studies and will depend heavily on the quality (in relation to the population) of the data you have.   
 
 
 ### The Role of Statistics  
@@ -177,7 +154,7 @@ Discuss conceptual vs actual populations and when we might care about one or the
 
 ### Selecting Response Variables
 
-Marketing example with data such as Clicks, Impressions, Total Revenue, Total Spent, Average Order Value, Sport, Time of visit/purchase, Campaigns running, etc.
+We don't get to choose the variables here as the analytics company gives us what they deem important.  We can however still think critically about what is important.  Marketing example with data such as Clicks, Impressions, Total Revenue, Total Spent, Average Order Value, Sport, Time of visit/purchase, Campaigns running, etc.
 
 ### Identifying Sources of Variation 
 
@@ -249,6 +226,11 @@ NHST paradigm with false discovery?
 
 
 ### Draw conclusions
+
+
+
+The implications for the conclusions that can be made from a set of data varies greatly with the quality of the data and study design.  
+
 
 <!-- - Frame still with question of interest.  Maybe pilot study or study where we mainly care about summary stats.
  - How does data look in the wild and how do we deal with it in the wild.  How could it be modeled via distributions?  Sample representing the larger group.
