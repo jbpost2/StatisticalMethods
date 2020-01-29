@@ -7,6 +7,7 @@ Book for use in a methods I &amp; II graduate sequence.
 The goal in creating this book is to provide a thorough treatment of applied statistical methodologies geared toward analyzing designed experiments.  Our approach emphasizes the problems researchers encounter rather than provide a litany of solutions with only modest context. We discuss a real scientific problem, thoughfully consider the data that could be used to answer that problem, investigate experimental designs that would be useful, and pursue statistical models to make informed decisions in the context of how the data was collected.  The focus of the book is on the statistical modeling portion but problems are viewed holistically.  We purposefully introduce the linear model framework in matrix form early on and place most of the methodologies under that umbrella.  This helps the reader to see the methods as a part of a general framework as opposed to a set of tools within a toolbox.  We believe that the book should be appropriate for a graduate level student that has some comfort in mathematics, particularly linear algebra.  Both SAS and R are used throughout to make sure the book works for a wide audience of practitioners.  
 
 
+Chapter 2 questions for them: Tell me about the metadata on some data set.
 
 ### META-QUESTION:
 How much do we want to use the "treatment means"-type language from ST512? Do we want to use this throughout the text? Do we want to focus on it specifically when we use some examples and otherwise not? 
