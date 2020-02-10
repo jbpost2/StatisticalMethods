@@ -164,19 +164,35 @@ To investigate the knowledge of hygiene and safety, a short questionnaire was de
 
 You can see that there are many decisions that the researcher must make in simply deciding the response variables to collect!  A poor choice here can make or break a study.
 
+(Maybe mention observational unit here as well.)
+
 ### Identifying Sources of Variation 
 
 The response variables clearly have some relationship to other variables that could be collected.  For instance, the NUM_ITEMS variable is clearly going to be different for the different types of vendors.  The AMT variable would differ depending on the size of the vendor's inventory.  These are examples of **explanatory variables** or variables that define the study conditions.  Explanatory variables go by many names such as predictors, features, or independent variables.  
 
 A main consideration about whether or not to record a variable is whether or not the variable would be related to a variation in the response.  Since the response variables are truly what is of interest, there is really not much of a point in recording variables that likely have no relationship with it.  
 
-Choosing the explanatory variables also can indicate further questions of interest.  We may want to compare the average AMT for ... leading to a comparison across groups being of interest.  
+Choosing the explanatory variables also can indicate further questions of interest.  We may want to compare the average AMT for ... leading to a comparison across groups being of interest.  This average amount would be referred to as a parameter of interest.  A **parameter** is a summary measure about a population.  Common parameters investigated include the mean, variance, or median of a different subgroups of the overall population.  
 
 ### Choose an Experimental Design <!-- Is this intended to include any sampling considerations?-->
 
-Discuss our "sampling" scheme vs a random sample.  This seems like a case where we aren't doing a "good" scheme but not much else could be done...  
+For this study the researchers aren't interested in doing an interavention so an observational study was being done.  The major task to consider for the observational study is how to select participants from the population.  The subset of the population we (attempt to) observe our data on is called the **sample**.  
 
-Maybe talk about how in the future you could do alternate email ads or something and do an AB type study.
+```{block2, type = "definition"}
+
+Sample - subset of the population we observe our data on
+
+```
+
+Ideally we would measure every member of our population.  This is called a **census**.  Conducting a census can be extremely costly or time instensive.  It a census can be done then values of a population's parameters can be found exactly by simply summarizing the population data.  
+
+Most of the time a census cannot be done.  This means that the information we collect would likely be different if we collected it again.  This variability is really the main reason statistical analysis is needed.  
+
+How the researcher selects their sample is extremely important.  The sample should be **unbiased** and **respresentative** of the population.  
+
+(Explain those terms)
+
+There are many good ways to select the sample and many bad ways.  (Talk about bad first and why bad - visuals too)  Talk about good and why good - visuals too.
 
 
 ### Peform the Test  <!-- Wait, does this mean to actually execute the experiment? -->
