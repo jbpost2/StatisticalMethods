@@ -136,7 +136,7 @@ Taking this bigger picture view of the problem, we can usually follow these step
 - Choose sampling scheme and/or experimental design (Select Design)  
 - Carry out the study (Do Study) 
 - Statistically analyze the data (Do Statistical Analysis)  
-- Draw conclusions from the analysis while considering the steps above (Draw Conclusions)  
+- Draw conclusions from the analysis while considering limitations and the steps above as well as communicate results (Draw Conclusions & Communicate)  
 
 We'll focus on this entire process and mostly investigate designed experiments.  We attempt to tackle each topic in this text with a problem-based approach.  That is, we identify a real-world problem and discuss the relevant statistical ideas in context.  Summaries at the end of each chapter recap the main statistical ideas and discuss other important related topics.  
 
@@ -180,7 +180,7 @@ There are many good ways to select the sample and many bad ways.  (Talk about ba
 Here they chose to do a stratified sample to make sure that they didn't leave out any important subgroups.  
 
 
-### Obtain Data  <!-- Wait, does this mean to actually execute the experiment? -->
+### Do Study  <!-- Wait, does this mean to actually execute the experiment? -->
 
 Go and talk to chosen vendors.  May have some non-response issues.  Ideally a contingency for this should be developed when considering the sampling scheme.  
 
@@ -197,7 +197,7 @@ Discuss population curves vs sample histograms and the relationship.
 
 Not a formal test here but comparisons of interest etc.
 
-### Draw conclusions
+### Draw Conclusions & Communicate
 
 What actionable things have we found?  Likely some trends to investigate further.  Perhaps run an experiment to formally see if some alteration can be effective.  
 
