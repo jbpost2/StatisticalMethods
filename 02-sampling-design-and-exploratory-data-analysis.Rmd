@@ -134,7 +134,7 @@ Taking this bigger picture view of the problem, we can usually follow these step
 - Select appropriate response variables (Select Response)  
 - Identify sources of variation (Determine Sources of Variation)  
 - Choose sampling scheme and/or experimental design (Select Design)  
-- Perform the test/collect the data (Obtain Data) 
+- Carry out the study (Do Study) 
 - Statistically analyze the data (Do Statistical Analysis)  
 - Draw conclusions from the analysis while considering the steps above (Draw Conclusions)  
 
@@ -242,6 +242,11 @@ NHST paradigm with false discovery?
 The implications for the conclusions that can be made from a set of data varies greatly with the quality of the data and study design.  
 
 
+
+## Why Observational Studies Can be Bad?  
+
+
+
 <!-- - Frame still with question of interest.  Maybe pilot study or study where we mainly care about summary stats.
  - How does data look in the wild and how do we deal with it in the wild.  How could it be modeled via distributions?  Sample representing the larger group.
  - Not too much math here, save that for later mostly.
@@ -265,4 +270,7 @@ Summaries of distributions (center, spread, graphs)
 Components of a research study or maybe the general process of a research study
 Things to do before and after data collection
 Real vs conceptual populations (finite vs infinite)
+.
+George Will WP column about SAT vs amount of money spent
+Pisani and Perv?  many bad examples of inference
 -->
