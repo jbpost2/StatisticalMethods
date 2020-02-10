@@ -139,26 +139,38 @@ Taking this bigger picture view of the problem, we can usually follow these step
 - Statistically analyze the data (Analysis)  
 - Draw conclusions (Conclusions)  
 
-We'll focus on this entire process and mostly investigate designed experiments.  We attempt to tackle each topic in this text with a problem-based approach.  That is, we identify a real-world problem and discuss the relevant statistical ideas in context.  Summaries at the end of each chapter recap the main statistical ideas.  
+We'll focus on this entire process and mostly investigate designed experiments.  We attempt to tackle each topic in this text with a problem-based approach.  That is, we identify a real-world problem and discuss the relevant statistical ideas in context.  Summaries at the end of each chapter recap the main statistical ideas and discuss other important related topics.  
 
 
-## Marketing Example  
+## Observational Study - Farmer's Market   
 
 ### Experiment Background  
 
-Marketing example.  Goal to describe the customers, how they tend to purchase/shop, and maybe find some shared qualities in order to adverstise curated packages to folks.
+An agricultural **something...** wanted to characterize the vendors at the North Carolina State Farmer's Market (henceforth the farmer's market) in order to learn about their sales and knowledge of food hygiene and safety.  The researcher had access to the names of each vendor's business and their general purpose.  There were xxx types of businesses selling xxx.
 
-Define basic things like population, parameters, statistics, and sample.
+The researcher needed to decide the scope of their study.  Formally, they needed to define the **population** of interest.  The population is the group of people or units of interest to the researcher.  In this case the population was all of the vendor's at the farmer's market other than the restaurants.  One could try to do a study at just the North Carolina State Farmer's Market and extend the results to all farmer's market in the state or in the south, but that would require many assumptions to be valid.  
 
-Discuss conceptual vs actual populations and when we might care about one or the other.  Our "sample" is really a bit of data from the conceptual population.  Or we could consider it as the population and we just want to describe it. 
+```{block2, type = "definition"}
+
+Population - group of people or units of interest  
+
+```
 
 ### Selecting Response Variables
 
-We don't get to choose the variables here as the analytics company gives us what they deem important.  We can however still think critically about what is important.  Marketing example with data such as Clicks, Impressions, Total Revenue, Total Spent, Average Order Value, Sport, Time of visit/purchase, Campaigns running, etc.
+The researchers needed to determine the variables to collect that would best help to answer their questions of interest.  These variables that characterize the experiment are called **response** or target variables.  They decided to collect vendors sales by looking at the (AMT) amount sold per week over the past two years (in dollars), the (UN_ITEMS) number of unique items sold per week over the past two years, and the (NUM_ITEMS) total number of items sold per week over the past two years.  For the last variable they had to decide how to measure the number of items sold for the different types of businesses.  For produce they decided to collect the total weight (in lbs) sold, for the live plant selling ... 
+
+To investigate the knowledge of hygiene and safety, a short questionnaire was developed to allow the vendor's head manager (or similar employee) to self evaluate as well as answer some general questions developed around proper policy.  
+
+You can see that there are many decisions that the researcher must make in simply deciding the response variables to collect!  A poor choice here can make or break a study.
 
 ### Identifying Sources of Variation 
 
-Consider variables linked to the user.  Age, other accounts, etc.  
+The response variables clearly have some relationship to other variables that could be collected.  For instance, the NUM_ITEMS variable is clearly going to be different for the different types of vendors.  The AMT variable would differ depending on the size of the vendor's inventory.  These are examples of **explanatory variables** or variables that define the study conditions.  Explanatory variables go by many names such as predictors, features, or independent variables.  
+
+A main consideration about whether or not to record a variable is whether or not the variable would be related to a variation in the response.  Since the response variables are truly what is of interest, there is really not much of a point in recording variables that likely have no relationship with it.  
+
+Choosing the explanatory variables also can indicate further questions of interest.  We may want to compare the average AMT for ... leading to a comparison across groups being of interest.  
 
 ### Choose an Experimental Design <!-- Is this intended to include any sampling considerations?-->
 
