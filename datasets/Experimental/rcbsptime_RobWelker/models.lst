@@ -1,0 +1,618 @@
+ 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+varcomps                                                                                      1
+
+Obs    weed           Year    CovParm                Estimate
+
+  1    Chick          2018    Replicate                     0
+  2    Chick          2018    Treatment*Replicate           0
+  3    Chick          2018    Residual               1.11E-12
+  4    Cspurry        2017    Replicate                0.3000
+  5    Cspurry        2017    Treatment*Replicate      0.6917
+  6    Cspurry        2017    Residual                 2.9750
+  7    Cud            2018    Replicate                     0
+  8    Cud            2018    Treatment*Replicate           0
+  9    Cud            2018    Residual               1.11E-12
+ 10    Dand           2018    Replicate                0.1421
+ 11    Dand           2018    Treatment*Replicate     -0.1421
+ 12    Dand           2018    Residual                 3.4010
+ 13    DogFennel      2019    Replicate                2.7314
+ 14    DogFennel      2019    Treatment*Replicate     17.8415
+ 15    DogFennel      2019    Residual                54.9219
+ 16    Eclipta        2019    Replicate                3.9583
+ 17    Eclipta        2019    Treatment*Replicate      361.42
+ 18    Eclipta        2019    Residual               1.11E-12
+ 19    Filago         2017    Replicate               60.4572
+ 20    Filago         2017    Treatment*Replicate     -2.8292
+ 21    Filago         2017    Residual                 220.95
+ 22    Filago         2019    Replicate              -347E-19
+ 23    Filago         2019    Treatment*Replicate    -194E-18
+ 24    Filago         2019    Residual                 0.3906
+ 25    Geran          2018    Replicate                     0
+ 26    Geran          2018    Treatment*Replicate           0
+ 27    Geran          2018    Residual               1.11E-12
+ 28    Henbit         2017    Replicate               54.1441
+ 29    Henbit         2017    Treatment*Replicate     22.9953
+ 30    Henbit         2017    Residual                 305.84
+ 31    Henbit         2018    Replicate                     0
+ 32    Henbit         2018    Treatment*Replicate           0
+ 33    Henbit         2018    Residual               1.11E-12
+ 34    Horse          2018    Replicate                     0
+ 35    Horse          2018    Treatment*Replicate           0
+ 36    Horse          2018    Residual               1.11E-12
+ 37    Horse          2019    Replicate                     0
+ 38    Horse          2019    Treatment*Replicate           0
+ 39    Horse          2019    Residual               1.11E-12
+ 40    LQ             2018    Replicate                     0
+ 41    LQ             2018    Treatment*Replicate           0
+ 42    LQ             2018    Residual               1.11E-12
+ 43    LivAmaranth    2019    Replicate              -45.8571
+ 44    LivAmaranth    2019    Treatment*Replicate      568.31
+ 45    LivAmaranth    2019    Residual               1.11E-12
+ 46    PinkPursl      2019    Replicate               22.1726
+ 47    PinkPursl      2019    Treatment*Replicate      535.90
+ 48    PinkPursl      2019    Residual               1.11E-12
+ 49    Poa            2018    Replicate                     0
+ 50    Poa            2018    Treatment*Replicate           0
+ 51    Poa            2018    Residual               1.11E-12
+ 52    Primrose       2017    Replicate                2.8943
+ 53    Primrose       2017    Treatment*Replicate     -3.8255
+ 54    Primrose       2017    Residual                56.4562
+ 55    Primrose       2018    Replicate              -0.01172
+ 56    Primrose       2018    Treatment*Replicate     -0.1180
+ 57    Primrose       2018    Residual                 7.2507
+ 58    Violet         2017    Replicate               14.4201
+ 59    Violet         2017    Treatment*Replicate     32.7303
+ 60    Violet         2017    Residual                 148.43
+ 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+t3                                                                                            2
+
+                                                 Num     Den
+Obs    weed           Year    Effect              DF      DF     FValue     ProbF
+
+  1    Chick          2018    Treatment            7      21       0.00    1.0000
+  2    Chick          2018    Week                 1      24       0.00    1.0000
+  3    Chick          2018    Week*Treatment       7      24       0.00    1.0000
+  4    Cspurry        2017    Treatment            7      14       4.92    0.0055
+  5    Cspurry        2017    Week                 4      64      75.45    <.0001
+  6    Cspurry        2017    Week*Treatment      28      64       3.99    <.0001
+  7    Cud            2018    Treatment            7      21       0.00    1.0000
+  8    Cud            2018    Week                 1      88       0.00    1.0000
+  9    Cud            2018    Week*Treatment       7      88       0.00    1.0000
+ 10    Dand           2018    Treatment            7      21       0.86    0.5495
+ 11    Dand           2018    Week                 1      24       4.42    0.0463
+ 12    Dand           2018    Week*Treatment       7      24       0.79    0.6010
+ 13    DogFennel      2019    Treatment            7      21       1.01    0.4549
+ 14    DogFennel      2019    Week                 1      24       0.15    0.7015
+ 15    DogFennel      2019    Week*Treatment       7      24       0.85    0.5595
+ 16    Eclipta        2019    Treatment            7      21    1.29E15    <.0001
+ 17    Eclipta        2019    Week                 0       .        .       .    
+ 18    Eclipta        2019    Week*Treatment       0       .        .       .    
+ 19    Filago         2017    Treatment            7      14       2.08    0.1151
+ 20    Filago         2017    Week                 4      60      40.24    <.0001
+ 21    Filago         2017    Week*Treatment      28      60       0.72    0.8301
+ 22    Filago         2019    Treatment            7      21       1.00    0.4586
+ 23    Filago         2019    Week                 1      24       1.00    0.3273
+ 24    Filago         2019    Week*Treatment       7      24       1.00    0.4553
+ 25    Geran          2018    Treatment            7      21       0.00    1.0000
+ 26    Geran          2018    Week                 1      24       0.00    1.0000
+ 27    Geran          2018    Week*Treatment       7      24       0.00    1.0000
+ 28    Henbit         2017    Treatment            7      14       4.89    0.0057
+ 29    Henbit         2017    Week                 4      58      67.54    <.0001
+ 30    Henbit         2017    Week*Treatment      28      58       2.26    0.0045
+ 31    Henbit         2018    Treatment            7      21       0.00    1.0000
+ 32    Henbit         2018    Week                 1      24       0.00    1.0000
+ 33    Henbit         2018    Week*Treatment       7      24       0.00    1.0000
+ 34    Horse          2018    Treatment            7      21       0.00    1.0000
+ 35    Horse          2018    Week                 1      24       0.00    1.0000
+ 36    Horse          2018    Week*Treatment       7      24       0.00    1.0000
+ 37    Horse          2019    Treatment            7      21       0.00    1.0000
+ 38    Horse          2019    Week                 1      24       0.00    1.0000
+ 39    Horse          2019    Week*Treatment       7      24       0.00    1.0000
+ 40    LQ             2018    Treatment            7      21       0.00    1.0000
+ 41    LQ             2018    Week                 1      24       0.00    1.0000
+ 42    LQ             2018    Week*Treatment       7      24       0.00    1.0000
+ 43    LivAmaranth    2019    Treatment            7      21    5.31E14    <.0001
+ 44    LivAmaranth    2019    Week                 0       .        .       .    
+ 45    LivAmaranth    2019    Week*Treatment       0       .        .       .    
+ 46    PinkPursl      2019    Treatment            7      21    1.01E15    <.0001
+ 47    PinkPursl      2019    Week                 0       .        .       .    
+ 48    PinkPursl      2019    Week*Treatment       0       .        .       .    
+ 49    Poa            2018    Treatment            7      21       0.00    1.0000
+ 50    Poa            2018    Week                 1      24       0.00    1.0000
+ 51    Poa            2018    Week*Treatment       7      24       0.00    1.0000
+ 52    Primrose       2017    Treatment            7      14       8.47    0.0004
+ 53    Primrose       2017    Week                 4      64     481.16    <.0001
+ 54    Primrose       2017    Week*Treatment      28      64       3.62    <.0001
+ 55    Primrose       2018    Treatment            7      21       1.85    0.1307
+ 56    Primrose       2018    Week                 1      88       2.59    0.1113
+ 57    Primrose       2018    Week*Treatment       7      88       1.54    0.1658
+ 58    Violet         2017    Treatment            7      14       3.72    0.0175
+ 59    Violet         2017    Week                 4      62     213.86    <.0001
+ 60    Violet         2017    Week*Treatment      28      62       2.97    0.0002
+ 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+ourslices                                                                                     3
+
+                                                         Num     Den
+Obs    weed           Year        Effect        Week      DF      DF     FValue     ProbF
+
+  1    Chick          2018    Week*Treatment     1         7      24       0.00    1.0000
+  2    Chick          2018    Week*Treatment     2         7      24       0.00    1.0000
+  3    Cspurry        2017    Week*Treatment     1         7      64      10.80    <.0001
+  4    Cspurry        2017    Week*Treatment     2         7      64      10.80    <.0001
+  5    Cspurry        2017    Week*Treatment     3         7      64       0.00    1.0000
+  6    Cspurry        2017    Week*Treatment     4         7      64       0.00    1.0000
+  7    Cspurry        2017    Week*Treatment     6         7      64       0.00    1.0000
+  8    Cud            2018    Week*Treatment     1         7      88       0.00    1.0000
+  9    Cud            2018    Week*Treatment     2         7      88       0.00    1.0000
+ 10    Dand           2018    Week*Treatment     1         7      24       0.00    1.0000
+ 11    Dand           2018    Week*Treatment     2         7      24       1.65    0.1686
+ 12    DogFennel      2019    Week*Treatment     1         7      24       0.71    0.6639
+ 13    DogFennel      2019    Week*Treatment     2         7      24       1.18    0.3493
+ 14    Eclipta        2019    Week*Treatment     2         7       0    1.29E15     .    
+ 15    Filago         2017    Week*Treatment     1         7      60       2.35    0.0347
+ 16    Filago         2017    Week*Treatment     2         7      60       2.35    0.0347
+ 17    Filago         2017    Week*Treatment     3         7      60       0.00    1.0000
+ 18    Filago         2017    Week*Treatment     4         7      60       0.00    1.0000
+ 19    Filago         2017    Week*Treatment     6         7      60       0.00    1.0000
+ 20    Filago         2019    Week*Treatment     1         7      24       0.00    1.0000
+ 21    Filago         2019    Week*Treatment     2         7      24       2.00    0.0973
+ 22    Geran          2018    Week*Treatment     1         7      24       0.00    1.0000
+ 23    Geran          2018    Week*Treatment     2         7      24       0.00    1.0000
+ 24    Henbit         2017    Week*Treatment     1         7      58       6.73    <.0001
+ 25    Henbit         2017    Week*Treatment     2         7      58       6.73    <.0001
+ 26    Henbit         2017    Week*Treatment     3         7      58       0.00    1.0000
+ 27    Henbit         2017    Week*Treatment     4         7      58       0.00    1.0000
+ 28    Henbit         2017    Week*Treatment     6         7      58       0.02    1.0000
+ 29    Henbit         2018    Week*Treatment     1         7      24       0.00    1.0000
+ 30    Henbit         2018    Week*Treatment     2         7      24       0.00    1.0000
+ 31    Horse          2018    Week*Treatment     1         7      24       0.00    1.0000
+ 32    Horse          2018    Week*Treatment     2         7      24       0.00    1.0000
+ 33    Horse          2019    Week*Treatment     1         7      24       0.00    1.0000
+ 34    Horse          2019    Week*Treatment     2         7      24       0.00    1.0000
+ 35    LQ             2018    Week*Treatment     1         7      24       0.00    1.0000
+ 36    LQ             2018    Week*Treatment     2         7      24       0.00    1.0000
+ 37    LivAmaranth    2019    Week*Treatment     2         7       0    5.31E14     .    
+ 38    PinkPursl      2019    Week*Treatment     2         7       0    1.01E15     .    
+ 39    Poa            2018    Week*Treatment     1         7      24       0.00    1.0000
+ 40    Poa            2018    Week*Treatment     2         7      24       0.00    1.0000
+ 41    Primrose       2017    Week*Treatment     1         7      64      14.93    <.0001
+ 42    Primrose       2017    Week*Treatment     2         7      64       6.19    <.0001
+ 43    Primrose       2017    Week*Treatment     3         7      64       0.12    0.9971
+ 44    Primrose       2017    Week*Treatment     4         7      64       0.12    0.9971
+ 45    Primrose       2017    Week*Treatment     6         7      64       0.19    0.9863
+ 46    Primrose       2018    Week*Treatment     1         7      88       0.01    1.0000
+ 47    Primrose       2018    Week*Treatment     2         7      88       3.36    0.0032
+ 48    Violet         2017    Week*Treatment     1         7      62       8.06    <.0001
+ 49    Violet         2017    Week*Treatment     2         7      62       8.06    <.0001
+ 50    Violet         2017    Week*Treatment     3         7      62       0.00    1.0000
+ 51    Violet         2017    Week*Treatment     4         7      62       0.00    1.0000
+ 52    Violet         2017    Week*Treatment     6         7      62       0.00    1.0000
+ 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+lsm                                                                                           4
+
+Obs weed        Year     Effect     Week Treatment Estimate   StdErr   DF  tValue  Probt
+
+  1 Chick       2018 Week*Treatment  1       1       100.00        0   24     I   <.0001
+  2 Chick       2018 Week*Treatment  1       2       100.00        0   24     I   <.0001
+  3 Chick       2018 Week*Treatment  1       3       100.00        0   24     I   <.0001
+  4 Chick       2018 Week*Treatment  1       4       100.00        0   24     I   <.0001
+  5 Chick       2018 Week*Treatment  1       6       100.00        0   24     I   <.0001
+  6 Chick       2018 Week*Treatment  1       7       100.00        0   24     I   <.0001
+  7 Chick       2018 Week*Treatment  1       8       100.00        0   24     I   <.0001
+  8 Chick       2018 Week*Treatment  1       9       100.00        0   24     I   <.0001
+  9 Chick       2018 Week*Treatment  2       1       100.00        0   24     I   <.0001
+ 10 Chick       2018 Week*Treatment  2       2       100.00        0   24     I   <.0001
+ 11 Chick       2018 Week*Treatment  2       3       100.00        0   24     I   <.0001
+ 12 Chick       2018 Week*Treatment  2       4       100.00        0   24     I   <.0001
+ 13 Chick       2018 Week*Treatment  2       6       100.00        0   24     I   <.0001
+ 14 Chick       2018 Week*Treatment  2       7       100.00        0   24     I   <.0001
+ 15 Chick       2018 Week*Treatment  2       8       100.00        0   24     I   <.0001
+ 16 Chick       2018 Week*Treatment  2       9       100.00        0   24     I   <.0001
+ 17 Cspurry     2017 Week*Treatment  1       1      93.3333   1.1499   64   81.17 <.0001
+ 18 Cspurry     2017 Week*Treatment  1       2      91.6667   1.1499   64   79.72 <.0001
+ 19 Cspurry     2017 Week*Treatment  1       3      90.0000   1.1499   64   78.27 <.0001
+ 20 Cspurry     2017 Week*Treatment  1       4      90.0000   1.1499   64   78.27 <.0001
+ 21 Cspurry     2017 Week*Treatment  1       6      96.0000   1.1499   64   83.49 <.0001
+ 22 Cspurry     2017 Week*Treatment  1       7      99.0000   1.1499   64   86.10 <.0001
+ 23 Cspurry     2017 Week*Treatment  1       8      97.6667   1.1499   64   84.94 <.0001
+ 24 Cspurry     2017 Week*Treatment  1       9      97.6667   1.1499   64   84.94 <.0001
+ 25 Cspurry     2017 Week*Treatment  2       1      93.3333   1.1499   64   81.17 <.0001
+ 26 Cspurry     2017 Week*Treatment  2       2      91.6667   1.1499   64   79.72 <.0001
+ 27 Cspurry     2017 Week*Treatment  2       3      90.0000   1.1499   64   78.27 <.0001
+ 28 Cspurry     2017 Week*Treatment  2       4      90.0000   1.1499   64   78.27 <.0001
+ 29 Cspurry     2017 Week*Treatment  2       6      96.0000   1.1499   64   83.49 <.0001
+ 30 Cspurry     2017 Week*Treatment  2       7      99.0000   1.1499   64   86.10 <.0001
+ 31 Cspurry     2017 Week*Treatment  2       8      97.6667   1.1499   64   84.94 <.0001
+ 32 Cspurry     2017 Week*Treatment  2       9      97.6667   1.1499   64   84.94 <.0001
+ 33 Cspurry     2017 Week*Treatment  3       1       100.00   1.1499   64   86.97 <.0001
+ 34 Cspurry     2017 Week*Treatment  3       2       100.00   1.1499   64   86.97 <.0001
+ 35 Cspurry     2017 Week*Treatment  3       3       100.00   1.1499   64   86.97 <.0001
+ 36 Cspurry     2017 Week*Treatment  3       4       100.00   1.1499   64   86.97 <.0001
+ 37 Cspurry     2017 Week*Treatment  3       6       100.00   1.1499   64   86.97 <.0001
+ 38 Cspurry     2017 Week*Treatment  3       7       100.00   1.1499   64   86.97 <.0001
+ 39 Cspurry     2017 Week*Treatment  3       8       100.00   1.1499   64   86.97 <.0001
+ 40 Cspurry     2017 Week*Treatment  3       9       100.00   1.1499   64   86.97 <.0001
+ 41 Cspurry     2017 Week*Treatment  4       1       100.00   1.1499   64   86.97 <.0001
+ 42 Cspurry     2017 Week*Treatment  4       2       100.00   1.1499   64   86.97 <.0001
+ 43 Cspurry     2017 Week*Treatment  4       3       100.00   1.1499   64   86.97 <.0001
+ 44 Cspurry     2017 Week*Treatment  4       4       100.00   1.1499   64   86.97 <.0001
+ 45 Cspurry     2017 Week*Treatment  4       6       100.00   1.1499   64   86.97 <.0001
+ 46 Cspurry     2017 Week*Treatment  4       7       100.00   1.1499   64   86.97 <.0001
+ 47 Cspurry     2017 Week*Treatment  4       8       100.00   1.1499   64   86.97 <.0001
+ 48 Cspurry     2017 Week*Treatment  4       9       100.00   1.1499   64   86.97 <.0001
+ 49 Cspurry     2017 Week*Treatment  6       1       100.00   1.1499   64   86.97 <.0001
+ 50 Cspurry     2017 Week*Treatment  6       2       100.00   1.1499   64   86.97 <.0001
+ 51 Cspurry     2017 Week*Treatment  6       3       100.00   1.1499   64   86.97 <.0001
+ 52 Cspurry     2017 Week*Treatment  6       4       100.00   1.1499   64   86.97 <.0001
+ 53 Cspurry     2017 Week*Treatment  6       6       100.00   1.1499   64   86.97 <.0001
+ 54 Cspurry     2017 Week*Treatment  6       7       100.00   1.1499   64   86.97 <.0001
+ 55 Cspurry     2017 Week*Treatment  6       8       100.00   1.1499   64   86.97 <.0001
+ 56 Cspurry     2017 Week*Treatment  6       9       100.00   1.1499   64   86.97 <.0001
+ 57 Cud         2018 Week*Treatment  1       1       100.00        0   88     I   <.0001
+ 58 Cud         2018 Week*Treatment  1       2       100.00        0   88     I   <.0001
+ 59 Cud         2018 Week*Treatment  1       3       100.00        0   88     I   <.0001
+ 60 Cud         2018 Week*Treatment  1       4       100.00        0   88     I   <.0001
+ 61 Cud         2018 Week*Treatment  1       6       100.00        0   88     I   <.0001
+ 62 Cud         2018 Week*Treatment  1       7       100.00        0   88     I   <.0001
+ 63 Cud         2018 Week*Treatment  1       8       100.00        0   88     I   <.0001
+ 64 Cud         2018 Week*Treatment  1       9       100.00        0   88     I   <.0001
+ 65 Cud         2018 Week*Treatment  2       1       100.00        0   88     I   <.0001
+ 66 Cud         2018 Week*Treatment  2       2       100.00        0   88     I   <.0001
+ 67 Cud         2018 Week*Treatment  2       3       100.00        0   88     I   <.0001
+ 68 Cud         2018 Week*Treatment  2       4       100.00        0   88     I   <.0001
+ 69 Cud         2018 Week*Treatment  2       6       100.00        0   88     I   <.0001
+ 70 Cud         2018 Week*Treatment  2       7       100.00        0   88     I   <.0001
+ 71 Cud         2018 Week*Treatment  2       8       100.00        0   88     I   <.0001
+ 72 Cud         2018 Week*Treatment  2       9       100.00        0   88     I   <.0001
+ 73 Dand        2018 Week*Treatment  1       1       100.00   0.9221   24  108.45 <.0001
+ 74 Dand        2018 Week*Treatment  1       2       100.00   0.9221   24  108.45 <.0001
+ 75 Dand        2018 Week*Treatment  1       3       100.00   0.9221   24  108.45 <.0001
+ 76 Dand        2018 Week*Treatment  1       4       100.00   0.9221   24  108.45 <.0001
+ 77 Dand        2018 Week*Treatment  1       6       100.00   0.9221   24  108.45 <.0001
+ 78 Dand        2018 Week*Treatment  1       7       100.00   0.9221   24  108.45 <.0001
+ 79 Dand        2018 Week*Treatment  1       8       100.00   0.9221   24  108.45 <.0001
+ 80 Dand        2018 Week*Treatment  1       9       100.00   0.9221   24  108.45 <.0001
+ 81 Dand        2018 Week*Treatment  2       1      97.2500   0.9221   24  105.47 <.0001
+ 82 Dand        2018 Week*Treatment  2       2      98.7500   0.9221   24  107.09 <.0001
+ 83 Dand        2018 Week*Treatment  2       3      99.7500   0.9221   24  108.18 <.0001
+ 84 Dand        2018 Week*Treatment  2       4      99.7500   0.9221   24  108.18 <.0001
+ 85 Dand        2018 Week*Treatment  2       6      99.7500   0.9221   24  108.18 <.0001
+ 86 Dand        2018 Week*Treatment  2       7      99.7500   0.9221   24  108.18 <.0001
+ 87 Dand        2018 Week*Treatment  2       8       100.00   0.9221   24  108.45 <.0001
+ 88 Dand        2018 Week*Treatment  2       9      97.2500   0.9221   24  105.47 <.0001
+ 89 DogFennel   2019 Week*Treatment  1       1       100.00   4.3444   24   23.02 <.0001
+ 90 DogFennel   2019 Week*Treatment  1       2       100.00   4.3444   24   23.02 <.0001
+ 91 DogFennel   2019 Week*Treatment  1       3      97.5000   4.3444   24   22.44 <.0001
+ 92 DogFennel   2019 Week*Treatment  1       4       100.00   4.3444   24   23.02 <.0001
+ 93 DogFennel   2019 Week*Treatment  1       6      91.2500   4.3444   24   21.00 <.0001
+ 94 DogFennel   2019 Week*Treatment  1       7      93.7500   4.3444   24   21.58 <.0001
+ 95 DogFennel   2019 Week*Treatment  1       8      93.7500   4.3444   24   21.58 <.0001
+ 96 DogFennel   2019 Week*Treatment  1       9       100.00   4.3444   24   23.02 <.0001
+ 97 DogFennel   2019 Week*Treatment  2       1      92.5000   4.3444   24   21.29 <.0001
+ 98 DogFennel   2019 Week*Treatment  2       2      93.7500   4.3444   24   21.58 <.0001
+ 99 DogFennel   2019 Week*Treatment  2       3       100.00   4.3444   24   23.02 <.0001
+100 DogFennel   2019 Week*Treatment  2       4      99.5000   4.3444   24   22.90 <.0001
+101 DogFennel   2019 Week*Treatment  2       6      87.5000   4.3444   24   20.14 <.0001
+102 DogFennel   2019 Week*Treatment  2       7      97.2500   4.3444   24   22.39 <.0001
+103 DogFennel   2019 Week*Treatment  2       8       100.00   4.3444   24   23.02 <.0001
+104 DogFennel   2019 Week*Treatment  2       9       100.00   4.3444   24   23.02 <.0001
+105 Eclipta     2019 Week*Treatment  2       1      20.0000        0    0     .    .    
+106 Eclipta     2019 Week*Treatment  2       2      95.0000        0    0     .    .    
+107 Eclipta     2019 Week*Treatment  2       3      20.0000        0    0     .    .    
+108 Eclipta     2019 Week*Treatment  2       4       100.00        0    0     .    .    
+109 Eclipta     2019 Week*Treatment  2       6      30.0000        0    0     .    .    
+110 Eclipta     2019 Week*Treatment  2       7      85.0000        0    0     .    .    
+111 Eclipta     2019 Week*Treatment  2       8       100.00        0    0     .    .    
+112 Eclipta     2019 Week*Treatment  2       9      98.0000        0    0     .    .    
+113 Filago      2017 Week*Treatment  1       1      44.5271  11.4064   60    3.90 0.0002
+114 Filago      2017 Week*Treatment  1       2      66.6667   9.6363   60    6.92 <.0001
+115 Filago      2017 Week*Treatment  1       3      56.3333   9.6363   60    5.85 <.0001
+116 Filago      2017 Week*Treatment  1       4      66.0373  11.4064   60    5.79 <.0001
+117 Filago      2017 Week*Treatment  1       6      76.6667   9.6363   60    7.96 <.0001
+118 Filago      2017 Week*Treatment  1       7      86.6667   9.6363   60    8.99 <.0001
+119 Filago      2017 Week*Treatment  1       8      61.6667   9.6363   60    6.40 <.0001
+120 Filago      2017 Week*Treatment  1       9      50.0000   9.6363   60    5.19 <.0001
+121 Filago      2017 Week*Treatment  2       1      44.5271  11.4064   60    3.90 0.0002
+122 Filago      2017 Week*Treatment  2       2      66.6667   9.6363   60    6.92 <.0001
+123 Filago      2017 Week*Treatment  2       3      56.3333   9.6363   60    5.85 <.0001
+124 Filago      2017 Week*Treatment  2       4      66.0373  11.4064   60    5.79 <.0001
+125 Filago      2017 Week*Treatment  2       6      76.6667   9.6363   60    7.96 <.0001
+126 Filago      2017 Week*Treatment  2       7      86.6667   9.6363   60    8.99 <.0001
+127 Filago      2017 Week*Treatment  2       8      61.6667   9.6363   60    6.40 <.0001
+128 Filago      2017 Week*Treatment  2       9      50.0000   9.6363   60    5.19 <.0001
+129 Filago      2017 Week*Treatment  3       1       100.00   9.6363   60   10.38 <.0001
+130 Filago      2017 Week*Treatment  3       2       100.00   9.6363   60   10.38 <.0001
+131 Filago      2017 Week*Treatment  3       3       100.00   9.6363   60   10.38 <.0001
+132 Filago      2017 Week*Treatment  3       4       100.00   9.6363   60   10.38 <.0001
+133 Filago      2017 Week*Treatment  3       6       100.00   9.6363   60   10.38 <.0001
+134 Filago      2017 Week*Treatment  3       7       100.00   9.6363   60   10.38 <.0001
+135 Filago      2017 Week*Treatment  3       8       100.00   9.6363   60   10.38 <.0001
+136 Filago      2017 Week*Treatment  3       9       100.00   9.6363   60   10.38 <.0001
+137 Filago      2017 Week*Treatment  4       1       100.00   9.6363   60   10.38 <.0001
+138 Filago      2017 Week*Treatment  4       2       100.00   9.6363   60   10.38 <.0001
+139 Filago      2017 Week*Treatment  4       3       100.00   9.6363   60   10.38 <.0001
+140 Filago      2017 Week*Treatment  4       4       100.00   9.6363   60   10.38 <.0001
+141 Filago      2017 Week*Treatment  4       6       100.00   9.6363   60   10.38 <.0001
+142 Filago      2017 Week*Treatment  4       7       100.00   9.6363   60   10.38 <.0001
+143 Filago      2017 Week*Treatment  4       8       100.00   9.6363   60   10.38 <.0001
+144 Filago      2017 Week*Treatment  4       9       100.00   9.6363   60   10.38 <.0001
+145 Filago      2017 Week*Treatment  6       1       100.00   9.6363   60   10.38 <.0001
+146 Filago      2017 Week*Treatment  6       2       100.00   9.6363   60   10.38 <.0001
+147 Filago      2017 Week*Treatment  6       3       100.00   9.6363   60   10.38 <.0001
+148 Filago      2017 Week*Treatment  6       4       100.00   9.6363   60   10.38 <.0001
+149 Filago      2017 Week*Treatment  6       6       100.00   9.6363   60   10.38 <.0001
+150 Filago      2017 Week*Treatment  6       7       100.00   9.6363   60   10.38 <.0001
+151 Filago      2017 Week*Treatment  6       8       100.00   9.6363   60   10.38 <.0001
+152 Filago      2017 Week*Treatment  6       9       100.00   9.6363   60   10.38 <.0001
+153 Filago      2019 Week*Treatment  1       1       100.00   0.3125   24  320.00 <.0001
+154 Filago      2019 Week*Treatment  1       2       100.00   0.3125   24  320.00 <.0001
+155 Filago      2019 Week*Treatment  1       3       100.00   0.3125   24  320.00 <.0001
+156 Filago      2019 Week*Treatment  1       4       100.00   0.3125   24  320.00 <.0001
+157 Filago      2019 Week*Treatment  1       6       100.00   0.3125   24  320.00 <.0001
+158 Filago      2019 Week*Treatment  1       7       100.00   0.3125   24  320.00 <.0001
+159 Filago      2019 Week*Treatment  1       8       100.00   0.3125   24  320.00 <.0001
+160 Filago      2019 Week*Treatment  1       9       100.00   0.3125   24  320.00 <.0001
+161 Filago      2019 Week*Treatment  2       1       100.00   0.3125   24  320.00 <.0001
+162 Filago      2019 Week*Treatment  2       2      98.7500   0.3125   24  316.00 <.0001
+163 Filago      2019 Week*Treatment  2       3       100.00   0.3125   24  320.00 <.0001
+164 Filago      2019 Week*Treatment  2       4       100.00   0.3125   24  320.00 <.0001
+165 Filago      2019 Week*Treatment  2       6       100.00   0.3125   24  320.00 <.0001
+166 Filago      2019 Week*Treatment  2       7       100.00   0.3125   24  320.00 <.0001
+167 Filago      2019 Week*Treatment  2       8       100.00   0.3125   24  320.00 <.0001
+168 Filago      2019 Week*Treatment  2       9       100.00   0.3125   24  320.00 <.0001
+169 Geran       2018 Week*Treatment  1       1       100.00        0   24     I   <.0001
+170 Geran       2018 Week*Treatment  1       2       100.00        0   24     I   <.0001
+171 Geran       2018 Week*Treatment  1       3       100.00        0   24     I   <.0001
+172 Geran       2018 Week*Treatment  1       4       100.00        0   24     I   <.0001
+173 Geran       2018 Week*Treatment  1       6       100.00        0   24     I   <.0001
+174 Geran       2018 Week*Treatment  1       7       100.00        0   24     I   <.0001
+175 Geran       2018 Week*Treatment  1       8       100.00        0   24     I   <.0001
+176 Geran       2018 Week*Treatment  1       9       100.00        0   24     I   <.0001
+177 Geran       2018 Week*Treatment  2       1       100.00        0   24     I   <.0001
+178 Geran       2018 Week*Treatment  2       2       100.00        0   24     I   <.0001
+179 Geran       2018 Week*Treatment  2       3       100.00        0   24     I   <.0001
+180 Geran       2018 Week*Treatment  2       4       100.00        0   24     I   <.0001
+181 Geran       2018 Week*Treatment  2       6       100.00        0   24     I   <.0001
+182 Geran       2018 Week*Treatment  2       7       100.00        0   24     I   <.0001
+183 Geran       2018 Week*Treatment  2       8       100.00        0   24     I   <.0001
+184 Geran       2018 Week*Treatment  2       9       100.00        0   24     I   <.0001
+185 Henbit      2017 Week*Treatment  1       1       3.0495  13.5221   58    0.23 0.8224
+186 Henbit      2017 Week*Treatment  1       2      40.0000  11.2986   58    3.54 0.0008
+187 Henbit      2017 Week*Treatment  1       3      43.0000  11.2986   58    3.81 0.0003
+188 Henbit      2017 Week*Treatment  1       4      17.9472  13.5221   58    1.33 0.1896
+189 Henbit      2017 Week*Treatment  1       6      73.0000  11.2986   58    6.46 <.0001
+190 Henbit      2017 Week*Treatment  1       7      86.6667  11.2986   58    7.67 <.0001
+191 Henbit      2017 Week*Treatment  1       8      63.3333  11.2986   58    5.61 <.0001
+192 Henbit      2017 Week*Treatment  1       9      12.9472  13.5221   58    0.96 0.3423
+193 Henbit      2017 Week*Treatment  2       1       3.0495  13.5221   58    0.23 0.8224
+194 Henbit      2017 Week*Treatment  2       2      40.0000  11.2986   58    3.54 0.0008
+195 Henbit      2017 Week*Treatment  2       3      43.0000  11.2986   58    3.81 0.0003
+196 Henbit      2017 Week*Treatment  2       4      17.9472  13.5221   58    1.33 0.1896
+197 Henbit      2017 Week*Treatment  2       6      73.0000  11.2986   58    6.46 <.0001
+198 Henbit      2017 Week*Treatment  2       7      86.6667  11.2986   58    7.67 <.0001
+199 Henbit      2017 Week*Treatment  2       8      63.3333  11.2986   58    5.61 <.0001
+200 Henbit      2017 Week*Treatment  2       9      12.9472  13.5221   58    0.96 0.3423
+201 Henbit      2017 Week*Treatment  3       1       100.00  11.2986   58    8.85 <.0001
+202 Henbit      2017 Week*Treatment  3       2       100.00  11.2986   58    8.85 <.0001
+203 Henbit      2017 Week*Treatment  3       3       100.00  11.2986   58    8.85 <.0001
+204 Henbit      2017 Week*Treatment  3       4       100.00  11.2986   58    8.85 <.0001
+205 Henbit      2017 Week*Treatment  3       6       100.00  11.2986   58    8.85 <.0001
+206 Henbit      2017 Week*Treatment  3       7       100.00  11.2986   58    8.85 <.0001
+207 Henbit      2017 Week*Treatment  3       8       100.00  11.2986   58    8.85 <.0001
+208 Henbit      2017 Week*Treatment  3       9       100.00  11.2986   58    8.85 <.0001
+209 Henbit      2017 Week*Treatment  4       1       100.00  11.2986   58    8.85 <.0001
+210 Henbit      2017 Week*Treatment  4       2       100.00  11.2986   58    8.85 <.0001
+211 Henbit      2017 Week*Treatment  4       3       100.00  11.2986   58    8.85 <.0001
+212 Henbit      2017 Week*Treatment  4       4       100.00  11.2986   58    8.85 <.0001
+213 Henbit      2017 Week*Treatment  4       6       100.00  11.2986   58    8.85 <.0001
+214 Henbit      2017 Week*Treatment  4       7       100.00  11.2986   58    8.85 <.0001
+215 Henbit      2017 Week*Treatment  4       8       100.00  11.2986   58    8.85 <.0001
+216 Henbit      2017 Week*Treatment  4       9       100.00  11.2986   58    8.85 <.0001
+217 Henbit      2017 Week*Treatment  6       1      96.6667  11.2986   58    8.56 <.0001
+218 Henbit      2017 Week*Treatment  6       2      96.3333  11.2986   58    8.53 <.0001
+219 Henbit      2017 Week*Treatment  6       3      99.6667  11.2986   58    8.82 <.0001
+220 Henbit      2017 Week*Treatment  6       4       100.00  11.2986   58    8.85 <.0001
+221 Henbit      2017 Week*Treatment  6       6       100.00  11.2986   58    8.85 <.0001
+222 Henbit      2017 Week*Treatment  6       7       100.00  11.2986   58    8.85 <.0001
+223 Henbit      2017 Week*Treatment  6       8       100.00  11.2986   58    8.85 <.0001
+224 Henbit      2017 Week*Treatment  6       9       100.00  11.2986   58    8.85 <.0001
+225 Henbit      2018 Week*Treatment  1       1       100.00        0   24     I   <.0001
+226 Henbit      2018 Week*Treatment  1       2       100.00        0   24     I   <.0001
+227 Henbit      2018 Week*Treatment  1       3       100.00        0   24     I   <.0001
+228 Henbit      2018 Week*Treatment  1       4       100.00        0   24     I   <.0001
+229 Henbit      2018 Week*Treatment  1       6       100.00        0   24     I   <.0001
+230 Henbit      2018 Week*Treatment  1       7       100.00        0   24     I   <.0001
+231 Henbit      2018 Week*Treatment  1       8       100.00        0   24     I   <.0001
+232 Henbit      2018 Week*Treatment  1       9       100.00        0   24     I   <.0001
+233 Henbit      2018 Week*Treatment  2       1       100.00        0   24     I   <.0001
+234 Henbit      2018 Week*Treatment  2       2       100.00        0   24     I   <.0001
+235 Henbit      2018 Week*Treatment  2       3       100.00        0   24     I   <.0001
+236 Henbit      2018 Week*Treatment  2       4       100.00        0   24     I   <.0001
+237 Henbit      2018 Week*Treatment  2       6       100.00        0   24     I   <.0001
+238 Henbit      2018 Week*Treatment  2       7       100.00        0   24     I   <.0001
+239 Henbit      2018 Week*Treatment  2       8       100.00        0   24     I   <.0001
+240 Henbit      2018 Week*Treatment  2       9       100.00        0   24     I   <.0001
+241 Horse       2018 Week*Treatment  1       1       100.00        0   24     I   <.0001
+242 Horse       2018 Week*Treatment  1       2       100.00        0   24     I   <.0001
+243 Horse       2018 Week*Treatment  1       3       100.00        0   24     I   <.0001
+244 Horse       2018 Week*Treatment  1       4       100.00        0   24     I   <.0001
+245 Horse       2018 Week*Treatment  1       6       100.00        0   24     I   <.0001
+246 Horse       2018 Week*Treatment  1       7       100.00        0   24     I   <.0001
+247 Horse       2018 Week*Treatment  1       8       100.00        0   24     I   <.0001
+248 Horse       2018 Week*Treatment  1       9       100.00        0   24     I   <.0001
+249 Horse       2018 Week*Treatment  2       1       100.00        0   24     I   <.0001
+250 Horse       2018 Week*Treatment  2       2       100.00        0   24     I   <.0001
+251 Horse       2018 Week*Treatment  2       3       100.00        0   24     I   <.0001
+252 Horse       2018 Week*Treatment  2       4       100.00        0   24     I   <.0001
+253 Horse       2018 Week*Treatment  2       6       100.00        0   24     I   <.0001
+254 Horse       2018 Week*Treatment  2       7       100.00        0   24     I   <.0001
+255 Horse       2018 Week*Treatment  2       8       100.00        0   24     I   <.0001
+256 Horse       2018 Week*Treatment  2       9       100.00        0   24     I   <.0001
+257 Horse       2019 Week*Treatment  1       1       100.00        0   24     I   <.0001
+258 Horse       2019 Week*Treatment  1       2       100.00        0   24     I   <.0001
+259 Horse       2019 Week*Treatment  1       3       100.00        0   24     I   <.0001
+260 Horse       2019 Week*Treatment  1       4       100.00        0   24     I   <.0001
+261 Horse       2019 Week*Treatment  1       6       100.00        0   24     I   <.0001
+262 Horse       2019 Week*Treatment  1       7       100.00        0   24     I   <.0001
+263 Horse       2019 Week*Treatment  1       8       100.00        0   24     I   <.0001
+264 Horse       2019 Week*Treatment  1       9       100.00        0   24     I   <.0001
+265 Horse       2019 Week*Treatment  2       1       100.00        0   24     I   <.0001
+266 Horse       2019 Week*Treatment  2       2       100.00        0   24     I   <.0001
+267 Horse       2019 Week*Treatment  2       3       100.00        0   24     I   <.0001
+268 Horse       2019 Week*Treatment  2       4       100.00        0   24     I   <.0001
+269 Horse       2019 Week*Treatment  2       6       100.00        0   24     I   <.0001
+270 Horse       2019 Week*Treatment  2       7       100.00        0   24     I   <.0001
+271 Horse       2019 Week*Treatment  2       8       100.00        0   24     I   <.0001
+272 Horse       2019 Week*Treatment  2       9       100.00        0   24     I   <.0001
+273 LQ          2018 Week*Treatment  1       1       100.00        0   24     I   <.0001
+274 LQ          2018 Week*Treatment  1       2       100.00        0   24     I   <.0001
+275 LQ          2018 Week*Treatment  1       3       100.00        0   24     I   <.0001
+276 LQ          2018 Week*Treatment  1       4       100.00        0   24     I   <.0001
+277 LQ          2018 Week*Treatment  1       6       100.00        0   24     I   <.0001
+278 LQ          2018 Week*Treatment  1       7       100.00        0   24     I   <.0001
+279 LQ          2018 Week*Treatment  1       8       100.00        0   24     I   <.0001
+280 LQ          2018 Week*Treatment  1       9       100.00        0   24     I   <.0001
+281 LQ          2018 Week*Treatment  2       1       100.00        0   24     I   <.0001
+282 LQ          2018 Week*Treatment  2       2       100.00        0   24     I   <.0001
+283 LQ          2018 Week*Treatment  2       3       100.00        0   24     I   <.0001
+284 LQ          2018 Week*Treatment  2       4       100.00        0   24     I   <.0001
+285 LQ          2018 Week*Treatment  2       6       100.00        0   24     I   <.0001
+286 LQ          2018 Week*Treatment  2       7       100.00        0   24     I   <.0001
+287 LQ          2018 Week*Treatment  2       8       100.00        0   24     I   <.0001
+288 LQ          2018 Week*Treatment  2       9       100.00        0   24     I   <.0001
+289 LivAmaranth 2019 Week*Treatment  2       1      30.0000        0    0     .    .    
+290 LivAmaranth 2019 Week*Treatment  2       2      98.0000        0    0     .    .    
+291 LivAmaranth 2019 Week*Treatment  2       3       100.00        0    0     .    .    
+292 LivAmaranth 2019 Week*Treatment  2       4       100.00        0    0     .    .    
+293 LivAmaranth 2019 Week*Treatment  2       6      90.0000        0    0     .    .    
+294 LivAmaranth 2019 Week*Treatment  2       7       100.00        0    0     .    .    
+295 LivAmaranth 2019 Week*Treatment  2       8       100.00        0    0     .    .    
+296 LivAmaranth 2019 Week*Treatment  2       9      98.0000 1.054E-6    0 9.301E7  .    
+297 PinkPursl   2019 Week*Treatment  2       1      20.0000        0    0     .    .    
+298 PinkPursl   2019 Week*Treatment  2       2      75.0000        0    0     .    .    
+299 PinkPursl   2019 Week*Treatment  2       3      20.0000        0    0     .    .    
+300 PinkPursl   2019 Week*Treatment  2       4       100.00        0    0     .    .    
+301 PinkPursl   2019 Week*Treatment  2       6      40.0000        0    0     .    .    
+302 PinkPursl   2019 Week*Treatment  2       7      85.0000        0    0     .    .    
+303 PinkPursl   2019 Week*Treatment  2       8       100.00        0    0     .    .    
+304 PinkPursl   2019 Week*Treatment  2       9      80.0000        0    0     .    .    
+305 Poa         2018 Week*Treatment  1       1       100.00        0   24     I   <.0001
+306 Poa         2018 Week*Treatment  1       2       100.00        0   24     I   <.0001
+307 Poa         2018 Week*Treatment  1       3       100.00        0   24     I   <.0001
+308 Poa         2018 Week*Treatment  1       4       100.00        0   24     I   <.0001
+309 Poa         2018 Week*Treatment  1       6       100.00        0   24     I   <.0001
+310 Poa         2018 Week*Treatment  1       7       100.00        0   24     I   <.0001
+311 Poa         2018 Week*Treatment  1       8       100.00        0   24     I   <.0001
+312 Poa         2018 Week*Treatment  1       9       100.00        0   24     I   <.0001
+313 Poa         2018 Week*Treatment  2       1       100.00        0   24     I   <.0001
+314 Poa         2018 Week*Treatment  2       2       100.00        0   24     I   <.0001
+315 Poa         2018 Week*Treatment  2       3       100.00        0   24     I   <.0001
+316 Poa         2018 Week*Treatment  2       4       100.00        0   24     I   <.0001
+317 Poa         2018 Week*Treatment  2       6       100.00        0   24     I   <.0001
+318 Poa         2018 Week*Treatment  2       7       100.00        0   24     I   <.0001
+319 Poa         2018 Week*Treatment  2       8       100.00        0   24     I   <.0001
+320 Poa         2018 Week*Treatment  2       9       100.00        0   24     I   <.0001
+321 Primrose    2017 Week*Treatment  1       1      10.0000   4.3021   64    2.32 0.0233
+322 Primrose    2017 Week*Treatment  1       2      11.6667   4.3021   64    2.71 0.0086
+323 Primrose    2017 Week*Treatment  1       3      10.0000   4.3021   64    2.32 0.0233
+324 Primrose    2017 Week*Treatment  1       4      10.0000   4.3021   64    2.32 0.0233
+325 Primrose    2017 Week*Treatment  1       6      45.0000   4.3021   64   10.46 <.0001
+326 Primrose    2017 Week*Treatment  1       7      48.3333   4.3021   64   11.23 <.0001
+327 Primrose    2017 Week*Treatment  1       8      20.0000   4.3021   64    4.65 <.0001
+328 Primrose    2017 Week*Treatment  1       9      13.3333   4.3021   64    3.10 0.0029
+329 Primrose    2017 Week*Treatment  2       1      71.6667   4.3021   64   16.66 <.0001
+330 Primrose    2017 Week*Treatment  2       2      70.0000   4.3021   64   16.27 <.0001
+331 Primrose    2017 Week*Treatment  2       3      88.3333   4.3021   64   20.53 <.0001
+332 Primrose    2017 Week*Treatment  2       4      81.6667   4.3021   64   18.98 <.0001
+333 Primrose    2017 Week*Treatment  2       6      95.0000   4.3021   64   22.08 <.0001
+334 Primrose    2017 Week*Treatment  2       7      95.0000   4.3021   64   22.08 <.0001
+335 Primrose    2017 Week*Treatment  2       8      91.6667   4.3021   64   21.31 <.0001
+336 Primrose    2017 Week*Treatment  2       9      95.0000   4.3021   64   22.08 <.0001
+337 Primrose    2017 Week*Treatment  3       1      98.3333   4.3021   64   22.86 <.0001
+338 Primrose    2017 Week*Treatment  3       2      98.6667   4.3021   64   22.93 <.0001
+339 Primrose    2017 Week*Treatment  3       3      99.3333   4.3021   64   23.09 <.0001
+340 Primrose    2017 Week*Treatment  3       4      99.6667   4.3021   64   23.17 <.0001
+341 Primrose    2017 Week*Treatment  3       6      95.6667   4.3021   64   22.24 <.0001
+342 Primrose    2017 Week*Treatment  3       7      99.3333   4.3021   64   23.09 <.0001
+343 Primrose    2017 Week*Treatment  3       8       100.00   4.3021   64   23.24 <.0001
+344 Primrose    2017 Week*Treatment  3       9       100.00   4.3021   64   23.24 <.0001
+345 Primrose    2017 Week*Treatment  4       1      98.3333   4.3021   64   22.86 <.0001
+346 Primrose    2017 Week*Treatment  4       2      98.6667   4.3021   64   22.93 <.0001
+347 Primrose    2017 Week*Treatment  4       3      99.3333   4.3021   64   23.09 <.0001
+348 Primrose    2017 Week*Treatment  4       4      99.6667   4.3021   64   23.17 <.0001
+349 Primrose    2017 Week*Treatment  4       6      95.6667   4.3021   64   22.24 <.0001
+350 Primrose    2017 Week*Treatment  4       7      99.3333   4.3021   64   23.09 <.0001
+351 Primrose    2017 Week*Treatment  4       8       100.00   4.3021   64   23.24 <.0001
+352 Primrose    2017 Week*Treatment  4       9       100.00   4.3021   64   23.24 <.0001
+353 Primrose    2017 Week*Treatment  6       1      96.6667   4.3021   64   22.47 <.0001
+354 Primrose    2017 Week*Treatment  6       2      96.3333   4.3021   64   22.39 <.0001
+355 Primrose    2017 Week*Treatment  6       3      96.6667   4.3021   64   22.47 <.0001
+356 Primrose    2017 Week*Treatment  6       4      98.3333   4.3021   64   22.86 <.0001
+357 Primrose    2017 Week*Treatment  6       6      96.3333   4.3021   64   22.39 <.0001
+358 Primrose    2017 Week*Treatment  6       7      95.0000   4.3021   64   22.08 <.0001
+359 Primrose    2017 Week*Treatment  6       8       100.00   4.3021   64   23.24 <.0001
+360 Primrose    2017 Week*Treatment  6       9       100.00   4.3021   64   23.24 <.0001
+361 Primrose    2018 Week*Treatment  1       1      99.7500   0.9348   88  106.70 <.0001
+362 Primrose    2018 Week*Treatment  1       2       100.00   0.9348   88  106.97 <.0001
+363 Primrose    2018 Week*Treatment  1       3      99.8750   0.9348   88  106.84 <.0001
+364 Primrose    2018 Week*Treatment  1       4      99.8750   0.9348   88  106.84 <.0001
+365 Primrose    2018 Week*Treatment  1       6      99.8750   0.9348   88  106.84 <.0001
+366 Primrose    2018 Week*Treatment  1       7       100.00   0.9348   88  106.97 <.0001
+367 Primrose    2018 Week*Treatment  1       8       100.00   0.9348   88  106.97 <.0001
+368 Primrose    2018 Week*Treatment  1       9      99.8750   0.9348   88  106.84 <.0001
+369 Primrose    2018 Week*Treatment  2       1      95.0000   0.9348   88  101.62 <.0001
+370 Primrose    2018 Week*Treatment  2       2      99.1250   0.9348   88  106.04 <.0001
+371 Primrose    2018 Week*Treatment  2       3       100.00   0.9348   88  106.97 <.0001
+372 Primrose    2018 Week*Treatment  2       4       100.00   0.9348   88  106.97 <.0001
+373 Primrose    2018 Week*Treatment  2       6       100.00   0.9348   88  106.97 <.0001
+374 Primrose    2018 Week*Treatment  2       7      99.1250   0.9348   88  106.04 <.0001
+375 Primrose    2018 Week*Treatment  2       8      99.8750   0.9348   88  106.84 <.0001
+376 Primrose    2018 Week*Treatment  2       9       100.00   0.9348   88  106.97 <.0001
+377 Violet      2017 Week*Treatment  1       1      26.6667   8.0743   62    3.30 0.0016
+378 Violet      2017 Week*Treatment  1       2      25.9958   9.6709   62    2.69 0.0092
+379 Violet      2017 Week*Treatment  1       3      18.3333   8.0743   62    2.27 0.0267
+380 Violet      2017 Week*Treatment  1       4       6.6667   8.0743   62    0.83 0.4122
+381 Violet      2017 Week*Treatment  1       6      71.3333   8.0743   62    8.83 <.0001
+382 Violet      2017 Week*Treatment  1       7      56.6667   8.0743   62    7.02 <.0001
+383 Violet      2017 Week*Treatment  1       8      36.6667   8.0743   62    4.54 <.0001
+384 Violet      2017 Week*Treatment  1       9      13.3333   8.0743   62    1.65 0.1037
+385 Violet      2017 Week*Treatment  2       1      26.6667   8.0743   62    3.30 0.0016
+386 Violet      2017 Week*Treatment  2       2      25.9958   9.6709   62    2.69 0.0092
+387 Violet      2017 Week*Treatment  2       3      18.3333   8.0743   62    2.27 0.0267
+388 Violet      2017 Week*Treatment  2       4       6.6667   8.0743   62    0.83 0.4122
+389 Violet      2017 Week*Treatment  2       6      71.3333   8.0743   62    8.83 <.0001
+390 Violet      2017 Week*Treatment  2       7      56.6667   8.0743   62    7.02 <.0001
+391 Violet      2017 Week*Treatment  2       8      36.6667   8.0743   62    4.54 <.0001
+392 Violet      2017 Week*Treatment  2       9      13.3333   8.0743   62    1.65 0.1037
+393 Violet      2017 Week*Treatment  3       1       100.00   8.0743   62   12.39 <.0001
+394 Violet      2017 Week*Treatment  3       2       100.00   8.0743   62   12.39 <.0001
+395 Violet      2017 Week*Treatment  3       3       100.00   8.0743   62   12.39 <.0001
+396 Violet      2017 Week*Treatment  3       4       100.00   8.0743   62   12.39 <.0001
+397 Violet      2017 Week*Treatment  3       6       100.00   8.0743   62   12.39 <.0001
+398 Violet      2017 Week*Treatment  3       7      99.3333   8.0743   62   12.30 <.0001
+399 Violet      2017 Week*Treatment  3       8       100.00   8.0743   62   12.39 <.0001
+400 Violet      2017 Week*Treatment  3       9       100.00   8.0743   62   12.39 <.0001
+401 Violet      2017 Week*Treatment  4       1       100.00   8.0743   62   12.39 <.0001
+402 Violet      2017 Week*Treatment  4       2       100.00   8.0743   62   12.39 <.0001
+403 Violet      2017 Week*Treatment  4       3       100.00   8.0743   62   12.39 <.0001
+404 Violet      2017 Week*Treatment  4       4       100.00   8.0743   62   12.39 <.0001
+405 Violet      2017 Week*Treatment  4       6       100.00   8.0743   62   12.39 <.0001
+406 Violet      2017 Week*Treatment  4       7      99.3333   8.0743   62   12.30 <.0001
+407 Violet      2017 Week*Treatment  4       8       100.00   8.0743   62   12.39 <.0001
+408 Violet      2017 Week*Treatment  4       9       100.00   8.0743   62   12.39 <.0001
+409 Violet      2017 Week*Treatment  6       1       100.00   8.0743   62   12.39 <.0001
+410 Violet      2017 Week*Treatment  6       2       100.00   8.0743   62   12.39 <.0001
+411 Violet      2017 Week*Treatment  6       3       100.00   8.0743   62   12.39 <.0001
+412 Violet      2017 Week*Treatment  6       4       100.00   8.0743   62   12.39 <.0001
+413 Violet      2017 Week*Treatment  6       6       100.00   8.0743   62   12.39 <.0001
+414 Violet      2017 Week*Treatment  6       7       100.00   8.0743   62   12.39 <.0001
+415 Violet      2017 Week*Treatment  6       8       100.00   8.0743   62   12.39 <.0001
+416 Violet      2017 Week*Treatment  6       9       100.00   8.0743   62   12.39 <.0001
