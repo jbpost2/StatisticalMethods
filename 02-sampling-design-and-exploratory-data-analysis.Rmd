@@ -57,7 +57,6 @@ Pillars of experimental design: (Put an outer block around this)
 
 ```
 
-
 ### Data from Observational Studies  
 
 Some data comes from an observational study where the researcher collects data without imposing any changes.   
@@ -131,87 +130,70 @@ Generally, one should try to take a holistic view of a study.  Before any data i
 
 Taking this bigger picture view of the problem, we can usually follow these steps (we'll try to follow these throughout the book!):  
 
-- Define the objective of the experiment and understand the background (Objective & Background)    
-- Select appropriate response variables (Response)  
-- Identify sources of variation (Sources of Variation)  
-- Choose experimental design (if applicable) (Experimental Design)  
-- Perform the test/collect the data (??? not sure how to shorten that to make it make sense ???) 
-- Statistically analyze the data (Analysis)  
-- Draw conclusions (Conclusions)  
+- Define the objective of the experiment and understand the background (Define Objective & Background)    
+- Select appropriate response variables (Select Response)  
+- Identify sources of variation (Determine Sources of Variation)  
+- Choose sampling scheme and/or experimental design (Select Design)  
+- Perform the test/collect the data (Obtain Data) 
+- Statistically analyze the data (Do Statistical Analysis)  
+- Draw conclusions from the analysis while considering the steps above (Draw Conclusions)  
 
 We'll focus on this entire process and mostly investigate designed experiments.  We attempt to tackle each topic in this text with a problem-based approach.  That is, we identify a real-world problem and discuss the relevant statistical ideas in context.  Summaries at the end of each chapter recap the main statistical ideas and discuss other important related topics.  
 
 
 ## Observational Study - Farmer's Market   
 
-### Experiment Background  
+### Define Objective & Background  
 
-An agricultural **something...** wanted to characterize the vendors at the North Carolina State Farmer's Market (henceforth the farmer's market) in order to learn about their sales and knowledge of food hygiene and safety.  The researcher had access to the names of each vendor's business and their general purpose.  There were xxx types of businesses selling xxx.
+An agricultural something...xxx wanted to characterize the vendors at the North Carolina State Farmer's Market (henceforth the farmer's market) in order to learn about their sales and knowledge of food hygiene and safety.  The researcher had access to the names of each vendor's business and their general purpose.  There were xxx types of businesses selling xxx.
 
-The researcher needed to decide the scope of their study.  Formally, they needed to define the **population** of interest.  The population is the group of people or units of interest to the researcher.  In this case the population was all of the vendor's at the farmer's market other than the restaurants.  One could try to do a study at just the North Carolina State Farmer's Market and extend the results to all farmer's market in the state or in the south, but that would require many assumptions to be valid.  
+The researcher needed to decide the scope of their study.  Formally, they needed to define the **population** of interest.  The population is the group of people or units of interest to the researcher.  In this case the population was all of the vendor's at the farmer's market other than the restaurants.  
 
-```{block2, type = "definition"}
+One could try to do a study at just the North Carolina State Farmer's Market and extend the results to all farmer's market in the state or in the south, but that would require many assumptions to be valid.  
 
-Population - group of people or units of interest  
+### Select Response
 
-```
-
-### Selecting Response Variables
-
-The researchers needed to determine the variables to collect that would best help to answer their questions of interest.  These variables that characterize the experiment are called **response** or target variables.  They decided to collect vendors sales by looking at the (AMT) amount sold per week over the past two years (in dollars), the (UN_ITEMS) number of unique items sold per week over the past two years, and the (NUM_ITEMS) total number of items sold per week over the past two years.  For the last variable they had to decide how to measure the number of items sold for the different types of businesses.  For produce they decided to collect the total weight (in lbs) sold, for the live plant selling ... 
+The researchers needed to determine the variables to collect that would best help to answer their questions of interest.  These variables that characterize the experiment are called **response** or target variables.  They decided to collect vendors sales by looking at the (AMT) amount sold per week over the past two years (in dollars), the (PURCHASE) total number of purchases each week over the past two years, and the (NUM_ITEMS) total number of items sold per week over the past two years.  For the last variable they had to decide how to measure the number of items sold for the different types of businesses.  For vendors that mainly sold produce they decided to collect the total weight (in lbs) sold, for the live plant selling ... 
 
 To investigate the knowledge of hygiene and safety, a short questionnaire was developed to allow the vendor's head manager (or similar employee) to self evaluate as well as answer some general questions developed around proper policy.  
 
 You can see that there are many decisions that the researcher must make in simply deciding the response variables to collect!  A poor choice here can make or break a study.
 
-(Maybe mention observational unit here as well.)
-
-### Identifying Sources of Variation 
+### Determine Sources of Variation
 
 The response variables clearly have some relationship to other variables that could be collected.  For instance, the NUM_ITEMS variable is clearly going to be different for the different types of vendors.  The AMT variable would differ depending on the size of the vendor's inventory.  These are examples of **explanatory variables** or variables that define the study conditions.  Explanatory variables go by many names such as predictors, features, or independent variables.  
 
 A main consideration about whether or not to record a variable is whether or not the variable would be related to a variation in the response.  Since the response variables are truly what is of interest, there is really not much of a point in recording variables that likely have no relationship with it.  
 
-Choosing the explanatory variables also can indicate further questions of interest.  We may want to compare the average AMT for ... leading to a comparison across groups being of interest.  This average amount would be referred to as a parameter of interest.  A **parameter** is a summary measure about a population.  Common parameters investigated include the mean, variance, or median of a different subgroups of the overall population.  
+Choosing the explanatory variables can also indicate further questions of interest.  We may want to compare the average AMT for vendors that mainly sell vegetables to those that mainly sell fruit leading to a comparison across groups being of interest.  The average amount for the population or a subpopulation would be referred to as a parameter of interest.  Formally, a **parameter** is a summary measure about a population.  Common parameters investigated include a mean, proportion, median, or variance of different subgroups of the population.  
 
-### Choose an Experimental Design <!-- Is this intended to include any sampling considerations?-->
+### Select Design
 
-For this study the researchers aren't interested in doing an interavention so an observational study was being done.  The major task to consider for the observational study is how to select participants from the population.  The subset of the population we (attempt to) observe our data on is called the **sample**.  
+For this study the researchers aren't interested in doing an intervention so an observational study was being done.  The major task to consider for the observational study is how to select participants from the population.  The subset of the population we (attempt to) observe our data on is called the **sample**.  The **sample size** is the number of measurements in the sample.
 
-```{block2, type = "definition"}
+Ideally we would measure every member of our population.  This is called a **census**.  If a census can be done then values of a population's parameters can be found exactly by simply summarizing the population data.  However, conducting a census can be extremely costly or time instensive so most of the time a census cannot be done.  This means that the information we collect would likely be different if we collected it again.  Accounting for this variability is the main reason statistical analysis is needed.  
 
-Sample - subset of the population we observe our data on
-
-```
-
-Ideally we would measure every member of our population.  This is called a **census**.  Conducting a census can be extremely costly or time instensive.  It a census can be done then values of a population's parameters can be found exactly by simply summarizing the population data.  
-
-Most of the time a census cannot be done.  This means that the information we collect would likely be different if we collected it again.  This variability is really the main reason statistical analysis is needed.  
-
-How the researcher selects their sample is extremely important.  The sample should be **unbiased** and **respresentative** of the population.  
-
-(Explain those terms)
+How the researcher selects their sample is extremely important.  This method is often referred to as the **sampling scheme**.  Using a statistically valid sampling scheme is vital to the assumptions made when doing statistical inference.  A valid sampling scheme implies that every member of the population has a known and non-zero chance of inclusion in the sample.  
 
 There are many good ways to select the sample and many bad ways.  (Talk about bad first and why bad - visuals too)  Talk about good and why good - visuals too.
 
+Here they chose to do a stratified sample to make sure that they didn't leave out any important subgroups.  
 
-### Peform the Test  <!-- Wait, does this mean to actually execute the experiment? -->
 
-Get the data from google analytics or whatever, have a plan for updating each month?
+### Obtain Data  <!-- Wait, does this mean to actually execute the experiment? -->
 
-### Look at the Data  <!-- I think we need to add this as a much needed step!  If nothing else than for data validation.  I'm assuming perform the test now means collect the data. Perhaps this could fall into the Statistically analyze the data part though... Might be good to separate out the exploring/validating part though.  -->
+Go and talk to chosen vendors.  May have some non-response issues.  Ideally a contingency for this should be developed when considering the sampling scheme.  
+
+
+### Do Statistical Analysis  
+
+The major goals of this study were simply to describe the vendors at the farmer's market.  In this case we can produce numerical and graphical summaries.  
 
 Careful discussion of not selecting a modeling technique based on this unless it is a pilot study or an exploratory study else we have increased our nominal type I error rate... 
-
-(sometimes EDA sometimes data validation only/cleaning - more formal experiments)
 
 Spend a lot of time here talking about graphs of different types.  Sample means, sample variances, etc.
 
 Discuss population curves vs sample histograms and the relationship.
-
-### Statistically Analyze the Data  
-
-New variables as functions of old?
 
 Not a formal test here but comparisons of interest etc.
 
