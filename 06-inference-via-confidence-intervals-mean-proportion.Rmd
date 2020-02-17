@@ -1,3 +1,75 @@
 # Inference via Confidence Intervals for One Sample {#CI}
 
-We have finished a nice book.
+There are many ways to build confidence intervals for sample proportions. Here are a few:
+
+## The normal approximation
+
+This is the basic interval they've taught in introductory statistics courses since time immamorial. Or at least the past few decades, I'd have to know the history of Stats Ed to give the real timeframe. Anyway, this confidence interval uses the fact from the Central Limit Theorem, that, as $n \rightarrow \infty$, the sampling distribution for $\hat\pi = x/n$ closely resembles a Normal distribution. 
+
+Based on that, you get the equation:
+
+$$\hat\pi \pm z_{\frac{\alpha}{2}} \sqrt{\frac{\hat\pi (1 - \hat\pi)}{n}}$$
+
+### Analog CI
+
+We can build this CI in R pretty easily by inputting the values for the sample size, $n$, and the number of "successes" or "1"s from our binary response variable. One example from class discusses a poll of 2500 people with 400 responding "Satisfactory". For a 90% confidence interval, we have:
+
+```{r}
+n <- 2500
+x <- 400
+pihat <- x/n
+alpha <- 0.1 # 90% CI --> alpha = 1 - .9 = 0.1
+
+lower_bound <- pihat + qnorm(alpha/2) * sqrt((pihat * (1 - pihat)/n))
+upper_bound <- pihat + qnorm(1 - alpha/2) * sqrt((pihat * (1 - pihat)/n))
+
+c(lower_bound, upper_bound)
+
+```
+
+
+### Easy mode
+
+But it's much easier to just use the `binom` library, which contains the function `binom.confint()`:
+
+```{r}
+# install.packages("binom")
+library(binom)
+
+binom.confint(x = 400, n = 2500, conf.level = 0.9, method = "asymptotic")
+
+```
+
+Much easier! But now that we're using `binom.confint()`, we discover that we have to specify `method = "asymptotic"`. But that implies that there are alternatives! And indeed, if we just remove that statement, we see that there are almost a DOZEN different methods that `binom.confint()` will compute for you!
+
+## Other types of binomial confidence intervals
+
+First off, most of these aren't useful in most cases.  They're in there because (1) they're not very hard to program, so the authors figured, "Why not?" and (2) in most cases, there *is* at least one circumstance where each one is  the best option.  (Or they're included for historical reasons.)
+
+### Exact CIs, aka Clopper-Pearson
+
+For one simple example, recall the assumption that we always have to make for our Normal approximation method:  $n * \hat\pi > 5$ and $n * (1 - \hat\pi) > 5$. This is required when we use the Normal approximation. It means we can't build CIs for small-ish samples. But other methods don't have this problem!
+
+`method = "exact"` uses what's called the <a href = "https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Clopper%E2%80%93Pearson_interval">Clopper-Pearson method</a>, which uses the Binomial distribution to calculate an "exact" confidence interval rather than rely on an approximation. 
+
+While being "exact" sounds better than "approximate", the truth of the matter is that the Clopper-Pearson interval is generally wider than it needs to be, meaning you get a less precise interval:
+
+```{r}
+library(dplyr)
+
+binom.confint(x = 400, n = 2500, conf.level = 0.9) %>% 
+  mutate(`CI Width` = upper - lower) %>% 
+  select(method, lower, upper, `CI Width`) %>% 
+  arrange(`CI Width`)
+
+```
+
+Since we have a large sample, the differences aren't very large, but there are times when you want every ounce of precision you can get!
+
+### Bayesian intervals
+
+<a href = "https://en.wikipedia.org/wiki/Bayesian_statistics">Bayesian statistics</a> is a school of thought that says we should try to incorporate our prior knowledge about a problem when making a decision instead of letting the data stand on its own.I don't want to get into why some folks prefer Bayesian intervals, but if you want to, just specify `method = "bayes"` to get a Bayesian CI.
+
+### A good general-use CI
+
+My go-to for a simple binomial confidence interval is the <a href = "https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Agresti%E2%80%93Coull_interval">Agresti-Coull method</a>, `method = "agresti-coull"`. It's one of the weirder ones (Seriously, go look at the equation for it!), but generally performs as well or better than the competition across most scenarios. It's more precise than `method = "exact"`, doesn't fail in small samples like `method = "asymptotic"`, and doesn't rely on a Bayesian approach. 
