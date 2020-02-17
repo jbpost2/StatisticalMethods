@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 23 Appendix - Learning Objectives | A Minimal Book Example</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17.2 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 23 Appendix - Learning Objectives | A Minimal Book Example" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2020-01-22" />
+<meta name="date" content="2020-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,68 @@
 
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -74,39 +136,43 @@
 <li class="chapter" data-level="2.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#data-in-the-wild"><i class="fa fa-check"></i><b>2.1</b> Data in the Wild</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#data-from-experiments"><i class="fa fa-check"></i><b>2.1.1</b> Data from Experiments</a></li>
 <li class="chapter" data-level="2.1.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#data-from-observational-studies"><i class="fa fa-check"></i><b>2.1.2</b> Data from Observational Studies</a></li>
-<li class="chapter" data-level="2.1.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#experiment-background"><i class="fa fa-check"></i><b>2.1.3</b> Experiment Background</a></li>
-<li class="chapter" data-level="2.1.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#selecting-response-variables"><i class="fa fa-check"></i><b>2.1.4</b> Selecting Response Variables</a></li>
-<li class="chapter" data-level="2.1.5" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#identifying-sources-of-variation"><i class="fa fa-check"></i><b>2.1.5</b> Identifying Sources of Variation</a></li>
-<li class="chapter" data-level="2.1.6" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#choose-an-experimental-design"><i class="fa fa-check"></i><b>2.1.6</b> Choose an Experimental Design <!-- Is this intended to include any sampling considerations?--></a></li>
-<li class="chapter" data-level="2.1.7" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#peform-the-test"><i class="fa fa-check"></i><b>2.1.7</b> Peform the Test <!-- Wait, does this mean to actually execute the experiment? --></a></li>
-<li class="chapter" data-level="2.1.8" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#look-at-the-data"><i class="fa fa-check"></i><b>2.1.8</b> Look at the Data <!-- I think we need to add this as a much needed step!  If nothing else than for data validation.  I'm assuming perform the test now means collect the data. Perhaps this could fall into the Statistically analyze the data part though... Might be good to separate out the exploring/validating part though.  --></a></li>
-<li class="chapter" data-level="2.1.9" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#statistically-analyze-the-data"><i class="fa fa-check"></i><b>2.1.9</b> Statistically Analyze the Data</a></li>
-<li class="chapter" data-level="2.1.10" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#draw-conclusions"><i class="fa fa-check"></i><b>2.1.10</b> Draw conclusions</a></li>
+<li class="chapter" data-level="2.1.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#observational-vs-experimental"><i class="fa fa-check"></i><b>2.1.3</b> Observational vs Experimental</a></li>
+<li class="chapter" data-level="2.1.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#the-role-of-statistics"><i class="fa fa-check"></i><b>2.1.4</b> The Role of Statistics</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#statistical-testing-ideas"><i class="fa fa-check"></i><b>2.2</b> Statistical Testing Ideas</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#experiment-background-1"><i class="fa fa-check"></i><b>2.2.1</b> Experiment Background</a></li>
-<li class="chapter" data-level="2.2.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#selecting-response-variables-1"><i class="fa fa-check"></i><b>2.2.2</b> Selecting Response Variables</a></li>
-<li class="chapter" data-level="2.2.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#identifying-sources-of-variation-1"><i class="fa fa-check"></i><b>2.2.3</b> Identifying Sources of Variation</a></li>
-<li class="chapter" data-level="2.2.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#choose-an-experimental-design-1"><i class="fa fa-check"></i><b>2.2.4</b> Choose an Experimental Design</a></li>
-<li class="chapter" data-level="2.2.5" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#peform-the-test-1"><i class="fa fa-check"></i><b>2.2.5</b> Peform the Test</a></li>
-<li class="chapter" data-level="2.2.6" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#explore-the-data"><i class="fa fa-check"></i><b>2.2.6</b> Explore the Data</a></li>
-<li class="chapter" data-level="2.2.7" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#statistically-analyze-the-data-1"><i class="fa fa-check"></i><b>2.2.7</b> Statistically Analyze the Data</a></li>
-<li class="chapter" data-level="2.2.8" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#draw-conclusions-1"><i class="fa fa-check"></i><b>2.2.8</b> Draw conclusions</a></li>
+<li class="chapter" data-level="2.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#observational-study---farmers-market"><i class="fa fa-check"></i><b>2.2</b> Observational Study - Farmer’s Market</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#define-objective-background"><i class="fa fa-check"></i><b>2.2.1</b> Define Objective &amp; Background</a></li>
+<li class="chapter" data-level="2.2.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#select-response"><i class="fa fa-check"></i><b>2.2.2</b> Select Response</a></li>
+<li class="chapter" data-level="2.2.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#determine-sources-of-variation"><i class="fa fa-check"></i><b>2.2.3</b> Determine Sources of Variation</a></li>
+<li class="chapter" data-level="2.2.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#select-design"><i class="fa fa-check"></i><b>2.2.4</b> Select Design</a></li>
+<li class="chapter" data-level="2.2.5" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#do-study"><i class="fa fa-check"></i><b>2.2.5</b> Do Study <!-- Wait, does this mean to actually execute the experiment? --></a></li>
+<li class="chapter" data-level="2.2.6" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#do-statistical-analysis"><i class="fa fa-check"></i><b>2.2.6</b> Do Statistical Analysis</a></li>
+<li class="chapter" data-level="2.2.7" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#draw-conclusions-communicate"><i class="fa fa-check"></i><b>2.2.7</b> Draw Conclusions &amp; Communicate</a></li>
 </ul></li>
+<li class="chapter" data-level="2.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#statistical-testing-ideas"><i class="fa fa-check"></i><b>2.3</b> Statistical Testing Ideas</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#experiment-background"><i class="fa fa-check"></i><b>2.3.1</b> Experiment Background</a></li>
+<li class="chapter" data-level="2.3.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#selecting-response-variables"><i class="fa fa-check"></i><b>2.3.2</b> Selecting Response Variables</a></li>
+<li class="chapter" data-level="2.3.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#identifying-sources-of-variation"><i class="fa fa-check"></i><b>2.3.3</b> Identifying Sources of Variation</a></li>
+<li class="chapter" data-level="2.3.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#choose-an-experimental-design"><i class="fa fa-check"></i><b>2.3.4</b> Choose an Experimental Design</a></li>
+<li class="chapter" data-level="2.3.5" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#peform-the-test"><i class="fa fa-check"></i><b>2.3.5</b> Peform the Test</a></li>
+<li class="chapter" data-level="2.3.6" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#explore-the-data"><i class="fa fa-check"></i><b>2.3.6</b> Explore the Data</a></li>
+<li class="chapter" data-level="2.3.7" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#statistically-analyze-the-data"><i class="fa fa-check"></i><b>2.3.7</b> Statistically Analyze the Data</a></li>
+<li class="chapter" data-level="2.3.8" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#draw-conclusions"><i class="fa fa-check"></i><b>2.3.8</b> Draw conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#why-observational-studies-can-be-bad"><i class="fa fa-check"></i><b>2.4</b> Why Observational Studies Can be Bad?</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="point-estimates.html"><a href="point-estimates.html"><i class="fa fa-check"></i><b>3</b> Point Estimates</a><ul>
 <li class="chapter" data-level="3.1" data-path="point-estimates.html"><a href="point-estimates.html#estiamte-with-means"><i class="fa fa-check"></i><b>3.1</b> Estiamte with means</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="point-estimates.html"><a href="point-estimates.html#experiment-background-2"><i class="fa fa-check"></i><b>3.1.1</b> Experiment background</a></li>
+<li class="chapter" data-level="3.1.1" data-path="point-estimates.html"><a href="point-estimates.html#experiment-background-1"><i class="fa fa-check"></i><b>3.1.1</b> Experiment background</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="point-estimates.html"><a href="point-estimates.html#estimate-with-quantiles"><i class="fa fa-check"></i><b>3.2</b> Estimate with quantiles</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="point-estimates.html"><a href="point-estimates.html#experiment-background-3"><i class="fa fa-check"></i><b>3.2.1</b> Experiment background</a></li>
+<li class="chapter" data-level="3.2.1" data-path="point-estimates.html"><a href="point-estimates.html#experiment-background-2"><i class="fa fa-check"></i><b>3.2.1</b> Experiment background</a></li>
 <li class="chapter" data-level="3.2.2" data-path="point-estimates.html"><a href="point-estimates.html#define-the-object-of-the-experiment"><i class="fa fa-check"></i><b>3.2.2</b> Define the object of the experiment</a></li>
 <li class="chapter" data-level="3.2.3" data-path="point-estimates.html"><a href="point-estimates.html#select-appropriate-response-variables"><i class="fa fa-check"></i><b>3.2.3</b> Select appropriate response variables</a></li>
 <li class="chapter" data-level="3.2.4" data-path="point-estimates.html"><a href="point-estimates.html#identify-sources-of-variation"><i class="fa fa-check"></i><b>3.2.4</b> IDentify sources of variation</a></li>
-<li class="chapter" data-level="3.2.5" data-path="point-estimates.html"><a href="point-estimates.html#choose-an-experimental-design-2"><i class="fa fa-check"></i><b>3.2.5</b> Choose an experimental design</a></li>
+<li class="chapter" data-level="3.2.5" data-path="point-estimates.html"><a href="point-estimates.html#choose-an-experimental-design-1"><i class="fa fa-check"></i><b>3.2.5</b> Choose an experimental design</a></li>
 <li class="chapter" data-level="3.2.6" data-path="point-estimates.html"><a href="point-estimates.html#perform-the-test"><i class="fa fa-check"></i><b>3.2.6</b> Perform the test</a></li>
-<li class="chapter" data-level="3.2.7" data-path="point-estimates.html"><a href="point-estimates.html#statistically-analyze-the-data-2"><i class="fa fa-check"></i><b>3.2.7</b> Statistically analyze the data</a></li>
-<li class="chapter" data-level="3.2.8" data-path="point-estimates.html"><a href="point-estimates.html#draw-conclusions-2"><i class="fa fa-check"></i><b>3.2.8</b> Draw conclusions</a></li>
+<li class="chapter" data-level="3.2.7" data-path="point-estimates.html"><a href="point-estimates.html#statistically-analyze-the-data-1"><i class="fa fa-check"></i><b>3.2.7</b> Statistically analyze the data</a></li>
+<li class="chapter" data-level="3.2.8" data-path="point-estimates.html"><a href="point-estimates.html#draw-conclusions-1"><i class="fa fa-check"></i><b>3.2.8</b> Draw conclusions</a></li>
 <li class="chapter" data-level="3.2.9" data-path="point-estimates.html"><a href="point-estimates.html#discussion"><i class="fa fa-check"></i><b>3.2.9</b> Discussion</a></li>
 </ul></li>
 </ul></li>
@@ -114,7 +180,36 @@
 <li class="chapter" data-level="4.1" data-path="accounting-for-uncertainty.html"><a href="accounting-for-uncertainty.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
 <li class="chapter" data-level="4.2" data-path="accounting-for-uncertainty.html"><a href="accounting-for-uncertainty.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="HT.html"><a href="HT.html"><i class="fa fa-check"></i><b>5</b> Inference via Hypothesis Tests for One Sample</a></li>
+<li class="chapter" data-level="5" data-path="HT.html"><a href="HT.html"><i class="fa fa-check"></i><b>5</b> Inference via Hypothesis Tests for One Sample</a><ul>
+<li class="chapter" data-level="5.1" data-path="HT.html"><a href="HT.html#example-detection-probability"><i class="fa fa-check"></i><b>5.1</b> Example: Detection Probability</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="HT.html"><a href="HT.html#understanding-system-performance"><i class="fa fa-check"></i><b>5.1.1</b> Understanding system performance</a></li>
+<li class="chapter" data-level="5.1.2" data-path="HT.html"><a href="HT.html#data-analysis"><i class="fa fa-check"></i><b>5.1.2</b> Data Analysis</a></li>
+<li class="chapter" data-level="5.1.3" data-path="HT.html"><a href="HT.html#data-from-experiments-1"><i class="fa fa-check"></i><b>5.1.3</b> Data from Experiments</a></li>
+<li class="chapter" data-level="5.1.4" data-path="HT.html"><a href="HT.html#data-from-observational-studies-1"><i class="fa fa-check"></i><b>5.1.4</b> Data from Observational Studies</a></li>
+<li class="chapter" data-level="5.1.5" data-path="HT.html"><a href="HT.html#observational-vs-experimental-1"><i class="fa fa-check"></i><b>5.1.5</b> Observational vs Experimental</a></li>
+<li class="chapter" data-level="5.1.6" data-path="HT.html"><a href="HT.html#the-role-of-statistics-1"><i class="fa fa-check"></i><b>5.1.6</b> The Role of Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="HT.html"><a href="HT.html#marketing-example"><i class="fa fa-check"></i><b>5.2</b> Marketing Example</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="HT.html"><a href="HT.html#experiment-background-3"><i class="fa fa-check"></i><b>5.2.1</b> Experiment Background</a></li>
+<li class="chapter" data-level="5.2.2" data-path="HT.html"><a href="HT.html#selecting-response-variables-1"><i class="fa fa-check"></i><b>5.2.2</b> Selecting Response Variables</a></li>
+<li class="chapter" data-level="5.2.3" data-path="HT.html"><a href="HT.html#identifying-sources-of-variation-1"><i class="fa fa-check"></i><b>5.2.3</b> Identifying Sources of Variation</a></li>
+<li class="chapter" data-level="5.2.4" data-path="HT.html"><a href="HT.html#choose-an-experimental-design-2"><i class="fa fa-check"></i><b>5.2.4</b> Choose an Experimental Design <!-- Is this intended to include any sampling considerations?--></a></li>
+<li class="chapter" data-level="5.2.5" data-path="HT.html"><a href="HT.html#peform-the-test-1"><i class="fa fa-check"></i><b>5.2.5</b> Peform the Test <!-- Wait, does this mean to actually execute the experiment? --></a></li>
+<li class="chapter" data-level="5.2.6" data-path="HT.html"><a href="HT.html#look-at-the-data"><i class="fa fa-check"></i><b>5.2.6</b> Look at the Data <!-- I think we need to add this as a much needed step!  If nothing else than for data validation.  I'm assuming perform the test now means collect the data. Perhaps this could fall into the Statistically analyze the data part though... Might be good to separate out the exploring/validating part though.  --></a></li>
+<li class="chapter" data-level="5.2.7" data-path="HT.html"><a href="HT.html#statistically-analyze-the-data-2"><i class="fa fa-check"></i><b>5.2.7</b> Statistically Analyze the Data</a></li>
+<li class="chapter" data-level="5.2.8" data-path="HT.html"><a href="HT.html#draw-conclusions-2"><i class="fa fa-check"></i><b>5.2.8</b> Draw conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="HT.html"><a href="HT.html#statistical-testing-ideas-1"><i class="fa fa-check"></i><b>5.3</b> Statistical Testing Ideas</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="HT.html"><a href="HT.html#experiment-background-4"><i class="fa fa-check"></i><b>5.3.1</b> Experiment Background</a></li>
+<li class="chapter" data-level="5.3.2" data-path="HT.html"><a href="HT.html#selecting-response-variables-2"><i class="fa fa-check"></i><b>5.3.2</b> Selecting Response Variables</a></li>
+<li class="chapter" data-level="5.3.3" data-path="HT.html"><a href="HT.html#identifying-sources-of-variation-2"><i class="fa fa-check"></i><b>5.3.3</b> Identifying Sources of Variation</a></li>
+<li class="chapter" data-level="5.3.4" data-path="HT.html"><a href="HT.html#choose-an-experimental-design-3"><i class="fa fa-check"></i><b>5.3.4</b> Choose an Experimental Design</a></li>
+<li class="chapter" data-level="5.3.5" data-path="HT.html"><a href="HT.html#peform-the-test-2"><i class="fa fa-check"></i><b>5.3.5</b> Peform the Test</a></li>
+<li class="chapter" data-level="5.3.6" data-path="HT.html"><a href="HT.html#explore-the-data-1"><i class="fa fa-check"></i><b>5.3.6</b> Explore the Data</a></li>
+<li class="chapter" data-level="5.3.7" data-path="HT.html"><a href="HT.html#statistically-analyze-the-data-3"><i class="fa fa-check"></i><b>5.3.7</b> Statistically Analyze the Data</a></li>
+<li class="chapter" data-level="5.3.8" data-path="HT.html"><a href="HT.html#draw-conclusions-3"><i class="fa fa-check"></i><b>5.3.8</b> Draw conclusions</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="CI.html"><a href="CI.html"><i class="fa fa-check"></i><b>6</b> Inference via Confidence Intervals for One Sample</a></li>
 <li class="chapter" data-level="7" data-path="twocategorical.html"><a href="twocategorical.html"><i class="fa fa-check"></i><b>7</b> Inference for Two Categorical Variables</a></li>
 <li class="chapter" data-level="8" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>8</b> One-Way ANOVA</a></li>
@@ -206,7 +301,7 @@
 <li>tradeoffs from replication within groups vice getting more groups</li>
 <li>compare and contrast methods for designing an experiment when the goal of a study is prediction versus when the goal is statistical inference</li>
 </ul></li>
-<li><p>explain the general concept of point estimation and how to account for sampling variability</p>
+<li>explain the general concept of point estimation and how to account for sampling variability
 <ul>
 <li>definition</li>
 <li>identify the right point estimate for your response variable of interest</li>
@@ -232,7 +327,7 @@
 <li>model parameters</li>
 </ul></li>
 </ul></li>
-<li><p>describe relevant properties of random variables and probabilities</p>
+<li>describe relevant properties of random variables and probabilities
 <ul>
 <li>Distinguish between mutually exclusive and independent events.</li>
 <li>Calculate probability for a given scenario, either numerically or using a Venn diagram.</li>
@@ -253,7 +348,7 @@
 <li><span class="math inline">\(P(A) + P(A^c) = 1\)</span>, where <span class="math inline">\(A\)</span> is an event and <span class="math inline">\(A^c\)</span> is the complement of A</li>
 </ul></li>
 </ul></li>
-<li><p>explain the importance of statistical distributions when conducting statistical inference</p>
+<li>explain the importance of statistical distributions when conducting statistical inference
 <ul>
 <li>normal distribution and approximations plus properties
 <ul>
@@ -263,7 +358,7 @@
 </ul></li>
 <li>costs and benefits of using nonparametric approaches</li>
 </ul></li>
-<li><p>describe the fundamental inferential techniques of hypothesis testing and confidence intervals as well as compare and contrast their uses and interpretations</p></li>
+<li>describe the fundamental inferential techniques of hypothesis testing and confidence intervals as well as compare and contrast their uses and interpretations</li>
 <li><p>identify a null and alternative for a given problem
 - interpret hypotheses
 - characterize the test statistic under the null
@@ -273,7 +368,7 @@
 - define statistical confidence<br />
 - identify when using a CI and NSHT will result in the same conclusion
 - explain when you can use a confidence interval to test for differences (e.g., comparing a single point estimate to a threshold) and when you can’t (e.g., when you have CIs for two different means)</p></li>
-<li><p>choose appropriate numerical summaries and graphical displays for a set of data and create these using software</p>
+<li>choose appropriate numerical summaries and graphical displays for a set of data and create these using software
 <ul>
 <li>when to use tables vs. a picture</li>
 <li>types of graphical displays
@@ -292,13 +387,13 @@
 <li>trade-offs between detail and interpretability</li>
 <li>not screwing up your axes</li>
 </ul></li>
-<li><p>fit statistical models in software and interpret their output</p>
+<li>fit statistical models in software and interpret their output
 <ul>
 <li>Which PROCs from SAS? REG, GLM, MIXED, GLIMMIX, others??</li>
 <li><code>lm()</code>, <code>glm()</code>, <code>anova()</code> …. <code>broom</code>? <code>modelr</code>? <code>ciTools</code>?</li>
 <li>p-values, point estimates, standard errors, f-statistics, chi-square-statistics, degrees of freedom, SS/MS, residual plots</li>
 </ul></li>
-<li><p>connect common statistical methods under the linear model framework</p>
+<li>connect common statistical methods under the linear model framework
 <ul>
 <li>Write statistical models using matrix representaiton</li>
 <li>identify models written in matrix representation with their representation in software</li>
@@ -376,58 +471,58 @@
 <p>WE NEED TO ORGANIZE THESE UNDER DIFFERENT CHAPTERS AT SOME POINT
 Learning Objectives</p>
 <ol style="list-style-type: decimal">
-<li><p>Recognize a completely randomized design with one treatment factor and write the corresponding one-way analysis of variance model, with assumptions</p></li>
-<li><p>Estimate treatment means</p></li>
-<li><p>Estimate the variance among replicates within a treatment</p></li>
-<li><p>Construct the analysis of variance table for a one factor analysis of variance, including computing degrees of freedom, sums of squares, mean squares, and F-ratios</p></li>
-<li><p>Interpret results and draw conclusions from a one-factor analysis of variance</p></li>
-<li><p>Estimate differences between two treatment means in a one factor analysis of variance</p></li>
-<li><p>Test differences between two treatment means in a one factor analysis of variance</p></li>
-<li><p>Construct a contrast to estimate or test a linear combination of treatment means</p></li>
-<li><p>Estimate the standard error of a linear combination of treatment means</p></li>
-<li><p>Make inferences about linear combinations of treatment means, including contrasts.</p></li>
-<li><p>Obtain and understand SAS output for linear combinations of treatment means, including contrasts.</p></li>
-<li><p>Explain when and why corrections for multiple comparisons are needed</p></li>
-<li><p>Know when and how to use Tukey’s correction for all pairwise comparisons</p></li>
-<li><p>Compute Bonferroni confidence intervals</p></li>
-<li><p>Create and interpret orthogonal contrasts.</p></li>
-<li><p>Define main effects and interactions</p></li>
-<li><p>Write contrasts to estimate main effects and interactions</p></li>
-<li><p>Estimate these contrasts and their standard errors</p></li>
-<li><p>Compute sums of squares associated with these contrasts</p></li>
-<li><p>Test hypotheses about the main effects and interactions.</p></li>
-<li><p>Identify and define simple effects.</p></li>
-<li><p>Identify and define interaction effects.</p></li>
-<li><p>Identify and define main effects.</p></li>
-<li><p>Understand when to use simple, interaction, and main effects when drawing inferences in a two-way ANOVA.</p></li>
-<li><p>Write the analysis of variance model and SAS code for a completely randomized design with two factors</p></li>
+<li>Recognize a completely randomized design with one treatment factor and write the corresponding one-way analysis of variance model, with assumptions</li>
+<li>Estimate treatment means</li>
+<li>Estimate the variance among replicates within a treatment</li>
+<li>Construct the analysis of variance table for a one factor analysis of variance, including computing degrees of freedom, sums of squares, mean squares, and F-ratios</li>
+<li>Interpret results and draw conclusions from a one-factor analysis of variance</li>
+<li>Estimate differences between two treatment means in a one factor analysis of variance</li>
+<li>Test differences between two treatment means in a one factor analysis of variance</li>
+<li>Construct a contrast to estimate or test a linear combination of treatment means</li>
+<li>Estimate the standard error of a linear combination of treatment means</li>
+<li>Make inferences about linear combinations of treatment means, including contrasts.</li>
+<li>Obtain and understand SAS output for linear combinations of treatment means, including contrasts.</li>
+<li>Explain when and why corrections for multiple comparisons are needed</li>
+<li>Know when and how to use Tukey’s correction for all pairwise comparisons</li>
+<li>Compute Bonferroni confidence intervals</li>
+<li>Create and interpret orthogonal contrasts.</li>
+<li>Define main effects and interactions</li>
+<li>Write contrasts to estimate main effects and interactions</li>
+<li>Estimate these contrasts and their standard errors</li>
+<li>Compute sums of squares associated with these contrasts</li>
+<li>Test hypotheses about the main effects and interactions.</li>
+<li>Identify and define simple effects.</li>
+<li>Identify and define interaction effects.</li>
+<li>Identify and define main effects.</li>
+<li>Understand when to use simple, interaction, and main effects when drawing inferences in a two-way ANOVA.</li>
+<li>Write the analysis of variance model and SAS code for a completely randomized design with two factors</li>
 <li><p>Test hypotheses and interpret the analysis of variance for a factorial experiment.</p></li>
-<li><p>Explain the appropriate use of correlations and compute the correlation coefficient</p></li>
-<li><p>Read and interpret a scatterplot and guess the correlation coefficient by examination of a scatter plot</p></li>
-<li><p>Interpret the strength and direction of association indicated by the correlation coefficient and judge when a correlation coefficient provides an appropriate summary of a bivariate relationship</p></li>
-<li><p>Test the hypothesis that the correlation coefficient is zero using either a t-test or the Fisher z transformation, Compute confidence intervals using Fisher’s z transformation</p></li>
-<li><p>Write a statistical model for a straight line regression or a multiple regression and explain what all the terms of the model represent</p></li>
-<li><p>Explain the assumptions underlying regression models, evaluate whether the assumptions are met</p></li>
-<li><p>Estimate the intercept, slope and variance for a simple linear regression model</p></li>
-<li><p>Fit a multiple regression model in SAS and interpret the output, use the coefficient of determination to evaluate model fit</p></li>
-<li><p>Use a regression model to predict Y for new values of X</p></li>
-<li><p>Estimate the variance and standard error of parameters in regression models, test hypotheses about the parameters, and construct confidence intervals for the parameters.</p></li>
-<li><p>Explain the difference between a confidence interval and a prediction interval and know when to use each of them</p></li>
-<li><p>Construct a confidence interval for the expected value of Y at a given value of X</p></li>
-<li><p>Construct a prediction interval for a new value of Y at a given value of X</p></li>
-<li><p>Write a linear model in matrix notation</p></li>
-<li><p>Find the expectation and variance of a linear combination of random variables, a’Y</p></li>
-<li><p>Set up the expressions to calculate parameter estimates and predicted values using the matrix form of the model</p></li>
-<li><p>Estimate standard errors for parameter estimates and predicted values</p></li>
-<li><p>Use extra sums of squares to test hypotheses about subsets of parameters</p></li>
-<li><p>Construct indicator variables for including categorical regressor variables in a linear model</p></li>
-<li><p>Understand how to interpret parameters of a general linear model with indicator variables</p></li>
-<li><p>Estimate contrasts of treatment means and their standard errors using the general linear model notation and matrix form of the model</p></li>
-<li><p>Compare nested models with a lack of fit test to select a model</p></li>
-<li><p>Explain what a covariate is and how they are used</p></li>
-<li><p>Explain the assumptions of the analysis of covariance model and determine when these assumptions are met</p></li>
-<li><p>Fit an analysis of covariance model in SAS and conduct appropriate tests for treatment effects</p></li>
-<li><p>Estimate and interpret treatment means and their standard errors adjusted for covariates using SAS, Construct confidence intervals for adjusted treatment means</p></li>
+<li>Explain the appropriate use of correlations and compute the correlation coefficient</li>
+<li>Read and interpret a scatterplot and guess the correlation coefficient by examination of a scatter plot</li>
+<li>Interpret the strength and direction of association indicated by the correlation coefficient and judge when a correlation coefficient provides an appropriate summary of a bivariate relationship</li>
+<li>Test the hypothesis that the correlation coefficient is zero using either a t-test or the Fisher z transformation, Compute confidence intervals using Fisher’s z transformation</li>
+<li>Write a statistical model for a straight line regression or a multiple regression and explain what all the terms of the model represent</li>
+<li>Explain the assumptions underlying regression models, evaluate whether the assumptions are met</li>
+<li>Estimate the intercept, slope and variance for a simple linear regression model</li>
+<li>Fit a multiple regression model in SAS and interpret the output, use the coefficient of determination to evaluate model fit</li>
+<li>Use a regression model to predict Y for new values of X</li>
+<li>Estimate the variance and standard error of parameters in regression models, test hypotheses about the parameters, and construct confidence intervals for the parameters.</li>
+<li>Explain the difference between a confidence interval and a prediction interval and know when to use each of them</li>
+<li>Construct a confidence interval for the expected value of Y at a given value of X</li>
+<li>Construct a prediction interval for a new value of Y at a given value of X</li>
+<li>Write a linear model in matrix notation</li>
+<li>Find the expectation and variance of a linear combination of random variables, a’Y</li>
+<li>Set up the expressions to calculate parameter estimates and predicted values using the matrix form of the model</li>
+<li>Estimate standard errors for parameter estimates and predicted values</li>
+<li>Use extra sums of squares to test hypotheses about subsets of parameters</li>
+<li>Construct indicator variables for including categorical regressor variables in a linear model</li>
+<li>Understand how to interpret parameters of a general linear model with indicator variables</li>
+<li>Estimate contrasts of treatment means and their standard errors using the general linear model notation and matrix form of the model</li>
+<li>Compare nested models with a lack of fit test to select a model</li>
+<li>Explain what a covariate is and how they are used</li>
+<li>Explain the assumptions of the analysis of covariance model and determine when these assumptions are met</li>
+<li>Fit an analysis of covariance model in SAS and conduct appropriate tests for treatment effects</li>
+<li>Estimate and interpret treatment means and their standard errors adjusted for covariates using SAS, Construct confidence intervals for adjusted treatment means</li>
 <li><p>Construct and estimate contrasts of treatment means adjusted for covariates and estimate the standard errors and confidence intervals of such contrasts.</p></li>
 </ol>
 <p>Analysis of variance and design of experiments
@@ -466,11 +561,11 @@ You should be able to do the following for fitting models to describe the relati
 <div id="for-point-estimates-chapter" class="section level2">
 <h2><span class="header-section-number">23.4</span> For Point Estimates Chapter</h2>
 <ul>
-<li><p>Definitions for Mean, Median, Quantile, Percentile</p></li>
-<li><p>Explain uses for the above</p></li>
+<li>Definitions for Mean, Median, Quantile, Percentile</li>
+<li>Explain uses for the above</li>
 <li><p>Identify the correct point estimate to use for a given test</p></li>
-<li><p>Define Systematic Random Sample and Convenience Sample</p></li>
-<li><p>Explain strengths and weaknesses of each</p></li>
+<li>Define Systematic Random Sample and Convenience Sample</li>
+<li>Explain strengths and weaknesses of each</li>
 <li><p>Identify conditions when Systematic and Convenience Sampling may not provide representitive samples</p></li>
 </ul>
 

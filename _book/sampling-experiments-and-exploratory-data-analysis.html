@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Sampling, Experiments, and Exploratory Data Analysis | A Minimal Book Example</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17.2 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Sampling, Experiments, and Exploratory Data Analysis | A Minimal Book Example" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2020-01-22" />
+<meta name="date" content="2020-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,68 @@
 
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -74,39 +136,43 @@
 <li class="chapter" data-level="2.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#data-in-the-wild"><i class="fa fa-check"></i><b>2.1</b> Data in the Wild</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#data-from-experiments"><i class="fa fa-check"></i><b>2.1.1</b> Data from Experiments</a></li>
 <li class="chapter" data-level="2.1.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#data-from-observational-studies"><i class="fa fa-check"></i><b>2.1.2</b> Data from Observational Studies</a></li>
-<li class="chapter" data-level="2.1.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#experiment-background"><i class="fa fa-check"></i><b>2.1.3</b> Experiment Background</a></li>
-<li class="chapter" data-level="2.1.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#selecting-response-variables"><i class="fa fa-check"></i><b>2.1.4</b> Selecting Response Variables</a></li>
-<li class="chapter" data-level="2.1.5" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#identifying-sources-of-variation"><i class="fa fa-check"></i><b>2.1.5</b> Identifying Sources of Variation</a></li>
-<li class="chapter" data-level="2.1.6" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#choose-an-experimental-design"><i class="fa fa-check"></i><b>2.1.6</b> Choose an Experimental Design <!-- Is this intended to include any sampling considerations?--></a></li>
-<li class="chapter" data-level="2.1.7" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#peform-the-test"><i class="fa fa-check"></i><b>2.1.7</b> Peform the Test <!-- Wait, does this mean to actually execute the experiment? --></a></li>
-<li class="chapter" data-level="2.1.8" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#look-at-the-data"><i class="fa fa-check"></i><b>2.1.8</b> Look at the Data <!-- I think we need to add this as a much needed step!  If nothing else than for data validation.  I'm assuming perform the test now means collect the data. Perhaps this could fall into the Statistically analyze the data part though... Might be good to separate out the exploring/validating part though.  --></a></li>
-<li class="chapter" data-level="2.1.9" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#statistically-analyze-the-data"><i class="fa fa-check"></i><b>2.1.9</b> Statistically Analyze the Data</a></li>
-<li class="chapter" data-level="2.1.10" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#draw-conclusions"><i class="fa fa-check"></i><b>2.1.10</b> Draw conclusions</a></li>
+<li class="chapter" data-level="2.1.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#observational-vs-experimental"><i class="fa fa-check"></i><b>2.1.3</b> Observational vs Experimental</a></li>
+<li class="chapter" data-level="2.1.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#the-role-of-statistics"><i class="fa fa-check"></i><b>2.1.4</b> The Role of Statistics</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#statistical-testing-ideas"><i class="fa fa-check"></i><b>2.2</b> Statistical Testing Ideas</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#experiment-background-1"><i class="fa fa-check"></i><b>2.2.1</b> Experiment Background</a></li>
-<li class="chapter" data-level="2.2.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#selecting-response-variables-1"><i class="fa fa-check"></i><b>2.2.2</b> Selecting Response Variables</a></li>
-<li class="chapter" data-level="2.2.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#identifying-sources-of-variation-1"><i class="fa fa-check"></i><b>2.2.3</b> Identifying Sources of Variation</a></li>
-<li class="chapter" data-level="2.2.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#choose-an-experimental-design-1"><i class="fa fa-check"></i><b>2.2.4</b> Choose an Experimental Design</a></li>
-<li class="chapter" data-level="2.2.5" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#peform-the-test-1"><i class="fa fa-check"></i><b>2.2.5</b> Peform the Test</a></li>
-<li class="chapter" data-level="2.2.6" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#explore-the-data"><i class="fa fa-check"></i><b>2.2.6</b> Explore the Data</a></li>
-<li class="chapter" data-level="2.2.7" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#statistically-analyze-the-data-1"><i class="fa fa-check"></i><b>2.2.7</b> Statistically Analyze the Data</a></li>
-<li class="chapter" data-level="2.2.8" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#draw-conclusions-1"><i class="fa fa-check"></i><b>2.2.8</b> Draw conclusions</a></li>
+<li class="chapter" data-level="2.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#observational-study---farmers-market"><i class="fa fa-check"></i><b>2.2</b> Observational Study - Farmer’s Market</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#define-objective-background"><i class="fa fa-check"></i><b>2.2.1</b> Define Objective &amp; Background</a></li>
+<li class="chapter" data-level="2.2.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#select-response"><i class="fa fa-check"></i><b>2.2.2</b> Select Response</a></li>
+<li class="chapter" data-level="2.2.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#determine-sources-of-variation"><i class="fa fa-check"></i><b>2.2.3</b> Determine Sources of Variation</a></li>
+<li class="chapter" data-level="2.2.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#select-design"><i class="fa fa-check"></i><b>2.2.4</b> Select Design</a></li>
+<li class="chapter" data-level="2.2.5" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#do-study"><i class="fa fa-check"></i><b>2.2.5</b> Do Study <!-- Wait, does this mean to actually execute the experiment? --></a></li>
+<li class="chapter" data-level="2.2.6" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#do-statistical-analysis"><i class="fa fa-check"></i><b>2.2.6</b> Do Statistical Analysis</a></li>
+<li class="chapter" data-level="2.2.7" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#draw-conclusions-communicate"><i class="fa fa-check"></i><b>2.2.7</b> Draw Conclusions &amp; Communicate</a></li>
 </ul></li>
+<li class="chapter" data-level="2.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#statistical-testing-ideas"><i class="fa fa-check"></i><b>2.3</b> Statistical Testing Ideas</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#experiment-background"><i class="fa fa-check"></i><b>2.3.1</b> Experiment Background</a></li>
+<li class="chapter" data-level="2.3.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#selecting-response-variables"><i class="fa fa-check"></i><b>2.3.2</b> Selecting Response Variables</a></li>
+<li class="chapter" data-level="2.3.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#identifying-sources-of-variation"><i class="fa fa-check"></i><b>2.3.3</b> Identifying Sources of Variation</a></li>
+<li class="chapter" data-level="2.3.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#choose-an-experimental-design"><i class="fa fa-check"></i><b>2.3.4</b> Choose an Experimental Design</a></li>
+<li class="chapter" data-level="2.3.5" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#peform-the-test"><i class="fa fa-check"></i><b>2.3.5</b> Peform the Test</a></li>
+<li class="chapter" data-level="2.3.6" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#explore-the-data"><i class="fa fa-check"></i><b>2.3.6</b> Explore the Data</a></li>
+<li class="chapter" data-level="2.3.7" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#statistically-analyze-the-data"><i class="fa fa-check"></i><b>2.3.7</b> Statistically Analyze the Data</a></li>
+<li class="chapter" data-level="2.3.8" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#draw-conclusions"><i class="fa fa-check"></i><b>2.3.8</b> Draw conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#why-observational-studies-can-be-bad"><i class="fa fa-check"></i><b>2.4</b> Why Observational Studies Can be Bad?</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="point-estimates.html"><a href="point-estimates.html"><i class="fa fa-check"></i><b>3</b> Point Estimates</a><ul>
 <li class="chapter" data-level="3.1" data-path="point-estimates.html"><a href="point-estimates.html#estiamte-with-means"><i class="fa fa-check"></i><b>3.1</b> Estiamte with means</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="point-estimates.html"><a href="point-estimates.html#experiment-background-2"><i class="fa fa-check"></i><b>3.1.1</b> Experiment background</a></li>
+<li class="chapter" data-level="3.1.1" data-path="point-estimates.html"><a href="point-estimates.html#experiment-background-1"><i class="fa fa-check"></i><b>3.1.1</b> Experiment background</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="point-estimates.html"><a href="point-estimates.html#estimate-with-quantiles"><i class="fa fa-check"></i><b>3.2</b> Estimate with quantiles</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="point-estimates.html"><a href="point-estimates.html#experiment-background-3"><i class="fa fa-check"></i><b>3.2.1</b> Experiment background</a></li>
+<li class="chapter" data-level="3.2.1" data-path="point-estimates.html"><a href="point-estimates.html#experiment-background-2"><i class="fa fa-check"></i><b>3.2.1</b> Experiment background</a></li>
 <li class="chapter" data-level="3.2.2" data-path="point-estimates.html"><a href="point-estimates.html#define-the-object-of-the-experiment"><i class="fa fa-check"></i><b>3.2.2</b> Define the object of the experiment</a></li>
 <li class="chapter" data-level="3.2.3" data-path="point-estimates.html"><a href="point-estimates.html#select-appropriate-response-variables"><i class="fa fa-check"></i><b>3.2.3</b> Select appropriate response variables</a></li>
 <li class="chapter" data-level="3.2.4" data-path="point-estimates.html"><a href="point-estimates.html#identify-sources-of-variation"><i class="fa fa-check"></i><b>3.2.4</b> IDentify sources of variation</a></li>
-<li class="chapter" data-level="3.2.5" data-path="point-estimates.html"><a href="point-estimates.html#choose-an-experimental-design-2"><i class="fa fa-check"></i><b>3.2.5</b> Choose an experimental design</a></li>
+<li class="chapter" data-level="3.2.5" data-path="point-estimates.html"><a href="point-estimates.html#choose-an-experimental-design-1"><i class="fa fa-check"></i><b>3.2.5</b> Choose an experimental design</a></li>
 <li class="chapter" data-level="3.2.6" data-path="point-estimates.html"><a href="point-estimates.html#perform-the-test"><i class="fa fa-check"></i><b>3.2.6</b> Perform the test</a></li>
-<li class="chapter" data-level="3.2.7" data-path="point-estimates.html"><a href="point-estimates.html#statistically-analyze-the-data-2"><i class="fa fa-check"></i><b>3.2.7</b> Statistically analyze the data</a></li>
-<li class="chapter" data-level="3.2.8" data-path="point-estimates.html"><a href="point-estimates.html#draw-conclusions-2"><i class="fa fa-check"></i><b>3.2.8</b> Draw conclusions</a></li>
+<li class="chapter" data-level="3.2.7" data-path="point-estimates.html"><a href="point-estimates.html#statistically-analyze-the-data-1"><i class="fa fa-check"></i><b>3.2.7</b> Statistically analyze the data</a></li>
+<li class="chapter" data-level="3.2.8" data-path="point-estimates.html"><a href="point-estimates.html#draw-conclusions-1"><i class="fa fa-check"></i><b>3.2.8</b> Draw conclusions</a></li>
 <li class="chapter" data-level="3.2.9" data-path="point-estimates.html"><a href="point-estimates.html#discussion"><i class="fa fa-check"></i><b>3.2.9</b> Discussion</a></li>
 </ul></li>
 </ul></li>
@@ -114,7 +180,36 @@
 <li class="chapter" data-level="4.1" data-path="accounting-for-uncertainty.html"><a href="accounting-for-uncertainty.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
 <li class="chapter" data-level="4.2" data-path="accounting-for-uncertainty.html"><a href="accounting-for-uncertainty.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="HT.html"><a href="HT.html"><i class="fa fa-check"></i><b>5</b> Inference via Hypothesis Tests for One Sample</a></li>
+<li class="chapter" data-level="5" data-path="HT.html"><a href="HT.html"><i class="fa fa-check"></i><b>5</b> Inference via Hypothesis Tests for One Sample</a><ul>
+<li class="chapter" data-level="5.1" data-path="HT.html"><a href="HT.html#example-detection-probability"><i class="fa fa-check"></i><b>5.1</b> Example: Detection Probability</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="HT.html"><a href="HT.html#understanding-system-performance"><i class="fa fa-check"></i><b>5.1.1</b> Understanding system performance</a></li>
+<li class="chapter" data-level="5.1.2" data-path="HT.html"><a href="HT.html#data-analysis"><i class="fa fa-check"></i><b>5.1.2</b> Data Analysis</a></li>
+<li class="chapter" data-level="5.1.3" data-path="HT.html"><a href="HT.html#data-from-experiments-1"><i class="fa fa-check"></i><b>5.1.3</b> Data from Experiments</a></li>
+<li class="chapter" data-level="5.1.4" data-path="HT.html"><a href="HT.html#data-from-observational-studies-1"><i class="fa fa-check"></i><b>5.1.4</b> Data from Observational Studies</a></li>
+<li class="chapter" data-level="5.1.5" data-path="HT.html"><a href="HT.html#observational-vs-experimental-1"><i class="fa fa-check"></i><b>5.1.5</b> Observational vs Experimental</a></li>
+<li class="chapter" data-level="5.1.6" data-path="HT.html"><a href="HT.html#the-role-of-statistics-1"><i class="fa fa-check"></i><b>5.1.6</b> The Role of Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="HT.html"><a href="HT.html#marketing-example"><i class="fa fa-check"></i><b>5.2</b> Marketing Example</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="HT.html"><a href="HT.html#experiment-background-3"><i class="fa fa-check"></i><b>5.2.1</b> Experiment Background</a></li>
+<li class="chapter" data-level="5.2.2" data-path="HT.html"><a href="HT.html#selecting-response-variables-1"><i class="fa fa-check"></i><b>5.2.2</b> Selecting Response Variables</a></li>
+<li class="chapter" data-level="5.2.3" data-path="HT.html"><a href="HT.html#identifying-sources-of-variation-1"><i class="fa fa-check"></i><b>5.2.3</b> Identifying Sources of Variation</a></li>
+<li class="chapter" data-level="5.2.4" data-path="HT.html"><a href="HT.html#choose-an-experimental-design-2"><i class="fa fa-check"></i><b>5.2.4</b> Choose an Experimental Design <!-- Is this intended to include any sampling considerations?--></a></li>
+<li class="chapter" data-level="5.2.5" data-path="HT.html"><a href="HT.html#peform-the-test-1"><i class="fa fa-check"></i><b>5.2.5</b> Peform the Test <!-- Wait, does this mean to actually execute the experiment? --></a></li>
+<li class="chapter" data-level="5.2.6" data-path="HT.html"><a href="HT.html#look-at-the-data"><i class="fa fa-check"></i><b>5.2.6</b> Look at the Data <!-- I think we need to add this as a much needed step!  If nothing else than for data validation.  I'm assuming perform the test now means collect the data. Perhaps this could fall into the Statistically analyze the data part though... Might be good to separate out the exploring/validating part though.  --></a></li>
+<li class="chapter" data-level="5.2.7" data-path="HT.html"><a href="HT.html#statistically-analyze-the-data-2"><i class="fa fa-check"></i><b>5.2.7</b> Statistically Analyze the Data</a></li>
+<li class="chapter" data-level="5.2.8" data-path="HT.html"><a href="HT.html#draw-conclusions-2"><i class="fa fa-check"></i><b>5.2.8</b> Draw conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="HT.html"><a href="HT.html#statistical-testing-ideas-1"><i class="fa fa-check"></i><b>5.3</b> Statistical Testing Ideas</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="HT.html"><a href="HT.html#experiment-background-4"><i class="fa fa-check"></i><b>5.3.1</b> Experiment Background</a></li>
+<li class="chapter" data-level="5.3.2" data-path="HT.html"><a href="HT.html#selecting-response-variables-2"><i class="fa fa-check"></i><b>5.3.2</b> Selecting Response Variables</a></li>
+<li class="chapter" data-level="5.3.3" data-path="HT.html"><a href="HT.html#identifying-sources-of-variation-2"><i class="fa fa-check"></i><b>5.3.3</b> Identifying Sources of Variation</a></li>
+<li class="chapter" data-level="5.3.4" data-path="HT.html"><a href="HT.html#choose-an-experimental-design-3"><i class="fa fa-check"></i><b>5.3.4</b> Choose an Experimental Design</a></li>
+<li class="chapter" data-level="5.3.5" data-path="HT.html"><a href="HT.html#peform-the-test-2"><i class="fa fa-check"></i><b>5.3.5</b> Peform the Test</a></li>
+<li class="chapter" data-level="5.3.6" data-path="HT.html"><a href="HT.html#explore-the-data-1"><i class="fa fa-check"></i><b>5.3.6</b> Explore the Data</a></li>
+<li class="chapter" data-level="5.3.7" data-path="HT.html"><a href="HT.html#statistically-analyze-the-data-3"><i class="fa fa-check"></i><b>5.3.7</b> Statistically Analyze the Data</a></li>
+<li class="chapter" data-level="5.3.8" data-path="HT.html"><a href="HT.html#draw-conclusions-3"><i class="fa fa-check"></i><b>5.3.8</b> Draw conclusions</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="CI.html"><a href="CI.html"><i class="fa fa-check"></i><b>6</b> Inference via Confidence Intervals for One Sample</a></li>
 <li class="chapter" data-level="7" data-path="twocategorical.html"><a href="twocategorical.html"><i class="fa fa-check"></i><b>7</b> Inference for Two Categorical Variables</a></li>
 <li class="chapter" data-level="8" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>8</b> One-Way ANOVA</a></li>
@@ -185,22 +280,6 @@
             <section class="normal" id="section-">
 <div id="sampling-experiments-and-exploratory-data-analysis" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Sampling, Experiments, and Exploratory Data Analysis</h1>
-<!-- General Chapter Structure -->
-<!-- - Motivating Problem/Problem Idea/What Data to Try to Collect -->
-<!-- - Explanation of what a good model might be (or maybe this goes in with the data to try and collect?) -->
-<!-- - EDA to explore and further motivate new topic -->
-<!-- - Background needed for the model/inference -->
-<!-- - Culmination of intro example -->
-<!-- - Second example to put it all together -->
-<!-- - Resources for when shit hits the fan -->
-<!-- Alternative: -->
-<!-- - Define the objective of the experiment -->
-<!-- - Select appropriate response variables -->
-<!-- - Identify sources of variation -->
-<!-- - Choose experimental design -->
-<!-- - Perform the test -->
-<!-- - Statistically analyze the data -->
-<!-- - Draw conclusions -->
 <div id="data-in-the-wild" class="section level2">
 <h2><span class="header-section-number">2.1</span> Data in the Wild</h2>
 <p>Data is a collection of information about a group, which may include both quantitative and qualitative variables. Data is ubiquitous in today’s society. Healthcare, marketing, history, biology, … basically every field has a quantitative aspect. The quality of data varies greatly from study to study.</p>
@@ -208,7 +287,7 @@
 <h3><span class="header-section-number">2.1.1</span> Data from Experiments</h3>
 <p>Some data comes from a well-designed experiment where a researcher uses sound principles to select units and conduct interventions.</p>
 <p>For example, a mechanical engineer wants to determine which variables influence overall gas mileage of a certain year and model of a car. Gas mileage would be referred to as the <strong>response</strong> variable for this study.</p>
-<p>After careful consideration, the engineer chooses to investigate the following <strong>factors</strong> that may affect the overall gas mileage:</p>
+<p>After careful consideration, the engineer chooses to investigate a few <strong>explanatory variables</strong>. They looked at the following <strong>factors</strong> that they believed may affect the overall gas mileage:</p>
 <ul>
 <li>Tire pressure (low, standard)<br />
 </li>
@@ -231,109 +310,197 @@
 <p>This short description exhibits three important concepts in experimental design that we’ll come back to many times.</p>
 
 <div class="definition">
-<p>Experiment - researchers manipulate the conditions in which the study is done.</p>
+<p>Experimental Study - researchers manipulate the conditions in which the study is done.</p>
 </div>
 
-<p>Pillars of experimental design:</p>
+<p>Pillars of experimental design: (Put an outer block around this)</p>
+
+<div class="definition">
 <ul>
 <li>Randomization - treatments are randomly assigned to the experimental units<br />
 </li>
+</ul>
+</div>
+
+
+<div class="definition">
+<ul>
 <li>Replication - multiple (independent) experimental units are assigned the same treatment<br />
 </li>
-<li>Control - study conditions are held constant where possible to reduce variability in the response</li>
 </ul>
+</div>
+
+
+<div class="definition">
+<ul>
+<li>Control - study conditions are held constant where possible to reduce variability in the response<br />
+</li>
+</ul>
+</div>
+
 </div>
 <div id="data-from-observational-studies" class="section level3">
 <h3><span class="header-section-number">2.1.2</span> Data from Observational Studies</h3>
-<p>Other data comes from observations studies where … For example, …</p>
-<p>&lt;<call out with observational study>&gt;</p>
-<p>The implications for the conclusions that can be made from a set of data varies greatly with the quality of the data and study design.</p>
-<p>&lt;<call out with conclusions table>&gt;</p>
-<p>Both studies have some things in common - popu sample…</p>
-<p>Statistics is the science of learning from data. (Other definition from some book but not sure which - the science of designing studies or experiments, collecting data and modeling/analyzing data for the purpose of decisions making and scientific discovery when the available information is both limited and variable.)</p>
-<p>&lt;&lt;call out about statistics, general usage vs this type of definition&gt;&gt;</p>
-<p>Statistical methods are needed because data is variable. For example… The full statistical process begins with …
-- Define the objective of the experiment<br />
-- Select appropriate response variables<br />
-- Identify sources of variation<br />
-- Choose experimental design<br />
-- Perform the test<br />
-- Statistically analyze the data<br />
-- Draw conclusions</p>
-<p>We’ll focus on the entire process of a study and mostly investigate designed experiments. We attempt to tackle each topioc in this text with a problem-based approach. That is, we identify a real-world problem and discuss the relevant statistical ideas in context. Summaries at the end of each chapter recap the main statistical ideas.</p>
+<p>Some data comes from an observational study where the researcher collects data without imposing any changes.</p>
+<p>For example, an economist wants to investigate the effects of recently added tariffs on agricultural products to the amount and value of such products that are traded between the United States and Asia. This study would have two <strong>response</strong> variables, amount and value of each product traded between the two parties.</p>
+<p>In order to take into account season variation and time of year, the economist decides to compare the two response variables from the current year - 6 months worth of data - to the <em>average</em> values of the two response variables during the same 6 month periods for the past 5 years. We would refer to the time frame of the data as an <strong>explanatory variable</strong>. This time frame could be labeled to take on one of two values: no-tariff (past) or tariff (current).</p>
+<p>The researcher obtains the data from the census bureau and conducts their analysis.</p>
+<p>Notice that the researcher, while certainly being actively involved in the careful consideration of the data to be collected, does not actively intervene or impose a change. This is the key component of an observational study.</p>
+
+<div class="definition">
+<p>Observational Study - researchers collects data without imposing any changes on the study environment.</p>
 </div>
-<div id="experiment-background" class="section level3">
-<h3><span class="header-section-number">2.1.3</span> Experiment Background</h3>
-<p>Marketing example. Goal to describe the customers, how they tend to purchase/shop, and maybe find some shared qualities in order to adverstise curated packages to folks.</p>
-<p>Define basic things like population, parameters, statistics, and sample.</p>
-<p>Discuss conceptual vs actual populations and when we might care about one or the other. Our “sample” is really a bit of data from the conceptual population. Or we could consider it as the population and we just want to describe it.</p>
+
 </div>
-<div id="selecting-response-variables" class="section level3">
-<h3><span class="header-section-number">2.1.4</span> Selecting Response Variables</h3>
-<p>Marketing example with data such as Clicks, Impressions, Total Revenue, Total Spent, Average Order Value, Sport, Time of visit/purchase, Campaigns running, etc.</p>
+<div id="observational-vs-experimental" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Observational vs Experimental</h3>
+<p>You may have noticed that both types of studies have some things in common. For instance, both studies have <strong>response</strong> (??? so I was thinking about maybe bolding most stats words as we go to point them out to students… thoughts???) variables that characterizes the performance of the study in some sense. Importantly, these response variables have variation. That is, observing the variable is non-deterministic even under identical situations. There are also <strong>explanatory variables</strong> that the researcher is interested in with regard to their relationship with the response variable.</p>
+<p>Beyond that, both studies hope to make conclusions about a larger group using data. This is the idea of <strong>statistical inference</strong> (??? Do we want to talk about the differences between prediction and inference here? - later???). More formally the group of values, items, or individuals defines the a <strong>population</strong> of interest and the data collected represents the <strong>sample</strong>. For the gas mileage example, the population would be all cars of the year and make in question and the sample would be the data on the 24 cars. For the tariff example, the population would be a <strong>conceptual population</strong> of all future agricultural products traded between the United States and Asia and the sample would be the information from the six years of trade data.</p>
+
+<div class="definition">
+<p>Population - (Possibly conceptual) group of units of interest</p>
 </div>
-<div id="identifying-sources-of-variation" class="section level3">
-<h3><span class="header-section-number">2.1.5</span> Identifying Sources of Variation</h3>
-<p>Consider variables linked to the user. Age, other accounts, etc.</p>
+
+
+<div class="definition">
+<p>Sample - Subset of the population on which we observe data</p>
 </div>
-<div id="choose-an-experimental-design" class="section level3">
-<h3><span class="header-section-number">2.1.6</span> Choose an Experimental Design <!-- Is this intended to include any sampling considerations?--></h3>
-<p>Discuss our “sampling” scheme vs a random sample. This seems like a case where we aren’t doing a “good” scheme but not much else could be done…</p>
-<p>Maybe talk about how in the future you could do alternate email ads or something and do an AB type study.</p>
+
+
+<div class="definition">
+<p>Statistical Inference - Process of using sample data to make statements or claims about a population (???Usually with the goal of determing which variables are important for a response???)</p>
 </div>
-<div id="peform-the-test" class="section level3">
-<h3><span class="header-section-number">2.1.7</span> Peform the Test <!-- Wait, does this mean to actually execute the experiment? --></h3>
-<p>Get the data from google analytics or whatever, have a plan for updating each month?</p>
+
+<p>Both of these studies had to determine how to obtain their observations. For the experiment, 24 cars were used. For the observational study, six years of data were collected. How this data is collected can be extremely important in terms of the types of conclusions that can be made. Data needs to be <strong>unbiased</strong> and <strong>representative</strong> of the population in which the researcher hopes to make inference otherwise the conclusions made are likely invalid. We’ll discuss the idea of what makes a good and bad <strong>sampling scheme</strong> later.</p>
+<p>The major difference between the two studies was the active (experimental) and passive (observational) roles played by the researcher. This difference is also of vital importance to the types of conclusions that can be made from the study. A well-designed experiment can often infer causation to the treatments where an observational study cannot.</p>
+<p>The conclusions a researcher can make based on how the data were collected and the type of study are outlined in the table below. (??? Probably just remake this table ourselves with our own words. This isn’t exactly ‘their’ original thought or something we need to attribute. ???)</p>
+<div class="figure"><span id="fig:scope"></span>
+<img src="img/ScopeOfInferenceTable.png" alt="Scope of Inference, cite: Khan Academy" width="650px" />
+<p class="caption">
+Figure 2.1: Scope of Inference, cite: Khan Academy
+</p>
 </div>
-<div id="look-at-the-data" class="section level3">
-<h3><span class="header-section-number">2.1.8</span> Look at the Data <!-- I think we need to add this as a much needed step!  If nothing else than for data validation.  I'm assuming perform the test now means collect the data. Perhaps this could fall into the Statistically analyze the data part though... Might be good to separate out the exploring/validating part though.  --></h3>
+<p>Doing an observational study doesn’t mean that your study is bad! An observational study is sometimes done out of necessity when an experiment wouldn’t be ethical or feasible. For the tariff example, there really isn’t a way to conduct an experiment. If we wanted to design an experiment to see if smoking causes lung cancer, that would be unethical because we can’t force people to smoke. The key point is that the implications we can draw will differ greatly between experimental and observational studies and will depend heavily on the quality (in relation to the population) of the data you have.</p>
+</div>
+<div id="the-role-of-statistics" class="section level3">
+<h3><span class="header-section-number">2.1.4</span> The Role of Statistics</h3>
+<p>Statistics is the science of learning from data. It encompasses the collection of data, the design of an experiment, the summarization of data, and the modeling or analysis used in order to make a decision or further scientific knowledge. (???I feel like this definition doesn’t quite get the sampling part right or maybe the holistic process or something - update as needed! JP???)</p>
+
+<div class="definition">
+<p>(This will be changed to a different style of callout - maybe “note”?)</p>
+<p>Statistics in every day use usually refers to simply summaries about data (means/averages, proportions, or counts).</p>
+<p>Statistics as a field encompasses a much larger range of ideas including how to collect data, model data, and make decisions or come to conclusions when faced with uncertainty.</p>
+</div>
+
+<p><strong>Statistical methods are needed because data is variable.</strong> If we again collected data about the gas mileage of vehicles under the exact same study conditions we’ll get slightly different results. If we observed another six month period of trade data we’ll see different amounts and values. Accounting for this variability in data is a key component of a statistical analysis.</p>
+<p>Generally, one should try to take a holistic view of a study. Before any data is collected it is vital to understand the goals and background of the study. These will inform the data you ideally want to collect as well as the data that you are able to collect - which may need to act as a proxy. A plan should be determined for the actual collection and storing of the data. The entire study design will then inform the statistical analysis and conclusions that can be drawn.</p>
+<p>Taking this bigger picture view of the problem, we can usually follow these steps (we’ll try to follow these throughout the book!):</p>
+<ul>
+<li>Define the objective of the experiment and understand the background (Define Objective &amp; Background)<br />
+</li>
+<li>Select appropriate response variables (Select Response)<br />
+</li>
+<li>Identify sources of variation (Determine Sources of Variation)<br />
+</li>
+<li>Choose sampling scheme and/or experimental design (Select Design)<br />
+</li>
+<li>Carry out the study (Do Study)</li>
+<li>Statistically analyze the data (Do Statistical Analysis)<br />
+</li>
+<li>Draw conclusions from the analysis while considering limitations and the steps above as well as communicate results (Draw Conclusions &amp; Communicate)</li>
+</ul>
+<p>We’ll focus on this entire process in our big chapter examples and mostly investigate designed experiments. We attempt to tackle each topic in this text with a problem-based approach. That is, we identify a real-world problem and discuss the relevant statistical ideas in context. At the end of each chapter we provide a recap the main statistical ideas and discuss other important related topics. Where applicable we include a section that outlines some of the mathematical concepts as well as a section to outline software related to the topic.</p>
+</div>
+</div>
+<div id="observational-study---farmers-market" class="section level2">
+<h2><span class="header-section-number">2.2</span> Observational Study - Farmer’s Market</h2>
+<div id="define-objective-background" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Define Objective &amp; Background</h3>
+<p>A nutrition scientist wanted to understand the cleanliness and food hygiene of the vendors at the North Carolina State Farmer’s Market (henceforth the farmer’s market). Secondarily, she wanted to learn about their sales to see if there was a relationship with their cleanliness and food hygiene. The researcher had access to the names of each vendor’s business, their general purpose, and the products they sold. Generally, there were three types of businesses classified as follows:</p>
+<ul>
+<li>Horticultural Crops<br />
+</li>
+<li>Dairy<br />
+</li>
+<li>Green Industry</li>
+</ul>
+<p>The researcher needed to decide the scope of their study. Formally, they needed to define the <strong>population</strong> of interest. The population is the group of people or units of interest to the researcher. In this case the population was all of the vendor’s at the farmer’s market other than the restaurants.</p>
+<p>One could try to do a study at just the North Carolina State Farmer’s Market and extend the results to all farmer’s market in the state or in the south, but that would require many assumptions to be valid.</p>
+</div>
+<div id="select-response" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Select Response</h3>
+<p>The researchers needed to determine the variables to collect that would best help to answer their questions of interest. These variables that characterize the experiment are called <strong>response</strong> or target variables. They decided to collect vendors sales by looking at the (AMT) amount sold per week over the past two years (in dollars), the (PURCHASE) total number of purchases each week over the past two years, and the (NUM_ITEMS) total number of items sold per week over the past two years. For the last variable they had to decide how to measure the number of items sold for the different types of businesses. For vendors that mainly sold produce they decided to collect the total weight (in lbs) sold, for the live plant selling …</p>
+<p>To investigate the knowledge of hygiene and safety, a short questionnaire was developed to allow the vendor’s head manager (or similar employee) to self evaluate as well as answer some general questions developed around proper policy.</p>
+<p>You can see that there are many decisions that the researcher must make in simply deciding the response variables to collect! A poor choice here can make or break a study.</p>
+</div>
+<div id="determine-sources-of-variation" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Determine Sources of Variation</h3>
+<p>The response variables clearly have some relationship to other variables that could be collected. For instance, the NUM_ITEMS variable is clearly going to be different for the different types of vendors. The AMT variable would differ depending on the size of the vendor’s inventory. These are examples of <strong>explanatory variables</strong> or variables that define the study conditions. Explanatory variables go by many names such as predictors, features, or independent variables.</p>
+<p>A main consideration about whether or not to record a variable is whether or not the variable would be related to a variation in the response. Since the response variables are truly what is of interest, there is really not much of a point in recording variables that likely have no relationship with it.</p>
+<p>Choosing the explanatory variables can also indicate further questions of interest. We may want to compare the average AMT for vendors that mainly sell vegetables to those that mainly sell fruit leading to a comparison across groups being of interest. The average amount for the population or a subpopulation would be referred to as a parameter of interest. Formally, a <strong>parameter</strong> is a summary measure about a population. Common parameters investigated include a mean, proportion, median, or variance of different subgroups of the population.</p>
+</div>
+<div id="select-design" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> Select Design</h3>
+<p>For this study the researchers aren’t interested in doing an intervention so an observational study was being done. The major task to consider for the observational study is how to select participants from the population. The subset of the population we (attempt to) observe our data on is called the <strong>sample</strong>. The <strong>sample size</strong> is the number of measurements in the sample.</p>
+<p>Ideally we would measure every member of our population. This is called a <strong>census</strong>. If a census can be done then values of a population’s parameters can be found exactly by simply summarizing the population data. However, conducting a census can be extremely costly or time instensive so most of the time a census cannot be done. This means that the information we collect would likely be different if we collected it again. Accounting for this variability is the main reason statistical analysis is needed.</p>
+<p>How the researcher selects their sample is extremely important. This method is often referred to as the <strong>sampling scheme</strong>. Using a statistically valid sampling scheme is vital to the assumptions made when doing statistical inference. A valid sampling scheme implies that every member of the population has a known and non-zero chance of inclusion in the sample.</p>
+<p>There are many good ways to select the sample and many bad ways. (Talk about bad first and why bad - visuals too) Talk about good and why good - visuals too.</p>
+<p>Here they chose to do a stratified sample to make sure that they didn’t leave out any important subgroups.</p>
+</div>
+<div id="do-study" class="section level3">
+<h3><span class="header-section-number">2.2.5</span> Do Study <!-- Wait, does this mean to actually execute the experiment? --></h3>
+<p>Go and talk to chosen vendors. May have some non-response issues. Ideally a contingency for this should be developed when considering the sampling scheme.</p>
+</div>
+<div id="do-statistical-analysis" class="section level3">
+<h3><span class="header-section-number">2.2.6</span> Do Statistical Analysis</h3>
+<p>The major goals of this study were simply to describe the vendors at the farmer’s market. In this case we can produce numerical and graphical summaries.</p>
 <p>Careful discussion of not selecting a modeling technique based on this unless it is a pilot study or an exploratory study else we have increased our nominal type I error rate…</p>
-<p>(sometimes EDA sometimes data validation only/cleaning - more formal experiments)</p>
 <p>Spend a lot of time here talking about graphs of different types. Sample means, sample variances, etc.</p>
 <p>Discuss population curves vs sample histograms and the relationship.</p>
-</div>
-<div id="statistically-analyze-the-data" class="section level3">
-<h3><span class="header-section-number">2.1.9</span> Statistically Analyze the Data</h3>
-<p>New variables as functions of old?</p>
 <p>Not a formal test here but comparisons of interest etc.</p>
 </div>
-<div id="draw-conclusions" class="section level3">
-<h3><span class="header-section-number">2.1.10</span> Draw conclusions</h3>
+<div id="draw-conclusions-communicate" class="section level3">
+<h3><span class="header-section-number">2.2.7</span> Draw Conclusions &amp; Communicate</h3>
 <p>What actionable things have we found? Likely some trends to investigate further. Perhaps run an experiment to formally see if some alteration can be effective.</p>
 <p>What can we conclude realistically from this data? To what population are we talking?</p>
 </div>
 </div>
 <div id="statistical-testing-ideas" class="section level2">
-<h2><span class="header-section-number">2.2</span> Statistical Testing Ideas</h2>
-<div id="experiment-background-1" class="section level3">
-<h3><span class="header-section-number">2.2.1</span> Experiment Background</h3>
+<h2><span class="header-section-number">2.3</span> Statistical Testing Ideas</h2>
+<div id="experiment-background" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Experiment Background</h3>
 <p>This example would lend itself to a reasonably easy randomization test or simulation based test. Maybe an AB type study where we swap labels and do that with a nice visual.</p>
 <p>Maybe third example with simulation test.</p>
 </div>
-<div id="selecting-response-variables-1" class="section level3">
-<h3><span class="header-section-number">2.2.2</span> Selecting Response Variables</h3>
+<div id="selecting-response-variables" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Selecting Response Variables</h3>
 </div>
-<div id="identifying-sources-of-variation-1" class="section level3">
-<h3><span class="header-section-number">2.2.3</span> Identifying Sources of Variation</h3>
+<div id="identifying-sources-of-variation" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> Identifying Sources of Variation</h3>
 </div>
-<div id="choose-an-experimental-design-1" class="section level3">
-<h3><span class="header-section-number">2.2.4</span> Choose an Experimental Design</h3>
+<div id="choose-an-experimental-design" class="section level3">
+<h3><span class="header-section-number">2.3.4</span> Choose an Experimental Design</h3>
 <p>Good discussion of what makes a good sampling design. Maybe a statified example like the river and selecting houses example as a quick expose of the issues with not doing a truly random sampling technique.</p>
 <p>Basics of experimental design (randomization, replication, error control ideas).</p>
 <p>Recap benefits of doing an experiment vs an observational study.</p>
 </div>
-<div id="peform-the-test-1" class="section level3">
-<h3><span class="header-section-number">2.2.5</span> Peform the Test</h3>
+<div id="peform-the-test" class="section level3">
+<h3><span class="header-section-number">2.3.5</span> Peform the Test</h3>
 </div>
 <div id="explore-the-data" class="section level3">
-<h3><span class="header-section-number">2.2.6</span> Explore the Data</h3>
+<h3><span class="header-section-number">2.3.6</span> Explore the Data</h3>
 <p>NHST paradigm with false discovery?</p>
 </div>
-<div id="statistically-analyze-the-data-1" class="section level3">
-<h3><span class="header-section-number">2.2.7</span> Statistically Analyze the Data</h3>
+<div id="statistically-analyze-the-data" class="section level3">
+<h3><span class="header-section-number">2.3.7</span> Statistically Analyze the Data</h3>
 </div>
-<div id="draw-conclusions-1" class="section level3">
-<h3><span class="header-section-number">2.2.8</span> Draw conclusions</h3>
+<div id="draw-conclusions" class="section level3">
+<h3><span class="header-section-number">2.3.8</span> Draw conclusions</h3>
+<p>The implications for the conclusions that can be made from a set of data varies greatly with the quality of the data and study design.</p>
+</div>
+</div>
+<div id="why-observational-studies-can-be-bad" class="section level2">
+<h2><span class="header-section-number">2.4</span> Why Observational Studies Can be Bad?</h2>
 <!-- - Frame still with question of interest.  Maybe pilot study or study where we mainly care about summary stats.
  - How does data look in the wild and how do we deal with it in the wild.  How could it be modeled via distributions?  Sample representing the larger group.
  - Not too much math here, save that for later mostly.
@@ -357,9 +524,11 @@ Summaries of distributions (center, spread, graphs)
 Components of a research study or maybe the general process of a research study
 Things to do before and after data collection
 Real vs conceptual populations (finite vs infinite)
+.
+George Will WP column about SAT vs amount of money spent
+Pisani and Perv?  many bad examples of inference
 -->
 
-</div>
 </div>
 </div>
             </section>
