@@ -315,7 +315,7 @@ Good discussion of what makes a good sampling design.  Maybe a statified example
 George Will WP column about SAT vs amount of money spent
 Pisani and Perv?  many bad examples of inference
 
-### References for other topics?  Or put those throughout?  
+### Suggestions for Further Readings  
 
 
 ## Software  

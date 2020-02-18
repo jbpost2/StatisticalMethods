@@ -34,6 +34,8 @@ Section designed to demonstrate basic use of R via R Studio. By the end of this 
 
 Topics
 
+Install business  
+
     About R
 
     R as a calculator
@@ -54,16 +56,14 @@ Module 2 - Markdown (very brief)
     Code chunks and options
     Creating different output types
 
-Module 3 - Reading in External Data
-Topics
+Module 3 - Reading in External Data 
 
     Delimiters and common data formats
     R Packages and the tidyverse
     Databases
     SQL
 
-Module 4 - Manipulating Data
-Topics
+Module 4 - Manipulating Data 
 
     dplyr
     logical statements
@@ -79,8 +79,7 @@ Section designed to demonstrate basic use of SAS via SAS Studio. By the end of t
     understand the capabilities of SAS program (something like this but a little clearer maybe)
 
 
-SAS Programming
-Topics
+SAS Programming Topics
 
     Common elements of SAS programs: PROC and DATA steps
     Steps, statements, keywords, and options
@@ -88,8 +87,7 @@ Topics
     Submitting SAS code, checking logs, and viewing output
     GPP elements
 
-Module 2 - Importing Data
-Topics
+Module 2 - Importing Data Topics
 
     SAS library
     Data set names (one vs two level)
@@ -99,7 +97,6 @@ Topics
     Explorer and PROC PRINT/CONTENTS for investigating a SAS data set
 
 
-Module 3 - Manipulating Data
-Topics
+Module 3 - Manipulating Data Topics
 
     very basic stuff
