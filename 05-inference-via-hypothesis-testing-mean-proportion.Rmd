@@ -40,7 +40,7 @@ hist(x)
 ```
 <!-- Histogram above for "Detect" and "No Detect" -->
 
-It's clear that the system detects these projectiles with a high probability, but what conclusions can we draw from
+It's clear that the system detects these projectiles with a high probability, but what conclusions can we draw from these data? Does the system detect projectiles at a high enough rate to be useful to a commander in the field? 
 
 
 ### Data from Experiments  
@@ -265,6 +265,91 @@ NHST paradigm with false discovery?
 
 ### Draw conclusions
 
+
+
+## Software
+
+### R
+
+
+```{r, include= F}
+library(tidyverse)
+
+tb <- tibble(x = seq(-4, 4, length.out = 1000)) %>% 
+  mutate(y = dnorm(x))
+
+aoc <- tb %>% filter(x < -1)
+
+```
+
+
+For each built-in distribution in R (Normal, Bernoulli, Binomial, Student's t, etc.), `R` has four basic functions. We'll go through them here and discuss briefly their uses. 
+
+## Finding a specific value from a Probability Distribution Function or Probability Mass Function
+
+For the normal distribution, this is `dnorm()`. In the plot below, the red point is the point along the distribution function of a standard normal when `x = -1`. By input `dnorm(-1)`, `R` evaluates the function and returns `r dnorm(-1)`.
+
+```{r, echo = F}
+tb %>% 
+  ggplot(aes(x = x, y = y)) + geom_line() +
+  theme_bw() +
+  geom_point(data = tibble(x = -1, y = dnorm(-1)), size = 3, color = "red") 
+
+dnorm(-1)
+```
+
+I mostly use this for discrete random variables, like `dbinom()`, since those probability values  are more often meaningful on their own (i.e., without integrating).
+
+
+## Finding the area under the curve
+
+`pnorm(q)` returns the area under the normal curve up to some value on the x-axis,  `q`.  This is good for finding p-values when you have a critical value, `q`.
+
+
+```{r, echo = F}
+tb %>% 
+  ggplot(aes(x = x, y = y)) + geom_line() +
+  theme_bw() +
+  geom_area(data = aoc) 
+```
+
+```{r}
+
+pnorm(-1)
+
+```
+
+
+## Finding quantiles of distributions
+
+`qnorm(p)` returns the value along the x-axis such that the area under the normal up to that point is equal to `p`. The example below illustrates how you'd get the critical value for the lower bound of a 95% confidence interval based off a Normal approximation. 
+
+```{r, echo = F}
+
+aoc <- tb %>% filter(x < qnorm(.025))
+
+tb %>% 
+  ggplot(aes(x = x, y = y)) + geom_line() +
+  theme_bw() +
+  geom_area(data = aoc, fill = "gray") + 
+  geom_point(data = tibble(x = qnorm(.025), y = 0), size = 3, color = "red") 
+```
+
+
+
+```{r}
+qnorm(0.025)
+```
+
+This is useful when you want to find, for example, a critical value to build a confidence interval or test a hypothesis. 
+
+## Generating random numbers
+
+The last function in this set is `rnorm()`, and it doesn't really go with the rest. This function generates random variables based on the distribution you give it. Quite useful for doing simulation studies and the like, but it rarely comes up when you're doing inference. 
+
+## Other distributions
+
+`R` has a lot of built in distributions, including the Binomial (`pbinom()`), Student's t (`pt()`), the Chi-square (`pchisq()`), the F-distribution, (`pf()`), the Beta (`pbeta()`), and the Gamma (`pgamma()`). They all have functions similar to the ones listed above that behave in similar ways, though note that the way parameters are input to these functions can be weird. Make sure to read the notation!
 
 
 The implications for the conclusions that can be made from a set of data varies greatly with the quality of the data and study design.  
