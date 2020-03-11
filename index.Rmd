@@ -21,53 +21,33 @@ The goal in creating this book is to provide a thorough treatment of applied sta
 
 ## Software  
 
-We'll use software throughout the book and include a section on both R and SAS in each chapter.  The following sections give a brief introduction to each software that should prepare you for what's ahead.  
+At this point software is a requirement for statistics in practice.  There are many available software solutions ranging from point and click to full on programming.  We've decided to focus on R and SAS for this book.  
 
-### R  
+- R is an open source, platform agnostic, software that is widely used by statisticians.  We'll use the RStudio interactive development environment to write and execute our R code.  
 
-Section designed to demonstrate basic use of R via R Studio. By the end of this section students will be able to:
+- SAS requires a license but is an extremely powerful software for doing modeling and is used widely enough to merit inclusion here.  For those without a license, SAS University Edition can be installed for free and is also platform agnostic.  We'll use the SAS Studio environment that comes with Univeristy Edition.
 
-    read, write, and explain the steps and purpose of R programs
-    efficiently read in and manipulate data in R
-    utilize R help and other resources to customize programs
-    produce and interpret numerical and graphical summaries using R
+As we progress through the book we'll include graphs, descriptive statistics, and analyses from R and/or SAS.  At the end of each chapter a section explaining how to create these in both R and SAS is included.  The following sections give a brief introduction to each software that should prepare you for what's ahead!  
 
-Topics
+## R  
 
-Install business  
+The general workflow for programming in R involves taking raw data and importing it into R.  Once that data is imported we often create numerical and graphical summaries of the data.  The appropriate model or statistical method is then applied.
 
-    About R
+```{r, fig.align='center', out.width = "600px"}
+knitr::include_graphics("img/RWorkFlow.png")
+```
 
-    R as a calculator
+At the end of this section the reader should be able to do the following:  
 
-    OOB programming and methods
+- install R and RStudio  
+- read and write basic R programs   
+- import well formatted data into R
+- do basic data manipulation in R   
 
-    common data objects in R
-        Vectors, Lists, Matrices, Data Frames
+As the book progresses the steps of summarizing and analyzing the data will be covered.  Let's get started!
 
-    Subsetting vectors, matrices, data frames, and lists
-
-
-Module 2 - Markdown (very brief)
-
-    Notebook environment
-    Three elements of markdown documents
-    Markdown syntax
-    Code chunks and options
-    Creating different output types
-
-Module 3 - Reading in External Data 
-
-    Delimiters and common data formats
-    R Packages and the tidyverse
-    Databases
-    SQL
-
-Module 4 - Manipulating Data 
-
-    dplyr
-    logical statements
-    creating new variables
+```{r, child=c('RBasics.Rmd', 'RReadingData.Rmd', 'RManipulatingData.Rmd')}
+```
 
 ### SAS
 

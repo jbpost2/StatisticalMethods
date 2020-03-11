@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 17 Regression Models | Statistical Methods</title>
   <meta name="description" content="Applied statistical methods book." />
-  <meta name="generator" content="bookdown 0.17.2 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 17 Regression Models | Statistical Methods" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Post, Avery, Osborne" />
 
 
-<meta name="date" content="2020-02-17" />
+<meta name="date" content="2020-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,66 +53,41 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -133,9 +108,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-the-book"><i class="fa fa-check"></i><b>1.1</b> About the book</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i><b>1.2</b> Software</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#r"><i class="fa fa-check"></i><b>1.2.1</b> R</a></li>
-<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#sas"><i class="fa fa-check"></i><b>1.2.2</b> SAS</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i><b>1.2</b> Software</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#r"><i class="fa fa-check"></i><b>1.3</b> R</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>1.3.1</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#r-objects-and-classes"><i class="fa fa-check"></i><b>1.3.2</b> R Objects and Classes</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#data-objects"><i class="fa fa-check"></i><b>1.3.3</b> Data Objects</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#r-reading-data"><i class="fa fa-check"></i><b>1.3.4</b> R Reading Data</a></li>
+<li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#r-manipulating-data"><i class="fa fa-check"></i><b>1.3.5</b> R Manipulating Data</a></li>
+<li class="chapter" data-level="1.3.6" data-path="index.html"><a href="index.html#sas"><i class="fa fa-check"></i><b>1.3.6</b> SAS</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html"><i class="fa fa-check"></i><b>2</b> Sampling, Experiments, and Exploratory Data Analysis</a><ul>
@@ -167,7 +147,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#study-purpose"><i class="fa fa-check"></i><b>2.4.1</b> Study Purpose</a></li>
 <li class="chapter" data-level="2.4.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#summarizing-data"><i class="fa fa-check"></i><b>2.4.2</b> Summarizing Data</a></li>
 <li class="chapter" data-level="2.4.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#study-types"><i class="fa fa-check"></i><b>2.4.3</b> Study Types</a></li>
-<li class="chapter" data-level="2.4.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#references-for-other-topics-or-put-those-throughout"><i class="fa fa-check"></i><b>2.4.4</b> References for other topics? Or put those throughout?</a></li>
+<li class="chapter" data-level="2.4.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#suggestions-for-further-readings"><i class="fa fa-check"></i><b>2.4.4</b> Suggestions for Further Readings</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#software-1"><i class="fa fa-check"></i><b>2.5</b> Software</a><ul>
 <li class="chapter" data-level="2.5.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#r-1"><i class="fa fa-check"></i><b>2.5.1</b> R</a></li>
@@ -223,8 +203,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.7" data-path="HT.html"><a href="HT.html#statistically-analyze-the-data-2"><i class="fa fa-check"></i><b>5.3.7</b> Statistically Analyze the Data</a></li>
 <li class="chapter" data-level="5.3.8" data-path="HT.html"><a href="HT.html#draw-conclusions-2"><i class="fa fa-check"></i><b>5.3.8</b> Draw conclusions</a></li>
 </ul></li>
+<li class="chapter" data-level="5.4" data-path="HT.html"><a href="HT.html#software-2"><i class="fa fa-check"></i><b>5.4</b> Software</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="HT.html"><a href="HT.html#r-2"><i class="fa fa-check"></i><b>5.4.1</b> R</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="CI.html"><a href="CI.html"><i class="fa fa-check"></i><b>6</b> Inference via Confidence Intervals for One Sample</a></li>
+<li class="chapter" data-level="5.5" data-path="HT.html"><a href="HT.html#finding-a-specific-value-from-a-probability-distribution-function-or-probability-mass-function"><i class="fa fa-check"></i><b>5.5</b> Finding a specific value from a Probability Distribution Function or Probability Mass Function</a></li>
+<li class="chapter" data-level="5.6" data-path="HT.html"><a href="HT.html#finding-the-area-under-the-curve"><i class="fa fa-check"></i><b>5.6</b> Finding the area under the curve</a></li>
+<li class="chapter" data-level="5.7" data-path="HT.html"><a href="HT.html#finding-quantiles-of-distributions"><i class="fa fa-check"></i><b>5.7</b> Finding quantiles of distributions</a></li>
+<li class="chapter" data-level="5.8" data-path="HT.html"><a href="HT.html#generating-random-numbers"><i class="fa fa-check"></i><b>5.8</b> Generating random numbers</a></li>
+<li class="chapter" data-level="5.9" data-path="HT.html"><a href="HT.html#other-distributions"><i class="fa fa-check"></i><b>5.9</b> Other distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="CI.html"><a href="CI.html"><i class="fa fa-check"></i><b>6</b> Inference via Confidence Intervals for One Sample</a><ul>
+<li class="chapter" data-level="6.1" data-path="CI.html"><a href="CI.html#the-normal-approximation"><i class="fa fa-check"></i><b>6.1</b> The normal approximation</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="CI.html"><a href="CI.html#analog-ci"><i class="fa fa-check"></i><b>6.1.1</b> Analog CI</a></li>
+<li class="chapter" data-level="6.1.2" data-path="CI.html"><a href="CI.html#easy-mode"><i class="fa fa-check"></i><b>6.1.2</b> Easy mode</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="CI.html"><a href="CI.html#other-types-of-binomial-confidence-intervals"><i class="fa fa-check"></i><b>6.2</b> Other types of binomial confidence intervals</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="CI.html"><a href="CI.html#exact-cis-aka-clopper-pearson"><i class="fa fa-check"></i><b>6.2.1</b> Exact CIs, aka Clopper-Pearson</a></li>
+<li class="chapter" data-level="6.2.2" data-path="CI.html"><a href="CI.html#bayesian-intervals"><i class="fa fa-check"></i><b>6.2.2</b> Bayesian intervals</a></li>
+<li class="chapter" data-level="6.2.3" data-path="CI.html"><a href="CI.html#a-good-general-use-ci"><i class="fa fa-check"></i><b>6.2.3</b> A good general-use CI</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="twocategorical.html"><a href="twocategorical.html"><i class="fa fa-check"></i><b>7</b> Inference for Two Categorical Variables</a></li>
 <li class="chapter" data-level="8" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>8</b> One-Way ANOVA</a></li>
 <li class="chapter" data-level="9" data-path="motivating-example.html"><a href="motivating-example.html"><i class="fa fa-check"></i><b>9</b> Motivating example</a></li>
@@ -270,7 +268,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="24.1" data-path="notation.html"><a href="notation.html#standard-notation"><i class="fa fa-check"></i><b>24.1</b> Standard notation</a></li>
 <li class="chapter" data-level="24.2" data-path="notation.html"><a href="notation.html#mixed-models"><i class="fa fa-check"></i><b>24.2</b> Mixed models</a></li>
 <li class="chapter" data-level="24.3" data-path="notation.html"><a href="notation.html#effects-model-representation"><i class="fa fa-check"></i><b>24.3</b> Effects model representation</a></li>
-<li class="chapter" data-level="24.4" data-path="notation.html"><a href="notation.html#estimators-vs.-estimates"><i class="fa fa-check"></i><b>24.4</b> Estimators vs. Estimates</a></li>
+<li class="chapter" data-level="24.4" data-path="notation.html"><a href="notation.html#estimators-vs.estimates"><i class="fa fa-check"></i><b>24.4</b> Estimators vs. Estimates</a><ul>
+<li class="chapter" data-level="24.4.1" data-path="notation.html"><a href="notation.html#installing-r-and-rstudio-1"><i class="fa fa-check"></i><b>24.4.1</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="24.4.2" data-path="notation.html"><a href="notation.html#r-objects-and-classes-1"><i class="fa fa-check"></i><b>24.4.2</b> R Objects and Classes</a></li>
+<li class="chapter" data-level="24.4.3" data-path="notation.html"><a href="notation.html#data-objects-1"><i class="fa fa-check"></i><b>24.4.3</b> Data Objects</a></li>
+<li class="chapter" data-level="24.4.4" data-path="notation.html"><a href="notation.html#r-manipulating-data-1"><i class="fa fa-check"></i><b>24.4.4</b> R Manipulating Data</a></li>
+<li class="chapter" data-level="24.4.5" data-path="notation.html"><a href="notation.html#r-reading-data-1"><i class="fa fa-check"></i><b>24.4.5</b> R Reading Data</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -358,7 +362,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "true";
+    var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))

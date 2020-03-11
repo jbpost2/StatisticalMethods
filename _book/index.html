@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Statistical Methods</title>
   <meta name="description" content="Applied statistical methods book." />
-  <meta name="generator" content="bookdown 0.17.2 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Statistical Methods" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Post, Avery, Osborne" />
 
 
-<meta name="date" content="2020-02-17" />
+<meta name="date" content="2020-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,66 +53,41 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -133,9 +108,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-the-book"><i class="fa fa-check"></i><b>1.1</b> About the book</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i><b>1.2</b> Software</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#r"><i class="fa fa-check"></i><b>1.2.1</b> R</a></li>
-<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#sas"><i class="fa fa-check"></i><b>1.2.2</b> SAS</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i><b>1.2</b> Software</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#r"><i class="fa fa-check"></i><b>1.3</b> R</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>1.3.1</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#r-objects-and-classes"><i class="fa fa-check"></i><b>1.3.2</b> R Objects and Classes</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#data-objects"><i class="fa fa-check"></i><b>1.3.3</b> Data Objects</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#r-reading-data"><i class="fa fa-check"></i><b>1.3.4</b> R Reading Data</a></li>
+<li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#r-manipulating-data"><i class="fa fa-check"></i><b>1.3.5</b> R Manipulating Data</a></li>
+<li class="chapter" data-level="1.3.6" data-path="index.html"><a href="index.html#sas"><i class="fa fa-check"></i><b>1.3.6</b> SAS</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html"><i class="fa fa-check"></i><b>2</b> Sampling, Experiments, and Exploratory Data Analysis</a><ul>
@@ -167,7 +147,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#study-purpose"><i class="fa fa-check"></i><b>2.4.1</b> Study Purpose</a></li>
 <li class="chapter" data-level="2.4.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#summarizing-data"><i class="fa fa-check"></i><b>2.4.2</b> Summarizing Data</a></li>
 <li class="chapter" data-level="2.4.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#study-types"><i class="fa fa-check"></i><b>2.4.3</b> Study Types</a></li>
-<li class="chapter" data-level="2.4.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#references-for-other-topics-or-put-those-throughout"><i class="fa fa-check"></i><b>2.4.4</b> References for other topics? Or put those throughout?</a></li>
+<li class="chapter" data-level="2.4.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#suggestions-for-further-readings"><i class="fa fa-check"></i><b>2.4.4</b> Suggestions for Further Readings</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#software-1"><i class="fa fa-check"></i><b>2.5</b> Software</a><ul>
 <li class="chapter" data-level="2.5.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#r-1"><i class="fa fa-check"></i><b>2.5.1</b> R</a></li>
@@ -223,8 +203,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.7" data-path="HT.html"><a href="HT.html#statistically-analyze-the-data-2"><i class="fa fa-check"></i><b>5.3.7</b> Statistically Analyze the Data</a></li>
 <li class="chapter" data-level="5.3.8" data-path="HT.html"><a href="HT.html#draw-conclusions-2"><i class="fa fa-check"></i><b>5.3.8</b> Draw conclusions</a></li>
 </ul></li>
+<li class="chapter" data-level="5.4" data-path="HT.html"><a href="HT.html#software-2"><i class="fa fa-check"></i><b>5.4</b> Software</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="HT.html"><a href="HT.html#r-2"><i class="fa fa-check"></i><b>5.4.1</b> R</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="CI.html"><a href="CI.html"><i class="fa fa-check"></i><b>6</b> Inference via Confidence Intervals for One Sample</a></li>
+<li class="chapter" data-level="5.5" data-path="HT.html"><a href="HT.html#finding-a-specific-value-from-a-probability-distribution-function-or-probability-mass-function"><i class="fa fa-check"></i><b>5.5</b> Finding a specific value from a Probability Distribution Function or Probability Mass Function</a></li>
+<li class="chapter" data-level="5.6" data-path="HT.html"><a href="HT.html#finding-the-area-under-the-curve"><i class="fa fa-check"></i><b>5.6</b> Finding the area under the curve</a></li>
+<li class="chapter" data-level="5.7" data-path="HT.html"><a href="HT.html#finding-quantiles-of-distributions"><i class="fa fa-check"></i><b>5.7</b> Finding quantiles of distributions</a></li>
+<li class="chapter" data-level="5.8" data-path="HT.html"><a href="HT.html#generating-random-numbers"><i class="fa fa-check"></i><b>5.8</b> Generating random numbers</a></li>
+<li class="chapter" data-level="5.9" data-path="HT.html"><a href="HT.html#other-distributions"><i class="fa fa-check"></i><b>5.9</b> Other distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="CI.html"><a href="CI.html"><i class="fa fa-check"></i><b>6</b> Inference via Confidence Intervals for One Sample</a><ul>
+<li class="chapter" data-level="6.1" data-path="CI.html"><a href="CI.html#the-normal-approximation"><i class="fa fa-check"></i><b>6.1</b> The normal approximation</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="CI.html"><a href="CI.html#analog-ci"><i class="fa fa-check"></i><b>6.1.1</b> Analog CI</a></li>
+<li class="chapter" data-level="6.1.2" data-path="CI.html"><a href="CI.html#easy-mode"><i class="fa fa-check"></i><b>6.1.2</b> Easy mode</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="CI.html"><a href="CI.html#other-types-of-binomial-confidence-intervals"><i class="fa fa-check"></i><b>6.2</b> Other types of binomial confidence intervals</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="CI.html"><a href="CI.html#exact-cis-aka-clopper-pearson"><i class="fa fa-check"></i><b>6.2.1</b> Exact CIs, aka Clopper-Pearson</a></li>
+<li class="chapter" data-level="6.2.2" data-path="CI.html"><a href="CI.html#bayesian-intervals"><i class="fa fa-check"></i><b>6.2.2</b> Bayesian intervals</a></li>
+<li class="chapter" data-level="6.2.3" data-path="CI.html"><a href="CI.html#a-good-general-use-ci"><i class="fa fa-check"></i><b>6.2.3</b> A good general-use CI</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="twocategorical.html"><a href="twocategorical.html"><i class="fa fa-check"></i><b>7</b> Inference for Two Categorical Variables</a></li>
 <li class="chapter" data-level="8" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>8</b> One-Way ANOVA</a></li>
 <li class="chapter" data-level="9" data-path="motivating-example.html"><a href="motivating-example.html"><i class="fa fa-check"></i><b>9</b> Motivating example</a></li>
@@ -270,7 +268,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="24.1" data-path="notation.html"><a href="notation.html#standard-notation"><i class="fa fa-check"></i><b>24.1</b> Standard notation</a></li>
 <li class="chapter" data-level="24.2" data-path="notation.html"><a href="notation.html#mixed-models"><i class="fa fa-check"></i><b>24.2</b> Mixed models</a></li>
 <li class="chapter" data-level="24.3" data-path="notation.html"><a href="notation.html#effects-model-representation"><i class="fa fa-check"></i><b>24.3</b> Effects model representation</a></li>
-<li class="chapter" data-level="24.4" data-path="notation.html"><a href="notation.html#estimators-vs.-estimates"><i class="fa fa-check"></i><b>24.4</b> Estimators vs. Estimates</a></li>
+<li class="chapter" data-level="24.4" data-path="notation.html"><a href="notation.html#estimators-vs.estimates"><i class="fa fa-check"></i><b>24.4</b> Estimators vs. Estimates</a><ul>
+<li class="chapter" data-level="24.4.1" data-path="notation.html"><a href="notation.html#installing-r-and-rstudio-1"><i class="fa fa-check"></i><b>24.4.1</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="24.4.2" data-path="notation.html"><a href="notation.html#r-objects-and-classes-1"><i class="fa fa-check"></i><b>24.4.2</b> R Objects and Classes</a></li>
+<li class="chapter" data-level="24.4.3" data-path="notation.html"><a href="notation.html#data-objects-1"><i class="fa fa-check"></i><b>24.4.3</b> Data Objects</a></li>
+<li class="chapter" data-level="24.4.4" data-path="notation.html"><a href="notation.html#r-manipulating-data-1"><i class="fa fa-check"></i><b>24.4.4</b> R Manipulating Data</a></li>
+<li class="chapter" data-level="24.4.5" data-path="notation.html"><a href="notation.html#r-reading-data-1"><i class="fa fa-check"></i><b>24.4.5</b> R Reading Data</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -295,7 +299,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Statistical Methods</h1>
 <p class="author"><em>Post, Avery, Osborne</em></p>
-<p class="date"><em>2020-02-17</em></p>
+<p class="date"><em>2020-03-11</em></p>
 </div>
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
@@ -305,67 +309,391 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="software" class="section level2">
 <h2><span class="header-section-number">1.2</span> Software</h2>
-<p>We’ll use software throughout the book and include a section on both R and SAS in each chapter. The following sections give a brief introduction to each software that should prepare you for what’s ahead.</p>
-<div id="r" class="section level3">
-<h3><span class="header-section-number">1.2.1</span> R</h3>
-<p>Section designed to demonstrate basic use of R via R Studio. By the end of this section students will be able to:</p>
-<pre><code>read, write, and explain the steps and purpose of R programs
-efficiently read in and manipulate data in R
-utilize R help and other resources to customize programs
-produce and interpret numerical and graphical summaries using R</code></pre>
-<p>Topics</p>
-<pre><code>About R
+<p>At this point software is a requirement for statistics in practice. There are many available software solutions ranging from point and click to full on programming. We’ve decided to focus on R and SAS for this book.</p>
+<ul>
+<li><p>R is an open source, platform agnostic, software that is widely used by statisticians. We’ll use the RStudio interactive development environment to write and execute our R code.</p></li>
+<li><p>SAS requires a license but is an extremely powerful software for doing modeling and is used widely enough to merit inclusion here. For those without a license, SAS University Edition can be installed for free and is also platform agnostic. We’ll use the SAS Studio environment that comes with Univeristy Edition.</p></li>
+</ul>
+<p>As we progress through the book we’ll include graphs, descriptive statistics, and analyses from R and/or SAS. At the end of each chapter a section explaining how to create these in both R and SAS is included. The following sections give a brief introduction to each software that should prepare you for what’s ahead!</p>
+</div>
+<div id="r" class="section level2">
+<h2><span class="header-section-number">1.3</span> R</h2>
+<p>The general workflow for programming in R involves taking raw data and importing it into R. Once that data is imported we often create numerical and graphical summaries of the data. The appropriate model or statistical method is then applied.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;img/RWorkFlow.png&quot;</span>)</code></pre></div>
+<p><img src="img/RWorkFlow.png" width="600px" style="display: block; margin: auto;" /></p>
+<p>At the end of this section the reader should be able to do the following:</p>
+<ul>
+<li>install R and RStudio<br />
+</li>
+<li>read and write basic R programs<br />
+</li>
+<li>import well formatted data into R</li>
+<li>do basic data manipulation in R</li>
+</ul>
+<p>As the book progresses the steps of summarizing and analyzing the data will be covered. Let’s get started!</p>
+<div id="installing-r-and-rstudio" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Installing R and RStudio</h3>
+<p>The R software itself can be downloaded and installed by visiting the <a href="https://cran.r-project.org/">Comprehensive R Archive Network (Cran) website</a>. Here there are links to install R for Linux, Mac, and Windows based machines.</p>
+<ul>
+<li><p>For Windows users, follow the inital ‘Download R for Windows’ link and then click ‘install R for the first time.’ From here you should now see a Download R X.x.x for Windows link that will download a .exe file. Once downloaded run that file and follow the prompts.</p></li>
+<li><p>For Mac users, follow the inital ‘Download R for (Mac) OS X’ link and click on the link near the ‘Latest Release’ section similar to R-x.x.x.pkg. Once downloaded, you should be able to install by double clicking on the file.</p></li>
+<li><p>For Linux users, follow the inital ‘Download R for Linux’ link. Choose your OS and instructions are given on how to download R.</p></li>
+</ul>
+<p>Once you’ve installed R you’ll want to install RStudio. RStudio is a well developed environment that makes programming in R much easier! To download head to <a href="https://rstudio.com/products/rstudio/download/">RStudio’s download page</a>. From here choose RStudio Desktop (Open Source License) and a page with appropriate links to install are provided.</p>
+<div id="using-rstudio" class="section level4">
+<h4><span class="header-section-number">1.3.1.1</span> Using RStudio</h4>
+<p>To program in R you’ll want to open RStudio. RStudio will submit R code for you so you never actually need to open R itself.</p>
+<p>There are four main ‘areas’ of the RStudio IDE:</p>
+<ul>
+<li><p>Console (&amp; Terminal)</p></li>
+<li><p>Scripting and Viewing Window</p></li>
+<li><p>Plots/Help (&amp; Files/Packages)</p></li>
+<li><p>Environment (&amp; Connections/Git)</p></li>
+</ul>
+<p>You may wish to rearrange the panes. This can be done via the menus at the top. Choose “Tools –&gt; Global Options”.</p>
+<p><img src="img/panes.png" width="700px" /></p>
+<p>Other useful global options to chnage are under the appearance tab (font size, theme) and under the code tab (editing –&gt; soft-wrap, display –&gt; show whitespace).</p>
+<div id="console" class="section level5">
+<h5><span class="header-section-number">1.3.1.1.1</span> Console</h5>
+<p>To evaluate code you can type directly into the <strong>console</strong>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#simple math operations</span>
+<span class="co"># &lt;-- is a comment - code not evaluated</span>
+<span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">7</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">10</span> <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(<span class="dv">3</span>) <span class="co">#exp is exponential function</span></code></pre></div>
+<pre><code>## [1] 200.8554</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(pi<span class="op">^</span><span class="dv">2</span>) <span class="co">#log is natural log by default</span></code></pre></div>
+<pre><code>## [1] 2.28946</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(cars<span class="op">$</span>speed)</code></pre></div>
+<pre><code>## [1] 15.4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(cars<span class="op">$</span>speed)</code></pre></div>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
+<p>In the R sections of the book we spend much of our time learning the R syntax needed to create the appropriate summaries or analysis.</p>
+</div>
+<div id="scripting-and-viewing-window" class="section level5">
+<h5><span class="header-section-number">1.3.1.1.2</span> Scripting and Viewing Window</h5>
+<p>Usually you don’t want to type code directly into the console because there isn’t an easy way to get the code for later use. Instead code is usually written in an R ‘script’ which is then saved.</p>
+From an R script you can send code to console via:
+<ul>
+<pre><code>  &lt;li&gt; &quot;Run&quot; button (runs current line)  &lt;/li&gt;
+  &lt;li&gt; CTRL+Enter (PC) or Command+Enter (MAC)  &lt;/li&gt;
+  &lt;li&gt; Highlight section and do above&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<p>To create a new R script you can use the menus at the top and go to File –&gt; New File –&gt; R Script. Take a moment and do this! Type the following into your script:</p>
+<ul>
+<li><p><code>View(cars)</code> (note capital <code>V</code>)</p></li>
+<li><p><code>plot(cars)</code></p></li>
+</ul>
+<p>Submit it to the console using a button or hot key!</p>
+</div>
+<div id="plotshelp" class="section level5">
+<h5><span class="header-section-number">1.3.1.1.3</span> Plots/Help</h5>
+<p>Created plots are stored in the <code>Plots</code> tab. This is a nice feature that allows you to cycle through past plots and easily save plots via menus.</p>
+<p>In this pane there is also a <code>Help</code> tab that will enable you to learn about R functions. In the console type <code>help(hist)</code> for instance. Information about the <code>hist</code> function is presented. Being able to parse these types of help files is a really useful skill!</p>
+<p>For every R function there are a few sections:</p>
+<ul>
+<li><p>Description - What the function is intended for.</p></li>
+<li><p>Usage - How to call the function, inputs required, and which inputs have default arguments.</p>
+<ul>
+<li>Here we see <code>hist(x, ...)</code>. This implies there is only one required input, <code>x</code>, and there is no default.<br />
+</li>
+<li>Below you see a more detailed call to <code>hist</code> that includes other inputs. Each of these inputs has an equal sign with a value after it. This is the default value for that input (since there is a default value you don’t have to specify it when you call). For instance the <code>breaks = &quot;Sturges&quot;</code> input implies that the “Sturges” method is the default for determining how the bins of the histogram are created.</li>
+</ul></li>
+<li><p>Arguments - Describes the input requirements in more detail.</p></li>
+<li><p>Details - Information about how the function works.</p></li>
+<li><p>Values - Information about what is returned to the user.</p></li>
+<li><p>References</p></li>
+<li><p>See Also - Related functions.</p></li>
+<li><p>Examples - Highly useful section giving code you can copy and paste to see an example of how the function can be used.</p></li>
+</ul>
+</div>
+<div id="environment" class="section level5">
+<h5><span class="header-section-number">1.3.1.1.4</span> Environment</h5>
+<p>R stores <strong>data/info/functions/etc.</strong> in R objects. An object is a data structure having attributes and methods (more on this shortly). You can create an R object via <code>&lt;-</code> (recommended) or <code>=</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#save for later</span>
+avg &lt;-<span class="st"> </span>(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">7</span> <span class="op">+</span><span class="st"> </span><span class="dv">6</span>) <span class="op">/</span><span class="st"> </span><span class="dv">3</span>
+<span class="co">#call avg object</span>
+avg</code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#strings (text) can be saved as well</span>
+words &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Hello there!&quot;</span>, <span class="st">&quot;How are you?&quot;</span>)
+words</code></pre></div>
+<pre><code>## [1] &quot;Hello there!&quot; &quot;How are you?&quot;</code></pre>
+<p>Notice that when you send the line <code>avg &lt;- (5+ 7 + 6) / 3</code> to the console (i.e. create the object <code>avg</code>) that nothing prints out. This is common behavior when storing the object. The output or information is saved for later use in the object. To see the output or information you then simply call the object (a default printing method is used to display it).</p>
+<p>You can look at all current objects with <code>ls()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>()</code></pre></div>
+<pre><code>## [1] &quot;avg&quot;   &quot;words&quot;</code></pre>
+<p>Use <code>rm()</code> to remove an object.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(avg)
+<span class="kw">ls</span>()</code></pre></div>
+<pre><code>## [1] &quot;words&quot;</code></pre>
+<p>Built-in objects exist like <code>letters</code> and <code>cars</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">letters</code></pre></div>
+<pre><code>##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot; &quot;r&quot; &quot;s&quot;
+## [20] &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(cars, <span class="dt">n =</span> <span class="dv">3</span>)</code></pre></div>
+<pre><code>##   speed dist
+## 1     4    2
+## 2     4   10
+## 3     7    4</code></pre>
+<p>The function <code>data()</code> shows available built-in datasets.</p>
+<p>You should now be roughly familiar with the four main ‘areas’ of the RStudio IDE:</p>
+<ul>
+<li><p>Console (&amp; Terminal)</p></li>
+<li><p>Scripting and Viewing Window</p></li>
+<li><p>Plots/Help (&amp; Files/Packages)</p></li>
+<li><p>Environment (&amp; Connections/Git)</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="r-objects-and-classes" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> R Objects and Classes</h3>
+<p>R has strong <strong>O</strong>bject <strong>O</strong>riented <strong>P</strong>rogramming (OOP) tools.</p>
+<ul>
+<li><p>Object: data structure with attributes (class)</p></li>
+<li><p>Method: procedures (functions) that act on object based on attributes</p></li>
+</ul>
+<p>R functions like <code>print()</code> or <code>plot()</code> act differently depending on an object’s class.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(cars)</code></pre></div>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(cars)</code></pre></div>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(exp)</code></pre></div>
+<pre><code>## [1] &quot;function&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(exp)</code></pre></div>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-68-2.png" width="672" /></p>
+<p>Many R functions exist to help understand an R Object.</p>
+<ul>
+<li><code>str()</code> (structure)</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(cars)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    50 obs. of  2 variables:
+##  $ speed: num  4 4 7 7 8 9 10 10 10 11 ...
+##  $ dist : num  2 10 4 22 16 10 18 26 34 17 ...</code></pre>
+<ul>
+<li><code>class()</code></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(cars)</code></pre></div>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
+<ul>
+<li><code>typeof()</code></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(cars)</code></pre></div>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<p>We’ll use these functions later to help us know how to extra information from an R object.</p>
+<p>Recall that we can create an R object via <code>&lt;-</code> (recommended) or <code>=</code>. This allocates computer memory to object. The object’s attributes depend on how you created it.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vec &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">10</span>)
+<span class="kw">class</span>(vec)</code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit &lt;-<span class="st"> </span><span class="kw">lm</span>(dist <span class="op">~</span><span class="st"> </span>speed, <span class="dt">data =</span> cars)
+<span class="kw">class</span>(fit)</code></pre></div>
+<pre><code>## [1] &quot;lm&quot;</code></pre>
+</div>
+<div id="data-objects" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> Data Objects</h3>
+<p>To understand how to use R for data analysis we need to understand commonly used data structures:</p>
+<pre><code> 1. Atomic Vector (1D)  
+ 2. Matrix (2D)  
+ 3. Array (nd) (not covered)  
+ 4. Data Frame (2D)  
+ 5. List (1D)  </code></pre>
+<div id="atomic-vector" class="section level4">
+<h4><span class="header-section-number">1.3.3.1</span> Atomic Vector</h4>
+<p>Let’s start with the most basic object and work our way up. An atomic vector is a 1D group of elements with an ordering.</p>
+<p><img src="img/vectorVisual.png" width="650px" style="display: block; margin: auto;" /></p>
+<p>All of the elements must be same ‘type’. Types include numeric (integer or double), character, or logical. We create an atomic vector with the <code>c()</code> function (‘combine’).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#vectors (1 dimensional) objects</span>
+x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">17</span>, <span class="dv">22</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">3</span>)
+y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;bird&quot;</span>, <span class="st">&quot;frog&quot;</span>)
+x</code></pre></div>
+<pre><code>## [1] 17 22  1  3 -3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">y</code></pre></div>
+<pre><code>## [1] &quot;cat&quot;  &quot;dog&quot;  &quot;bird&quot; &quot;frog&quot;</code></pre>
+<p>In addition, many ‘functions’ output a numeric vector. Functions are at the heart of R so it is vital to understand them. The concept of a function is that there the function takes an input or inputs and maps those inputs to some output(s).</p>
+<p><img src="img/funVisual1.png" width="800px" style="display: block; margin: auto;" /></p>
+<p>As an example, one function that outputs a numeric vector is the <code>seq</code> or sequence function. To know about a function you need to know about the inputs and ouputs. For <code>seq</code> we have the following:</p>
+<pre><code>+ Inputs = from, to, by (among others)  
 
-R as a calculator
-
-OOB programming and methods
-
-common data objects in R
-    Vectors, Lists, Matrices, Data Frames
-
-Subsetting vectors, matrices, data frames, and lists</code></pre>
-<p>Module 2 - Markdown (very brief)</p>
-<pre><code>Notebook environment
-Three elements of markdown documents
-Markdown syntax
-Code chunks and options
-Creating different output types</code></pre>
-<p>Module 3 - Reading in External Data
-Topics</p>
-<pre><code>Delimiters and common data formats
-R Packages and the tidyverse
-Databases
-SQL</code></pre>
-<p>Module 4 - Manipulating Data
-Topics</p>
-<pre><code>dplyr
-logical statements
-creating new variables</code></pre>
++ Output = a sequence of numbers</code></pre>
+<p><img src="img/funVisual2.png" width="800px" style="display: block; margin: auto;" /></p>
+<p><code>seq(from = 1, to = 1, by = ((to - from)/(length.out - 1)),</code> <code>length.out = NULL, along.with = NULL, ...)</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="dv">5</span>, <span class="dt">by =</span> <span class="dv">1</span>)
+v</code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(v)</code></pre></div>
+<pre><code>##  num [1:5] 1 2 3 4 5</code></pre>
+<p><code>str</code> tells about the object <code>v</code>:</p>
+<ul>
+<li><p><code>num</code> says it is numeric</p></li>
+<li><p><code>[1:5]</code> implies one dimensional with elements 1, 2, 3, 4, 5</p></li>
+</ul>
+<p>The <code>seq</code> function is used quite a bit. There is a shorthand way to create an integer sequence using the <code>:</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">:</span><span class="dv">20</span> </code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20</code></pre>
+<p>It is also important to know how R does math on its objects. R does elementwise addition/subtraction and multiplication/division to vectors.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">:</span><span class="dv">20</span><span class="op">/</span><span class="dv">20</span></code></pre></div>
+<pre><code>##  [1] 0.05 0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75
+## [16] 0.80 0.85 0.90 0.95 1.00</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">:</span><span class="dv">20</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></code></pre></div>
+<pre><code>##  [1]  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21</code></pre>
+<p>As we mentioned earlier, understanding help files is really useful to being about to program in R. As functions are ubiquitous in R we often need to learn about their inputs (or arguments) and we can do so using <code>help</code>.</p>
+<p>To recap, our first commonly used R object for storing data is an atomic vectore. This is a 1D group of elements with an ordering where all of the elements are of the same type. Generally vectors are useful to know about but not usually useful for a storing a dataset exactly. They can often be considered as the ‘building blocks’ for other data types.</p>
+</div>
+<div id="matrix" class="section level4">
+<h4><span class="header-section-number">1.3.3.2</span> Matrix</h4>
+<p>A Matrix is a 2D data structure in R whose elements are all of the same type. The first dimension refers to the rows and the second dimension refers to the columns. A 2D data object is very common. The rows often represent the <em>observations</em> and the columns represent the <em>variables</em>. Although not technically right, it is useful to think of the columns of a matrix as vectors of the same <strong>type and length</strong>.</p>
+<p><img src="img/matrixVisual.png" width="500px" style="display: block; margin: auto;" /></p>
+<p>For instance, consider the three vectors created ehre:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#populate vectors</span>
+x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">17</span>, <span class="dv">3</span>, <span class="dv">13</span>, <span class="dv">11</span>)
+y &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="op">-</span><span class="dv">3</span>, <span class="dt">times =</span> <span class="dv">4</span>)
+z &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span></code></pre></div>
+<p>These are all of the same type. This can be checked with an <code>is.</code> (read as is dot) function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#check &#39;type&#39;</span>
+<span class="kw">is.numeric</span>(x)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.numeric</span>(y)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.numeric</span>(z)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Not only are these three objects the same type but they are also the same length. This can be checked using the <code>length</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#check &#39;length&#39;</span>
+<span class="kw">length</span>(x)</code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(y)</code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(z)</code></pre></div>
+<pre><code>## [1] 4</code></pre>
+</div>
+<p>Again, it is useful to visualize the columns of a potential matrix as these vectors. We can create the matrix using the <code>matrix</code> function. The <code>matrix</code> function requires us to give the data as one vector. We can combine the <code>x</code>, <code>y</code>, and <code>z</code> objects into one vector using the <code>c</code> funciton. This is the first argument to the <code>matrix</code> function. The only other argument required is to either specify the number of rows (<code>nrow =</code>) or the number of columns (<code>ncol =</code>) (R will attempt to figure out the one that is not given using the total length of the specified data vector).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#combine in a matrix</span>
+<span class="kw">matrix</span>(<span class="kw">c</span>(x, y, z), <span class="dt">ncol =</span> <span class="dv">3</span>)</code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]   17   -3    1
+## [2,]    3   -3    2
+## [3,]   13   -3    3
+## [4,]   11   -3    4</code></pre>
+<p>A matrix can also store character data as well. An example of this is given below and the number of rows is specified rather than the number of columns. Note the use of <code>is.character</code> from the <code>is.</code> family of functions.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Hi&quot;</span>, <span class="st">&quot;There&quot;</span>, <span class="st">&quot;!&quot;</span>)
+y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)
+z &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;One&quot;</span>, <span class="st">&quot;Two&quot;</span>, <span class="st">&quot;Three&quot;</span>)
+<span class="kw">is.character</span>(x)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">matrix</span>(<span class="kw">c</span>(x, y, z), <span class="dt">nrow =</span> <span class="dv">3</span>)</code></pre></div>
+<pre><code>##      [,1]    [,2] [,3]   
+## [1,] &quot;Hi&quot;    &quot;a&quot;  &quot;One&quot;  
+## [2,] &quot;There&quot; &quot;b&quot;  &quot;Two&quot;  
+## [3,] &quot;!&quot;     &quot;c&quot;  &quot;Three&quot;</code></pre>
+<p>To recap, a Matrix is a 2D data structure where we can think of the columns as vectors of the same <strong>type and length</strong>. These are useful for some datasets but most datasets have some numeric and some character variables.</p>
+<p><img src="img/dataset.PNG" width="600px" style="display: block; margin: auto;" /></p>
+<p>Another 2D object called a data frame is perfect for this type of data!</p>
+</div>
+<div id="data-frame" class="section level4">
+<h4><span class="header-section-number">1.3.3.3</span> Data Frame</h4>
+<p>A Data Frame is a 2D data structure where elements within a column must be of the same type but the columns themselves can differ in type. When thinking of a data frame, consider them as a collection (list) of vectors of the same <strong>length</strong>.</p>
+<p><img src="img/dfVisual.PNG" width="500px" style="display: block; margin: auto;" /></p>
+<p>A data frame can be created with the <code>data.frame</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;f&quot;</span>)
+y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">6</span>)
+z &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">:</span><span class="dv">15</span>
+<span class="kw">data.frame</span>(x, y, z)</code></pre></div>
+<pre><code>##   x  y  z
+## 1 a  1 10
+## 2 b  3 11
+## 3 c  4 12
+## 4 d -1 13
+## 5 e  5 14
+## 6 f  6 15</code></pre>
+<p>You can also easily name the columns during creation.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data.frame</span>(<span class="dt">char =</span> x, <span class="dt">data1 =</span> y, <span class="dt">data2 =</span> z)</code></pre></div>
+<pre><code>##   char data1 data2
+## 1    a     1    10
+## 2    b     3    11
+## 3    c     4    12
+## 4    d    -1    13
+## 5    e     5    14
+## 6    f     6    15</code></pre>
+<p>Notice that char, data1, and data2 become the variable names for the data frame.</p>
+<p>To recap, consider a data frame as a collection (list) of vectors of the same <strong>length</strong>. Tis type of data structure is perfect for most data sets! Most functions that read 2D data into R store it as a data frame.</p>
+</div>
+<div id="list" class="section level4">
+<h4><span class="header-section-number">1.3.3.4</span> List</h4>
+<p>A List is a 1D group of objects with ordering. Really it is a vector that can have differing elements. Think of this in a similar way to the atomic vector previously discussed except the elements are really flexible.</p>
+<p><img src="img/listVisual.png" width="600px" style="display: block; margin: auto;" /></p>
+<p>A list can be created with the <code>list</code> function. You specify the elements you want to include, separated by commas.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="kw">rnorm</span>(<span class="dv">2</span>), <span class="kw">c</span>(<span class="st">&quot;!&quot;</span>, <span class="st">&quot;?&quot;</span>))</code></pre></div>
+<pre><code>## [[1]]
+## [1] 1 2 3
+## 
+## [[2]]
+## [1]  0.3526863 -1.8874009
+## 
+## [[3]]
+## [1] &quot;!&quot; &quot;?&quot;</code></pre>
+<p>Similar to a data frame, you can add names to the list elements during creation.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list</span>(<span class="dt">seq =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">normVals =</span> <span class="kw">rnorm</span>(<span class="dv">2</span>), <span class="dt">punctuation =</span> <span class="kw">c</span>(<span class="st">&quot;!&quot;</span>, <span class="st">&quot;?&quot;</span>))</code></pre></div>
+<pre><code>## $seq
+## [1] 1 2 3
+## 
+## $normVals
+## [1] -0.3298597  0.4990318
+## 
+## $punctuation
+## [1] &quot;!&quot; &quot;?&quot;</code></pre>
+<p>To recap, a list is a very flexible 1D object. It is really useful for more complex types of data.</p>
+<p>The table below gives a summary of the data objects we’ve covered. For most data analysis you’ll use data frames.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Homogeneous</th>
+<th>Heterogeneous</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1d</td>
+<td>Atomic Vector</td>
+<td>List</td>
+</tr>
+<tr class="even">
+<td>2d</td>
+<td>Matrix</td>
+<td>Data Frame</td>
+</tr>
+</tbody>
+</table>
+<p>Next we look at how to access or change parts of our these common data objects.</p>
+</div>
+</div>
+<div id="r-reading-data" class="section level3">
+<h3><span class="header-section-number">1.3.4</span> R Reading Data</h3>
+</div>
+<div id="r-manipulating-data" class="section level3">
+<h3><span class="header-section-number">1.3.5</span> R Manipulating Data</h3>
 </div>
 <div id="sas" class="section level3">
-<h3><span class="header-section-number">1.2.2</span> SAS</h3>
+<h3><span class="header-section-number">1.3.6</span> SAS</h3>
 <p>Section designed to demonstrate basic use of SAS via SAS Studio. By the end of this section students will be able to:</p>
 <pre><code>write basic SAS programs in SAS Studio using SAS University edition
 import well formatted data into SAS using the import wizard, PROC IMPORT, or a DATA step
 create common numerical and graphical summaries of data
 understand the capabilities of SAS program (something like this but a little clearer maybe)</code></pre>
-<p>SAS Programming
-Topics</p>
+<p>SAS Programming Topics</p>
 <pre><code>Common elements of SAS programs: PROC and DATA steps
 Steps, statements, keywords, and options
 SAS windows
 Submitting SAS code, checking logs, and viewing output
 GPP elements</code></pre>
-<p>Module 2 - Importing Data
-Topics</p>
+<p>Module 2 - Importing Data Topics</p>
 <pre><code>SAS library
 Data set names (one vs two level)
 Methods for importing data: Instream, Import Wizard, and Data step
 Delimiters and common data formats
 Types of variables in SAS
 Explorer and PROC PRINT/CONTENTS for investigating a SAS data set</code></pre>
-<p>Module 3 - Manipulating Data
-Topics</p>
+<p>Module 3 - Manipulating Data Topics</p>
 <pre><code>very basic stuff</code></pre>
 
 </div>
@@ -432,7 +760,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "true";
+    var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
