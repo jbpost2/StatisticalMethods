@@ -11,7 +11,7 @@ The R software itself can be downloaded and installed by visiting the [Comprehen
 Once you've installed R you'll want to install RStudio.  RStudio is a well developed environment that makes programming in R much easier!  To download head to [RStudio's download page](https://rstudio.com/products/rstudio/download/).  From here choose RStudio Desktop (Open Source License) and a page with appropriate links to install are provided.
 
 
-#### Using RStudio
+### Using RStudio
 
 To program in R you'll want to open RStudio.  RStudio will submit R code for you so you never actually need to open R itself.  
 
@@ -34,7 +34,7 @@ knitr::include_graphics("img/panes.png")
 Other useful global options to chnage are under the appearance tab (font size, theme) and under the code tab (editing --> soft-wrap, display --> show whitespace).  
 
 
-##### Console  
+#### Console  
 
 To evaluate code you can type directly into the **console**.
 
@@ -51,16 +51,18 @@ hist(cars$speed)
 In the R sections of the book we spend much of our time learning the R syntax needed to create the appropriate summaries or analysis.
 
 
-##### Scripting and Viewing Window 
+#### Scripting and Viewing Window  
 
 Usually you don't want to type code directly into the console because there isn't an easy way to get the code for later use.  Instead code is usually written in an R 'script' which is then saved.  
 
 From an R script you can send code to console via: 
-    <ul>
-      <li> "Run" button (runs current line)  </li>
-      <li> CTRL+Enter (PC) or Command+Enter (MAC)  </li>
-      <li> Highlight section and do above</li>
-    </ul>
+
+- "Run" button (runs current line)  
+
+- CTRL+Enter (PC) or Command+Enter (MAC)  
+
+- Highlight section and do above
+
 
 To create a new R script you can use the menus at the top and go to File --> New File --> R Script.  Take a moment and do this!  Type the following into your script:
 
@@ -71,7 +73,7 @@ To create a new R script you can use the menus at the top and go to File --> New
 Submit it to the console using a button or hot key!
 
 
-##### Plots/Help 
+#### Plots/Help  
 
 Created plots are stored in the `Plots` tab.  This is a nice feature that allows you to cycle through past plots and easily save plots via menus.  
 
@@ -99,7 +101,7 @@ For every R function there are a few sections:
 - Examples - Highly useful section giving code you can copy and paste to see an example of how the function can be used.
 
 
-##### Environment   
+#### Environment   
 
 R stores **data/info/functions/etc.** in R objects.  An object is a data structure having attributes and methods (more on this shortly).  You can create an R object via `<-` (recommended) or `=`.  
 
@@ -248,9 +250,6 @@ As an example, one function that outputs a numeric vector is the `seq` or sequen
 knitr::include_graphics("img/funVisual2.png")
 ```
 
-`seq(from = 1, to = 1, by = ((to - from)/(length.out - 1)),`
-`    length.out = NULL, along.with = NULL, ...)`
-
 ```{r }
 v <- seq(from = 1, to = 5, by = 1)
 v
@@ -264,14 +263,14 @@ str(v)
 - `[1:5]` implies one dimensional with elements 1, 2, 3, 4, 5
 
 
-The `seq` function is used quite a bit.  There is a shorthand way to create an integer sequence using the `:`.  
+The `seq` function is used quite a bit.  There is a shorthand way to create an integer sequence using `:`.  
 
 ```{r }
 1:20 
 ```
 
 
-It is also important to know how R does math on its objects.  R does elementwise addition/subtraction and multiplication/division to vectors.  
+It is also important to know how R does math on its objects.  R does elementwise addition/subtraction and multiplication/division to vectors, matrices, and data frames.  (The matrix multiplicaiton operator is `%*%`.).  
 
 ```{r }
 1:20/20
@@ -293,7 +292,7 @@ A Matrix is a 2D data structure in R whose elements are all of the same type.  T
 knitr::include_graphics("img/matrixVisual.png")
 ```
 
-For instance, consider the three vectors created ehre:  
+For instance, consider the three vectors created here:  
 
 ```{r ,echo=TRUE}
 #populate vectors
@@ -302,7 +301,7 @@ y <- rep(-3, times = 4)
 z <- 1:4
 ```
 
-These are all of the same type.  This can be checked with an `is.` (read as is dot) function.  
+These are all of the same type.  This can be checked with an `is.` (read as 'is dot') function.  
 
 ```{r , echo = TRUE}
 #check 'type'
@@ -407,5 +406,219 @@ Dimension | Homogeneous   | Heterogeneous
 2d        | Matrix        | Data Frame
 
 Next we look at how to access or change parts of our these common data objects.  
+
+
+
+
+### Accessing Common Data Objects
+
+When we are dealing with a data object (1D or 2D) we may want to extract a single element, certain columns, or certain rows.  In this section we'll look at how to subset or extract information from each of the common data objects covered in the previous section.  
+
+#### Atomic Vector (1D)
+
+For atomic vectors (and lists, see later) you can return elements using square brackets `[]`. You may notice that when R prints a vector to the console you often see `[1]` next to the first element and perhaps a `[#]` where R has to break and move to the next line of the console.  The `[1]` implies the element printed next is the first element of the vector (R starts its counting at 1 not 0 like some other languages).  The `[#]` implies that the element printed to the right is the `#` element of the vector.  This is a good reminder of how to extract values from an atomic vector.  
+
+As an example, here we extract from a built-in R object called letters that is a vector of length 26 containing the letters of the alphabet.
+
+```{r }
+letters #built-in vector
+letters[1] #R starts counting at 1!
+letters[26]
+```
+
+To obtain more than one element you can 'feed' in a vector of indices to that you'd like to return.  
+
+```{r }
+letters[1:4]
+letters[c(5, 10, 15, 20, 25)]
+x <- c(1, 2, 5)
+letters[x]
+```
+
+If you'd like to return all values except a certain subset, you can use negative indices.
+
+```{r }
+letters[-(1:4)]
+x <- c(1, 2, 5)
+letters[-x]
+```
+
+
+#### Matrices (2D)  
+
+For rectangular data like a matrix you can return rectangular subsets using square brackets with a comma `[ , ]`.  Notice default row and column names when R prints a matrix!  
+
+```{r }
+mat <- matrix(c(1:4, 20:17), ncol = 2)
+mat
+```
+
+This is a nice reminder of how to index a matrix.  The value prior to the columns represents which row(s) you want to return and the value after the comma which column(s).  If an index is left blank then all of that corresponding dimension (row or column) is returned. 
+
+```{r }
+mat[c(2, 4), ]
+mat[, 1]
+mat[2, ]
+mat[2, 1]
+```
+
+Notice that R simplifies the result where possible.  That is, returns an atomic vector if you have only 1 dimension and a matrix if two.  This can be changed by adding an additional argument to the `[` function.
+
+```{r}
+mat[ , 1, drop = FALSE]
+```
+
+Also, if you only give a single value in the `[]` then R uses the count of the value in the matrix.  Counts go down columns first.
+
+```{r}
+mat[5]
+```
+
+If your matrix has column names associated with it, you can also use those to return columns of interest.  To add column names we can look run `help(matrix)` to learn how!  Notice the `dimnames` argument.  You can specify names for the rows and columns by using a list with two vectors.  The first vector indicating row names and the second column names.  If we don't want to give rownames we can give a NULL (a special value in R that is used for undefined values - here giving no specification of row names).  We can do this and give a character vector for the column names.
+
+```{r}
+mat<-matrix(c(1:4, 20:17), ncol = 2,
+            dimnames = list(NULL, c("First", "Second"))
+            )
+mat
+```
+
+Now we can request columns be using a single name or a character vector of names.
+
+```{r}
+mat[, "First"]
+```
+
+To return all but certain parts of a matrix you can still use negative indices but note that this won't work with column names.  
+
+```{r , error = TRUE}
+mat[-c(1,3), -"First"]
+```
+
+```{r}
+mat[-c(1,3), "First"]
+```
+
+
+#### Data Frames (2D)  
+
+Since a data frame is also a rectangular data object you can return rectangular subsets using square brackets with a comma `[ , ]`!
+
+As an example, we'll subset the built-in `iris` data frame. To get an idea about this object we can run `str(iris)`.  
+
+```{r }
+str(iris)
+```
+
+We can see this is a data frame with a few columns, four are numeric and one is a factor (a special type of character vector essentially - these will be covered when we discuss plotting).  
+
+```{r }
+iris[1:4, 2:4]
+iris[1, ]
+iris[, 1]
+```
+
+Notice the simplification done when a single column is selected.  R will simplify to a vector unless `drop = FALSE` is included as done in the matrix section.  (The simplification doesn't occur when a single row is selected because data frames are actually lists - we'll discuss this more in the list section!)
+
+You can use columns names to subset as well.  
+
+```{r }
+iris[1:10 , c("Sepal.Length", "Species")]
+```
+
+The most common way to access a single columns is to use the dollar sign operator.
+
+```{r }
+iris$Sepal.Length
+```
+
+A nice benefit of using RStudio is that column names will be filled in automatically as you type.  In your console do the following:
+
++ Type `iris$`  
++ If no choices - hit tab
++ Scroll up and down or continue typing to highlight the column of interest  
++ Hit tab again to choose  
+
+
+#### Lists (1D)  
+
+As a list is a 1D data object we can use single square brackets `[ ]` for multiple list elements.   
+
+```{r }
+x <- list("HI", c(10:20), 1)
+x
+x[2:3]
+```
+
+We can use double square brackets `[[ ]]` (or `[ ]`) to return a single list element.  The major difference is in whether or not a list with the element chosen is returned or just the element itself.  `[[` will return just the element requested.
+
+```{r }
+x <- list("HI", c(10:20), 1)
+x[1]
+x[[1]]
+x[[2]]
+x[[2]][4:5]
+```
+
+Recall we could name our list elements.  If they are named we can use the `$` similar to a data frame.
+
+```{r }
+x <- list("HI", c(10:20), 1)
+str(x)
+x <- list(First = "Hi", Second = c(10:20), Third = 1)
+x$Second
+```
+
+Under the hood a data frame is just a *list* of equal length vectors!
+
+```{r }
+str(x)
+str(iris)
+typeof(x)
+typeof(iris)
+```
+
+This means we can index a data frame in a similar way to how we index a list if we want.  
+
+```{r }
+iris[[2]]
+```
+
+Lastly, one nice thing about lists (and data frames) is that you can use partial matching with `[[` and `$`.  
+
+```{r}
+iris$Sp[1:10]
+```
+
+```{r}
+iris[["Petal.Len", exact = FALSE]]
+```
+
+This is less important now that RStudio can auto-complete long column names.
+
+
+### Recap!
+
+- RStudio IDE (Integrated Development Environment)  
+
+- R Objects and Classes  
+
+- Data Objects & Basic Manipulation    
+
+Dimension | Homogeneous   | Heterogeneous
+--------- | ------------- | -------------
+1d        | Atomic Vector | List
+2d        | Matrix        | Data Frame
+
+
+Basic access via  
+
+- Atomic vectors - `x[ ]`  
+
+- Matrices - `x[ , ]`  
+
+- Data Frames - `x[ , ]` or `x$name`  
+
+- Lists - `x[ ]`, `x[[ ]]`, or `x$name`  
 
 

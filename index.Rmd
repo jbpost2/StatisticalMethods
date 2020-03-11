@@ -29,11 +29,25 @@ At this point software is a requirement for statistics in practice.  There are m
 
 As we progress through the book we'll include graphs, descriptive statistics, and analyses from R and/or SAS.  At the end of each chapter a section explaining how to create these in both R and SAS is included.  The following sections give a brief introduction to each software that should prepare you for what's ahead!  
 
+You'll also notice a certain style to the way our code is written.  Good programming practices (GPPs) are essential for improving productivity and collaborating with others - including future you!  There are a lot of guidelines and resources about GPPs available. We’ll cover just a few of the essentials here.
+
+- Include a header at the top of the program that gives the author, date, and purpose of the program.  
+
+- Place comments throughout the program explaining the purpose of different chunks of code as well as your thought process.
+
+- Spacing and indentation should be used throughout for readability of the program.  
+
+- Group sections of your code that serve a certain purpose together.
+
+- Use a consistent naming scheme such as camelCase or underscores_between_words.
+
+Many of these and other GPPs can be taken care of by programming in a notebook environment such as JUPYTER (which can include SAS and R) or R Markdown.  Also using a version control software such as Git and Github is really useful!
+
 ## R  
 
 The general workflow for programming in R involves taking raw data and importing it into R.  Once that data is imported we often create numerical and graphical summaries of the data.  The appropriate model or statistical method is then applied.
 
-```{r, fig.align='center', out.width = "600px"}
+```{r, echo = FALSE, fig.align='center', out.width = "600px"}
 knitr::include_graphics("img/RWorkFlow.png")
 ```
 
