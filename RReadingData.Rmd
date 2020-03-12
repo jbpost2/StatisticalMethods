@@ -137,239 +137,121 @@ knitr::include_graphics("img/project.png")
 Now you can easily switch between analyses by using "File --> Open Project" or by using the little drop down menu in the top right of RStudio.  
 
 
-#### Reading Delimited Data  
+#### Quick Aside: Factors
 
-- Functions from `read.` family work well  
+As mentioned above there are `read.` functions for many different types of delimited data.  These functions work really well but there are a few areas they could be improved.  
 
-- Concerns:  
+- A poor default function behavior as strings are read as `factors`
 
-    + A poor default function behavior
-    
-         * strings are read as `factors`  
+Understanding factors is important enough to warrant a quick discussion.  Let's look at the structure of our neuralgiaData object we read in with `read.csv`.  
 
-
-## Aside: Factors
-
-```{r strn}
+```{r }
 str(neuralgiaData)
 ```
 
-> - Factor: special class of vector with a `levels` attribute  
+We can see that all of the character variables are `Factor` vectors.  A factor is special class of vector with a `levels` attribute.  The levels define all possible values for that variable.  This is a great concept for a variable that can only take on a certain values such as `Day` (Monday, Tuesday, ..., Sunday).  However, if you have a variable like `Name` that you will eventually add new values (levels) to factors become a bit of a nuisance.  
 
-> - Levels define all possible values for that variable  
-    <ul>
-      <li> Great for variable like `Day` (Monday, Tuesday, ...)</li>
-      <li> Not great for variable like `Name`</li>  
-    </ul>
+For example, in the neuralgia data set we may have a fourth treatment we want to add to the `Treatment` variable.  Let's try to assign the first observation value with a 'new' treatment called 'M'.  
 
-
-## Aside: Factors
-
-```{r strn2, error = TRUE}
+```{r , error = TRUE}
 neuralgiaData$Treatment
 neuralgiaData$Treatment[1] <- "M"
+```
 
+We can see this throws an error because 'M' is not one of the levels defined for the variable.  To add the new value we have to alter the `levels` attribute of the factor.  
+
+```{r}
 #overwrite with another possible level
 levels(neuralgiaData$Treatment) <- c(levels(neuralgiaData$Treatment), "M")
 levels(neuralgiaData$Treatment)
 neuralgiaData$Treatment[1] <- "M"
 ```
 
+Factors are very useful for plotting as we'll see later.  
 
-## Aside: Factors
+For the other issues with the `read.` family we can look at useful functions from other R packages.  R packages deserve a brief discussion as well!  
 
-- Useful if you want to order values though (say for plotting!)
+#### Quick Aside: R Packages  
 
-```{r reread,echo = FALSE}
-neuralgiaData <- read.csv(
-      "https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv"
-      )
-```
+An R package is a collection of functions in one place.  There are tons of packages to do most anything.  In particular a group of packages called the "[TidyVerse](http://tidyverse.org/)" has modernized the use of R for a larger audience.  The tidyverse is a package that is a collection of eight R packages that share common philosophies and are designed to work together!  One of these packages, `readr`, is extremely useful for reading in data and remedies the concerns mentioned above about the `read.` family of functions.  
 
-```{r factorPlot1,echo=TRUE, eval = TRUE, out.width = '600px', fig.align='center'}
-ggplot(data = neuralgiaData, aes(x = Treatment, y = Duration)) + 
-  geom_boxplot() + ggtitle("Plot of Duration by Treatment")
-```
+The first time using a package you must 'install' the package (download the files).  You can do this
 
+- Using code:
 
-## Aside: Factors
-
-- Useful if you want to change order of values (say for plotting!)
-
-```{r factorOrder,echo=TRUE, eval = TRUE}
-#or use ordered()
-neuralgiaData$Treatment <- factor(neuralgiaData$Treatment,
-                                  levels(neuralgiaData$Treatment)[c(3, 2, 1)])
-neuralgiaData$Treatment
-```
-<!-- mention ordered vs unordered factors-->
-
-
-## Aside: Factors
-
-- Useful if you want to change order of values (say for plotting!)
-
-```{r factorPlot2, out.width = '600px', fig.align='center'}
-ggplot(data = neuralgiaData, aes(x = Treatment, y = Duration)) + 
-  geom_boxplot()
-```
-
-
-
-## Reading Delimited Data  
-
-- Functions from `read.` family work well  
-
-- Concerns:  
-
-    + A poor default function behavior
-    
-         * strings are read as `factors`  
-         
-         * row & column names can be troublesome
-    
-    + Slow processing  
-    
-    + (Slightly) different behavior on different computers  
-    
-
-
-## Aside: R Packages
-
-- R package  
-    <ul>
-      <li> Collection of functions in one place</li>  
-      <li> Packages exist to do almost anything</li>  
-      <li> [List of CRAN](https://cran.r-project.org/web/packages/available_packages_by_name.html) approved packages on R's website</li>  
-      <li> Plenty of other packages on places like GitHub</li>
-    </ul>
-    
-> - "[TidyVerse](http://tidyverse.org/)" - collection of R packages that share common philosophies and are designed to work together!  
-<!--Many packages do the same thing.  Some just do it better than others.  Often hard to pick the best one.-->    
-
-
-## Aside: R Packages
-
-- First time using a package  
-    + Must install package (download files)  
-    + Can use code or menus 
-    
-```{r install1, eval=FALSE}
-install.packages("readr")
+```{r , eval=FALSE}
+install.packages("tidyverse")
 #can do multiple packages at once
 install.packages(c("readr", "readxl", "haven", "DBI", "httr"))
 ```
 
+- Using menus:
 
-## Aside: R Packages
-
-- First time using a package  
-    + Must install package (download files)  
-    + Can use code or menus
-
-```{r install2, out.width = "800px",echo=FALSE, fig.align='center'}
-knitr::include_graphics("../img/packages.png")
+```{r , out.width = "800px",echo=FALSE, fig.align='center'}
+knitr::include_graphics("img/packages.png")
 ```
 
-<!--Can also install them from local sources and stuff like that but that isn't usually required unless you are behind a firewall of some kind that keeps R from accessing the internet.-->
+Note that you can also install packages from local sources (such as a downloaded .zip or .tar) but that isn't usually required unless you are behind a firewall or R updates and the packages haven't bene updated for that version of R.  
     
+The good thing is that you only need to install the packages once!  However, this doesn't mean you have direct access to your package functions or datasets in your R session.  **Each R session** you open you need to read in the package using `library()` or `require()`.
 
-## Aside: R Packages
-
-- Only install once!  
-
-- **Each session**: read in package using `library()` or `require()`
-
-```{r libreq1}
+```{r }
 library("readr")
 require("haven")
 ```
 
-## Aside: R Packages
+These functions are very similar; they both give you direct access to the functions or data in your R session.  The difference is that if you try to load a package that doesn't exist `library` throws an error where `require()` returns `FALSE`.  
 
-- Difference - if no package  
-     + `library()` throws an error
-     + `require()` returns FALSE
-
-```{r libreq2,error=TRUE,warning=TRUE}
+```{r ,error=TRUE,warning=TRUE}
 library("notAPackage")
 require("notAPackage")
 ```
-<!--require is often used when you write functions that load in packages.  Rather than throwing an error you'd like to just return a warning to the user so they can go and download the package.
 
-Of course, there are ways to load packages by default into your r workspace.  Go to your .Rprofile.site file (usually in C:\Program Files\R\R-***\etc\) and add in options(defaultPackages=c(getOption("defaultPackages"),
-       "mypackage1","mypackage2", ... [etc.]))-->
+Now is a good time to install the `tidyverse` package if you haven't already.  
 
-
-## Aside: R Packages  
-
-- Many packages to do things in R  
-
-> - How to choose?  
-     <ul>
-       <li> Want 'fast' code</li>  
-       <li> Want 'easy' syntax</li>  
-       <li> Good default settings on functions</li>  
-       <li> Nice set of examples and vignettes</li>  
-     </ul> 
-     
-> - Enter: TidyVerse
-
-
-## Aside: R Packages  
-
-- Install the `tidyverse` package  
-
-```{r tidy, eval=FALSE}
+```{r , eval=FALSE}
 install.packages("tidyverse")
 ```
 
 
+The functions in the `tidyverse` generally have   
 
-## Aside: R Packages  
+- Fast code  
 
-- Install the `tidyverse` package  
+- Easy syntax  
 
-```{r tidy2, eval=FALSE}
-install.packages("tidyverse")
-```
+- Good default settings on functions  
 
-- Load library  
+- A nice set of examples and vignettes  
 
-```{r loadTidy, message = TRUE}
+Read the package into your R session.  
+
+```{r , message = TRUE}
 library(tidyverse)
 ```
 
-- Once library loaded, check `help(filter)`  
+You'll likely see a message about functions being masked.  This implies that one of the functions just loaded has a function under the same name as a function that already exists.  If you type `help(filter)`, R will now give you an option of which `filter` to look at.  R uses the most recently loaded function and "masks" the old ones.  You can access specific package's functions using `::`.  This allows you to call functions without loading a full library.
 
-<!--Note: There are two conflicts.  This just means functions that are named the same thing.  R uses the most recently loaded function and "masks" the old ones.  You can access specific package functions using "::" for instance, stats::filter(...) will call the filter function that has been masked.-->
-
-
-## Aside: R Packages  
-
-- Can call functions without loading full library with `::`  
-
-```{r readCSVex, eval = TRUE}
+```{r , eval = TRUE}
 readr::read_csv("https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv")
 ```
 
 
-## Aside: R Packages  
+#### Reading Delimited Data  
 
-Install packages first (download it)  
+#### Reading Delimited Data  
 
- - Can do more than one at a time  
- 
-Load package with `require()` or `library()`  
+Again the `read.` functions exist to read in many different types of delimited data.  These functions work really well but there are a few areas they could be improved.  
 
- - Call without loading using `::`  
- 
+- A poor default function behavior as strings are read as `factors`
 
-## Reading Delimited Data  
-
-We'll use the `tidyverse`!
-
-Function and purpose:
+- Raw data row & column names can be troublesome
+    
+- Slow processing (relatively speaking)  
+    
+- (Slightly) different behavior on different computers  
+    
+Functions from the `tidyverse` (and `readr` in particular) remedy all of these!
 
 Type of Delimeter           | `utils` Function        | `readr` 
 --------------------------- | ----------------------- | ---------
@@ -380,156 +262,84 @@ General                     | `read.table(sep = "")`  | `read_delim()`
 White Space                 | `read.table(sep = "")`  | `read_table()` `read_table2()`
 
 
-## Reading Delimited Data  
+Let's reread the '[neuralgia.csv](https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv)' file using `read_csv` from the `readr` package.  
 
-- Let's read in the '[neuralgia.csv](https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv)' file  
-
-```{r readCSVex2, eval = TRUE, message = TRUE}
+```{r , eval = TRUE, message = TRUE}
 neuralgiaData <- readr::read_csv("https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv")
 ```
 
+You can see that the package displays a bit of information about how the data was parsed.  
 
-## Reading Delimited Data  
-
-- Let's read in the '[neuralgia.csv](https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv)' file  
-
-```{r viewData}
+```{r }
 neuralgiaData
 ```
 
-
-## Reading Delimited Data  
-
-- Notice: fancy printing!  
-
-- Checking column type is a basic data validation step  
-
-- `tidyverse` data frames are called `tibbles`  
+You'll also notice the fancy printing.  This gives a quick check for the column type you have, which is a basic data validation step.  The `tidyverse` has a special class of data frames called `tibbles`.
 
 ```{r class}
 class(neuralgiaData)
 ```
 
+The behavior of `tibbles` is slightly different than that of a standard `data frame`.  One is the printing method.  The other major difference is that `tibbles` don't simplify.
 
-## `tibbles`  
-
-- Behavior slightly different than a standard `data frame`
-
-- No simplification!  
-
-<div class = "columns-2">
-```{r simplify}
+```{r }
 neuralgiaData[,1]
 as.data.frame(neuralgiaData)[,1]
-
 ```
 
+As this behavior can cause some issues with functions that are expecting a vector it is useful to force simplification sometimes.  You can either use the `pull` function or the `$` operator to return a column as a vector.  
 
-## `tibbles`  
-
-- Behavior slightly different than a standard `data frame`
-
-- No simplification!  Use either `pull()` or `$`
-
-```{r pull}
+```{r }
 pull(neuralgiaData, 1)
 neuralgiaData$Treatment 
 ```
 
+One question you may have about the column types is, how did R determine the column types?  The help file for `read_csv` tells us that it checks the first 1000 rows of data and uses those to figure out the type of data.  You can of course override this default behavior.  
 
-## Reading Delimited Data  
+Some useful inputs you may want to change when reading in data are 
 
- - How did R determine the column types?
+- `skip = 0`  
 
-```{r helpcsv, eval = FALSE}
-help(read_csv)
-```
+- `col_names = TRUE`  
 
-> - Other useful inputs:  
-<ul>
-  <li> `skip = 0`</li>
-  <li> `col_names = TRUE`</li>
-  <li> `na = c("", "NA") </li>
-</ul>
-<!--check the help on read_csv again.  See col_types.  Checks first 1000 rows of data and figures out character or numeric.  Notice you can read columns in using specifications.  For instance could specify week as integer and use date or date time when applicable.
---> 
+- `na = c("", "NA")`  
+
+These allow you to skip lines of data, specify column names, and define what represents a missing value in the raw data (`NA` is the missing data indicator in R).
 
 
-## Reading Delimited Data  
+Generally, reading *clean* delimited data pretty easy with the `read_` family of functions!  Let's go through a few examples.  
 
-- Reading *clean* delimited data pretty easy!  
+First, let's read in the space delimited file '[chemical.txt](https://www4.stat.ncsu.edu/~online/datasets/chemical.txt)'.  Since this is space delimited we'll use `read_table`.  
 
-- Let's read in the '[chemical.txt](https://www4.stat.ncsu.edu/~online/datasets/chemical.txt)' file (space delimited)  
-
-
-
-## Reading Delimited Data  
-
-- Reading *clean* delimited data pretty easy!  
-
-- Let's read in the '[chemical.txt](https://www4.stat.ncsu.edu/~online/datasets/chemical.txt)' file (space delimited)  
-
-```{r readSpace}
+```{r }
 read_table("https://www4.stat.ncsu.edu/~online/datasets/chemical.txt")
 ```
 
 
+Next, let's read in the tab delimited file '[crabs.txt](https://www4.stat.ncsu.edu/~online/datasets/crabs.txt)'.  Since this is tab delimited we'll use `read_tsv`.
 
-## Reading Delimited Data  
-
-- Reading *clean* delimited data pretty easy!  
-
-- Let's read in the '[crabs.txt](https://www4.stat.ncsu.edu/~online/datasets/crabs.txt)' file (tab delimited)  
-
-
-
-## Reading Delimited Data  
-
-- Reading *clean* delimited data pretty easy!  
-
-- Let's read in the '[crabs.txt](https://www4.stat.ncsu.edu/~online/datasets/crabs.txt)' file (tab delimited)  
-
-```{r readTab}
+```{r }
 read_tsv("https://www4.stat.ncsu.edu/~online/datasets/crabs.txt")
 ```
 
 
-## Reading Delimited Data  
+Lastly, let's read in the `>` delimited file '[umps2012.txt](https://www4.stat.ncsu.edu/~online/datasets/umps2012.txt)'.  As this isn't a standard delimiter we'll use `read_delim` and specify the `delim = ` input.  However, this file doesn't contain column names in the raw data.  The columns represent Year, Month, Day, Home, Away, and HPUmpire.  The column names can be specified using the `col_names` input and specifying them with a character vector.  
 
-- Reading *clean* delimited data pretty easy!  
-
-- Let's read in the '[umps2012.txt](https://www4.stat.ncsu.edu/~online/datasets/umps2012.txt)' file ('>' delimited)  
-
-- Notice no column names provided  
-
-     + Year Month Day Home Away HPUmpire  
-
-
-## Reading Delimited Data  
-
-- Reading *clean* delimited data pretty easy!  
-
-- Let's read in the '[umps2012.txt](https://www4.stat.ncsu.edu/~online/datasets/umps2012.txt)' file ('>' delimited)  
-
-- Notice no column names provided  
-
-     + Year Month Day Home Away HPUmpire  
-
-```{r readGeneral}
+```{r }
 read_delim("https://www4.stat.ncsu.edu/~online/datasets/umps2012.txt", delim = ">",
            col_names = c("Year", "Month", "Day", "Home", "Away", "HPUmpire"))
 ```
 
 
-## Reading Tricky Non-Standard Data
+#### Non-Standard Data
 
-- read_file()
-     + reads an entire file into a single string
+To read in tricky, non-standard data there are a few functions that can help.  
 
-- read_lines() 
-     + reads a file into a character vector with one element per line  
+- `read_file` - reads an entire file into a single string
 
-- Usually parse with `regular expressions` :(
+- `read_lines` - reads a file into a character vector with one element per line  
+
+These are often parsed with `regular expressions`.
 
 
 ## Next Up!
