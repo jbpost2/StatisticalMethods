@@ -342,9 +342,9 @@ To read in tricky, non-standard data there are a few functions that can help.
 These are often parsed with `regular expressions`.
 
 
-## Next Up!
+#### Excel data
 
-- Read data from other sources
+Next we'll cover reading data from Excel files (`readxl` package), SAS datasets (`haven` package), and SPSS files (`haven` package). 
 
 Type of file       | Package   | Function   
 ------------------ | --------- | -----------------
@@ -353,35 +353,8 @@ Excel (.xls,.xlsx) | `readxl`  | `read_excel()`
 SAS (.sas7bdat)    | `haven`   | `read_sas()`
 SPSS (.sav)        | `haven`   | `read_spss()`
 
-<br> 
 
-- Resources for JSON, XML, databases, and APIs
-
-
-
-
-## Excel Data
-
-- Read in [censusEd.xlsx](https://www4.stat.ncsu.edu/~online/datasets/censusEd.xlsx)  
-
-- Use `read_excel()` from `readxl` package!  
-
-
-
-## Excel Data
-
-- Read in [censusEd.xlsx](https://www4.stat.ncsu.edu/~online/datasets/censusEd.xlsx)  
-
-- Use `read_excel()` from `readxl` package!  
-
-    + Reads both xls and xlsx files  
-
-    + Detects format from extension given  
-
-    + Can't pull from web though!  
-
-
-## Excel Data
+Let's read in the [censusEd.xlsx](https://www4.stat.ncsu.edu/~online/datasets/censusEd.xlsx) file.This can be done with the `read_excel()` from `readxl` package!  This funcion reads in both xls and xlsx files.  It detects the format from the file extension given in the path name.  One issue is that excel files can be read from the web so they do need to be downloaded locally.  
 
 ```{r}
 #install package if necessary
@@ -391,16 +364,7 @@ edData <- read_excel("../datasets/censusEd.xlsx")
 edData
 ```
 
-
-## Excel Data
-
-- Read in [censusEd.xlsx](https://www4.stat.ncsu.edu/~online/datasets/censusEd.xlsx)  
-
-- Use `read_excel()` from `readxl` package!    
-
-    + Specify sheet with name or integers (or `NULL` for 1st) using `sheet =`  
-
-    + Can look at sheets available
+If you want to read in a sheet other than the first sheet, you can do so with the `sheet =` argument.  To look at the available sheets without opening in Excel you can use the `excel_sheets` function.  
 
 ```{r}
 excel_sheets("../datasets/censusEd.xlsx")
@@ -410,12 +374,7 @@ excel_sheets("../datasets/censusEd.xlsx")
 read_excel("../datasets/censusEd.xlsx", sheet = "EDU01D")
 ```
 
-
-## Excel Data
-
-- Use `read_excel()` from `readxl` package!    
-
-    + Specify cells with contiguous range with `range =`  
+There are also ways to specify which cells to read in with the `range =` argument.  You can select cells that are contiguous only (next to each other).
     
 ```{r}
 edData <- read_excel("../datasets/censusEd.xlsx", sheet = "EDU01A", 
@@ -425,27 +384,9 @@ edData
 
 
 
-## SAS Data
+#### SAS Data
 
-- SAS data has extension '.sas7bdat' 
-
-- Read in [smoke2003.sas7bdat](https://www4.stat.ncsu.edu/~online/datasets/smoke2003.sas7bdat)  
-
-> - Use `read_sas()` from `haven` package  
-
-> - Not many options!
-
-
-
-## SAS Data
-
-- SAS data has extension '.sas7bdat' 
-
-- Read in [smoke2003.sas7bdat](https://www4.stat.ncsu.edu/~online/datasets/smoke2003.sas7bdat)  
-
-- Use `read_sas()` from `haven` package  
-
-- Not many options!
+SAS datasets have a file extension of '.sas7bdat'.  Let's read in the [smoke2003.sas7bdat](https://www4.stat.ncsu.edu/~online/datasets/smoke2003.sas7bdat) dataset.  This can be done using the `read_sas` function from the `haven` package.  As .sas7bdat files are pretty structured there aren't many options to use with this function.  
 
 ```{r,eval=TRUE}
 #install if necessary
@@ -454,85 +395,32 @@ smokeData <- read_sas("https://www4.stat.ncsu.edu/~online/datasets/smoke2003.sas
 smokeData
 ```
 
-
-
-## SAS Data
-
-- Note: Variables had SAS labels. Don't show on print!  
-
-    + Will show on `View(smokeData)` (or click on data from environment)  
+Often times SAS datasets have labels associated with the variable names.  These are more descriptive titles that will print in SAS if requested.  This is the case here.  However, as you see above the labels did not print out.  The labels will show if you look at the data set using the `View` function (or click on smokeData object from environment tab).  How do we get to those labels?  
     
 ```{r}
 str(smokeData)
 ```
     
-    
-## SAS Data
-
-- Note: Variables had SAS labels.  Don't show on print!  
-
-    + Will show on `View(smokeData)` (or click on data from environment)  
-    + Can access via
+The labels are an **attribute** of the dataset.  The attribute is called "label".  These can be accessed using the `attr` function.  
 
 ```{r}
 attr(smokeData$SDDSRVYR, "label")
 ```
 
 
-## SPSS Data  
+#### SPSS Data  
 
-- SPSS data has extension ".sav"  
-
-- Read in [bodyFat.sav](https://www4.stat.ncsu.edu/~online/datasets/bodyFat.sav)  
-
-> - Use `read_spss()` from `haven` package  
-
-> - Not many options!
+SPSS datasets have a file extension of ".sav".  Let's read in the [bodyFat.sav](https://www4.stat.ncsu.edu/~online/datasets/bodyFat.sav) dataset.  This can be done using the `read_spss` function from the `haven` package.  As with SAS datasets, these are well structured so there aren't many options to use with the function.  
 
 
-## SPSS Data  
-
-- SPSS data has extension ".sav"  
-
-- Read in [bodyFat.sav](https://www4.stat.ncsu.edu/~online/datasets/bodyFat.sav)  
-
-- Use `read_spss()` from `haven` package  
-
-- Not many options!
 ```{r,eval=TRUE}
 bodyFatData <- read_spss("https://www4.stat.ncsu.edu/~online/datasets/bodyFat.sav")
 bodyFatData
 ```
 
+#### JSON
 
-## Recap
-
-- Reading Data  
-
-Type of file       | Package   | Function   
------------------- | --------- | -----------------
-Delimited          | `readr`   | `read_csv()`, `read_tsv()`, `read_table()`, `read_delim()`
-Excel (.xls,.xlsx) | `readxl`  | `read_excel()`
-SAS (.sas7bdat)    | `haven`   | `read_sas()`
-SPSS (.sav)        | `haven`   | `read_spss()`
-
-<br> 
-
-## Resources for Other Data Sources  
-
-**JSON** - JavaScript Object Notation  
-
-- Used widely across the internet and databases  
-
-- Can represent usual 2D data or heirarchical data
-
-
-
-## Resources for Other Data Sources  
-
-**JSON** - JavaScript Object Notation  
-
-- Uses key-value pairs  
+**JSON** stands for  JavaScript Object Notation.  This data format is used widely across the internet and in databases.  JSON data can represent our usual 2D data or heirarchical data.  JSON uses key-value pairs.  An example of raw JSON data is given below.
 
 ```{r, eval = FALSE}
 {  
@@ -549,12 +437,7 @@ SPSS (.sav)        | `haven`   | `read_spss()`
 } 
 ```
 
-
-## Resources for Other Data Sources  
-
-**JSON** - JavaScript Object Notation  
-
-Three major R packages 
+There are three major R packages for reading in JSON data:
 
 1. `rjson`  
 
@@ -562,17 +445,7 @@ Three major R packages
 
 3. `jsonlite`  
 
-    + many nice features 
-    
-    + a little slower implementation  
-
-
-
-## Resources for Other Data Sources  
-
-**JSON** - JavaScript Object Notation  
-
-[`jsonlite`](https://www.rdocumentation.org/packages/jsonlite/versions/1.6) basic functions:
+We prefer `jsonlite`.  It has many nice features to simplify reading in data, but these features do make the package's functions a little slower.  The most useful functions from [`jsonlite`](https://www.rdocumentation.org/packages/jsonlite/versions/1.6) are summarized below:
 
 Function    | Description
 ----------- | --------------------------------------------------
@@ -581,23 +454,9 @@ Function    | Description
 `stream_in` | Accepts a *file connection* - can read streaming JSON data
 
 
+#### XML
 
-
-## Resources for Other Data Sources  
-
-**XML** - eXtensible Markup Language
-
-- Used widely across the internet and databases  
-
-- Can represent usual 2D data or heirarchical data
-
-
-
-## Resources for Other Data Sources  
-
-**XML** - eXtensible Markup Language
-
-- Uses tags < > (similar to HTML)
+XML stands for eXtensible Markup Language.  This is another data format that is used widely across the internet and in databases.  This type of data can again represent our usual 2D data or heirarchical data.  XML uss tags < > similar to HTML.  An example of raw XML data is given below.
 
 
 ```{r eval=F}
@@ -615,13 +474,10 @@ Function    | Description
 </roster>
 ```
 
-
-## Resources for Other Data Sources  
-
-**XML** - eXtensible Markup Language
+There is a bit of lingo needed to parse XML data.  
 
 ```{r, fig.align = 'center', echo = FALSE, out.width = "600px", fig.cap="Source: mysamplecode.com"}
-knitr::include_graphics("../img/xmlDiagram.jpg")
+knitr::include_graphics("img/xmlDiagram.jpg")
 ```
 
 
