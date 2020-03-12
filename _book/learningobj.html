@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 23 Appendix - Learning Objectives | Statistical Methods</title>
   <meta name="description" content="Applied statistical methods book." />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17.2 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 23 Appendix - Learning Objectives | Statistical Methods" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Post, Avery, Osborne" />
 
 
-<meta name="date" content="2020-03-11" />
+<meta name="date" content="2020-03-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,41 +53,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -115,10 +140,29 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#r-objects-and-classes"><i class="fa fa-check"></i><b>1.3.3</b> R Objects and Classes</a></li>
 <li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#data-objects"><i class="fa fa-check"></i><b>1.3.4</b> Data Objects</a></li>
 <li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#accessing-common-data-objects"><i class="fa fa-check"></i><b>1.3.5</b> Accessing Common Data Objects</a></li>
-<li class="chapter" data-level="1.3.6" data-path="index.html"><a href="index.html#recap"><i class="fa fa-check"></i><b>1.3.6</b> Recap!</a></li>
-<li class="chapter" data-level="1.3.7" data-path="index.html"><a href="index.html#r-reading-data"><i class="fa fa-check"></i><b>1.3.7</b> R Reading Data</a></li>
-<li class="chapter" data-level="1.3.8" data-path="index.html"><a href="index.html#r-manipulating-data"><i class="fa fa-check"></i><b>1.3.8</b> R Manipulating Data</a></li>
-<li class="chapter" data-level="1.3.9" data-path="index.html"><a href="index.html#sas"><i class="fa fa-check"></i><b>1.3.9</b> SAS</a></li>
+<li class="chapter" data-level="1.3.6" data-path="index.html"><a href="index.html#basics-of-r-recap"><i class="fa fa-check"></i><b>1.3.6</b> Basics of R Recap</a></li>
+<li class="chapter" data-level="1.3.7" data-path="index.html"><a href="index.html#reading-data-basics"><i class="fa fa-check"></i><b>1.3.7</b> Reading Data Basics</a></li>
+<li class="chapter" data-level="1.3.8" data-path="index.html"><a href="index.html#quick-aside-rstudio-project"><i class="fa fa-check"></i><b>1.3.8</b> Quick Aside: RStudio Project</a></li>
+<li class="chapter" data-level="1.3.9" data-path="index.html"><a href="index.html#quick-aside-factors"><i class="fa fa-check"></i><b>1.3.9</b> Quick Aside: Factors</a></li>
+<li class="chapter" data-level="1.3.10" data-path="index.html"><a href="index.html#quick-aside-r-packages"><i class="fa fa-check"></i><b>1.3.10</b> Quick Aside: R Packages</a></li>
+<li class="chapter" data-level="1.3.11" data-path="index.html"><a href="index.html#reading-delimited-data"><i class="fa fa-check"></i><b>1.3.11</b> Reading Delimited Data</a></li>
+<li class="chapter" data-level="1.3.12" data-path="index.html"><a href="index.html#excel-data"><i class="fa fa-check"></i><b>1.3.12</b> Excel data</a></li>
+<li class="chapter" data-level="1.3.13" data-path="index.html"><a href="index.html#sas-data"><i class="fa fa-check"></i><b>1.3.13</b> SAS Data</a></li>
+<li class="chapter" data-level="1.3.14" data-path="index.html"><a href="index.html#spss-data"><i class="fa fa-check"></i><b>1.3.14</b> SPSS Data</a></li>
+<li class="chapter" data-level="1.3.15" data-path="index.html"><a href="index.html#json"><i class="fa fa-check"></i><b>1.3.15</b> JSON</a></li>
+<li class="chapter" data-level="1.3.16" data-path="index.html"><a href="index.html#xml"><i class="fa fa-check"></i><b>1.3.16</b> XML</a></li>
+<li class="chapter" data-level="1.3.17" data-path="index.html"><a href="index.html#databases"><i class="fa fa-check"></i><b>1.3.17</b> Databases</a></li>
+<li class="chapter" data-level="1.3.18" data-path="index.html"><a href="index.html#apis"><i class="fa fa-check"></i><b>1.3.18</b> APIs</a></li>
+<li class="chapter" data-level="1.3.19" data-path="index.html"><a href="index.html#data-manipulation-ideas"><i class="fa fa-check"></i><b>1.3.19</b> Data Manipulation Ideas</a></li>
+<li class="chapter" data-level="1.3.20" data-path="index.html"><a href="index.html#documenting-with-markdown"><i class="fa fa-check"></i><b>1.3.20</b> Documenting with Markdown</a></li>
+<li class="chapter" data-level="1.3.21" data-path="index.html"><a href="index.html#logical-statements"><i class="fa fa-check"></i><b>1.3.21</b> Logical Statements</a></li>
+<li class="chapter" data-level="1.3.22" data-path="index.html"><a href="index.html#dplyr"><i class="fa fa-check"></i><b>1.3.22</b> <code>dplyr</code></a></li>
+<li class="chapter" data-level="1.3.23" data-path="index.html"><a href="index.html#reshaping-data"><i class="fa fa-check"></i><b>1.3.23</b> Reshaping Data</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#sas"><i class="fa fa-check"></i><b>1.4</b> SAS</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#basics-of-sas"><i class="fa fa-check"></i><b>1.4.1</b> Basics of SAS</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#reading-data-with-sas"><i class="fa fa-check"></i><b>1.4.2</b> Reading Data with SAS</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#manipulating-data-with-sas"><i class="fa fa-check"></i><b>1.4.3</b> Manipulating Data with SAS</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html"><i class="fa fa-check"></i><b>2</b> Sampling, Experiments, and Exploratory Data Analysis</a><ul>
@@ -271,15 +315,33 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="24.1" data-path="notation.html"><a href="notation.html#standard-notation"><i class="fa fa-check"></i><b>24.1</b> Standard notation</a></li>
 <li class="chapter" data-level="24.2" data-path="notation.html"><a href="notation.html#mixed-models"><i class="fa fa-check"></i><b>24.2</b> Mixed models</a></li>
 <li class="chapter" data-level="24.3" data-path="notation.html"><a href="notation.html#effects-model-representation"><i class="fa fa-check"></i><b>24.3</b> Effects model representation</a></li>
-<li class="chapter" data-level="24.4" data-path="notation.html"><a href="notation.html#estimators-vs.estimates"><i class="fa fa-check"></i><b>24.4</b> Estimators vs. Estimates</a><ul>
+<li class="chapter" data-level="24.4" data-path="notation.html"><a href="notation.html#estimators-vs.-estimates"><i class="fa fa-check"></i><b>24.4</b> Estimators vs. Estimates</a><ul>
 <li class="chapter" data-level="24.4.1" data-path="notation.html"><a href="notation.html#installing-r-and-rstudio-1"><i class="fa fa-check"></i><b>24.4.1</b> Installing R and RStudio</a></li>
 <li class="chapter" data-level="24.4.2" data-path="notation.html"><a href="notation.html#using-rstudio-1"><i class="fa fa-check"></i><b>24.4.2</b> Using RStudio</a></li>
 <li class="chapter" data-level="24.4.3" data-path="notation.html"><a href="notation.html#r-objects-and-classes-1"><i class="fa fa-check"></i><b>24.4.3</b> R Objects and Classes</a></li>
 <li class="chapter" data-level="24.4.4" data-path="notation.html"><a href="notation.html#data-objects-1"><i class="fa fa-check"></i><b>24.4.4</b> Data Objects</a></li>
 <li class="chapter" data-level="24.4.5" data-path="notation.html"><a href="notation.html#accessing-common-data-objects-1"><i class="fa fa-check"></i><b>24.4.5</b> Accessing Common Data Objects</a></li>
-<li class="chapter" data-level="24.4.6" data-path="notation.html"><a href="notation.html#recap-1"><i class="fa fa-check"></i><b>24.4.6</b> Recap!</a></li>
-<li class="chapter" data-level="24.4.7" data-path="notation.html"><a href="notation.html#r-manipulating-data-1"><i class="fa fa-check"></i><b>24.4.7</b> R Manipulating Data</a></li>
-<li class="chapter" data-level="24.4.8" data-path="notation.html"><a href="notation.html#r-reading-data-1"><i class="fa fa-check"></i><b>24.4.8</b> R Reading Data</a></li>
+<li class="chapter" data-level="24.4.6" data-path="notation.html"><a href="notation.html#basics-of-r-recap-1"><i class="fa fa-check"></i><b>24.4.6</b> Basics of R Recap</a></li>
+<li class="chapter" data-level="24.4.7" data-path="notation.html"><a href="notation.html#data-manipulation-ideas-1"><i class="fa fa-check"></i><b>24.4.7</b> Data Manipulation Ideas</a></li>
+<li class="chapter" data-level="24.4.8" data-path="notation.html"><a href="notation.html#documenting-with-markdown-1"><i class="fa fa-check"></i><b>24.4.8</b> Documenting with Markdown</a></li>
+<li class="chapter" data-level="24.4.9" data-path="notation.html"><a href="notation.html#logical-statements-1"><i class="fa fa-check"></i><b>24.4.9</b> Logical Statements</a></li>
+<li class="chapter" data-level="24.4.10" data-path="notation.html"><a href="notation.html#dplyr-1"><i class="fa fa-check"></i><b>24.4.10</b> <code>dplyr</code></a></li>
+<li class="chapter" data-level="24.4.11" data-path="notation.html"><a href="notation.html#reshaping-data-1"><i class="fa fa-check"></i><b>24.4.11</b> Reshaping Data</a></li>
+<li class="chapter" data-level="24.4.12" data-path="notation.html"><a href="notation.html#reading-data-basics-1"><i class="fa fa-check"></i><b>24.4.12</b> Reading Data Basics</a></li>
+<li class="chapter" data-level="24.4.13" data-path="notation.html"><a href="notation.html#quick-aside-rstudio-project-1"><i class="fa fa-check"></i><b>24.4.13</b> Quick Aside: RStudio Project</a></li>
+<li class="chapter" data-level="24.4.14" data-path="notation.html"><a href="notation.html#quick-aside-factors-1"><i class="fa fa-check"></i><b>24.4.14</b> Quick Aside: Factors</a></li>
+<li class="chapter" data-level="24.4.15" data-path="notation.html"><a href="notation.html#quick-aside-r-packages-1"><i class="fa fa-check"></i><b>24.4.15</b> Quick Aside: R Packages</a></li>
+<li class="chapter" data-level="24.4.16" data-path="notation.html"><a href="notation.html#reading-delimited-data-1"><i class="fa fa-check"></i><b>24.4.16</b> Reading Delimited Data</a></li>
+<li class="chapter" data-level="24.4.17" data-path="notation.html"><a href="notation.html#excel-data-1"><i class="fa fa-check"></i><b>24.4.17</b> Excel data</a></li>
+<li class="chapter" data-level="24.4.18" data-path="notation.html"><a href="notation.html#sas-data-1"><i class="fa fa-check"></i><b>24.4.18</b> SAS Data</a></li>
+<li class="chapter" data-level="24.4.19" data-path="notation.html"><a href="notation.html#spss-data-1"><i class="fa fa-check"></i><b>24.4.19</b> SPSS Data</a></li>
+<li class="chapter" data-level="24.4.20" data-path="notation.html"><a href="notation.html#json-1"><i class="fa fa-check"></i><b>24.4.20</b> JSON</a></li>
+<li class="chapter" data-level="24.4.21" data-path="notation.html"><a href="notation.html#xml-1"><i class="fa fa-check"></i><b>24.4.21</b> XML</a></li>
+<li class="chapter" data-level="24.4.22" data-path="notation.html"><a href="notation.html#databases-1"><i class="fa fa-check"></i><b>24.4.22</b> Databases</a></li>
+<li class="chapter" data-level="24.4.23" data-path="notation.html"><a href="notation.html#apis-1"><i class="fa fa-check"></i><b>24.4.23</b> APIs</a></li>
+<li class="chapter" data-level="24.4.24" data-path="notation.html"><a href="notation.html#basics-of-sas-1"><i class="fa fa-check"></i><b>24.4.24</b> Basics of SAS</a></li>
+<li class="chapter" data-level="24.4.25" data-path="notation.html"><a href="notation.html#manipulating-data-with-sas-1"><i class="fa fa-check"></i><b>24.4.25</b> Manipulating Data with SAS</a></li>
+<li class="chapter" data-level="24.4.26" data-path="notation.html"><a href="notation.html#reading-data-with-sas-1"><i class="fa fa-check"></i><b>24.4.26</b> Reading Data with SAS</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -383,18 +445,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>costs and benefits of using nonparametric approaches</li>
 </ul></li>
 <li>describe the fundamental inferential techniques of hypothesis testing and confidence intervals as well as compare and contrast their uses and interpretations</li>
-<li>identify a null and alternative for a given problem
-<ul>
-<li>interpret hypotheses</li>
-<li>characterize the test statistic under the null</li>
-<li>explain what a rejection region and be able to identify one</li>
-<li>define statistical power</li>
-<li>calculate statistical power for one- and two-sample tests of continuous and binary random variables</li>
-<li>define statistical confidence<br />
-</li>
-<li>identify when using a CI and NSHT will result in the same conclusion</li>
-<li>explain when you can use a confidence interval to test for differences (e.g., comparing a single point estimate to a threshold) and when you can’t (e.g., when you have CIs for two different means)</li>
-</ul></li>
+<li><p>identify a null and alternative for a given problem
+- interpret hypotheses
+- characterize the test statistic under the null
+- explain what a rejection region and be able to identify one
+- define statistical power
+- calculate statistical power for one- and two-sample tests of continuous and binary random variables
+- define statistical confidence<br />
+- identify when using a CI and NSHT will result in the same conclusion
+- explain when you can use a confidence interval to test for differences (e.g., comparing a single point estimate to a threshold) and when you can’t (e.g., when you have CIs for two different means)</p></li>
 <li>choose appropriate numerical summaries and graphical displays for a set of data and create these using software
 <ul>
 <li>when to use tables vs. a picture</li>
@@ -495,7 +554,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="from-st512" class="section level2">
 <h2><span class="header-section-number">23.3</span> From ST512</h2>
-<p>WE NEED TO ORGANIZE THESE UNDER DIFFERENT CHAPTERS AT SOME POINT Learning Objectives</p>
+<p>WE NEED TO ORGANIZE THESE UNDER DIFFERENT CHAPTERS AT SOME POINT
+Learning Objectives</p>
 <ol style="list-style-type: decimal">
 <li>Recognize a completely randomized design with one treatment factor and write the corresponding one-way analysis of variance model, with assumptions</li>
 <li>Estimate treatment means</li>
@@ -551,7 +611,38 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Estimate and interpret treatment means and their standard errors adjusted for covariates using SAS, Construct confidence intervals for adjusted treatment means</li>
 <li><p>Construct and estimate contrasts of treatment means adjusted for covariates and estimate the standard errors and confidence intervals of such contrasts.</p></li>
 </ol>
-<p>Analysis of variance and design of experiments Recognize each of the following types of experimental designs and determine when each type would be advantageous. 1. completely randomized design 2. randomized complete block design 3. split plot design Recognize whether factors should be considered fixed effects or random effects and explain the scope of inference for each case. Recognize whether factors are crossed or nested. For all of the designs listed and for experiments with crossed and/or nested fixed factors, random factors, or a combination of fixed and random effects, be able to 1. Write the corresponding analysis of variance model, with assumptions, and define all terms 2. Estimate treatment means and their standard errors 3. Construct the analysis of variance table, including computing degrees of freedom, sums of squares, mean squares, and F-ratios 4. Determine whether the assumptions of the model are satisfied 5. Interpret results and draw conclusions 6. Construct and estimate linear combinations of treatment means and their standard errors 7. Test hypotheses and construct confidence intervals about linear combinations of treatment means 8. Explain when and why corrections for multiple comparisons are needed, know when and how to use Tukey’s correction for all pairwise comparisons, compute Bonferroni confidence intervals 9. Create and interpret orthogonal contrasts. 10. Define and interpret main effects, simple effects and interactions 11. Use a table of expected mean squares to estimate variance components and determine appropriate F-statistics for testing effects in the analysis of variance 12. Interpret variance components and estimate and interpret the intraclass correlation coefficient. Regression and correlation Explain the appropriate use of correlations and compute the correlation coefficient, read and interpret a scatterplot and guess the correlation coefficient by examination of a scatter plot, test the hypothesis that the correlation coefficient is zero using either a t-test or the Fisher z transformation, compute confidence intervals using Fisher’s z transformation You should be able to do the following for fitting models to describe the relationships of one or several variables to a response variable. The regressor variables may be continuous or categorical or a mix of the two (e.g., analysis of covariance models) 1. Write a general linear model, including assumptions, in standard or matrix notation, and explain what all the terms and assumptions represent. Be able to handle models that contain interaction terms, polynomial terms, and dummy variables. 2. Evaluate whether the model assumptions are met 3. Fit a general linear model in SAS and interpret the output 4. Work with the general linear model in matrix form, including finding the expectation and variance of a linear combination of regression coefficients or treatment means 5. Test hypotheses and construct confidence intervals for linear combinations of the parameters 6. Construct and interpret a confidence interval for the expected value of Y at a given value of X 7. Construct and interpret a prediction interval for a new value of Y at a given value of X 8. Use extra sums of squares to test hypotheses about subsets of parameters. 9. Explain what a covariate is and how covariates are used</p>
+<p>Analysis of variance and design of experiments
+Recognize each of the following types of experimental designs and determine when each type would be advantageous.
+1. completely randomized design
+2. randomized complete block design
+3. split plot design
+Recognize whether factors should be considered fixed effects or random effects and explain the scope of inference for each case.
+Recognize whether factors are crossed or nested.
+For all of the designs listed and for experiments with crossed and/or nested fixed factors, random factors, or a combination of fixed and random effects, be able to
+1. Write the corresponding analysis of variance model, with assumptions, and define all terms
+2. Estimate treatment means and their standard errors
+3. Construct the analysis of variance table, including computing degrees of freedom, sums of squares, mean squares, and F-ratios
+4. Determine whether the assumptions of the model are satisfied
+5. Interpret results and draw conclusions
+6. Construct and estimate linear combinations of treatment means and their standard errors
+7. Test hypotheses and construct confidence intervals about linear combinations of treatment means
+8. Explain when and why corrections for multiple comparisons are needed, know when and how to use Tukey’s correction for all pairwise comparisons, compute Bonferroni confidence intervals
+9. Create and interpret orthogonal contrasts.
+10. Define and interpret main effects, simple effects and interactions
+11. Use a table of expected mean squares to estimate variance components and determine appropriate F-statistics for testing effects in the analysis of variance
+12. Interpret variance components and estimate and interpret the intraclass correlation coefficient.
+Regression and correlation
+Explain the appropriate use of correlations and compute the correlation coefficient, read and interpret a scatterplot and guess the correlation coefficient by examination of a scatter plot, test the hypothesis that the correlation coefficient is zero using either a t-test or the Fisher z transformation, compute confidence intervals using Fisher’s z transformation
+You should be able to do the following for fitting models to describe the relationships of one or several variables to a response variable. The regressor variables may be continuous or categorical or a mix of the two (e.g., analysis of covariance models)
+1. Write a general linear model, including assumptions, in standard or matrix notation, and explain what all the terms and assumptions represent. Be able to handle models that contain interaction terms, polynomial terms, and dummy variables.
+2. Evaluate whether the model assumptions are met
+3. Fit a general linear model in SAS and interpret the output
+4. Work with the general linear model in matrix form, including finding the expectation and variance of a linear combination of regression coefficients or treatment means
+5. Test hypotheses and construct confidence intervals for linear combinations of the parameters
+6. Construct and interpret a confidence interval for the expected value of Y at a given value of X
+7. Construct and interpret a prediction interval for a new value of Y at a given value of X
+8. Use extra sums of squares to test hypotheses about subsets of parameters.
+9. Explain what a covariate is and how covariates are used</p>
 </div>
 <div id="for-point-estimates-chapter" class="section level2">
 <h2><span class="header-section-number">23.4</span> For Point Estimates Chapter</h2>
@@ -627,7 +718,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))

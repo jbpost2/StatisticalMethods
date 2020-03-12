@@ -12,6 +12,13 @@ github-repo: rstudio/bookdown-demo
 description: "Applied statistical methods book."
 ---
 
+
+```{r, echo = FALSE, warning = FALSE, message=FALSE}
+options(dplyr.print_min = 5)
+options(tibble.print_min = 5)
+options(max.print = 100)
+```
+
 # Introduction  
 
 ## About the book  
@@ -63,34 +70,19 @@ As the book progresses the steps of summarizing and analyzing the data will be c
 ```{r, child=c('RBasics.Rmd', 'RReadingData.Rmd', 'RManipulatingData.Rmd')}
 ```
 
-### SAS
+## SAS
 
-Section designed to demonstrate basic use of SAS via SAS Studio. By the end of this section students will be able to:
+The general workflow for programming in SAS is similar to that of R.  First raw data must be imported to SAS.  Once that data is imported you will find an appropriate PROC (or procedure) that will summarize or analyze your data appropriate. Often times relevant graphs and summaries are created with a single PROC.  
 
-    write basic SAS programs in SAS Studio using SAS University edition
-    import well formatted data into SAS using the import wizard, PROC IMPORT, or a DATA step
-    create common numerical and graphical summaries of data
-    understand the capabilities of SAS program (something like this but a little clearer maybe)
+At the end of this section the reader should be able to do the following:  
 
+- install SAS University Edition   
+- read and write basic SAS programs   
+- import well formatted data into SAS
+- do basic data manipulation in SAS   
 
-SAS Programming Topics
+As the book progresses the steps of summarizing and analyzing the data will be covered.  Let's get started!
 
-    Common elements of SAS programs: PROC and DATA steps
-    Steps, statements, keywords, and options
-    SAS windows
-    Submitting SAS code, checking logs, and viewing output
-    GPP elements
+```{r, child=c('SASBasics.Rmd', 'SASReadingData.Rmd', 'SASManipulatingData.Rmd')}
+```
 
-Module 2 - Importing Data Topics
-
-    SAS library
-    Data set names (one vs two level)
-    Methods for importing data: Instream, Import Wizard, and Data step
-    Delimiters and common data formats
-    Types of variables in SAS
-    Explorer and PROC PRINT/CONTENTS for investigating a SAS data set
-
-
-Module 3 - Manipulating Data Topics
-
-    very basic stuff

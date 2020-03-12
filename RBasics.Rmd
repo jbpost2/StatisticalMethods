@@ -597,7 +597,7 @@ iris[["Petal.Len", exact = FALSE]]
 This is less important now that RStudio can auto-complete long column names.
 
 
-### Recap!
+### Basics of R Recap 
 
 - RStudio IDE (Integrated Development Environment)  
 

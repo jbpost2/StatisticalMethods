@@ -1,0 +1,2361 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 R Markdown | Statistical Methods</title>
+  <meta name="description" content="Applied statistical methods book." />
+  <meta name="generator" content="bookdown 0.17.2 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 R Markdown | Statistical Methods" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Applied statistical methods book." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 R Markdown | Statistical Methods" />
+  
+  <meta name="twitter:description" content="Applied statistical methods book." />
+  
+
+<meta name="author" content="Post, Avery, Osborne" />
+
+
+<meta name="date" content="2020-03-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="sampling-experiments-and-exploratory-data-analysis.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-the-book"><i class="fa fa-check"></i><b>1.1</b> About the book</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i><b>1.2</b> Software</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#r"><i class="fa fa-check"></i><b>1.3</b> R</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>1.3.1</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#using-rstudio"><i class="fa fa-check"></i><b>1.3.2</b> Using RStudio</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#r-objects-and-classes"><i class="fa fa-check"></i><b>1.3.3</b> R Objects and Classes</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#data-objects"><i class="fa fa-check"></i><b>1.3.4</b> Data Objects</a></li>
+<li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#accessing-common-data-objects"><i class="fa fa-check"></i><b>1.3.5</b> Accessing Common Data Objects</a></li>
+<li class="chapter" data-level="1.3.6" data-path="index.html"><a href="index.html#recap"><i class="fa fa-check"></i><b>1.3.6</b> Recap!</a></li>
+<li class="chapter" data-level="1.3.7" data-path="index.html"><a href="index.html#r-reading-data"><i class="fa fa-check"></i><b>1.3.7</b> R Reading Data</a></li>
+<li class="chapter" data-level="1.3.8" data-path="index.html"><a href="index.html#r-manipulating-data"><i class="fa fa-check"></i><b>1.3.8</b> R Manipulating Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>2</b> R Markdown</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="r-markdown.html"><a href="r-markdown.html#sas"><i class="fa fa-check"></i><b>2.0.1</b> SAS</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html"><i class="fa fa-check"></i><b>3</b> Sampling, Experiments, and Exploratory Data Analysis</a><ul>
+<li class="chapter" data-level="3.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#data-in-the-wild"><i class="fa fa-check"></i><b>3.1</b> Data in the Wild</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#data-from-experiments"><i class="fa fa-check"></i><b>3.1.1</b> Data from Experiments</a></li>
+<li class="chapter" data-level="3.1.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#data-from-observational-studies"><i class="fa fa-check"></i><b>3.1.2</b> Data from Observational Studies</a></li>
+<li class="chapter" data-level="3.1.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#observational-vs-experimental"><i class="fa fa-check"></i><b>3.1.3</b> Observational vs Experimental</a></li>
+<li class="chapter" data-level="3.1.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#the-role-of-statistics"><i class="fa fa-check"></i><b>3.1.4</b> The Role of Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#descriptive-study---farmers-market"><i class="fa fa-check"></i><b>3.2</b> Descriptive Study - Farmer’s Market</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#define-objective-background"><i class="fa fa-check"></i><b>3.2.1</b> Define Objective &amp; Background</a></li>
+<li class="chapter" data-level="3.2.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#select-response"><i class="fa fa-check"></i><b>3.2.2</b> Select Response</a></li>
+<li class="chapter" data-level="3.2.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#determine-sources-of-variation"><i class="fa fa-check"></i><b>3.2.3</b> Determine Sources of Variation</a></li>
+<li class="chapter" data-level="3.2.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#select-design"><i class="fa fa-check"></i><b>3.2.4</b> Select Design</a></li>
+<li class="chapter" data-level="3.2.5" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#do-study"><i class="fa fa-check"></i><b>3.2.5</b> Do Study</a></li>
+<li class="chapter" data-level="3.2.6" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#do-statistical-analysis"><i class="fa fa-check"></i><b>3.2.6</b> Do Statistical Analysis</a></li>
+<li class="chapter" data-level="3.2.7" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#draw-conclusions-communicate"><i class="fa fa-check"></i><b>3.2.7</b> Draw Conclusions &amp; Communicate</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#statistical-testing-ideas---simulated-experiment"><i class="fa fa-check"></i><b>3.3</b> Statistical Testing Ideas - Simulated Experiment</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#define-objective-background-1"><i class="fa fa-check"></i><b>3.3.1</b> Define Objective &amp; Background</a></li>
+<li class="chapter" data-level="3.3.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#select-response-1"><i class="fa fa-check"></i><b>3.3.2</b> Select Response</a></li>
+<li class="chapter" data-level="3.3.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#determine-sources-of-variation-1"><i class="fa fa-check"></i><b>3.3.3</b> Determine Sources of Variation</a></li>
+<li class="chapter" data-level="3.3.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#select-design-1"><i class="fa fa-check"></i><b>3.3.4</b> Select Design</a></li>
+<li class="chapter" data-level="3.3.5" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#do-study-1"><i class="fa fa-check"></i><b>3.3.5</b> Do Study</a></li>
+<li class="chapter" data-level="3.3.6" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#do-statistical-analysis-1"><i class="fa fa-check"></i><b>3.3.6</b> Do Statistical Analysis</a></li>
+<li class="chapter" data-level="3.3.7" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#draw-conclusions-communicate-1"><i class="fa fa-check"></i><b>3.3.7</b> Draw Conclusions &amp; Communicate</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#statistical-ideas-and-concepts"><i class="fa fa-check"></i><b>3.4</b> Statistical Ideas and Concepts</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#study-purpose"><i class="fa fa-check"></i><b>3.4.1</b> Study Purpose</a></li>
+<li class="chapter" data-level="3.4.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#summarizing-data"><i class="fa fa-check"></i><b>3.4.2</b> Summarizing Data</a></li>
+<li class="chapter" data-level="3.4.3" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#study-types"><i class="fa fa-check"></i><b>3.4.3</b> Study Types</a></li>
+<li class="chapter" data-level="3.4.4" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#suggestions-for-further-readings"><i class="fa fa-check"></i><b>3.4.4</b> Suggestions for Further Readings</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#software-1"><i class="fa fa-check"></i><b>3.5</b> Software</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#r-1"><i class="fa fa-check"></i><b>3.5.1</b> R</a></li>
+<li class="chapter" data-level="3.5.2" data-path="sampling-experiments-and-exploratory-data-analysis.html"><a href="sampling-experiments-and-exploratory-data-analysis.html#sas-1"><i class="fa fa-check"></i><b>3.5.2</b> SAS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="point-estimates.html"><a href="point-estimates.html"><i class="fa fa-check"></i><b>4</b> Point Estimates</a><ul>
+<li class="chapter" data-level="4.1" data-path="point-estimates.html"><a href="point-estimates.html#estiamte-with-means"><i class="fa fa-check"></i><b>4.1</b> Estiamte with means</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="point-estimates.html"><a href="point-estimates.html#experiment-background"><i class="fa fa-check"></i><b>4.1.1</b> Experiment background</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="point-estimates.html"><a href="point-estimates.html#estimate-with-quantiles"><i class="fa fa-check"></i><b>4.2</b> Estimate with quantiles</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="point-estimates.html"><a href="point-estimates.html#experiment-background-1"><i class="fa fa-check"></i><b>4.2.1</b> Experiment background</a></li>
+<li class="chapter" data-level="4.2.2" data-path="point-estimates.html"><a href="point-estimates.html#define-the-object-of-the-experiment"><i class="fa fa-check"></i><b>4.2.2</b> Define the object of the experiment</a></li>
+<li class="chapter" data-level="4.2.3" data-path="point-estimates.html"><a href="point-estimates.html#select-appropriate-response-variables"><i class="fa fa-check"></i><b>4.2.3</b> Select appropriate response variables</a></li>
+<li class="chapter" data-level="4.2.4" data-path="point-estimates.html"><a href="point-estimates.html#identify-sources-of-variation"><i class="fa fa-check"></i><b>4.2.4</b> IDentify sources of variation</a></li>
+<li class="chapter" data-level="4.2.5" data-path="point-estimates.html"><a href="point-estimates.html#choose-an-experimental-design"><i class="fa fa-check"></i><b>4.2.5</b> Choose an experimental design</a></li>
+<li class="chapter" data-level="4.2.6" data-path="point-estimates.html"><a href="point-estimates.html#perform-the-test"><i class="fa fa-check"></i><b>4.2.6</b> Perform the test</a></li>
+<li class="chapter" data-level="4.2.7" data-path="point-estimates.html"><a href="point-estimates.html#statistically-analyze-the-data"><i class="fa fa-check"></i><b>4.2.7</b> Statistically analyze the data</a></li>
+<li class="chapter" data-level="4.2.8" data-path="point-estimates.html"><a href="point-estimates.html#draw-conclusions"><i class="fa fa-check"></i><b>4.2.8</b> Draw conclusions</a></li>
+<li class="chapter" data-level="4.2.9" data-path="point-estimates.html"><a href="point-estimates.html#discussion"><i class="fa fa-check"></i><b>4.2.9</b> Discussion</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="accounting-for-uncertainty.html"><a href="accounting-for-uncertainty.html"><i class="fa fa-check"></i><b>5</b> Accounting for Uncertainty</a><ul>
+<li class="chapter" data-level="5.1" data-path="accounting-for-uncertainty.html"><a href="accounting-for-uncertainty.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="accounting-for-uncertainty.html"><a href="accounting-for-uncertainty.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="HT.html"><a href="HT.html"><i class="fa fa-check"></i><b>6</b> Inference via Hypothesis Tests for One Sample</a><ul>
+<li class="chapter" data-level="6.1" data-path="HT.html"><a href="HT.html#example-detection-probability"><i class="fa fa-check"></i><b>6.1</b> Example: Detection Probability</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="HT.html"><a href="HT.html#understanding-system-performance"><i class="fa fa-check"></i><b>6.1.1</b> Understanding system performance</a></li>
+<li class="chapter" data-level="6.1.2" data-path="HT.html"><a href="HT.html#data-analysis"><i class="fa fa-check"></i><b>6.1.2</b> Data Analysis</a></li>
+<li class="chapter" data-level="6.1.3" data-path="HT.html"><a href="HT.html#data-from-experiments-1"><i class="fa fa-check"></i><b>6.1.3</b> Data from Experiments</a></li>
+<li class="chapter" data-level="6.1.4" data-path="HT.html"><a href="HT.html#data-from-observational-studies-1"><i class="fa fa-check"></i><b>6.1.4</b> Data from Observational Studies</a></li>
+<li class="chapter" data-level="6.1.5" data-path="HT.html"><a href="HT.html#observational-vs-experimental-1"><i class="fa fa-check"></i><b>6.1.5</b> Observational vs Experimental</a></li>
+<li class="chapter" data-level="6.1.6" data-path="HT.html"><a href="HT.html#the-role-of-statistics-1"><i class="fa fa-check"></i><b>6.1.6</b> The Role of Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="HT.html"><a href="HT.html#marketing-example"><i class="fa fa-check"></i><b>6.2</b> Marketing Example</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="HT.html"><a href="HT.html#experiment-background-2"><i class="fa fa-check"></i><b>6.2.1</b> Experiment Background</a></li>
+<li class="chapter" data-level="6.2.2" data-path="HT.html"><a href="HT.html#selecting-response-variables"><i class="fa fa-check"></i><b>6.2.2</b> Selecting Response Variables</a></li>
+<li class="chapter" data-level="6.2.3" data-path="HT.html"><a href="HT.html#identifying-sources-of-variation"><i class="fa fa-check"></i><b>6.2.3</b> Identifying Sources of Variation</a></li>
+<li class="chapter" data-level="6.2.4" data-path="HT.html"><a href="HT.html#choose-an-experimental-design-1"><i class="fa fa-check"></i><b>6.2.4</b> Choose an Experimental Design <!-- Is this intended to include any sampling considerations?--></a></li>
+<li class="chapter" data-level="6.2.5" data-path="HT.html"><a href="HT.html#peform-the-test"><i class="fa fa-check"></i><b>6.2.5</b> Peform the Test <!-- Wait, does this mean to actually execute the experiment? --></a></li>
+<li class="chapter" data-level="6.2.6" data-path="HT.html"><a href="HT.html#look-at-the-data"><i class="fa fa-check"></i><b>6.2.6</b> Look at the Data <!-- I think we need to add this as a much needed step!  If nothing else than for data validation.  I'm assuming perform the test now means collect the data. Perhaps this could fall into the Statistically analyze the data part though... Might be good to separate out the exploring/validating part though.  --></a></li>
+<li class="chapter" data-level="6.2.7" data-path="HT.html"><a href="HT.html#statistically-analyze-the-data-1"><i class="fa fa-check"></i><b>6.2.7</b> Statistically Analyze the Data</a></li>
+<li class="chapter" data-level="6.2.8" data-path="HT.html"><a href="HT.html#draw-conclusions-1"><i class="fa fa-check"></i><b>6.2.8</b> Draw conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="HT.html"><a href="HT.html#statistical-testing-ideas"><i class="fa fa-check"></i><b>6.3</b> Statistical Testing Ideas</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="HT.html"><a href="HT.html#experiment-background-3"><i class="fa fa-check"></i><b>6.3.1</b> Experiment Background</a></li>
+<li class="chapter" data-level="6.3.2" data-path="HT.html"><a href="HT.html#selecting-response-variables-1"><i class="fa fa-check"></i><b>6.3.2</b> Selecting Response Variables</a></li>
+<li class="chapter" data-level="6.3.3" data-path="HT.html"><a href="HT.html#identifying-sources-of-variation-1"><i class="fa fa-check"></i><b>6.3.3</b> Identifying Sources of Variation</a></li>
+<li class="chapter" data-level="6.3.4" data-path="HT.html"><a href="HT.html#choose-an-experimental-design-2"><i class="fa fa-check"></i><b>6.3.4</b> Choose an Experimental Design</a></li>
+<li class="chapter" data-level="6.3.5" data-path="HT.html"><a href="HT.html#peform-the-test-1"><i class="fa fa-check"></i><b>6.3.5</b> Peform the Test</a></li>
+<li class="chapter" data-level="6.3.6" data-path="HT.html"><a href="HT.html#explore-the-data"><i class="fa fa-check"></i><b>6.3.6</b> Explore the Data</a></li>
+<li class="chapter" data-level="6.3.7" data-path="HT.html"><a href="HT.html#statistically-analyze-the-data-2"><i class="fa fa-check"></i><b>6.3.7</b> Statistically Analyze the Data</a></li>
+<li class="chapter" data-level="6.3.8" data-path="HT.html"><a href="HT.html#draw-conclusions-2"><i class="fa fa-check"></i><b>6.3.8</b> Draw conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="HT.html"><a href="HT.html#software-2"><i class="fa fa-check"></i><b>6.4</b> Software</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="HT.html"><a href="HT.html#r-2"><i class="fa fa-check"></i><b>6.4.1</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="HT.html"><a href="HT.html#finding-a-specific-value-from-a-probability-distribution-function-or-probability-mass-function"><i class="fa fa-check"></i><b>6.5</b> Finding a specific value from a Probability Distribution Function or Probability Mass Function</a></li>
+<li class="chapter" data-level="6.6" data-path="HT.html"><a href="HT.html#finding-the-area-under-the-curve"><i class="fa fa-check"></i><b>6.6</b> Finding the area under the curve</a></li>
+<li class="chapter" data-level="6.7" data-path="HT.html"><a href="HT.html#finding-quantiles-of-distributions"><i class="fa fa-check"></i><b>6.7</b> Finding quantiles of distributions</a></li>
+<li class="chapter" data-level="6.8" data-path="HT.html"><a href="HT.html#generating-random-numbers"><i class="fa fa-check"></i><b>6.8</b> Generating random numbers</a></li>
+<li class="chapter" data-level="6.9" data-path="HT.html"><a href="HT.html#other-distributions"><i class="fa fa-check"></i><b>6.9</b> Other distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="CI.html"><a href="CI.html"><i class="fa fa-check"></i><b>7</b> Inference via Confidence Intervals for One Sample</a><ul>
+<li class="chapter" data-level="7.1" data-path="CI.html"><a href="CI.html#the-normal-approximation"><i class="fa fa-check"></i><b>7.1</b> The normal approximation</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="CI.html"><a href="CI.html#analog-ci"><i class="fa fa-check"></i><b>7.1.1</b> Analog CI</a></li>
+<li class="chapter" data-level="7.1.2" data-path="CI.html"><a href="CI.html#easy-mode"><i class="fa fa-check"></i><b>7.1.2</b> Easy mode</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="CI.html"><a href="CI.html#other-types-of-binomial-confidence-intervals"><i class="fa fa-check"></i><b>7.2</b> Other types of binomial confidence intervals</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="CI.html"><a href="CI.html#exact-cis-aka-clopper-pearson"><i class="fa fa-check"></i><b>7.2.1</b> Exact CIs, aka Clopper-Pearson</a></li>
+<li class="chapter" data-level="7.2.2" data-path="CI.html"><a href="CI.html#bayesian-intervals"><i class="fa fa-check"></i><b>7.2.2</b> Bayesian intervals</a></li>
+<li class="chapter" data-level="7.2.3" data-path="CI.html"><a href="CI.html#a-good-general-use-ci"><i class="fa fa-check"></i><b>7.2.3</b> A good general-use CI</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="twocategorical.html"><a href="twocategorical.html"><i class="fa fa-check"></i><b>8</b> Inference for Two Categorical Variables</a></li>
+<li class="chapter" data-level="9" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>9</b> One-Way ANOVA</a></li>
+<li class="chapter" data-level="10" data-path="motivating-example.html"><a href="motivating-example.html"><i class="fa fa-check"></i><b>10</b> Motivating example</a></li>
+<li class="chapter" data-level="11" data-path="simple-model-for-the-data.html"><a href="simple-model-for-the-data.html"><i class="fa fa-check"></i><b>11</b> Simple model for the data</a></li>
+<li class="chapter" data-level="12" data-path="exploratory-analysis.html"><a href="exploratory-analysis.html"><i class="fa fa-check"></i><b>12</b> exploratory analysis</a></li>
+<li class="chapter" data-level="13" data-path="sources-of-variation.html"><a href="sources-of-variation.html"><i class="fa fa-check"></i><b>13</b> sources of variation</a></li>
+<li class="chapter" data-level="14" data-path="statistical-model-and-analysis.html"><a href="statistical-model-and-analysis.html"><i class="fa fa-check"></i><b>14</b> statistical model and analysis</a></li>
+<li class="chapter" data-level="15" data-path="compare-analyses.html"><a href="compare-analyses.html"><i class="fa fa-check"></i><b>15</b> compare analyses</a></li>
+<li class="chapter" data-level="16" data-path="multiway.html"><a href="multiway.html"><i class="fa fa-check"></i><b>16</b> Multi-way ANOVA</a></li>
+<li class="chapter" data-level="17" data-path="block.html"><a href="block.html"><i class="fa fa-check"></i><b>17</b> Block Designs</a></li>
+<li class="chapter" data-level="18" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>18</b> Regression Models</a></li>
+<li class="chapter" data-level="19" data-path="glm.html"><a href="glm.html"><i class="fa fa-check"></i><b>19</b> The General Linear Model</a></li>
+<li class="chapter" data-level="20" data-path="mixedmodels.html"><a href="mixedmodels.html"><i class="fa fa-check"></i><b>20</b> Mixed Models</a></li>
+<li class="chapter" data-level="21" data-path="repeatedmeasures.html"><a href="repeatedmeasures.html"><i class="fa fa-check"></i><b>21</b> Split Plot and Repeated Measures Designs</a></li>
+<li class="chapter" data-level="22" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>22</b> Logistic Regression and Generalized Linear Models</a><ul>
+<li class="chapter" data-level="22.1" data-path="logistic.html"><a href="logistic.html#stuff-here"><i class="fa fa-check"></i><b>22.1</b> Stuff here</a></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="glmm.html"><a href="glmm.html"><i class="fa fa-check"></i><b>23</b> Generalized Linear Mixed Models</a></li>
+<li class="chapter" data-level="24" data-path="learningobj.html"><a href="learningobj.html"><i class="fa fa-check"></i><b>24</b> Appendix - Learning Objectives</a><ul>
+<li class="chapter" data-level="24.1" data-path="learningobj.html"><a href="learningobj.html#book-level"><i class="fa fa-check"></i><b>24.1</b> Book-level</a></li>
+<li class="chapter" data-level="24.2" data-path="learningobj.html"><a href="learningobj.html#topic-level"><i class="fa fa-check"></i><b>24.2</b> Topic-level</a><ul>
+<li class="chapter" data-level="24.2.1" data-path="learningobj.html"><a href="learningobj.html#chapter-2---sampling-design-and-exploratory-data-analysis"><i class="fa fa-check"></i><b>24.2.1</b> Chapter 2 - Sampling, Design, and Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="24.2.2" data-path="learningobj.html"><a href="learningobj.html#chapter-3---point-estimation"><i class="fa fa-check"></i><b>24.2.2</b> Chapter 3 - Point Estimation</a></li>
+<li class="chapter" data-level="24.2.3" data-path="learningobj.html"><a href="learningobj.html#chapter-4---accounting-for-uncertainty-in-estimation"><i class="fa fa-check"></i><b>24.2.3</b> Chapter 4 - Accounting for Uncertainty in Estimation</a></li>
+<li class="chapter" data-level="24.2.4" data-path="learningobj.html"><a href="learningobj.html#chapter-5---inference-via-hypothesis-testing-for-a-proportion-or-mean"><i class="fa fa-check"></i><b>24.2.4</b> Chapter 5 - Inference via Hypothesis Testing for a Proportion or Mean</a></li>
+<li class="chapter" data-level="24.2.5" data-path="learningobj.html"><a href="learningobj.html#chapter-6---inference-via-confidence-intervals-for-a-proportion-or-mean"><i class="fa fa-check"></i><b>24.2.5</b> Chapter 6 - Inference via Confidence Intervals for a Proportion or Mean</a></li>
+<li class="chapter" data-level="24.2.6" data-path="learningobj.html"><a href="learningobj.html#chapter-7---inference-on-two-categorical-variables"><i class="fa fa-check"></i><b>24.2.6</b> Chapter 7 - Inference on Two Categorical Variables</a></li>
+<li class="chapter" data-level="24.2.7" data-path="learningobj.html"><a href="learningobj.html#chapter-8---inference-for-multiple-means"><i class="fa fa-check"></i><b>24.2.7</b> Chapter 8 - Inference for Multiple Means</a></li>
+<li class="chapter" data-level="24.2.8" data-path="learningobj.html"><a href="learningobj.html#chapter-9---multiway-anova"><i class="fa fa-check"></i><b>24.2.8</b> Chapter 9 - Multiway ANOVA</a></li>
+<li class="chapter" data-level="24.2.9" data-path="learningobj.html"><a href="learningobj.html#chapter-10---block-designs"><i class="fa fa-check"></i><b>24.2.9</b> Chapter 10 - Block Designs</a></li>
+<li class="chapter" data-level="24.2.10" data-path="learningobj.html"><a href="learningobj.html#chapter-11---regression"><i class="fa fa-check"></i><b>24.2.10</b> Chapter 11 - Regression</a></li>
+<li class="chapter" data-level="24.2.11" data-path="learningobj.html"><a href="learningobj.html#chapter-12---the-general-linear-model"><i class="fa fa-check"></i><b>24.2.11</b> Chapter 12 - The General Linear Model</a></li>
+<li class="chapter" data-level="24.2.12" data-path="learningobj.html"><a href="learningobj.html#chapter-13---mixed-models"><i class="fa fa-check"></i><b>24.2.12</b> Chapter 13 - Mixed Models</a></li>
+<li class="chapter" data-level="24.2.13" data-path="learningobj.html"><a href="learningobj.html#chapter-14---repeated-measures-and-split-plot-designs"><i class="fa fa-check"></i><b>24.2.13</b> Chapter 14 - Repeated Measures and Split Plot Designs</a></li>
+<li class="chapter" data-level="24.2.14" data-path="learningobj.html"><a href="learningobj.html#chapter-15---logistic-regression-and-generalized-linear-models"><i class="fa fa-check"></i><b>24.2.14</b> Chapter 15 - Logistic Regression and Generalized Linear Models</a></li>
+<li class="chapter" data-level="24.2.15" data-path="learningobj.html"><a href="learningobj.html#chapter-16---generalized-linear-mixed-models"><i class="fa fa-check"></i><b>24.2.15</b> Chapter 16 - Generalized Linear Mixed Models</a></li>
+</ul></li>
+<li class="chapter" data-level="24.3" data-path="learningobj.html"><a href="learningobj.html#from-st512"><i class="fa fa-check"></i><b>24.3</b> From ST512</a></li>
+<li class="chapter" data-level="24.4" data-path="learningobj.html"><a href="learningobj.html#for-point-estimates-chapter"><i class="fa fa-check"></i><b>24.4</b> For Point Estimates Chapter</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="25" data-path="notation.html"><a href="notation.html"><i class="fa fa-check"></i><b>25</b> Appendix - Notation</a><ul>
+<li class="chapter" data-level="25.1" data-path="notation.html"><a href="notation.html#standard-notation"><i class="fa fa-check"></i><b>25.1</b> Standard notation</a></li>
+<li class="chapter" data-level="25.2" data-path="notation.html"><a href="notation.html#mixed-models"><i class="fa fa-check"></i><b>25.2</b> Mixed models</a></li>
+<li class="chapter" data-level="25.3" data-path="notation.html"><a href="notation.html#effects-model-representation"><i class="fa fa-check"></i><b>25.3</b> Effects model representation</a></li>
+<li class="chapter" data-level="25.4" data-path="notation.html"><a href="notation.html#estimators-vs.-estimates"><i class="fa fa-check"></i><b>25.4</b> Estimators vs. Estimates</a><ul>
+<li class="chapter" data-level="25.4.1" data-path="notation.html"><a href="notation.html#installing-r-and-rstudio-1"><i class="fa fa-check"></i><b>25.4.1</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="25.4.2" data-path="notation.html"><a href="notation.html#using-rstudio-1"><i class="fa fa-check"></i><b>25.4.2</b> Using RStudio</a></li>
+<li class="chapter" data-level="25.4.3" data-path="notation.html"><a href="notation.html#r-objects-and-classes-1"><i class="fa fa-check"></i><b>25.4.3</b> R Objects and Classes</a></li>
+<li class="chapter" data-level="25.4.4" data-path="notation.html"><a href="notation.html#data-objects-1"><i class="fa fa-check"></i><b>25.4.4</b> Data Objects</a></li>
+<li class="chapter" data-level="25.4.5" data-path="notation.html"><a href="notation.html#accessing-common-data-objects-1"><i class="fa fa-check"></i><b>25.4.5</b> Accessing Common Data Objects</a></li>
+<li class="chapter" data-level="25.4.6" data-path="notation.html"><a href="notation.html#recap-1"><i class="fa fa-check"></i><b>25.4.6</b> Recap!</a></li>
+<li class="chapter" data-level="25.4.7" data-path="notation.html"><a href="notation.html#r-manipulating-data-1"><i class="fa fa-check"></i><b>25.4.7</b> R Manipulating Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="r-markdown-1.html"><a href="r-markdown-1.html"><i class="fa fa-check"></i><b>26</b> R Markdown</a><ul>
+<li class="chapter" data-level="26.0.1" data-path="r-markdown-1.html"><a href="r-markdown-1.html#r-reading-data-1"><i class="fa fa-check"></i><b>26.0.1</b> R Reading Data</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistical Methods</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r-markdown" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> R Markdown</h1>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax
+for authoring HTML, PDF, and MS Word documents. For more details on
+using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the Knit button a document will be generated that
+includes both content as well as the output of any embedded R code
+chunks within the document.</p>
+<p>Where do we go from here?</p>
+<p>Briefly investigate:</p>
+<ul>
+<li><p>Markdown syntax</p></li>
+<li><p>Code chunks and their options</p></li>
+<li><p>Changing type of output</p></li>
+</ul>
+<p>Documenting with Markdown</p>
+<p>Markdown syntax</p>
+<ul>
+<li><code>[Cheat Sheet link](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)</code> becomes <a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">Cheat Sheet link</a></li>
+</ul>
+<p>Documenting with Markdown</p>
+<p>Markdown syntax</p>
+<ul>
+<li><p><code>[Cheat Sheet link](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)</code> becomes <a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">Cheat Sheet link</a></p></li>
+<li><p><code># Header 1</code> becomes a large font header</p></li>
+<li><p><code>Header 2</code> becomes a slightly smaller font header</p></li>
+<li><p>Goes to 6 headers</p>
+<ul>
+<li>Use of headers can automatically create a Table of Contents!</li>
+</ul></li>
+</ul>
+<p>Documenting with Markdown</p>
+<p>Markdown syntax</p>
+<ul>
+<li><p><code>[Cheat Sheet link](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)</code> becomes <a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">Cheat Sheet link</a></p></li>
+<li><p><code># Header 1</code> becomes a large font header</p></li>
+<li><p><code>Header 2</code> becomes a slightly smaller font header</p></li>
+<li><p>Goes to 6 headers</p>
+<ul>
+<li>Use of headers can automatically create a Table of Contents!</li>
+</ul></li>
+<li><p><code>bold</code> and <code>__bold__</code></p></li>
+<li><p>`code` becomes <code>code</code></p></li>
+</ul>
+<p>Documenting with Markdown</p>
+<p>Markdown syntax</p>
+<ul>
+<li><p>Can do lists: be sure to end each line with two spaces!</p>
+<ul>
+<li>Indent sub lists four spaces</li>
+</ul></li>
+</ul>
+<div style="float: left; width: 50%">
+<pre><code>* unordered list  
+* item 2  
+    + sub-item 1  
+    + sub-item 2  
+
+1. ordered list  
+2. item 2  
+    + sub-item 1  
+    + sub-item 2  </code></pre>
+</div>
+<div style="float: right; width: 50%">
+<ul>
+<li>unordered list<br />
+</li>
+<li>item 2
+<ul>
+<li>sub-item 1<br />
+</li>
+<li>sub-item 2</li>
+</ul></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>ordered list<br />
+</li>
+<li>item 2
+<ul>
+<li>sub-item 1<br />
+</li>
+<li>sub-item 2<br />
+</li>
+</ul></li>
+</ol>
+</div>
+<p>Documenting with Markdown</p>
+<p>Markdown syntax</p>
+<ul>
+<li>Can include nice tables (renders differently in slides than html doc)</li>
+</ul>
+<pre><code>Table Header  | Second Header | Col 3
+------------- | ------------- | -----------
+Table Cell    | Cell (1, 2)   | Cell (1, 3)
+Cell (2, 1)   | Cell (2, 2)   | Cell (2, 3) </code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>Table Header</th>
+<th>Second Header</th>
+<th>Col 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Table Cell</td>
+<td>Cell (1, 2)</td>
+<td>Cell (1, 3)</td>
+</tr>
+<tr class="even">
+<td>Cell (2, 1)</td>
+<td>Cell (2, 2)</td>
+<td>Cell (2, 3)</td>
+</tr>
+</tbody>
+</table>
+<p>Documenting with Markdown</p>
+<p>Code chunks and their options</p>
+<ul>
+<li><p>Any R code can go into the chunk</p></li>
+<li><p>Chunks evaluate sequentially (can use output from prior chunk)</p></li>
+</ul>
+<blockquote>
+<ul>
+<li>Code can be added in line: Ex: The Iris dataset has 150 observations</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Added by beginning with back-tick <code>r</code> and ending with a back-tick: Iris has `r <code>length(iris$Sepal.Length)</code>`</li>
+</ul>
+</blockquote>
+<p>Documenting with Markdown</p>
+<p>Code chunks and their options</p>
+<ul>
+<li><p>Many options depending on chunk purpose!</p></li>
+<li><p>Can hide/show code with <code>echo = FALSE/TRUE</code></p></li>
+<li><p>Can choose if code is evaluated with <code>eval = TRUE/FALSE</code></p></li>
+<li><p><code>message = TRUE/FALSE</code> and <code>warning = TRUE/FALSE</code> can turn on/off displaying messages/warnings</p></li>
+</ul>
+<p>Documenting with Markdown</p>
+<p>Code chunks and their options</p>
+<ul>
+<li><p>Many options depending on chunk purpose!</p></li>
+<li><p>Can hide/show code with <code>echo = FALSE/TRUE</code></p></li>
+<li><p>Can choose if code is evaluated with <code>eval = TRUE/FALSE</code></p></li>
+<li><p><code>message = TRUE/FALSE</code> and <code>warning = TRUE/FALSE</code> can turn on/off displaying messages/warnings</p></li>
+<li><p>Can set global options for all chunks</p></li>
+</ul>
+<pre><code>opts_chunk$set(echo = FALSE, eval = TRUE, warning = FALSE)</code></pre>
+<ul>
+<li>Allows for easy change of audience!</li>
+</ul>
+<p>Documenting with Markdown</p>
+<p>Changing type of output</p>
+<p>R Markdown really flexible!</p>
+<p><img src="img/compile.PNG" width="458" style="display: block; margin: auto;" /></p>
+<p>Documenting with Markdown</p>
+<p>Changing type of output</p>
+<p>Change output type in the YAML header:</p>
+<ul>
+<li>Use CTRL/CMD + Shift + k or the Knit menu:</li>
+</ul>
+<p><img src="img/knit.PNG" width="150px" style="display: block; margin: auto;" /></p>
+<blockquote>
+<ul>
+<li>Use code explicity:<br />
+<code>rmarkdown::render("file.Rmd", output_format = "word_document")</code></li>
+</ul>
+</blockquote>
+<p>Documenting with Markdown</p>
+<p>Changing type of output</p>
+<p>For HTML &amp; PDF can include Table of Contents with options</p>
+<pre><code>output:
+  html_document:
+    toc: true
+    toc_float: true</code></pre>
+<p>Documenting with Markdown</p>
+<p>Changing type of output</p>
+<p>For HTML &amp; PDF can include Table of Contents with options</p>
+<pre><code>output:
+  html_document:
+    toc: true
+    toc_float: true</code></pre>
+<p>For HTML another option is to make the code chunks hidden by default, but visible with a click:</p>
+<pre><code>output:
+  html_document:
+    code_folding: hide</code></pre>
+<p>Documenting with Markdown</p>
+<p>Changing type of output</p>
+<p>HTML documents inherently interactive</p>
+<ul>
+<li>Widgets can be included with appropriate R package</li>
+</ul>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb265-1" title="1"><span class="kw">library</span>(leaflet)</a>
+<a class="sourceLine" id="cb265-2" title="2"><span class="kw">leaflet</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb265-3" title="3"><span class="st">  </span><span class="kw">setView</span>(<span class="fl">174.764</span>, <span class="fl">-36.877</span>, <span class="dt">zoom =</span> <span class="dv">16</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb265-4" title="4"><span class="st">  </span><span class="kw">addTiles</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb265-5" title="5"><span class="st">  </span><span class="kw">addMarkers</span>(<span class="fl">174.764</span>, <span class="fl">-36.877</span>, <span class="dt">popup =</span> <span class="st">&quot;Maungawhau&quot;</span>) </a></code></pre></div>
+<p>Documenting with Markdown</p>
+<p>Changing type of output</p>
+<pre><code>## Warning: package &#39;leaflet&#39; was built under R version 3.6.3</code></pre>
+<div id="htmlwidget-8942987910b84a8a47e0" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8942987910b84a8a47e0">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[-36.877,174.764],16,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[-36.877,174.764,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Maungawhau",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.877,-36.877],"lng":[174.764,174.764]}},"evals":[],"jsHooks":[]}</script>
+<p>Documenting with Markdown</p>
+<p>Changing type of output</p>
+<ul>
+<li>PDF
+<ul>
+<li>Install MikTex and update its packages</li>
+</ul></li>
+</ul>
+<pre><code>output: pdf_document   </code></pre>
+<p>Documenting with Markdown</p>
+<p>Changing type of output</p>
+<ul>
+<li>PDF
+<ul>
+<li>Install MikTex and update its packages</li>
+</ul></li>
+</ul>
+<pre><code>output: pdf_document   </code></pre>
+<ul>
+<li>Word</li>
+</ul>
+<pre><code>output: word_document</code></pre>
+<ul>
+<li>Slides ( for new slide)</li>
+</ul>
+<p>Recap/Next Up!</p>
+<ul>
+<li><p>Data manipulation idea</p></li>
+<li><p>Documenting with Markdown</p></li>
+<li><p>Logical statements</p></li>
+<li><p><code>dplyr</code></p></li>
+<li><p>Creating new variables</p>
+<ul>
+<li>Conditional execution (if then)<br />
+</li>
+<li>For loops<br />
+</li>
+<li>Vectorized functions</li>
+</ul></li>
+<li><p>Reshaping Data</p></li>
+</ul>
+<p>Where are we at?</p>
+<ul>
+<li><p>Data manipulation idea</p></li>
+<li><p>Documenting with Markdown</p></li>
+<li><p>Logical statements</p></li>
+<li><p><code>dplyr</code></p></li>
+<li><p>Creating new variables</p>
+<ul>
+<li>Conditional execution (if then)<br />
+</li>
+<li>For loops<br />
+</li>
+<li>Vectorized functions</li>
+</ul></li>
+<li><p>Reshaping Data</p></li>
+</ul>
+<p>Data manipulation idea</p>
+<p>We may want to subset our full data set or create new data</p>
+<ul>
+<li>Grab only certain types of observations (filter rows)</li>
+</ul>
+<p><img src="img/filterVisual.png" width="400px" style="display: block; margin: auto;" /></p>
+<p>Logical statements</p>
+<p>Goal: Subset rows or columns</p>
+<ul>
+<li>logical statement - comparison that resolves as <code>TRUE</code> or <code>FALSE</code></li>
+</ul>
+<div style="float: left; width: 45%;">
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb270-1" title="1"><span class="st">&quot;hi&quot;</span> <span class="op">==</span><span class="st"> &quot; hi&quot;</span> <span class="co">#== is comparison</span></a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb272-1" title="1"><span class="st">&quot;hi&quot;</span> <span class="op">==</span><span class="st"> &quot;hi&quot;</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb274-1" title="1"><span class="dv">4</span> <span class="op">&gt;=</span><span class="st"> </span><span class="dv">1</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div style="float: right; width: 45%;">
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb276-1" title="1"><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">1</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb278-1" title="1"><span class="kw">sqrt</span>(<span class="dv">3</span>)<span class="op">^</span><span class="dv">2</span>  <span class="op">==</span><span class="st"> </span><span class="dv">3</span></a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb280-1" title="1">dplyr<span class="op">::</span><span class="kw">near</span>(<span class="kw">sqrt</span>(<span class="dv">3</span>)<span class="op">^</span><span class="dv">2</span>, <span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<p>Logical statements</p>
+<p>Goal: Subset rows or columns</p>
+<ul>
+<li>logical statement - comparison that resolves as <code>TRUE</code> or <code>FALSE</code></li>
+</ul>
+<div style="float: left; width: 45%;">
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb282-1" title="1"><span class="co">#use of is. functions</span></a>
+<a class="sourceLine" id="cb282-2" title="2"><span class="kw">is.numeric</span>(<span class="st">&quot;Word&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb284-1" title="1"><span class="kw">is.numeric</span>(<span class="dv">10</span>)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div style="float: right; width: 45%;">
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb286-1" title="1"><span class="kw">is.character</span>(<span class="st">&quot;10&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb288-1" title="1"><span class="kw">is.na</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="ot">NA</span>, <span class="dv">3</span>))</a></code></pre></div>
+<pre><code>## [1] FALSE FALSE  TRUE FALSE</code></pre>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb290-1" title="1"><span class="kw">is.matrix</span>(<span class="kw">c</span>(<span class="st">&quot;hello&quot;</span>, <span class="st">&quot;world&quot;</span>))</a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+</div>
+<p>Logical statements</p>
+<p>Goal: Subset rows or columns</p>
+<ul>
+<li>logical statement - useful for indexing an R object</li>
+</ul>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb292-1" title="1">iris &lt;-<span class="st"> </span><span class="kw">tbl_df</span>(iris)</a>
+<a class="sourceLine" id="cb292-2" title="2">iris</a></code></pre></div>
+<pre><code>## # A tibble: 150 x 5
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  
+##  1          5.1         3.5          1.4         0.2 setosa 
+##  2          4.9         3            1.4         0.2 setosa 
+##  3          4.7         3.2          1.3         0.2 setosa 
+##  4          4.6         3.1          1.5         0.2 setosa 
+##  5          5           3.6          1.4         0.2 setosa 
+##  6          5.4         3.9          1.7         0.4 setosa 
+##  7          4.6         3.4          1.4         0.3 setosa 
+##  8          5           3.4          1.5         0.2 setosa 
+##  9          4.4         2.9          1.4         0.2 setosa 
+## 10          4.9         3.1          1.5         0.1 setosa 
+## # ... with 140 more rows</code></pre>
+<p>Logical statements</p>
+<p>Goal: Subset rows or columns</p>
+<ul>
+<li><p>logical statement - useful for indexing an R object</p></li>
+<li>Concept:
+<ul>
+<li>Feed index a vector of <code>TRUE</code>/<code>FALSE</code> or <code>0</code>/<code>1</code> values<br />
+</li>
+<li>R returns elements where <code>TRUE</code> or <code>1</code> occurred</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb294-1" title="1">iris[iris<span class="op">$</span>Species <span class="op">==</span><span class="st"> &quot;setosa&quot;</span>, ]</a></code></pre></div>
+<p>Logical statements</p>
+<ul>
+<li><p>logical statement - useful for indexing an R object</p></li>
+<li>Concept:
+<ul>
+<li>Feed index a vector of <code>TRUE</code>/<code>FALSE</code> or <code>0</code>/<code>1</code> values<br />
+</li>
+<li>R returns elements where <code>TRUE</code> or <code>1</code> occurred</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb295-1" title="1">iris<span class="op">$</span>Species <span class="op">==</span><span class="st"> &quot;setosa&quot;</span> <span class="co">#vector indicating setosa values</span></a></code></pre></div>
+<pre><code>##   [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [13]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [25]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [37]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [49]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [61] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [73] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [85] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [97] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [109] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [121] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [133] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [145] FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<p>Logical statements</p>
+<p>Goal: Subset rows or columns</p>
+<ul>
+<li>logical statement - useful for indexing an R object</li>
+</ul>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb297-1" title="1">iris[iris<span class="op">$</span>Species <span class="op">==</span><span class="st"> &quot;setosa&quot;</span>, ]</a></code></pre></div>
+<pre><code>## # A tibble: 50 x 5
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  
+##  1          5.1         3.5          1.4         0.2 setosa 
+##  2          4.9         3            1.4         0.2 setosa 
+##  3          4.7         3.2          1.3         0.2 setosa 
+##  4          4.6         3.1          1.5         0.2 setosa 
+##  5          5           3.6          1.4         0.2 setosa 
+##  6          5.4         3.9          1.7         0.4 setosa 
+##  7          4.6         3.4          1.4         0.3 setosa 
+##  8          5           3.4          1.5         0.2 setosa 
+##  9          4.4         2.9          1.4         0.2 setosa 
+## 10          4.9         3.1          1.5         0.1 setosa 
+## # ... with 40 more rows</code></pre>
+<p>Logical statements</p>
+<p>Goal: Subset rows or columns</p>
+<ul>
+<li><p>logical statement - useful for indexing an R object</p></li>
+<li><p>Similarly, can use <code>subset</code> function</p></li>
+</ul>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb299-1" title="1"><span class="kw">subset</span>(iris, Species <span class="op">==</span><span class="st"> &quot;setosa&quot;</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 50 x 5
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  
+##  1          5.1         3.5          1.4         0.2 setosa 
+##  2          4.9         3            1.4         0.2 setosa 
+##  3          4.7         3.2          1.3         0.2 setosa 
+##  4          4.6         3.1          1.5         0.2 setosa 
+##  5          5           3.6          1.4         0.2 setosa 
+##  6          5.4         3.9          1.7         0.4 setosa 
+##  7          4.6         3.4          1.4         0.3 setosa 
+##  8          5           3.4          1.5         0.2 setosa 
+##  9          4.4         2.9          1.4         0.2 setosa 
+## 10          4.9         3.1          1.5         0.1 setosa 
+## # ... with 40 more rows</code></pre>
+<p><code>dplyr</code></p>
+<p>Goal: Subset rows or columns</p>
+<ul>
+<li><p>logical statement - useful for indexing an R object</p></li>
+<li><p>Similarly, can use <code>filter</code> from <code>dplyr</code> (installed with <code>tidyverse</code>)</p></li>
+</ul>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb301-1" title="1"><span class="kw">filter</span>(iris, Species <span class="op">==</span><span class="st"> &quot;setosa&quot;</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 50 x 5
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  
+##  1          5.1         3.5          1.4         0.2 setosa 
+##  2          4.9         3            1.4         0.2 setosa 
+##  3          4.7         3.2          1.3         0.2 setosa 
+##  4          4.6         3.1          1.5         0.2 setosa 
+##  5          5           3.6          1.4         0.2 setosa 
+##  6          5.4         3.9          1.7         0.4 setosa 
+##  7          4.6         3.4          1.4         0.3 setosa 
+##  8          5           3.4          1.5         0.2 setosa 
+##  9          4.4         2.9          1.4         0.2 setosa 
+## 10          4.9         3.1          1.5         0.1 setosa 
+## # ... with 40 more rows</code></pre>
+<p>Logical statements</p>
+<p>Compound logicals via Logical Operators</p>
+<ul>
+<li><code>&amp;</code> ‘and’</li>
+<li><code>|</code> ‘or’</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>A,B true</th>
+<th>A true, B false</th>
+<th>A,B false</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&amp;</code></td>
+<td><code>A &amp; B = TRUE</code></td>
+<td><code>A &amp; B = FALSE</code></td>
+<td><code>A &amp; B = FALSE</code></td>
+</tr>
+<tr class="even">
+<td><code>|</code></td>
+<td><code>A | B = TRUE</code></td>
+<td><code>A | B = TRUE</code></td>
+<td><code>A | B = FALSE</code></td>
+</tr>
+</tbody>
+</table>
+<p>Logical statements</p>
+<p>Compound logicals via Logical Operators</p>
+<ul>
+<li><code>&amp;</code> ‘and’</li>
+<li><code>|</code> ‘or’</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>A,B true</th>
+<th>A true, B false</th>
+<th>A,B false</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&amp;</code></td>
+<td><code>A &amp; B = TRUE</code></td>
+<td><code>A &amp; B = FALSE</code></td>
+<td><code>A &amp; B = FALSE</code></td>
+</tr>
+<tr class="even">
+<td><code>|</code></td>
+<td><code>A | B = TRUE</code></td>
+<td><code>A | B = TRUE</code></td>
+<td><code>A | B = FALSE</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>&amp;&amp;</code> and <code>||</code> are alternatives
+<ul>
+<li>Looks at only first comparison if given a vector of comparisons</li>
+</ul></li>
+</ul>
+<p>Logical statements</p>
+<p>Compound logicals via Logical Operators</p>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb303-1" title="1"><span class="kw">set.seed</span>(<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb303-2" title="2">x &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dt">n =</span> <span class="dv">10</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">1</span>); x</a></code></pre></div>
+<pre><code>##  [1] 0.1680415 0.8075164 0.3849424 0.3277343 0.6021007 0.6043941 0.1246334
+##  [8] 0.2946009 0.5776099 0.6309793</code></pre>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb305-1" title="1">(x <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.25</span>) <span class="op">|</span><span class="st"> </span>(x <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.75</span>)</a></code></pre></div>
+<pre><code>##  [1]  TRUE  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE</code></pre>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb307-1" title="1">(x <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.25</span>) <span class="op">||</span><span class="st"> </span>(x <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.75</span>)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Logical statements</p>
+<p>Goal: Subset rows or columns</p>
+<ul>
+<li>Only pull out large petal setosa flowers</li>
+</ul>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb309-1" title="1">(iris<span class="op">$</span>Petal.Length <span class="op">&gt;</span><span class="st"> </span><span class="fl">1.5</span>) <span class="op">&amp;</span><span class="st"> </span>(iris<span class="op">$</span>Petal.Width <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.3</span>) <span class="op">&amp;</span><span class="st"> </span>(iris<span class="op">$</span>Species <span class="op">==</span><span class="st"> &quot;setosa&quot;</span>)</a></code></pre></div>
+<pre><code>##   [1] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE
+##  [25] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE
+##  [49] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [61] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [73] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [85] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [97] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [109] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [121] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [133] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [145] FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<p>Logical statements</p>
+<p>Goal: Subset rows or columns</p>
+<ul>
+<li>Only pull out large petal setosa flowers</li>
+</ul>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb311-1" title="1">iris[(iris<span class="op">$</span>Petal.Length <span class="op">&gt;</span><span class="st"> </span><span class="fl">1.5</span>) <span class="op">&amp;</span><span class="st"> </span>(iris<span class="op">$</span>Petal.Width <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.3</span>) <span class="op">&amp;</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb311-2" title="2"><span class="st">         </span>(iris<span class="op">$</span>Species <span class="op">==</span><span class="st"> &quot;setosa&quot;</span>), ]</a></code></pre></div>
+<pre><code>## # A tibble: 5 x 5
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+##          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  
+## 1          5.4         3.9          1.7         0.4 setosa 
+## 2          5.1         3.3          1.7         0.5 setosa 
+## 3          5           3.4          1.6         0.4 setosa 
+## 4          5           3.5          1.6         0.6 setosa 
+## 5          5.1         3.8          1.9         0.4 setosa</code></pre>
+<p>Logical statements</p>
+<p>Goal: Subset rows or columns</p>
+<ul>
+<li><p>Only pull out large petal setosa flowers</p></li>
+<li><p>Easier with <code>subset</code> or <code>filter</code>!</p></li>
+</ul>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb313-1" title="1"><span class="kw">filter</span>(iris, (Petal.Length <span class="op">&gt;</span><span class="st"> </span><span class="fl">1.5</span>) <span class="op">&amp;</span><span class="st"> </span>(Petal.Width <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.3</span>) <span class="op">&amp;</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb313-2" title="2"><span class="st">         </span>(Species <span class="op">==</span><span class="st"> &quot;setosa&quot;</span>))</a></code></pre></div>
+<pre><code>## # A tibble: 5 x 5
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+##          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  
+## 1          5.4         3.9          1.7         0.4 setosa 
+## 2          5.1         3.3          1.7         0.5 setosa 
+## 3          5           3.4          1.6         0.4 setosa 
+## 4          5           3.5          1.6         0.6 setosa 
+## 5          5.1         3.8          1.9         0.4 setosa</code></pre>
+<p><code>dplyr</code></p>
+<p>Overview of dplyr and tidyr packages</p>
+<ul>
+<li><p><code>dplry</code> package made for most standard data manipulation tasks</p></li>
+<li><p><code>tidyr</code> package reshapes data</p></li>
+<li><p>Both part of <code>tidyverse</code></p></li>
+<li><p>Make sure <code>library(tidyverse)</code> has been run!</p></li>
+</ul>
+<p><code>dplyr</code></p>
+<ul>
+<li>Basic commands
+<ul>
+<li><code>tbl_df()</code> - convert data frame to one with better printing<br />
+</li>
+<li><code>filter()</code> - subset rows<br />
+</li>
+<li><code>arrange()</code> - reorder rows<br />
+</li>
+<li><code>select()</code> - subset columns<br />
+</li>
+<li><code>rename()</code> - rename columns<br />
+</li>
+<li><code>mutate()</code> - add newly created column<br />
+</li>
+<li><code>transmute()</code> - create new variable<br />
+</li>
+<li><code>group_by()</code> - group rows by a variable<br />
+</li>
+<li><code>summarise()</code> - apply basic function to data</li>
+</ul></li>
+</ul>
+<p>Tidyverse Syntax</p>
+<ul>
+<li>Reason to prefer <code>dplyr</code> and packages from the <code>tidyverse</code></li>
+</ul>
+<blockquote>
+<ul>
+<li>Fast!</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Good defaults</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>All packages have similar syntax! All work on <code>tibbles</code> (data frames)</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Syntax:
+<code>function(tibble, actions, ...)</code></li>
+</ul>
+</blockquote>
+<p><code>dplyr</code></p>
+<p><code>tbl_df()</code> - convert data frame to one with better printing and no simplification</p>
+<ul>
+<li>Just ‘wrap’ data frame</li>
+</ul>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb315-1" title="1"><span class="co">#install.packages(&quot;Lahman&quot;)</span></a>
+<a class="sourceLine" id="cb315-2" title="2"><span class="kw">library</span>(Lahman)</a></code></pre></div>
+<pre><code>## Warning: package &#39;Lahman&#39; was built under R version 3.6.2</code></pre>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb317-1" title="1"><span class="kw">head</span>(Batting, <span class="dt">n =</span> <span class="dv">4</span>) <span class="co">#look at just first 4 observations</span></a></code></pre></div>
+<pre><code>##    playerID yearID stint teamID lgID  G  AB  R  H X2B X3B HR RBI SB CS BB SO
+## 1 abercda01   1871     1    TRO   NA  1   4  0  0   0   0  0   0  0  0  0  0
+## 2  addybo01   1871     1    RC1   NA 25 118 30 32   6   0  0  13  8  1  4  0
+## 3 allisar01   1871     1    CL1   NA 29 137 28 40   4   5  0  19  3  1  2  5
+## 4 allisdo01   1871     1    WS3   NA 27 133 28 44  10   2  2  27  1  1  0  2
+##   IBB HBP SH SF GIDP
+## 1  NA  NA NA NA    0
+## 2  NA  NA NA NA    0
+## 3  NA  NA NA NA    1
+## 4  NA  NA NA NA    0</code></pre>
+<p><code>dplyr</code></p>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb319-1" title="1">Batting &lt;-<span class="st"> </span><span class="kw">tbl_df</span>(Batting)</a>
+<a class="sourceLine" id="cb319-2" title="2">Batting</a></code></pre></div>
+<pre><code>## # A tibble: 105,861 x 22
+##    playerID yearID stint teamID lgID      G    AB     R     H   X2B   X3B    HR
+##    &lt;chr&gt;     &lt;int&gt; &lt;int&gt; &lt;fct&gt;  &lt;fct&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+##  1 abercda~   1871     1 TRO    NA        1     4     0     0     0     0     0
+##  2 addybo01   1871     1 RC1    NA       25   118    30    32     6     0     0
+##  3 allisar~   1871     1 CL1    NA       29   137    28    40     4     5     0
+##  4 allisdo~   1871     1 WS3    NA       27   133    28    44    10     2     2
+##  5 ansonca~   1871     1 RC1    NA       25   120    29    39    11     3     0
+##  6 armstbo~   1871     1 FW1    NA       12    49     9    11     2     1     0
+##  7 barkeal~   1871     1 RC1    NA        1     4     0     1     0     0     0
+##  8 barnero~   1871     1 BS1    NA       31   157    66    63    10     9     0
+##  9 barrebi~   1871     1 FW1    NA        1     5     1     1     1     0     0
+## 10 barrofr~   1871     1 BS1    NA       18    86    13    13     2     1     0
+## # ... with 105,851 more rows, and 10 more variables: RBI &lt;int&gt;, SB &lt;int&gt;,
+## #   CS &lt;int&gt;, BB &lt;int&gt;, SO &lt;int&gt;, IBB &lt;int&gt;, HBP &lt;int&gt;, SH &lt;int&gt;, SF &lt;int&gt;,
+## #   GIDP &lt;int&gt;</code></pre>
+<ul>
+<li>If data read in with <code>haven</code>, <code>readxl</code>, or <code>readr</code> probably in this format!</li>
+</ul>
+<p><code>dplyr</code></p>
+<p><code>filter()</code> - subset rows</p>
+<ul>
+<li>Use <code>filter()</code> to obtain only PIT data</li>
+</ul>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb321-1" title="1"><span class="kw">filter</span>(Batting, teamID <span class="op">==</span><span class="st"> &quot;PIT&quot;</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 4,817 x 22
+##    playerID yearID stint teamID lgID      G    AB     R     H   X2B   X3B    HR
+##    &lt;chr&gt;     &lt;int&gt; &lt;int&gt; &lt;fct&gt;  &lt;fct&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+##  1 barklsa~   1887     1 PIT    NL       89   340    44    76    10     4     1
+##  2 beeched~   1887     1 PIT    NL       41   169    15    41     8     0     2
+##  3 bishobi~   1887     1 PIT    NL        3     9     0     0     0     0     0
+##  4 brownto~   1887     1 PIT    NL       47   192    30    47     3     4     0
+##  5 carrofr~   1887     1 PIT    NL      102   421    71   138    24    15     6
+##  6 colemjo~   1887     1 PIT    NL      115   475    75   139    21    11     2
+##  7 dalryab~   1887     1 PIT    NL       92   358    45    76    18     5     2
+##  8 fieldjo~   1887     1 PIT    NL       43   164    26    44     9     2     0
+##  9 galvipu~   1887     1 PIT    NL       49   193    10    41     7     3     2
+## 10 kuehnbi~   1887     1 PIT    NL      102   402    68   120    18    15     1
+## # ... with 4,807 more rows, and 10 more variables: RBI &lt;int&gt;, SB &lt;int&gt;,
+## #   CS &lt;int&gt;, BB &lt;int&gt;, SO &lt;int&gt;, IBB &lt;int&gt;, HBP &lt;int&gt;, SH &lt;int&gt;, SF &lt;int&gt;,
+## #   GIDP &lt;int&gt;</code></pre>
+<p><code>dplyr</code></p>
+<p><code>filter()</code> - subset rows</p>
+<ul>
+<li>Multiple filters</li>
+</ul>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb323-1" title="1"><span class="kw">filter</span>(Batting, teamID <span class="op">==</span><span class="st"> &quot;PIT&quot;</span> <span class="op">&amp;</span><span class="st"> </span>yearID <span class="op">==</span><span class="st"> </span><span class="dv">2000</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 46 x 22
+##    playerID yearID stint teamID lgID      G    AB     R     H   X2B   X3B    HR
+##    &lt;chr&gt;     &lt;int&gt; &lt;int&gt; &lt;fct&gt;  &lt;fct&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+##  1 anderji~   2000     1 PIT    NL       27    50     5     7     1     0     0
+##  2 arroybr~   2000     1 PIT    NL       21    21     2     3     2     0     0
+##  3 avenbr01   2000     1 PIT    NL       72   148    18    37    11     0     5
+##  4 benjami~   2000     1 PIT    NL       93   233    28    63    18     2     2
+##  5 bensokr~   2000     1 PIT    NL       32    65     3     6     2     0     0
+##  6 brownad~   2000     1 PIT    NL      104   308    64    97    18     3     4
+##  7 brownem~   2000     1 PIT    NL       50   119    13    26     5     0     3
+##  8 chrisja~   2000     1 PIT    NL       44     0     0     0     0     0     0
+##  9 clontbr~   2000     1 PIT    NL        5     0     1     0     0     0     0
+## 10 cordewi~   2000     1 PIT    NL       89   348    46    98    24     3    16
+## # ... with 36 more rows, and 10 more variables: RBI &lt;int&gt;, SB &lt;int&gt;, CS &lt;int&gt;,
+## #   BB &lt;int&gt;, SO &lt;int&gt;, IBB &lt;int&gt;, HBP &lt;int&gt;, SH &lt;int&gt;, SF &lt;int&gt;, GIDP &lt;int&gt;</code></pre>
+<p><code>dplyr</code></p>
+<p><code>arrange()</code> - reorder rows</p>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb325-1" title="1"><span class="co">#reorder by teamID</span></a>
+<a class="sourceLine" id="cb325-2" title="2"><span class="kw">arrange</span>(Batting, teamID)</a></code></pre></div>
+<pre><code>## # A tibble: 105,861 x 22
+##    playerID yearID stint teamID lgID      G    AB     R     H   X2B   X3B    HR
+##    &lt;chr&gt;     &lt;int&gt; &lt;int&gt; &lt;fct&gt;  &lt;fct&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+##  1 berrych~   1884     1 ALT    UA        7    25     2     6     0     0     0
+##  2 brownji~   1884     1 ALT    UA       21    88    12    22     2     2     1
+##  3 carropa~   1884     1 ALT    UA       11    49     4    13     1     0     0
+##  4 connojo~   1884     1 ALT    UA        3    11     0     1     0     0     0
+##  5 crosscl~   1884     1 ALT    UA        2     7     1     4     1     0     0
+##  6 daisege~   1884     1 ALT    UA        1     4     0     0     0     0     0
+##  7 doughch~   1884     1 ALT    UA       23    85     6    22     5     0     0
+##  8 gradyjo~   1884     1 ALT    UA        9    36     5    11     3     0     0
+##  9 harrifr~   1884     1 ALT    UA       24    95    10    25     2     1     0
+## 10 koonsha~   1884     1 ALT    UA       21    78     8    18     2     1     0
+## # ... with 105,851 more rows, and 10 more variables: RBI &lt;int&gt;, SB &lt;int&gt;,
+## #   CS &lt;int&gt;, BB &lt;int&gt;, SO &lt;int&gt;, IBB &lt;int&gt;, HBP &lt;int&gt;, SH &lt;int&gt;, SF &lt;int&gt;,
+## #   GIDP &lt;int&gt;</code></pre>
+<p><code>dplyr</code></p>
+<p><code>arrange()</code> - reorder rows</p>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb327-1" title="1"><span class="co">#get secondary arrangement as well</span></a>
+<a class="sourceLine" id="cb327-2" title="2"><span class="kw">arrange</span>(Batting, teamID, G)</a></code></pre></div>
+<pre><code>## # A tibble: 105,861 x 22
+##    playerID yearID stint teamID lgID      G    AB     R     H   X2B   X3B    HR
+##    &lt;chr&gt;     &lt;int&gt; &lt;int&gt; &lt;fct&gt;  &lt;fct&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+##  1 daisege~   1884     1 ALT    UA        1     4     0     0     0     0     0
+##  2 crosscl~   1884     1 ALT    UA        2     7     1     4     1     0     0
+##  3 manloch~   1884     1 ALT    UA        2     7     1     3     0     0     0
+##  4 connojo~   1884     1 ALT    UA        3    11     0     1     0     0     0
+##  5 shafff01   1884     1 ALT    UA        6    19     1     3     0     0     0
+##  6 berrych~   1884     1 ALT    UA        7    25     2     6     0     0     0
+##  7 noftsge~   1884     1 ALT    UA        7    25     0     1     0     0     0
+##  8 learyja~   1884     1 ALT    UA        8    33     1     3     0     0     0
+##  9 gradyjo~   1884     1 ALT    UA        9    36     5    11     3     0     0
+## 10 carropa~   1884     1 ALT    UA       11    49     4    13     1     0     0
+## # ... with 105,851 more rows, and 10 more variables: RBI &lt;int&gt;, SB &lt;int&gt;,
+## #   CS &lt;int&gt;, BB &lt;int&gt;, SO &lt;int&gt;, IBB &lt;int&gt;, HBP &lt;int&gt;, SH &lt;int&gt;, SF &lt;int&gt;,
+## #   GIDP &lt;int&gt;</code></pre>
+<p><code>dplyr</code></p>
+<p><code>arrange()</code> - reorder rows</p>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb329-1" title="1"><span class="co">#descending instead</span></a>
+<a class="sourceLine" id="cb329-2" title="2"><span class="kw">arrange</span>(Batting, teamID, <span class="kw">desc</span>(G))</a></code></pre></div>
+<pre><code>## # A tibble: 105,861 x 22
+##    playerID yearID stint teamID lgID      G    AB     R     H   X2B   X3B    HR
+##    &lt;chr&gt;     &lt;int&gt; &lt;int&gt; &lt;fct&gt;  &lt;fct&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+##  1 smithge~   1884     1 ALT    UA       25   108     9    34     8     1     0
+##  2 harrifr~   1884     1 ALT    UA       24    95    10    25     2     1     0
+##  3 doughch~   1884     1 ALT    UA       23    85     6    22     5     0     0
+##  4 murphjo~   1884     1 ALT    UA       23    94    10    14     1     0     0
+##  5 brownji~   1884     1 ALT    UA       21    88    12    22     2     2     1
+##  6 koonsha~   1884     1 ALT    UA       21    78     8    18     2     1     0
+##  7 mooreje~   1884     1 ALT    UA       20    80    10    25     3     1     1
+##  8 shaffta~   1884     1 ALT    UA       13    55    10    18     2     0     0
+##  9 carropa~   1884     1 ALT    UA       11    49     4    13     1     0     0
+## 10 gradyjo~   1884     1 ALT    UA        9    36     5    11     3     0     0
+## # ... with 105,851 more rows, and 10 more variables: RBI &lt;int&gt;, SB &lt;int&gt;,
+## #   CS &lt;int&gt;, BB &lt;int&gt;, SO &lt;int&gt;, IBB &lt;int&gt;, HBP &lt;int&gt;, SH &lt;int&gt;, SF &lt;int&gt;,
+## #   GIDP &lt;int&gt;</code></pre>
+<p>Data manipulation idea</p>
+<p>We may want to subset our full data set or create new data</p>
+<ul>
+<li>Look at only certain variables (select columns)</li>
+</ul>
+<p><img src="img/selectVisual.png" width="300px" style="display: block; margin: auto;" /></p>
+<p><code>dplyr</code></p>
+<p><code>select()</code> - subset columns</p>
+<ul>
+<li>Often only want select variables (saw <code>$</code> and <code>[ , ]</code>)</li>
+<li><code>select()</code> function has same syntax as other <code>dplyr</code> functions!</li>
+</ul>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb331-1" title="1"><span class="co">#Choose a single column by name</span></a>
+<a class="sourceLine" id="cb331-2" title="2"><span class="kw">select</span>(Batting, X2B)</a></code></pre></div>
+<pre><code>## # A tibble: 105,861 x 1
+##      X2B
+##    &lt;int&gt;
+##  1     0
+##  2     6
+##  3     4
+##  4    10
+##  5    11
+##  6     2
+##  7     0
+##  8    10
+##  9     1
+## 10     2
+## # ... with 105,851 more rows</code></pre>
+<p><code>dplyr</code></p>
+<p><code>select()</code> - subset columns</p>
+<ul>
+<li>Often only want select variables (saw <code>$</code> and <code>[ , ]</code>)</li>
+<li><code>select()</code> function has same syntax as other <code>dplyr</code> functions!</li>
+</ul>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb333-1" title="1"><span class="co">#Choose a single column by name</span></a>
+<a class="sourceLine" id="cb333-2" title="2"><span class="kw">select</span>(Batting, playerID, X2B)</a></code></pre></div>
+<pre><code>## # A tibble: 105,861 x 2
+##    playerID    X2B
+##    &lt;chr&gt;     &lt;int&gt;
+##  1 abercda01     0
+##  2 addybo01      6
+##  3 allisar01     4
+##  4 allisdo01    10
+##  5 ansonca01    11
+##  6 armstbo01     2
+##  7 barkeal01     0
+##  8 barnero01    10
+##  9 barrebi01     1
+## 10 barrofr01     2
+## # ... with 105,851 more rows</code></pre>
+<p>Aside: Piping or Chaining</p>
+<ul>
+<li>Applying multiple functions: nesting hard to parse!</li>
+<li>Piping or Chaining with <code>%&gt;%</code> operator helps</li>
+</ul>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb335-1" title="1"><span class="kw">arrange</span>(<span class="kw">select</span>(<span class="kw">filter</span>(Batting, teamID <span class="op">==</span><span class="st"> &quot;PIT&quot;</span>), playerID, G, X2B), <span class="kw">desc</span>(X2B))</a></code></pre></div>
+<pre><code>## # A tibble: 4,817 x 3
+##    playerID      G   X2B
+##    &lt;chr&gt;     &lt;int&gt; &lt;int&gt;
+##  1 wanerpa01   154    62
+##  2 wanerpa01   148    53
+##  3 sanchfr01   157    53
+##  4 wanerpa01   152    50
+##  5 comorad01   152    47
+##  6 mclouna01   152    46
+##  7 wagneho01   135    45
+##  8 parkeda01   158    45
+##  9 vanslan01   154    45
+## 10 wagneho01   132    44
+## # ... with 4,807 more rows</code></pre>
+<p>Aside: Piping or Chaining</p>
+<ul>
+<li>Applying multiple functions: nesting hard to parse!</li>
+<li>Piping or Chaining with <code>%&gt;%</code> operator helps</li>
+</ul>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb337-1" title="1">Batting <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(teamID <span class="op">==</span><span class="st"> &quot;PIT&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(playerID, G, X2B) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(X2B)) </a></code></pre></div>
+<pre><code>## # A tibble: 4,817 x 3
+##    playerID      G   X2B
+##    &lt;chr&gt;     &lt;int&gt; &lt;int&gt;
+##  1 wanerpa01   154    62
+##  2 wanerpa01   148    53
+##  3 sanchfr01   157    53
+##  4 wanerpa01   152    50
+##  5 comorad01   152    47
+##  6 mclouna01   152    46
+##  7 wagneho01   135    45
+##  8 parkeda01   158    45
+##  9 vanslan01   154    45
+## 10 wagneho01   132    44
+## # ... with 4,807 more rows</code></pre>
+<p>Aside: Piping or Chaining</p>
+<ul>
+<li>Generically, pipe does the following</li>
+</ul>
+<p><code>x %&gt;% f(y)</code> turns into <code>f(x,y)</code></p>
+<p><code>x %&gt;% f(y) %&gt;% g(z)</code> turns into <code>g(f(x, y), z)</code></p>
+<ul>
+<li>Can be used with functions outside the tidyverse if this structure works!</li>
+</ul>
+<p><code>dplyr</code></p>
+<p><code>select()</code> - subset columns</p>
+<ul>
+<li>Many ways to select variables</li>
+</ul>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb339-1" title="1"><span class="co">#all columns between</span></a>
+<a class="sourceLine" id="cb339-2" title="2">Batting <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(X2B<span class="op">:</span>HR)</a></code></pre></div>
+<pre><code>## # A tibble: 105,861 x 3
+##      X2B   X3B    HR
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;
+##  1     0     0     0
+##  2     6     0     0
+##  3     4     5     0
+##  4    10     2     2
+##  5    11     3     0
+##  6     2     1     0
+##  7     0     0     0
+##  8    10     9     0
+##  9     1     0     0
+## 10     2     1     0
+## # ... with 105,851 more rows</code></pre>
+<p><code>dplyr</code></p>
+<p><code>select()</code> - subset columns</p>
+<ul>
+<li>Many ways to select variables</li>
+</ul>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb341-1" title="1"><span class="co">#all columns containing</span></a>
+<a class="sourceLine" id="cb341-2" title="2">Batting <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="kw">contains</span>(<span class="st">&quot;X&quot;</span>))</a></code></pre></div>
+<pre><code>## # A tibble: 105,861 x 2
+##      X2B   X3B
+##    &lt;int&gt; &lt;int&gt;
+##  1     0     0
+##  2     6     0
+##  3     4     5
+##  4    10     2
+##  5    11     3
+##  6     2     1
+##  7     0     0
+##  8    10     9
+##  9     1     0
+## 10     2     1
+## # ... with 105,851 more rows</code></pre>
+<p><code>dplyr</code></p>
+<p><code>select()</code> - subset columns</p>
+<ul>
+<li>Many ways to select variables</li>
+</ul>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb343-1" title="1"><span class="co">#all columns starting with</span></a>
+<a class="sourceLine" id="cb343-2" title="2">Batting <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="kw">starts_with</span>(<span class="st">&quot;X&quot;</span>))</a></code></pre></div>
+<pre><code>## # A tibble: 105,861 x 2
+##      X2B   X3B
+##    &lt;int&gt; &lt;int&gt;
+##  1     0     0
+##  2     6     0
+##  3     4     5
+##  4    10     2
+##  5    11     3
+##  6     2     1
+##  7     0     0
+##  8    10     9
+##  9     1     0
+## 10     2     1
+## # ... with 105,851 more rows</code></pre>
+<p><code>dplyr</code></p>
+<p><code>select()</code> - subset columns</p>
+<ul>
+<li>Many ways to select variables</li>
+</ul>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb345-1" title="1"><span class="co">#multiple selections</span></a>
+<a class="sourceLine" id="cb345-2" title="2">Batting <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="kw">starts_with</span>(<span class="st">&quot;X&quot;</span>), <span class="kw">ends_with</span>(<span class="st">&quot;ID&quot;</span>), G)</a></code></pre></div>
+<pre><code>## # A tibble: 105,861 x 7
+##      X2B   X3B playerID  yearID teamID lgID      G
+##    &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;fct&gt;  &lt;fct&gt; &lt;int&gt;
+##  1     0     0 abercda01   1871 TRO    NA        1
+##  2     6     0 addybo01    1871 RC1    NA       25
+##  3     4     5 allisar01   1871 CL1    NA       29
+##  4    10     2 allisdo01   1871 WS3    NA       27
+##  5    11     3 ansonca01   1871 RC1    NA       25
+##  6     2     1 armstbo01   1871 FW1    NA       12
+##  7     0     0 barkeal01   1871 RC1    NA        1
+##  8    10     9 barnero01   1871 BS1    NA       31
+##  9     1     0 barrebi01   1871 FW1    NA        1
+## 10     2     1 barrofr01   1871 BS1    NA       18
+## # ... with 105,851 more rows</code></pre>
+<p><code>dplyr</code></p>
+<p><code>select()</code> - subset columns</p>
+<ul>
+<li>Sometimes want to rename variables</li>
+</ul>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb347-1" title="1"><span class="co">#rename our previous</span></a>
+<a class="sourceLine" id="cb347-2" title="2">Batting <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb347-3" title="3"><span class="st">  </span><span class="kw">select</span>(<span class="kw">starts_with</span>(<span class="st">&quot;X&quot;</span>), <span class="kw">ends_with</span>(<span class="st">&quot;ID&quot;</span>), G) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">rename</span>(<span class="st">&quot;Doubles&quot;</span> =<span class="st"> </span>X2B, <span class="st">&quot;Triples&quot;</span> =<span class="st"> </span>X3B)</a></code></pre></div>
+<pre><code>## # A tibble: 105,861 x 7
+##    Doubles Triples playerID  yearID teamID lgID      G
+##      &lt;int&gt;   &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;fct&gt;  &lt;fct&gt; &lt;int&gt;
+##  1       0       0 abercda01   1871 TRO    NA        1
+##  2       6       0 addybo01    1871 RC1    NA       25
+##  3       4       5 allisar01   1871 CL1    NA       29
+##  4      10       2 allisdo01   1871 WS3    NA       27
+##  5      11       3 ansonca01   1871 RC1    NA       25
+##  6       2       1 armstbo01   1871 FW1    NA       12
+##  7       0       0 barkeal01   1871 RC1    NA        1
+##  8      10       9 barnero01   1871 BS1    NA       31
+##  9       1       0 barrebi01   1871 FW1    NA        1
+## 10       2       1 barrofr01   1871 BS1    NA       18
+## # ... with 105,851 more rows</code></pre>
+<p><code>dplyr</code></p>
+<p><code>select()</code> - subset columns</p>
+<ul>
+<li>May want to reorder variables</li>
+</ul>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb349-1" title="1"><span class="co">#reorder</span></a>
+<a class="sourceLine" id="cb349-2" title="2">Batting <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(playerID, HR, <span class="kw">everything</span>())</a></code></pre></div>
+<pre><code>## # A tibble: 105,861 x 22
+##    playerID    HR yearID stint teamID lgID      G    AB     R     H   X2B   X3B
+##    &lt;chr&gt;    &lt;int&gt;  &lt;int&gt; &lt;int&gt; &lt;fct&gt;  &lt;fct&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+##  1 abercda~     0   1871     1 TRO    NA        1     4     0     0     0     0
+##  2 addybo01     0   1871     1 RC1    NA       25   118    30    32     6     0
+##  3 allisar~     0   1871     1 CL1    NA       29   137    28    40     4     5
+##  4 allisdo~     2   1871     1 WS3    NA       27   133    28    44    10     2
+##  5 ansonca~     0   1871     1 RC1    NA       25   120    29    39    11     3
+##  6 armstbo~     0   1871     1 FW1    NA       12    49     9    11     2     1
+##  7 barkeal~     0   1871     1 RC1    NA        1     4     0     1     0     0
+##  8 barnero~     0   1871     1 BS1    NA       31   157    66    63    10     9
+##  9 barrebi~     0   1871     1 FW1    NA        1     5     1     1     1     0
+## 10 barrofr~     0   1871     1 BS1    NA       18    86    13    13     2     1
+## # ... with 105,851 more rows, and 10 more variables: RBI &lt;int&gt;, SB &lt;int&gt;,
+## #   CS &lt;int&gt;, BB &lt;int&gt;, SO &lt;int&gt;, IBB &lt;int&gt;, HBP &lt;int&gt;, SH &lt;int&gt;, SF &lt;int&gt;,
+## #   GIDP &lt;int&gt;</code></pre>
+<p><code>dplyr</code></p>
+<p><a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">Cheat sheet</a></p>
+<ul>
+<li>Basic commands
+<ul>
+<li><code>tbl_df()</code> - convert data frame to one with better printing</li>
+<li><code>filter()</code> - subset rows</li>
+<li><code>arrange()</code> - reorder rows</li>
+<li><code>select()</code> - subset columns</li>
+</ul></li>
+<li>Many <code>joins</code> to combine tibbles too! (Similar to SQL)</li>
+</ul>
+<p>Recap/Next Up!</p>
+<ul>
+<li><p>Data manipulation idea</p></li>
+<li><p>Documenting with Markdown</p></li>
+<li><p>Logical statements</p></li>
+<li><p><code>dplyr</code></p></li>
+<li><p>Creating new variables</p>
+<ul>
+<li>Conditional execution (if then)<br />
+</li>
+<li>For loops<br />
+</li>
+<li>Vectorized functions</li>
+</ul></li>
+<li><p>Reshaping Data</p></li>
+</ul>
+<p>Recap/Next Up!</p>
+<ul>
+<li><p>Data manipulation idea</p></li>
+<li><p>Documenting with Markdown</p></li>
+<li><p>Logical statements</p></li>
+<li><p><code>dplyr</code></p></li>
+<li><p>Creating new variables</p>
+<ul>
+<li>Conditional execution (if then)<br />
+</li>
+<li>For loops<br />
+</li>
+<li>Vectorized functions</li>
+</ul></li>
+<li><p>Reshaping data</p></li>
+</ul>
+<p>Data manipulation idea</p>
+<p>We may want to subset our full data set or create new data</p>
+<ul>
+<li>Create new variables</li>
+</ul>
+<p><img src="img/createVarVisual.png" width="450px" style="display: block; margin: auto;" /></p>
+<p>Creating New Variables</p>
+<p>Given a data frame and an appropriate length vector (new variable) can use <code>cbind</code> (column bind)</p>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb351-1" title="1">temp &lt;-<span class="st"> </span><span class="kw">cbind</span>(iris, <span class="dt">extra =</span> <span class="kw">rep</span>(<span class="st">&quot;a&quot;</span>, <span class="dv">150</span>))</a>
+<a class="sourceLine" id="cb351-2" title="2"><span class="kw">str</span>(temp)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    150 obs. of  6 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ extra       : Factor w/ 1 level &quot;a&quot;: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<p>Creating New Variables</p>
+<p>Or simply add as a named (list) element!</p>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb353-1" title="1">iris<span class="op">$</span>extra &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="st">&quot;a&quot;</span>, <span class="dv">150</span>)</a>
+<a class="sourceLine" id="cb353-2" title="2"><span class="kw">str</span>(iris)</a></code></pre></div>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    150 obs. of  6 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ extra       : chr  &quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;a&quot; ...</code></pre>
+<p>Creating New Variables</p>
+<p>Better method: use <code>dplyr</code>!</p>
+<ul>
+<li><p><code>mutate()</code> - add newly created column(s) to current data frame</p></li>
+<li><p><code>transmute()</code> - create new data frame with created variable(s)</p></li>
+</ul>
+<p>Creating New Variables</p>
+<p>Better method: use <code>dplyr</code>!</p>
+<ul>
+<li><p><code>mutate()</code> - add newly created column(s) to current data frame</p></li>
+<li><p><code>transmute()</code> - create new data frame with created variable(s)</p></li>
+<li><p>Syntax:</p></li>
+</ul>
+<p><code>mutate(data, newVarName = functionOfData, newVarName2 = functionOfData, ...)</code></p>
+<p>Creating New Variables</p>
+<ul>
+<li>Consider a data set on movie ratings</li>
+</ul>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb355-1" title="1"><span class="kw">library</span>(fivethirtyeight)</a></code></pre></div>
+<pre><code>## Warning: package &#39;fivethirtyeight&#39; was built under R version 3.6.3</code></pre>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb357-1" title="1">fandango</a></code></pre></div>
+<pre><code>## # A tibble: 146 x 23
+##    film   year rottentomatoes rottentomatoes_~ metacritic metacritic_user  imdb
+##    &lt;chr&gt; &lt;dbl&gt;          &lt;int&gt;            &lt;int&gt;      &lt;int&gt;           &lt;dbl&gt; &lt;dbl&gt;
+##  1 Aven~  2015             74               86         66             7.1   7.8
+##  2 Cind~  2015             85               80         67             7.5   7.1
+##  3 Ant-~  2015             80               90         64             8.1   7.8
+##  4 Do Y~  2015             18               84         22             4.7   5.4
+##  5 Hot ~  2015             14               28         29             3.4   5.1
+##  6 The ~  2015             63               62         50             6.8   7.2
+##  7 Irra~  2015             42               53         53             7.6   6.9
+##  8 Top ~  2014             86               64         81             6.8   6.5
+##  9 Shau~  2015             99               82         81             8.8   7.4
+## 10 Love~  2015             89               87         80             8.5   7.8
+## # ... with 136 more rows, and 16 more variables: fandango_stars &lt;dbl&gt;,
+## #   fandango_ratingvalue &lt;dbl&gt;, rt_norm &lt;dbl&gt;, rt_user_norm &lt;dbl&gt;,
+## #   metacritic_norm &lt;dbl&gt;, metacritic_user_nom &lt;dbl&gt;, imdb_norm &lt;dbl&gt;,
+## #   rt_norm_round &lt;dbl&gt;, rt_user_norm_round &lt;dbl&gt;, metacritic_norm_round &lt;dbl&gt;,
+## #   metacritic_user_norm_round &lt;dbl&gt;, imdb_norm_round &lt;dbl&gt;,
+## #   metacritic_user_vote_count &lt;int&gt;, imdb_user_vote_count &lt;int&gt;,
+## #   fandango_votes &lt;int&gt;, fandango_difference &lt;dbl&gt;</code></pre>
+<p>Creating New Variables</p>
+<ul>
+<li><code>mutate()</code> - add newly created column(s) to current data frame</li>
+</ul>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb359-1" title="1"><span class="co">#Create an average rottentomatoes score variable</span></a>
+<a class="sourceLine" id="cb359-2" title="2">fandango <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">avgRotten =</span> (rottentomatoes <span class="op">+</span><span class="st"> </span>rottentomatoes_user)<span class="op">/</span><span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 146 x 24
+##    film   year rottentomatoes rottentomatoes_~ metacritic metacritic_user  imdb
+##    &lt;chr&gt; &lt;dbl&gt;          &lt;int&gt;            &lt;int&gt;      &lt;int&gt;           &lt;dbl&gt; &lt;dbl&gt;
+##  1 Aven~  2015             74               86         66             7.1   7.8
+##  2 Cind~  2015             85               80         67             7.5   7.1
+##  3 Ant-~  2015             80               90         64             8.1   7.8
+##  4 Do Y~  2015             18               84         22             4.7   5.4
+##  5 Hot ~  2015             14               28         29             3.4   5.1
+##  6 The ~  2015             63               62         50             6.8   7.2
+##  7 Irra~  2015             42               53         53             7.6   6.9
+##  8 Top ~  2014             86               64         81             6.8   6.5
+##  9 Shau~  2015             99               82         81             8.8   7.4
+## 10 Love~  2015             89               87         80             8.5   7.8
+## # ... with 136 more rows, and 17 more variables: fandango_stars &lt;dbl&gt;,
+## #   fandango_ratingvalue &lt;dbl&gt;, rt_norm &lt;dbl&gt;, rt_user_norm &lt;dbl&gt;,
+## #   metacritic_norm &lt;dbl&gt;, metacritic_user_nom &lt;dbl&gt;, imdb_norm &lt;dbl&gt;,
+## #   rt_norm_round &lt;dbl&gt;, rt_user_norm_round &lt;dbl&gt;, metacritic_norm_round &lt;dbl&gt;,
+## #   metacritic_user_norm_round &lt;dbl&gt;, imdb_norm_round &lt;dbl&gt;,
+## #   metacritic_user_vote_count &lt;int&gt;, imdb_user_vote_count &lt;int&gt;,
+## #   fandango_votes &lt;int&gt;, fandango_difference &lt;dbl&gt;, avgRotten &lt;dbl&gt;</code></pre>
+<p>Creating New Variables</p>
+<ul>
+<li><code>mutate()</code> - add newly created column(s) to current data frame</li>
+</ul>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb361-1" title="1"><span class="co">#can&#39;t see it!</span></a>
+<a class="sourceLine" id="cb361-2" title="2">fandango <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">avgRotten =</span> (rottentomatoes <span class="op">+</span><span class="st"> </span>rottentomatoes_user)<span class="op">/</span><span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb361-3" title="3"><span class="st">  </span><span class="kw">select</span>(film, year, avgRotten, <span class="kw">everything</span>())</a></code></pre></div>
+<pre><code>## # A tibble: 146 x 24
+##    film   year avgRotten rottentomatoes rottentomatoes_~ metacritic
+##    &lt;chr&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;int&gt;            &lt;int&gt;      &lt;int&gt;
+##  1 Aven~  2015      80               74               86         66
+##  2 Cind~  2015      82.5             85               80         67
+##  3 Ant-~  2015      85               80               90         64
+##  4 Do Y~  2015      51               18               84         22
+##  5 Hot ~  2015      21               14               28         29
+##  6 The ~  2015      62.5             63               62         50
+##  7 Irra~  2015      47.5             42               53         53
+##  8 Top ~  2014      75               86               64         81
+##  9 Shau~  2015      90.5             99               82         81
+## 10 Love~  2015      88               89               87         80
+## # ... with 136 more rows, and 18 more variables: metacritic_user &lt;dbl&gt;,
+## #   imdb &lt;dbl&gt;, fandango_stars &lt;dbl&gt;, fandango_ratingvalue &lt;dbl&gt;,
+## #   rt_norm &lt;dbl&gt;, rt_user_norm &lt;dbl&gt;, metacritic_norm &lt;dbl&gt;,
+## #   metacritic_user_nom &lt;dbl&gt;, imdb_norm &lt;dbl&gt;, rt_norm_round &lt;dbl&gt;,
+## #   rt_user_norm_round &lt;dbl&gt;, metacritic_norm_round &lt;dbl&gt;,
+## #   metacritic_user_norm_round &lt;dbl&gt;, imdb_norm_round &lt;dbl&gt;,
+## #   metacritic_user_vote_count &lt;int&gt;, imdb_user_vote_count &lt;int&gt;,
+## #   fandango_votes &lt;int&gt;, fandango_difference &lt;dbl&gt;</code></pre>
+<p>Creating New Variables</p>
+<ul>
+<li><p><code>mutate()</code> - add newly created column(s) to current data frame</p></li>
+<li><p>Add more than one variable</p></li>
+</ul>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb363-1" title="1">fandango <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb363-2" title="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">avgRotten =</span> (rottentomatoes <span class="op">+</span><span class="st"> </span>rottentomatoes_user)<span class="op">/</span><span class="dv">2</span>, </a>
+<a class="sourceLine" id="cb363-3" title="3">         <span class="dt">avgMeta =</span> (metacritic_norm <span class="op">+</span><span class="st"> </span>metacritic_user_nom)<span class="op">/</span><span class="dv">2</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb363-4" title="4"><span class="st">  </span><span class="kw">select</span>(film, year, avgRotten, avgMeta, <span class="kw">everything</span>())</a></code></pre></div>
+<pre><code>## # A tibble: 146 x 25
+##    film   year avgRotten avgMeta rottentomatoes rottentomatoes_~ metacritic
+##    &lt;chr&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;          &lt;int&gt;            &lt;int&gt;      &lt;int&gt;
+##  1 Aven~  2015      80      3.42             74               86         66
+##  2 Cind~  2015      82.5    3.55             85               80         67
+##  3 Ant-~  2015      85      3.62             80               90         64
+##  4 Do Y~  2015      51      1.72             18               84         22
+##  5 Hot ~  2015      21      1.58             14               28         29
+##  6 The ~  2015      62.5    2.95             63               62         50
+##  7 Irra~  2015      47.5    3.22             42               53         53
+##  8 Top ~  2014      75      3.72             86               64         81
+##  9 Shau~  2015      90.5    4.22             99               82         81
+## 10 Love~  2015      88      4.12             89               87         80
+## # ... with 136 more rows, and 18 more variables: metacritic_user &lt;dbl&gt;,
+## #   imdb &lt;dbl&gt;, fandango_stars &lt;dbl&gt;, fandango_ratingvalue &lt;dbl&gt;,
+## #   rt_norm &lt;dbl&gt;, rt_user_norm &lt;dbl&gt;, metacritic_norm &lt;dbl&gt;,
+## #   metacritic_user_nom &lt;dbl&gt;, imdb_norm &lt;dbl&gt;, rt_norm_round &lt;dbl&gt;,
+## #   rt_user_norm_round &lt;dbl&gt;, metacritic_norm_round &lt;dbl&gt;,
+## #   metacritic_user_norm_round &lt;dbl&gt;, imdb_norm_round &lt;dbl&gt;,
+## #   metacritic_user_vote_count &lt;int&gt;, imdb_user_vote_count &lt;int&gt;,
+## #   fandango_votes &lt;int&gt;, fandango_difference &lt;dbl&gt;</code></pre>
+<p>Creating New Variables</p>
+<ul>
+<li><code>transmute()</code> - create new data frame with created variable(s)</li>
+</ul>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb365-1" title="1"><span class="co">#transmute will keep the new variable(s) only</span></a>
+<a class="sourceLine" id="cb365-2" title="2">fandango <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">transmute</span>(<span class="dt">avgRotten =</span> (rottentomatoes <span class="op">+</span><span class="st"> </span>rottentomatoes_user)<span class="op">/</span><span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 146 x 1
+##    avgRotten
+##        &lt;dbl&gt;
+##  1      80  
+##  2      82.5
+##  3      85  
+##  4      51  
+##  5      21  
+##  6      62.5
+##  7      47.5
+##  8      75  
+##  9      90.5
+## 10      88  
+## # ... with 136 more rows</code></pre>
+<p>Creating New Variables</p>
+<ul>
+<li><code>transmute()</code> - create new data frame with created variable(s)</li>
+</ul>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb367-1" title="1"><span class="co">#transmute will keep the new variable(s) only</span></a>
+<a class="sourceLine" id="cb367-2" title="2">fandango <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">transmute</span>(<span class="dt">avgRotten =</span> (rottentomatoes <span class="op">+</span><span class="st"> </span>rottentomatoes_user)<span class="op">/</span><span class="dv">2</span>, </a>
+<a class="sourceLine" id="cb367-3" title="3">                       <span class="dt">avgMeta =</span> (metacritic_norm <span class="op">+</span><span class="st"> </span>metacritic_user_nom)<span class="op">/</span><span class="dv">2</span>) </a></code></pre></div>
+<pre><code>## # A tibble: 146 x 2
+##    avgRotten avgMeta
+##        &lt;dbl&gt;   &lt;dbl&gt;
+##  1      80      3.42
+##  2      82.5    3.55
+##  3      85      3.62
+##  4      51      1.72
+##  5      21      1.58
+##  6      62.5    2.95
+##  7      47.5    3.22
+##  8      75      3.72
+##  9      90.5    4.22
+## 10      88      4.12
+## # ... with 136 more rows</code></pre>
+<p>Creating New Variables</p>
+<p><code>mutate</code> and <code>transmute</code> can also use ‘window’ functions</p>
+<ul>
+<li>functions that take a vector of values and return another vector of values (see <a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">Cheat sheet</a>)</li>
+</ul>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb369-1" title="1">fandango <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(rottentomatoes) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">cumulativeSum =</span> <span class="kw">cumsum</span>(rottentomatoes))</a></code></pre></div>
+<pre><code>## # A tibble: 146 x 2
+##    rottentomatoes cumulativeSum
+##             &lt;int&gt;         &lt;int&gt;
+##  1             74            74
+##  2             85           159
+##  3             80           239
+##  4             18           257
+##  5             14           271
+##  6             63           334
+##  7             42           376
+##  8             86           462
+##  9             99           561
+## 10             89           650
+## # ... with 136 more rows</code></pre>
+<p>Creating New Variables</p>
+<p><code>mutate</code> and <code>transmute</code> can also use some statistical functions</p>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb371-1" title="1">fandango <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(rottentomatoes) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb371-2" title="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">avg =</span> <span class="kw">mean</span>(rottentomatoes), <span class="dt">sd =</span> <span class="kw">sd</span>(rottentomatoes))</a></code></pre></div>
+<pre><code>## # A tibble: 146 x 3
+##    rottentomatoes   avg    sd
+##             &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1             74  60.8  30.2
+##  2             85  60.8  30.2
+##  3             80  60.8  30.2
+##  4             18  60.8  30.2
+##  5             14  60.8  30.2
+##  6             63  60.8  30.2
+##  7             42  60.8  30.2
+##  8             86  60.8  30.2
+##  9             99  60.8  30.2
+## 10             89  60.8  30.2
+## # ... with 136 more rows</code></pre>
+<p>Creating New Variables</p>
+<p><code>mutate</code> and <code>transmute</code> can also use some statistical functions</p>
+<ul>
+<li><code>group_by</code> to create summaries for groups (more on this later)</li>
+</ul>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb373-1" title="1">fandango <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(year, rottentomatoes) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb373-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(year) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">avg =</span> <span class="kw">mean</span>(rottentomatoes), <span class="dt">sd =</span> <span class="kw">sd</span>(rottentomatoes))</a></code></pre></div>
+<pre><code>## # A tibble: 146 x 4
+## # Groups:   year [2]
+##     year rottentomatoes   avg    sd
+##    &lt;dbl&gt;          &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1  2015             74  58.4  30.3
+##  2  2015             85  58.4  30.3
+##  3  2015             80  58.4  30.3
+##  4  2015             18  58.4  30.3
+##  5  2015             14  58.4  30.3
+##  6  2015             63  58.4  30.3
+##  7  2015             42  58.4  30.3
+##  8  2014             86  79.5  21.6
+##  9  2015             99  58.4  30.3
+## 10  2015             89  58.4  30.3
+## # ... with 136 more rows</code></pre>
+<p>Creating New Variables<br />
+Conditional Execution with If then, If then else</p>
+<ul>
+<li><p>Often want to execute statements conditionally</p></li>
+<li><p><code>if</code> <code>then</code> <code>else</code> syntax</p></li>
+</ul>
+<div style="float: left; width: 45%;">
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb375-1" title="1"><span class="cf">if</span> (condition) {</a>
+<a class="sourceLine" id="cb375-2" title="2">  then execute code</a>
+<a class="sourceLine" id="cb375-3" title="3">} </a>
+<a class="sourceLine" id="cb375-4" title="4"></a>
+<a class="sourceLine" id="cb375-5" title="5"><span class="co">#if then else</span></a>
+<a class="sourceLine" id="cb375-6" title="6"><span class="cf">if</span> (condition) {</a>
+<a class="sourceLine" id="cb375-7" title="7">  execute this code  </a>
+<a class="sourceLine" id="cb375-8" title="8">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb375-9" title="9">  execute this code</a>
+<a class="sourceLine" id="cb375-10" title="10">}</a></code></pre></div>
+</div>
+<div style="float: right; width: 45%;">
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb376-1" title="1"><span class="co">#Or more if statements</span></a>
+<a class="sourceLine" id="cb376-2" title="2"><span class="cf">if</span> (condition) {</a>
+<a class="sourceLine" id="cb376-3" title="3">  execute this code  </a>
+<a class="sourceLine" id="cb376-4" title="4">} <span class="cf">else</span> <span class="cf">if</span> (condition2) {</a>
+<a class="sourceLine" id="cb376-5" title="5">  execute this code</a>
+<a class="sourceLine" id="cb376-6" title="6">} <span class="cf">else</span> <span class="cf">if</span> (condition3) {</a>
+<a class="sourceLine" id="cb376-7" title="7">  execute this code</a>
+<a class="sourceLine" id="cb376-8" title="8">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb376-9" title="9">  <span class="co">#if no conditions met</span></a>
+<a class="sourceLine" id="cb376-10" title="10">  execute this code</a>
+<a class="sourceLine" id="cb376-11" title="11">}</a></code></pre></div>
+</div>
+<p>Creating New Variables<br />
+Conditional Execution with If then, If then else</p>
+<ul>
+<li><p>Consider built-in data set <code>airquality</code></p>
+<ul>
+<li><p>daily air quality measurements in New York</p></li>
+<li><p>from May (Day 1) to September (Day 153) in 1973</p></li>
+</ul></li>
+</ul>
+<p>Creating New Variables<br />
+Conditional Execution with If then, If then else</p>
+<ul>
+<li>Consider built-in data set <code>airquality</code></li>
+</ul>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb377-1" title="1">airquality &lt;-<span class="st"> </span><span class="kw">tbl_df</span>(airquality)</a>
+<a class="sourceLine" id="cb377-2" title="2">airquality</a></code></pre></div>
+<pre><code>## # A tibble: 153 x 6
+##    Ozone Solar.R  Wind  Temp Month   Day
+##    &lt;int&gt;   &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+##  1    41     190   7.4    67     5     1
+##  2    36     118   8      72     5     2
+##  3    12     149  12.6    74     5     3
+##  4    18     313  11.5    62     5     4
+##  5    NA      NA  14.3    56     5     5
+##  6    28      NA  14.9    66     5     6
+##  7    23     299   8.6    65     5     7
+##  8    19      99  13.8    59     5     8
+##  9     8      19  20.1    61     5     9
+## 10    NA     194   8.6    69     5    10
+## # ... with 143 more rows</code></pre>
+<p>Creating New Variables<br />
+Conditional Execution with If then, If then else</p>
+<p>Want to code a wind category variable</p>
+<ul>
+<li>high wind days (15mph <span class="math inline">\(\leq\)</span> wind)<br />
+</li>
+<li>windy days (10mph <span class="math inline">\(\leq\)</span> wind &lt; 15mph)<br />
+</li>
+<li>lightwind days (6mph <span class="math inline">\(\leq\)</span> wind &lt; 10mph)<br />
+</li>
+<li>calm days (wind <span class="math inline">\(\leq\)</span> 6mph)</li>
+</ul>
+<p>Creating New Variables<br />
+Conditional Execution with If then, If then else</p>
+<p>Want to code a wind category variable</p>
+<p>Issue: <code>if(condition)</code> can only take in a single comparison</p>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb379-1" title="1"><span class="cf">if</span>(airquality<span class="op">$</span>Wind <span class="op">&gt;=</span><span class="st"> </span><span class="dv">15</span>) { </a>
+<a class="sourceLine" id="cb379-2" title="2">  <span class="st">&quot;High Wind&quot;</span></a>
+<a class="sourceLine" id="cb379-3" title="3">  }</a></code></pre></div>
+<pre><code>## Warning in if (airquality$Wind &gt;= 15) {: the condition has length &gt; 1 and only
+## the first element will be used</code></pre>
+<p>Creating New Variables<br />
+Conditional Execution with If then, If then else</p>
+<p>Want to code a wind category variable</p>
+<ul>
+<li>high wind days (15mph <span class="math inline">\(\leq\)</span> wind)<br />
+</li>
+<li>windy days (10mph <span class="math inline">\(\leq\)</span> wind &lt; 15mph)<br />
+</li>
+<li>lightwind days (6mph <span class="math inline">\(\leq\)</span> wind &lt; 10mph)<br />
+</li>
+<li>calm days (wind <span class="math inline">\(\leq\)</span> 6mph)</li>
+</ul>
+<p>Initial plan</p>
+<ul>
+<li><p>loop through each observation</p></li>
+<li><p>use if then else to determine wind status</p></li>
+</ul>
+<p>Looping in R</p>
+<ul>
+<li><p>There are a number of ways to do looping in R</p>
+<ul>
+<li><code>for()</code><br />
+</li>
+<li><code>while()</code></li>
+<li><code>repeat()</code></li>
+</ul></li>
+<li>Idea:
+<ul>
+<li>Run code repeatedly changing something each time</li>
+</ul></li>
+</ul>
+<p>Looping in R</p>
+<ul>
+<li>Syntax</li>
+</ul>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb381-1" title="1"><span class="cf">for</span>(index <span class="cf">in</span> values){</a>
+<a class="sourceLine" id="cb381-2" title="2">  code to be run</a>
+<a class="sourceLine" id="cb381-3" title="3">}</a></code></pre></div>
+<blockquote>
+<ul>
+<li>index defines ‘counter’ or variable that varies</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>‘values’ define which values index takes on</li>
+</ul>
+</blockquote>
+<p>Looping in R</p>
+<ul>
+<li><p>index defines ‘counter’ or variable that varies</p></li>
+<li><p>‘values’ define which values index takes on</p></li>
+</ul>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb382-1" title="1"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>){</a>
+<a class="sourceLine" id="cb382-2" title="2">  <span class="kw">print</span>(i)</a>
+<a class="sourceLine" id="cb382-3" title="3">}</a></code></pre></div>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5
+## [1] 6
+## [1] 7
+## [1] 8
+## [1] 9
+## [1] 10</code></pre>
+<p>Looping in R</p>
+<ul>
+<li><p>index defines ‘counter’ or variable that varies</p></li>
+<li><p>‘values’ define which values index takes on</p></li>
+</ul>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb384-1" title="1"><span class="cf">for</span> (index <span class="cf">in</span> <span class="kw">c</span>(<span class="st">&quot;cat&quot;</span>,<span class="st">&quot;hat&quot;</span>,<span class="st">&quot;worm&quot;</span>)){</a>
+<a class="sourceLine" id="cb384-2" title="2">  <span class="kw">print</span>(index)</a>
+<a class="sourceLine" id="cb384-3" title="3">}</a></code></pre></div>
+<pre><code>## [1] &quot;cat&quot;
+## [1] &quot;hat&quot;
+## [1] &quot;worm&quot;</code></pre>
+<p>Creating New Variables<br />
+Conditional Execution with If then, If then else</p>
+<p>Want to code a wind category variable</p>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb386-1" title="1">status&lt;-<span class="kw">vector</span>() <span class="co">#initialize vector to save results</span></a>
+<a class="sourceLine" id="cb386-2" title="2"></a>
+<a class="sourceLine" id="cb386-3" title="3"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(airquality)){</a>
+<a class="sourceLine" id="cb386-4" title="4">  <span class="cf">if</span>(airquality<span class="op">$</span>Wind[i] <span class="op">&gt;=</span><span class="st"> </span><span class="dv">15</span>){</a>
+<a class="sourceLine" id="cb386-5" title="5">    status[i] &lt;-<span class="st"> &quot;HighWind&quot;</span></a>
+<a class="sourceLine" id="cb386-6" title="6">  } <span class="cf">else</span> <span class="cf">if</span> (airquality<span class="op">$</span>Wind[i] <span class="op">&gt;=</span><span class="st"> </span><span class="dv">10</span>){</a>
+<a class="sourceLine" id="cb386-7" title="7">    status[i] &lt;-<span class="st"> &quot;Windy&quot;</span></a>
+<a class="sourceLine" id="cb386-8" title="8">  } <span class="cf">else</span> <span class="cf">if</span> (airquality<span class="op">$</span>Wind[i] <span class="op">&gt;=</span><span class="st"> </span><span class="dv">6</span>){</a>
+<a class="sourceLine" id="cb386-9" title="9">    status[i] &lt;-<span class="st"> &quot;LightWind&quot;</span></a>
+<a class="sourceLine" id="cb386-10" title="10">  } <span class="cf">else</span> <span class="cf">if</span> (airquality<span class="op">$</span>Wind[i] <span class="op">&gt;=</span><span class="st"> </span><span class="dv">0</span>){</a>
+<a class="sourceLine" id="cb386-11" title="11">    status[i] &lt;-<span class="st"> &quot;Calm&quot;</span></a>
+<a class="sourceLine" id="cb386-12" title="12">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb386-13" title="13">    status[i] &lt;-<span class="st"> &quot;Error&quot;</span></a>
+<a class="sourceLine" id="cb386-14" title="14">  }</a>
+<a class="sourceLine" id="cb386-15" title="15">}</a></code></pre></div>
+<p>Creating New Variables<br />
+Conditional Execution with If then, If then else</p>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb387-1" title="1">airquality<span class="op">$</span>status &lt;-<span class="st"> </span>status</a>
+<a class="sourceLine" id="cb387-2" title="2">airquality<span class="op">$</span>status</a></code></pre></div>
+<pre><code>##   [1] &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;    
+##   [7] &quot;LightWind&quot; &quot;Windy&quot;     &quot;HighWind&quot;  &quot;LightWind&quot; &quot;LightWind&quot; &quot;LightWind&quot;
+##  [13] &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;     &quot;HighWind&quot; 
+##  [19] &quot;Windy&quot;     &quot;LightWind&quot; &quot;LightWind&quot; &quot;HighWind&quot;  &quot;LightWind&quot; &quot;Windy&quot;    
+##  [25] &quot;HighWind&quot;  &quot;Windy&quot;     &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;Calm&quot;     
+##  [31] &quot;LightWind&quot; &quot;LightWind&quot; &quot;LightWind&quot; &quot;HighWind&quot;  &quot;LightWind&quot; &quot;LightWind&quot;
+##  [37] &quot;Windy&quot;     &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;    
+##  [43] &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;     &quot;HighWind&quot; 
+##  [49] &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;LightWind&quot; &quot;Calm&quot;      &quot;Calm&quot;     
+##  [55] &quot;LightWind&quot; &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;    
+##  [61] &quot;LightWind&quot; &quot;Calm&quot;      &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;     &quot;Calm&quot;     
+##  [67] &quot;Windy&quot;     &quot;Calm&quot;      &quot;LightWind&quot; &quot;Calm&quot;      &quot;LightWind&quot; &quot;LightWind&quot;
+##  [73] &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;     &quot;LightWind&quot; &quot;Windy&quot;    
+##  [79] &quot;LightWind&quot; &quot;Calm&quot;      &quot;Windy&quot;     &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;    
+##  [85] &quot;LightWind&quot; &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;     &quot;LightWind&quot; &quot;LightWind&quot;
+##  [91] &quot;LightWind&quot; &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;     &quot;LightWind&quot; &quot;LightWind&quot;
+##  [97] &quot;LightWind&quot; &quot;Calm&quot;      &quot;Calm&quot;      &quot;Windy&quot;     &quot;LightWind&quot; &quot;LightWind&quot;
+## [103] &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;     &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;    
+## [109] &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;HighWind&quot;  &quot;Windy&quot;    
+## [115] &quot;Windy&quot;     &quot;LightWind&quot; &quot;Calm&quot;      &quot;LightWind&quot; &quot;Calm&quot;      &quot;LightWind&quot;
+## [121] &quot;Calm&quot;      &quot;LightWind&quot; &quot;LightWind&quot; &quot;LightWind&quot; &quot;Calm&quot;      &quot;Calm&quot;     
+## [127] &quot;Calm&quot;      &quot;LightWind&quot; &quot;HighWind&quot;  &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;    
+## [133] &quot;LightWind&quot; &quot;Windy&quot;     &quot;HighWind&quot;  &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;    
+## [139] &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;     &quot;LightWind&quot; &quot;Windy&quot;    
+## [145] &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;HighWind&quot;  &quot;LightWind&quot; &quot;Windy&quot;    
+## [151] &quot;Windy&quot;     &quot;LightWind&quot; &quot;Windy&quot;</code></pre>
+<p>Looping in R</p>
+<p>Other things to know</p>
+<ul>
+<li><code>break</code> kicks you out of the loop</li>
+</ul>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb389-1" title="1"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>){</a>
+<a class="sourceLine" id="cb389-2" title="2">    <span class="cf">if</span> (i <span class="op">==</span><span class="st"> </span><span class="dv">3</span>){ </a>
+<a class="sourceLine" id="cb389-3" title="3">      <span class="cf">break</span> </a>
+<a class="sourceLine" id="cb389-4" title="4">      }</a>
+<a class="sourceLine" id="cb389-5" title="5">  <span class="kw">print</span>(i)</a>
+<a class="sourceLine" id="cb389-6" title="6">}</a></code></pre></div>
+<pre><code>## [1] 1
+## [1] 2</code></pre>
+<p>Looping in R</p>
+<p>Other things to know</p>
+<ul>
+<li><code>next</code> jumps to the next iteration of the loop</li>
+</ul>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb391-1" title="1"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>){</a>
+<a class="sourceLine" id="cb391-2" title="2">    <span class="cf">if</span> (i <span class="op">==</span><span class="st"> </span><span class="dv">3</span>){</a>
+<a class="sourceLine" id="cb391-3" title="3">      <span class="cf">next</span></a>
+<a class="sourceLine" id="cb391-4" title="4">    } </a>
+<a class="sourceLine" id="cb391-5" title="5">  <span class="kw">print</span>(i)</a>
+<a class="sourceLine" id="cb391-6" title="6">}</a></code></pre></div>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 4
+## [1] 5</code></pre>
+<p>Looping in R</p>
+<p>Other things to know</p>
+<ul>
+<li><code>while</code> loop similar</li>
+</ul>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb393-1" title="1"><span class="cf">while</span>(condition) {</a>
+<a class="sourceLine" id="cb393-2" title="2">    expression to evaluate</a>
+<a class="sourceLine" id="cb393-3" title="3">  modify condition?</a>
+<a class="sourceLine" id="cb393-4" title="4">}</a></code></pre></div>
+<p>Looping in R</p>
+<p>Other things to know</p>
+<p>For loops inefficient in R</p>
+<blockquote>
+<ul>
+<li>R interpreted language</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Must figure out how to evaluate code at each iteration of loop</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Slows it down</li>
+</ul>
+</blockquote>
+<p>Looping in R</p>
+<p>Other things to know</p>
+<p>For loops inefficient in R</p>
+<ul>
+<li><p>R interpreted language</p></li>
+<li><p>Must figure out how to evaluate code at each iteration of loop</p></li>
+<li><p>Slows it down</p></li>
+</ul>
+<p>Vectorized functions much faster!</p>
+<blockquote>
+<ul>
+<li>Vectorized function: works on entire vector at once</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Avoids costly computation time</li>
+</ul>
+</blockquote>
+<p>Creating New Variables<br />
+Vectorized ifelse</p>
+<ul>
+<li><p><code>ifelse()</code> is vectorized version of <code>if then else</code></p></li>
+<li><p>Syntax</p></li>
+</ul>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb394-1" title="1"><span class="kw">ifelse</span>(vector_condition, if_true_do_this, if_false_do_this)</a></code></pre></div>
+<p>Creating New Variables<br />
+Vectorized ifelse</p>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb395-1" title="1"><span class="kw">ifelse</span>(airquality<span class="op">$</span>Wind <span class="op">&gt;=</span><span class="st"> </span><span class="dv">15</span>, <span class="st">&quot;HighWind&quot;</span>,</a>
+<a class="sourceLine" id="cb395-2" title="2">          <span class="kw">ifelse</span>(airquality<span class="op">$</span>Wind <span class="op">&gt;=</span><span class="st"> </span><span class="dv">10</span>, <span class="st">&quot;Windy&quot;</span>,</a>
+<a class="sourceLine" id="cb395-3" title="3">                 <span class="kw">ifelse</span>(airquality<span class="op">$</span>Wind <span class="op">&gt;=</span><span class="st"> </span><span class="dv">6</span>, <span class="st">&quot;LightWind&quot;</span>, <span class="st">&quot;Calm&quot;</span>)))</a></code></pre></div>
+<pre><code>##   [1] &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;    
+##   [7] &quot;LightWind&quot; &quot;Windy&quot;     &quot;HighWind&quot;  &quot;LightWind&quot; &quot;LightWind&quot; &quot;LightWind&quot;
+##  [13] &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;     &quot;HighWind&quot; 
+##  [19] &quot;Windy&quot;     &quot;LightWind&quot; &quot;LightWind&quot; &quot;HighWind&quot;  &quot;LightWind&quot; &quot;Windy&quot;    
+##  [25] &quot;HighWind&quot;  &quot;Windy&quot;     &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;Calm&quot;     
+##  [31] &quot;LightWind&quot; &quot;LightWind&quot; &quot;LightWind&quot; &quot;HighWind&quot;  &quot;LightWind&quot; &quot;LightWind&quot;
+##  [37] &quot;Windy&quot;     &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;    
+##  [43] &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;     &quot;HighWind&quot; 
+##  [49] &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;LightWind&quot; &quot;Calm&quot;      &quot;Calm&quot;     
+##  [55] &quot;LightWind&quot; &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;    
+##  [61] &quot;LightWind&quot; &quot;Calm&quot;      &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;     &quot;Calm&quot;     
+##  [67] &quot;Windy&quot;     &quot;Calm&quot;      &quot;LightWind&quot; &quot;Calm&quot;      &quot;LightWind&quot; &quot;LightWind&quot;
+##  [73] &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;     &quot;LightWind&quot; &quot;Windy&quot;    
+##  [79] &quot;LightWind&quot; &quot;Calm&quot;      &quot;Windy&quot;     &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;    
+##  [85] &quot;LightWind&quot; &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;     &quot;LightWind&quot; &quot;LightWind&quot;
+##  [91] &quot;LightWind&quot; &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;     &quot;LightWind&quot; &quot;LightWind&quot;
+##  [97] &quot;LightWind&quot; &quot;Calm&quot;      &quot;Calm&quot;      &quot;Windy&quot;     &quot;LightWind&quot; &quot;LightWind&quot;
+## [103] &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;     &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;    
+## [109] &quot;LightWind&quot; &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;HighWind&quot;  &quot;Windy&quot;    
+## [115] &quot;Windy&quot;     &quot;LightWind&quot; &quot;Calm&quot;      &quot;LightWind&quot; &quot;Calm&quot;      &quot;LightWind&quot;
+## [121] &quot;Calm&quot;      &quot;LightWind&quot; &quot;LightWind&quot; &quot;LightWind&quot; &quot;Calm&quot;      &quot;Calm&quot;     
+## [127] &quot;Calm&quot;      &quot;LightWind&quot; &quot;HighWind&quot;  &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;    
+## [133] &quot;LightWind&quot; &quot;Windy&quot;     &quot;HighWind&quot;  &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;    
+## [139] &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;Windy&quot;     &quot;LightWind&quot; &quot;Windy&quot;    
+## [145] &quot;LightWind&quot; &quot;Windy&quot;     &quot;Windy&quot;     &quot;HighWind&quot;  &quot;LightWind&quot; &quot;Windy&quot;    
+## [151] &quot;Windy&quot;     &quot;LightWind&quot; &quot;Windy&quot;</code></pre>
+<p>Creating New Variables<br />
+Vectorized ifelse</p>
+<ul>
+<li>Can use with <code>transmute()</code> or <code>mutate()</code></li>
+</ul>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb397-1" title="1"><span class="kw">mutate</span>(airquality, <span class="dt">status =</span> <span class="kw">ifelse</span>(airquality<span class="op">$</span>Wind <span class="op">&gt;=</span><span class="st"> </span><span class="dv">15</span>, <span class="st">&quot;HighWind&quot;</span>,</a>
+<a class="sourceLine" id="cb397-2" title="2">                                <span class="kw">ifelse</span>(airquality<span class="op">$</span>Wind <span class="op">&gt;=</span><span class="st"> </span><span class="dv">10</span>, <span class="st">&quot;Windy&quot;</span>,</a>
+<a class="sourceLine" id="cb397-3" title="3">                                       <span class="kw">ifelse</span>(airquality<span class="op">$</span>Wind <span class="op">&gt;=</span><span class="st"> </span><span class="dv">6</span>, <span class="st">&quot;LightWind&quot;</span>, <span class="st">&quot;Calm&quot;</span>)))</a>
+<a class="sourceLine" id="cb397-4" title="4">)</a></code></pre></div>
+<pre><code>## # A tibble: 153 x 7
+##    Ozone Solar.R  Wind  Temp Month   Day status   
+##    &lt;int&gt;   &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    
+##  1    41     190   7.4    67     5     1 LightWind
+##  2    36     118   8      72     5     2 LightWind
+##  3    12     149  12.6    74     5     3 Windy    
+##  4    18     313  11.5    62     5     4 Windy    
+##  5    NA      NA  14.3    56     5     5 Windy    
+##  6    28      NA  14.9    66     5     6 Windy    
+##  7    23     299   8.6    65     5     7 LightWind
+##  8    19      99  13.8    59     5     8 Windy    
+##  9     8      19  20.1    61     5     9 HighWind 
+## 10    NA     194   8.6    69     5    10 LightWind
+## # ... with 143 more rows</code></pre>
+<p>Creating New Variables</p>
+<ul>
+<li><p>Compare speed of for loop and vectorized version</p></li>
+<li><p><code>microbenchmark</code> package runs code repeatedly, returns summary stats</p></li>
+</ul>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb399-1" title="1"><span class="co">#install if needed</span></a>
+<a class="sourceLine" id="cb399-2" title="2"><span class="kw">library</span>(microbenchmark)</a></code></pre></div>
+<pre><code>## Warning: package &#39;microbenchmark&#39; was built under R version 3.6.3</code></pre>
+<p>Creating New Variables</p>
+<ul>
+<li>Compare speed of for loop and vectorized version</li>
+</ul>
+<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb401-1" title="1">loopTime &lt;-<span class="st"> </span><span class="kw">microbenchmark</span>(</a>
+<a class="sourceLine" id="cb401-2" title="2">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(airquality)){</a>
+<a class="sourceLine" id="cb401-3" title="3">    <span class="cf">if</span>(airquality<span class="op">$</span>Wind[i] <span class="op">&gt;=</span><span class="st"> </span><span class="dv">15</span>){</a>
+<a class="sourceLine" id="cb401-4" title="4">      status[i] &lt;-<span class="st"> &quot;HighWind&quot;</span></a>
+<a class="sourceLine" id="cb401-5" title="5">    } <span class="cf">else</span> <span class="cf">if</span> (airquality<span class="op">$</span>Wind[i] <span class="op">&gt;=</span><span class="st"> </span><span class="dv">10</span>){</a>
+<a class="sourceLine" id="cb401-6" title="6">      status[i] &lt;-<span class="st"> &quot;Windy&quot;</span></a>
+<a class="sourceLine" id="cb401-7" title="7">    } <span class="cf">else</span> <span class="cf">if</span> (airquality<span class="op">$</span>Wind[i] <span class="op">&gt;=</span><span class="st"> </span><span class="dv">6</span>){</a>
+<a class="sourceLine" id="cb401-8" title="8">      status[i] &lt;-<span class="st"> &quot;LightWind&quot;</span></a>
+<a class="sourceLine" id="cb401-9" title="9">    } <span class="cf">else</span> <span class="cf">if</span> (airquality<span class="op">$</span>Wind[i] <span class="op">&gt;=</span><span class="st"> </span><span class="dv">0</span>){</a>
+<a class="sourceLine" id="cb401-10" title="10">      status[i] &lt;-<span class="st"> &quot;Calm&quot;</span></a>
+<a class="sourceLine" id="cb401-11" title="11">    } <span class="cf">else</span>{</a>
+<a class="sourceLine" id="cb401-12" title="12">      status[i] &lt;-<span class="st"> &quot;Error&quot;</span></a>
+<a class="sourceLine" id="cb401-13" title="13">    }</a>
+<a class="sourceLine" id="cb401-14" title="14">  }</a>
+<a class="sourceLine" id="cb401-15" title="15">, <span class="dt">unit =</span> <span class="st">&quot;us&quot;</span>)</a></code></pre></div>
+<p>Creating New Variables</p>
+<ul>
+<li>Compare speed of for loop and vectorized version</li>
+</ul>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb402-1" title="1">vectorTime &lt;-<span class="st"> </span><span class="kw">microbenchmark</span>(</a>
+<a class="sourceLine" id="cb402-2" title="2">  <span class="kw">ifelse</span>(airquality<span class="op">$</span>Wind <span class="op">&gt;=</span><span class="st"> </span><span class="dv">15</span>, <span class="st">&quot;HighWind&quot;</span>,</a>
+<a class="sourceLine" id="cb402-3" title="3">            <span class="kw">ifelse</span>(airquality<span class="op">$</span>Wind <span class="op">&gt;=</span><span class="st"> </span><span class="dv">10</span>, <span class="st">&quot;Windy&quot;</span>,</a>
+<a class="sourceLine" id="cb402-4" title="4">                   <span class="kw">ifelse</span>(airquality<span class="op">$</span>Wind <span class="op">&gt;=</span><span class="st"> </span><span class="dv">6</span>, <span class="st">&quot;LightWind&quot;</span>, <span class="st">&quot;Calm&quot;</span>)))</a>
+<a class="sourceLine" id="cb402-5" title="5">, <span class="dt">unit =</span> <span class="st">&quot;us&quot;</span>)</a></code></pre></div>
+<p>Creating New Variables</p>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb403-1" title="1">loopTime</a></code></pre></div>
+<pre><code>## Unit: microseconds
+##                                                                                                                                                                                                                                                                                                                                                                                            expr
+##  for (i in 1:nrow(airquality)) {     if (airquality$Wind[i] &gt;= 15) {         status[i] &lt;- &quot;HighWind&quot;     }     else if (airquality$Wind[i] &gt;= 10) {         status[i] &lt;- &quot;Windy&quot;     }     else if (airquality$Wind[i] &gt;= 6) {         status[i] &lt;- &quot;LightWind&quot;     }     else if (airquality$Wind[i] &gt;= 0) {         status[i] &lt;- &quot;Calm&quot;     }     else {         status[i] &lt;- &quot;Error&quot;     } }
+##     min      lq     mean  median     uq     max neval
+##  7488.9 7566.45 8254.002 7863.35 8056.5 11214.2   100</code></pre>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb405-1" title="1">vectorTime</a></code></pre></div>
+<pre><code>## Unit: microseconds
+##                                                                                                                                       expr
+##  ifelse(airquality$Wind &gt;= 15, &quot;HighWind&quot;, ifelse(airquality$Wind &gt;=      10, &quot;Windy&quot;, ifelse(airquality$Wind &gt;= 6, &quot;LightWind&quot;, &quot;Calm&quot;)))
+##   min   lq   mean median   uq   max neval
+##  94.7 95.4 97.371   96.1 97.7 134.4   100</code></pre>
+<p>Creating New Variables Recap!</p>
+<ul>
+<li><p>Add new column with <code>$</code></p></li>
+<li><p><code>mutate()</code> - add newly created column(s) to current data frame</p></li>
+<li><p><code>transmute()</code> - create new data frame with created variable(s)</p>
+<ul>
+<li><p>Can use with window functions</p></li>
+<li><p>Use <code>ifelse()</code> to do conditional creation</p></li>
+<li><p>Note: <code>cut()</code> can be used to categorize a numeric variable too!</p></li>
+</ul></li>
+</ul>
+<p>Reshaping Data<br />
+<code>tidyr</code> package</p>
+<p>Easily allows for two very important actions</p>
+<blockquote>
+<ul>
+<li><code>gather()</code> - takes multiple columns, and gathers them into key-value pairs<br />
+
+<ul>
+<li>
+Make wide data longer
+</li>
+<li>
+Most important as analysis methods often prefer this form
+</li>
+</ul></li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><code>spread()</code> - takes two columns (key &amp; value) and spreads in to multiple columns<br />
+
+<ul>
+<li>
+Make “long” data wider
+</li>
+</ul></li>
+</ul>
+</blockquote>
+<p>Reshaping Data<br />
+<code>tidyr</code> package</p>
+<p>Easily allows for two very important actions</p>
+<ul>
+<li><p><code>gather()</code> - takes multiple columns, and gathers them into key-value pairs</p>
+<ul>
+<li>Make wide data longer<br />
+</li>
+<li>Most important as analysis methods often prefer this form</li>
+</ul></li>
+<li><code>spread()</code> - takes two columns (key &amp; value) and spreads in to multiple columns<br />
+
+<ul>
+<li>
+Make “long” data wider
+</li>
+</ul></li>
+</ul>
+<p>Also gives an easy method to separate a column (or combine two columns) using <code>separate()</code> and <code>unite()</code></p>
+<p>Reshaping Data<br />
+<code>tidyr</code> package</p>
+<ul>
+<li>Data in ‘Wide’ form</li>
+</ul>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb407-1" title="1">tempsData &lt;-<span class="st"> </span><span class="kw">read_table2</span>(<span class="dt">file =</span> <span class="st">&quot;https://www4.stat.ncsu.edu/~online/datasets/cityTemps.txt&quot;</span>) </a>
+<a class="sourceLine" id="cb407-2" title="2">tempsData</a></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   city = col_character(),
+##   sun = col_double(),
+##   mon = col_double(),
+##   tue = col_double(),
+##   wed = col_double(),
+##   thr = col_double(),
+##   fri = col_double(),
+##   sat = col_double()
+## )</code></pre>
+<pre><code>## # A tibble: 6 x 8
+##   city        sun   mon   tue   wed   thr   fri   sat
+##   &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 atlanta      81    87    83    79    88    91    94
+## 2 baltimore    73    75    70    78    73    75    79
+## 3 charlotte    82    80    75    82    83    88    93
+## 4 denver       72    71    67    68    72    71    58
+## 5 ellington    51    42    47    52    55    56    59
+## 6 frankfort    70    70    72    70    74    74    79</code></pre>
+<p>Manipulating Data
+tidyr package</p>
+<ul>
+<li>Switch to ‘Long’ form with <code>gather()</code>
+<ul>
+<li>key = new name for values in columns<br />
+</li>
+<li>value = new name for data values<br />
+</li>
+<li>columns describe which columns to take</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb410-1" title="1">tempsData <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">gather</span>(<span class="dt">key =</span> day, <span class="dt">value =</span> temp, <span class="dv">2</span><span class="op">:</span><span class="dv">8</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 42 x 3
+##    city      day    temp
+##    &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt;
+##  1 atlanta   sun      81
+##  2 baltimore sun      73
+##  3 charlotte sun      82
+##  4 denver    sun      72
+##  5 ellington sun      51
+##  6 frankfort sun      70
+##  7 atlanta   mon      87
+##  8 baltimore mon      75
+##  9 charlotte mon      80
+## 10 denver    mon      71
+## # ... with 32 more rows</code></pre>
+<p>Reshaping Data<br />
+tidyr package</p>
+<ul>
+<li>Switch to ‘Long’ form with <code>gather()</code><br />
+</li>
+<li>Can provide columns to <code>gather()</code> in many ways!</li>
+</ul>
+<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb412-1" title="1">newTempsData &lt;-<span class="st"> </span>tempsData <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">gather</span>(<span class="dt">key =</span> day, <span class="dt">value =</span> temp, sun<span class="op">:</span>sat)</a>
+<a class="sourceLine" id="cb412-2" title="2">newTempsData</a></code></pre></div>
+<pre><code>## # A tibble: 42 x 3
+##    city      day    temp
+##    &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt;
+##  1 atlanta   sun      81
+##  2 baltimore sun      73
+##  3 charlotte sun      82
+##  4 denver    sun      72
+##  5 ellington sun      51
+##  6 frankfort sun      70
+##  7 atlanta   mon      87
+##  8 baltimore mon      75
+##  9 charlotte mon      80
+## 10 denver    mon      71
+## # ... with 32 more rows</code></pre>
+<p>Reshaping Data<br />
+tidyr package</p>
+<ul>
+<li>Switch to ‘Wide’ form with <code>spread()</code>
+<ul>
+<li>opposite from gather<br />
+</li>
+<li>key = new column names<br />
+</li>
+<li>value = value to spread out</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb414-1" title="1">newTempsData <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">spread</span>(<span class="dt">key =</span> day, <span class="dt">value =</span> temp)</a></code></pre></div>
+<pre><code>## # A tibble: 6 x 8
+##   city        fri   mon   sat   sun   thr   tue   wed
+##   &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 atlanta      91    87    94    81    88    83    79
+## 2 baltimore    75    75    79    73    73    70    78
+## 3 charlotte    88    80    93    82    83    75    82
+## 4 denver       71    71    58    72    72    67    68
+## 5 ellington    56    42    59    51    55    47    52
+## 6 frankfort    74    70    79    70    74    72    70</code></pre>
+<p>Reshaping Data<br />
+tidyr package</p>
+<ul>
+<li><p>Separate a column (or combine two columns) using <code>separate()</code> and <code>unite()</code></p></li>
+<li><p>Consider data set on air pollution in Chicago</p></li>
+</ul>
+<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb416-1" title="1">chicagoData &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://www4.stat.ncsu.edu/~online/datasets/Chicago.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb416-2" title="2">chicagoData</a></code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   X = col_double(),
+##   city = col_character(),
+##   date = col_character(),
+##   death = col_double(),
+##   temp = col_double(),
+##   dewpoint = col_double(),
+##   pm10 = col_double(),
+##   o3 = col_double(),
+##   time = col_double(),
+##   season = col_character(),
+##   year = col_double()
+## )</code></pre>
+<pre><code>## # A tibble: 1,461 x 11
+##        X city  date      death  temp dewpoint  pm10    o3  time season  year
+##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;
+##  1  3654 chic  1/1/1997    137  36      37.5  13.1   5.66  3654 winter  1997
+##  2  3655 chic  1/2/1997    123  45      47.2  41.9   5.53  3655 winter  1997
+##  3  3656 chic  1/3/1997    127  40      38    27.0   6.29  3656 winter  1997
+##  4  3657 chic  1/4/1997    146  51.5    45.5  25.1   7.54  3657 winter  1997
+##  5  3658 chic  1/5/1997    102  27      11.2  15.3  20.8   3658 winter  1997
+##  6  3659 chic  1/6/1997    127  17       5.75  9.36 14.9   3659 winter  1997
+##  7  3660 chic  1/7/1997    116  16       7    20.2  11.9   3660 winter  1997
+##  8  3661 chic  1/8/1997    118  19      17.8  33.1   8.68  3661 winter  1997
+##  9  3662 chic  1/9/1997    148  26      24    12.1  13.4   3662 winter  1997
+## 10  3663 chic  1/10/1997   121  16       5.38 24.8  10.4   3663 winter  1997
+## # ... with 1,451 more rows</code></pre>
+<p>Manipulating Data
+tidyr package</p>
+<ul>
+<li><code>lubridate</code> package great for date data! Can parse with <code>separate</code>:</li>
+</ul>
+<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb419-1" title="1">chicagoData <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">separate</span>(date, <span class="kw">c</span>(<span class="st">&quot;Day&quot;</span>, <span class="st">&quot;Month&quot;</span>, <span class="st">&quot;Year&quot;</span>), <span class="dt">sep =</span> <span class="st">&quot;/&quot;</span>, </a>
+<a class="sourceLine" id="cb419-2" title="2">                                                 <span class="dt">convert =</span> <span class="ot">TRUE</span>, <span class="dt">remove =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 1,461 x 14
+##        X city  date    Day Month  Year death  temp dewpoint  pm10    o3  time
+##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1  3654 chic  1/1/~     1     1  1997   137  36      37.5  13.1   5.66  3654
+##  2  3655 chic  1/2/~     1     2  1997   123  45      47.2  41.9   5.53  3655
+##  3  3656 chic  1/3/~     1     3  1997   127  40      38    27.0   6.29  3656
+##  4  3657 chic  1/4/~     1     4  1997   146  51.5    45.5  25.1   7.54  3657
+##  5  3658 chic  1/5/~     1     5  1997   102  27      11.2  15.3  20.8   3658
+##  6  3659 chic  1/6/~     1     6  1997   127  17       5.75  9.36 14.9   3659
+##  7  3660 chic  1/7/~     1     7  1997   116  16       7    20.2  11.9   3660
+##  8  3661 chic  1/8/~     1     8  1997   118  19      17.8  33.1   8.68  3661
+##  9  3662 chic  1/9/~     1     9  1997   148  26      24    12.1  13.4   3662
+## 10  3663 chic  1/10~     1    10  1997   121  16       5.38 24.8  10.4   3663
+## # ... with 1,451 more rows, and 2 more variables: season &lt;chr&gt;, year &lt;dbl&gt;</code></pre>
+<p>Manipulating Data
+tidyr package</p>
+<ul>
+<li><code>lubridate</code> package great for date data! Combine with <code>unite</code>:</li>
+</ul>
+<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb421-1" title="1">chicagoData <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">separate</span>(date, <span class="kw">c</span>(<span class="st">&quot;Day&quot;</span>, <span class="st">&quot;Month&quot;</span>, <span class="st">&quot;Year&quot;</span>), <span class="dt">sep =</span> <span class="st">&quot;/&quot;</span>, </a>
+<a class="sourceLine" id="cb421-2" title="2">                                                 <span class="dt">convert =</span> <span class="ot">TRUE</span>, <span class="dt">remove =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb421-3" title="3"><span class="st">  </span><span class="kw">unite</span>(DayMonth, Day, Month, <span class="dt">sep =</span> <span class="st">&quot;-&quot;</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 1,461 x 13
+##        X city  date  DayMonth  Year death  temp dewpoint  pm10    o3  time
+##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1  3654 chic  1/1/~ 1-1       1997   137  36      37.5  13.1   5.66  3654
+##  2  3655 chic  1/2/~ 1-2       1997   123  45      47.2  41.9   5.53  3655
+##  3  3656 chic  1/3/~ 1-3       1997   127  40      38    27.0   6.29  3656
+##  4  3657 chic  1/4/~ 1-4       1997   146  51.5    45.5  25.1   7.54  3657
+##  5  3658 chic  1/5/~ 1-5       1997   102  27      11.2  15.3  20.8   3658
+##  6  3659 chic  1/6/~ 1-6       1997   127  17       5.75  9.36 14.9   3659
+##  7  3660 chic  1/7/~ 1-7       1997   116  16       7    20.2  11.9   3660
+##  8  3661 chic  1/8/~ 1-8       1997   118  19      17.8  33.1   8.68  3661
+##  9  3662 chic  1/9/~ 1-9       1997   148  26      24    12.1  13.4   3662
+## 10  3663 chic  1/10~ 1-10      1997   121  16       5.38 24.8  10.4   3663
+## # ... with 1,451 more rows, and 2 more variables: season &lt;chr&gt;, year &lt;dbl&gt;</code></pre>
+<p>Recap/Next Up!</p>
+<ul>
+<li><p>Data manipulation idea</p></li>
+<li><p>Documenting with Markdown</p></li>
+<li><p>Logical statements</p></li>
+<li><p><code>dplyr</code></p></li>
+<li><p>Creating new variables</p>
+<ul>
+<li>Conditional execution (if then)<br />
+</li>
+<li>For loops<br />
+</li>
+<li>Vectorized functions</li>
+</ul></li>
+<li><p>Reshaping data</p></li>
+</ul>
+<div id="sas" class="section level3">
+<h3><span class="header-section-number">2.0.1</span> SAS</h3>
+<p>Section designed to demonstrate basic use of SAS via SAS Studio. By the end of this section students will be able to:</p>
+<pre><code>write basic SAS programs in SAS Studio using SAS University edition
+import well formatted data into SAS using the import wizard, PROC IMPORT, or a DATA step
+create common numerical and graphical summaries of data
+understand the capabilities of SAS program (something like this but a little clearer maybe)</code></pre>
+<p>SAS Programming Topics</p>
+<pre><code>Common elements of SAS programs: PROC and DATA steps
+Steps, statements, keywords, and options
+SAS windows
+Submitting SAS code, checking logs, and viewing output
+GPP elements</code></pre>
+<p>Module 2 - Importing Data Topics</p>
+<pre><code>SAS library
+Data set names (one vs two level)
+Methods for importing data: Instream, Import Wizard, and Data step
+Delimiters and common data formats
+Types of variables in SAS
+Explorer and PROC PRINT/CONTENTS for investigating a SAS data set</code></pre>
+<p>Module 3 - Manipulating Data Topics</p>
+<pre><code>very basic stuff</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sampling-experiments-and-exploratory-data-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["StatisticalMethods.pdf", "StatisticalMethods.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

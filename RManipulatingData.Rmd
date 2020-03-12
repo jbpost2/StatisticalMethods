@@ -1,209 +1,60 @@
-### R Manipulating Data
+### Data Manipulation Ideas  
 
+As you can see it isn't too difficult to bring well structured raw data into R.  You should now have the basics of reading in delimited, Excel, SAS, SPSS, JSON, and XML data as well as how to connect to a database and contact an API.  Once you have your data you may want manipulate it in some way.  
 
-
-## Recap So Far    
-
-Dimension | Homogeneous   | Heterogeneous
---------- | ------------- | -------------
-1d        | Atomic Vector | List
-2d        | Matrix        | Data Frame
-
-<br> 
-
-Basic access via  
-
-- Atomic vectors - `x[ ]`  
-- Matrices - `x[ , ]`  
-- Data Frames - `x[ , ]` or `x$name`  
-- Lists - `x[ ]`, `x[[ ]]`, or `x$name`  
-
-
-## Recap So Far  
-
-- Reading Data
-
-Type of file       | Package   | Function   
------------------- | --------- | -----------------
-Delimited          | `readr`   | `read_csv()`, `read_tsv()`,`read_table()`, `read_delim(...,delim = ,...)`
-Excel (.xls,.xlsx) | `readxl`  | `read_excel`
-SPSS (.sav)        | `haven`   | `read_spss`
-SAS (.sas7bdat)    | `haven`   | `read_sas`
-
-<br>
-
-- Resources for JSON, XML, databases, and APIs
-
-
-
-## What is this course about?
-
-Basic use of R for reading, manipulating, and plotting data!
-
-- read and write basic R programs   
-- import well formatted data into R
-- **do basic data manipulation in R**   
-- produce common numerical and graphical summaries in R  
-- describe a use case of an analysis done in R  
-
-
-
-## Where do we start?  
-
-- Data manipulation idea  
-
-- Documenting with Markdown  
-
-
-
-## Where do we start?  
-
-- Data manipulation idea  
-  
-- Documenting with Markdown  
-
-- Logical statements 
-
-- `dplyr`
-
-
-
-## Where do we start?  
-
-- Data manipulation idea  
-
-- Documenting with Markdown
-
-- Logical statements 
-
-- `dplyr`
-
-- Creating new variables  
-
-     + Conditional execution (if then)  
-     + For loops  
-     + Vectorized functions   
- 
-- Reshaping Data
-
-
-## Data manipulation idea  
-
-We may want to subset our full data set or create new data   
-
-- Grab only certain types of observations (**filter rows**)
+Often we want to grab only certain types of observations (filter rows).
 
 ```{r, echo = FALSE, fig.align='center', out.width = "400px"}
-knitr::include_graphics("../img/filterVisual.png")
+knitr::include_graphics("img/filterVisual.png")
 ```
 
-
-## Data manipulation idea  
-
-We may want to subset our full data set or create new data   
-
-- Look at only certain variables (**select columns**)  
+We also want to only look at only certain variables (select columns).
     
 ```{r, echo = FALSE, fig.align='center', out.width = "300px"}
-knitr::include_graphics("../img/selectVisual.png")
+knitr::include_graphics("img/selectVisual.png")
 ```
 
-
-## Data manipulation idea  
-
-We may want to subset our full data set or create new data   
-
-- Create new variables
+Other times we want to crate new variables that may be functions of the data in the data set.
 
 ```{r, echo = FALSE, fig.align='center', out.width = "450px"}
-knitr::include_graphics("../img/createVarVisual.png")
+knitr::include_graphics("img/createVarVisual.png")
 ```
 
 
-
-## Data manipulation idea  
-
-We may want to subset our full data set or create new data   
-
-- Grab only certain types of observations (**filter rows**)
-    
-- Look at only certain variables (**select columns**)  
-    
-- Create new variables
-    
-- Vital to make your work reproducible!  
-
-> - Traditional documentation through comments (`#` in R) in script
+When doing data manipulation it is vital to make your work reproducible!  Traditionally documentation has been done through comments (`#` in R) in your R script.  This is being replaced by using a 'Notebook' environment like R Markdown.  
 
 
-## Documenting with Markdown  
+### Documenting with Markdown  
 
-- Communication and reproducibility vital!  
+You may have heard of [JUPYTER](http://jupyter.org/) notebooks.  This is a program that allows you to weave plain text with formatting characters along side code.  JUPYTER allows you to call Julia, Python, R, or SAS code (among others).  
 
-- May have heard of [JUPYTER](http://jupyter.org/) notebooks  
+R Markdown is a built in notebook for R studio!  A nice intro video is [available here](https://vimeo.com/178485416).
 
+R Markdown is designed to be used in three ways (R for Data Science): 
 
+- Communicating to decision makers (focus on conclusions not code)  
 
-## Documenting with Markdown  
+- Collaborating with other data scientists (including future you!)  
 
-- Communication and reproducibility vital!  
-
-- May have heard of [JUPYTER](http://jupyter.org/) notebooks  
-
-- R Markdown - built in notebook for R studio  
-
-- [Intro video](https://vimeo.com/178485416)
+- As environment to do data science (documents what you did and what you were thinking) 
 
 
+Most have heard of HTML or HyperText Mark-up Language.  This is really just plain text that a web browser like firefox interprets and renders.  Markdown is a specific markup language that has easier syntax but is not as powerful.  Any plain text file can be used although the .Rmd extension associates the file with R Studio.
+
+RStudio makes it easy to create a Markdown document.  
+
+```{r , out.width = "700px",echo=FALSE, fig.align='center'}
+knitr::include_graphics("img/startMD.png")
+```
+
+You can create many commonly used types of output including HTML, PDF, Word, and HTML slides.  
+
+```{r , out.width = "500px",echo=FALSE, fig.align='center'}
+knitr::include_graphics("img/startMDDoc.png")
+```
 
 
-## Documenting with Markdown  
-
-
-- R Markdown = Digital "Notebook":  Program that weaves word processing and code.  
-
-- Designed to be used in three ways (R for Data Science)  
-
-
-
-
-## Documenting with Markdown  
-
-
-- R Markdown = Digital "Notebook":  Program that weaves word processing and code.  
-
-- Designed to be used in three ways (R for Data Science)  
-<ul>
-  <li>Communicating to decision makers (focus on conclusions not code)</li>
-  <li>Collaborating with other data scientists (including future you!)  </li>
-  <li> As environment to do data science (documents what you did and what you were thinking)</li>
-</ul>
-
-
-
-## Documenting with Markdown  
-**Verbage**
-
-- May have heard of HTML (HyperText Mark-up Language)  
-    + Write plain text that the browser interprets and renders  
-    
-    
-## Documenting with Markdown  
-**Verbage**
-
-- May have heard of HTML (HyperText Mark-up Language)  
-    + Write plain text that the browser interprets and renders  
-    
-- Markdown is a specific markup language  
-    + Easier syntax  
-    + Not as powerful  
-    
-- Any plain text file can be used (.Rmd extension associates it with R Studio)
-
-
-## Documenting with Markdown  
-
-R Markdown file contains three important types of content:
+An R Markdown file contains three important types of content:
 
 1. (Optional) YAML header surrounded by `---`s  
 
@@ -212,54 +63,7 @@ R Markdown file contains three important types of content:
 3. Text mixed with simple text formatting instructions 
 
 
-## Documenting with Markdown  
-**Creating an R Markdown Document**
-
-- R Studio makes it easy!  
-
-```{r startMD.png, out.width = "700px",echo=FALSE, fig.align='center'}
-knitr::include_graphics("../img/startMD.png")
-```
-
-
-## Documenting with Markdown  
-**Creating an R Markdown Document**
-
-- Commonly used document types can be created 
-
-<div style="float: center;">
-```{r startMDDoc.png, out.width = "500px",echo=FALSE, fig.align='center'}
-knitr::include_graphics("../img/startMDDoc.png")
-```
-</div>
-
-
-
-## Documenting with Markdown  
-**Creating an R Markdown Document**
-
-- Slide presentations 
-
-```{r startMDPres.png, out.width = "500px",echo=FALSE, fig.align='center'}
-knitr::include_graphics("../img/startMDPres.png")
-```
-
-
-
-## Documenting with Markdown  
-**Creating an R Markdown Document**
-
-- Truly Interactive Documents/Pages (require R backend)
-
-```{r startMDShiny.png, out.width = "500px",echo=FALSE, fig.align='center'}
-knitr::include_graphics("../img/startMDShiny.png")
-```
-
-
-## Documenting with Markdown  
-**YAML Header**  
-
- - Define settings for document  
+The YAML header defines settings for document:
 
 ```
 ---
@@ -270,33 +74,14 @@ output: html_document
 ---
 ```  
 
-- CTRL/CMD + Shift + k **knits** via this info 
+The hot key combination of CTRL/CMD + Shift + k 'knits' (or creates the output type) via this information.  
 
-     
-## Documenting with Markdown  
-**Code Chunks**  
+Code Chunks can contain any R code.  These can be started by typing ```{r} out or with CTRL/CMD + Alt + I.  This code will be executed when document is created and the chunks will be evaulated sequentially.  Options can be specified on individual code chunks to hide their code or output (among other things).  
 
- - Below YAML header: 'r chunk'  
-
-```{r chunk_png, out.width = "500px",echo=FALSE, fig.align='center'}
-knitr::include_graphics("../img/chunk.png")
-```  
-
-> - Start code chunk by typing ```{r} out or with CTRL/CMD + Alt + I
-
-> - Code will be executed when document is created    
-
-> - Can specify options on individual code chunks  
-
-
-
-## Documenting with Markdown  
-**Markdown Syntax**
-     
-- Below code chunk is plain text with markdown sytnax  
+Below you'll see plain text with markdown sytnax included:  
 
 ```
-## R Markdown
+##R Markdown
 
 This is an R Markdown document. Markdown is a simple formatting syntax
 for authoring HTML, PDF, and MS Word documents. For more details on
@@ -307,494 +92,93 @@ includes both content as well as the output of any embedded R code
 chunks within the document. 
 ```
 
-- When file created, "##" becomes a header, "<...>" a link, and ```**Knit**``` bold font
+When the file is created `##` becomes a header, "<...>" a link, and `**Knit**` bold font.
 
+You can learn much more about how to use R Markdown with this handy [cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf). 
 
-## Documenting with Markdown  
+The key idea here is that you can easily write down your thought process and document all of the changes you make to your data.  This creates a reproducible final product!
 
-### R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax
-for authoring HTML, PDF, and MS Word documents. For more details on
-using R Markdown see <http://rmarkdown.rstudio.com>.
+### Logical Statements
 
-When you click the **Knit** button a document will be generated that
-includes both content as well as the output of any embedded R code
-chunks within the document. 
-
-
-
-
-## Where do we go from here?  
-
-Briefly investigate:  
-
-- Markdown syntax  
-
-- Code chunks and their options  
-
-- Changing type of output  
-
-
-
-## Documenting with Markdown  
-
-**Markdown syntax**  
-
-- ```[Cheat Sheet link](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)``` becomes [Cheat Sheet link](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)  
-
-
-
-
-## Documenting with Markdown  
-
-**Markdown syntax**  
-
-- ```[Cheat Sheet link](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)``` becomes [Cheat Sheet link](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)  
-
-- ```# Header 1``` becomes a large font header  
-
-- ```## Header 2``` becomes a slightly smaller font header  
-
-- Goes to 6 headers  
-
-    + Use of headers can automatically create a Table of Contents!
-
-
-
-## Documenting with Markdown  
-
-**Markdown syntax**  
-
-- ```[Cheat Sheet link](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)``` becomes [Cheat Sheet link](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)  
-
-- ```# Header 1``` becomes a large font header  
-
-- ```## Header 2``` becomes a slightly smaller font header  
-
-- Goes to 6 headers  
-
-    + Use of headers can automatically create a Table of Contents!
-
-- ```**bold**``` **and** ```__bold__```
-
-- \`code\` becomes `code`  
-
-
-## Documenting with Markdown  
-
-**Markdown syntax**  
-
-- Can do lists: be sure to end each line with two spaces!  
-
-    + Indent sub lists four spaces  
-
-<div style = "float: left; width: 50%">
-```
-* unordered list  
-* item 2  
-    + sub-item 1  
-    + sub-item 2  
-
-1. ordered list  
-2. item 2  
-    + sub-item 1  
-    + sub-item 2  
-```  
-</div>
-<div style = "float: right; width: 50%">
-* unordered list  
-* item 2  
-    + sub-item 1  
-    + sub-item 2  
-
-1. ordered list  
-2. item 2  
-    + sub-item 1  
-    + sub-item 2  
-</div>
-
-
-## Documenting with Markdown  
-
-**Markdown syntax**  
-
-- Can include nice tables (renders differently in slides than html doc)  
-
-```
-Table Header  | Second Header | Col 3
-------------- | ------------- | -----------
-Table Cell    | Cell (1, 2)   | Cell (1, 3)
-Cell (2, 1)   | Cell (2, 2)   | Cell (2, 3) 
-```
-Table Header  | Second Header | Col 3
-------------- | ------------- | -----------
-Table Cell    | Cell (1, 2)   | Cell (1, 3)
-Cell (2, 1)   | Cell (2, 2)   | Cell (2, 3) 
-
-
-
-
-## Documenting with Markdown  
-
-**Code chunks and their options**  
-
-
-- Any R code can go into the chunk  
-
-- Chunks evaluate sequentially (can use output from prior chunk)
-
-> - Code can be added in line:  Ex: The Iris dataset has `r length(iris$Sepal.Length)` observations  
-
-> - Added by beginning with back-tick `r` and ending with a back-tick: Iris has \`r `length(iris$Sepal.Length)`\`  
-
-
-
-## Documenting with Markdown  
-
-**Code chunks and their options**  
-
-- Many options depending on chunk purpose!    
-
-- Can hide/show code with `echo = FALSE/TRUE`  
-
-- Can choose if code is evaluated with `eval = TRUE/FALSE`   
-
-- `message = TRUE/FALSE` and `warning = TRUE/FALSE` can turn on/off displaying messages/warnings   
-
-
-
-## Documenting with Markdown  
-
-**Code chunks and their options**  
-
-- Many options depending on chunk purpose!    
-
-- Can hide/show code with `echo = FALSE/TRUE`  
-
-- Can choose if code is evaluated with `eval = TRUE/FALSE`   
-
-- `message = TRUE/FALSE` and `warning = TRUE/FALSE` can turn on/off displaying messages/warnings   
-
-- Can set global options for all chunks  
-
-```
-opts_chunk$set(echo = FALSE, eval = TRUE, warning = FALSE)
-```
-
-- Allows for easy change of audience!  
-
-
-
-
-## Documenting with Markdown  
-
-**Changing type of output**  
-
-R Markdown really flexible!  
-
-```{r, echo = FALSE, fig.align='center'}
-knitr::include_graphics("../img/compile.png")
-```
-
-
-
-## Documenting with Markdown  
-
-**Changing type of output**  
-
-Change output type in the YAML header:  
-
-- Use CTRL/CMD + Shift + k or the Knit menu:
-
-```{r knit, echo=FALSE, fig.align='center', out.width='150px'}
-knitr::include_graphics("../img/knit.png")
-```
-
-> - Use code explicity:  
-    `rmarkdown::render("file.Rmd", output_format = "word_document")`
-
-
-
-
-## Documenting with Markdown  
-
-**Changing type of output**  
-
-For HTML & PDF can include Table of Contents with options    
-
-```
-output:
-  html_document:
-    toc: true
-    toc_float: true
-```
-
-
-## Documenting with Markdown  
-
-**Changing type of output**  
-
-For HTML & PDF can include Table of Contents with options    
-
-```
-output:
-  html_document:
-    toc: true
-    toc_float: true
-```
-
-For HTML another option is to make the code chunks hidden by default, but visible with a click:
-
-```
-output:
-  html_document:
-    code_folding: hide
-```
-
-## Documenting with Markdown  
-
-**Changing type of output**  
-
-HTML documents inherently interactive  
-
-- Widgets can be included with appropriate **R package** 
-
-```{r leafletP, echo = TRUE, eval = FALSE}
-library(leaflet)
-leaflet() %>%
-  setView(174.764, -36.877, zoom = 16) %>% 
-  addTiles() %>%
-  addMarkers(174.764, -36.877, popup = "Maungawhau") 
-```
-
-
-
-## Documenting with Markdown  
-
-**Changing type of output**  
-
-```{r leafletE, echo = FALSE, eval = TRUE, fig.align='center'}
-library(leaflet)
-leaflet() %>%
-  setView(174.764, -36.877, zoom = 16) %>% 
-  addTiles() %>%
-  addMarkers(174.764, -36.877, popup = "Maungawhau") 
-```
-
-
-## Documenting with Markdown  
-
-**Changing type of output**  
-
-
-- PDF  
-    + Install MikTex and update its packages  
-
-```
-output: pdf_document   
-```
-  
-
-## Documenting with Markdown  
-
-**Changing type of output**  
-
-- PDF  
-    + Install MikTex and update its packages  
-
-```
-output: pdf_document   
-```
-  
-
-- Word  
-
-```
-output: word_document
-```
-
-- Slides (## for new slide)
-
-
-
-## Recap/Next Up! 
-
-- Data manipulation idea  
-
-
-- Documenting with Markdown
-
-- Logical statements 
-
-- `dplyr`
-
-- Creating new variables  
-
-     + Conditional execution (if then)  
-     + For loops  
-     + Vectorized functions   
- 
-- Reshaping Data 
-
-
-## Where are we at?  
-
-- Data manipulation idea  
-
-- Documenting with Markdown
-
-- Logical statements 
-
-- `dplyr`
-
-- Creating new variables  
-
-     + Conditional execution (if then)  
-     + For loops  
-     + Vectorized functions   
- 
-- Reshaping Data
-
-
-## Data manipulation idea  
-
-We may want to subset our full data set or create new data   
-
-- Grab only certain types of observations (**filter rows**)
+Our current goal is to subset rows or columns of a dataset.  
 
 ```{r, echo = FALSE, fig.align='center', out.width = "400px"}
-knitr::include_graphics("../img/filterVisual.png")
+knitr::include_graphics("img/filterVisual.png")
 ```
 
+To do this efficiently we need to learn about logical statements.  A logical statement is a comparison that resolves as `TRUE` or `FALSE`.  R has all of the standard comparison operators:
 
+- `==` equal to 
+- `!=` not equal to
+- `<`, `<=`, `>`, `>=` less than (or equal) and greater than (or equal)
 
-## Logical statements 
-
-Goal: Subset rows or columns  
-
-- **logical statement** - comparison that resolves as `TRUE` or `FALSE`  
-
-<div style="float: left; width: 45%;">
 ```{r}
 "hi" == " hi" #== is comparison
 "hi" == "hi"
 4 >= 1
-```
-</div>
-<div style="float: right; width: 45%;">
-```{r}
 4 != 1
+```
+
+Sometimes we see issues due to a loss of precision when doing mathematical operations.
+
+```{r}
 sqrt(3)^2  == 3
+```
+
+The `near` function from the `dplyr` package can help with this type of situation.  
+
+```{r}
 dplyr::near(sqrt(3)^2, 3)
 ```
-</div>
 
+Another common way to do a logical statement in R is to use an `is.` family function.  
 
-## Logical statements 
-
-Goal: Subset rows or columns  
-
-- **logical statement** - comparison that resolves as `TRUE` or `FALSE`  
-
-<div style="float: left; width: 45%;">
 ```{r}
-#use of is. functions
 is.numeric("Word")
 is.numeric(10)
-```
-</div>
-<div style="float: right; width: 45%;">
-```{r}
 is.character("10")
 is.na(c(1:2, NA, 3))
 is.matrix(c("hello", "world"))
 ```
-</div>
 
+How do we use logical statements to subset our data?  Logical vectors can be used for indexing an R object.  The concept is:
 
-## Logical statements 
+- Feed index a vector of `TRUE`/`FALSE` or `0`/`1` values  
+- R will return elements where `TRUE` or `1` occurred
 
-Goal: Subset rows or columns  
+Let's subset the built-in `iris` data set.  First we'll convert it to a `tibble` so it prints nicely.  
 
-- **logical statement** - useful for indexing an R object
-
-```{r}
+```{r,eval=FALSE}
 iris <- tbl_df(iris)
 iris
 ```
 
-
-## Logical statements 
-
-Goal: Subset rows or columns  
-
-- **logical statement** - useful for indexing an R object
-
-- Concept:
-    + Feed index a vector of `TRUE`/`FALSE` or `0`/`1` values  
-    + R returns elements where `TRUE` or `1` occurred
-
-
-```{r,eval=FALSE}
-iris[iris$Species == "setosa", ]
-```
-
-
-## Logical statements 
-
-- **logical statement** - useful for indexing an R object
-
-- Concept:
-    + Feed index a vector of `TRUE`/`FALSE` or `0`/`1` values  
-    + R returns elements where `TRUE` or `1` occurred
+Now, we can create an indexing vector corresponding to some condition of interest.  For instance, we may want to only look at the Species 'setosa' flowers.  
 
 ```{r}
 iris$Species == "setosa" #vector indicating setosa values
 ```
 
-
-## Logical statements 
-
-Goal: Subset rows or columns  
-
-- **logical statement** - useful for indexing an R object
+Now we can feed this in as our row index to the `[` function.  Remember for rectangular data the first index you give refers to the rows and the second to columns.  
 
 ```{r}
 iris[iris$Species == "setosa", ]
 ```
 
-
-## Logical statements 
-
-Goal: Subset rows or columns  
-
-- **logical statement** - useful for indexing an R object
-
-- Similarly, can use `subset` function  
+Rather than use `[`, a base R function called `subset` can be used.  
 
 ```{r}
 subset(iris, Species == "setosa")
 ```
 
-
-## `dplyr`
-
-Goal: Subset rows or columns  
-
-- **logical statement** - useful for indexing an R object
-
-- Similarly, can use `filter` from `dplyr` (installed with `tidyverse`)
+This function works quite well but we want to work in the tidyverse.  The `filter` function from the `dplyr` package (installed with `tidyverse`) will be our function of choice.  For `filter` the first argument is the data frame (or tibble) and the second is the logical statement used for indexing the rows.  
 
 ```{r}
 filter(iris, Species == "setosa")
 ```
 
-
-
-## Logical statements 
-
-Compound logicals via **Logical Operators**
+Often we'll want to subset based on more than one condition.  These can be created using standard logical operators.  In R these are:
 
 - `&` 'and'
 - `|` 'or'
@@ -804,66 +188,24 @@ Operator | A,B true       | A true, B false   | A,B false
 `&`      | `A & B = TRUE` | `A & B = FALSE`   | `A & B = FALSE`
 `|`      | `A | B = TRUE` | `A | B = TRUE`    | `A | B = FALSE`
 
+For the most part we'll want to use the single `&` or `|`.  `&&` and `||` are alternatives that only look at only first comparison done (if given a vector of comparisons).  
 
-## Logical statements 
-
-Compound logicals via **Logical Operators**
-
-- `&` 'and'
-- `|` 'or'
-
-Operator | A,B true       | A true, B false   | A,B false
----------|----------------|-------------------|--------------
-`&`      | `A & B = TRUE` | `A & B = FALSE`   | `A & B = FALSE`
-`|`      | `A | B = TRUE` | `A | B = TRUE`    | `A | B = FALSE`
-
-- `&&` and `||` are alternatives  
-  + Looks at only first comparison if given a vector of comparisons
-  
-
-## Logical statements 
-
-Compound logicals via **Logical Operators**
+A quick example of the compound logical syntax is given below.  Parenthesis are not necessary but are quite useful to keep things straight!  Here we generate 10 random values between 0 and 1 (`set.seed` just starts the random number generator at a specific spot so we can get the same 10 values each time we create this document!).  We use `|` to return TRUE if the randomly generated value is either below 0.25 or above 0.75.  
 
 ```{r}
 set.seed(3)
-x <- runif(n = 10, min = 0, max = 1); x
+x <- runif(n = 10, min = 0, max = 1)
+x
 (x < 0.25) | (x > 0.75)
-(x < 0.25) || (x > 0.75)
 ```
 
-
-## Logical statements 
-
-Goal: Subset rows or columns  
-
-- Only pull out large petal setosa flowers
+With this kind of syntax we can now create an indexing vector to only pull out large petal setosa flowers:
 
 ```{r}
 (iris$Petal.Length > 1.5) & (iris$Petal.Width > 0.3) & (iris$Species == "setosa")
 ```
 
-
-## Logical statements 
-
-Goal: Subset rows or columns  
-
-- Only pull out large petal setosa flowers
-
-```{r, eval = TRUE}
-iris[(iris$Petal.Length > 1.5) & (iris$Petal.Width > 0.3) & 
-         (iris$Species == "setosa"), ]
-```
-
-
-
-## Logical statements 
-
-Goal: Subset rows or columns  
-
-- Only pull out large petal setosa flowers
-
-- Easier with `subset` or `filter`!
+Using this in the filter function we return only a few observations corresponding to our condition. 
 
 ```{r}
 filter(iris, (Petal.Length > 1.5) & (Petal.Width > 0.3) & 
@@ -871,413 +213,211 @@ filter(iris, (Petal.Length > 1.5) & (Petal.Width > 0.3) &
 ```
 
 
+### `dplyr`
 
+The tidyverse has many useful packages for common data manipulation tasks.  Make sure `library(tidyverse)` has been run when working through this section!  
+Two major packages for data manipulation are:
 
-## `dplyr`
+-`dplry` package made for most standard data manipulation tasks    
 
-**Overview of dplyr and tidyr packages**
+- `tidyr` package reshapes data (wide and long format, split columns, etc) 
 
-- `dplry` package made for most standard data manipulation tasks    
+This section focuses on the most useful functions from the `dplyr` package:  
 
-- `tidyr` package reshapes data  
+- `tbl_df()` - convert data frame to one with better printing  
+- `filter()` - subset rows  
+- `arrange()` - reorder rows  
+- `select()` - subset columns  
+- `rename()` - rename columns  
 
-- Both part of `tidyverse`  
+Later we'll look at  
 
-- Make sure `library(tidyverse)` has been run!  
- 
- 
-## `dplyr` 
+- `mutate()` - add newly created column  
+- `transmute()` - create new variable  
+- `group_by()` - group rows by a variable   
+- `summarise()` - apply basic function to data  
 
-- Basic commands 
-    + `tbl_df()` - convert data frame to one with better printing  
-    + `filter()` - subset **rows**  
-    + `arrange()` - reorder **rows**  
-    + `select()` - subset **columns**  
-    + `rename()` - rename **columns**  
-    + `mutate()` - add newly created **column**  
-    + `transmute()` - create new variable  
-    + `group_by()` - group **rows** by a variable   
-    + `summarise()` - apply basic function to data  
+One really nice thing about the functions in the tidyverse is that the syntax is mostly consistent (save `ggplot2`).  The basic syntax is
 
-
-
-## Tidyverse Syntax
-
-- Reason to prefer `dplyr` and packages from the `tidyverse` 
-
-> - Fast!
-
-> - Good defaults
-
-> - All packages have similar syntax!  All work on `tibbles` (data frames)
-
-> - Syntax:
 `function(tibble, actions, ...)`
 
-
-## `dplyr`
-
-`tbl_df()` - convert data frame to one with better printing and no simplification
-
-- Just 'wrap' data frame
+Let's get started!  We've seen `tbl_df` a few times.  This function converts a data frame to one with better printing and no simplification.  To use it we can simply 'wrap' data frame with it.  In this section we'll do examples on datasets from the `Lahman` pacakge.  This package has data about baseball players dating back from the start of professional baseball.
 
 ```{r,eval=TRUE}
 #install.packages("Lahman")
 library(Lahman)
+#old method for previewing a dataset
 head(Batting, n = 4) #look at just first 4 observations
-```
-
-
-
-## `dplyr`
-
-```{r}
 Batting <- tbl_df(Batting)
 Batting
 ```
 
-- If data read in with `haven`, `readxl`, or `readr` probably in this format!
+If the data has been read in with `haven`, `readxl`, or `readr`, it is probably in this format already!
 
 
-## `dplyr`
+#### Row Manipulations  
 
-`filter()` - subset **rows**
+Again, we may to do a subset based on the rows of our dataset.  
 
-- Use `filter()` to obtain only PIT data
+```{r, echo = FALSE, fig.align='center', out.width = "400px"}
+knitr::include_graphics("img/filterVisual.png")
+```
+
+We just looked at using the `filter` function to subset rows or observations of a dataset.  Let's look at a few more examples.  We may only want to return observations from the Batting dataset corresponding to the Pittsburgh Pirates (PIT).  
+
 ```{r}
 filter(Batting, teamID == "PIT")
 ```
 
+We could use a compound logical to only return Pirate data from the year 2000.  
 
-## `dplyr`
-
-`filter()` - subset **rows**
-
-- Multiple filters
 ```{r}
 filter(Batting, teamID == "PIT" & yearID == 2000)
 ```
 
 
-## `dplyr`
-
-`arrange()` - reorder **rows**
+Another useful row operation is to rearrange the data based on some criteria.  The `arrange` function allows us to sort a data set by numeric or character variables. For instance we could reorder alphabetically by the teamID variable.
 
 ```{r}
-#reorder by teamID
 arrange(Batting, teamID)
 ```
 
-
-## `dplyr`
-
-`arrange()` - reorder **rows**
+A secondary arrangement can be done as well (and third, etc.)
 
 ```{r}
-#get secondary arrangement as well
 arrange(Batting, teamID, G)
 ```
 
-
-## `dplyr`
-
-`arrange()` - reorder **rows**
+The arrangement can be done descending as well by giving the column (variable) with `desc`.  
 
 ```{r}
-#descending instead
 arrange(Batting, teamID, desc(G))
 ```
 
 
+#### Column Manipulations  
 
-## Data manipulation idea  
-
-We may want to subset our full data set or create new data   
-
-- Look at only certain variables (**select columns**)  
+We may want to look at only certain variables (select columns).  
     
 ```{r, echo = FALSE, fig.align='center', out.width = "300px"}
-knitr::include_graphics("../img/selectVisual.png")
+knitr::include_graphics("img/selectVisual.png")
 ```
 
+The `select` function from the `dplyr` package allows us to choose columns of interest.  We've seen the use of `$` and `[ , ]` to do this already but `select` offers many advantages.  
 
+- Same syntax as tidyverse functions  
 
-## `dplyr`
+- Useful ways to use character matching to select columns
 
-`select()` - subset **columns**
-
-- Often only want select variables (saw `$` and `[ , ]`)
-- `select()` function has same syntax as other `dplyr` functions!
+Let's see it in action!  To choose a single column of interest just supply the column name (or position) after the `tibble`.  
 
 ```{r}
-#Choose a single column by name
 select(Batting, X2B)
 ```
 
-
-## `dplyr`
-
-`select()` - subset **columns**
-
-- Often only want select variables (saw `$` and `[ , ]`)
-- `select()` function has same syntax as other `dplyr` functions!
+Multiple columns can be selected by giving multiple column names.
 
 ```{r}
-#Choose a single column by name
 select(Batting, playerID, X2B)
 ```
 
-
-## Aside: Piping or Chaining
-
-- Applying multiple functions: nesting hard to parse!
-- Piping or Chaining with `%>%` operator helps
+There are many ways to select multiple columsn (variables).  For instance, contiguous columns can be selected using the `:`.
 
 ```{r}
-arrange(select(filter(Batting, teamID == "PIT"), playerID, G, X2B), desc(X2B))
+#all columns between
+select(Batting, X2B:HR)
+```
+
+Character matching can be done to select all columns that contain a certain character.  
+
+```{r}
+#all columns containing
+select(Batting, contains("X"))
+```
+
+Similary, there is a `starts_with` and `ends_with` function.
+
+```{r}
+#all columns starting with
+select(Batting, starts_with("X"))
+#multiple selections
+select(Batting, starts_with("X"), ends_with("ID"), G)
+```
+
+Sometimes we want to rename variables.  This can be done with the `rename` function.  
+
+```{r}
+#rename our previous selection
+rename(select(Batting, starts_with("X"), ends_with("ID"), G), "Doubles" = X2B, "Triples" = X3B)
 ```
 
 
-## Aside: Piping or Chaining
+You may notice this is kind function nesting makes this code difficult for humans to parse.  Piping or Chaining can be used to make the use of multiple functions easier!  
 
-- Applying multiple functions: nesting hard to parse!
-- Piping or Chaining with `%>%` operator helps
-
-```{r}
-Batting %>% filter(teamID == "PIT") %>% select(playerID, G, X2B) %>% arrange(desc(X2B)) 
-```
-
-
-## Aside: Piping or Chaining
-
-- Generically, pipe does the following
+`%>%` is the piping operator.  Generically, piping does the following
 
 `x %>% f(y)` turns into `f(x,y)`  
 
 `x %>% f(y) %>% g(z)` turns into `g(f(x, y), z)`  
 
-- Can be used with functions outside the tidyverse if this structure works!    
+Since the tidyverse functions all have the same syntax, piping works wonders for readability!  Piping can be used with functions outside the tidyverse if this structure works.  Let's rewrite our previous nested function with piping.  When reading code with piping, read `%>%` as the word 'then.'
 
-
-## `dplyr`
-
-`select()` - subset **columns**
-
-- Many ways to select variables 
+Batting data set (then) select these columns (then) rename the variables.
 
 ```{r}
-#all columns between
-Batting %>% select(X2B:HR)
+Batting %>% select(starts_with("X"), ends_with("ID"), G) %>% rename("Doubles" = X2B, "Triples" = X3B)
 ```
 
-
-## `dplyr`
-
-`select()` - subset **columns**
-
-- Many ways to select variables 
+We may also wish to reorder our columns (variables).  This can be done using `select`.  The `everything` function is handy so you don't have to list all the variables out if you only want to reorder a few.
 
 ```{r}
-#all columns containing
-Batting %>% select(contains("X"))
-```
-
-
-## `dplyr`
-
-`select()` - subset **columns**
-
-- Many ways to select variables 
-
-```{r}
-#all columns starting with
-Batting %>% select(starts_with("X"))
-```
-
-
-## `dplyr`
-
-`select()` - subset **columns**
-
-- Many ways to select variables 
-
-```{r}
-#multiple selections
-Batting %>% select(starts_with("X"), ends_with("ID"), G)
-```
-
-
-## `dplyr`
-
-`select()` - subset **columns**
-
-- Sometimes want to rename variables
-
-```{r}
-#rename our previous
-Batting %>% 
-  select(starts_with("X"), ends_with("ID"), G) %>% rename("Doubles" = X2B, "Triples" = X3B)
-```
-
-
-## `dplyr`
-
-`select()` - subset **columns**
-
-- May want to reorder variables
-
-```{r}
-#reorder
 Batting %>% select(playerID, HR, everything())
 ```
 
-
-
-## `dplyr`
-
-[Cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
-
-- Basic commands 
-    + `tbl_df()` - convert data frame to one with better printing
-    + `filter()` - subset **rows**
-    + `arrange()` - reorder **rows**
-    + `select()` - subset **columns**
-
-- Many `joins` to combine tibbles too! (Similar to SQL)
-
-
-## Recap/Next Up!
-
-- Data manipulation idea  
-
-- Documenting with Markdown
-
-- Logical statements 
-
-- `dplyr`
-
-- Creating new variables  
-
-     + Conditional execution (if then)  
-     + For loops  
-     + Vectorized functions   
-     
-- Reshaping Data
-
-
-## Recap/Next Up!
-
-- Data manipulation idea  
-
-- Documenting with Markdown
-
-- Logical statements 
-
-- `dplyr`
-
-- Creating new variables  
-
-     + Conditional execution (if then)  
-     + For loops  
-     + Vectorized functions   
-     
-- Reshaping data
-
- 
-
-## Data manipulation idea  
-
-We may want to subset our full data set or create new data   
-
-- Create new variables
+Another commonly done column manipulation is the creating of new variables.
 
 ```{r, echo = FALSE, fig.align='center', out.width = "450px"}
-knitr::include_graphics("../img/createVarVisual.png")
+knitr::include_graphics("img/createVarVisual.png")
 ```
 
- 
-## Creating New Variables  
-
-Given a data frame and an appropriate length vector (new variable) can use `cbind` (column bind)  
+Given a data frame and an appropriate length vector (new variable) we can use `cbind` (column bind) to add the variable to the data frame.  
 
 ```{r}
 temp <- cbind(iris, extra = rep("a", 150))
 str(temp)
 ```
 
-
- 
-## Creating New Variables  
-
-Or simply add as a named (list) element!  
+More simply we can just add the new variable as a named (list) element!  
 
 ```{r}
 iris$extra <- rep("a", 150)
 str(iris)
 ```
 
+To stay in the tidyverse and add more functionality we can use two functions from `dplyr`:
 
-
-## Creating New Variables  
-
-Better method: use `dplyr`!
-
-- `mutate()` - add newly created **column(s)** to current data frame 
+- `mutate()` - add newly created column(s) to current data frame 
 
 - `transmute()` - create new data frame with created variable(s)  
 
-
-
-## Creating New Variables  
-
-Better method: use `dplyr`!
-
-- `mutate()` - add newly created **column(s)** to current data frame 
-
-- `transmute()` - create new data frame with created variable(s)  
-
-- Syntax:  
+The syntax for these functions is similar to previous.  We simply name the new variables after specifying our data set.  
 
 `mutate(data, newVarName = functionOfData, newVarName2 = functionOfData, ...)`  
-
-
-
-## Creating New Variables  
-
-- Consider a data set on movie ratings  
+For this section let's consider a data set on movie ratings from the `fivethirtyeight` package.   
 
 ```{r,eval=TRUE}
 library(fivethirtyeight)
 fandango
 ```
 
-
-## Creating New Variables  
-
-- `mutate()` - add newly created **column(s)** to current data frame 
+We can add a new variable that is the average of two columns using `mutate`.  Remember to read `%>%` as 'then.'
 
 ```{r}
-##Create an average rottentomatoes score variable
-fandango %>% mutate(avgRotten = (rottentomatoes + rottentomatoes_user)/2)
-```
-
-
-## Creating New Variables  
-
-- `mutate()` - add newly created **column(s)** to current data frame 
-
-```{r}
-#can't see it!
 fandango %>% mutate(avgRotten = (rottentomatoes + rottentomatoes_user)/2) %>% 
   select(film, year, avgRotten, everything())
 ```
 
-
-## Creating New Variables  
-
-- `mutate()` - add newly created **column(s)** to current data frame 
-
-- Add more than one variable
+More than one variable can be created.  Here an average of the normed metacritic scores.
 
 ```{r}
 fandango %>% 
@@ -1286,72 +426,37 @@ fandango %>%
   select(film, year, avgRotten, avgMeta, everything())
 ```
 
-
-
-## Creating New Variables  
-
-- `transmute()` - create new data frame with created variable(s)  
+`transmute` is very similar to mutate except it doesn't return the original tibble, just the newly created variable(s).
 
 ```{r}
-#transmute will keep the new variable(s) only
 fandango %>% transmute(avgRotten = (rottentomatoes + rottentomatoes_user)/2)
-```
-
-
-## Creating New Variables  
-
-- `transmute()` - create new data frame with created variable(s)  
-
-```{r}
-#transmute will keep the new variable(s) only
 fandango %>% transmute(avgRotten = (rottentomatoes + rottentomatoes_user)/2, 
                        avgMeta = (metacritic_norm + metacritic_user_nom)/2) 
 ```
 
-
-
-## Creating New Variables  
-
-`mutate` and `transmute` can also use 'window' functions  
-
- - functions that take a vector of values and return another vector of values (see [Cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf))
+`mutate` and `transmute` can also use 'window' functions.  These are functions that take a vector of values and return another vector of values (see [Cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)).  For instance we can find the cumulative sum of a column using `cumsum`.
  
 ```{r}
 fandango %>% select(rottentomatoes) %>% mutate(cumulativeSum = cumsum(rottentomatoes))
 ```
 
-
-
-## Creating New Variables  
-
-`mutate` and `transmute` can also use some statistical functions
+`mutate` and `transmute` can also use some statistical functions to create new variables.  Here we add a column representing the mean and standard deviation of the rottentomatoes score.
  
 ```{r}
 fandango %>% select(rottentomatoes) %>% 
   mutate(avg = mean(rottentomatoes), sd = sd(rottentomatoes))
 ```
 
-## Creating New Variables  
+These statistical quantities are easily found for subgroups of the data using the `group_by` function.  We can group the data set by year and run the same `mutate` function.  Now the mean and standard deviation are found for each year and appended appropriately.  
 
-`mutate` and `transmute` can also use some statistical functions
-
-- `group_by` to create summaries for groups (more on this later)
- 
 ```{r}
 fandango %>% select(year, rottentomatoes) %>% 
   group_by(year) %>% mutate(avg = mean(rottentomatoes), sd = sd(rottentomatoes))
 ```
 
 
+Another important way to create variables is through the use of conditional logic.  This allows code to be executed only under certain conditions. The main way this is done is through `if` `then` `else` syntax.  
 
-## Creating New Variables  
-**Conditional Execution with If then, If then else**
-
-- Often want to execute statements conditionally 
-
-- `if` `then` `else` syntax
-
-<div style="float: left; width: 45%;">
 ```{r,eval=FALSE}
 if (condition) {
   then execute code
@@ -1363,12 +468,7 @@ if (condition) {
 } else {
   execute this code
 }
-```
-</div>
 
-
-<div style="float: right; width: 45%;">
-```{r,eval=FALSE}
 #Or more if statements
 if (condition) {
   execute this code  
@@ -1381,49 +481,22 @@ if (condition) {
   execute this code
 }
 ```
-</div>
 
-
-
-
-## Creating New Variables  
-**Conditional Execution with If then, If then else**
-
-- Consider built-in data set `airquality`  
-
-    + daily air quality measurements in New York  
-    
-    + from May (Day 1) to September (Day 153) in 1973  
-    
-
-## Creating New Variables  
-**Conditional Execution with If then, If then else**
-
-- Consider built-in data set `airquality`  
+Consider the built-in data set `airquality`.  This hasdaily air quality measurements in New York from May (Day 1) to September (Day 153) in 1973.    
 
 ```{r}
 airquality <- tbl_df(airquality)
 airquality
 ```
 
+We may want to code a wind category variable:    
 
-## Creating New Variables  
-**Conditional Execution with If then, If then else**
++ high wind days (15mph $\leq$ wind)  
++ windy days     (10mph $\leq$ wind < 15mph)  
++ lightwind days (6mph $\leq$ wind < 10mph)  
++ calm days      (wind $\leq$ 6mph)
 
-Want to code a wind category variable    
-
- + high wind days (15mph $\leq$ wind)  
- + windy days     (10mph $\leq$ wind < 15mph)  
- + lightwind days (6mph $\leq$ wind < 10mph)  
- + calm days      (wind $\leq$ 6mph)
-
-
-## Creating New Variables  
-**Conditional Execution with If then, If then else**
-
-Want to code a wind category variable    
-
-Issue: `if(condition)` can only take in a single comparison  
+We may think using of using the standard `if` statements above.  The issue is that `if(condition)` can only take in a single comparison.  
 
 ```{r, error = TRUE, message = TRUE, warning = TRUE}
 if(airquality$Wind >= 15) { 
@@ -1431,41 +504,21 @@ if(airquality$Wind >= 15) {
   }
 ```
 
+If you've programmed before you may think about this as an initial plan:
 
-
-## Creating New Variables  
-**Conditional Execution with If then, If then else**
-
-Want to code a wind category variable    
-
- + high wind days (15mph $\leq$ wind)  
- + windy days     (10mph $\leq$ wind < 15mph)  
- + lightwind days (6mph $\leq$ wind < 10mph)  
- + calm days      (wind $\leq$ 6mph)  
-
-Initial plan    
-
-  + loop through each observation    
+- loop through each observation    
   
-  + use if then else to determine wind status    
+- use if then else to determine wind status    
   
+There are a number of ways to do looping in R  
+
++ `for`   
+
++ `while`  
+
++ `repeat`  
     
-
-## Looping in R  
-
-- There are a number of ways to do looping in R  
-
-    + `for()`  
-    + `while()`
-    + `repeat()`
-    
-- Idea: 
-    + Run code repeatedly changing something each time
-    
-
-## Looping in R  
-
-- Syntax  
+The idea of a loop is to run code repeatedly changing something each time.  The syntax for the `for` loop is
 
 ```{r,eval=FALSE}
 for(index in values){
@@ -1473,41 +526,20 @@ for(index in values){
 }
 ```
 
-> - index defines 'counter' or variable that varies
-
-> - 'values' define which values index takes on
-
-
-## Looping in R  
-
-- index defines 'counter' or variable that varies
-
-- 'values' define which values index takes on
+The index defines the 'counter' or variable that varies as the loop iterates and 'values' define which values the index takes on.  
 
 ```{r}
 for (i in 1:10){
   print(i)
 }
-```
 
-
-## Looping in R  
-
-- index defines 'counter' or variable that varies
-
-- 'values' define which values index takes on
-
-```{r}
 for (index in c("cat","hat","worm")){
   print(index)
 }
 ```
 
 
-## Creating New Variables  
-**Conditional Execution with If then, If then else**
-
-Want to code a wind category variable    
+If we want to code our wind variable we could run a `for` loop with `if` logic inside:    
 
 ```{r}
 status<-vector() #initialize vector to save results
@@ -1527,20 +559,14 @@ for (i in 1:nrow(airquality)){
 }
 ```
 
-
-## Creating New Variables  
-**Conditional Execution with If then, If then else**
+Then we can append the new variable to our dataset.  
 
 ```{r}
 airquality$status <- status
 airquality$status
 ```
 
-
-
-## Looping in R  
-
-**Other things to know**  
+This works just fine!  Some other things to be aware of with loops:
 
 - `break` kicks you out of the loop  
 
@@ -1553,12 +579,6 @@ for (i in 1:5){
 }
 ```
 
-
-
-## Looping in R  
-
-**Other things to know**  
-
 - `next` jumps to the next iteration of the loop  
 
 ```{r}
@@ -1570,12 +590,7 @@ for (i in 1:5){
 }
 ```
 
-
-## Looping in R  
-
-**Other things to know**  
-
-- `while` loop similar  
+- `while` loop are similar  
 
 ```{r, eval = FALSE}
 while(condition) {
@@ -1585,55 +600,15 @@ while(condition) {
 ```
 
 
+The main issue with loops in R is that they are inefficient.  R is an interpreted language so it must figure out how to evaluate code at each iteration of loop, slowing it down.
 
-## Looping in R  
-
-**Other things to know**  
-
-For loops inefficient in R  
-
-> + R interpreted language  
-
-> + Must figure out how to evaluate code at each iteration of loop  
-
-> + Slows it down  
-
-
-
-## Looping in R  
-
-**Other things to know**  
-
-For loops inefficient in R  
-
- + R interpreted language  
-
- + Must figure out how to evaluate code at each iteration of loop  
- 
- + Slows it down  
-
-Vectorized functions much faster!  
-
-> + Vectorized function: works on entire vector at once  
-
-> + Avoids costly computation time  
-   
-
-
-## Creating New Variables  
-**Vectorized ifelse**
-
-- `ifelse()` is vectorized version of `if then else`
-
-- Syntax
+Vectorized functions are much faster!  These functions work on an entire vector at once so R doesn't have to figure things out as often.  `ifelse()` is a vectorized version of `if then else`.  The syntax is:
 
 ```{r,eval=FALSE}
 ifelse(vector_condition, if_true_do_this, if_false_do_this)
 ```
 
-
-## Creating New Variables  
-**Vectorized ifelse**
+Now to create our Wind status variable we can nest `ifelse` statements.  
 
 ```{r}
 ifelse(airquality$Wind >= 15, "HighWind",
@@ -1641,12 +616,7 @@ ifelse(airquality$Wind >= 15, "HighWind",
                  ifelse(airquality$Wind >= 6, "LightWind", "Calm")))
 ```
 
-
-
-## Creating New Variables  
-**Vectorized ifelse**
-
-- Can use with `transmute()` or `mutate()` 
+`ifelse` can also easily be used with `transmute()` or `mutate()`! 
 
 ```{r}
 mutate(airquality, status = ifelse(airquality$Wind >= 15, "HighWind",
@@ -1655,114 +625,23 @@ mutate(airquality, status = ifelse(airquality$Wind >= 15, "HighWind",
 )
 ```
 
+Note: the `cut` function can also be used to categorize a numeric variable pretty easily.
+
+This covers the major uses of `dplyr` for manipulating rows and columns.  `dplyr` also has great functionality for doing `joins` similar to SQL.  We'll also see how it can be used to create basic numeric summaries using `group_by` and `summarize`.  The [cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) is a great reference!
+
+Recap of basic commands:
+
++ `tbl_df` - convert data frame to one with better printing  
++ `filter` - subset rows  
++ `arrange` - reorder rows  
++ `select` - subset columns  
++ `rename` - reorder columns  
++ `mutate/transmute` - create new variable  
 
 
-## Creating New Variables  
+### Reshaping Data  
 
-- Compare speed of for loop and vectorized version
-
-- `microbenchmark` package runs code repeatedly, returns summary stats
-
-```{r}
-#install if needed
-library(microbenchmark)
-```
-
-
-## Creating New Variables  
-
-- Compare speed of for loop and vectorized version
-
-```{r}
-loopTime <- microbenchmark(
-  for (i in 1:nrow(airquality)){
-    if(airquality$Wind[i] >= 15){
-      status[i] <- "HighWind"
-    } else if (airquality$Wind[i] >= 10){
-      status[i] <- "Windy"
-    } else if (airquality$Wind[i] >= 6){
-      status[i] <- "LightWind"
-    } else if (airquality$Wind[i] >= 0){
-      status[i] <- "Calm"
-    } else{
-      status[i] <- "Error"
-    }
-  }
-, unit = "us")
-```
-
-
-## Creating New Variables  
-
-- Compare speed of for loop and vectorized version
-
-```{r}
-vectorTime <- microbenchmark(
-  ifelse(airquality$Wind >= 15, "HighWind",
-            ifelse(airquality$Wind >= 10, "Windy",
-                   ifelse(airquality$Wind >= 6, "LightWind", "Calm")))
-, unit = "us")
-```
-
-## Creating New Variables  
-
-```{r}
-loopTime
-vectorTime
-```
-
-
-## Creating New Variables Recap!
-
-- Add new column with `$`  
-
-- `mutate()` - add newly created **column(s)** to current data frame 
-
-- `transmute()` - create new data frame with created variable(s)  
-
-    + Can use with window functions
-
-    + Use `ifelse()` to do conditional creation
-    
-    + Note: `cut()` can be used to categorize a numeric variable too!
-
-
-
-## Reshaping Data  
-**`tidyr` package**
-
-Easily allows for two very important actions
-
-> - `gather()` - takes multiple columns, and gathers them into key-value pairs  
-    <ul>  
-        <li> Make wide data longer</li>  
-        <li> Most important as analysis methods often prefer this form</li>  
-    </ul>  
-         
-> - `spread()` - takes two columns (key & value) and spreads in to multiple columns  
-    <ul> <li> Make "long" data wider </li></ul>
-
-
-## Reshaping Data  
-**`tidyr` package**
-
-Easily allows for two very important actions
-
-- `gather()` - takes multiple columns, and gathers them into key-value pairs  
-
-    + Make wide data longer  
-    + Most important as analysis methods often prefer this form  
-
-- `spread()` - takes two columns (key & value) and spreads in to multiple columns  
-    <ul> <li> Make "long" data wider </li></ul>
-    
-Also gives an easy method to separate a column (or combine two columns) using `separate()` and `unite()`
-
-
-## Reshaping Data  
-**`tidyr` package**
-
-- Data in 'Wide' form
+We've talked about rows being observations and columns being variables.  This is generally how most statistical analysis software likes their data to be formatted.  This is called 'long' format data - each row is an observation. Sometimes data doesn't come that way!  Data may have observations across some columns since viewing data is often more natural that way.  For example, consider the weather data set below.    
 
 
 ```{r, eval = FALSE}
@@ -1770,80 +649,66 @@ tempsData <- read_table2(file = "https://www4.stat.ncsu.edu/~online/datasets/cit
 tempsData
 ```
 ```{r, echo = FALSE}
-tempsData <- read_table2(file = "../datasets/cityTemps.txt")
+tempsData <- read_table2(file = "datasets/cityTemps.txt")
 tempsData
 ```
 
+This data set is said to be in 'wide' format because columns represent observations.  For most analyses this type of data will need to be reshaped into long format.  The `tidyr` package can be used for this purpose!
 
+The `gather` function takes multiple columns and gathers them into key-value pairs.  This tkes wide data and makes it long.  
 
-## Manipulating Data
-**tidyr package**
+Similarly there is a `spread` function takes two columns (key & value) and spreads in to multiple columns.  This takes long data and makes it wide.
 
-- Switch to 'Long' form with `gather()`  
-    + key = new name for values in columns  
-    + value = new name for data values  
-    + columns describe which columns to take  
+Let's switch the tempsData dataset to 'long' form with `gather()`.  We need to identify the 
+
++ key = new name for values in columns  
+
++ value = new name for data values  
+
++ columns describe which columns to take  
+
 ```{r}
 tempsData %>% gather(key = day, value = temp, 2:8)
 ```
 
+The columns can be provided to gather in similar ways to how we chose them in the `select` function.  
 
-## Reshaping Data  
-**tidyr package**
-
-- Switch to 'Long' form with `gather()`  
-- Can provide columns to `gather()` in many ways!
 ```{r}
 newTempsData <- tempsData %>% gather(key = day, value = temp, sun:sat)
 newTempsData
 ```
 
-## Reshaping Data  
-**tidyr package**
+To give an example of using `spread` we can take our long format data and turn it back into wide format.  WE just need to identify the:
 
-- Switch to 'Wide' form with `spread()`  
-    + opposite from gather  
-    + key = new column names  
-    + value = value to spread out  
++ key = new column names  
+
++ value = value to spread out  
 
 ```{r}
 newTempsData %>% spread(key = day, value = temp)
 ```
 
-## Reshaping Data  
-**tidyr package**
+The `tidyr` package also has useful functions for separating a column (or combining two columns) using `separate` (and `unite`)
 
-- Separate a column (or combine two columns) using `separate()` and `unite()`
-
-- Consider data set on air pollution in Chicago  
-
+Consider a data set on air pollution in Chicago.  
 
 ```{r, eval = FALSE}
 chicagoData <- read_csv("https://www4.stat.ncsu.edu/~online/datasets/Chicago.csv")
 chicagoData
 ```
 ```{r, echo = FALSE}
-chicagoData <- read_csv("../datasets/Chicago.csv")
+chicagoData <- read_csv("datasets/Chicago.csv")
 chicagoData
 ```
 
-
-## Manipulating Data
-**tidyr package**
-
-- `lubridate` package great for date data!  Can parse with `separate`:
+The `lubridate` package great for date data but let's just do some basic parsing of the `date` variable using `separate`.  We can split the `date` variable by the `/` that separates the day, month, and year to create three new columns.  Using `remove = FALSE` keeps the original variable (`date`) and `convert = TRUE` attempts to convert the newly created variables to numeric if possible.
 
 ```{r}
 chicagoData %>% separate(date, c("Day", "Month", "Year"), sep = "/", 
 												 convert = TRUE, remove = FALSE)
 ```
 
-
-
-## Manipulating Data
-**tidyr package**
-
-- `lubridate` package great for date data!  Combine with `unite`:
+Similarly we can combine columns with `unite`.  Let's create a new column that is just the day and month separated by a `-`.
 
 ```{r}
 chicagoData %>% separate(date, c("Day", "Month", "Year"), sep = "/", 
@@ -1851,21 +716,4 @@ chicagoData %>% separate(date, c("Day", "Month", "Year"), sep = "/",
   unite(DayMonth, Day, Month, sep = "-")
 ```
 
-
-## Recap/Next Up!
-
-- Data manipulation idea  
-
-- Documenting with Markdown
-
-- Logical statements 
-
-- `dplyr`
-
-- Creating new variables  
-
-     + Conditional execution (if then)  
-     + For loops  
-     + Vectorized functions   
-     
-- Reshaping data
+You should now be ready to use R to get data in and do some basic manipulation!

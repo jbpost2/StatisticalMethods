@@ -1,4 +1,4 @@
-### R Reading Data
+### Reading Data Basics
 
 When it comes to reading in data, where do we start?  Our plan for this section is as follows:
 
@@ -26,7 +26,7 @@ knitr::include_graphics("img/delimitedData.png")
 To read in data we'll need functions to do so.  When you open R a few `packages` are loaded.  
 
 ```{r , fig.align = 'center', out.width = "250px", echo = FALSE}
-include_graphics("img/loadR.png")
+knitr::include_graphics("img/loadR.png")
 ```
 
 R Packages:  
@@ -119,7 +119,7 @@ To recap, to read a csv file you can
 - Pull from a URL  
 
 
-#### Quick Aside: RStudio Project
+### Quick Aside: RStudio Project
 
 Often we have many files associated with an analysis.  When working on multiple undertakings things get cluttered in R...  With each analysis we may want to associate different  
 
@@ -137,7 +137,7 @@ knitr::include_graphics("img/project.png")
 Now you can easily switch between analyses by using "File --> Open Project" or by using the little drop down menu in the top right of RStudio.  
 
 
-#### Quick Aside: Factors
+### Quick Aside: Factors
 
 As mentioned above there are `read.` functions for many different types of delimited data.  These functions work really well but there are a few areas they could be improved.  
 
@@ -171,7 +171,7 @@ Factors are very useful for plotting as we'll see later.
 
 For the other issues with the `read.` family we can look at useful functions from other R packages.  R packages deserve a brief discussion as well!  
 
-#### Quick Aside: R Packages  
+### Quick Aside: R Packages  
 
 An R package is a collection of functions in one place.  There are tons of packages to do most anything.  In particular a group of packages called the "[TidyVerse](http://tidyverse.org/)" has modernized the use of R for a larger audience.  The tidyverse is a package that is a collection of eight R packages that share common philosophies and are designed to work together!  One of these packages, `readr`, is extremely useful for reading in data and remedies the concerns mentioned above about the `read.` family of functions.  
 
@@ -237,9 +237,7 @@ readr::read_csv("https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv")
 ```
 
 
-#### Reading Delimited Data  
-
-#### Reading Delimited Data  
+### Reading Delimited Data  
 
 Again the `read.` functions exist to read in many different types of delimited data.  These functions work really well but there are a few areas they could be improved.  
 
@@ -276,7 +274,7 @@ neuralgiaData
 
 You'll also notice the fancy printing.  This gives a quick check for the column type you have, which is a basic data validation step.  The `tidyverse` has a special class of data frames called `tibbles`.
 
-```{r class}
+```{r }
 class(neuralgiaData)
 ```
 
@@ -342,7 +340,7 @@ To read in tricky, non-standard data there are a few functions that can help.
 These are often parsed with `regular expressions`.
 
 
-#### Excel data
+### Excel data
 
 Next we'll cover reading data from Excel files (`readxl` package), SAS datasets (`haven` package), and SPSS files (`haven` package). 
 
@@ -360,31 +358,31 @@ Let's read in the [censusEd.xlsx](https://www4.stat.ncsu.edu/~online/datasets/ce
 #install package if necessary
 library(readxl)
 #reads first sheet by default
-edData <- read_excel("../datasets/censusEd.xlsx")
+edData <- read_excel("datasets/censusEd.xlsx")
 edData
 ```
 
 If you want to read in a sheet other than the first sheet, you can do so with the `sheet =` argument.  To look at the available sheets without opening in Excel you can use the `excel_sheets` function.  
 
 ```{r}
-excel_sheets("../datasets/censusEd.xlsx")
+excel_sheets("datasets/censusEd.xlsx")
 ```
 
 ```{r, eval = FALSE}
-read_excel("../datasets/censusEd.xlsx", sheet = "EDU01D")
+read_excel("datasets/censusEd.xlsx", sheet = "EDU01D")
 ```
 
 There are also ways to specify which cells to read in with the `range =` argument.  You can select cells that are contiguous only (next to each other).
     
 ```{r}
-edData <- read_excel("../datasets/censusEd.xlsx", sheet = "EDU01A", 
+edData <- read_excel("datasets/censusEd.xlsx", sheet = "EDU01A", 
                    range = cell_cols("A:D"))
 edData
 ```
 
 
 
-#### SAS Data
+### SAS Data
 
 SAS datasets have a file extension of '.sas7bdat'.  Let's read in the [smoke2003.sas7bdat](https://www4.stat.ncsu.edu/~online/datasets/smoke2003.sas7bdat) dataset.  This can be done using the `read_sas` function from the `haven` package.  As .sas7bdat files are pretty structured there aren't many options to use with this function.  
 
@@ -408,7 +406,7 @@ attr(smokeData$SDDSRVYR, "label")
 ```
 
 
-#### SPSS Data  
+### SPSS Data  
 
 SPSS datasets have a file extension of ".sav".  Let's read in the [bodyFat.sav](https://www4.stat.ncsu.edu/~online/datasets/bodyFat.sav) dataset.  This can be done using the `read_spss` function from the `haven` package.  As with SAS datasets, these are well structured so there aren't many options to use with the function.  
 
@@ -418,7 +416,7 @@ bodyFatData <- read_spss("https://www4.stat.ncsu.edu/~online/datasets/bodyFat.sa
 bodyFatData
 ```
 
-#### JSON
+### JSON
 
 **JSON** stands for  JavaScript Object Notation.  This data format is used widely across the internet and in databases.  JSON data can represent our usual 2D data or heirarchical data.  JSON uses key-value pairs.  An example of raw JSON data is given below.
 
@@ -454,7 +452,7 @@ Function    | Description
 `stream_in` | Accepts a *file connection* - can read streaming JSON data
 
 
-#### XML
+### XML
 
 XML stands for eXtensible Markup Language.  This is another data format that is used widely across the internet and in databases.  This type of data can again represent our usual 2D data or heirarchical data.  XML uss tags < > similar to HTML.  An example of raw XML data is given below.
 
@@ -474,34 +472,19 @@ XML stands for eXtensible Markup Language.  This is another data format that is 
 </roster>
 ```
 
-There is a bit of lingo needed to parse XML data.  
+The structure of the nodes has parent nodes, child nodes, etc.  A basic diagram is given below.   
 
 ```{r, fig.align = 'center', echo = FALSE, out.width = "600px", fig.cap="Source: mysamplecode.com"}
 knitr::include_graphics("img/xmlDiagram.jpg")
 ```
 
-
-## Resources for Other Data Sources  
-
-**XML** - eXtensible Markup Language
-
-Two major R packages 
+There are two major R packages for reading in XML data:
 
 1. `XML`  
 
 2. `xml2`
 
-    + basic functionality to get data into R  
-    
-> - Reading XML data generally tough since structure of tags varies by data source!
-
-
-
-## Resources for Other Data Sources  
-
-**XML** - eXtensible Markup Language
-
-[`xml2`](https://cran.r-project.org/web/packages/xml2/index.html) basic functions:
+`xml2` has all the basic functionality to get data into R.  Reading XML data is generally tough since the structure of tags varies by data source!  The [`xml2`](https://cran.r-project.org/web/packages/xml2/index.html) core functions are:
 
 Function       | Description
 -------------- | ---------------------------------------------
@@ -513,53 +496,17 @@ Function       | Description
 
 
 
-## Resources for Other Data Sources  
+### Databases  
 
-**Databases** 
+A database is a collection of data, usually a bunch of 2D tables that have keys that connect them.  The Database Management System (DBMS) controls how users interact with the database.  There is a common and very useful Structured Query Language (SQL - pronounced ess-que-el or sequel) used by relational database management systems (RDBMS) for retrieving and combining datasets from a database.  
 
-- Collection of data, usually a bunch of 2D tables  
-
-- Database Management System (DBMS) controls how users interact  
-
-> - Structured Query Language (SQL - pronounced ess-que-el or sequel) - language used by relational database management systems (RDBMS) 
-
-
-## Resources for Other Data Sources  
-
-**Databases** 
-
-- Collection of data, usually a bunch of 2D tables  
-
-- Database Management System (DBMS) controls how users interact  
-
-- Structured Query Language (SQL - pronounced ess-que-el or sequel) - language used by relational database management systems (RDBMS) 
-
-<ul>
-<ul>
-  <li> Used to obtain data from tables (rectangular data sets)  </li>
-  
-  <li>  Used to combine data from separate tables ('keys' relate tables)</li>
-     
-  <li>  Used to anipulate and create variables, structure and edit databases, etc.</li>
-</ul>
-</ul>
-
-
-## Resources for Other Data Sources  
-
-**Databases** 
+An example of a relational database structure is given below.  Notice there are keys that link different tables.  
 
 ```{r, out.width = "550px", echo = FALSE, fig.align='center', fig.cap= "Source: oreilly.com"}
-knitr::include_graphics("../img/lahman.jpg")
+knitr::include_graphics("img/lahman.jpg")
 ```
 
-
-
-## Resources for Other Data Sources  
-
-**Databases** 
-
-Many popular RDBMS, some free some proprietary (often referred to as databases...)
+There are many popular RDBMS.  Some are free and some are proprietary.  These are often simply referred to as databases.  
  
  - Oracle - most popular (cross platform)  
  
@@ -571,13 +518,9 @@ Many popular RDBMS, some free some proprietary (often referred to as databases..
  
  - PostgreSQL (open source)  
  
-[Basic SQL language](http://www.sqltutorial.org/sql-cheat-sheet/) constant across all - features differ  
+Again there is a [Basic SQL language](http://www.sqltutorial.org/sql-cheat-sheet/) that is constant across all these database types.
 
-
-
-## Resources for Other Data Sources  
-
-**Databases** - Common flow in R  
+The common flow to connect to a database using R is:
 
 1. Connect to the database with `DBI::dbConnect()`  
   - Need appropriate R package for database backend  
@@ -596,114 +539,31 @@ con <- DBI::dbConnect(RMySQL::MySQL(),
 )
 ```
 
-
-
-## Resources for Other Data Sources  
-
-**Databases** - Common flow in R  
-
-1. Connect to the database with `DBI::dbConnect()`  
-  - Need appropriate R package for database backend  
-  
-<ol start="2">
-<li> Use `tbl()` to reference a table in the database  </li>
-</ol>
+2. Use `tbl()` to reference a table in the database 
 
 ```{r, eval = FALSE}
 tbl(con, "name_of_table")
 ```
 
+3. Query the database with `SQL` or `dplyr/dbplyr`
 
-
-## Resources for Other Data Sources  
-
-**Databases** - Common flow in R  
-
-1. Connect to the database with `DBI::dbConnect()`  
-  - Need appropriate R package for database backend  
-  
-<ol start="2">
-<li> Use `tbl()` to reference a table in the database  </li>
-<li> Query the database with `SQL` or `dplyr/dbplyr`  </li>
-</ol>
+There is much more about [R Studio and Databases here](https://db.rstudio.com/).  
 
 
 
+### APIs
 
-## Resources for Other Data Sources  
+API stands for Application Programming Interfaces.  This is essentially a defined method for asking for information from a computer.  They are useful for getting data or allowing others to run a model you've built.  
 
-**Databases** - Quick Example  
+There are many open APIs.  They usually just require you to register and obtain a key.  Once you have a key you simply need to construct the proper URL to return the information you want from the API.  
 
-- Connect to Google's BigQuery database  
-
-
-```{r, eval = FALSE}
-#devtools::install_github("r-dbi/bigrquery")
-library(DBI)
-con <- dbConnect(
-  bigrquery::bigquery(),
-  project = "publicdata",
-  dataset = "samples",
-  billing = "your-project-id-here"
-  )
-```
-
-
-
-## Resources for Other Data Sources  
-
-**Databases** - Quick Example  
-
-- Connect to Google's BigQuery database  
-
-```{r, eval = FALSE}
-dbListTables(con)
-natality <- tbl(con, "natality")
-
-natality %>%
-  select(starts_with("mother"), year, cigarette_use, weight_pounds) %>% 
-  collect()
-```
-
-- More about [R Studio and Databases](https://db.rstudio.com/)
-
-
-
-## Resources for Other Data Sources  
-
-**APIs** - Application Programming Interfaces
-
-A defined method for asking for information from a computer  
-
-- Useful for getting data  
-
-- Useful for allowing others to run your model without a GUI (like Shiny)  
-
-> - Many open APIs, just need key  
-
-> - Often just need to construct proper URL
-
-
-## Resources for Other Data Sources  
-
-**APIs** - Quick Example
-
-- Query Harry Potter database https://www.potterapi.com/
-
-- Get key in top right (sign up for account)
+As a quick example we will query the Harry Potter database at [https://www.potterapi.com/](https://www.potterapi.com/).  There is a button on the top right where you can register and obtain a key.
 
 ```{r, fig.align = 'center', echo = FALSE, out.width="800px"}
-knitr::include_graphics("../img/HPAPI.png")
+knitr::include_graphics("img/HPAPI.png")
 ```
 
-
-## Resources for Other Data Sources  
-
-**APIs** - Quick Example
-
-- Query Harry Potter database https://www.potterapi.com/
-
-- Documentation:  
+The documentation for returning Harry Potter spells states: 
 
     + All routes need to be prefixed with https://www.potterapi.com/v1/  
     
@@ -711,73 +571,34 @@ knitr::include_graphics("../img/HPAPI.png")
     
     + Key goes on the end  
 
+This tells us how to construct the appropriate URL.  The `paste` and `paste0` functions are useful for combining strings (check their help).  
+
 ```{r}
 baseURL <- "https://www.potterapi.com/v1/"
 value <- "spells?"
 key <- "key=$2a$10$UMvDCH.93fa2KOjKbJYkOOPMNzdzQpJ0gMnVEtcHzW5Ic04HUmcsa"
 URL <- paste0(baseURL, value, key)
+URL
+```
+
+Now we use the `RCurl` package and the `getURL` function to ping the URL we just created.  This will return the spell data set in JSON form as that is the default response format for this API.  
+
+```{r}
 spellData <- RCurl::getURL(URL)
 ```
 
+This is a reasonably large string of information so we can just look at the first 100 characters using the `substr` function.  
 
-
-## Resources for Other Data Sources  
-
-**APIs** - Quick Example
-
-- Query Harry Potter database https://www.potterapi.com/
-
-- Default response format is JSON 
-
-```{r, eval = FALSE}
-spellData
-```
-```{r, echo = FALSE}
+```{r}
 substr(spellData, 1, 100) 
 ```
 
-
-
-## Resources for Other Data Sources  
-
-**APIs** - Quick Example
-
-- Query Harry Potter database https://www.potterapi.com/
-
-- Default response format is JSON 
+To convert this to a data frame we can use the `fromJSON` function in the `jsonlite` package.  `tbl_df` converts the dataframe to a `tibble` (for printing purposes).  
 
 ```{r, warning = FALSE, message = FALSE}
 spellDataDF <- jsonlite::fromJSON(spellData)
 tbl_df(spellDataDF)
 ```
 
-
-
-
-## Resources for Other Data Sources  
-
-**APIs** - Application Programming Interfaces
-
-Access in R  
-
- - Article [here](https://www.programmableweb.com/news/how-to-access-any-restful-api-using-r-language/how-to/2017/07/21) discusses accessing APIs generically with R  
-
- - Same website gives a [list of APIs](https://www.programmableweb.com/category/all/apis)
-
-
-
-## Recap 
-
-- Read data from other sources
-
-Type of file       | Package   | Function   
------------------- | --------- | -----------------
-Delimited          | `readr`   | `read_csv()`, `read_tsv()`,`read_table()`, `read_delim()`
-Excel (.xls,.xlsx) | `readxl`  | `read_excel()`
-SAS (.sas7bdat)    | `haven`   | `read_sas()`
-SPSS (.sav)        | `haven`   | `read_spss()`
-
-<br> 
-
-- Resources for JSON, XML, databases, and APIs
+Of course constructing URLs like this yourself isn't ideal.  Languages like python have many packages to help you contact APIs without reading as much documentation.  Unfortunately, R does not have a very mature collection of API packages. The article [here](https://www.programmableweb.com/news/how-to-access-any-restful-api-using-r-language/how-to/2017/07/21) discusses accessing APIs generically with R.  The same website gives a [list of APIs](https://www.programmableweb.com/category/all/apis) that you might consider.
 
