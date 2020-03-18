@@ -50,13 +50,17 @@ tb$Munition <- ifelse(tb$`Radar Mode` == "360 degree Normal",
 
 
 
-tb$`Fire Rate` <- ifelse(Munition == "Rocket", 
+tb$`Fire Rate` <- ifelse(tb$Munition == "Rocket", 
                          "Single Fire",
                          sample(c("Single Fire", "Volley Fire"), size = nmission, replace = T,
                                 prob = c(.7, .3)))
+
+tb <- tb %>% 
+  mutate(Detection = map(`Mission Size`, rbinom, size = 1, prob = .8)) %>% 
+  unnest()
   
 tb %>% 
   group_by(Munition) %>% 
   skim
 
-tb <- write_csv("datasets/experimental/counterfire-radar/counterfire-radar.csv")
+ write_csv(tb, "datasets/Experimental/counterfire-radar/counterfire-radar.csv")
