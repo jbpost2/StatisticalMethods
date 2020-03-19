@@ -33,17 +33,38 @@ Having identified their response variable, the testers collected data on which p
 
 
 ```{r}
-x <- rbinom(20, 1, .8)
+tb <- readr::read_csv("datasets/Experimental/counterfire-radar/counterfire-radar.csv") %>% 
+  filter(Mission %in%  c(1:4))
 
-hist(x)
+hist(tb$Detection)
 
 ```
-<!-- Histogram above for "Detect" and "No Detect" -->
+<!-- Histogram above for "Detect" and "No Detect" using a subset of missions from the dataset -->
 
 It's clear that the system detects these projectiles with a high probability, but what conclusions can we draw from these data? Does the system detect projectiles at a high enough rate to be useful to a commander in the field? 
 
+Typically, you'll want to think about these questions before designing a test or analyzing your data. In the case of this counterfire radar, the US Army has specified in requirements documents what it deems to be "good enough" in terms of detection probability. Suppose the Army requires that the system be able to detect at least 80% of incoming projectiles. 
 
-### Data from Experiments  
+Using that requirement, we can compare the probabiltiy of detection we observed in our sample and get an idea of whether or not the system is good enough:
+
+```{r}
+
+phat <- mean(tb$Detection)
+
+phat
+
+```
+
+Let the true probability of detection for this radar system be $\pi$, a value somewhere between $0$ and $1$. Then our estimate for $\pi$ is denoted:
+
+$$\hat\pi = \frac{1}{n}\sum_{i = 1}^n x_i$$ 
+
+In this equation, $x_i$ is a 1 or a 0 depending on whether or not we detected the $i$th projectile, and $n$ is the total number of observations we have. We can use this notation to state the research problem we describe above more formally:  We want to determine if $\pi > 0.8 = 80%$. To do this, we're going to use our estimat, $\hat \pi$. 
+
+The simplest approach is to just say that $\hat \pi$ is our best guess for $\pi$, so let's just ask if $\hat \pi> 0.8$. Based on our data above, we have:  $\hat\pi = $`r phat`. This is larger than 0.8, so it looks like we're good to go! Unforunately, 
+
+
+
 
 Some data comes from a well-designed experiment where a researcher uses sound principles to select units and conduct interventions.  
 
