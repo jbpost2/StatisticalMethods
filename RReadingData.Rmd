@@ -17,7 +17,7 @@ When it comes to reading in data, where do we start?  Our plan for this section 
 
 We'll start by focusing on delimited data.  
 
-- Delimiter - Character (such as a `,`) that separates data entries
+- Delimiter - Character (such as a`,`) that separates data entries
 
 ```{r, echo = FALSE, fig.align='center', out.width="600px"}
 knitr::include_graphics("img/delimitedData.png")
@@ -39,7 +39,7 @@ R Packages:
 
 - Plenty of other packages on places like GitHub  
 
-The `utils` package that automatically loads has *family* of `read.` functions ready for use!  Reading data with these functions is often referred to as reading with a standard R or base R method.
+The `utils` package that automatically loads has a *family* of `read.` functions ready for use!  Reading data with these functions is often referred to as reading with a standard R or base R method.
  
 Function and purpose:
 
@@ -80,7 +80,7 @@ head(neuralgiaData)
 ```
 
 
-Pretty simply if the data is nicely formatted!  Using a full local path not recommended though!  Doing so makes it difficult to share code without having to go in and change the paths.  Instead you can change the *working directory* R is using.  That is, the folder by default R is 'looking' for files.  THen we can supply a **relative** path.  As long as other users have the same folder structure as you (say if you are using a github repo), no changes need to be made for them to run the code!
+Pretty simply if the data is nicely formatted!  Using a full local path not recommended though!  Doing so makes it difficult to share code without having to go in and change the paths.  Instead, you can change the *working directory* R is using.  That is, the folder by default R is 'looking' for files.  Then we can supply a **relative** path.  As long as other users have the same folder structure as you (say if you are using a github repo), no changes need to be made for them to run the code!
 
 We can determine the working directory using `getwd`.  
 
@@ -149,9 +149,9 @@ Understanding factors is important enough to warrant a quick discussion.  Let's 
 str(neuralgiaData)
 ```
 
-We can see that all of the character variables are `Factor` vectors.  A factor is special class of vector with a `levels` attribute.  The levels define all possible values for that variable.  This is a great concept for a variable that can only take on a certain values such as `Day` (Monday, Tuesday, ..., Sunday).  However, if you have a variable like `Name` that you will eventually add new values (levels) to factors become a bit of a nuisance.  
+We can see that all of the character variables are `Factor` vectors.  A factor is a special class of vector with a `levels` attribute.  The levels define all possible values for that variable.  This is a great concept for a variable that can only take on certain values such as `Day` (Monday, Tuesday, ..., Sunday).  However, if you have a variable like `Name` that you will eventually add new values (levels) to factors become a bit of a nuisance.  
 
-For example, in the neuralgia data set we may have a fourth treatment we want to add to the `Treatment` variable.  Let's try to assign the first observation value with a 'new' treatment called 'M'.  
+For example, in the neuralgia dataset we may have a fourth treatment we want to add to the `Treatment` variable.  Let's try to assign the first observation value with a 'new' treatment called 'M'.  
 
 ```{r , error = TRUE}
 neuralgiaData$Treatment
