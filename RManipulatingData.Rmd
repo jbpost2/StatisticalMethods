@@ -1,6 +1,6 @@
 ### Data Manipulation Ideas  
 
-As you can see it isn't too difficult to bring well structured raw data into R.  You should now have the basics of reading in delimited, Excel, SAS, SPSS, JSON, and XML data as well as how to connect to a database and contact an API.  Once you have your data you may want manipulate it in some way.  
+As you can see it isn't too difficult to bring well structured raw data into R.  You should now have the basics of reading in delimited, Excel, SAS, SPSS, JSON, and XML data as well as how to connect to a database and contact an API.  Once you have your data you may want to manipulate it in some way.  
 
 Often we want to grab only certain types of observations (filter rows).
 
@@ -14,7 +14,7 @@ We also want to only look at only certain variables (select columns).
 knitr::include_graphics("img/selectVisual.png")
 ```
 
-Other times we want to crate new variables that may be functions of the data in the data set.
+Other times we want to create new variables that may be functions of the data in the data set.
 
 ```{r, echo = FALSE, fig.align='center', out.width = "450px"}
 knitr::include_graphics("img/createVarVisual.png")

@@ -1,14 +1,14 @@
 ### Installing R and RStudio  
 
-The R software itself can be downloaded and installed by visiting the [Comprehensive R Archive Network (Cran) website](https://cran.r-project.org/).  Here there are links to install R for Linux, Mac, and Windows based machines.  
+The R software itself can be downloaded and installed by visiting the [Comprehensive R Archive Network (Cran) website](https://cran.r-project.org/).  Here there are links to install R for Linux, Mac, and Windows-based machines.  
 
-- For Windows users, follow the inital 'Download R for Windows' link and then click 'install R for the first time.'  From here you should now see a Download R X.x.x for Windows link that will download a .exe file.  Once downloaded run that file and follow the prompts.
+- For Windows users, follow the initial 'Download R for Windows' link and then click 'install R for the first time.'  From here you should now see a Download R X.x.x for Windows link that will download a .exe file.  Once downloaded run that file and follow the prompts.
 
-- For Mac users, follow the inital 'Download R for (Mac) OS X' link and click on the link near the 'Latest Release' section similar to R-x.x.x.pkg.  Once downloaded, you should be able to install by double clicking on the file.
+- For Mac users, follow the initial 'Download R for (Mac) OS X' link and click on the link near the 'Latest Release' section similar to R-x.x.x.pkg.  Once downloaded, you should be able to install by double clicking on the file.
 
-- For Linux users, follow the inital 'Download R for Linux' link.  Choose your OS and instructions are given on how to download R.
+- For Linux users, follow the initial 'Download R for Linux' link.  Choose your OS and instructions are given on how to download R.
 
-Once you've installed R you'll want to install RStudio.  RStudio is a well developed environment that makes programming in R much easier!  To download head to [RStudio's download page](https://rstudio.com/products/rstudio/download/).  From here choose RStudio Desktop (Open Source License) and a page with appropriate links to install are provided.
+Once you've installed R you'll want to install RStudio.  RStudio is a well-developed environment that makes programming in R much easier!  To download head to [RStudio's download page](https://rstudio.com/products/rstudio/download/).  From here choose RStudio Desktop (Open Source License) and a page with appropriate links to install are provided.
 
 
 ### Using RStudio
@@ -31,7 +31,7 @@ You may wish to rearrange the panes.  This can be done via the menus at the top.
 knitr::include_graphics("img/panes.png")
 ```
 
-Other useful global options to chnage are under the appearance tab (font size, theme) and under the code tab (editing --> soft-wrap, display --> show whitespace).  
+Other useful global options to change are under the appearance tab (font size, theme) and under the code tab (editing --> soft-wrap, display --> show whitespace).  
 
 
 #### Console  
@@ -86,7 +86,7 @@ For every R function there are a few sections:
 - Usage - How to call the function, inputs required, and which inputs have default arguments.   
 
      + Here we see `hist(x, ...)`.  This implies there is only one required input, `x`, and there is no default.  
-     + Below you see a more detailed call to `hist` that includes other inputs.  Each of these inputs has an equal sign with a value after it. This is the default value for that input (since there is a default value you don't have to specify it when you call).  For instance the `breaks = "Sturges"` input implies that the "Sturges" method is the default for determining how the bins of the histogram are created.
+     + Below you see a more detailed call to `hist` that includes other inputs.  Each of these inputs has an equal sign with a value after it. This is the default value for that input (since there is a default value you don't have to specify it when you call).  For instance, the `breaks = "Sturges"` input implies that the "Sturges" method is the default for determining how the bins of the histogram are created.
      
 - Arguments - Describes the input requirements in more detail.  
 

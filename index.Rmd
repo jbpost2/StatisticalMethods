@@ -23,32 +23,32 @@ options(max.print = 100)
 
 ## About the book  
 
-The goal in creating this book is to provide a thorough treatment of applied statistical methodologies geared toward analyzing designed experiments. Our approach emphasizes the problems researchers encounter rather than provide a litany of solutions with only modest context. We discuss a real scientific problem, thoughfully consider the data that could be used to answer that problem, investigate experimental designs that would be useful, and pursue statistical models to make informed decisions in the context of how the data was collected. The focus of the book is on the statistical modeling portion but problems are viewed holistically. We purposefully introduce the linear model framework in matrix form early on and place most of the methodologies under that umbrella. This helps the reader to see the methods as a part of a general framework as opposed to a set of tools within a toolbox. We believe that the book should be appropriate for a graduate level student that has some comfort in mathematics, particularly linear algebra. Both SAS and R are used throughout to make sure the book works for a wide audience of practitioners.
+The goal in creating this book is to provide a thorough treatment of applied statistical methodologies geared toward analyzing designed experiments. Our approach emphasizes the problems researchers encounter rather than providing a litany of solutions with only modest context. We discuss a real scientific problem, thoughtfully consider the data that could be used to answer that problem, investigate experimental designs that would be useful, and pursue statistical models to make informed decisions in the context of how the data was collected. The focus of the book is on the statistical modeling portion but problems are viewed holistically. We purposefully introduce the linear model framework in matrix form early on and place most of the methodologies under that umbrella. This helps the reader to see the methods as a part of a general framework as opposed to a set of tools within a toolbox. We believe that the book should be appropriate for a graduate level student that has some comfort in mathematics, particularly linear algebra. Both SAS and R are used throughout to make sure the book works for a wide audience of practitioners.
 
 
 ## Software  
 
-At this point software is a requirement for statistics in practice.  There are many available software solutions ranging from point and click to full on programming.  We've decided to focus on R and SAS for this book.  
+At this point, software is a requirement for statistics in practice.  There are many available software solutions ranging from point and click to full on programming.  We've decided to focus on R and SAS for this book.  
 
 - R is an open source, platform agnostic, software that is widely used by statisticians.  We'll use the RStudio interactive development environment to write and execute our R code.  
 
-- SAS requires a license but is an extremely powerful software for doing modeling and is used widely enough to merit inclusion here.  For those without a license, SAS University Edition can be installed for free and is also platform agnostic.  We'll use the SAS Studio environment that comes with Univeristy Edition.
+- SAS requires a license but is an extremely powerful software for doing modeling and is used widely enough to merit inclusion here.  For those without a license, SAS University Edition can be installed for free and is also platform agnostic.  We'll use the SAS Studio environment that comes with University Edition.
 
 As we progress through the book we'll include graphs, descriptive statistics, and analyses from R and/or SAS.  At the end of each chapter a section explaining how to create these in both R and SAS is included.  The following sections give a brief introduction to each software that should prepare you for what's ahead!  
 
-You'll also notice a certain style to the way our code is written.  Good programming practices (GPPs) are essential for improving productivity and collaborating with others - including future you!  There are a lot of guidelines and resources about GPPs available. We’ll cover just a few of the essentials here.
+You'll also notice a certain style to the way our code is written.  Good programming practices (GPPs) are essential for improving productivity and collaborating with others - including future you! There are a lot of guidelines and resources about GPPs available. We’ll cover just a few of the essentials here.
 
 - Include a header at the top of the program that gives the author, date, and purpose of the program.  
 
 - Place comments throughout the program explaining the purpose of different chunks of code as well as your thought process.
 
-- Spacing and indentation should be used throughout for readability of the program.  
+- Spacing and indentation should be used throughout for readability of the program.  
 
 - Group sections of your code that serve a certain purpose together.
 
 - Use a consistent naming scheme such as camelCase or underscores_between_words.
 
-Many of these and other GPPs can be taken care of by programming in a notebook environment such as JUPYTER (which can include SAS and R) or R Markdown.  Also using a version control software such as Git and Github is really useful!
+Many of these and other GPPs can be taken care of by programming in a notebook environment such as JUPYTER (which can include SAS) or R Markdown.  Also using a version control software such as Git and Github is really useful!
 
 ## R  
 
@@ -62,7 +62,7 @@ At the end of this section the reader should be able to do the following:
 
 - install R and RStudio  
 - read and write basic R programs   
-- import well formatted data into R
+- import well-formatted data into R
 - do basic data manipulation in R   
 
 As the book progresses the steps of summarizing and analyzing the data will be covered.  Let's get started!
@@ -78,7 +78,7 @@ At the end of this section the reader should be able to do the following:
 
 - install SAS University Edition   
 - read and write basic SAS programs   
-- import well formatted data into SAS
+- import well-formatted data into SAS
 - do basic data manipulation in SAS   
 
 As the book progresses the steps of summarizing and analyzing the data will be covered.  Let's get started!
