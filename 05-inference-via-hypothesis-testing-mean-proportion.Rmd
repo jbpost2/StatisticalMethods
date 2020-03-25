@@ -1,3 +1,10 @@
+```{r, message = F, warning = F}
+
+library(tidyverse)
+
+
+```
+
 # Inference via Hypothesis Tests for One Sample {#HT}
 
 <!-- Alternative: -->
@@ -32,7 +39,7 @@ There are some other measures the testers could've used. For example, they could
 Having identified their response variable, the testers collected data on which projectils were detected. Table 1 shows the first 20 shots collected.
 
 
-```{r}
+```{r, message = F}
 tb <- readr::read_csv("datasets/Experimental/counterfire-radar/counterfire-radar.csv") %>% 
   filter(Mission %in%  c(1:4))
 
@@ -48,7 +55,7 @@ Typically, you'll want to think about these questions before designing a test or
 Using that requirement, we can compare the probabiltiy of detection we observed in our sample and get an idea of whether or not the system is good enough:
 
 ```{r}
-
+n <- nrow(tb)
 phat <- mean(tb$Detection)
 
 phat
@@ -59,321 +66,350 @@ Let the true probability of detection for this radar system be $\pi$, a value so
 
 $$\hat\pi = \frac{1}{n}\sum_{i = 1}^n x_i$$ 
 
-In this equation, $x_i$ is a 1 or a 0 depending on whether or not we detected the $i$th projectile, and $n$ is the total number of observations we have. We can use this notation to state the research problem we describe above more formally:  We want to determine if $\pi > 0.8 = 80%$. To do this, we're going to use our estimat, $\hat \pi$. 
+In this equation, $x_i$ is 1 or a 0 depending on whether or not we detected the $i$th projectile, and $n$ is the total number of observations we have. We can use this notation to state the research problem we describe above more formally:  We want to determine if $\pi > 0.8 = 80%$. To do this, we're going to use our estimat, $\hat \pi$. 
 
-The simplest approach is to just say that $\hat \pi$ is our best guess for $\pi$, so let's just ask if $\hat \pi> 0.8$. Based on our data above, we have:  $\hat\pi = $`r phat`. This is larger than 0.8, so it looks like we're good to go! Unforunately, 
+The simplest approach is to just say that $\hat \pi$ is our best guess for $\pi$, so let's just ask if $\hat \pi> 0.8$. Based on our data above, we have:  $\hat\pi = $`r phat`. This is larger than 0.8, so it looks like we're good to go! 
 
+Unforunately, $\hat \pi$ is an *estimate* of $\pi$ and not the true value. It is based on a *random sample*, which are subject to variability. Before drawing any conclusions, it's important to ask the question, "How sure are we that $\hat\pi$ is close to $\pi$?"
 
+## Hypothesis testing
 
+The framework used throughout modern science to answer these sorts of question is known as *Null Hypothesis SignificanceTesting* (NHST), or more concisely, *hypothesis testing*. The basic approach is to frame our research question as a comparison between two possible realities and then decide, based on the data, if one of those realities is sufficiently implausible to discard as an actual possibility. 
 
-Some data comes from a well-designed experiment where a researcher uses sound principles to select units and conduct interventions.  
+For our application, the two competing realities are one in which the radar's performance meets the desired performance of the Army (that is, $\pi > 0.8$) and one where it does not ($\pi \le  0.8$). These possibilities are derived directly from our research question, and are typically phrased explicitly as a *Null Hypothesis* (denoted $H_0$) and an *Alternative Hypothesis* (denoted $H_1$ or $H_a$). The null hypothesis is typically written in such a way that, if we can prove it is not true, we will have learned important information. For this example, if we can show that the system's probability of detection isn't worse than $0.8$, we'll know that it's at least good enough to meet the desired level of performance. Therefore, we write our null and alternative thus:
 
-For example, a mechanical engineer wants to determine which variables influence overall gas mileage of a certain year and model of a car.  Gas mileage would be referred to as the **response** variable for this study.  
+$$H_0: \pi \le 0.8$$
+$$H_1: \pi > 0.8$$
 
-After careful consideration, the engineer chooses to investigate a few **explanatory variables**.  They looked at the following **factors** that they believed may affect the overall gas mileage:  
+Our goal is to determine, based on the sample we've collected, whether $H_0$ is plausible. There are many ways that statisticians have developed over the years of determining this, but we'll focus on one for now.
 
-- Tire pressure (low, standard)  
-- Octane rating of fuel (regular, midgrade, premium)  
-- Type of driving (defensive, aggressive)
+The first thing to do is consider our data, which are whether or not the radar system detected each of the `r n` projectiles shot during the test event. We must make some general assumptions about these data if we're to get anyhwere. Plausible assumptions include:
 
-They also choose to **control** or hold constant the following variables during the implementation of the study:  
+1. One shot is independent from the next
+2. The underlying probability of detection for each shot is the same
 
-- Weather conditions  
-- Route  
-- Tire type  
-- Past car usage
+If these assumptions hold, than each observation is a Bernoulli random variable with $P(Detect) = \pi$ and $P(NoDetect) = 1 - \pi$.
 
-The engineer randomly selects 24 cars from the assembly line for that year and model of car (we'll learn more about the importance of selecting a representative sample of cars shortly).  Software is used to randomly assign a **treatment** or combination of the factors to each car of the 24 cars.  For instance, low tire pressure, regulare octane fuel, and defensive driving would be a treatement.  The cars would be called the **experimental units** or (EUs) as they are the unit the treatments are assigned to.  
 
-The experiment is run and the gas mileage found for each car.  As the car is being measured we'd refer to the car as the **observational unit**.
+### Wald tests
 
-This short description exhibits three important concepts in experimental design that we'll come back to many times.  
-  
+Luckily, we have tools available to help us answer that question! Specifically, we can use the *standard error*, which was introduced in Chapter 4. Recall that the equation for the standard error of $\hat\pi$ is 
 
-```{block2, type = 'definition'}
+$$SE(\hat\pi) = \sqrt{\frac{\hat\pi (1 - \hat\pi)}{n}}$$
 
-Experimental Study - researchers manipulate the conditions in which the study is done.  
+For our observed data, $SE(\hat\pi) =$ `r round(sqrt(phat * (1 - phat)/n), 2)`. Using these values, we can determine with greater precision whether the true performance of the radar system meets the desired level of performance. 
 
-```
 
 
 
-Pillars of experimental design: (Put an outer block around this)   
+<!-- Some data comes from a well-designed experiment where a researcher uses sound principles to select units and conduct interventions.   -->
 
-```{block2, type = 'definition'}
+<!-- For example, a mechanical engineer wants to determine which variables influence overall gas mileage of a certain year and model of a car.  Gas mileage would be referred to as the **response** variable for this study.   -->
 
- - Randomization - treatments are randomly assigned to the experimental units   
+<!-- After careful consideration, the engineer chooses to investigate a few **explanatory variables**.  They looked at the following **factors** that they believed may affect the overall gas mileage:   -->
 
-```
-```{block2, type = 'definition'}
+<!-- - Tire pressure (low, standard)   -->
+<!-- - Octane rating of fuel (regular, midgrade, premium)   -->
+<!-- - Type of driving (defensive, aggressive) -->
 
- - Replication - multiple (independent) experimental units are assigned the same treatment  
+<!-- They also choose to **control** or hold constant the following variables during the implementation of the study:   -->
 
-```
-```{block2, type = 'definition'}
+<!-- - Weather conditions   -->
+<!-- - Route   -->
+<!-- - Tire type   -->
+<!-- - Past car usage -->
 
- - Control - study conditions are held constant where possible to reduce variability in the response    
+<!-- The engineer randomly selects 24 cars from the assembly line for that year and model of car (we'll learn more about the importance of selecting a representative sample of cars shortly).  Software is used to randomly assign a **treatment** or combination of the factors to each car of the 24 cars.  For instance, low tire pressure, regulare octane fuel, and defensive driving would be a treatement.  The cars would be called the **experimental units** or (EUs) as they are the unit the treatments are assigned to.   -->
 
-```
+<!-- The experiment is run and the gas mileage found for each car.  As the car is being measured we'd refer to the car as the **observational unit**. -->
 
+<!-- This short description exhibits three important concepts in experimental design that we'll come back to many times.   -->
 
-### Data from Observational Studies  
 
-Some data comes from an observational study where the researcher collects data without imposing any changes.   
+<!-- ```{block2, type = 'definition'} -->
 
-For example, an economist wants to investigate the effects of recently added tariffs on agricultural products to the amount and value of such products that are traded between the United States and Asia.  This study would have two **response** variables, amount and value of each product traded between the two parties.  
+<!-- Experimental Study - researchers manipulate the conditions in which the study is done.   -->
 
-In order to take into account season variation and time of year, the economist decides to compare the two response variables from the current year - 6 months worth of data - to the *average* values of the two response variables during the same 6 month periods for the past 5 years.  We would refer to the time frame of the data as an **explanatory variable**.  This time frame could be labeled to take on one of two values: no-tariff (past) or tariff (current).  
+<!-- ``` -->
 
-The researcher obtains the data from the census bureau and conducts their analysis.  
 
-Notice that the researcher, while certainly being actively involved in the careful consideration of the data to be collected, does not actively intervene or impose a change.  This is the key component of an observational study.  
 
-```{block2, type = 'definition'}
+<!-- Pillars of experimental design: (Put an outer block around this)    -->
 
-Observational Study - researchers collects data without imposing any changes on the study environment.     
+<!-- ```{block2, type = 'definition'} -->
 
-```
+<!--  - Randomization - treatments are randomly assigned to the experimental units    -->
 
+<!-- ``` -->
+<!-- ```{block2, type = 'definition'} -->
 
-### Observational vs Experimental  
+<!--  - Replication - multiple (independent) experimental units are assigned the same treatment   -->
 
-You may have noticed that both types of studies have some things in common.  For instance, both studies have **response** (??? so I was thinking about maybe bolding most stats words as we go to point them out to students... thoughts???) variables that characterizes the performance of the study in some sense.  Importantly, these response variables have variation.  That is, observing the variable is non-deterministic even under identical situations.  There are also **explanatory variables** that the researcher is interested in with regard to their relationship with the response variable.  
+<!-- ``` -->
+<!-- ```{block2, type = 'definition'} -->
 
-Beyond that, both studies hope to make conclusions about a larger group using data.  This is the idea of **statistical inference** (??? Do we want to talk about the differences between prediction and inference here? - later???).  More formally the group of values, items, or individuals defines the a **population** of interest and the data collected represents the **sample**.  For the gas mileage example, the population would be all cars of the year and make in question and the sample would be the data on the 24 cars.  For the tariff example, the population would be a **conceptual population** of all future agricultural products traded between the United States and Asia and the sample would be the information from the six years of trade data.   
+<!--  - Control - study conditions are held constant where possible to reduce variability in the response     -->
 
-```{block2, type = "definition"}
+<!-- ``` -->
 
-Population - (Possibly conceptual) group of units of interest  
 
-```
-```{block2, type = "definition"}
+<!-- ### Data from Observational Studies   -->
 
-Sample - Subset of the population on which we observe data  
+<!-- Some data comes from an observational study where the researcher collects data without imposing any changes.    -->
 
-```
-```{block2, type = "definition"}
+<!-- For example, an economist wants to investigate the effects of recently added tariffs on agricultural products to the amount and value of such products that are traded between the United States and Asia.  This study would have two **response** variables, amount and value of each product traded between the two parties.   -->
 
-Statistical Inference - Process of using sample data to make statements or claims about a population (???Usually with the goal of determing which variables are important for a response???)  
+<!-- In order to take into account season variation and time of year, the economist decides to compare the two response variables from the current year - 6 months worth of data - to the *average* values of the two response variables during the same 6 month periods for the past 5 years.  We would refer to the time frame of the data as an **explanatory variable**.  This time frame could be labeled to take on one of two values: no-tariff (past) or tariff (current).   -->
 
-```
+<!-- The researcher obtains the data from the census bureau and conducts their analysis.   -->
 
-Both of these studies had to determine how to obtain their observations.  For the experiment, 24 cars were used.  For the observational study, six years of data were collected.  How this data is collected can be extremely important in terms of the types of conclusions that can be made.  Data needs to be **unbiased** and **representative** of the population in which the researcher hopes to make inference otherwise the conclusions made are likely invalid.  We'll discuss the idea of what makes a good and bad **sampling scheme** later. 
+<!-- Notice that the researcher, while certainly being actively involved in the careful consideration of the data to be collected, does not actively intervene or impose a change.  This is the key component of an observational study.   -->
 
-The major difference between the two studies was the active (experimental) and passive (observational) roles played by the researcher.  This difference is also of vital importance to the types of conclusions that can be made from the study.  A well-designed experiment can often infer causation to the treatments where an observational study cannot.  
+<!-- ```{block2, type = 'definition'} -->
 
-The conclusions a researcher can make based on how the data were collected and the type of study are outlined in the table below.  (??? Probably just remake this table ourselves with our own words.  This isn't exactly 'their' original thought or something we need to attribute. ???)
+<!-- Observational Study - researchers collects data without imposing any changes on the study environment.      -->
 
-```{r scopeTable, out.width="650px", fig.cap="Scope of Inference, cite: Khan Academy", echo = FALSE}
-knitr::include_graphics("img/ScopeOfInferenceTable.png")
-```
+<!-- ``` -->
 
-Doing an observational study doesn't mean that your study is bad!  An observational study is sometimes done out of necessity when an experiment wouldn't be ethical or feasible.  For the tariff example, there really isn't a way to conduct an experiment.  If we wanted to design an experiment to see if smoking causes lung cancer, that would be unethical because we can't force people to smoke.  The key point is that the implications we can draw will differ greatly between experimental and observational studies and will depend heavily on the quality (in relation to the population) of the data you have.   
 
+<!-- ### Observational vs Experimental   -->
 
-### The Role of Statistics  
- 
-Statistics is the science of learning from data.  It encompasses the collection of data, the design of an experiment, the summarization of data, and the modeling or analysis used in order to make a decision or further scientific knowledge. (???I feel like this definition doesn't quite get the sampling part right or maybe the holistic process or something - update as needed! JP???)  
+<!-- You may have noticed that both types of studies have some things in common.  For instance, both studies have **response** (??? so I was thinking about maybe bolding most stats words as we go to point them out to students... thoughts???) variables that characterizes the performance of the study in some sense.  Importantly, these response variables have variation.  That is, observing the variable is non-deterministic even under identical situations.  There are also **explanatory variables** that the researcher is interested in with regard to their relationship with the response variable.   -->
 
-```{block2, type = "definition"}
-(This will be changed to a different style of callout - maybe "note"?)
+<!-- Beyond that, both studies hope to make conclusions about a larger group using data.  This is the idea of **statistical inference** (??? Do we want to talk about the differences between prediction and inference here? - later???).  More formally the group of values, items, or individuals defines the a **population** of interest and the data collected represents the **sample**.  For the gas mileage example, the population would be all cars of the year and make in question and the sample would be the data on the 24 cars.  For the tariff example, the population would be a **conceptual population** of all future agricultural products traded between the United States and Asia and the sample would be the information from the six years of trade data.    -->
 
-Statistics in every day use usually refers to simply summaries about data (means/averages, proportions, or counts).  
+<!-- ```{block2, type = "definition"} -->
 
-Statistics as a field encompasses a much larger range of ideas including how to collect data, model data, and make decisions or come to conclusions when faced with uncertainty.  
+<!-- Population - (Possibly conceptual) group of units of interest   -->
 
-```
+<!-- ``` -->
+<!-- ```{block2, type = "definition"} -->
 
-**Statistical methods are needed because data is variable.**  If we again collected data about the gas mileage of vehicles under the exact same study conditions we'll get slightly different results.  If we observed another six month period of trade data we'll see different amounts and values.  Accounting for this variability in data is a key component of a statistical analysis.   
+<!-- Sample - Subset of the population on which we observe data   -->
 
-Generally, one should try to take a holistic view of a study.  Before any data is collected it is vital to understand the goals and background of the study.  These will inform the data you ideally want to collect as well as the data that you are able to collect - which may need to act as a proxy.  A plan should be determined for the actual collection and storing of the data.  The entire study design will then inform the statistical analysis and conclusions that can be drawn.  
+<!-- ``` -->
+<!-- ```{block2, type = "definition"} -->
 
-Taking this bigger picture view of the problem, we can usually follow these steps (we'll try to follow these throughout the book!):  
+<!-- Statistical Inference - Process of using sample data to make statements or claims about a population (???Usually with the goal of determing which variables are important for a response???)   -->
 
-- Define the objective of the experiment and understand the background (Objective & Background)    
-- Select appropriate response variables (Response)  
-- Identify sources of variation (Sources of Variation)  
-- Choose experimental design (if applicable) (Experimental Design)  
-- Perform the test/collect the data (??? not sure how to shorten that to make it make sense ???) 
-- Statistically analyze the data (Analysis)  
-- Draw conclusions (Conclusions)  
+<!-- ``` -->
 
-We'll focus on this entire process and mostly investigate designed experiments.  We attempt to tackle each topic in this text with a problem-based approach.  That is, we identify a real-world problem and discuss the relevant statistical ideas in context.  Summaries at the end of each chapter recap the main statistical ideas.  
+<!-- Both of these studies had to determine how to obtain their observations.  For the experiment, 24 cars were used.  For the observational study, six years of data were collected.  How this data is collected can be extremely important in terms of the types of conclusions that can be made.  Data needs to be **unbiased** and **representative** of the population in which the researcher hopes to make inference otherwise the conclusions made are likely invalid.  We'll discuss the idea of what makes a good and bad **sampling scheme** later.  -->
 
+<!-- The major difference between the two studies was the active (experimental) and passive (observational) roles played by the researcher.  This difference is also of vital importance to the types of conclusions that can be made from the study.  A well-designed experiment can often infer causation to the treatments where an observational study cannot.   -->
 
-## Marketing Example  
+<!-- The conclusions a researcher can make based on how the data were collected and the type of study are outlined in the table below.  (??? Probably just remake this table ourselves with our own words.  This isn't exactly 'their' original thought or something we need to attribute. ???) -->
 
-### Experiment Background  
+<!-- ```{r scopeTable, out.width="650px", fig.cap="Scope of Inference, cite: Khan Academy", echo = FALSE} -->
+<!-- knitr::include_graphics("img/ScopeOfInferenceTable.png") -->
+<!-- ``` -->
 
-Marketing example.  Goal to describe the customers, how they tend to purchase/shop, and maybe find some shared qualities in order to adverstise curated packages to folks.
+<!-- Doing an observational study doesn't mean that your study is bad!  An observational study is sometimes done out of necessity when an experiment wouldn't be ethical or feasible.  For the tariff example, there really isn't a way to conduct an experiment.  If we wanted to design an experiment to see if smoking causes lung cancer, that would be unethical because we can't force people to smoke.  The key point is that the implications we can draw will differ greatly between experimental and observational studies and will depend heavily on the quality (in relation to the population) of the data you have.    -->
 
-Define basic things like population, parameters, statistics, and sample.
 
-Discuss conceptual vs actual populations and when we might care about one or the other.  Our "sample" is really a bit of data from the conceptual population.  Or we could consider it as the population and we just want to describe it. 
+<!-- ### The Role of Statistics   -->
 
-### Selecting Response Variables
+<!-- Statistics is the science of learning from data.  It encompasses the collection of data, the design of an experiment, the summarization of data, and the modeling or analysis used in order to make a decision or further scientific knowledge. (???I feel like this definition doesn't quite get the sampling part right or maybe the holistic process or something - update as needed! JP???)   -->
 
-We don't get to choose the variables here as the analytics company gives us what they deem important.  We can however still think critically about what is important.  Marketing example with data such as Clicks, Impressions, Total Revenue, Total Spent, Average Order Value, Sport, Time of visit/purchase, Campaigns running, etc.
+<!-- ```{block2, type = "definition"} -->
+<!-- (This will be changed to a different style of callout - maybe "note"?) -->
 
-### Identifying Sources of Variation 
+<!-- Statistics in every day use usually refers to simply summaries about data (means/averages, proportions, or counts).   -->
 
-Consider variables linked to the user.  Age, other accounts, etc.  
+<!-- Statistics as a field encompasses a much larger range of ideas including how to collect data, model data, and make decisions or come to conclusions when faced with uncertainty.   -->
 
-### Choose an Experimental Design <!-- Is this intended to include any sampling considerations?-->
+<!-- ``` -->
 
-Discuss our "sampling" scheme vs a random sample.  This seems like a case where we aren't doing a "good" scheme but not much else could be done...  
+<!-- **Statistical methods are needed because data is variable.**  If we again collected data about the gas mileage of vehicles under the exact same study conditions we'll get slightly different results.  If we observed another six month period of trade data we'll see different amounts and values.  Accounting for this variability in data is a key component of a statistical analysis.    -->
 
-Maybe talk about how in the future you could do alternate email ads or something and do an AB type study.
+<!-- Generally, one should try to take a holistic view of a study.  Before any data is collected it is vital to understand the goals and background of the study.  These will inform the data you ideally want to collect as well as the data that you are able to collect - which may need to act as a proxy.  A plan should be determined for the actual collection and storing of the data.  The entire study design will then inform the statistical analysis and conclusions that can be drawn.   -->
 
+<!-- Taking this bigger picture view of the problem, we can usually follow these steps (we'll try to follow these throughout the book!):   -->
 
-### Peform the Test  <!-- Wait, does this mean to actually execute the experiment? -->
+<!-- - Define the objective of the experiment and understand the background (Objective & Background)     -->
+<!-- - Select appropriate response variables (Response)   -->
+<!-- - Identify sources of variation (Sources of Variation)   -->
+<!-- - Choose experimental design (if applicable) (Experimental Design)   -->
+<!-- - Perform the test/collect the data (??? not sure how to shorten that to make it make sense ???)  -->
+<!-- - Statistically analyze the data (Analysis)   -->
+<!-- - Draw conclusions (Conclusions)   -->
 
-Get the data from google analytics or whatever, have a plan for updating each month?
+<!-- We'll focus on this entire process and mostly investigate designed experiments.  We attempt to tackle each topic in this text with a problem-based approach.  That is, we identify a real-world problem and discuss the relevant statistical ideas in context.  Summaries at the end of each chapter recap the main statistical ideas.   -->
 
-### Look at the Data  <!-- I think we need to add this as a much needed step!  If nothing else than for data validation.  I'm assuming perform the test now means collect the data. Perhaps this could fall into the Statistically analyze the data part though... Might be good to separate out the exploring/validating part though.  -->
 
-Careful discussion of not selecting a modeling technique based on this unless it is a pilot study or an exploratory study else we have increased our nominal type I error rate... 
+<!-- ## Marketing Example   -->
 
-(sometimes EDA sometimes data validation only/cleaning - more formal experiments)
+<!-- ### Experiment Background   -->
 
-Spend a lot of time here talking about graphs of different types.  Sample means, sample variances, etc.
+<!-- Marketing example.  Goal to describe the customers, how they tend to purchase/shop, and maybe find some shared qualities in order to adverstise curated packages to folks. -->
 
-Discuss population curves vs sample histograms and the relationship.
+<!-- Define basic things like population, parameters, statistics, and sample. -->
 
-### Statistically Analyze the Data  
+<!-- Discuss conceptual vs actual populations and when we might care about one or the other.  Our "sample" is really a bit of data from the conceptual population.  Or we could consider it as the population and we just want to describe it.  -->
 
-New variables as functions of old?
+<!-- ### Selecting Response Variables -->
 
-Not a formal test here but comparisons of interest etc.
+<!-- We don't get to choose the variables here as the analytics company gives us what they deem important.  We can however still think critically about what is important.  Marketing example with data such as Clicks, Impressions, Total Revenue, Total Spent, Average Order Value, Sport, Time of visit/purchase, Campaigns running, etc. -->
 
-### Draw conclusions
+<!-- ### Identifying Sources of Variation  -->
 
-What actionable things have we found?  Likely some trends to investigate further.  Perhaps run an experiment to formally see if some alteration can be effective.  
+<!-- Consider variables linked to the user.  Age, other accounts, etc.   -->
 
-What can we conclude realistically from this data?  To what population are we talking?  
+<!-- ### Choose an Experimental Design <!-- Is this intended to include any sampling considerations?--> -->
 
+<!-- Discuss our "sampling" scheme vs a random sample.  This seems like a case where we aren't doing a "good" scheme but not much else could be done...   -->
 
-## Statistical Testing Ideas  
+<!-- Maybe talk about how in the future you could do alternate email ads or something and do an AB type study. -->
 
-### Experiment Background 
 
-This example would lend itself to a reasonably easy randomization test or simulation based test.  Maybe an AB type study where we swap labels and do that with a nice visual.
+<!-- ### Peform the Test  <!-- Wait, does this mean to actually execute the experiment? --> -->
 
-Maybe third example with simulation test.
+<!-- Get the data from google analytics or whatever, have a plan for updating each month? -->
 
-### Selecting Response Variables
+<!-- ### Look at the Data  <!-- I think we need to add this as a much needed step!  If nothing else than for data validation.  I'm assuming perform the test now means collect the data. Perhaps this could fall into the Statistically analyze the data part though... Might be good to separate out the exploring/validating part though.  --> -->
 
+<!-- Careful discussion of not selecting a modeling technique based on this unless it is a pilot study or an exploratory study else we have increased our nominal type I error rate...  -->
 
-### Identifying Sources of Variation 
+<!-- (sometimes EDA sometimes data validation only/cleaning - more formal experiments) -->
 
+<!-- Spend a lot of time here talking about graphs of different types.  Sample means, sample variances, etc. -->
 
-### Choose an Experimental Design 
+<!-- Discuss population curves vs sample histograms and the relationship. -->
 
-Good discussion of what makes a good sampling design.  Maybe a statified example like the river and selecting houses example as a quick expose of the issues with not doing a truly random sampling technique.
+<!-- ### Statistically Analyze the Data   -->
 
-Basics of experimental design (randomization, replication, error control ideas).
+<!-- New variables as functions of old? -->
 
-Recap benefits of doing an experiment vs an observational study.
+<!-- Not a formal test here but comparisons of interest etc. -->
 
-### Peform the Test  
+<!-- ### Draw conclusions -->
 
-### Explore the Data  
+<!-- What actionable things have we found?  Likely some trends to investigate further.  Perhaps run an experiment to formally see if some alteration can be effective.   -->
 
-NHST paradigm with false discovery?
+<!-- What can we conclude realistically from this data?  To what population are we talking?   -->
 
-### Statistically Analyze the Data  
 
+<!-- ## Statistical Testing Ideas   -->
 
-### Draw conclusions
+<!-- ### Experiment Background  -->
 
+<!-- This example would lend itself to a reasonably easy randomization test or simulation based test.  Maybe an AB type study where we swap labels and do that with a nice visual. -->
 
+<!-- Maybe third example with simulation test. -->
 
-## Software
+<!-- ### Selecting Response Variables -->
 
-### R
 
+<!-- ### Identifying Sources of Variation  -->
 
-```{r, include= F}
-library(tidyverse)
 
-tb <- tibble(x = seq(-4, 4, length.out = 1000)) %>% 
-  mutate(y = dnorm(x))
+<!-- ### Choose an Experimental Design  -->
 
-aoc <- tb %>% filter(x < -1)
+<!-- Good discussion of what makes a good sampling design.  Maybe a statified example like the river and selecting houses example as a quick expose of the issues with not doing a truly random sampling technique. -->
 
-```
+<!-- Basics of experimental design (randomization, replication, error control ideas). -->
 
+<!-- Recap benefits of doing an experiment vs an observational study. -->
 
-For each built-in distribution in R (Normal, Bernoulli, Binomial, Student's t, etc.), `R` has four basic functions. We'll go through them here and discuss briefly their uses. 
+<!-- ### Peform the Test   -->
 
-## Finding a specific value from a Probability Distribution Function or Probability Mass Function
+<!-- ### Explore the Data   -->
 
-For the normal distribution, this is `dnorm()`. In the plot below, the red point is the point along the distribution function of a standard normal when `x = -1`. By input `dnorm(-1)`, `R` evaluates the function and returns `r dnorm(-1)`.
+<!-- NHST paradigm with false discovery? -->
 
-```{r, echo = F}
-tb %>% 
-  ggplot(aes(x = x, y = y)) + geom_line() +
-  theme_bw() +
-  geom_point(data = tibble(x = -1, y = dnorm(-1)), size = 3, color = "red") 
+<!-- ### Statistically Analyze the Data   -->
 
-dnorm(-1)
-```
 
-I mostly use this for discrete random variables, like `dbinom()`, since those probability values  are more often meaningful on their own (i.e., without integrating).
+<!-- ### Draw conclusions -->
 
 
-## Finding the area under the curve
 
-`pnorm(q)` returns the area under the normal curve up to some value on the x-axis,  `q`.  This is good for finding p-values when you have a critical value, `q`.
+<!-- ## Software -->
 
+<!-- ### R -->
 
-```{r, echo = F}
-tb %>% 
-  ggplot(aes(x = x, y = y)) + geom_line() +
-  theme_bw() +
-  geom_area(data = aoc) 
-```
 
-```{r}
+<!-- ```{r, include= F} -->
+<!-- library(tidyverse) -->
 
-pnorm(-1)
+<!-- tb <- tibble(x = seq(-4, 4, length.out = 1000)) %>%  -->
+<!--   mutate(y = dnorm(x)) -->
 
-```
+<!-- aoc <- tb %>% filter(x < -1) -->
 
+<!-- ``` -->
 
-## Finding quantiles of distributions
 
-`qnorm(p)` returns the value along the x-axis such that the area under the normal up to that point is equal to `p`. The example below illustrates how you'd get the critical value for the lower bound of a 95% confidence interval based off a Normal approximation. 
+<!-- For each built-in distribution in R (Normal, Bernoulli, Binomial, Student's t, etc.), `R` has four basic functions. We'll go through them here and discuss briefly their uses.  -->
 
-```{r, echo = F}
+<!-- ## Finding a specific value from a Probability Distribution Function or Probability Mass Function -->
 
-aoc <- tb %>% filter(x < qnorm(.025))
+<!-- For the normal distribution, this is `dnorm()`. In the plot below, the red point is the point along the distribution function of a standard normal when `x = -1`. By input `dnorm(-1)`, `R` evaluates the function and returns `r dnorm(-1)`. -->
 
-tb %>% 
-  ggplot(aes(x = x, y = y)) + geom_line() +
-  theme_bw() +
-  geom_area(data = aoc, fill = "gray") + 
-  geom_point(data = tibble(x = qnorm(.025), y = 0), size = 3, color = "red") 
-```
+<!-- ```{r, echo = F} -->
+<!-- tb %>%  -->
+<!--   ggplot(aes(x = x, y = y)) + geom_line() + -->
+<!--   theme_bw() + -->
+<!--   geom_point(data = tibble(x = -1, y = dnorm(-1)), size = 3, color = "red")  -->
 
+<!-- dnorm(-1) -->
+<!-- ``` -->
 
+<!-- I mostly use this for discrete random variables, like `dbinom()`, since those probability values  are more often meaningful on their own (i.e., without integrating). -->
 
-```{r}
-qnorm(0.025)
-```
 
-This is useful when you want to find, for example, a critical value to build a confidence interval or test a hypothesis. 
+<!-- ## Finding the area under the curve -->
 
-## Generating random numbers
+<!-- `pnorm(q)` returns the area under the normal curve up to some value on the x-axis,  `q`.  This is good for finding p-values when you have a critical value, `q`. -->
 
-The last function in this set is `rnorm()`, and it doesn't really go with the rest. This function generates random variables based on the distribution you give it. Quite useful for doing simulation studies and the like, but it rarely comes up when you're doing inference. 
 
-## Other distributions
+<!-- ```{r, echo = F} -->
+<!-- tb %>%  -->
+<!--   ggplot(aes(x = x, y = y)) + geom_line() + -->
+<!--   theme_bw() + -->
+<!--   geom_area(data = aoc)  -->
+<!-- ``` -->
 
-`R` has a lot of built in distributions, including the Binomial (`pbinom()`), Student's t (`pt()`), the Chi-square (`pchisq()`), the F-distribution, (`pf()`), the Beta (`pbeta()`), and the Gamma (`pgamma()`). They all have functions similar to the ones listed above that behave in similar ways, though note that the way parameters are input to these functions can be weird. Make sure to read the notation!
+<!-- ```{r} -->
 
+<!-- pnorm(-1) -->
 
-The implications for the conclusions that can be made from a set of data varies greatly with the quality of the data and study design.  
+<!-- ``` -->
+
+
+<!-- ## Finding quantiles of distributions -->
+
+<!-- `qnorm(p)` returns the value along the x-axis such that the area under the normal up to that point is equal to `p`. The example below illustrates how you'd get the critical value for the lower bound of a 95% confidence interval based off a Normal approximation.  -->
+
+<!-- ```{r, echo = F} -->
+
+<!-- aoc <- tb %>% filter(x < qnorm(.025)) -->
+
+<!-- tb %>%  -->
+<!--   ggplot(aes(x = x, y = y)) + geom_line() + -->
+<!--   theme_bw() + -->
+<!--   geom_area(data = aoc, fill = "gray") +  -->
+<!--   geom_point(data = tibble(x = qnorm(.025), y = 0), size = 3, color = "red")  -->
+<!-- ``` -->
+
+
+
+<!-- ```{r} -->
+<!-- qnorm(0.025) -->
+<!-- ``` -->
+
+<!-- This is useful when you want to find, for example, a critical value to build a confidence interval or test a hypothesis.  -->
+
+<!-- ## Generating random numbers -->
+
+<!-- The last function in this set is `rnorm()`, and it doesn't really go with the rest. This function generates random variables based on the distribution you give it. Quite useful for doing simulation studies and the like, but it rarely comes up when you're doing inference.  -->
+
+<!-- ## Other distributions -->
+
+<!-- `R` has a lot of built in distributions, including the Binomial (`pbinom()`), Student's t (`pt()`), the Chi-square (`pchisq()`), the F-distribution, (`pf()`), the Beta (`pbeta()`), and the Gamma (`pgamma()`). They all have functions similar to the ones listed above that behave in similar ways, though note that the way parameters are input to these functions can be weird. Make sure to read the notation! -->
+
+
+<!-- The implications for the conclusions that can be made from a set of data varies greatly with the quality of the data and study design.   -->
 
 
 <!-- - Frame still with question of interest.  Maybe pilot study or study where we mainly care about summary stats.
