@@ -19,13 +19,13 @@ We'll start by focusing on delimited data.
 
 - Delimiter - Character (such as a`,`) that separates data entries
 
-```{r, echo = FALSE, fig.align='center', out.width="600px"}
+```{r, echo = FALSE, fig.align='center', out.width="80%"}
 knitr::include_graphics("img/delimitedData.png")
 ``` 
 
 To read in data we'll need functions to do so.  When you open R a few `packages` are loaded.  
 
-```{r , fig.align = 'center', out.width = "250px", echo = FALSE}
+```{r , fig.align = 'center', out.width = "20%", echo = FALSE}
 knitr::include_graphics("img/loadR.png")
 ```
 
@@ -57,7 +57,7 @@ R locates the file by the path you give it.  You can give *full path name*.  For
 * ex: C:/Users/jbpost2/repos/StatisticalMethods/datasets/neuralgia.csv  
 * ex: C:\\\\Users\\\\jbpost2\\\\repos\\\\StatisticalMethods\\\\datasets\\\\neuralgia.csv  
 
-```{r , fig.align = 'center', out.width = "450px", echo = FALSE}
+```{r , fig.align = 'center', out.width = "80%", echo = FALSE}
 knitr::include_graphics("img/pathVis.png")
 ```
 
@@ -98,7 +98,7 @@ setwd("C:\\Users\\jbpost2\\repos\\StatisticalMethods\\datasets")
 
 The working directory can also be changed via the menus in RStudio.  
 
-```{r , out.width = "800px",echo=FALSE}
+```{r , out.width = "80%",echo=FALSE, fig.align='center'}
 knitr::include_graphics("img/setwd.png")
 ```
 
@@ -130,7 +130,7 @@ Often we have many files associated with an analysis.  When working on multiple 
 
 The "Project" feature in R Studio allows us to easily do this!  To create you can use the drop down menus.  
 
-```{r , out.width = "600px",echo=FALSE, fig.align = 'center'}
+```{r , out.width = "80%",echo=FALSE, fig.align = 'center'}
 knitr::include_graphics("img/project.png")
 ```
 
@@ -187,7 +187,7 @@ install.packages(c("readr", "readxl", "haven", "DBI", "httr"))
 
 - Using menus:
 
-```{r , out.width = "800px",echo=FALSE, fig.align='center'}
+```{r , out.width = "70%",echo=FALSE, fig.align='center'}
 knitr::include_graphics("img/packages.png")
 ```
 
@@ -474,7 +474,7 @@ XML stands for eXtensible Markup Language.  This is another data format that is 
 
 The structure of the nodes has parent nodes, child nodes, etc.  A basic diagram is given below.   
 
-```{r, fig.align = 'center', echo = FALSE, out.width = "600px", fig.cap="Source: mysamplecode.com"}
+```{r, fig.align = 'center', echo = FALSE, out.width = "80%", fig.cap="Source: mysamplecode.com"}
 knitr::include_graphics("img/xmlDiagram.jpg")
 ```
 
@@ -502,7 +502,7 @@ A database is a collection of data, usually a bunch of 2D tables that have keys 
 
 An example of a relational database structure is given below.  Notice there are keys that link different tables.  
 
-```{r, out.width = "550px", echo = FALSE, fig.align='center', fig.cap= "Source: oreilly.com"}
+```{r, out.width = "80%", echo = FALSE, fig.align='center', fig.cap= "Source: oreilly.com"}
 knitr::include_graphics("img/lahman.jpg")
 ```
 
@@ -559,7 +559,7 @@ There are many open APIs.  They usually just require you to register and obtain 
 
 As a quick example we will query the Harry Potter database at [https://www.potterapi.com/](https://www.potterapi.com/).  There is a button on the top right where you can register and obtain a key.
 
-```{r, fig.align = 'center', echo = FALSE, out.width="800px"}
+```{r, fig.align = 'center', echo = FALSE, out.width="80%"}
 knitr::include_graphics("img/HPAPI.png")
 ```
 
