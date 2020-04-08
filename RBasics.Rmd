@@ -27,7 +27,7 @@ There are four main 'areas' of the RStudio IDE:
 
 You may wish to rearrange the panes.  This can be done via the menus at the top.  Choose "Tools --> Global Options".
 
-```{r, out.width = "700px",echo=FALSE}
+```{r, out.width = "80%",echo=FALSE}
 knitr::include_graphics("img/panes.png")
 ```
 
@@ -219,8 +219,8 @@ To understand how to use R for data analysis we need to understand commonly used
 
 Let's start with the most basic object and work our way up. An atomic vector is a 1D group of elements with an ordering.  
 
-```{r , echo = FALSE, fig.align='center', out.width = '650px'}
-knitr::include_graphics("img/vectorVisual.png")
+```{r , echo = FALSE, fig.align='center', out.width = '80%'}
+knitr::include_graphics("img/vectorVisualF.png")
 ```
 
 All of the elements must be same 'type'.  Types include numeric (integer or double), character, or logical.  We create an atomic vector with the `c()` function ('combine').
@@ -235,8 +235,8 @@ y
 
 In addition, many 'functions' output a numeric vector.  Functions are at the heart of R so it is vital to understand them.  The concept of a function is that there the function takes an input or inputs and maps those inputs to some output(s).
 
-```{r , echo = FALSE, out.width = "800px", fig.align= 'center'}
-knitr::include_graphics("img/funVisual1.png")
+```{r , echo = FALSE, out.width = "80%", fig.align= 'center'}
+knitr::include_graphics("img/funVisual1F.png")
 ```
 
 
@@ -246,8 +246,8 @@ As an example, one function that outputs a numeric vector is the `seq` or sequen
 
     + Output = a sequence of numbers
 
-```{r , echo = FALSE, out.width = "800px", fig.align= 'center'}
-knitr::include_graphics("img/funVisual2.png")
+```{r , echo = FALSE, out.width = "80%", fig.align= 'center'}
+knitr::include_graphics("img/funVisual2F.png")
 ```
 
 ```{r }
@@ -288,8 +288,8 @@ To recap, our first commonly used R object for storing data is an atomic vectore
 
 A Matrix is a 2D data structure in R whose elements are all of the same type.  The first dimension refers to the rows and the second dimension refers to the columns.  A 2D data object is very common.  The rows often represent the *observations* and the columns represent the *variables*.   Although not technically right, it is useful to think of the columns of a matrix as vectors of the same **type and length**.  
   
-```{r , echo = FALSE, out.width = "500px", fig.align= 'center'}
-knitr::include_graphics("img/matrixVisual.png")
+```{r , echo = FALSE, out.width = "75%", fig.align= 'center'}
+knitr::include_graphics("img/matrixVisualF.png")
 ```
 
 For instance, consider the three vectors created here:  
@@ -341,7 +341,7 @@ matrix(c(x, y, z), nrow = 3)
 
 To recap, a Matrix is a 2D data structure where we can think of the columns as vectors of the same **type and length**. These are useful for some datasets but most datasets have some numeric and some character variables.
 
-```{r , out.width = "600px",echo=FALSE, fig.align='center'}
+```{r , out.width = "80%",echo=FALSE, fig.align='center'}
 knitr::include_graphics("img/dataset.png")
 ```
 
@@ -352,8 +352,8 @@ Another 2D object called a data frame is perfect for this type of data!
 
 A Data Frame is a 2D data structure where elements within a column must be of the same type but the columns themselves can differ in type.  When thinking of a data frame, consider them as a collection (list) of vectors of the same **length**.    
 
-```{r , echo = FALSE, out.width = "500px", fig.align= 'center'}
-knitr::include_graphics("img/dfVisual.png")
+```{r , echo = FALSE, out.width = "80%", fig.align= 'center'}
+knitr::include_graphics("img/dfVisualF.png")
 ```
 
 A data frame can be created with the `data.frame` function.
@@ -380,8 +380,8 @@ To recap, consider a data frame as a collection (list) of vectors of the same **
 
 A List is a 1D group of objects with ordering.  Really it is a vector that can have differing elements.  Think of this in a similar way to the atomic vector previously discussed except the elements are really flexible.  
 
-```{r , echo = FALSE, out.width = "600px", fig.align= 'center'}
-knitr::include_graphics("img/listVisual.png")
+```{r , echo = FALSE, out.width = "80%", fig.align= 'center'}
+knitr::include_graphics("img/listVisualF.png")
 ```
 
 A list can be created with the `list` function.  You specify the elements you want to include, separated by commas.  

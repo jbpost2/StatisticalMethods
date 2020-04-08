@@ -54,7 +54,7 @@ Many of these and other GPPs can be taken care of by programming in a notebook e
 
 The general workflow for programming in R involves taking raw data and importing it into R.  Once that data is imported we often create numerical and graphical summaries of the data.  The appropriate model or statistical method is then applied.
 
-```{r, echo = FALSE, fig.align='center', out.width = "600px"}
+```{r, echo = FALSE, fig.align='center', out.width = "80%"}
 knitr::include_graphics("img/RWorkFlow.png")
 ```
 
