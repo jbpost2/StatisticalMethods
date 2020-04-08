@@ -1,0 +1,499 @@
+#### Graphical Summaries  
+
+ Where are we at?  
+
+- Understand types of data and their distributions  
+
+- Numerical summaries (across subgroups)  
+
+    + Contingency Tables  
+    + Mean/Median  
+    + Standard Deviation/Variance/IQR
+    + Quantiles/Percentiles
+
+- Graphical summaries (across subgroups)  
+
+    + Bar plots (categorical data)   
+    + Histograms  
+    + Box plots  
+    + Scatter plots
+
+    
+
+ Understanding Data
+
+- How to summarize data?  
+
+- Depends on data type:  
+
+    + Categorical (Qualitative) - variable whose entries are a label or attribute   
+    + Numerical (Quantitative) - variable whose entries are a numerical value where math can be performed
+
+```{r, echo = FALSE, out.width="500px", fig.align='center'}
+knitr::include_graphics("img/variableTypes.png")
+```
+
+
+
+ Understanding Data
+
+Common goal: Describe the **distribution** of the variable  
+
+- Distribution = pattern and frequency with which you observe a variable  
+
+- Categorical variable - describe relative frequency (or count) in each category
+
+- Numerical variable - describe the shape, center, and spread
+
+
+
+
+ Graphical Summaries
+
+Three major systems for plotting:
+
+- Base R (built-in functions)  
+
+    + Use `plot`, `barplot`, `hist`, etc. to start a plot  
+    + Annotate the plot using functions like `text`, `lines`, `points`, etc.
+
+
+ Graphical Summaries
+
+Three major systems for plotting:
+
+- Base R (built-in functions)  
+
+    + Use `plot`, `barplot`, `hist`, etc. to start a plot  
+    + Annotate the plot using functions like `text`, `lines`, `points`, etc.
+
+- Lattice (not covered)  
+
+- ggplot2 (sort of part of the tidyverse - [Cheat Sheet](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=2ahUKEwjFu_ep-rroAhXnknIEHf13Bq4QFjABegQICBAB&url=https%3A%2F%2Frstudio.com%2Fwp-content%2Fuploads%2F2016%2F11%2Fggplot2-cheatsheet-2.1.pdf&usg=AOvVaw1-6jSR5VfWs7V62OYxtDtG))
+
+    + `ggplot(data = data_frame)` creates a plot instance  
+    + Add "layers" to the system (geoms or stats)  
+
+Great [reference book here!](https://bookdown.org/rdpeng/exdata/plotting-systems.html)
+
+
+
+ Base R Plotting: Categorical variables  
+
+Categorical variable - entries are a label or attribute   
+
+- Barplots via `barplot`  
+
+- Ex: Data on titanic passengers in `titanic.csv`
+
+```{r,echo=FALSE}
+titanicData <- read_csv("datasets/titanic.csv")
+titanicData
+```
+
+
+ Base R Plotting: Categorical variables  
+
+Categorical variable - entries are a label or attribute   
+
+- Easiest to create a summary dataset with `table` for use with `barplot`  
+
+- One-way table easy to visualize
+
+```{r}
+table(titanicData$survived)
+```
+
+
+
+ Base R Plotting: Categorical variables  
+
+Categorical variable - entries are a label or attribute   
+
+- Easiest to create a summary dataset with `table` for use with `barplot`  
+
+- One-way table easy to visualize
+
+```{r, echo = TRUE, out.width = "450px", fig.align='center'}
+barplot(table(titanicData$survived))
+```
+
+
+
+ Base R Plotting: Categorical variables  
+
+Categorical variable - entries are a label or attribute   
+
+- Easiest to create a summary dataset with `table` for use with `barplot`
+
+- **Stacked barplot** created by passing a two-way table
+
+```{r, out.width = "450px", fig.align='center'}
+twoTable <- table(titanicData$survived, titanicData$sex)
+barplot(twoTable)
+```
+
+
+ Base R Plotting: Categorical variables  
+
+Categorical variable - entries are a label or attribute   
+
+- Common arguments to `barplot`  
+
+    + `legend = TRUE` & `args.legend = list(title = "...")
+
+```{r, out.width = "450px", fig.align='center'}
+twoTable <- table(titanicData$survived, titanicData$sex)
+barplot(twoTable, legend = TRUE, args.legend = list(title="Survived"))
+```
+
+
+
+ Base R Plotting: Categorical variables  
+
+Categorical variable - entries are a label or attribute   
+
+- Easiest to create a summary dataset with `table` for use with `barplot`
+
+- **Side-by-side barplot** created by passing a two-way table with `beside = TRUE`
+
+```{r, out.width = "450px", fig.align='center'}
+twoTable <- table(titanicData$survived, titanicData$sex)
+barplot(twoTable, beside = TRUE, legend = TRUE, args.legend=list(title="Survived"))
+```
+
+
+
+ Base R Plotting: Categorical variables  
+
+Categorical variable - entries are a label or attribute   
+
+- Easiest to create a summary dataset with `table` for use with `barplot`
+
+- **Side-by-side barplot** created by passing a two-way table with `beside = TRUE`
+
+```{r, out.width = "450px", fig.align='center'}
+barplot(twoTable, beside = TRUE, legend = c("Died", "Survived"),
+        args.legend=list(title="Survived"))
+```
+
+
+
+ Base R Plotting: Categorical variables  
+
+Recap!  
+
+Categorical variable - entries are a label or attribute   
+
+- Easiest to create a summary dataset with `table` for use with `barplot`  
+
+- Two-way table with `beside = TRUE` for side-by-side barplot
+
+- Create same plot for each level of another variable?  
+
+    + Requires a bit of work with Base R... (`ggplot2` takes care of it for us!)
+
+Next:  Numerical variable plotting
+
+
+
+ Base R Plotting: Numerical Variables    
+
+Numerical variable - entries are a numerical value where math can be performed
+
+Goal: describe the shape, center, and spread
+
+- Generally, via a histogram or boxplot!  
+
+Process:  
+
+- Use `hist`, `boxpot`, `plot`, etc. to start a plot  
+
+- Annotate the plot using functions like `text`, `lines`, `points`, etc.
+
+
+
+ Base R Plotting: Numerical Variables    
+
+- Look at carbon dioxide (CO2) uptake data set  
+
+    + Response recorded: `uptake` CO2 uptake rates in grass plants  
+    + Environment manipulated: `Treatment` - chilled/nonchilled  
+    + Ambient CO2 specified and measured: `conc`  
+    
+```{r}
+CO2 <- tbl_df(CO2)
+CO2
+```
+
+
+ Base R Plotting: Numerical Variables    
+
+Numerical variable - entries are a numerical value where math can be performed
+
+- **Histogram** - Bins data to show distribution of observations
+
+```{r,eval = TRUE, out.width = "450px", fig.align='center'}
+hist(CO2$uptake)
+```
+
+
+ Base R Plotting: Numerical Variables    
+
+Numerical variable - entries are a numerical value where math can be performed
+
+- **Histogram** - Bins data to show distribution of observations
+
+- Modify title with `main`, bins with `breaks`, color with `col`, ...
+
+```{r,eval = TRUE, out.width = "450px", fig.align='center'}
+hist(CO2$uptake, main = "Histogram of Uptake Values", breaks = 15, col = "Red")
+```
+
+
+ Base R Plotting: Numerical Variables    
+
+Numerical variable - entries are a numerical value where math can be performed
+
+- **Histogram** - Bins data to show distribution of observations
+
+- Add a line with `abline` (`lty` specifies line type, see `help(par)`)
+
+```{r,eval = TRUE, out.width = "450px", fig.align='center'}
+hist(CO2$uptake, main = "Histogram of Uptake Values", breaks = 15, col = "Red")
+abline(v = mean(CO2$uptake), lwd = 3, lty = 2, col = "Blue")
+```
+
+
+ Base R Plotting: Numerical Variables  
+
+Numerical variable - entries are a numerical value where math can be performed
+
+- **Kernel Smoother** - Smoothed version of a histogram  
+
+- 'Kernel' determines weight given to nearby points    
+
+```{r, echo = FALSE, out.width = "500px", fig.align='center'}
+knitr::include_graphics("img/kernel.png")
+```
+
+
+ Base R Plotting: Numerical Variables  
+
+Numerical variable - entries are a numerical value where math can be performed
+
+- **Kernel Smoother** - Smoothed version of a histogram  
+
+```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+plot(density(CO2$uptake), lwd = 3, col = "Blue", lty = 3)
+```
+
+
+ Base R Plotting: Numerical Variables  
+
+- **Histogram + Kernel Smoother** (Add to plot with `lines`!)  
+
+- Use `freq = FALSE` to put histogram on same scale  
+
+```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+hist(CO2$uptake, main = "Histogram of Uptake Values", col = "Red", freq = FALSE)
+lines(density(CO2$uptake), lwd = 3, col = "Blue", lty = 3)
+```
+
+
+ Base R Plotting: Numerical Variables  
+
+One numerical and one categorical variable
+
+- **Boxplot** - Provides the five number summary in a graph
+
+    - Min, Q1, Median, Q3, Max  
+    - Often show possible outliers as well  
+    - Use `boxplot` function  
+
+
+ Base R Plotting: Numerical Variables  
+
+One numerical and one categorical variable
+
+- **Boxplot** - Provides the five number summary in a graph
+
+```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+boxplot(uptake ~ Treatment, data = CO2, main = "Boxplot of Uptake by Treatment")
+```
+
+
+
+ Base R Plotting: Numerical Variables  
+
+- Change orientation with `horizontal`   
+
+```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+boxplot(uptake ~ Treatment, data = CO2, 
+        main = "Boxplot of Uptake by Treatment", horizontal = TRUE)
+```
+
+
+ Base R Plotting: Numerical Variables  
+
+- Most graphical parameters can be changed!  
+
+```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+boxplot(uptake ~ Treatment, data = CO2, 
+        main = "Boxplot of Uptake by Treatment", col = "Grey")
+```
+
+> - Could overlay data values with `points` (probably just use `ggplot`!)
+
+
+
+ Base R Plotting: Numerical Variables  
+
+Two numerical variables
+
+- **Scatter Plot** - graphs points corresponding to each observation
+
+    - Use `plot`  
+
+    - Give coordinates for points to be plotted as `x` and `y` (usually)  
+
+    - Change plot type with `type`  
+
+    - Change line type `lty`, point type `pch`, color `color`, etc.  
+
+
+
+ Base R Plotting: Numerical Variables  
+
+Two numerical variables
+
+- **Scatter Plot** - graphs points corresponding to each observation
+
+```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+plot(x = CO2$conc, y = CO2$uptake) 
+```
+
+
+ Base R Plotting: Numerical Variables  
+
+- Change labels with `xlab`, `ylab`, title with `main`, plot character `pch`, etc.  
+
+```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+plot(x = CO2$conc, y = CO2$uptake, xlab = "Concentration", ylab = "Uptake",
+     main = "Scatter Plot of Concentration and Uptake", pch = 2,
+     ylim = c(0, max(CO2$uptake)))
+```
+
+
+ Base R Plotting: Numerical Variables  
+
+- To change plot symbol (or color, etc.) based on another variable, create appropriate vectors to match data  
+
+```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+symbols <- ifelse(CO2$Treatment == "chilled", 3, 2)
+plot(x = CO2$conc, y = CO2$uptake, pch = symbols)
+```
+
+
+ Base R Plotting: Numerical Variables  
+
+- Manually create legend with `legend`
+
+```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+plot(x = CO2$conc, y = CO2$uptake, pch = symbols)
+legend(x = 810, y = 18, legend = c("Chilled", "Non-Chilled"), pch = c(3, 2))
+```
+
+
+
+ Base R Plotting: Numerical Variables  
+
+- Add trend line with `abline`
+
+```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+plot(x = CO2$conc, y = CO2$uptake, xlab = "Concentration", ylab = "Uptake",
+     main = "Scatter Plot of Concentration and Uptake", ylim = c(0, max(CO2$uptake)))
+abline(lm(uptake ~ conc, data = CO2), lwd = 2, col = "Blue")
+```
+
+
+
+ Base R Plotting: Numerical Variables  
+
+- May want to add value of correlation to plot  
+
+- `paste()` or `paste0()` handy
+
+```{r}
+paste("Hi", "What", "Is", "Going", "On", "?", sep = " ")
+paste("Hi", "What", "Is", "Going", "On", "?", sep = ".")
+paste0("Hi", "What", "Is", "Going", "On", "?")
+```
+
+
+ Base R Plotting: Numerical Variables  
+
+- Use `text` to add text  
+
+```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+correlation <- cor(CO2$conc, CO2$uptake)
+plot(x = CO2$conc, y = CO2$uptake, xlab = "Concentration", ylab = "Uptake",
+     main = "Scatter Plot of Concentration and Uptake", ylim = c(0, max(CO2$uptake)))
+abline(lm(uptake ~ conc, data = CO2), lwd = 2, col = "Blue")
+text(x = 750, y = 10, cex = 2, 
+     label = paste0("Correlation = ", round(correlation, 2)))
+```
+
+
+ Base R Plotting: Numerical Variables  
+
+- **Scatter Plot**
+
+- Text for points easy to do as well: Create an 'empty' plot
+
+```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+plot(NULL, xlim = c(min(CO2$conc), max(CO2$conc)), ylim = c(min(CO2$uptake), max(CO2$uptake)), 
+     main = "Scatter Plot of Concentration and Uptake", xlab = "Conc", ylab = "Uptake")
+text(x = CO2$conc, y = CO2$uptake, label = CO2$Plant)
+```
+
+
+ Base R Plotting: Numerical Variables  
+
+- Useful function: `pairs`
+
+```{r, echo = TRUE, out.width = "600px", fig.align='center', message = FALSE, warning = FALSE}
+pairs(iris)
+```
+
+
+ Base R Plotting: Numerical Variables  
+
+Recap!  
+
+Numerical variable - entries are a numerical value where math can be performed
+
+Most common plots:
+
+- Histogram (`hist`), Density (`plot(density)` or `lines(density)`)  
+
+- Boxplot (`boxplot`)
+
+- Scatter plot (`plot`)  
+
+- Useful functions: `lines`, `abline`, `points`, `text`
+
+- Graphical parameters: `lty`, `lwd`, `pch`, `cex`, `color`
+
+
+ Base R Plotting: Numerical Variables  
+
+Issues:  
+
+- Doing plots across another variable not super intuitive...  
+
+- Creating vectors for color, point type, etc. not fun...  
+
+- Creating legends stinks...  
+
+`ggplot2` automates these processes!
