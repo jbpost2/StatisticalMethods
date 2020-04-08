@@ -74,21 +74,54 @@ Unforunately, $\hat \pi$ is an *estimate* of $\pi$ and not the true value. It is
 
 ## Hypothesis testing
 
-The framework used throughout modern science to answer these sorts of question is known as *Null Hypothesis SignificanceTesting* (NHST), or more concisely, *hypothesis testing*. The basic approach is to frame our research question as a comparison between two possible realities and then decide, based on the data, if one of those realities is sufficiently implausible to discard as an actual possibility. 
+The framework used throughout modern science to answer these sorts of question is known as *Null Hypothesis Significance Testing* (NHST), or more concisely, *hypothesis testing*. The basic approach is to frame our research question as a comparison between two possible realities and then decide, based on the data, if one of those realities is sufficiently implausible to discard as an actual possibility. 
 
-For our application, the two competing realities are one in which the radar's performance meets the desired performance of the Army (that is, $\pi > 0.8$) and one where it does not ($\pi \le  0.8$). These possibilities are derived directly from our research question, and are typically phrased explicitly as a *Null Hypothesis* (denoted $H_0$) and an *Alternative Hypothesis* (denoted $H_1$ or $H_a$). The null hypothesis is typically written in such a way that, if we can prove it is not true, we will have learned important information. For this example, if we can show that the system's probability of detection isn't worse than $0.8$, we'll know that it's at least good enough to meet the desired level of performance. Therefore, we write our null and alternative thus:
+For our application, the two competing realities are one in which the radar's performance meets the desired performance of the Army (that is, $\pi > 0.8$) and one where it does not ($\pi \le  0.8$). These possibilities are derived directly from our research question, and are typically phrased explicitly as a *Null Hypothesis* (denoted $H_0$) and an *Alternative Hypothesis* (denoted $H_1$ or $H_a$). The null hypothesis is typically written in such a way that, if we can prove it is not true, we will have learned important information. For this example, if we can show that the system's probability of detection isn't worse than $0.8$, we'll know that it's at least good enough to meet the Army's desired level of performance. Therefore, we write our null and alternative thus:
 
 $$H_0: \pi \le 0.8$$
 $$H_1: \pi > 0.8$$
 
 Our goal is to determine, based on the sample we've collected, whether $H_0$ is plausible. There are many ways that statisticians have developed over the years of determining this, but we'll focus on one for now.
 
-The first thing to do is consider our data, which are whether or not the radar system detected each of the `r n` projectiles shot during the test event. We must make some general assumptions about these data if we're to get anyhwere. Plausible assumptions include:
+The first thing to do is consider our data, which are records of whether or not the radar system detected each of the `r n` projectiles shot during the test event. We must make some general assumptions about these data if we're to get anyhwere. Plausible assumptions include:
 
 1. One shot is independent from the next
 2. The underlying probability of detection for each shot is the same
 
 If these assumptions hold, than each observation is a Bernoulli random variable with $P(Detect) = \pi$ and $P(NoDetect) = 1 - \pi$.
+
+This is very useful knowledge, since we know a lot about how Bernoulli random variables behave. For example, software can simulate Bernoulli random very easily. The function `rbernoulli` in the `purrr` package will simulate the outcomes of `n` random draws from a Bernoulli distribution with probability of success `pi`. The function will output `TRUE` for each success and `FALSE` for each failure. For our example, `TRUE` will represent the case where the radar detected the projectile and `FALSE` will represent the case where the radar failed to detect the projectile. This allows us to simulate what might have happened in our experiment. To do this, we need to provide values for `n` and `pi`. Luckily, we know the number of observations we had in our experiment ($n = $ `r n`), and we can postulate a value for `pi` based on our hypotheses above. 
+
+Recall that our goal is to determine whether $H_0$ is plausible. If the outcome of our actual data is consistent with what the outcome might have looked like if $H_0$ was true, then we'll conclude that $H_0$ is plausible. So let's plug in a value for `pi` based on the values of $\pi$ given in $H_0$. The highest value of $\pi$ included in $H_0$ is $0.8$, so we'll go with that. (If we chose a lower value, our comparison would be less compelling, so when we take this approach, we'll always choose the value under $H_0$ that's closest to the values included under $H_a$.)
+
+We can now simulate what the outcome of our experiment might have looked like if $H_0$ was true:
+
+```{r}
+set.seed(20200401)
+simulated_trials <- purrr::rbernoulli(n, .8)
+
+mean(simulated_trials)
+
+```
+
+But this is just one possible outcome. Each trial is random, so the overall outcome is random, too. This means that we should look at many possible results from the experiment to get a more complete picture of what things might look like under $H_0$. The code below simulates 10,000 experiments and calcualtes the sample proportion for each. These sample proportions are then plotted in a histogram:
+
+
+```{r}
+
+nsim <- 10000
+simulation_results <- tibble(`Sample Statistic` = rep(0, nsim))
+
+for(i in 1:nsim){
+  simulation_results$`Sample Statistic`[i] <- mean(purrr::rbernoulli(n, .8))
+  
+}
+
+simulation_results  %>% 
+  ggplot(aes(x = `Sample Statistic`)) + geom_histogram(bins = 10)
+
+
+```
 
 
 ### Wald tests
