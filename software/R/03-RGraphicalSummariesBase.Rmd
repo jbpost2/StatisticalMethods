@@ -1,0 +1,263 @@
+#### Graphical Summaries  
+
+There are three major systems for plotting in R.  
+
+- Base R (built-in functions)  
+
+    + Use `plot`, `barplot`, `hist`, etc. to start a plot  
+    + Annotate the plot using functions like `text`, `lines`, `points`, etc.
+
+- Lattice (not covered here)  
+
+- ggplot2 (sort of part of the tidyverse - [Cheat Sheet](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=2ahUKEwjFu_ep-rroAhXnknIEHf13Bq4QFjABegQICBAB&url=https%3A%2F%2Frstudio.com%2Fwp-content%2Fuploads%2F2016%2F11%2Fggplot2-cheatsheet-2.1.pdf&usg=AOvVaw1-6jSR5VfWs7V62OYxtDtG))
+
+    + `ggplot(data = data_frame)` creates a plot instance  
+    + Add "layers" to the system (geoms or stats)  
+
+There is a great [reference book here](https://bookdown.org/rdpeng/exdata/plotting-systems.html) for plotting in R and general exploratory data analysis!
+
+We'll start by going through common `Base R` plotting for both categorical and numerical variables.  After that, we'll cover the same plots using `ggplot2`.  
+
+##### `Base R` Plotting  
+
+Let's start by graphing categorical variables (variables in which entries are a label or attribute).  Recall that the main goal of summarizing categorical variables is to look at counts for each level or combination of levels for the variables in question.  
+
+Again, we'll look at the titanic data set.  
+
+```{r,echo=FALSE}
+titanicData <- read_csv("../../datasets/titanic.csv")
+titanicData
+```
+
+
+The function to create a barplot in R is `barplot`.  Essentially, we can just input the output from the `table` function into `barplot`!
+
+```{r}
+table(titanicData$survived)
+```
+```{r, fig.align='center', out.width = "75%"}
+barplot(table(titanicData$survived))
+```
+
+To visualize a two-way table, a stacked barplot can be created.  Again, we simply pass a two-way table to the `barplot` function.
+
+```{r}
+twoTable <- table(titanicData$survived, titanicData$sex)
+```
+```{r, fig.align = "center", out.width = "75%"}
+barplot(twoTable)
+```
+
+Of course, a legend is needed.  Common arguments to `barplot` include: 
+
++ `legend = TRUE`
++ `args.legend = list(title = "...")
+
+```{r, out.width = "75%", fig.align='center'}
+barplot(twoTable, legend = TRUE, args.legend = list(title="Survived"))
+```
+
+To create a **Side-by-side barplot**, simply pass a two-way table to `barplot` with an additional input of `beside = TRUE`.
+
+```{r, out.width = "75%", fig.align='center'}
+barplot(twoTable, beside = TRUE, legend = TRUE, args.legend=list(title="Survived"))
+```
+
+The legend can be specified more clearly by providing a character vector corresponding to the values of the first variable given to the `table` function.  
+
+```{r, out.width = "75%", fig.align='center'}
+barplot(twoTable, beside = TRUE, legend = c("Died", "Survived"),
+        args.legend=list(title="Survived"))
+```
+
+To visualize a three-way table, we essentially want to recreate this plot for each setting of the third variable.  This is a little difficult in `Base R` and will be taken up in the `ggplot` section.  
+
+
+Next we'll create common plots for numerical variables (variables in which entries are a numerical value where math can be performed).  Recall that the main goal of summarizing numerical variables is to describe the shape, center, and spread of the distribution.  Generally, this is done using a histogram, boxplot, or, in the case of two numerical variables, scatterplot.  
+
+The general process for creating these plots using `Base R`:
+
+- Use `hist`, `boxpot`, `plot`, etc. to start a plot  
+
+- Annotate the plot using functions like `text`, `lines`, `points`, etc.
+
+We'll again look at the carbon dioxide (CO2) uptake data set.  
+
+```{r, echo = FALSE}
+CO2 <- tbl_df(CO2)
+CO2
+```
+
+The `hist` function creates a histogram and its main argument is a numeric vector.
+
+```{r,eval = TRUE, out.width = "75%", fig.align='center'}
+hist(CO2$uptake)
+```
+
+There are many ways to modify the histogram.  Some common things to change would be the title (`main`), the bin calculation (`breaks`), and perhaps the color of the bars (`col`).
+
+```{r,eval = TRUE, out.width = "75%", fig.align='center'}
+hist(CO2$uptake, main = "Histogram of Uptake Values", breaks = 15, col = "Red")
+```
+
+Often there is a value that you'd like to highlight by adding a line.  This can be done using the `abline` function (`lty` specifies line type, `lwd` the line width, `col` the color, etc. - see `help(par)` for more information).  `abline` will add a line to the most recently created plot.  
+
+```{r,eval = TRUE, out.width = "75%", fig.align='center'}
+hist(CO2$uptake, main = "Histogram of Uptake Values", breaks = 15, col = "Red")
+abline(v = mean(CO2$uptake), lwd = 3, lty = 2, col = "Blue")
+```
+
+A kernel plot (or smoothed histogram plot) can be created by using the `plot` function on the output created by the `density` function.  `density` will comput kernel density estimates, by default using the normal distribution for weighting.  As with `hist`, we pass `density` the numeric vector of interest.  
+
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
+density(CO2$uptake)
+plot(density(CO2$uptake), lwd = 3, col = "Blue", lty = 3)
+```
+
+To overlay a kernel smoother on top of a histogram, we first create a histogram and specify `freq = FALSE` in order to put the histogram on the same scale as a density plot.  Then, we use `lines` instead of `plot` on the output of the `density` call.  `lines` is a function similar to `abline` in that it will overlay a (more general) 'line' on the most recently created plot.  
+
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
+hist(CO2$uptake, main = "Histogram of Uptake Values", col = "Red", freq = FALSE)
+lines(density(CO2$uptake), lwd = 3, col = "Blue", lty = 3)
+```
+
+To create a boxplot, use the `boxplot` function.  We can specify a single numeric vector as the argument.  This will create a single boxplot.  To create side-by-side boxplots, the formula notation we've used before comes in handy!  If we want a boxplot of the `uptake` variable for each level of the `Treatment` variable, we pass `boxplot` `uptake ~ Treatment` and specify the data set being used (`main` again will change the title).
+
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
+boxplot(uptake ~ Treatment, data = CO2, main = "Boxplot of Uptake by Treatment")
+```
+
+It is easy to change the orientation using the `horizontal` argument.
+
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
+boxplot(uptake ~ Treatment, data = CO2, 
+        main = "Boxplot of Uptake by Treatment", horizontal = TRUE)
+```
+
+Most of the graphical parameters used previously can be changed here too because `boxplot` has the ellipsis argument `...`.  
+
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
+boxplot(uptake ~ Treatment, data = CO2, 
+        main = "Boxplot of Uptake by Treatment", col = "Grey", lty = 2, lwd = 2)
+```
+
+The ellipsis argument exists in many functions including `hist`, `boxplot`, `abline`, `lines`, and `plot`  This argument means additional arguments not named in the inputs of the function being called can be passed.  These arguments may be used by function calls within one of these functions!  You can see the code used in each function by running the function with no `()` after it.
+
+```{r}
+read_csv
+```
+
+Some functions are 'generic' such as `mean` and `plot`.  You need to know which mean or plot method you are trying to get the code.  `plot.default` is the default!
+
+```{r}
+plot.default
+```
+
+Here you can see that some of the functions called by `plot.default` also have the `...` argument being used.  This is why the arguments like `lty` and `col` can be used even though they aren't always named in the function inputs explicity.  When working with `Base R` graphics, getting to know the graphical parameters (see `help(par)`) is important!  
+
+The `plot` function itself is very flexible. General use:
+
+- Call `plot`  
+- Give coordinates for points to be plotted as `x` and `y` (usually)    
+- Change plot type with `type`    
+- Change graphical parameters such as line type `lty`, point type `pch`, color `color`, etc.  
+- Add a legend with `legend`
+
+To create a basic scatterplot, just specify two numeric vectors of the same length.  
+
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
+plot(x = CO2$conc, y = CO2$uptake) 
+```
+
+By default the `plot` type is 'p' for points but many types of plots can be made by changing the `type` argument.  The labels on the axis can be changed using `xlab` and `ylab`, the title with `main`, the plotting character `pch`, etc.  
+
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
+plot(x = CO2$conc, y = CO2$uptake, xlab = "Concentration", ylab = "Uptake",
+     main = "Scatter Plot of Concentration and Uptake", pch = 2,
+     ylim = c(0, max(CO2$uptake)))
+```
+
+To change the plotting symbol (or color, etc.) based on another variable, create appropriate vectors that match the length of the data.  For instance, we can create a `symbol` column on our data frame that is `3` if the `Treatment` is 'chilled' and `2` if not.  This symbol column is of course the same length as the data. If we pass the `pch` argument `symbol`, `plot` will assign the plotting character `3` to chilled observations and `2` if not.    
+
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
+CO2$symbol <- ifelse(CO2$Treatment == "chilled", 3, 2)
+select(CO2, uptake, Treatment, symbol)
+plot(x = CO2$conc, y = CO2$uptake, pch = CO2$symbol)
+```
+
+To instruct the reader of the plot, a legend should be added.  A manual legend can be created with `legend`.  You can use keywords to specify its location or give an `x`-`y` pair.  As with the legend for `barplot`, we can specify the names that display.  To match the plot, we should specify the `pch` corresponding to the levels in the same manner (this would be the same if we changed the color too!). 
+
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
+plot(x = CO2$conc, y = CO2$uptake, pch = CO2$symbol)
+legend(x = 810, y = 18, legend = c("Chilled", "Non-Chilled"), pch = c(3, 2))
+#Note that colors specified as integers come from the `palette` function 
+#2 is 'red' and 3 is 'green3'
+plot(x = CO2$conc, y = CO2$uptake, col = CO2$symbol)
+legend(x = 810, y = 18, legend = c("Chilled", "Non-Chilled"), col = c(3, 2))
+```
+
+Plots can be adorned using `abline`, `lines`, and `text` to name a few.  For instance, a trend line can be added with `abline`.  We'll use `lm` and our formula notation to fit a simple linear regression model (covered later) and `abline` knows how to plot an object of class `lm`.  
+
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
+plot(x = CO2$conc, y = CO2$uptake, xlab = "Concentration", ylab = "Uptake",
+     main = "Scatter Plot of Concentration and Uptake", ylim = c(0, max(CO2$uptake)))
+abline(lm(uptake ~ conc, data = CO2), lwd = 2, col = "Blue")
+```
+
+When adding text, the `text` function can be used.  `paste` or `paste0` can come in handy.  These functions 'paste' together strings.  `paste` allows the user to specify the character that separates the pasted together strings and `paste0` is a special case where there is no separating character.
+
+```{r}
+paste("Hi", "What", "Is", "Going", "On", "?", sep = " ")
+paste("Hi", "What", "Is", "Going", "On", "?", sep = ".")
+paste0("Hi", "What", "Is", "Going", "On", "?")
+```
+
+We can add the correlation value to the plot using `text` and assigning the `x`-`y` coordinate for the value.  Here we round the value to two decimal places using `round`. 
+
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
+correlation <- cor(CO2$conc, CO2$uptake)
+plot(x = CO2$conc, y = CO2$uptake, xlab = "Concentration", ylab = "Uptake",
+     main = "Scatter Plot of Concentration and Uptake", ylim = c(0, max(CO2$uptake)))
+abline(lm(uptake ~ conc, data = CO2), lwd = 2, col = "Blue")
+text(x = 750, y = 10, cex = 2, 
+     label = paste0("Correlation = ", round(correlation, 2)))
+```
+
+To plot character strings instead of points, `text` can be used after creating an 'empty' `plot` call.  `plot` should be called and the plotting window set, but the values to plot should be `NULL` (a special object in R used for things that are undefined).  Next, call the text function using the usual `x`-`y` coordinates along with a `label` vector the same length as the data.  For example, we could plot the `Plant` for each data point instead of a symbol.
+
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
+plot(NULL, xlim = c(min(CO2$conc), max(CO2$conc)), ylim = c(min(CO2$uptake), max(CO2$uptake)), 
+     main = "Scatter Plot of Concentration and Uptake", xlab = "Conc", ylab = "Uptake")
+text(x = CO2$conc, y = CO2$uptake, label = CO2$Plant)
+```
+
+Note that you could specify a single character value for `label` and the plot would still work.  This is because R 'recycles' the value.  This is a powerful but dangerous aspect of R.  
+
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
+plot(NULL, xlim = c(min(CO2$conc), max(CO2$conc)), ylim = c(min(CO2$uptake), max(CO2$uptake)), 
+     main = "Scatter Plot of Concentration and Uptake", xlab = "Conc", ylab = "Uptake")
+text(x = CO2$conc, y = CO2$uptake, label = "S")
+```
+
+The last `Base R` plot functionality we'll mention is the `pairs` function.  This function creates basic plots for all pairs of variables when given a data frame.  
+
+```{r, echo = TRUE, out.width = "75%", fig.align='center', message = FALSE, warning = FALSE}
+pairs(CO2)
+pairs(iris)
+```
+
+To recap `Base R` plotting:
+
+- Barplot (`barplot` on a `table` object)
+
+- Histogram (`hist`), Density (`plot(density)` or `lines(density)`)  
+
+- Boxplot (`boxplot`)
+
+- Scatter plot (`plot`)  
+
+- Useful functions: `lines`, `abline`, `points`, `text`
+
+- Graphical parameters: `lty`, `lwd`, `pch`, `cex`, `color`
+
+`Base R` creates superb plots.  The main issue is that much of the plotting customizations have to be manually created.  It is also a bit more work to create the same plot for each level of another variable.  `ggplot` will automate these processes.

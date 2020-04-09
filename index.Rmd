@@ -32,7 +32,7 @@ At this point, software is a requirement for statistics in practice.  There are 
 
 - R is an open source, platform agnostic, software that is widely used by statisticians.  We'll use the RStudio interactive development environment to write and execute our R code.  
 
-- SAS requires a license but is an extremely powerful software for doing modeling and is used widely enough to merit inclusion here.  For those without a license, SAS University Edition can be installed for free and is also platform agnostic.  We'll use the SAS Studio environment that comes with University Edition.
+- SAS is an extremely powerful and widely used software for modelling and analysis.  It requires a license, but for those without one, SAS University Edition can be installed for free and is also platform agnostic.  We'll use the SAS Studio environment that comes with University Edition.
 
 As we progress through the book we'll include graphs, descriptive statistics, and analyses from R and/or SAS.  At the end of each chapter a section explaining how to create these in both R and SAS is included.  The following sections give a brief introduction to each software that should prepare you for what's ahead!  
 
@@ -52,7 +52,7 @@ Many of these and other GPPs can be taken care of by programming in a notebook e
 
 ## R  
 
-The general workflow for programming in R involves taking raw data and importing it into R.  Once that data is imported we often create numerical and graphical summaries of the data.  The appropriate model or statistical method is then applied.
+The general workflow for programming in R involves taking raw data and importing it into R.  Once that data is imported we often create numerical and graphical summaries of the data.  An appropriate model and statistical methods are then applied.
 
 ```{r, echo = FALSE, fig.align='center', out.width = "80%"}
 knitr::include_graphics("img/RWorkFlow.png")
@@ -67,7 +67,7 @@ At the end of this section the reader should be able to do the following:
 
 As the book progresses the steps of summarizing and analyzing the data will be covered.  Let's get started!
 
-```{r, child=c('RBasics.Rmd', 'RReadingData.Rmd', 'RManipulatingData.Rmd')}
+```{r, child=c('software/R/01-RBasics.Rmd', 'software/R/01-RReadingData.Rmd', 'software/R/01-RManipulatingData.Rmd')}
 ```
 
 ## SAS
@@ -83,6 +83,6 @@ At the end of this section the reader should be able to do the following:
 
 As the book progresses the steps of summarizing and analyzing the data will be covered.  Let's get started!
 
-```{r, child=c('SASBasics.Rmd', 'SASReadingData.Rmd', 'SASManipulatingData.Rmd')}
+```{r, child=c('software/SAS/01-SASBasics.Rmd', 'software/SAS/01-SASReadingData.Rmd', 'software/SAS/01-SASManipulatingData.Rmd')}
 ```
 

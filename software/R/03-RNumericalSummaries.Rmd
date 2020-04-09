@@ -10,7 +10,7 @@ The main goal is to describe the distribution or pattern and frequency with whic
 We'll recreate the summaries of the titanic dataset (available in the file `titanic.csv` in the datasets folder).  
 
 ```{r,echo=TRUE}
-titanicData <- read_csv("datasets/titanic.csv")
+titanicData <- read_csv("../../datasets/titanic.csv")
 titanicData
 ```
 
@@ -115,6 +115,17 @@ R has some nice functions that return multiple summaries.  For instance, the `su
 summary(CO2$uptake)
 ```
 
+The `psych` package has a very nice function called `describe` that provides many summaries about your numerical variables in the dataset as well.  Remember you need to install a package if you've never used it and then read it in to your current R session using the `library` or `require` function.  
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+library(psych)
+```
+
+```{r}
+describe(titanicData)
+describe(CO2)
+```
+
 Recall, if you had multiple numerical variables we often want to measure the linear relationship.  This is done via covariance and correlation.  If you pass the `var` or `cov` function a data frame with multiple numeric columns, you'll obtain the variance-covariance matrix.  The diagonals represent the variance and the off-diagonals the covariances.  The `cor` function similarly gives the correlation matrix.
 
 ```{r}
@@ -141,20 +152,20 @@ CO2 %>% group_by(Treatment, conc) %>%
 		summarise(avg = mean(uptake), med = median(uptake), var = var(uptake))
 ```
 
-An alternative to using `dplyr` is to use the built-in `aggregate` function.  This function is more flexible and can be used with functions that return more than one value, like `summary`.  Basic use gives a response (`x`) and a `list` of variables to group `by`.
+An alternative to using `dplyr` is to use the built-in `aggregate` function.  This function is more flexible and can be used with functions that return more than one value like `summary`.  Basic use gives a response (`x`) and a `list` of variables to group `by`.
 
 ```{r}
 aggregate(x = CO2$uptake, by = list(CO2$Treatment), FUN = summary)
 ```
 
-Alternatively, `formula` notation can be used.  We can supply `uptake ~ Treatment` and the data object.  The idea of formula notation is essentially a shorthand for modeling the left-hand side (uptake here) by the right-hand side (Treatment here).
+Alternatively, `formula` notation can be used.  We can supply `uptake ~ Treatment` and the data object.  The idea of formula notation is essentially a shorthand for modeling the left-hand side (uptake here) by the right-hand side (Treatment here).  In this case, this implies finding `uptake` values returned by `FUN` for the different levels of `Treatment`. 
 
 ```{r}
 aggregate(uptake ~ Treatment, data = CO2, FUN = summary)
 ```
 
-A second variable can be given on the right hand side:  
+A second variable can be given on the right hand side.  The summaries will then be found for every combination of the values of the variables on the right hand side.  Since `conc` is only observed at a few levels, this is reasonable here.  
 
-```{r, eval = FALSE}
+```{r}
 aggregate(uptake ~ Treatment + conc, data = CO2, FUN = summary)
 ```

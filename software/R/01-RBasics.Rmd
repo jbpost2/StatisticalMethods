@@ -28,7 +28,7 @@ There are four main 'areas' of the RStudio IDE:
 You may wish to rearrange the panes.  This can be done via the menus at the top.  Choose "Tools --> Global Options".
 
 ```{r, out.width = "80%",echo=FALSE}
-knitr::include_graphics("img/panes.png")
+knitr::include_graphics("../../img/panes.png")
 ```
 
 Other useful global options to change are under the appearance tab (font size, theme) and under the code tab (editing --> soft-wrap, display --> show whitespace).  
@@ -42,8 +42,11 @@ To evaluate code you can type directly into the **console**.
 #simple math operations
 # <-- is a comment - code not evaluated
 3 + 7
-10 * exp(3) #exp is exponential function
-log(pi^2) #log is natural log by default
+#exp is exponential function
+10 * exp(3)
+#log is the natural logarithm (base exp(1)) by default
+#pi is the built-in constant
+log(pi^2) 
 mean(cars$speed)
 hist(cars$speed)
 ```
@@ -59,7 +62,7 @@ From an R script you can send code to console via:
 
 - "Run" button (runs current line)  
 
-- CTRL+Enter (PC) or Command+Enter (MAC)  
+- CTRL+Enter (PC and Linux) or Command+Enter (MAC)  
 
 - Highlight section and do above
 
@@ -85,7 +88,7 @@ For every R function there are a few sections:
  
 - Usage - How to call the function, inputs required, and which inputs have default arguments.   
 
-     + Here we see `hist(x, ...)`.  This implies there is only one required input, `x`, and there is no default.  
+     + Here we see `hist(x, ...)`.  This implies there is only one required input, `x`, and there is no default.  The ellipsis `(...)` is an important tool that gives a function (say A) that calls another function (say B) the flexibility to supply arguments specific to function B when calling function A.  We'll learn more about this in later chapters.  
      + Below you see a more detailed call to `hist` that includes other inputs.  Each of these inputs has an equal sign with a value after it. This is the default value for that input (since there is a default value you don't have to specify it when you call).  For instance, the `breaks = "Sturges"` input implies that the "Sturges" method is the default for determining how the bins of the histogram are created.
      
 - Arguments - Describes the input requirements in more detail.  
@@ -190,10 +193,10 @@ class(cars)
 typeof(cars)
 ```
  
-We'll use these functions later to help us know how to extra information from an R object.
+We'll use these functions later to help us know how to extract information from an R object.
 
 
-Recall that we can create an R object via `<-` (recommended) or `=`.  This allocates computer memory to object.  The object's attributes depend on how you created it.  
+Recall that we can create an R object via `<-` (recommended) or `=`.  This allocates computer memory to the object.  The object's attributes depend on how you created it.  
 
 ```{r , echo = TRUE}
 vec <- c(1, 4, 10)
@@ -217,10 +220,10 @@ To understand how to use R for data analysis we need to understand commonly used
 
 #### Atomic Vector
 
-Let's start with the most basic object and work our way up. An atomic vector is a 1D group of elements with an ordering.  
+Let's start with the most basic object and work our way up. An atomic vector is a 1D group of elements with an ordering.  Two examples of atomic vectors are given below:
 
 ```{r , echo = FALSE, fig.align='center', out.width = '80%'}
-knitr::include_graphics("img/vectorVisualF.png")
+knitr::include_graphics("../../img/vectorVisualF.png")
 ```
 
 All of the elements must be same 'type'.  Types include numeric (integer or double), character, or logical.  We create an atomic vector with the `c()` function ('combine').
@@ -233,10 +236,10 @@ x
 y
 ```
 
-In addition, many 'functions' output a numeric vector.  Functions are at the heart of R so it is vital to understand them.  The concept of a function is that there the function takes an input or inputs and maps those inputs to some output(s).
+In addition, many 'functions' output a numeric vector.  Functions are at the heart of R so it is vital to understand them.  The concept of a function is that the function takes an input or inputs and maps those inputs to some output(s).
 
 ```{r , echo = FALSE, out.width = "80%", fig.align= 'center'}
-knitr::include_graphics("img/funVisual1F.png")
+knitr::include_graphics("../../img/funVisual1F.png")
 ```
 
 
@@ -247,7 +250,7 @@ As an example, one function that outputs a numeric vector is the `seq` or sequen
     + Output = a sequence of numbers
 
 ```{r , echo = FALSE, out.width = "80%", fig.align= 'center'}
-knitr::include_graphics("img/funVisual2F.png")
+knitr::include_graphics("../../img/funVisual2F.png")
 ```
 
 ```{r }
@@ -262,6 +265,14 @@ str(v)
 
 - `[1:5]` implies one dimensional with elements 1, 2, 3, 4, 5
 
+If the order of the function arguments is known, they do not need to be named when invoking the function as R uses positional matching to determine the inputs.  Also, if you name some arguments but not others, R will use positional matching for the remaining inputs.  For example, the calls below are all equivalent:
+
+```{r, eval = FALSE}
+seq(from = 1, to = 5, 1)
+seq(1, 5, 1)
+seq(to = 5, 1, 1)
+seq(by = 1, 1, 5)
+```
 
 The `seq` function is used quite a bit.  There is a shorthand way to create an integer sequence using `:`.  
 
@@ -278,10 +289,10 @@ It is also important to know how R does math on its objects.  R does elementwise
 ```
 
 
-As we mentioned earlier, understanding help files is really useful to being about to program in R.  As functions are ubiquitous in R we often need to learn about their inputs (or arguments) and we can do so using `help`.    
+As we mentioned earlier, understanding help files is really critical to being able to program in R.  As functions are ubiquitous in R we often need to learn about their inputs (or arguments) and we can do so using `help`.    
 
 
-To recap, our first commonly used R object for storing data is an atomic vectore.  This is a 1D group of elements with an ordering where all of the elements are of the same type.  Generally vectors are useful to know about but not usually useful for a storing a dataset exactly.  They can often be considered as the 'building blocks' for other data types.
+To recap, our first commonly used R object for storing data is an atomic vector.  This is a 1D group of elements with an ordering where all of the elements are of the same type.  Generally vectors are useful to know about but not usually useful for a storing a dataset exactly.  They can often be considered as the 'building blocks' for other data types.
 
 
 #### Matrix   
@@ -289,7 +300,7 @@ To recap, our first commonly used R object for storing data is an atomic vectore
 A Matrix is a 2D data structure in R whose elements are all of the same type.  The first dimension refers to the rows and the second dimension refers to the columns.  A 2D data object is very common.  The rows often represent the *observations* and the columns represent the *variables*.   Although not technically right, it is useful to think of the columns of a matrix as vectors of the same **type and length**.  
   
 ```{r , echo = FALSE, out.width = "75%", fig.align= 'center'}
-knitr::include_graphics("img/matrixVisualF.png")
+knitr::include_graphics("../../img/matrixVisualF.png")
 ```
 
 For instance, consider the three vectors created here:  
@@ -342,7 +353,7 @@ matrix(c(x, y, z), nrow = 3)
 To recap, a Matrix is a 2D data structure where we can think of the columns as vectors of the same **type and length**. These are useful for some datasets but most datasets have some numeric and some character variables.
 
 ```{r , out.width = "80%",echo=FALSE, fig.align='center'}
-knitr::include_graphics("img/dataset.png")
+knitr::include_graphics("../../img/dataset.png")
 ```
 
 Another 2D object called a data frame is perfect for this type of data!
@@ -353,7 +364,7 @@ Another 2D object called a data frame is perfect for this type of data!
 A Data Frame is a 2D data structure where elements within a column must be of the same type but the columns themselves can differ in type.  When thinking of a data frame, consider them as a collection (list) of vectors of the same **length**.    
 
 ```{r , echo = FALSE, out.width = "80%", fig.align= 'center'}
-knitr::include_graphics("img/dfVisualF.png")
+knitr::include_graphics("../../img/dfVisualF.png")
 ```
 
 A data frame can be created with the `data.frame` function.
@@ -381,7 +392,7 @@ To recap, consider a data frame as a collection (list) of vectors of the same **
 A List is a 1D group of objects with ordering.  Really it is a vector that can have differing elements.  Think of this in a similar way to the atomic vector previously discussed except the elements are really flexible.  
 
 ```{r , echo = FALSE, out.width = "80%", fig.align= 'center'}
-knitr::include_graphics("img/listVisualF.png")
+knitr::include_graphics("../../img/listVisualF.png")
 ```
 
 A list can be created with the `list` function.  You specify the elements you want to include, separated by commas.  
@@ -405,7 +416,7 @@ Dimension | Homogeneous   | Heterogeneous
 1d        | Atomic Vector | List
 2d        | Matrix        | Data Frame
 
-Next we look at how to access or change parts of our these common data objects.  
+Next we look at how to access or change parts of these common data objects.  
 
 
 
@@ -474,7 +485,7 @@ Also, if you only give a single value in the `[]` then R uses the count of the v
 mat[5]
 ```
 
-If your matrix has column names associated with it, you can also use those to return columns of interest.  To add column names we can look run `help(matrix)` to learn how!  Notice the `dimnames` argument.  You can specify names for the rows and columns by using a list with two vectors.  The first vector indicating row names and the second column names.  If we don't want to give rownames we can give a NULL (a special value in R that is used for undefined values - here giving no specification of row names).  We can do this and give a character vector for the column names.
+If your matrix has column names associated with it, you can also use those to return columns of interest.  To add column names we can look run `help(matrix)` to learn how!  Notice the `dimnames` argument.  You can specify names for the rows and columns by using a list with two vectors.  The first vector indicating row names and the second column names.  If we don't want to give row names we can give a NULL (a special value in R that is used for undefined values - here giving no specification of row names).  We can do this and give a character vector for the column names.
 
 ```{r}
 mat<-matrix(c(1:4, 20:17), ncol = 2,
@@ -526,7 +537,7 @@ You can use columns names to subset as well.
 iris[1:10 , c("Sepal.Length", "Species")]
 ```
 
-The most common way to access a single columns is to use the dollar sign operator.
+The most common way to access a single column is to use the dollar sign operator.
 
 ```{r }
 iris$Sepal.Length
@@ -584,7 +595,7 @@ This means we can index a data frame in a similar way to how we index a list if 
 iris[[2]]
 ```
 
-Lastly, one nice thing about lists (and data frames) is that you can use partial matching with `[[` and `$`.  
+Lastly, one nice thing about lists (and data frames) is that you can use partial matching with `[[` and `$`.  That is, you don't need to specify the full column name as long as you've specified enough characters as to be clear which column you are referring to.
 
 ```{r}
 iris$Sp[1:10]

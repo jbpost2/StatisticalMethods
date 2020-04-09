@@ -1,72 +1,5 @@
-
-
- Where are we at?  
-
-- Understand types of data and their distributions  
-
-- Numerical summaries (across subgroups)  
-
-    + Contingency Tables  
-    + Mean/Median  
-    + Standard Deviation/Variance/IQR
-    + Quantiles/Percentiles
-
-- Graphical summaries (across subgroups)  
-
-    + Bar plots (categorical data)   
-    + Histograms  
-    + Box plots  
-    + Scatter plots
-    
-    
- Understanding Data
-
-- How to summarize data?  
-
-- Depends on data type:  
-
-    + Categorical (Qualitative) - variable whose entries are a label or attribute   
-    + Numerical (Quantitative) - variable whose entries are a numerical value where math can be performed
-
-```{r, echo = FALSE, out.width="500px", fig.align='center'}
-knitr::include_graphics("img/variableTypes.png")
-```
-
-
-
- Plotting  
-
-Three major systems for plotting:
-
-- Base R (built-in functions)  
-
-    + Use `plot`, `barplot`, `hist`, etc. to start a plot  
-    + Annotate the plot using functions like `text`, `lines`, `points`, etc.
-
-- Lattice (not covered)  
-
-- ggplot2 (sort of part of the tidyverse - [Cheat Sheet](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=2ahUKEwjFu_ep-rroAhXnknIEHf13Bq4QFjABegQICBAB&url=https%3A%2F%2Frstudio.com%2Fwp-content%2Fuploads%2F2016%2F11%2Fggplot2-cheatsheet-2.1.pdf&usg=AOvVaw1-6jSR5VfWs7V62OYxtDtG))  
-
-    + `ggplot(data = data_frame)` creates a plot instance  
-    + Add "layers" to the system (geoms or stats)  
-
-Great [reference book here!](https://bookdown.org/rdpeng/exdata/plotting-systems.html)
-
-
-
- `ggplot2` Plotting
-
-ggplot2 basics ([Cheat Sheet](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=2ahUKEwjFu_ep-rroAhXnknIEHf13Bq4QFjABegQICBAB&url=https%3A%2F%2Frstudio.com%2Fwp-content%2Fuploads%2F2016%2F11%2Fggplot2-cheatsheet-2.1.pdf&usg=AOvVaw1-6jSR5VfWs7V62OYxtDtG))
-
-- `ggplot(data = data_frame)` creates a plot instance  
-- Add "layers" to the system (geoms or stats)  
-    + Creates a visualization of the data  
-    
-    
-
- `ggplot2` Plotting
-
-ggplot2 basics ([Cheat Sheet](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=2ahUKEwjFu_ep-rroAhXnknIEHf13Bq4QFjABegQICBAB&url=https%3A%2F%2Frstudio.com%2Fwp-content%2Fuploads%2F2016%2F11%2Fggplot2-cheatsheet-2.1.pdf&usg=AOvVaw1-6jSR5VfWs7V62OYxtDtG))
+##### `ggplot` Plotting  
+Now that we've covered `Base R` plotting, we'll look at plotting through `ggplot2` (sort of part of the tidyverse - [Cheat Sheet](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=2ahUKEwjFu_ep-rroAhXnknIEHf13Bq4QFjABegQICBAB&url=https%3A%2F%2Frstudio.com%2Fwp-content%2Fuploads%2F2016%2F11%2Fggplot2-cheatsheet-2.1.pdf&usg=AOvVaw1-6jSR5VfWs7V62OYxtDtG)).  The main idea is outlined below:
 
 - `ggplot(data = data_frame)` creates a plot instance  
 - Add "layers" to the system (geoms or stats)  
@@ -76,21 +9,9 @@ ggplot2 basics ([Cheat Sheet](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&so
 - Coordinate system (mostly use Cartesian plane)  
 - Optional: Titles, etc.
 
+We'll go through creation of the same plots in the `Base R` section.  
 
- `ggplot2` Plotting: Categorical variables  
-
-Categorical variable - entries are a label or attribute   
-
-Goal: describe relative frequency (or count) in each category
-
-- Generally, use a barplot!
-
-
- `ggplot2` Plotting: Categorical variables  
-
-Categorical variable - entries are a label or attribute   
-
-- Barplots via `ggplot + geom_bar`  
+To create a barplot we can use `ggplot + geom_bar`.    
 
 - Ex: Data on titanic passengers in `titanic.csv`
 

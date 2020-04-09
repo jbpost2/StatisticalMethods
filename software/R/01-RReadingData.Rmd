@@ -20,13 +20,13 @@ We'll start by focusing on delimited data.
 - Delimiter - Character (such as a`,`) that separates data entries
 
 ```{r, echo = FALSE, fig.align='center', out.width="80%"}
-knitr::include_graphics("img/delimitedData.png")
+knitr::include_graphics("../../img/delimitedData.png")
 ``` 
 
 To read in data we'll need functions to do so.  When you open R a few `packages` are loaded.  
 
 ```{r , fig.align = 'center', out.width = "20%", echo = FALSE}
-knitr::include_graphics("img/loadR.png")
+knitr::include_graphics("../../img/loadR.png")
 ```
 
 R Packages:  
@@ -58,7 +58,7 @@ R locates the file by the path you give it.  You can give *full path name*.  For
 * ex: C:\\\\Users\\\\jbpost2\\\\repos\\\\StatisticalMethods\\\\datasets\\\\neuralgia.csv  
 
 ```{r , fig.align = 'center', out.width = "80%", echo = FALSE}
-knitr::include_graphics("img/pathVis.png")
+knitr::include_graphics("../../img/pathVis.png")
 ```
 
 Notice that a double `\` is needed because `\` is an escape character in R so `\\` is really read as `\`.  
@@ -80,7 +80,7 @@ head(neuralgiaData)
 ```
 
 
-Pretty simply if the data is nicely formatted!  Using a full local path not recommended though!  Doing so makes it difficult to share code without having to go in and change the paths.  Instead, you can change the *working directory* R is using.  That is, the folder by default R is 'looking' for files.  Then we can supply a **relative** path.  As long as other users have the same folder structure as you (say if you are using a github repo), no changes need to be made for them to run the code!
+Pretty simple if the data is nicely formatted!  Using a full local path is not recommended though!  Doing so makes it difficult to share code without having to go in and change the paths.  Instead, you can change the *working directory* R is using.  That is, the folder by default R is 'looking' for files.  Then we can supply a **relative** path.  As long as other users have the same folder structure as you (say if you are using a github repo), no changes need to be made for them to run the code!
 
 We can determine the working directory using `getwd`.  
 
@@ -99,7 +99,7 @@ setwd("C:\\Users\\jbpost2\\repos\\StatisticalMethods\\datasets")
 The working directory can also be changed via the menus in RStudio.  
 
 ```{r , out.width = "80%",echo=FALSE, fig.align='center'}
-knitr::include_graphics("img/setwd.png")
+knitr::include_graphics("../../img/setwd.png")
 ```
 
 Another way to supply a path is via a URL.  This is really handy if you have a place to host your datasets!
@@ -126,12 +126,12 @@ Often we have many files associated with an analysis.  When working on multiple 
     + environments  
     + histories  
     + working directories  
-    + source documents  
+    + source documents.  
 
 The "Project" feature in R Studio allows us to easily do this!  To create you can use the drop down menus.  
 
 ```{r , out.width = "80%",echo=FALSE, fig.align = 'center'}
-knitr::include_graphics("img/project.png")
+knitr::include_graphics("../../img/project.png")
 ```
 
 Now you can easily switch between analyses by using "File --> Open Project" or by using the little drop down menu in the top right of RStudio.  
@@ -188,10 +188,10 @@ install.packages(c("readr", "readxl", "haven", "DBI", "httr"))
 - Using menus:
 
 ```{r , out.width = "70%",echo=FALSE, fig.align='center'}
-knitr::include_graphics("img/packages.png")
+knitr::include_graphics("../../img/packages.png")
 ```
 
-Note that you can also install packages from local sources (such as a downloaded .zip or .tar) but that isn't usually required unless you are behind a firewall or R updates and the packages haven't bene updated for that version of R.  
+Note that you can also install packages from local sources (such as a downloaded .zip or .tar) but that isn't usually required unless you are behind a firewall or R updates and the packages haven't been updated for that version of R.  
     
 The good thing is that you only need to install the packages once!  However, this doesn't mean you have direct access to your package functions or datasets in your R session.  **Each R session** you open you need to read in the package using `library()` or `require()`.
 
@@ -305,7 +305,7 @@ Some useful inputs you may want to change when reading in data are
 These allow you to skip lines of data, specify column names, and define what represents a missing value in the raw data (`NA` is the missing data indicator in R).
 
 
-Generally, reading *clean* delimited data pretty easy with the `read_` family of functions!  Let's go through a few examples.  
+Generally, reading *clean* delimited data is pretty easy with the `read_` family of functions!  Let's go through a few examples.  
 
 First, let's read in the space delimited file '[chemical.txt](https://www4.stat.ncsu.edu/~online/datasets/chemical.txt)'.  Since this is space delimited we'll use `read_table`.  
 
@@ -352,30 +352,30 @@ SAS (.sas7bdat)    | `haven`   | `read_sas()`
 SPSS (.sav)        | `haven`   | `read_spss()`
 
 
-Let's read in the [censusEd.xlsx](https://www4.stat.ncsu.edu/~online/datasets/censusEd.xlsx) file.This can be done with the `read_excel()` from `readxl` package!  This funcion reads in both xls and xlsx files.  It detects the format from the file extension given in the path name.  One issue is that excel files can be read from the web so they do need to be downloaded locally.  
+Let's read in the [censusEd.xlsx](https://www4.stat.ncsu.edu/~online/datasets/censusEd.xlsx) file.This can be done with the `read_excel()` from `readxl` package!  This funcion reads in both xls and xlsx files.  It detects the format from the file extension given in the path name.  One issue is that excel files cannot be read from the web so they do need to be downloaded locally.  
 
 ```{r}
 #install package if necessary
 library(readxl)
 #reads first sheet by default
-edData <- read_excel("datasets/censusEd.xlsx")
+edData <- read_excel("../../datasets/censusEd.xlsx")
 edData
 ```
 
 If you want to read in a sheet other than the first sheet, you can do so with the `sheet =` argument.  To look at the available sheets without opening in Excel you can use the `excel_sheets` function.  
 
 ```{r}
-excel_sheets("datasets/censusEd.xlsx")
+excel_sheets("../../datasets/censusEd.xlsx")
 ```
 
 ```{r, eval = FALSE}
-read_excel("datasets/censusEd.xlsx", sheet = "EDU01D")
+read_excel("../../datasets/censusEd.xlsx", sheet = "EDU01D")
 ```
 
 There are also ways to specify which cells to read in with the `range =` argument.  You can select cells that are contiguous only (next to each other).
     
 ```{r}
-edData <- read_excel("datasets/censusEd.xlsx", sheet = "EDU01A", 
+edData <- read_excel("../../datasets/censusEd.xlsx", sheet = "EDU01A", 
                    range = cell_cols("A:D"))
 edData
 ```
@@ -475,7 +475,7 @@ XML stands for eXtensible Markup Language.  This is another data format that is 
 The structure of the nodes has parent nodes, child nodes, etc.  A basic diagram is given below.   
 
 ```{r, fig.align = 'center', echo = FALSE, out.width = "80%", fig.cap="Source: mysamplecode.com"}
-knitr::include_graphics("img/xmlDiagram.jpg")
+knitr::include_graphics("../../img/xmlDiagram.jpg")
 ```
 
 There are two major R packages for reading in XML data:
@@ -503,7 +503,7 @@ A database is a collection of data, usually a bunch of 2D tables that have keys 
 An example of a relational database structure is given below.  Notice there are keys that link different tables.  
 
 ```{r, out.width = "80%", echo = FALSE, fig.align='center', fig.cap= "Source: oreilly.com"}
-knitr::include_graphics("img/lahman.jpg")
+knitr::include_graphics("../../img/lahman.jpg")
 ```
 
 There are many popular RDBMS.  Some are free and some are proprietary.  These are often simply referred to as databases.  
@@ -560,7 +560,7 @@ There are many open APIs.  They usually just require you to register and obtain 
 As a quick example we will query the Harry Potter database at [https://www.potterapi.com/](https://www.potterapi.com/).  There is a button on the top right where you can register and obtain a key.
 
 ```{r, fig.align = 'center', echo = FALSE, out.width="80%"}
-knitr::include_graphics("img/HPAPI.png")
+knitr::include_graphics("../../img/HPAPI.png")
 ```
 
 The documentation for returning Harry Potter spells states: 
