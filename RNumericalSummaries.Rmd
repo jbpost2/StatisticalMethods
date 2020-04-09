@@ -1,484 +1,160 @@
 #### Numerical Summaries  
 
- Where do we start?  
+To create numerical summaries in R, you first need to determine the type of data you have.  Remember there are two major categories:
 
-- Understand types of data and their distributions  
++ Categorical (Qualitative) variable - entries are a label or attribute   
++ Numerical (Quantitative) variable - entries are a numerical value where math can be performed
 
-- Numerical summaries (across subgroups)  
+The main goal is to describe the distribution or pattern and frequency with which you observe the variable.  For categorical variables, we used contingency tables to describe the count in each category.  In R, this is done using the `table` function.  
 
-```{r, echo = FALSE,  out.width = "260px", fig.align='center'}
-knitr::include_graphics("../img/summarizeAllF.png")
-```
+We'll recreate the summaries of the titanic dataset (available in the file `titanic.csv` in the datasets folder).  
 
-
- Where do we start?  
-
-- Understand types of data and their distributions  
-
-- Numerical summaries (across subgroups)  
-
-```{r, echo = FALSE,  out.width = "295px", fig.align='center'}
-knitr::include_graphics("../img/summarizeGroupsF.png")
-```
-
-
-
- Where do we start?  
-
-- Understand types of data and their distributions  
-
-- Numerical summaries (across subgroups)  
-
-    + Contingency Tables  
-    + Mean/Median  
-    + Standard Deviation/Variance/IQR
-    + Quantiles/Percentiles
-    
-
- Where do we start?  
-
-- Understand types of data and their distributions  
-
-- Numerical summaries (across subgroups)  
-
-    + Contingency Tables  
-    + Mean/Median  
-    + Standard Deviation/Variance/IQR
-    + Quantiles/Percentiles
-
-- Graphical summaries (across subgroups)  
-
-    + Bar plots  
-    + Histograms  
-    + Box plots  
-    + Scatter plots
-
-    
-
- Understanding Data
-
-- How to summarize data?  
-
-- Depends on data type:  
-
-    + Categorical (Qualitative) variable - entries are a label or attribute   
-    + Numerical (Quantitative) variable - entries are a numerical value where math can be performed
-
-
-```{r, echo = FALSE, out.width="500px", fig.align='center'}
-knitr::include_graphics("../img/variableTypes.png")
-```
-
-
-
-
- Understanding Data
-
-Common goal: Describe the **distribution** of the variable  
-
-- Distribution = pattern and frequency with which you observe a variable  
-
-> - Categorical variable - describe relative frequency (or count) in each category
-
-> - Numerical variable - describe the shape, center, and spread
-
-
-
- Numerical summaries: Categorical variables  
-
-Categorical variable - entries are a label or attribute   
-
-- Tables (contingency tables) via `table`
-
-    + Show frequency/proportion of categories
-
-- Ex: Data on titanic passengers in `titanic.csv`
-
-```{r,echo=FALSE}
-titanicData <- read_csv("../datasets/titanic.csv")
+```{r,echo=TRUE}
+titanicData <- read_csv("datasets/titanic.csv")
 titanicData
 ```
 
+Recall the three variables we created tables for were:
 
- Numerical summaries: Categorical variables  
++ embarked (where journey started)  
++ survived (survive or not)    
++ sex (Male or Female)  
 
-- Create **one-way contingency tables** for each of three categorical variables: 
-
-    + embarked (where journey started)  
-    + survived (survive or not)    
-    + sex (Male or Female)  
-
-<div style="float: left; width: 45%;">
+To create the **one-way contingency tables**, we simply pass the column of interest to the `table` function.  
 
 ```{r}
 table(titanicData$embarked)
-```
-</div>
-<div style="float: right; width: 45%;">
-```{r}
 table(titanicData$survived)
 table(titanicData$sex)
 ```
-</div>
 
+To create a **two-way contingency table**, we can pass the columns of interest from the dataset.  
 
- Numerical summaries: Categorical variables  
-
-- Create **two-way contingency tables** for pairs of categorical variables  
-
-<div style="float: left; width: 45%;">
 ```{r}
-table(titanicData$survived,
-      titanicData$sex)
+table(titanicData$survived, titanicData$sex)
+table(titanicData$survived, titanicData$embarked)
+table(titanicData$sex, titanicData$embarked)
 ```
-</div>
-<div style="float: right; width: 45%;">
-```{r}
-table(titanicData$survived,
-      titanicData$embarked)
-table(titanicData$sex,
-      titanicData$embarked)
-```
-</div>
 
-
- Numerical summaries: Categorical variables  
-
-- Create a **three-way contingency table** for three categorical variables 
+This same process can continue to create an **n-way contingency table**.
 
 ```{r}
 table(titanicData$sex, titanicData$embarked, titanicData$survived)
 ```
 
-
- Numerical summaries: Categorical variables  
-
-- Create a **three-way contingency table** for three categorical variables (order matters for output!)
-
-- Example of an array!  3 dimensions `[ , , ]`
+These table objects in R are actually arrays - the extension of a matrix to more than two dimensions. 
 
 ```{r}
 tab <- table(titanicData$sex, titanicData$embarked, titanicData$survived)
-
 str(tab)
 ```
 
+You can obtain **conditional** bivariate info by supplying an index.
 
- Numerical summaries: Categorical variables  
-
-- Can obtain **conditional** bivariate info!
-
-```{r,echo=FALSE}
-str(tab)
-```
 ```{r}
 #returns embarked vs survived table for females
 tab[1, , ]
-```
-
-
-
- Numerical summaries: Categorical variables  
-
-- Can obtain **conditional** bivariate info!
-
-```{r,echo=FALSE}
-str(tab)
-```
-```{r}
 #returns embarked vs survived table for males
 tab[2, , ]
-```
-
-
-
- Numerical summaries: Categorical variables  
-
-- Can obtain **conditional** bivariate info!
-
-```{r,echo=FALSE}
-str(tab)
-```
-```{r}
 #returns survived vs sex table for embarked "C"
 tab[, 1, ]
 ```
 
+We can also obtain **conditional** univariate info too!
 
- Numerical summaries: Categorical variables  
-
-- Can obtain **conditional** univariate info too!
-
-
-```{r,echo=FALSE}
-str(tab)
-```
 ```{r}
 #Survived status for males that embarked at "Q"
 tab[2, 2, ]
 ```
 
+For numerical variables, recall that we want to describe the shape, center, and spread of the variable's distribution.  
 
+Recall the carbon dioxide (CO2) uptake data set  
 
- Numerical summaries: Numerical variables  
++ Response recorded: `uptake` CO2 uptake rates in grass plants  
++ Environment manipulated: `Treatment` - chilled/nonchilled  
++ Ambient CO2 specified and measured: `conc`  
 
-Numerical variable - entries are a numerical value where math can be performed
-
-**Single variable:**  
-
-- Shape: Histogram or Density plot
-
-> - Measures of center: Mean, Median
-
-> - Measures of spread: Variance, Standard Deviation, Quartiles, IQR
-
-
- Numerical summaries: Numerical variables  
-
-Numerical variable - entries are a numerical value where math can be performed
-
-**Single variable:**  
-
-- Shape: Histogram or Density plot
-
-- Measures of center: Mean, Median
-
-- Measures of spread: Variance, Standard Deviation, Quartiles, IQR
-
-**Two Variables:**
-
-- Shape: Scatter plot
-
-- Measures of linear relationship: Covariance, Correlation   
-
-
-
- Numerical summaries: Numerical variables  
-
-- Look at carbon dioxide (CO2) uptake data set  
-
-    + Response recorded: `uptake` CO2 uptake rates in grass plants  
-    + Environment manipulated: `Treatment` - chilled/nonchilled  
-    + Ambient CO2 specified and measured: `conc`  
-    
 ```{r}
 CO2 <- tbl_df(CO2)
 CO2
 ```
 
-
- Numerical summaries: Numerical variables  
-
-Measures of center: Mean, Median
+To investigate the center we looked at the mean, trimmed mean, and the median.  The `mean` and `median` functions handle these.  You simply pass the column of interest.  To obtain a trimmed mean, you can use the `trim` argument.  
 
 ```{r}
 mean(CO2$uptake)
-#note you can easily get a trimmed mean
-mean(CO2$uptake, trim = 0.05) #5% trimmed mean
+#5% trimmed mean
+mean(CO2$uptake, trim = 0.05) 
 median(CO2$uptake)
 ```
 
+To obtain measures of spread we can use `var` and `sd`.  Similarly, we pass the column of interest to these functions.  
 
- Numerical summaries: Numerical variables  
+```{r}
+var(CO2$uptake)
+sd(CO2$uptake)
+```
 
-Measures of spread: Variance, Standard Deviation, Quartiles, IQR
+Quantiles can be found using the `quantile` function.  You pass the column of interest and a vector of probabilities corresponding to the quantiles of interest.  
+
+```{r}
+quantile(CO2$uptake, probs = c(0.1, 0.2))
+```
+
+The IQR can be found by passing the `IQR` function the column of interest.
+
+```{r}
+IQR(CO2$uptake)
+```
+
+R has some nice functions that return multiple summaries.  For instance, the `summary` function!
 
 ```{r}
 #quartiles and mean
 summary(CO2$uptake)
 ```
 
-<div style="float: left; width: 40%;">
-```{r}
-var(CO2$uptake)
-sd(CO2$uptake)
-```
-</div>
-<div style="float: right; width: 55%;">
-```{r}
-IQR(CO2$uptake)
-quantile(CO2$uptake, probs = c(0.1, 0.2))
-```
-</div>
-
-
-
- Numerical summaries: Numerical variables  
-
-Measures of linear relationship: Covariance, Correlation   
+Recall, if you had multiple numerical variables we often want to measure the linear relationship.  This is done via covariance and correlation.  If you pass the `var` or `cov` function a data frame with multiple numeric columns, you'll obtain the variance-covariance matrix.  The diagonals represent the variance and the off-diagonals the covariances.  The `cor` function similarly gives the correlation matrix.
 
 ```{r}
-cov(CO2$conc, CO2$uptake)
-cor(CO2$conc, CO2$uptake)
+var(select(CO2, conc, uptake))
+cov(select(CO2, conc, uptake))
 ```
 
+Of course, often summaries by a subgroup of the data is of interest.  We looked at finding summaries of `uptake` for each `Treatment` level.  `dplyr` is easy to use for this purpose but can only use functions that return a single value.  The idea is:
 
+- Use `group_by` to create subgroups associated with the data frame  
+- Use `summarize` to create basic summaries for each subgroup  
 
-
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment**
-
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment**
-
-- `dplyr` easy to use but can only return one value
-
-
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment**
-
-- `dplyr` easy to use but can only return one value
-
-Idea: 
-
-- Use `group_by` to create subgroups associated with the data frame
-
-- Use `summarize` to create basic summaries for each subgroup
-
-    
-    
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment**
-
+For example: 
 
 ```{r}
 CO2 %>% group_by(Treatment) %>% 
 	summarise(avg = mean(uptake), med = median(uptake), var = var(uptake))
 ```
 
-
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment** and **Concentration**
+To find the summary for different settings of two variables, say **Treatment** and **Concentration**, simply pass more than one categorical variable to `group_by`.  
 
 ```{r}
 CO2 %>% group_by(Treatment, conc) %>% 
 		summarise(avg = mean(uptake), med = median(uptake), var = var(uptake))
 ```
 
-
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment**
-
-- Built-in `aggregate()` function more general  
-
-
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment**
-
-- Built-in `aggregate()` function more general  
-
-- Basic use gives response (`x`) and a `list` of variables to group `by`
+An alternative to using `dplyr` is to use the built-in `aggregate` function.  This function is more flexible and can be used with functions that return more than one value, like `summary`.  Basic use gives a response (`x`) and a `list` of variables to group `by`.
 
 ```{r}
 aggregate(x = CO2$uptake, by = list(CO2$Treatment), FUN = summary)
 ```
 
-
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment**
-
-- Built-in `aggregate()` function more general  
-
-- Commonly used with `formula` notation!
+Alternatively, `formula` notation can be used.  We can supply `uptake ~ Treatment` and the data object.  The idea of formula notation is essentially a shorthand for modeling the left-hand side (uptake here) by the right-hand side (Treatment here).
 
 ```{r}
 aggregate(uptake ~ Treatment, data = CO2, FUN = summary)
 ```
 
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment**
-
-- Built-in `aggregate()` function more general  
-
-- Commonly used with `formula` notation!
-
-```{r, eval = FALSE}
-aggregate(uptake ~ Treatment, data = CO2, FUN = summary)
-```
-
-`uptake ~ Treatment` - formula notation in R  
-
-- Idea: uptake (LHS) modeled by Treatment levels (RHS)
-
-
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment** and **Concentration**
-
-- Built-in `aggregate()` function more general
-
-- Commonly used with `formula` notation!
+A second variable can be given on the right hand side:  
 
 ```{r, eval = FALSE}
 aggregate(uptake ~ Treatment + conc, data = CO2, FUN = summary)
 ```
-
-`uptake ~ Treatment + conc` model uptake by levels of Treatment and conc
-
-
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment** and **Concentration**
-
-```{r}
-aggregate(uptake ~ Treatment + conc, data = CO2, FUN = summary)
-```
-
-
-
- Recap/Next Up!
-
-- Understand types of data and their distributions  
-
-- Numerical summaries
-
-    + Contingency Tables: `table`  
-    + Mean/Median: `mean`, `median`
-    + Standard Deviation/Variance/IQR: `sd`, `var`, `IQR` 
-    + Quantiles/Percentiles: `quantile`
-
-- Across subgroups with `dplyr::group_by` and `dplyr::summarize` or `aggregate`
-
-> - Graphical summaries (across subgroups)  
- 
