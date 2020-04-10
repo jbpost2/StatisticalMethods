@@ -346,19 +346,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="data-analysis" class="section level3">
 <h3><span class="header-section-number">7.1.2</span> Data Analysis</h3>
 <p>Having identified their response variable, the testers collected data on which projectils were detected. Table 1 shows the first 20 shots collected.</p>
-<div class="sourceCode" id="cb580"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb580-1" title="1">tb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_csv</span>(<span class="st">&quot;datasets/Experimental/counterfire-radar/counterfire-radar.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb580-2" title="2"><span class="st">  </span><span class="kw">filter</span>(Mission <span class="op">%in%</span><span class="st">  </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>))</a>
-<a class="sourceLine" id="cb580-3" title="3"></a>
-<a class="sourceLine" id="cb580-4" title="4"><span class="kw">hist</span>(tb<span class="op">$</span>Detection)</a></code></pre></div>
+<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb579-1" title="1">tb &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_csv</span>(<span class="st">&quot;datasets/Experimental/counterfire-radar/counterfire-radar.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb579-2" title="2"><span class="st">  </span><span class="kw">filter</span>(Mission <span class="op">%in%</span><span class="st">  </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>))</a>
+<a class="sourceLine" id="cb579-3" title="3"></a>
+<a class="sourceLine" id="cb579-4" title="4"><span class="kw">hist</span>(tb<span class="op">$</span>Detection)</a></code></pre></div>
 <p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-27-1.png" width="672" />
 <!-- Histogram above for "Detect" and "No Detect" using a subset of missions from the dataset --></p>
 <p>It’s clear that the system detects these projectiles with a high probability, but what conclusions can we draw from these data? Does the system detect projectiles at a high enough rate to be useful to a commander in the field?</p>
 <p>Typically, you’ll want to think about these questions before designing a test or analyzing your data. In the case of this counterfire radar, the US Army has specified in requirements documents what it deems to be “good enough” in terms of detection probability. Suppose the Army requires that the system be able to detect at least 80% of incoming projectiles.</p>
 <p>Using that requirement, we can compare the probabiltiy of detection we observed in our sample and get an idea of whether or not the system is good enough:</p>
-<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb581-1" title="1">n &lt;-<span class="st"> </span><span class="kw">nrow</span>(tb)</a>
-<a class="sourceLine" id="cb581-2" title="2">phat &lt;-<span class="st"> </span><span class="kw">mean</span>(tb<span class="op">$</span>Detection)</a>
-<a class="sourceLine" id="cb581-3" title="3"></a>
-<a class="sourceLine" id="cb581-4" title="4">phat</a></code></pre></div>
+<div class="sourceCode" id="cb580"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb580-1" title="1">n &lt;-<span class="st"> </span><span class="kw">nrow</span>(tb)</a>
+<a class="sourceLine" id="cb580-2" title="2">phat &lt;-<span class="st"> </span><span class="kw">mean</span>(tb<span class="op">$</span>Detection)</a>
+<a class="sourceLine" id="cb580-3" title="3"></a>
+<a class="sourceLine" id="cb580-4" title="4">phat</a></code></pre></div>
 <pre><code>## [1] 0.804878</code></pre>
 <p>Let the true probability of detection for this radar system be <span class="math inline">\(\pi\)</span>, a value somewhere between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>. Then our estimate for <span class="math inline">\(\pi\)</span> is denoted:</p>
 <p><span class="math display">\[\hat\pi = \frac{1}{n}\sum_{i = 1}^n x_i\]</span></p>
@@ -383,22 +383,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This is very useful knowledge, since we know a lot about how Bernoulli random variables behave. For example, software can simulate Bernoulli random very easily. The function <code>rbernoulli</code> in the <code>purrr</code> package will simulate the outcomes of <code>n</code> random draws from a Bernoulli distribution with probability of success <code>pi</code>. The function will output <code>TRUE</code> for each success and <code>FALSE</code> for each failure. For our example, <code>TRUE</code> will represent the case where the radar detected the projectile and <code>FALSE</code> will represent the case where the radar failed to detect the projectile. This allows us to simulate what might have happened in our experiment. To do this, we need to provide values for <code>n</code> and <code>pi</code>. Luckily, we know the number of observations we had in our experiment ($n = $ 41), and we can postulate a value for <code>pi</code> based on our hypotheses above.</p>
 <p>Recall that our goal is to determine whether <span class="math inline">\(H_0\)</span> is plausible. If the outcome of our actual data is consistent with what the outcome might have looked like if <span class="math inline">\(H_0\)</span> was true, then we’ll conclude that <span class="math inline">\(H_0\)</span> is plausible. So let’s plug in a value for <code>pi</code> based on the values of <span class="math inline">\(\pi\)</span> given in <span class="math inline">\(H_0\)</span>. The highest value of <span class="math inline">\(\pi\)</span> included in <span class="math inline">\(H_0\)</span> is <span class="math inline">\(0.8\)</span>, so we’ll go with that. (If we chose a lower value, our comparison would be less compelling, so when we take this approach, we’ll always choose the value under <span class="math inline">\(H_0\)</span> that’s closest to the values included under <span class="math inline">\(H_a\)</span>.)</p>
 <p>We can now simulate what the outcome of our experiment might have looked like if <span class="math inline">\(H_0\)</span> was true:</p>
-<div class="sourceCode" id="cb583"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb583-1" title="1"><span class="kw">set.seed</span>(<span class="dv">20200401</span>)</a>
-<a class="sourceLine" id="cb583-2" title="2">simulated_trials &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw">rbernoulli</span>(n, <span class="fl">.8</span>)</a>
-<a class="sourceLine" id="cb583-3" title="3"></a>
-<a class="sourceLine" id="cb583-4" title="4"><span class="kw">mean</span>(simulated_trials)</a></code></pre></div>
+<div class="sourceCode" id="cb582"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb582-1" title="1"><span class="kw">set.seed</span>(<span class="dv">20200401</span>)</a>
+<a class="sourceLine" id="cb582-2" title="2">simulated_trials &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw">rbernoulli</span>(n, <span class="fl">.8</span>)</a>
+<a class="sourceLine" id="cb582-3" title="3"></a>
+<a class="sourceLine" id="cb582-4" title="4"><span class="kw">mean</span>(simulated_trials)</a></code></pre></div>
 <pre><code>## [1] 0.8292683</code></pre>
 <p>But this is just one possible outcome. Each trial is random, so the overall outcome is random, too. This means that we should look at many possible results from the experiment to get a more complete picture of what things might look like under <span class="math inline">\(H_0\)</span>. The code below simulates 10,000 experiments and calcualtes the sample proportion for each. These sample proportions are then plotted in a histogram:</p>
-<div class="sourceCode" id="cb585"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb585-1" title="1">nsim &lt;-<span class="st"> </span><span class="dv">10000</span></a>
-<a class="sourceLine" id="cb585-2" title="2">simulation_results &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="st">`</span><span class="dt">Sample Statistic</span><span class="st">`</span> =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>, nsim))</a>
-<a class="sourceLine" id="cb585-3" title="3"></a>
-<a class="sourceLine" id="cb585-4" title="4"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>nsim){</a>
-<a class="sourceLine" id="cb585-5" title="5">  simulation_results<span class="op">$</span><span class="st">`</span><span class="dt">Sample Statistic</span><span class="st">`</span>[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(purrr<span class="op">::</span><span class="kw">rbernoulli</span>(n, <span class="fl">.8</span>))</a>
-<a class="sourceLine" id="cb585-6" title="6">  </a>
-<a class="sourceLine" id="cb585-7" title="7">}</a>
-<a class="sourceLine" id="cb585-8" title="8"></a>
-<a class="sourceLine" id="cb585-9" title="9">simulation_results  <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb585-10" title="10"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> <span class="st">`</span><span class="dt">Sample Statistic</span><span class="st">`</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb584"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb584-1" title="1">nsim &lt;-<span class="st"> </span><span class="dv">10000</span></a>
+<a class="sourceLine" id="cb584-2" title="2">simulation_results &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="st">`</span><span class="dt">Sample Statistic</span><span class="st">`</span> =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>, nsim))</a>
+<a class="sourceLine" id="cb584-3" title="3"></a>
+<a class="sourceLine" id="cb584-4" title="4"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>nsim){</a>
+<a class="sourceLine" id="cb584-5" title="5">  simulation_results<span class="op">$</span><span class="st">`</span><span class="dt">Sample Statistic</span><span class="st">`</span>[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(purrr<span class="op">::</span><span class="kw">rbernoulli</span>(n, <span class="fl">.8</span>))</a>
+<a class="sourceLine" id="cb584-6" title="6">  </a>
+<a class="sourceLine" id="cb584-7" title="7">}</a>
+<a class="sourceLine" id="cb584-8" title="8"></a>
+<a class="sourceLine" id="cb584-9" title="9">simulation_results  <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb584-10" title="10"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> <span class="st">`</span><span class="dt">Sample Statistic</span><span class="st">`</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">bins =</span> <span class="dv">10</span>)</a></code></pre></div>
 <p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
 <div id="wald-tests" class="section level3">
 <h3><span class="header-section-number">7.2.1</span> Wald tests</h3>

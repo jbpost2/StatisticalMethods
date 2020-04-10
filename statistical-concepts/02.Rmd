@@ -15,7 +15,7 @@ Ideally, we'd be able to measure every member of the population and exactly calc
 (**A better visual than this**)
 
 ```{r, echo = FALSE, out.width="80%", fig.align='center'}
-knitr::include_graphics("../img/paradigm.png")
+knitr::include_graphics("img/paradigm.png")
 ```
 
 Example - A political scientist surveys 400 people randomly from a list of all registered voters in a particular county.  He asks the people if they plan to vote in the upcoming election and 312 say they do.
@@ -281,7 +281,7 @@ Example:  For the 3 diet example.  What variables might we control?
 - Blocks - Groups of EUs sharing a common level of a confounding variable.
 
 ```{r, echo = FALSE, fig.align='center', out.width="80%"}
-knitr::include_graphics("../img/block/jpg")
+knitr::include_graphics("img/block.jpg")
 ```
 
 Similar to controlling, but allows for increased generalizability.  EUs within a block are very similar (decreases experimental error there as all the EUs in a block are affected similarly by the confounding variable).  By having enough blocks to cover the range of the population you can still generalize.)

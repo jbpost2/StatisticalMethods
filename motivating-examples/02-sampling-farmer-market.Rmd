@@ -11,8 +11,8 @@ Note: One could try to do a study at just the North Carolina State Farmer's Mark
 A [list of the horticultural products sold and their availability](http://www.ncagr.gov/markets/chart.htm) is reproduced below.  
 
 ```{r fmProducts, echo = FALSE, out.width = "65%"}
-knitr::include_graphics("../../img/availabilitychart-1.jpg")  
-knitr::include_graphics("../../img/availabilitychart-2.jpg")  
+knitr::include_graphics("img/availabilitychart-1.jpg")  
+knitr::include_graphics("img/availabilitychart-2.jpg")  
 ```
 
 

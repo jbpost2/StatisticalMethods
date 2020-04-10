@@ -5,19 +5,19 @@ As you can see it isn't too difficult to bring well structured raw data into R. 
 Often we want to grab only certain types of observations (filter rows).
 
 ```{r, echo = FALSE, fig.align='center', out.width = "80%"}
-knitr::include_graphics("../../img/filterVisualF.png")
+knitr::include_graphics("img/filterVisualF.png")
 ```
 
 We also want to only look at only certain variables (select columns).
     
 ```{r, echo = FALSE, fig.align='center', out.width = "70%"}
-knitr::include_graphics("../../img/selectVisualF.png")
+knitr::include_graphics("img/selectVisualF.png")
 ```
 
 Other times we want to create new variables that may be functions of the data in the data set.
 
 ```{r, echo = FALSE, fig.align='center', out.width = "80%"}
-knitr::include_graphics("../../img/createVarVisualF.png")
+knitr::include_graphics("img/createVarVisualF.png")
 ```
 
 
@@ -44,13 +44,13 @@ Most have heard of HTML or HyperText Mark-up Language.  This is really just plai
 RStudio makes it easy to create a Markdown document.  
 
 ```{r , out.width = "75%",echo=FALSE, fig.align='center'}
-knitr::include_graphics("../../img/startMD.png")
+knitr::include_graphics("img/startMD.png")
 ```
 
 You can create many commonly used types of output including HTML, PDF, Word, and HTML slides.  
 
 ```{r , out.width = "65%",echo=FALSE, fig.align='center'}
-knitr::include_graphics("../../img/startMDDoc.png")
+knitr::include_graphics("img/startMDDoc.png")
 ```
 
 
@@ -104,7 +104,7 @@ The key idea here is that you can easily write down your thought process and doc
 Our current goal is to subset rows or columns of a dataset.  
 
 ```{r, echo = FALSE, fig.align='center', out.width = "80%"}
-knitr::include_graphics("../../img/filterVisualF.png")
+knitr::include_graphics("img/filterVisualF.png")
 ```
 
 To do this efficiently we need to learn about logical statements.  A logical statement is a comparison that resolves as `TRUE` or `FALSE`.  R has all of the standard comparison operators:
@@ -260,7 +260,7 @@ If the data has been read in with `haven`, `readxl`, or `readr`, it is probably 
 Again, we may to do a subset based on the rows of our dataset.  
 
 ```{r, echo = FALSE, fig.align='center', out.width = "80%"}
-knitr::include_graphics("../../img/filterVisualF.png")
+knitr::include_graphics("img/filterVisualF.png")
 ```
 
 We just looked at using the `filter` function to subset rows or observations of a dataset.  Let's look at a few more examples.  We may only want to return observations from the Batting dataset corresponding to the Pittsburgh Pirates (PIT).  
@@ -300,7 +300,7 @@ arrange(Batting, teamID, desc(G))
 We may want to look at only certain variables (select columns).  
     
 ```{r, echo = FALSE, fig.align='center', out.width = "65%"}
-knitr::include_graphics("../../img/selectVisualF.png")
+knitr::include_graphics("img/selectVisualF.png")
 ```
 
 The `select` function from the `dplyr` package allows us to choose columns of interest.  We've seen the use of `$` and `[ , ]` to do this already but `select` offers many advantages.  
@@ -377,7 +377,7 @@ Batting %>% select(playerID, HR, everything())
 Another commonly done column manipulation is the creating of new variables.
 
 ```{r, echo = FALSE, fig.align='center', out.width = "80%"}
-knitr::include_graphics("../../img/createVarVisualF.png")
+knitr::include_graphics("img/createVarVisualF.png")
 ```
 
 Given a data frame and an appropriate length vector (new variable) we can use `cbind` (column bind) to add the variable to the data frame.  
@@ -644,7 +644,7 @@ Recap of basic commands:
 We've talked about rows being observations and columns being variables.  This is generally how most statistical analysis software likes their data to be formatted.  This is called 'long' format data - each row is an observation. Sometimes data doesn't come that way! 
 
 ```{r, echo = FALSE, fig.align='center', out.width = "70%"}
-knitr::include_graphics("../../img/longWideF.png")
+knitr::include_graphics("img/longWideF.png")
 ```
 
 Data may have observations across some columns since viewing data is often more natural that way.  For example, consider the weather data set below.    
@@ -692,7 +692,7 @@ newTempsData %>% spread(key = day, value = temp)
 The `tidyr` package also has useful functions for separating a column (or combining two columns) using `separate` (and `unite`)
 
 ```{r, echo = FALSE, fig.align='center', out.width = "80%"}
-knitr::include_graphics("../../img/uniteSeparateF.png")
+knitr::include_graphics("img/uniteSeparateF.png")
 ```
 
 Consider a data set on air pollution in Chicago.  
