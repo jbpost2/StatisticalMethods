@@ -1,4 +1,5 @@
 ##### `ggplot` Plotting  
+
 Now that we've covered `Base R` plotting, we'll look at plotting through `ggplot2` (sort of part of the tidyverse - [Cheat Sheet](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=2ahUKEwjFu_ep-rroAhXnknIEHf13Bq4QFjABegQICBAB&url=https%3A%2F%2Frstudio.com%2Fwp-content%2Fuploads%2F2016%2F11%2Fggplot2-cheatsheet-2.1.pdf&usg=AOvVaw1-6jSR5VfWs7V62OYxtDtG)).  The main idea is outlined below:
 
 - `ggplot(data = data_frame)` creates a plot instance  
@@ -11,191 +12,80 @@ Now that we've covered `Base R` plotting, we'll look at plotting through `ggplot
 
 We'll go through creation of the same plots in the `Base R` section.  
 
-To create a barplot we can use `ggplot + geom_bar`.    
+To create a barplot we can use `ggplot + geom_bar`.  To start, we create a base plotting object with `ggplot`.  Here we can specify attributes of the plot in the `aes` function.  For instance, to create a vertical bar chart we can specify the cateogrical variable of interest as `x`.  Let's do this for the `survived` variable from the titanic data set. `survived` is actually stored as a `dbl` or double in the dataset since it is coded as a 0/1 variable.  The plots will look better if we explicity change this as a `factor` first.  
 
-- Ex: Data on titanic passengers in `titanic.csv`
-
-```{r,echo=FALSE}
-titanicData <- read_csv("datasets/titanic.csv")
-#convert survival status to a factor
+```{r, eval=TRUE, out.width = "75%", fig.align='center'}
 titanicData$survived <- as.factor(titanicData$survived)
-titanicData
-```
-
-
- `ggplot2` Plotting: Categorical variables  
-
-Categorical variable - entries are a label or attribute   
-
-- Barplots via `ggplot + geom_bar`  
-
-- Across x-axis we want our categories - specify with `aes(x = ...)`
-
-```{r, eval=TRUE, out.width = "450px", fig.align='center'}
 ggplot(data = titanicData, aes(x = survived))
 ```
 
+Notice that no plot is made!  We haven't added a `geom` or `stat` layer yet.  These are generally what you add in order to actually see something created with the plot.  The base plotting object just let's you specify global attributes like what goes on the x-axis.  Having the cheat sheet nearby is highly recommend when learning to use `ggplot`!  The `geom` layer we want to add is `geom_bar`.  
 
- `ggplot2` Plotting: Categorical variables  
-
-Categorical variable - entries are a label or attribute   
-
-- Barplots via `ggplot + geom_bar`  
-
-- Must add geom (or stat) layer!
-
-```{r,eval=TRUE, out.width = "450px", fig.align='center'}
+```{r,eval=TRUE, out.width = "75%", fig.align='center'}
 ggplot(data = titanicData, aes(x = survived)) + geom_bar()
 ```
 
+The usual practice is to save the base object and then add to it.  For instance:
 
-
- `ggplot2` Plotting: Categorical variables  
-
-- Generally: Save base object, then "add layers"  
-
-```{r,eval = FALSE, out.width = "450px", fig.align='center'}
+```{r,eval = FALSE, out.width = "75%", fig.align='center'}
 g <- ggplot(data = titanicData, aes(x = survived))
 g + geom_bar()
 ```
 
+We won't do this here just to help make the plots as clear as possible.  
 
- `ggplot2` Plotting: Categorical variables  
+You may wonder how to modify the plot.  `aes()` defines visual properties of objects in the plot.  This is where a lot of the modification occurs.  Changing these is similar to changing values of `par` in `Base R` plotting.  The cheat sheet gives the most commonly used aesthetics arguments for each `geom`.  Under `geom_bar` we see
 
-- Generally: Save base object, then "add layers"  
-
-```{r,eval = FALSE, out.width = "450px", fig.align='center'}
-g <- ggplot(data = titanicData, aes(x = survived))
-g + geom_bar()
-```
-
-- `aes()` defines visual properties of objects in the plot  
-
-&nbsp; &nbsp; &nbsp; &nbsp; `x = , y = , size = , shape = , color = , alpha = , ...` 
-
--  [Cheat Sheet](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=2ahUKEwjFu_ep-rroAhXnknIEHf13Bq4QFjABegQICBAB&url=https%3A%2F%2Frstudio.com%2Fwp-content%2Fuploads%2F2016%2F11%2Fggplot2-cheatsheet-2.1.pdf&usg=AOvVaw1-6jSR5VfWs7V62OYxtDtG) gives most common properties for a given `geom`  
-
-
- `ggplot2` Plotting: Categorical variables  
-
-- Generally: Save base object, then "add layers"  
-
-```{r,eval = FALSE, out.width = "450px", fig.align='center'}
-g <- ggplot(data = titanicData, aes(x = survived))
-g + geom_bar()
-```
-
-- `aes()` defines visual properties of objects in the plot  
-
-&nbsp; &nbsp; &nbsp; &nbsp; `x = , y = , size = , shape = , color = , alpha = , ...`
-
--  [Cheat Sheet](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=2ahUKEwjFu_ep-rroAhXnknIEHf13Bq4QFjABegQICBAB&url=https%3A%2F%2Frstudio.com%2Fwp-content%2Fuploads%2F2016%2F11%2Fggplot2-cheatsheet-2.1.pdf&usg=AOvVaw1-6jSR5VfWs7V62OYxtDtG) gives most common properties for a given `geom`  
-
-&nbsp; &nbsp; &nbsp; &nbsp; `d + geom_bar()`  
-
-&nbsp; &nbsp; &nbsp; &nbsp; `x, alpha, color, fill, linetype, size, weight`
+> `d + geom_bar()`    
+> `x, alpha, color, fill, linetype, size, weight`
     
-
-
- `ggplot2` Plotting: Categorical variables  
- 
-`data` and `aes` can be set in two ways;
+The `data` and `aes` values can be set in two ways:
 
 - 'globally' (for all layers) via the `ggplot` statement  
 
 - 'locally' (for just that layer) via the `geom`, `stat`, etc. layer
 
-
- `ggplot2` Plotting: Categorical variables  
- 
-`data` and `aes` can be set in two ways;
-
-- 'globally' (for all layers) via the `ggplot` statement  
-
-- 'locally' (for just that layer) via the `geom`, `stat`, etc. layer
-
-```{r,eval = FALSE, out.width = "450px", fig.align='center'}
+```{r,eval = FALSE, out.width = "75%", fig.align='center'}
 #global 
 ggplot(data = titanicData, aes(x = survived)) + geom_bar()
 #local 
 ggplot() + geom_bar(data = titanicData, aes(x = survived))
 ```
 
+To set an attribute that doesn't depend on the data (i.e. `color = 'blue'`), you generally place these outside of the `aes`.  Usually only aesthetics that need to depend on the data should go in the `aes` function.  
 
+Back to our barplot.  We can improve the plot in a number of ways.  First, we can remove the `NA` (missing value) category by using the `drop_na` function.  Here we'll remove all rows where any of the three variables we are investigating have missing values.    
 
- `ggplot2` Plotting: Categorical variables  
- 
-`data` and `aes` can be set in two ways;
-
-- 'globally' (for all layers) via the `ggplot` statement  
-
-- 'locally' (for just that layer) via the `geom`, `stat`, etc. layer
-
-```{r,eval = FALSE, out.width = "450px", fig.align='center'}
-#global 
-ggplot(data = titanicData, aes(x = survived)) + geom_bar()
-#local 
-ggplot() + geom_bar(data = titanicData, aes(x = survived))
-```
-
-- To set an attribute that doesn't depend on the data (i.e. `color = 'blue'`), generally place these outside of the `aes`  
-
-
- `ggplot2` Plotting: Categorical variables  
- 
-- Improve plot by removing `NA` category  
-
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
+```{r,eval = TRUE, out.width = "75%", fig.align='center'}
 titanicData <- titanicData %>% drop_na(survived, sex, embarked)
 g <- ggplot(data = titanicData, aes(x = survived))
 g + geom_bar()
 ```
 
+Next, we can add better labels and a title by adding the appropriate layers (new layers --> see cheat sheet!).  The layers we want here are `labs` to set the title and `x` (or `y`) labels.  To change the names on the legend we need to look at the `scale_x_discrete` layer.  This is because the `aes` value's scale we are trying to modify is 'x' and we are doing so for a layer with a 'discrete' variable (their word for categorical).  
 
-
- `ggplot2` Plotting: Categorical variables  
- 
-- Add better labels and a title (new layers, see cheat sheet!)  
-
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
+```{r,eval = TRUE, out.width = "75%", fig.align='center'}
 ggplot(data = titanicData, aes(x = as.character(survived))) + 
   geom_bar() + 
   labs(x = "Survival Status", title = "Bar Plot of Survival for Titanic Passengers") + 
   scale_x_discrete(labels = c("Died", "Survived"))
 ```
 
-
-
- `ggplot2` Plotting: Categorical variables  
- 
-Categorical variable - entries are a label or attribute   
-
-- **Stacked barplot** created by via `fill` aesthetic and same process
+A **stacked barplot** can be created by using the `fill` aesthetic and the same process.  
     
-    + Create base object  
-    + Add geoms  
-    + Use aes to specify aspects of the plot  
++ Create base object  
++ Add geoms  
++ Use aes to specify aspects of the plot  
 
+The truly wonderful things about `ggplot` are the automatic assignment of colors, the creation of legends, and things of that nature for `aes` elements.  This takes a lot of work from the user.  Note: the `group` aestethic does not automatically generate a legend.  
 
-     
- `ggplot2` Plotting: Categorical variables  
- 
-Categorical variable - entries are a label or attribute   
-
-- **Stacked barplot** created by via `fill` aesthetic
-
-- Automatic assignment of colors, creation of legends, etc. for `aes` elements (except with `group`)
-
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
+```{r,eval = TRUE, out.width = "75%", fig.align='center'}
 ggplot(data = titanicData, aes(x = survived, fill = sex)) + geom_bar()
 ```
 
+Again, we can add custom labels by adding more layers.  
 
- `ggplot2` Plotting: Categorical variables  
-
-- Add custom labels by adding more layers
-
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
+```{r,eval = TRUE, out.width = "75%", fig.align='center'}
 ggplot(data = titanicData, aes(x = survived, fill = sex)) + 
   geom_bar() +
   labs(x = "Survival Status", 
@@ -204,27 +94,14 @@ ggplot(data = titanicData, aes(x = survived, fill = sex)) +
   scale_fill_discrete(name = "Sex", labels = c("Female","Male"))
 ```
 
+Notice the similar adjustment for the scale using `scale_*_discrete`.  For our aestethics, we set `aes(x = survived, fill = sex)`.  This means if we want to change one of those auto-generated scales we should use `scale_aes-value_discrete`.  
 
+> `scale_x_discrete(labels = c("Died", "Survived"))`
+> `scale_fill_discrete(name = "Sex", labels = c("Female","Male"))`
 
- `ggplot2` Plotting: Categorical variables  
+To turn the plot we can add the `coord_flip` layer.  
 
-- Adjusting appropriate labeling via `scale_*_discrete`
-
-
-`aes(x = survived, fill = sex)` 
-
-`scale_x_discrete(labels = c("Died", "Survived"))`
-
-`scale_fill_discrete(name = "Sex", labels = c("Female","Male"))`
-
-
-
-
- `ggplot2` Plotting: Categorical variables  
-
-- Easy to rotate a plot with `coord_flip`  
-
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
+```{r,eval = TRUE, out.width = "75%", fig.align='center'}
 ggplot(data = titanicData, aes(x = survived, fill = sex)) + geom_bar() +
   labs(x = "Survival Status", 
        title = "Bar Plot of Survival Status for Titanic Passengers") + 
@@ -233,141 +110,76 @@ ggplot(data = titanicData, aes(x = survived, fill = sex)) + geom_bar() +
   coord_flip()
 ```
 
-
-
- `ggplot2` Plotting: Categorical variables  
-
-Note: Most geoms have a corresponding stat that can be used  
+One thing that can be quite confusing when you are first using the `ggplot` function is that most geoms have a corresponding stat that can be used instead.  For instance, look at the help for `geom_bar`:
 
 `geom_bar(mapping = NULL, data = NULL, stat = "count",
   position = "stack", ..., width = NULL, binwidth = NULL, na.rm = FALSE,
   show.legend = NA, inherit.aes = TRUE)`
-  
-- Equivalent plots via:
+
+There is a `stat = "count"` default argument there.  An equivalent plot could be create using a `stat` layer instead.  
 
 ```{r,eval=FALSE,echo=TRUE}
 ggplot(data = titanicData, aes(x = survived, fill = sex)) + geom_bar()
-ggplot(data = titanicData, aes(x = survived, fill = sex)) + stat_count() ```
+ggplot(data = titanicData, aes(x = survived, fill = sex)) + stat_count() 
 ```
 
+Sometimes you'll need to modify the `stat`.  For example, if you have summary data to begin with rather than the raw data, change the stat to `identity`.  
 
- `ggplot2` Plotting: Categorical variables  
-
-Note: Most geoms have a corresponding stat that can be used  
-
-- Can modify the stat: if you have summary data, use `identity`  
-  
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
+```{r,eval = TRUE, out.width = "75%", fig.align='center'}
 sumData <- titanicData %>% group_by(survived, sex) %>% summarize(count = n())
 ggplot(sumData, aes(x = survived, y = count, fill = sex)) + 
   geom_bar(stat = "identity")
 ```
 
+The **side-by-side barplot** can be created using the `position` aesthetic.  `position` has the following values:
 
++ `dodge` for side-by-side bar plot  
++ `jitter` for continuous data with many points at same values  
++ `fill` stacks bars and standardises each stack to have constant height  
++ `stack` stacks bars on top of each other
 
- `ggplot2` Plotting: Categorical variables  
+As the value of this aestethic doesn't depend on the data, we do not place this argument in the `aes` function.  
 
-Categorical variable - entries are a label or attribute   
-
-- **Side-by-side barplot** created by via `position` aesthetic
-
-    + `dodge` for side-by-side bar plot  
-    + `jitter` for continuous data with many points at same values  
-    + `fill` stacks bars and standardises each stack to have constant height  
-    + `stack` stacks bars on top of each other
-
-
- `ggplot2` Plotting: Categorical variables  
-
-Categorical variable - entries are a label or attribute   
-
-- **Side-by-side barplot** created by via `position` aesthetic
-
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
+```{r,eval = TRUE, out.width = "75%", fig.align='center'}
 ggplot(data = titanicData, aes(x = survived, fill = sex)) + 
   geom_bar(position = "dodge")
 ```
 
+If we use `position = fill` the bars will be stacked and the bars will be standardized to have constant height.  This is really useful when there are an equal number of observations (or close to it) in each category on the x-axis (for instance with some Likert scale data surveys). 
 
- `ggplot2` Plotting: Categorical variables  
-
-Categorical variable - entries are a label or attribute   
-  
- - `position = fill` stacks bars and standardises each stack to have constant height (especially useful with equal group sizes)  
-
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
+```{r,eval = TRUE, out.width = "75%", fig.align='center'}
 ggplot(data = titanicData, aes(x = survived, fill = sex)) + 
   geom_bar(position = "fill")
 ```
 
+Where else does `ggplot` shine?  What if we want to make the same type of barplot for each `embarked` value?  Here we can use **faceting**!  This is just another layer on the plot call.  
 
- `ggplot2` Plotting: Categorical variables  
+`facet_wrap(~ var)` creates a plot for each setting of the variable `var`.  You can specify `nrow` and `ncol` or let R figure it out.  
 
-How to create same plot for each `embarked` value?  Use **faceting**!
-
-
-
- `ggplot2` Plotting: Categorical variables  
-
-How to create same plot for each `embarked` value?  Use **faceting**!
-
-`facet_wrap(~ var)` - creates a plot for each setting of `var`  
-
-- Can specify `nrow` and `ncol` or let R figure it out
-
-
-
- `ggplot2` Plotting: Categorical variables  
-
-How to create same plot for each `embarked` value?  Use **faceting**!
-
-`facet_wrap(~ var)` - creates a plot for each setting of `var`  
-
-- Can specify `nrow` and `ncol` or let R figure it out
-
-`facet_grid(var1 ~ var2)` - creats a plot for each combination of `var1` and `var2`  
-
-- `var1` values across rows
-
-- `var2` values across columns
-
-- Use `. ~ var2` or `var1 ~ .` to have only one row or column  
-
-
- `ggplot2` Plotting: Categorical variables  
-
-How to create same plot for each `embarked` value?  Use **faceting**!
-
-- `facet_wrap(~ var)` - creates a plot for each setting of `var`  
-
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
+```{r,eval = TRUE, out.width = "75%", fig.align='center'}
 ggplot(data = titanicData, aes(x = survived)) + 
   geom_bar(aes(fill =sex), position = "dodge") +
   facet_wrap(~ embarked)
 ```
 
+`facet_grid(var1 ~ var2)` creates a grid of plots for each combination of the variables `var1` and `var2`.  `var1` values go across rows and `var2` values go across columns.  To have side-by-side or a vertical column of plots use `. ~ var2` or `var1 ~ .`, respectively.  
 
- `ggplot2` Plotting: Categorical variables  
+```{r,eval = TRUE, out.width = "75%", fig.align='center'}
+ggplot(data = titanicData, aes(x = survived)) + 
+  geom_bar(aes(fill =sex), position = "dodge") +
+  facet_wrap(~ embarked)
+```
 
-How to create same plot for each `pclass` and `embarked` combination?  
-
-- `facet_grid(var1 ~ var2)` - creats a plot for each combination of `var1` and `var2` 
-
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
+Here we'll create a grid of plots for all `pclass` and `embarked` combinations (so easy!).  
+```{r,eval = TRUE, out.width = "75%", fig.align='center'}
 ggplot(data = titanicData, aes(x = survived)) + 
   geom_bar(aes(fill =sex), position = "dodge") +
   facet_grid(pclass ~ embarked)
 ```
 
+Below is a recap of creating a barplot with `ggplot`:
 
-
- `ggplot2` Plotting: Categorical variables  
-
-Recap!  
-
-Categorical variable - entries are a label or attribute   
-
-- Most common plot is barplot: `ggplot + geom_bar(aes(x = ...))`  
+- Use `ggplot(data = ...) + geom_bar(aes(x = ...))`  
     
 - With summary data, use `geom_bar(stat = identity)`  
 
@@ -377,10 +189,7 @@ Categorical variable - entries are a label or attribute
 
 - Filled barplot via `position = fill`  
 
-
- `ggplot2` Plotting Recap
-
-General `ggplot` things:
+Recapping plotting with `ggplot` so far: 
 
 - Can set local or global `aes`
 
@@ -393,187 +202,66 @@ General `ggplot` things:
 - Only need `aes` if setting a mapping value that is dependent on the data (or you want to create a custom legend!)  
 
 
- `ggplot2` Plotting Recap
+Now we'll create similar plots to the `Base R` section for our numeric variables from the `CO2` uptake dataset.  The process is the same:
 
-General `ggplot` things:
-
-- Can set local or global `aes`
-
-- Modify titles/labels by adding more layers
-
-- Use either stat or geom layer
-
-- Faceting (multiple plots) via `facet_grid` or `facet_wrap`
-
-- Only need `aes` if setting a mapping value that is dependent on the data (or you want to create a custom legend!)  
-
-Next:  Numerical variable plotting
-
-
-
-
- `ggplot2` Plotting: Numerical Variables    
-
-Numerical variable - entries are a numerical value where math can be performed
-
-Goal: describe the shape, center, and spread
-
-- Generally, via a histogram or boxplot!  
-
-Same process:
-    
 - Create base object  
 - Add geoms  
 - Use aes to specify aspects of the plot  
 
+Let's start by creating a histogram.  This can be done with `geom_bar`.  The easiest way to get started with a new `geom` is to look at the cheat sheet and the common `aes` values: 
 
- `ggplot2` Plotting: Numerical Variables    
+> `c + geom_histogram(binwidth = 5)`
+> `x, y, alpha, color, fill, linetype, size, weight`
 
+For `geom_hist`, only `x` is really needed.  Now we'll create the histogram for the `uptake` variable.  
 
-- Look at carbon dioxide (CO2) uptake data set  
-
-    + Response recorded: `uptake` CO2 uptake rates in grass plants  
-    + Environment manipulated: `Treatment` - chilled/nonchilled  
-    + Ambient CO2 specified and measured: `conc`  
-    
-```{r}
-CO2 <- tbl_df(CO2)
-CO2
-```
-
-
- `ggplot2` Plotting: Numerical Variables    
-
-Numerical variable - entries are a numerical value where math can be performed
-
-- **Histogram** - Bins data to show distribution of observations
-
-- Common `aes` values (from cheat sheet):
-
-&nbsp; &nbsp; &nbsp; &nbsp; `c + geom_histogram(binwidth = 5)`
-
-&nbsp; &nbsp; &nbsp; &nbsp; `x, y, alpha, color, fill, linetype, size, weight`
-
-> - only `x` is really needed
-
-
- `ggplot2` Plotting: Numerical Variables    
-
-Numerical variable - entries are a numerical value where math can be performed
-
-- **Histogram** - Bins data to show distribution of observations
-
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
+```{r,eval = TRUE, out.width = "75%", fig.align='center'}
 g <- ggplot(CO2, aes(x = uptake))
 g + geom_histogram()
 ```
 
+We might modify a few attributes of the plot that are not dependent on the data.  Remember, these generally are set outside of the `aes` function.
 
- `ggplot2` Plotting: Numerical Variables    
-
-Numerical variable - entries are a numerical value where math can be performed
-
-- **Histogram** - Bins data to show distribution of observations
-
-- Attributes of the plot not dependent on data generally set outside of `aes`  
-
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
+```{r,eval = TRUE, out.width = "75%", fig.align='center'}
 g + geom_histogram(color = "blue", fill = "red", size = 2, binwidth = 3)
 ```
 
+To create the kernel smoother plot (smoothed histogram), we use the `geom_density` layer.  The common `aes` values from the cheat sheet are:
 
- `ggplot2` Plotting: Numerical Variables    
+> `c + geom_density(kernel = "gaussian")`  
 
-Numerical variable - entries are a numerical value where math can be performed
+> `x, y, alpha, color, fill, group, linetype, size, weight`
 
-- **Kernel Smoother** - Smoothed version of a histogram  
+As with `geom_hist`, only `x =` is really needed.  The kernel smoother for the `uptake` variable is created below.  
 
-- 'Kernel' determines weight given to nearby points    
-
-```{r, echo = FALSE, out.width = "500px", fig.align='center'}
-knitr::include_graphics("img/kernel.png")
-```
-
-
- `ggplot2` Plotting: Numerical Variables    
-
-Numerical variable - entries are a numerical value where math can be performed
-
-- **Kernel Smoother** - Smoothed version of a histogram  
-
-- Common `aes` values (from cheat sheet):
-
-&nbsp; &nbsp; &nbsp; &nbsp; `c + geom_density(kernel = "gaussian")`  
-
-&nbsp; &nbsp; &nbsp; &nbsp; `x, y, alpha, color, fill, group, linetype, size, weight`
-
-> - Only `x =` is really needed
-
-
- `ggplot2` Plotting: Numerical Variables    
-
-- **Kernel Smoother** - Smoothed version of a histogram  
-
-```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
 ggplot(CO2, aes(x = uptake)) + geom_density()
 ```
 
+This is not a pretty plot.  The `fill` aesthetic is usually used with `geom_density`.  Here, we'll fill by the `Treatment` variable.  We'll also change the `alpha` (transparency value, between 0 and 1) and the `adjust` (modify the kernel density calculations - 0.5 implies half the default bandwidth) aestethics.  
 
-
- `ggplot2` Plotting: Numerical Variables    
-
-- **Kernel Smoother** - Smoothed version of a histogram  
-
-- `fill` a useful aesthetic! 
-
-```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
 ggplot(CO2, aes(x = uptake)) +
   geom_density(adjust = 0.5, alpha = 0.5, aes(fill = Treatment))
 ```
 
+We may wish to stack the two density estimates on top of each other.  Recall the `position` aestethic and the choices of `dodge`, `jitter`, `fill`, and `stack`.
 
-
- `ggplot2` Plotting: Numerical Variables    
-
-- **Kernel Smoother** - Smoothed version of a histogram  
-
-- recall `position` choices of `dodge`, `jitter`, `fill`, and `stack`
-
-```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
 ggplot(CO2, aes(x = uptake)) + 
   geom_density(adjust = 0.5, alpha = 0.5, position = "stack", aes(fill = Treatment))
 ```
 
+Plots can easily be overlayed, as long as they are on the same scale, by simply adding the appropriate layers.  To put the histogram on the same scale as a density, we can set `y  = ..density..` on the `geom_hist` layer.  
 
-
- `ggplot2` Plotting: Numerical Variables    
-
-- **Histogram + Kernel Smoother**
-
-- Just add both layers!  (Works for any compatible layers)  
-
-- Use `y = ..density..` to put histogram on same scale  
-
-
- `ggplot2` Plotting: Numerical Variables    
-
-- **Histogram + Kernel Smoother**
-
-```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
 ggplot(CO2) + 
   geom_histogram(aes(y = ..density.., x = uptake, fill = Treatment)) +
   geom_density(adjust = 0.25, alpha = 0.5, position = "stack", 
                aes(x = uptake, fill = Treatment)) 
 ```
 
-
- `ggplot2` Plotting: Numerical Variables    
-
-- **Histogram + Kernel Smoother**
-
-- Better to set global `aes()` options here!  
-
-- Can easily change `fill` variable for all layers
+For these two plots, you can see it is a little beneficial to set global `aes()` options here.  This would allow for an easy change of the `fill` variable for all layers!
 
 ```{r,eval=FALSE,echo=TRUE,message=FALSE}
 ggplot(CO2, aes(x = uptake, fill = Treatment)) + 
@@ -581,147 +269,71 @@ ggplot(CO2, aes(x = uptake, fill = Treatment)) +
   geom_density(adjust = 0.25, alpha = 0.5, position = "stack")
 ```
 
+To create a boxplot we can use `geom_boxplot`.  The common `aes` values from the cheat sheet are:
 
- `ggplot2` Plotting: Numerical Variables    
+> `f + geom_boxplot()`
 
-One numerical and one categorical variable
+> `x, y, lower, middle, upper, ymax, ymin, alpha, color, fill, group, linetype, shape, size, weight`
 
-- **Boxplot** - Provides the five number summary in a graph
+For `geom_boxplot`, only `x =, y =` are really needed.  To create a single vertical boxplot, use `x = ""`.  We'll create side-by-side boxplots of `uptake` for each `Treatment` level. 
 
-    - Min, Q1, Median, Q3, Max  
-    - Often show possible outliers as well  
-
-
-
- `ggplot2` Plotting: Numerical Variables    
-
-One numerical and one categorical variable
-
-- **Boxplot** - Provides the five number summary in a graph
-
-- Common `aes` values (from cheat sheet):
-
-&nbsp; &nbsp; &nbsp; &nbsp; `f + geom_boxplot()`
-
-&nbsp; &nbsp; &nbsp; &nbsp; `x, y, lower, middle, upper, ymax, ymin, alpha, color, fill, group, linetype, shape, size, weight`
-
-> - Only `x =, y =` are really needed  
-
-
- `ggplot2` Plotting: Numerical Variables    
-
-One numerical and one categorical variable
-
-- **Boxplot** - Provides the five number summary in a graph
-
-```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
 g <- ggplot(CO2, aes(x = Treatment, y = uptake))
 g + geom_boxplot(fill = "grey")
 ```
 
+Sometimes it is useful to overlay the data values themselves on a boxplot in order to see the shape of the distribution more clearly.  This can be done using the `geom_jitter` layer.  The `width` argument sets how widely the points are scattered (1 = width of box).
 
-
- `ggplot2` Plotting: Numerical Variables    
-
-
-- **Boxplot** - Provides the five number summary in a graph
-
-- Can add data points (jittered) to see shape of data better
-
-```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
 ggplot(CO2, aes(x = Treatment, y = uptake)) + 
   geom_boxplot(fill = "grey") +
   geom_jitter(width = 0.1)
 ```
 
+Note that the order of the layers is important!
 
- `ggplot2` Plotting: Numerical Variables    
-
-
-- **Boxplot** - Provides the five number summary in a graph
-
-- Order of layers important!
-
-```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
 ggplot(CO2, aes(x = Treatment, y = uptake)) + 
   geom_jitter(width = 0.1) + 
   geom_boxplot(fill = "grey")
 ```
 
+If we wanted to create these same side-by-side boxplots for each value of another variable, we can again use faceting.  For instance, we can use `facet_wrap` with the `Type` variable.  
 
- `ggplot2` Plotting: Numerical Variables    
-
-- **Boxplot** - Provides the five number summary in a graph
-
-- Can `facet` easily!
-
-```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
 ggplot(CO2, aes(x = Treatment, y = uptake)) + geom_boxplot(fill = "grey") +
   geom_jitter(width = 0.1) + facet_wrap(~ Type)
 ```
 
+Scatterplots can be created using `geom_point`.  The common `aes` values from the cheat sheet are:
 
+> `e + geom_point()`
+> `x, y, alpha, color, fill, shape, size, stroke`
 
+For `geom_point`, only `x =, y =` are really needed.  
 
- `ggplot2` Plotting: Numerical Variables    
+Below is a scatterplot of the `conc` and `uptake` variables. 
 
-Two numerical variables
-
-- **Scatter Plot** - graphs points corresponding to each observation
-
-- Common `aes` values (from cheat sheet):
-
-&nbsp; &nbsp; &nbsp; &nbsp; `e + geom_point()`
-
-&nbsp; &nbsp; &nbsp; &nbsp; `x, y, alpha, color, fill, shape, size, stroke`
-
-> - Only `x =, y =` are really needed  
-
-
-
- `ggplot2` Plotting: Numerical Variables    
-
-Two numerical variables
-
-- **Scatter Plot** - graphs points corresponding to each observation
-
-```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
 g <- ggplot(CO2, aes(x = conc, y = uptake)) 
 g + geom_point()
 ```
 
+A trend lines can be easily added with `geom_smooth`.  The default is a smoothed line.  To request the simple linear regression fit, we can use `method = lm`.  Both of these lines are added to the plot below.  
 
-
- `ggplot2` Plotting: Numerical Variables    
-
-- Add trend lines easily (linear and loess - a smoother) 
-
-```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
 ggplot(CO2, aes(x = conc, y = uptake)) + geom_point() +  
   geom_smooth(aes(col = "loess")) +
   geom_smooth(method = lm, aes(col = "linear")) + 
-  scale_colour_manual(name = 'Smoother', values =c('loess'='purple','linear'='red'), 
-                      labels = c('GAM','Linear'), guide = 'legend')
+  scale_colour_manual(name = 'Smoother', values = c('loess' = 'purple', 'linear' = 'red'), 
+                      labels = c('GAM', 'Linear'), guide = 'legend')
 ```
 
+You may notice something a bit odd in the call above.  The value of `col` (color) was set inside the `aes` function even though it was not set to a value corresponding to the data set.  This is an exception to that rule.  If you want to utilize `ggplot`'s automatic creation of legends, you can use the method above where labels are given to the color for each line ('loess' and 'linear', respectively).  `scale_colour_manual` is then used to create the legend.  Notice the `values` being set assign colors to the lines here.   
 
+Text can also be added to the plot with `geom_text`.  The correlation is added to the plot in a similar way to how it was done in the `Base R` section.  The `size` argument being set to a value larger than 1 makes the text bigger.  
 
- `ggplot2` Plotting: Numerical Variables    
-
-- May want to add value of correlation to plot  
-
-- `paste()` or `paste0()` handy
-
-```{r}
-paste("Hi", "What", "Is", "Going", "On", "?", sep = " ")
-paste("Hi", "What", "Is", "Going", "On", "?", sep = ".")
-paste0("Hi", "What", "Is", "Going", "On", "?")
-```
-
-
- `ggplot2` Plotting: Numerical Variables    
-
-```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
 correlation <- cor(CO2$conc, CO2$uptake)
 ggplot(CO2, aes(x = conc, y = uptake)) + geom_point() +
   geom_smooth(method = lm, col = "Red") + 
@@ -729,47 +341,29 @@ ggplot(CO2, aes(x = conc, y = uptake)) + geom_point() +
             label = paste0("Correlation = ", round(correlation, 2)))
 ```
 
+Using text for the points is very easy with `geom_text`.  Just use this layer with a `label` variable.  
 
- `ggplot2` Plotting: Numerical Variables
-
-- **Scatter Plot**
-
-- Text for points with `geom_text`  
-
-```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
 ggplot(CO2, aes(x = conc, y = uptake)) + 
   geom_text(aes(label = Plant))
 ```
 
+Again, if we want to create similar scatterplots for each value of another variable, we can do so with faceting.  (Note: the `cut` function is very useful for categorizing a numeric variable.)  Here we create similar scatterplots for each level of the `Treatment` variable.  
 
- `ggplot2` Plotting: Numerical Variables
-
-- Easily facet! (Note: `cut()` is useful for categorizing a numeric variable)  
-
-```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+```{r, echo = TRUE, out.width = "75%", fig.align='center'}
 ggplot(CO2, aes(x = conc, y = uptake)) + 
   geom_point(aes(color = Type), size = 2.5) +
   facet_wrap(~ Treatment)
 ```
 
+Lastly, we saw the useful `pairs` function from `Base R`.  There are many extension packages for `ggplot` that give great functionality.  The `GGally` package has a function called `ggpairs` that is similar to pairs but retains the same syntax and functionality of `ggplot`.  Remember to install the package if you haven't done so and then read it in with the library command (or call the function directly using `::`).
 
- Other `ggplot2` Type Plotting
-
-- Saw `pairs`, better with `GGally::ggpairs()`
-
-```{r, echo = TRUE, out.width = "600px", fig.align='center', message = FALSE, warning = FALSE}
-library(GGally) #install GGally if needed
+```{r, echo = TRUE, out.width = "90%", fig.align='center', message = FALSE, warning = FALSE}
+library(GGally)
 ggpairs(iris, aes(colour = Species, alpha = 0.4))
 ```
 
-
- `ggplot2` Plotting: Numerical variables  
-
-Recap!  
-
-Numerical variable - entries are a numerical value where math can be performed
-
-Most common plots:
+To recap numerical variable plots using `ggplot`, the most common `geom`s are:
 
 - Histogram (`geom_hist`), Density (`geom_density`)  
 
@@ -781,10 +375,7 @@ Most common plots:
 
 - Text on plot (`geom_text`)  
 
-
- `ggplot2` Plotting Recap
-
-General `ggplot` things:
+The syntax and functionality of `ggplot` is recapped below again.
 
 - Can set local or global `aes`
 
@@ -796,8 +387,7 @@ General `ggplot` things:
 
 - Only need `aes` if setting a mapping value that is dependent on the data (or you want to create a custom legend!)  
 
-
- Recap!
+- General syntax:  
 
 `ggplot(data = <DATA>) +`  
 &nbsp;&nbsp;`<GEOM_FUNCTION>(mapping = aes(<MAPPINGS>), stat = <STAT>, position = <POSITION>) +`  
@@ -806,8 +396,4 @@ General `ggplot` things:
 &nbsp;&nbsp;`<LABEL_FUNCTION>`   
 `)`
 
-- Lots of extensions to ggplot!  
-    + `gganimate`  
-    + `ggthemes`  
-    + `ggmap`  
-    + `ggrepel`
+There are many other useful extensions such as `gganimate`, `ggthemes`, `ggmap`, and `ggrepel`.
