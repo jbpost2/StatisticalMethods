@@ -1,0 +1,355 @@
+### Study Purpose
+
+A major goal of a study is usually to conduct statistical inference.  Inference can involve determine which variables are important in relation to a response variable and/or predicting a response variable.  To formally do inference we need to define the population of interest as well as **parameters** we want to study.  
+
+- Population - all the values, items, or individuals of interest
+
+- Parameter - a (usually) unknown summary value about the population
+
+Ideally, we'd be able to measure every member of the population and exactly calculate the value of any population parameter.  This would involved conducing a census.  A census is usually not feasible.  Instead we take a subset of the population and try to use these observations to make statements or claims about the population.
+
+- Sample - a subset of the population we observe data on
+
+- Statistic - a summary value calculated from the sample observations
+
+(**A better visual than this**)
+
+```{r, echo = FALSE, out.width="80%", fig.align='center'}
+knitr::include_graphics("../img/paradigm.png")
+```
+
+Example - A political scientist surveys 400 people randomly from a list of all registered voters in a particular county.  He asks the people if they plan to vote in the upcoming election and 312 say they do.
+
+**Relate above to definitions...**
+
+To discuss paramters and statistics more easily, symbols are used to denote them.  Luckily, there is a common notation that, for the most, is consistent across statistical literature. 
+
+<!-- Name | Parameter | Statistic | Quantity Measured -->
+<!-- -------------------------------------------------- -->
+<!-- Mean | $\mu$     | $\bar{Y}$ or $\bar{y}$ or $\bar{X}$ or $\bar{x}$ | Center or Location -->
+<!-- Proportion | $p$ or $\pi$ | $\hat{P}$ or $\hat{p}$ or $\hat{\pi}$ | Location or Frequency -->
+<!-- Standard Deviation (SD) | $\sigma$ | $S$ or $s$ | Variability or spread -->
+<!-- Variance (Var) | $\sigma^2$ | $S^2$ or $s^2$ | Variability or spread -->
+
+Note: $\bar{Y}=\frac{1}{n}\sum_{i=1}^{n}Y_i$ and $S^2=\frac{1}{n-1}\sum_{i=1}^{n}(Y_i-\bar{Y})^2$ where $n$ is the sample size (or number of observed values in the sample).  Sometimes you'll see other notation for proportions **(....... fill in and change table)**
+
+Question of interest will lead you to which parameter you have interest in.  Careful consideration of what your study goals are will also most likely lead you to which type of data you will collect.
+
+
+### Scales (Types) of Data:
+
+**Quantitative or Numerical variable** - A variable that is described by numerical measurements where arithmetic can be performed
+
+Subscales: 
+ - Discrete - finite or countable finite number of values (# of flowers on a plant, 0, 1, 2, ...)
+ - Continuous - any value in an interval is possible (Temperature, $(-459.67\deg F, \infty)$
+
+**Qualitative or Categorical variable** - A variable that is described by attributes or labels
+
+Subscales: 
+ - Nominal - categories have no ordering (Male, Female) (zip codes)
+ - Ordinal - can order categories (Lickert scale data) (college football rankings)
+ 
+How we summarize and analyze the data will depend on which type of data we have!
+
+
+Example: SAT Performance
+
+50 total students (16 males and 34 females) where matched on socio-economic background (all had similar income). 
+
+- A study was done to examine the effect of preparation atmosphere on SAT scores.  
+- Two types of atmospheres were investigated (strict vs easy going).
+- Students were divided into two groups of 25 (12 males and 13 females in strict class and 4 males 21 females in the easy going class).
+- After a 9 week tutoring session the SAT was taken (although 1 in the strict group did not take the exam and 5 in the easy going group did not take the exam).
+
+**Questions to fill in:**
+- Determine the research question.
+- Define the population and sample.
+- Define possible parameter(s) of interest.
+- Describe the scale of measurement for gender, atmosphere, SAT score.
+- Define possible statistics that might be calculated.
+- Why might the students have been matched on socio-economic background?
+- What issues might you see with the design of this study?
+- What other variables might you collect (to explain more variability in the response)?
+
+
+To get data, we need units for our sample.  We'll discuss a few good and bad ways to obtain units.  
+
+Sampling
+
+Samples must be unbiased and representative of the population to make valid inference.
+
+**Sampleing Scheme** – the method used for selecting members of the population for the sample
+
+Some Sampling Schemes:
+
+- Simple Random Sample
+- Stratified Sample
+- Convenience Sample (Not good!)
+ Many others both good and bad!
+ 
+
+**Simple Random Sampling (SRS)**
+
+- Assign each member in the population a number.
+- Use a random number mechanism to select which members to use.
+
+Why bother? 
+
+Examples:
+- Service Evaluation - disgruntled customers may be more inclined to complete them. \\
+- 1936 US presidential election it was incorrectly predicted that Landon would overwhelmingly defeat Roosevelt (source: Literary Digest ).  
+
+    +	Questionnaires were mailed only to people who had both telephones and cars 
+    +	Selected sample was not representative of the population.
+
+Remark: SRS does not guarantee a “good” or “representative” sample every time.  
+
+- can get all small values or all large values
+-	can get all males or all females
+
+On average we should get a representative sample.  
+
+
+**Stratified Sampling** - Divide a population into groups (strata) and select a SRS from each group. 
+
+
+Example: Academic Support is interested in offering premium movie channels to students that live in dorms.  
+This would cause each student’s housing cost to increase by \$250 a semester.  They would like to conduct a survey to gauge support of this change.
+
+How could we use a SRS? Stratified Sample? 
+
+**Convenience Sample (BAD)**  
+
+- Use most convenient group available or decide on the spot.
+- Often responses from people who choose to participate.
+
+Bad Sampling Examples?
+American Idol, SYTYCD, etc.
+ESPN.com polls, News site polls, etc.
+
+How we select our sample is important as we want to avoid biasing our results!
+There are a number of different types of data we can collect.
+- A good method must have a statistical randomness to them (i.e. must use a random mechanism!)
+- Now we're ready to talk about what to do once we have our units.
+
+
+Sampling is about getting units for your study.  Once done there are two basic types of studies:
+**Observational Study** - observe individuals and measure outcomes without influencing the responses.
+
+Ex: measuring political beliefs in using a poll, measuring yield of a crop based on rainfall
+
+**Experimental Study** - deliberately impose a treatment on individuals and observe their response. 
+
+Ex: assigning different fertilizers and irrigation method and measuring crop yield, assigning temperatures of water to tanks containing a fish and observing weight gain
+
+
+Big difference in conclusions drawn!
+- Cannot usually infer causation from observational studies, but you can from a well-designed experiment.
+- Experiments are not always feasible or ethical.  i.e. cannot assign people to smoke a pack a day or have expectant mothers drink a certain amount of alcohol.
+
+To describe the methods for creating a well-designed experiment, we first need some definitions.
+
+- **Response Variable** - Variable of interest that characterizes performance or behavior.
+- **Explanatory Variables** - Variables that determine the study conditions (can be quantitative or categorical).
+- **Covariate** - Quantitative explanatory variable.
+- **Factor** - Categorical explanatory variable of interest.
+- **Level** -	The specified value of a factor.
+- **Treatment** - A specific experimental condition, either the level of a factor (if only 1 factor) or the combinations of levels from a number of factors.
+- **Experimental units (EUs)** - Units on which the treatments are assigned.
+- **Control Treatment** - Benchmark treatment sometimes necessary for comparison (to avoid the placebo effect).
+- **Replicate** - Name given to EUs that receive the same treatment.
+- **Experimental Error** - Used to describe the variation in response among EUs that are assigned the same treatment.
+
+
+Example: A manufacturer of paper used for making grocery bags is interested in improving the tensile strength of the product.  Product engineering thinks that tensile strength is a function of the hardwood concentration in the pulp and that the range of hardwood concentrations of practical interest is between 5 and 20%.  A team of engineers responsible for the study decides to investigate four levels of hardwood concentration (see table below).  They decide to make up six test specimens at each concentration level, using a pilot plant.  All 24 specimens are tested on a laboratory tensile tester, in random order.
+
+<!-- Hardwood Concentration (%) | 1 | 2 | 3 | 4 | 5 | 6 | Average -->
+<!-- -------------------------------------------------------------- -->
+<!-- 5 | 7 | 8 |15 |11|9|10|10 -->
+<!-- 10|12|17|13|18|19|15|15.67 -->
+<!-- 15|14|18|19|17|16|18|17 -->
+<!-- 20|19|25|22|23|18|20|21.17 -->
+
+What are the response variable, experimental units, factor(s), levels of the factor(s), treatments, and number of replications per treatment?
+
+Example: A mechanical engineer is studying the surface roughness of parts produced in a metal-cutting operation.  The experiment looked at 16 parts, selected using a SRS of today’s parts.  A roughness measurement was recorded on each piece.   Two parts were randomly assigned to each combination of 
+- feed rate – 20 inches/minute or 30 inches/minute
+- depth of cut – 0.025 or 0.04 inches
+- tool angle – 15 or 25 degrees
+
+<!-- | | | Depth of Cut | -->
+<!-- | | 0.025in | | 0.04in -->
+<!-- Feed Rate | | Tool Angle | | Tool Angle -->
+<!-- | 15$\degree$ | 25$\degree$ | 15$\degree$ | 25$\degree$ -->
+<!-- 20 in/min | 9 |11 |9 |10  -->
+<!-- | 7 | 10 | 11 | 8 -->
+<!-- 30in/min | 10 | 10 | 12 | 16 -->
+<!-- | 12 | 13 | 15 | 14 -->
+
+What are the Response variable, EUs, Factors, Levels of the factors, Treatments, and Number of Replicates per treatment? 
+
+
+Notice that many of the response values are different.  What is causing them to be different?
+
+**Sources of Variation** in the responses of an experiment:
+
+**Treatment effect** - we hope there is an effect due to the variables we are setting
+
+Variables accounted for - We record some variables that are not of interest, but we think may have an effect on the response.
+
+Variables unaccounted for (these make up the Experimental Error or Error Variation)
+
+- Inherent variability in experimental units - Experimental units are different!  
+
+Example: No two people, paper towels, concrete blocks, or even lab rats are exactly the same.  
+Consequence: Experimental units respond differently to the same treatment
+		
+- Measurement error - Multiple measurements of a same experimental unit typically contain error.  
+
+			If the same experimental unit is measured more than once, will the value be the same?
+			
+Example: Blood Pressure, Break a water sample in two, measure each for bacteria\\
+			
+- Variations in applying/creating treatments  
+
+The treatment is not clearly defined, leaving room for interpretation.  
+
+Example:  Two researchers mix concrete, one stirs for 10 minutes and one for 20 minutes, will they come out exactly the same? Temperature is of interest but two ovens don`t heat exactly the same, etc.
+			
+- Effects from any other extraneous (or lurking) variables - Extraneous variables are those variables that are not part of the treatment, but may influence the response.  
+
+Example: For the oven example, the experiment is done over the course of several days.  There may be slight differences due to humidity changes.
+
+
+Example: A gardener wants to know if levels of water and fertilizer are better in terms of producing greater crop yield.  The gardener decides to treat 2 greenhouses with 4 treatments (water low - fertilizer low, water high - fertilizer low, etc.).  There were 2 replicates for each treatment within each greenhouse.  
+
+Identify the sources of variation and experimental error (identify what type they are).
+
+
+No matter how hard we try, some experimental error will remain. What we can do is use good experimental design techniques to ensure our study is valid.  
+
+DOE is about creating the optimal experiment to determine the effects of different treatments.  Different types of experimental designs are then analyzed differently.
+
+
+Pillars of Experimental Design
+
+- Randomization - means that the treatments are randomly allocated to the EUs.  
+
+    + Every EU has a chance to get a different treatment, so helps protect the results of the analysis against a systematic influence of lurking variables.  
+    + Allows the observed responses to be regarded as a random sample.
+    + Note: Different randomization schemes lead to different statistical analyses.  
+    + Completely Randomized Design (CRD) - for t treatments, replicated $n_t$ times each, use a random number generator to assign the treatments to the EUs.  
+    + Most basic randomization design - assumes all EUs are exchangeable.
+
+Example:  We are doing an experiment to determine the effect of nutrition (3 different diets) on weight gain in humans.  How can we perform a CRD for this study?
+
+Notes about randomization:  
+
+- Similar in spirit to a SRS in the fact that it does not guarantee balance of lurking variables.  However, if we have a large enough study we should balance out the lurking variables between the treatment groups.  
+
+Randomization is different than random sampling!  
+
+- With an Random Sample, chance determines who will be included in the sample. 
+- Once we have our sample, Randomization determines which EUs get which treatments.
+
+Many other experimental designs!  All use randomization.
+
+Replication - Repetition of an experiment using a large group of subjects to reduce chance variation in the results
+
+- Allows us to generalize the results to the population and increases reliability of conclusions.  
+- Allows an estimate of variability (an estimate of experimental error) not due to the treatment effect.
+
+Note: Replication does not mean that we measure the same EUs multiple times, this is called repeated measures.  Observations from repeated measures experiments cannot 	usually be considered independent.
+
+Ideally as many EUs as we can afford.  Think if we had 3 diets and 3 EUs.  Diet 1 was better than diet 2 and diet 3, not a very reliable conclusion, perhaps person 1 just loses weight more easily.  Now if 100 people at each diet and on average diet 1 was much better, more reliable conclusion.  
+
+By averaging over the many observations we can reduce the effects of measurement error and error in applying/creating the treatments.  
+
+Methods for accounting for/reducing experimental error  
+
+- Controlling Variables - holding certain variables constant across the EUs
+
+    + Decreases generalizability, but reduces experimental error.  
+
+We're not interested in the effects of these variables on the response.  These variables affect the response in exactly the same manner, so that we	don't see the effects on the conclusions. We don`t get information on what happens at levels other than the fixed one.
+
+Example:  For the 3 diet example.  What variables might we control?
+
+- Blocking - Divide subjects with similar characteristics into `blocks', and then within each block, randomly assign subjects to treatment groups.
+
+- Blocks - Groups of EUs sharing a common level of a confounding variable.
+
+```{r, echo = FALSE, fig.align='center', out.width="80%"}
+knitr::include_graphics("../img/block/jpg")
+```
+
+Similar to controlling, but allows for increased generalizability.  EUs within a block are very similar (decreases experimental error there as all the EUs in a block are affected similarly by the confounding variable).  By having enough blocks to cover the range of the population you can still generalize.)
+
+
+Example:  Two new types of material are developed (type A and type B) for use as a dash board in a car.  The material must withstand high temperatures due to the sun and the greenhouse effect.  
+- To test which material holds up better, the manufacturer randomly selects 20 pieces of type A and 20 pieces of type B material.  
+- The company has 4 large ovens (oven 1, 2, 3, and 4) for testing.  Each oven has 5 pieces of type A and 5 of type B randomly placed into each.   
+- After 24 hours, the amount of degradation is measured.  
+
+What are the blocks?  How many replicates do we have?  How many replicates in each block?
+
+There are also methods for dealing with some explained experimental error during the analysis stage - Namely ANCOVA.
+
+These ideas are very important.  Unless you are well versed in statistical methods and ideas you should consult a statistician before investing time and money in an experiment.  
+
+> A poorly designed study can never be saved, but a poorly analyzed one has the possibility of being reanalyzed.
+
+Open-ended Example:  
+Mike and John are interested in finding the optimal type of disc and the throw style on the throw distance of a disc. They consider 3 different disc types (Putter, Mid-Range and Driver) and 2 different throwing techniques (Forehand, Backhand). They gather a group of 30 people to use in the study (hopefully they are an unbiased and representative sample from their population of interest!).  
+
+We want to design an experiment that will assist them.
+
+Specify the factors, treatments, experimental units, response variable, and how you would do the randomization.  What other sources of variation may not be accounted for?  Could you do blocking?
+
+
+Example:	Your company has 20 different types of tires for compact cars. There are 4 types of all season tires, 6 types of snow tires, and 10 types of standard tires.  
+
+The length of time the tires last is very important to customers.  You are to select 60 tires, run them, and test them for wear.  
+
+With a partner - Define the Population, possible Parameter of interest, Sample, and possible Statistic of interest.  
+
+Then come up with a SRS, Stratified, and convenience sampling design for this problem.
+
+This class is about analyzing data.  Once we have data, we need to organize it and summarize it in useful/meaningful ways.  
+
+
+### Study Types  
+
+Ob vs exp  
+Good discussion of what makes a good sampling design.
+
+
+Good discussion of what makes a good sampling design revisit.  Maybe a statified example like the river and selecting houses example as a quick expose of the issues with not doing a truly random sampling technique.  
+
+
+Approx probabilities and quantiles vs theoretical
+
+
+1.  Collecting Data
+Parameter/Statistic
+Census/Sample
+Biases in Samples
+Response, Nonresponse, and Selection
+Sampling Techniques
+SRS, Stratified, Cluster, and Systematic.
+Undercoverage
+Bad Surveys
+
+
+
+### Study Conclusions
+
+Scope of inference stuff and what-not
+
+Examples of why Observational Studies Can be Bad  
+
+George Will WP column about SAT vs amount of money spent
+Pisani and Perv?  many bad examples of inference
+
+Stuff about power/sample size calculation somewhere?
