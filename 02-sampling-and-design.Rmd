@@ -141,7 +141,7 @@ Taking this bigger picture view of the problem, we can usually follow these step
 
 We'll focus on this entire process in our chapter motivating examples and mostly investigate designed experiments.  We attempt to tackle each major topic in this text with a problem-based approach.  That is, we identify a real-world motivating example and discuss the relevant statistical ideas in the context of an actual problem.  We then provide a discussion of the main statistical ideas and concepts in a more traditional format and provide related readings.  Each chapter includes with a section that outlines the use of R and SAS for implementing ideas and concepts from the chapter.  Finally, where applicable, we include a section that outlines some of the mathematical concepts - this section is generally optional.
 
-```{r, child='motivating-examples/02-sampling-farmer's-market.Rmd'}
+```{r, child='motivating-examples/02-sampling-farmer-market.Rmd'}
 ```
 
 
@@ -158,10 +158,10 @@ We'll focus on this entire process in our chapter motivating examples and mostly
 
 ### R
 
-```{r, child=c('02-RSampling&DOE.Rmd')}
+```{r, child=c('software/R/02-RSampling&DOE.Rmd')}
 ```
 
 ### SAS  
 
-```{r, child=c('02-SASSampling&DOE.Rmd')}
+```{r, child=c('software/SAS/02-SASSampling&DOE.Rmd')}
 ```

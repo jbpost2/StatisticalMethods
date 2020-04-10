@@ -27,7 +27,7 @@ There are four main 'areas' of the RStudio IDE:
 
 You may wish to rearrange the panes.  This can be done via the menus at the top.  Choose "Tools --> Global Options".
 
-```{r, out.width = "80%",echo=FALSE}
+```{r, out.width = "80%",echo=FALSE, fig.align='center'}
 knitr::include_graphics("../../img/panes.png")
 ```
 
@@ -48,6 +48,8 @@ To evaluate code you can type directly into the **console**.
 #pi is the built-in constant
 log(pi^2) 
 mean(cars$speed)
+```
+```{r, fig.align='center', out.width = "75%"}
 hist(cars$speed)
 ```
 
@@ -168,8 +170,14 @@ R functions like `print()` or `plot()` act differently depending on an object's 
 
 ```{r , echo = TRUE}
 class(cars)
+```
+```{r, fig.align="center", out.width="75%"}
 plot(cars)
+```
+```{r}
 class(exp)
+```
+```{r, fig.align="center", out.width="75%"}
 plot(exp)
 ```
 
@@ -211,11 +219,11 @@ class(fit)
 
 To understand how to use R for data analysis we need to understand commonly used data structures:
 
-     1. Atomic Vector (1D)  
-     2. Matrix (2D)  
-     3. Array (nd) (not covered)  
-     4. Data Frame (2D)  
-     5. List (1D)  
+1. Atomic Vector (1D)  
+2. Matrix (2D)  
+3. Array (nd) (not covered)  
+4. Data Frame (2D)  
+5. List (1D)  
 
 
 #### Atomic Vector

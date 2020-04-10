@@ -242,8 +242,7 @@ text(x = CO2$conc, y = CO2$uptake, label = "S")
 The last `Base R` plot functionality we'll mention is the `pairs` function.  This function creates basic plots for all pairs of variables when given a data frame.  
 
 ```{r, echo = TRUE, out.width = "75%", fig.align='center', message = FALSE, warning = FALSE}
-pairs(CO2)
-pairs(iris)
+pairs(select(iris, -Species))
 ```
 
 To recap `Base R` plotting:

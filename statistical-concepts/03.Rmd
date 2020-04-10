@@ -163,7 +163,7 @@ Let's start by summarizing a categorical variable (entries are a label or attrib
 + sex (Male or Female)  
 
 ```{r,echo=FALSE}
-titanicData <- read_csv("datasets/titanic.csv")
+titanicData <- read_csv("../datasets/titanic.csv")
 titanicData
 ```
 
