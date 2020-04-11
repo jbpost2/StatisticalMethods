@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Sampling Schemes and Experimental Design | Statistical Methods</title>
+  <meta name="description" content="Applied statistical methods book." />
+  <meta name="generator" content="bookdown 0.17.2 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Sampling Schemes and Experimental Design | Statistical Methods" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Applied statistical methods book." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Sampling Schemes and Experimental Design | Statistical Methods" />
+  
+  <meta name="twitter:description" content="Applied statistical methods book." />
+  
+
+<meta name="author" content="Post, Avery, Osborne" />
+
+
+<meta name="date" content="2020-04-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="summarizing-data.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-the-book"><i class="fa fa-check"></i><b>1.1</b> About the book</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i><b>1.2</b> Software</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#r"><i class="fa fa-check"></i><b>1.3</b> R</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>1.3.1</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#using-rstudio"><i class="fa fa-check"></i><b>1.3.2</b> Using RStudio</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#r-objects-and-classes"><i class="fa fa-check"></i><b>1.3.3</b> R Objects and Classes</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#data-objects"><i class="fa fa-check"></i><b>1.3.4</b> Data Objects</a></li>
+<li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#accessing-common-data-objects"><i class="fa fa-check"></i><b>1.3.5</b> Accessing Common Data Objects</a></li>
+<li class="chapter" data-level="1.3.6" data-path="index.html"><a href="index.html#basics-of-r-recap"><i class="fa fa-check"></i><b>1.3.6</b> Basics of R Recap</a></li>
+<li class="chapter" data-level="1.3.7" data-path="index.html"><a href="index.html#reading-data-basics"><i class="fa fa-check"></i><b>1.3.7</b> Reading Data Basics</a></li>
+<li class="chapter" data-level="1.3.8" data-path="index.html"><a href="index.html#quick-aside-rstudio-project"><i class="fa fa-check"></i><b>1.3.8</b> Quick Aside: RStudio Project</a></li>
+<li class="chapter" data-level="1.3.9" data-path="index.html"><a href="index.html#quick-aside-factors"><i class="fa fa-check"></i><b>1.3.9</b> Quick Aside: Factors</a></li>
+<li class="chapter" data-level="1.3.10" data-path="index.html"><a href="index.html#quick-aside-r-packages"><i class="fa fa-check"></i><b>1.3.10</b> Quick Aside: R Packages</a></li>
+<li class="chapter" data-level="1.3.11" data-path="index.html"><a href="index.html#reading-delimited-data"><i class="fa fa-check"></i><b>1.3.11</b> Reading Delimited Data</a></li>
+<li class="chapter" data-level="1.3.12" data-path="index.html"><a href="index.html#excel-data"><i class="fa fa-check"></i><b>1.3.12</b> Excel data</a></li>
+<li class="chapter" data-level="1.3.13" data-path="index.html"><a href="index.html#sas-data"><i class="fa fa-check"></i><b>1.3.13</b> SAS Data</a></li>
+<li class="chapter" data-level="1.3.14" data-path="index.html"><a href="index.html#spss-data"><i class="fa fa-check"></i><b>1.3.14</b> SPSS Data</a></li>
+<li class="chapter" data-level="1.3.15" data-path="index.html"><a href="index.html#json"><i class="fa fa-check"></i><b>1.3.15</b> JSON</a></li>
+<li class="chapter" data-level="1.3.16" data-path="index.html"><a href="index.html#xml"><i class="fa fa-check"></i><b>1.3.16</b> XML</a></li>
+<li class="chapter" data-level="1.3.17" data-path="index.html"><a href="index.html#databases"><i class="fa fa-check"></i><b>1.3.17</b> Databases</a></li>
+<li class="chapter" data-level="1.3.18" data-path="index.html"><a href="index.html#apis"><i class="fa fa-check"></i><b>1.3.18</b> APIs</a></li>
+<li class="chapter" data-level="1.3.19" data-path="index.html"><a href="index.html#data-manipulation-ideas"><i class="fa fa-check"></i><b>1.3.19</b> Data Manipulation Ideas</a></li>
+<li class="chapter" data-level="1.3.20" data-path="index.html"><a href="index.html#documenting-with-markdown"><i class="fa fa-check"></i><b>1.3.20</b> Documenting with Markdown</a></li>
+<li class="chapter" data-level="1.3.21" data-path="index.html"><a href="index.html#logical-statements"><i class="fa fa-check"></i><b>1.3.21</b> Logical Statements</a></li>
+<li class="chapter" data-level="1.3.22" data-path="index.html"><a href="index.html#dplyr"><i class="fa fa-check"></i><b>1.3.22</b> <code>dplyr</code></a></li>
+<li class="chapter" data-level="1.3.23" data-path="index.html"><a href="index.html#reshaping-data"><i class="fa fa-check"></i><b>1.3.23</b> Reshaping Data</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#sas"><i class="fa fa-check"></i><b>1.4</b> SAS</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#basics-of-sas"><i class="fa fa-check"></i><b>1.4.1</b> Basics of SAS</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#reading-data-with-sas"><i class="fa fa-check"></i><b>1.4.2</b> Reading Data with SAS</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#manipulating-data-with-sas"><i class="fa fa-check"></i><b>1.4.3</b> Manipulating Data with SAS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html"><i class="fa fa-check"></i><b>2</b> Sampling Schemes and Experimental Design</a><ul>
+<li class="chapter" data-level="2.1" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#data-in-the-wild"><i class="fa fa-check"></i><b>2.1</b> Data in the Wild</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#data-from-experiments"><i class="fa fa-check"></i><b>2.1.1</b> Data from Experiments</a></li>
+<li class="chapter" data-level="2.1.2" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#data-from-observational-studies"><i class="fa fa-check"></i><b>2.1.2</b> Data from Observational Studies</a></li>
+<li class="chapter" data-level="2.1.3" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#observational-vs-experimental-studies"><i class="fa fa-check"></i><b>2.1.3</b> Observational vs Experimental Studies</a></li>
+<li class="chapter" data-level="2.1.4" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#the-role-of-statistics"><i class="fa fa-check"></i><b>2.1.4</b> The Role of Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#motivating-example-sampling---farmers-market"><i class="fa fa-check"></i><b>2.2</b> Motivating Example: Sampling - Farmer’s Market</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#define-objective-background"><i class="fa fa-check"></i><b>2.2.1</b> Define Objective &amp; Background</a></li>
+<li class="chapter" data-level="2.2.2" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#select-response"><i class="fa fa-check"></i><b>2.2.2</b> Select Response</a></li>
+<li class="chapter" data-level="2.2.3" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#determine-sources-of-variation"><i class="fa fa-check"></i><b>2.2.3</b> Determine Sources of Variation</a></li>
+<li class="chapter" data-level="2.2.4" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#select-design"><i class="fa fa-check"></i><b>2.2.4</b> Select Design</a></li>
+<li class="chapter" data-level="2.2.5" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#do-study"><i class="fa fa-check"></i><b>2.2.5</b> Do Study</a></li>
+<li class="chapter" data-level="2.2.6" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#do-statistical-analysis"><i class="fa fa-check"></i><b>2.2.6</b> Do Statistical Analysis</a></li>
+<li class="chapter" data-level="2.2.7" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#draw-conclusions-communicate"><i class="fa fa-check"></i><b>2.2.7</b> Draw Conclusions &amp; Communicate</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#statistical-ideas-and-concepts"><i class="fa fa-check"></i><b>2.3</b> Statistical Ideas and Concepts</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#obtaining-a-representative-sample"><i class="fa fa-check"></i><b>2.3.1</b> Obtaining a Representative Sample</a></li>
+<li class="chapter" data-level="2.3.2" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#fundamentals-of-designed-experiments"><i class="fa fa-check"></i><b>2.3.2</b> Fundamentals of Designed Experiments</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#references-and-readings"><i class="fa fa-check"></i><b>2.4</b> References and Readings</a></li>
+<li class="chapter" data-level="2.5" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#software-1"><i class="fa fa-check"></i><b>2.5</b> Software</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#r-1"><i class="fa fa-check"></i><b>2.5.1</b> R</a></li>
+<li class="chapter" data-level="2.5.2" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#sas-1"><i class="fa fa-check"></i><b>2.5.2</b> SAS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="summarizing-data.html"><a href="summarizing-data.html"><i class="fa fa-check"></i><b>3</b> Summarizing Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="summarizing-data.html"><a href="summarizing-data.html#motivating-example---temp"><i class="fa fa-check"></i><b>3.1</b> Motivating Example - Temp</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="summarizing-data.html"><a href="summarizing-data.html#define-objective-background-1"><i class="fa fa-check"></i><b>3.1.1</b> Define Objective &amp; Background</a></li>
+<li class="chapter" data-level="3.1.2" data-path="summarizing-data.html"><a href="summarizing-data.html#select-response-1"><i class="fa fa-check"></i><b>3.1.2</b> Select Response</a></li>
+<li class="chapter" data-level="3.1.3" data-path="summarizing-data.html"><a href="summarizing-data.html#determine-sources-of-variation-1"><i class="fa fa-check"></i><b>3.1.3</b> Determine Sources of Variation</a></li>
+<li class="chapter" data-level="3.1.4" data-path="summarizing-data.html"><a href="summarizing-data.html#select-design-1"><i class="fa fa-check"></i><b>3.1.4</b> Select Design</a></li>
+<li class="chapter" data-level="3.1.5" data-path="summarizing-data.html"><a href="summarizing-data.html#do-study-1"><i class="fa fa-check"></i><b>3.1.5</b> Do Study</a></li>
+<li class="chapter" data-level="3.1.6" data-path="summarizing-data.html"><a href="summarizing-data.html#do-statistical-analysis-1"><i class="fa fa-check"></i><b>3.1.6</b> Do Statistical Analysis</a></li>
+<li class="chapter" data-level="3.1.7" data-path="summarizing-data.html"><a href="summarizing-data.html#draw-conclusions-communicate-1"><i class="fa fa-check"></i><b>3.1.7</b> Draw Conclusions &amp; Communicate</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="summarizing-data.html"><a href="summarizing-data.html#statistical-ideas-and-concepts-1"><i class="fa fa-check"></i><b>3.2</b> Statistical Ideas and Concepts</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="summarizing-data.html"><a href="summarizing-data.html#study-purpose"><i class="fa fa-check"></i><b>3.2.1</b> Study Purpose</a></li>
+<li class="chapter" data-level="3.2.2" data-path="summarizing-data.html"><a href="summarizing-data.html#scales-types-of-data"><i class="fa fa-check"></i><b>3.2.2</b> Scales (Types) of Data:</a></li>
+<li class="chapter" data-level="3.2.3" data-path="summarizing-data.html"><a href="summarizing-data.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>3.2.3</b> Exploratory Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="summarizing-data.html"><a href="summarizing-data.html#suggestions-for-further-readings"><i class="fa fa-check"></i><b>3.3</b> Suggestions for Further Readings</a></li>
+<li class="chapter" data-level="3.4" data-path="summarizing-data.html"><a href="summarizing-data.html#software-2"><i class="fa fa-check"></i><b>3.4</b> Software</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="summarizing-data.html"><a href="summarizing-data.html#r-2"><i class="fa fa-check"></i><b>3.4.1</b> R</a></li>
+<li class="chapter" data-level="3.4.2" data-path="summarizing-data.html"><a href="summarizing-data.html#sas-2"><i class="fa fa-check"></i><b>3.4.2</b> SAS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="point-estimates.html"><a href="point-estimates.html"><i class="fa fa-check"></i><b>4</b> Point Estimates</a><ul>
+<li class="chapter" data-level="4.1" data-path="point-estimates.html"><a href="point-estimates.html#estiamte-with-means"><i class="fa fa-check"></i><b>4.1</b> Estiamte with means</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="point-estimates.html"><a href="point-estimates.html#experiment-background"><i class="fa fa-check"></i><b>4.1.1</b> Experiment background</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="point-estimates.html"><a href="point-estimates.html#estimate-with-quantiles"><i class="fa fa-check"></i><b>4.2</b> Estimate with quantiles</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="point-estimates.html"><a href="point-estimates.html#experiment-background-1"><i class="fa fa-check"></i><b>4.2.1</b> Experiment background</a></li>
+<li class="chapter" data-level="4.2.2" data-path="point-estimates.html"><a href="point-estimates.html#define-the-object-of-the-experiment"><i class="fa fa-check"></i><b>4.2.2</b> Define the object of the experiment</a></li>
+<li class="chapter" data-level="4.2.3" data-path="point-estimates.html"><a href="point-estimates.html#select-appropriate-response-variables"><i class="fa fa-check"></i><b>4.2.3</b> Select appropriate response variables</a></li>
+<li class="chapter" data-level="4.2.4" data-path="point-estimates.html"><a href="point-estimates.html#identify-sources-of-variation"><i class="fa fa-check"></i><b>4.2.4</b> IDentify sources of variation</a></li>
+<li class="chapter" data-level="4.2.5" data-path="point-estimates.html"><a href="point-estimates.html#choose-an-experimental-design"><i class="fa fa-check"></i><b>4.2.5</b> Choose an experimental design</a></li>
+<li class="chapter" data-level="4.2.6" data-path="point-estimates.html"><a href="point-estimates.html#perform-the-test"><i class="fa fa-check"></i><b>4.2.6</b> Perform the test</a></li>
+<li class="chapter" data-level="4.2.7" data-path="point-estimates.html"><a href="point-estimates.html#statistically-analyze-the-data"><i class="fa fa-check"></i><b>4.2.7</b> Statistically analyze the data</a></li>
+<li class="chapter" data-level="4.2.8" data-path="point-estimates.html"><a href="point-estimates.html#draw-conclusions"><i class="fa fa-check"></i><b>4.2.8</b> Draw conclusions</a></li>
+<li class="chapter" data-level="4.2.9" data-path="point-estimates.html"><a href="point-estimates.html#discussion"><i class="fa fa-check"></i><b>4.2.9</b> Discussion</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="accounting-for-uncertainty.html"><a href="accounting-for-uncertainty.html"><i class="fa fa-check"></i><b>5</b> Accounting for Uncertainty</a><ul>
+<li class="chapter" data-level="5.1" data-path="accounting-for-uncertainty.html"><a href="accounting-for-uncertainty.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="accounting-for-uncertainty.html"><a href="accounting-for-uncertainty.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="CI.html"><a href="CI.html"><i class="fa fa-check"></i><b>6</b> Inference via Confidence Intervals for One Sample</a><ul>
+<li class="chapter" data-level="6.1" data-path="CI.html"><a href="CI.html#the-normal-approximation"><i class="fa fa-check"></i><b>6.1</b> The normal approximation</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="CI.html"><a href="CI.html#analog-ci"><i class="fa fa-check"></i><b>6.1.1</b> Analog CI</a></li>
+<li class="chapter" data-level="6.1.2" data-path="CI.html"><a href="CI.html#easy-mode"><i class="fa fa-check"></i><b>6.1.2</b> Easy mode</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="CI.html"><a href="CI.html#other-types-of-binomial-confidence-intervals"><i class="fa fa-check"></i><b>6.2</b> Other types of binomial confidence intervals</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="CI.html"><a href="CI.html#exact-cis-aka-clopper-pearson"><i class="fa fa-check"></i><b>6.2.1</b> Exact CIs, aka Clopper-Pearson</a></li>
+<li class="chapter" data-level="6.2.2" data-path="CI.html"><a href="CI.html#bayesian-intervals"><i class="fa fa-check"></i><b>6.2.2</b> Bayesian intervals</a></li>
+<li class="chapter" data-level="6.2.3" data-path="CI.html"><a href="CI.html#a-good-general-use-ci"><i class="fa fa-check"></i><b>6.2.3</b> A good general-use CI</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="HT.html"><a href="HT.html"><i class="fa fa-check"></i><b>7</b> Inference via Hypothesis Tests for One Sample</a><ul>
+<li class="chapter" data-level="7.1" data-path="HT.html"><a href="HT.html#example-detection-probability"><i class="fa fa-check"></i><b>7.1</b> Example: Detection Probability</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="HT.html"><a href="HT.html#understanding-system-performance"><i class="fa fa-check"></i><b>7.1.1</b> Understanding system performance</a></li>
+<li class="chapter" data-level="7.1.2" data-path="HT.html"><a href="HT.html#data-analysis"><i class="fa fa-check"></i><b>7.1.2</b> Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="HT.html"><a href="HT.html#hypothesis-testing"><i class="fa fa-check"></i><b>7.2</b> Hypothesis testing</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="HT.html"><a href="HT.html#wald-tests"><i class="fa fa-check"></i><b>7.2.1</b> Wald tests</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="twocategorical.html"><a href="twocategorical.html"><i class="fa fa-check"></i><b>8</b> Inference for Two Categorical Variables</a></li>
+<li class="chapter" data-level="9" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>9</b> One-Way ANOVA</a></li>
+<li class="chapter" data-level="10" data-path="motivating-example.html"><a href="motivating-example.html"><i class="fa fa-check"></i><b>10</b> Motivating example</a></li>
+<li class="chapter" data-level="11" data-path="simple-model-for-the-data.html"><a href="simple-model-for-the-data.html"><i class="fa fa-check"></i><b>11</b> Simple model for the data</a></li>
+<li class="chapter" data-level="12" data-path="exploratory-analysis.html"><a href="exploratory-analysis.html"><i class="fa fa-check"></i><b>12</b> exploratory analysis</a></li>
+<li class="chapter" data-level="13" data-path="sources-of-variation.html"><a href="sources-of-variation.html"><i class="fa fa-check"></i><b>13</b> sources of variation</a></li>
+<li class="chapter" data-level="14" data-path="statistical-model-and-analysis.html"><a href="statistical-model-and-analysis.html"><i class="fa fa-check"></i><b>14</b> statistical model and analysis</a></li>
+<li class="chapter" data-level="15" data-path="compare-analyses.html"><a href="compare-analyses.html"><i class="fa fa-check"></i><b>15</b> compare analyses</a></li>
+<li class="chapter" data-level="16" data-path="multiway.html"><a href="multiway.html"><i class="fa fa-check"></i><b>16</b> Multi-way ANOVA</a></li>
+<li class="chapter" data-level="17" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#block"><i class="fa fa-check"></i><b>17</b> Block Designs</a></li>
+<li class="chapter" data-level="18" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>18</b> Regression Models</a></li>
+<li class="chapter" data-level="19" data-path="glm.html"><a href="glm.html"><i class="fa fa-check"></i><b>19</b> The General Linear Model</a></li>
+<li class="chapter" data-level="20" data-path="mixedmodels.html"><a href="mixedmodels.html"><i class="fa fa-check"></i><b>20</b> Mixed Models</a></li>
+<li class="chapter" data-level="21" data-path="repeatedmeasures.html"><a href="repeatedmeasures.html"><i class="fa fa-check"></i><b>21</b> Split Plot and Repeated Measures Designs</a></li>
+<li class="chapter" data-level="22" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>22</b> Logistic Regression and Generalized Linear Models</a><ul>
+<li class="chapter" data-level="22.1" data-path="logistic.html"><a href="logistic.html#stuff-here"><i class="fa fa-check"></i><b>22.1</b> Stuff here</a></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="glmm.html"><a href="glmm.html"><i class="fa fa-check"></i><b>23</b> Generalized Linear Mixed Models</a></li>
+<li class="chapter" data-level="24" data-path="learningobj.html"><a href="learningobj.html"><i class="fa fa-check"></i><b>24</b> Appendix - Learning Objectives</a><ul>
+<li class="chapter" data-level="24.1" data-path="learningobj.html"><a href="learningobj.html#book-level"><i class="fa fa-check"></i><b>24.1</b> Book-level</a></li>
+<li class="chapter" data-level="24.2" data-path="learningobj.html"><a href="learningobj.html#topic-level"><i class="fa fa-check"></i><b>24.2</b> Topic-level</a><ul>
+<li class="chapter" data-level="24.2.1" data-path="learningobj.html"><a href="learningobj.html#chapter-2---sampling-design-and-exploratory-data-analysis"><i class="fa fa-check"></i><b>24.2.1</b> Chapter 2 - Sampling, Design, and Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="24.2.2" data-path="learningobj.html"><a href="learningobj.html#chapter-3---point-estimation"><i class="fa fa-check"></i><b>24.2.2</b> Chapter 3 - Point Estimation</a></li>
+<li class="chapter" data-level="24.2.3" data-path="learningobj.html"><a href="learningobj.html#chapter-4---accounting-for-uncertainty-in-estimation"><i class="fa fa-check"></i><b>24.2.3</b> Chapter 4 - Accounting for Uncertainty in Estimation</a></li>
+<li class="chapter" data-level="24.2.4" data-path="learningobj.html"><a href="learningobj.html#chapter-5---inference-via-hypothesis-testing-for-a-proportion-or-mean"><i class="fa fa-check"></i><b>24.2.4</b> Chapter 5 - Inference via Hypothesis Testing for a Proportion or Mean</a></li>
+<li class="chapter" data-level="24.2.5" data-path="learningobj.html"><a href="learningobj.html#chapter-6---inference-via-confidence-intervals-for-a-proportion-or-mean"><i class="fa fa-check"></i><b>24.2.5</b> Chapter 6 - Inference via Confidence Intervals for a Proportion or Mean</a></li>
+<li class="chapter" data-level="24.2.6" data-path="learningobj.html"><a href="learningobj.html#chapter-7---inference-on-two-categorical-variables"><i class="fa fa-check"></i><b>24.2.6</b> Chapter 7 - Inference on Two Categorical Variables</a></li>
+<li class="chapter" data-level="24.2.7" data-path="learningobj.html"><a href="learningobj.html#chapter-8---inference-for-multiple-means"><i class="fa fa-check"></i><b>24.2.7</b> Chapter 8 - Inference for Multiple Means</a></li>
+<li class="chapter" data-level="24.2.8" data-path="learningobj.html"><a href="learningobj.html#chapter-9---multiway-anova"><i class="fa fa-check"></i><b>24.2.8</b> Chapter 9 - Multiway ANOVA</a></li>
+<li class="chapter" data-level="24.2.9" data-path="learningobj.html"><a href="learningobj.html#chapter-10---block-designs"><i class="fa fa-check"></i><b>24.2.9</b> Chapter 10 - Block Designs</a></li>
+<li class="chapter" data-level="24.2.10" data-path="learningobj.html"><a href="learningobj.html#chapter-11---regression"><i class="fa fa-check"></i><b>24.2.10</b> Chapter 11 - Regression</a></li>
+<li class="chapter" data-level="24.2.11" data-path="learningobj.html"><a href="learningobj.html#chapter-12---the-general-linear-model"><i class="fa fa-check"></i><b>24.2.11</b> Chapter 12 - The General Linear Model</a></li>
+<li class="chapter" data-level="24.2.12" data-path="learningobj.html"><a href="learningobj.html#chapter-13---mixed-models"><i class="fa fa-check"></i><b>24.2.12</b> Chapter 13 - Mixed Models</a></li>
+<li class="chapter" data-level="24.2.13" data-path="learningobj.html"><a href="learningobj.html#chapter-14---repeated-measures-and-split-plot-designs"><i class="fa fa-check"></i><b>24.2.13</b> Chapter 14 - Repeated Measures and Split Plot Designs</a></li>
+<li class="chapter" data-level="24.2.14" data-path="learningobj.html"><a href="learningobj.html#chapter-15---logistic-regression-and-generalized-linear-models"><i class="fa fa-check"></i><b>24.2.14</b> Chapter 15 - Logistic Regression and Generalized Linear Models</a></li>
+<li class="chapter" data-level="24.2.15" data-path="learningobj.html"><a href="learningobj.html#chapter-16---generalized-linear-mixed-models"><i class="fa fa-check"></i><b>24.2.15</b> Chapter 16 - Generalized Linear Mixed Models</a></li>
+</ul></li>
+<li class="chapter" data-level="24.3" data-path="learningobj.html"><a href="learningobj.html#from-st512"><i class="fa fa-check"></i><b>24.3</b> From ST512</a></li>
+<li class="chapter" data-level="24.4" data-path="learningobj.html"><a href="learningobj.html#for-point-estimates-chapter"><i class="fa fa-check"></i><b>24.4</b> For Point Estimates Chapter</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="25" data-path="notation.html"><a href="notation.html"><i class="fa fa-check"></i><b>25</b> Appendix - Notation</a><ul>
+<li class="chapter" data-level="25.1" data-path="notation.html"><a href="notation.html#standard-notation"><i class="fa fa-check"></i><b>25.1</b> Standard notation</a></li>
+<li class="chapter" data-level="25.2" data-path="notation.html"><a href="notation.html#mixed-models"><i class="fa fa-check"></i><b>25.2</b> Mixed models</a></li>
+<li class="chapter" data-level="25.3" data-path="notation.html"><a href="notation.html#effects-model-representation"><i class="fa fa-check"></i><b>25.3</b> Effects model representation</a></li>
+<li class="chapter" data-level="25.4" data-path="notation.html"><a href="notation.html#estimators-vs.-estimates"><i class="fa fa-check"></i><b>25.4</b> Estimators vs. Estimates</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistical Methods</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sampling-schemes-and-experimental-design" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Sampling Schemes and Experimental Design</h1>
+<div id="data-in-the-wild" class="section level2">
+<h2><span class="header-section-number">2.1</span> Data in the Wild</h2>
+<p>Data is a collection of information about a group of individuals or units. Most often we have a number of variables, or measures of interest, that we observe on each individual or unit. The collection of information is called a dataset. Data is ubiquitous in today’s society. Healthcare, marketing, history, biology, … almost every field has data for which a sound statistical analysis can glean useful insights. However, the quality of data varies greatly from study to study and this implies the conclusions which you can draw from a study vary as well. Let’s jump in!</p>
+<div id="data-from-experiments" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Data from Experiments</h3>
+<p>Some data comes from a well-designed experiment where a researcher uses sound principles to select units for the study and conduct interventions.</p>
+<p>For example, a mechanical engineer wanted to determine which variables influence gas mileage of a certain year and model of a car. Gas mileage would be referred to as the <strong>response</strong> variable for this study since it characterized the performance of interest.</p>
+<p>After careful consideration, the engineer chose to investigate a few <strong>explanatory variables</strong> they believed were associated with the response. They wanted to learn about the relationship between gas mileage and the factors below. A <strong>factor</strong> is an explanatory variable that takes on a finite number of values, called levels, set by the researcher.</p>
+<p>Study factors (<strong>levels</strong> of each factor are given in parentheses):</p>
+<ul>
+<li>Tire pressure (low, standard)<br />
+</li>
+<li>Octane rating of fuel (regular, midgrade, premium)<br />
+</li>
+<li>Type of driving (defensive, aggressive)</li>
+</ul>
+<p>They also chose to <strong>control</strong> or hold constant the following variables during the execution of the study:</p>
+<ul>
+<li>Weather conditions<br />
+</li>
+<li>Route<br />
+</li>
+<li>Tire type<br />
+</li>
+<li>Past car usage</li>
+</ul>
+<p>The engineer randomly selected a <strong>sample</strong> of 24 cars from the assembly line for that year and model of car (we’ll learn more about the importance of selecting a representative sample of cars shortly). Software was used to randomly assign a <strong>treatment</strong> to each of the 24 cars. A treatment is a particular combination of the factor levels. For instance, low tire pressure, regular octane fuel, and defensive driving was a treatment. The cars would be called the <strong>experimental units</strong> (EUs) as they are the unit the treatments are assigned to.</p>
+<p>The experiment was run and the gas mileage found for each car. As the car was measured, we’d refer to the car as the <strong>observational unit</strong> (OU).</p>
+<p>The key thing that makes this study an <strong>experimental study</strong> is the active role the research plays in manipulating the environment. Here, the researcher uses random assignment of treatments to the EUs.</p>
+
+<div class="definition">
+<p>Experimental Study - researchers manipulate the conditions in which the study is done.</p>
+</div>
+
+<p><strong>Visual of experiment - maybe a researcher with arrows going out to cars where the tires, gas tank, and driver are emphasized in some way</strong></p>
+<p>This short description exhibits three important concepts in experimental design that we’ll come back to many times.</p>
+<p>Pillars of experimental design: (Put an outer block around this)</p>
+
+<div class="definition">
+<ul>
+<li>Randomization - treatments are randomly assigned to experimental units<br />
+</li>
+</ul>
+</div>
+
+
+<div class="definition">
+<ul>
+<li>Replication - multiple (independent) experimental units are assigned the same treatment<br />
+</li>
+</ul>
+</div>
+
+
+<div class="definition">
+<ul>
+<li>Control - some study conditions are held constant to reduce variability in the response<br />
+</li>
+</ul>
+</div>
+
+</div>
+<div id="data-from-observational-studies" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Data from Observational Studies</h3>
+<p>Some data comes from an observational study where the researcher collects data without imposing any changes.</p>
+<p>For example, an economist wanted to investigate the effects of recently added tariffs on agricultural products to the amount and value of such products that are traded between the United States and Asia. This study had two <strong>response</strong> variables, the amount and value of each product traded between the two parties.</p>
+<p>In order to take into account seasonal variation and time of year, the economist decided to compare the two response variables from the current year - 6 months worth of data - against the values of the two response variables during the same 6 month periods for each of the past 5 years. The year variable associated with a measurement was an <strong>explanatory variable</strong>. Alternatively, the year variable could have also been labeled to take on one of two values: no-tariff (past years’ data) or tariff (current year’s data).</p>
+<p>The researcher obtained the data from the census bureau and conducted their analysis.</p>
+<p>Notice that the researcher, while certainly being actively involved in the careful consideration of the data to be collected and how to format the data, did not actively intervene or impose a change. This is the key component of an <strong>observational study</strong>.</p>
+
+<div class="definition">
+<p>Observational Study - researchers collect data without imposing any changes on the study environment.</p>
+</div>
+
+<p><strong>Visual of observational study here - something like a researcher with a clipboard looked at a globe with arrows to represent trading or something like that</strong></p>
+</div>
+<div id="observational-vs-experimental-studies" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Observational vs Experimental Studies</h3>
+<p>You may have noticed that both example studies had some things in common. For instance, both studies had <strong>response</strong> variables that characterize the performance of the study in some sense. Importantly, these response variables had variation. That is, observing the variable is non-deterministic even under seemingly identical situations. Accounting for, and dealing with, this variation is at the heart of the reason statistical methods are needed! There were also <strong>explanatory variables</strong> that the researcher was interested in with regard to their relationship with the response variable. Determing ad quantifying these relationships is often the major goal of a study.</p>
+<p>Both studies also hoped to make statements or conclusions about a larger group using data from a subset of that larger group. This idea is referred to as <strong>statistical inference</strong>. More formally the group of values, items, measurements, or individuals of interest defines the <strong>population</strong> of interest and the data collected on that group represents the <strong>sample</strong>. The number of observations in the sample is referred to as the <strong>sample size</strong>. For the gas mileage example, the population was all cars of the year and make in question, the sample was the data collected on the 24 cars, and the sample size was 24. For the tariff example, the population was all future agricultural products traded between the United States and Asia, the sample was the information from the six years of trade data, and the sample size is six. The two populations mentioned here differ in that the car population is a <strong>real, finite population</strong> and the trade population is a <strong>conceptual, infinite population</strong>. As long as a finite population is large relative to the sample size, the differences tend not to be important. We’ll discuss these ideas in more detail as they arise.</p>
+
+<div class="definition">
+<p>Population - (Possibly conceptual) group of values, items, measurements, or individuals of interest</p>
+</div>
+
+
+<div class="definition">
+<p>Sample - Subset of the population on which we observe data</p>
+<p>Sample Size - Number of observations in the sample</p>
+</div>
+
+
+<div class="definition">
+<p>Statistical Inference - Process of using sample data to make statements or claims about a population. Two major goals of inference:<br />
+- Determining and quantifying relationships between explanatory variables and the response<br />
+- Predicting the response for some setting of explanatory variables.</p>
+</div>
+
+<p>Both of these studies had to determine how to obtain their observations. For the experiment, 24 cars were used. For the observational study, six years of data were collected. How this data is collected can be extremely important in terms of the types of conclusions that can be made. Data needs to be <strong>representative</strong> of the population in which the researcher hopes to make inference. Otherwise, the conclusions made are likely invalid or in need of qualifications. We’ll discuss the idea of what makes a good or bad <strong>sampling scheme</strong> later in the chapter.</p>
+<p>The major difference between the two studies was the active (experimental) and passive (observational) roles played by the researcher. This difference is also of vital importance to the types of conclusions that can be made from the study. A well-designed experiment can often allow the researcher to infer <strong>causation</strong> to the treatments, whereas an observational study cannot.</p>
+<p>The conclusions a researcher can make based on how the data were collected and the type of study are outlined in the table below.</p>
+<strong>Redo this table with our own wording</strong>
+<div class="figure" style="text-align: center"><span id="fig:scope"></span>
+<img src="img/ScopeOfInferenceTable.png" alt="Scope of Inference, cite: Khan Academy" width="80%" />
+<p class="caption">
+Figure 2.1: Scope of Inference, cite: Khan Academy
+</p>
+</div>
+<p>Doing an observational study doesn’t mean that your study is bad! An observational study is sometimes done out of necessity when an experiment wouldn’t be ethical or feasible. For the tariff example, there really isn’t a way to conduct an experiment. If we wanted to design an experiment to see if smoking causes lung cancer, that would be unethical because we can’t force people to smoke. The key point is that the implications we can draw will differ greatly between experimental and observational studies and will depend heavily on the quality (in relation to the population) of the data you have. To apply causation to an observational study, <strong>causal inference</strong> methods can sometimes be used. We won’t cover this extensive topic in this text. See the references and readings section for a few useful texts.</p>
+</div>
+<div id="the-role-of-statistics" class="section level3">
+<h3><span class="header-section-number">2.1.4</span> The Role of Statistics</h3>
+<p>A statistic itself is generally a summary of data. When most people think of statistics they think of things like a batting average or a proportion of people that will vote for a proposal. <strong>Statistics</strong> as a discipline is the science of learning from data. It encompasses the collection of data, the possible design of an experiment, the summarization of collected data, and the modeling or analysis used in order to make a decision or further scientific knowledge.</p>
+
+<div class="definition">
+<p>Statistics in everyday use usually refers simply to summaries about data (means/averages, proportions, or counts).</p>
+<p>Statistics as a field encompasses a much larger range of ideas including how to collect data, model data, and make decisions or come to conclusions when faced with uncertainty.</p>
+</div>
+
+<p><strong>Statistical methods are needed in situations where data is variable.</strong> There is no need to apply statistical methods to study the relationship between temperature in degrees Celsius and degrees Fahrenheit. Given the degrees in Celsius, we know teh exact value in degrees Fahrenheit. However, if we again collected data about the gas mileage of vehicles under the exact same study conditions we’ll get slightly different gas mileage readings. If we observed another six month period of trade data we’ll see different amounts and values traded. Accounting for this variability in data is the reason to apply statistical methods and is a key component of any statistical analysis.</p>
+<p>Ideally, one should try to take a holistic view of a study. Before any data is collected it is vital to understand the goals and background of the study. These will inform the data you ideally want to collect as well as the data that you are able to collect - which may need to act as a proxy. A plan should be determined for the actual collection and storing of the data. The entire study design will then inform the statistical analysis and conclusions that can be drawn.</p>
+<p>Taking this bigger picture view of the problem, we can usually follow these steps:</p>
+<p><strong>Add icons to these as well as the overall logo here </strong></p>
+<ol style="list-style-type: decimal">
+<li>Define the objective of the experiment and understand the background (Define Objective &amp; Background)<br />
+</li>
+<li>Select appropriate response variables (Select Response)<br />
+</li>
+<li>Identify sources of variation (Determine Sources of Variation)<br />
+</li>
+<li>Choose sampling scheme and/or experimental design (Select Design)<br />
+</li>
+<li>Carry out the study (Do Study)</li>
+<li>Statistically analyze the data (Do Statistical Analysis)<br />
+</li>
+<li>Draw conclusions from the analysis while considering limitations and the steps above as well as communicate results (Draw Conclusions &amp; Communicate)</li>
+</ol>
+<p>We’ll focus on this entire process in our chapter motivating examples. Mostly, we’ll investigate designed experiments. We attempt to tackle each major topic in this text with a problem-based approach. That is, we identify a real-world motivating example and discuss the relevant statistical ideas in the context of that problem. We then provide a discussion of the main statistical ideas and concepts and provide related references and readings. Each chapter includes with a section that outlines the use of R and SAS for implemention. Finally, where applicable, we include a section that outlines some of the mathematical concepts - this section is always optional!</p>
+</div>
+</div>
+<div id="motivating-example-sampling---farmers-market" class="section level2">
+<h2><span class="header-section-number">2.2</span> Motivating Example: Sampling - Farmer’s Market</h2>
+<div id="define-objective-background" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Define Objective &amp; Background</h3>
+<p>A nutrition scientist wanted to understand the cleanliness and food hygiene of the vendors at the North Carolina State Farmer’s Market (henceforth the farmer’s market). Secondarily, she wanted to learn about vendor sales to see if there was a relationship with their cleanliness and food hygiene. The researcher had access to the names of each vendor’s business, their general purpose, and the products they sold.</p>
+<p>The researcher needed to decide the scope of their study. Formally, they needed to define the <strong>population</strong> of interest. The population is the group of people or units of interest to the researcher. As her interest centered around food-related businesses, she restricted to looking at the vendors which sold horticultural crops. She hoped that conclusions made by her study could apply to all horticulture vendors at the farmer’s market - thus, this is her population.</p>
+<p>Note: One could try to do a study at just the North Carolina State Farmer’s Market and extend the results to all farmer’s markets in the state or in the south, but that would require many assumptions to be valid.</p>
+<p>A <a href="http://www.ncagr.gov/markets/chart.htm">list of the horticultural products sold and their availability</a> is reproduced below.</p>
+<p><img src="img/availabilitychart-1.jpg" width="65%" /><img src="img/availabilitychart-2.jpg" width="65%" /></p>
+</div>
+<div id="select-response" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Select Response</h3>
+<p>The researcher needed to determine the variables to collect that would best help to answer their questions of interest. These variables that characterize the experiment are called <strong>response</strong> or target variables.</p>
+<p>To investigate the knowledge of hygiene and safety, a short questionnaire was developed to allow the vendor’s head manager (or similar employee) to describe their safety protocol and knowledge:</p>
+<ul>
+<li>For your produce with signs that say “clean” or “washed”, what does this mean?</li>
+<li>How are the foods transported to the market? eg: refrigerated/closed storage<br />
+</li>
+<li>What food safety risks do you as a vendor worry about?<br />
+</li>
+<li>Do you require one-use gloves to be used? (Yes or No)<br />
+</li>
+<li>Do you designate a person in charge of money transactions? (Yes or No)</li>
+</ul>
+<p>The researcher also planned to do an assessment of the cleanliness of each vendor’s station at different times. Her team would pick 30 days during the summer in which they’d walk through the vendor stations and collect the following information:</p>
+<ul>
+<li>Overall is the station clean (Yes or No)<br />
+</li>
+<li>Is anyone smoking around the food products? (Yes or No)<br />
+</li>
+<li>Are tables covered? (Yes or No) If so, what is the material?<br />
+</li>
+<li>Do employees appear to be clean? (Yes or No)<br />
+</li>
+<li>Are one-use gloves used? (Yes or No)<br />
+</li>
+<li>Is there a designated person in charge of money transactions (Yes or No)</li>
+</ul>
+<p>She noted that there is a yearly cycle to the products sold and decided to collect vendors sales information by looking at the (AMT) amount sold in the last year (in dollars), the (PURCHASE) total number of purchases made in the last year, and the (NUM_ITEMS) total number of items sold in the last year. For the last variable, they had to decide how to measure the number of items sold for the different types of crops. For most of the crops looking at the total weight (in lbs) sold made sense. But, for some, other measures were needed. For example, for sweet corn the number of ears sold would be recorded.</p>
+<p>You can see that there are many decisions that the researcher must make in simply deciding the response variables to collect! A poor choice here can make or break a study.</p>
+</div>
+<div id="determine-sources-of-variation" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Determine Sources of Variation</h3>
+<p>The response variables clearly have some relationship to other variables that could be collected. For instance, the NUM_ITEMS variable is clearly going to be different based upon what crops the vendor sells. The AMT variable would differ depending on the size of the vendor’s inventory. These are examples of <strong>explanatory variables</strong> or variables that define the study conditions. Explanatory variables go by many names such as predictors, features, or independent variables.</p>
+<p><strong>A main consideration about whether or not to record a variable is whether or not the variable would be related to a variation in a response variable.</strong> Since the response variables are truly what is of interest, there is really not much of a point in recording variables that likely have no relationship with it.</p>
+<p>Choosing the explanatory variables can also indicate further questions of interest. For instance, the researcher may want to compare the percent of “Yes” for the overall cleanliness score for vendors that mainly sell vegetables to those that mainly sell fruit leading to a comparison across groups being of interest. She may want to try to model the AMT of cantaloupe sold as a function of the cleanliness score.</p>
+<p>The average amount for the population or a subpopulation would be referred to as a parameter of interest. Formally, a <strong>parameter</strong> is a summary measure about a population. Common parameters investigated include a mean, proportion, median, or variance of different subgroups of the population.</p>
+<p>The explanatory variables she collected about the vendors included the types of crops sold, the services they provide (grow, pack, and/or ship), and whether or not they are a “Got to be NC member”.</p>
+<p>For the questionnaire, she added the additional questions below:</p>
+<ul>
+<li>Are there any organic or synthetic chemicals/fertilizers/pesticides/manures used on the products?<br />
+</li>
+<li>Are all foods grown/processed by the vendors?<br />
+</li>
+<li>What kind of soil were the products grown in? eg: organic/compost/plant material</li>
+</ul>
+<p>For the assessment of cleanliness, she added the following question:</p>
+<ul>
+<li>How many people are working?</li>
+</ul>
+<p><strong>Should we talk about formalizing the other questions they want to answer here??</strong></p>
+</div>
+<div id="select-design" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> Select Design</h3>
+<p>For this study the researchers aren’t interested in doing an intervention so an observational study was being done. The major task to consider for the observational study is how to select participants from the population. The subset of the population we (attempt to) observe our data on is called the <strong>sample</strong>. The <strong>sample size</strong> is the number of measurements in the sample.</p>
+<p>Ideally, we would measure every member of our population. This is called a <strong>census</strong>. If a census can be done then the value of a population’s parameter can be found exactly by simply summarizing the population data. However, conducting a census can be extremely costly or time-intensive so most of the time a census cannot be done. This means that the information we collect would likely be different if we collected it again. Accounting for this variability is the main reason statistical analysis is needed.</p>
+<p>How the researcher selects their sample is extremely important. This method is often referred to as the <strong>sampling scheme</strong>. Using a statistically valid sampling scheme is vital to the assumptions made when doing statistical inference. A valid sampling scheme implies that every member of the population has a known and non-zero chance of inclusion in the sample.</p>
+<p>There are many good ways to select the sample and many bad ways. <strong>Need to get more info about the farmer’s market to finish this part</strong>
+(Talk about bad first and why bad - visuals too) Talk about good and why good - visuals too.</p>
+<p>This idea is further fleshed out at the end of the chapter. (reference/link this)</p>
+<p>Here they chose to do a stratified sample to make sure that they didn’t leave out any important subgroups.</p>
+<p><strong>Should we talk about formalizing the other questions they want to answer here??</strong></p>
+</div>
+<div id="do-study" class="section level3">
+<h3><span class="header-section-number">2.2.5</span> Do Study</h3>
+<p>Go and talk to chosen vendors. May have some non-response issues. Ideally a contingency for this should be developed when considering the sampling scheme.</p>
+<p><strong>Should we talk about formalizing the other questions they want to answer here??</strong></p>
+</div>
+<div id="do-statistical-analysis" class="section level3">
+<h3><span class="header-section-number">2.2.6</span> Do Statistical Analysis</h3>
+<p><strong>Should we talk about formalizing the other questions they want to answer here??</strong></p>
+<p>The major goals of this study were simply to describe the vendors at the farmer’s market. In this case we can produce numerical and graphical summaries.</p>
+<p>Careful discussion of not selecting a modeling technique based on this unless it is a pilot study or an exploratory study else we have increased our nominal type I error rate…</p>
+<p>Spend a lot of time here talking about graphs of different types. Sample means, sample variances, etc.</p>
+<p>Discuss population curves vs sample histograms and the relationship.</p>
+<p>Not a formal test here but comparisons of interest etc.</p>
+</div>
+<div id="draw-conclusions-communicate" class="section level3">
+<h3><span class="header-section-number">2.2.7</span> Draw Conclusions &amp; Communicate</h3>
+<p>What actionable things have we found? Likely some trends to investigate further. Perhaps run an experiment to formally see if some alteration can be effective.</p>
+<p>What can we conclude realistically from this data? To what population are we talking?</p>
+</div>
+</div>
+<div id="statistical-ideas-and-concepts" class="section level2">
+<h2><span class="header-section-number">2.3</span> Statistical Ideas and Concepts</h2>
+<p>Identifying population discussion, questions of interest, what does a difference mean, parameters, …</p>
+<div id="obtaining-a-representative-sample" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Obtaining a Representative Sample</h3>
+<p>To get data, we need units for our sample. We’ll discuss a few good and bad ways to obtain units.</p>
+<p>Sampling</p>
+<p>Samples must be representative of the population to make valid inference.</p>
+<p><strong>Sampling Scheme</strong> – the method used for selecting members of the population for the sample</p>
+<p>Some Sampling Schemes:</p>
+<ul>
+<li>Simple Random Sample</li>
+<li>Stratified Sample</li>
+<li>Convenience Sample (Not good!)
+Many others both good and bad!</li>
+</ul>
+<div id="simple-random-sampling-srs" class="section level4">
+<h4><span class="header-section-number">2.3.1.1</span> Simple Random Sampling (SRS)</h4>
+<ul>
+<li>Assign each member in the population a number.</li>
+<li>Use a random number mechanism to select which members to use.</li>
+</ul>
+<p>Why bother?</p>
+<p>Examples:
+- Service Evaluation - disgruntled customers may be more inclined to complete them. \
+- 1936 US presidential election it was incorrectly predicted that Landon would overwhelmingly defeat Roosevelt (source: Literary Digest ).</p>
+<pre><code>+   Questionnaires were mailed only to people who had both telephones and cars 
++   Selected sample was not representative of the population.</code></pre>
+<p>Remark: SRS does not guarantee a “good” or “representative” sample every time.</p>
+<ul>
+<li>can get all small values or all large values</li>
+<li>can get all males or all females</li>
+</ul>
+<p>On average we should get a representative sample.</p>
+</div>
+<div id="stratified-sampling" class="section level4">
+<h4><span class="header-section-number">2.3.1.2</span> Stratified Sampling</h4>
+<p>Divide a population into groups (strata) and select a SRS from each group.</p>
+<p>Example: Academic Support is interested in offering premium movie channels to students that live in dorms.<br />
+This would cause each student’s housing cost to increase by $250 a semester. They would like to conduct a survey to gauge support of this change.</p>
+<p>How could we use a SRS? Stratified Sample?</p>
+</div>
+<div id="convenience-sample-bad" class="section level4">
+<h4><span class="header-section-number">2.3.1.3</span> Convenience Sample (BAD)</h4>
+<ul>
+<li>Use most convenient group available or decide on the spot.</li>
+<li>Often responses from people who choose to participate.</li>
+</ul>
+<p>Bad Sampling Examples?
+American Idol, SYTYCD, etc.
+ESPN.com polls, News site polls, etc.</p>
+<p>How we select our sample is important as we want to avoid biasing our results!
+There are a number of different types of data we can collect.
+- A good method must have a statistical randomness to them (i.e. must use a random mechanism!)</p>
+<p>Sampling is about getting units for your study. Once done there are two basic types of studies:
+<strong>Observational Study</strong> - observe individuals and measure outcomes without influencing the responses.</p>
+<p>Ex: measuring political beliefs in using a poll, measuring yield of a crop based on rainfall</p>
+<p>Recall <strong>Experimental Study</strong> - deliberately impose a treatment on individuals and observe their response.</p>
+<p>Big difference in conclusions drawn!
+- Cannot usually infer causation from observational studies, but you can from a well-designed experiment.
+- Experiments are not always feasible or ethical. i.e. cannot assign people to smoke a pack a day or have expectant mothers drink a certain amount of alcohol.</p>
+<p>How to do this important and nuanced. Next we’ll …</p>
+</div>
+</div>
+<div id="fundamentals-of-designed-experiments" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Fundamentals of Designed Experiments</h3>
+<p>Ex: assigning different fertilizers and irrigation method and measuring crop yield, assigning temperatures of water to tanks containing a fish and observing weight gain</p>
+<p>To describe the methods for creating a well-designed experiment, we first need some definitions.</p>
+<ul>
+<li><strong>Response Variable</strong> - Variable of interest that characterizes performance or behavior.</li>
+<li><strong>Explanatory Variables</strong> - Variables that determine the study conditions (can be quantitative or categorical).</li>
+<li><strong>Covariate</strong> - Quantitative explanatory variable.</li>
+<li><strong>Factor</strong> - Categorical explanatory variable of interest.</li>
+<li><strong>Level</strong> - The specified value of a factor.</li>
+<li><strong>Treatment</strong> - A specific experimental condition, either the level of a factor (if only 1 factor) or the combinations of levels from a number of factors.</li>
+<li><strong>Experimental units (EUs)</strong> - Units on which the treatments are assigned.</li>
+<li><strong>Control Treatment</strong> - Benchmark treatment sometimes necessary for comparison (to avoid the placebo effect).</li>
+<li><strong>Replicate</strong> - Name given to EUs that receive the same treatment.</li>
+<li><strong>Experimental Error</strong> - Used to describe the variation in response among EUs that are assigned the same treatment.</li>
+</ul>
+<p>Example: A manufacturer of paper used for making grocery bags is interested in improving the tensile strength of the product. Product engineering thinks that tensile strength is a function of the hardwood concentration in the pulp and that the range of hardwood concentrations of practical interest is between 5 and 20%. A team of engineers responsible for the study decides to investigate four levels of hardwood concentration (see table below). They decide to make up six test specimens at each concentration level, using a pilot plant. All 24 specimens are tested on a laboratory tensile tester, in random order.</p>
+<!-- Hardwood Concentration (%) | 1 | 2 | 3 | 4 | 5 | 6 | Average -->
+<!-- -------------------------------------------------------------- -->
+<!-- 5 | 7 | 8 |15 |11|9|10|10 -->
+<!-- 10|12|17|13|18|19|15|15.67 -->
+<!-- 15|14|18|19|17|16|18|17 -->
+<!-- 20|19|25|22|23|18|20|21.17 -->
+<p>What are the response variable, experimental units, factor(s), levels of the factor(s), treatments, and number of replications per treatment?</p>
+<p>Example: A mechanical engineer is studying the surface roughness of parts produced in a metal-cutting operation. The experiment looked at 16 parts, selected using a SRS of today’s parts. A roughness measurement was recorded on each piece. Two parts were randomly assigned to each combination of
+- feed rate – 20 inches/minute or 30 inches/minute
+- depth of cut – 0.025 or 0.04 inches
+- tool angle – 15 or 25 degrees</p>
+<!-- | | | Depth of Cut | -->
+<!-- | | 0.025in | | 0.04in -->
+<!-- Feed Rate | | Tool Angle | | Tool Angle -->
+<!-- | 15$\degree$ | 25$\degree$ | 15$\degree$ | 25$\degree$ -->
+<!-- 20 in/min | 9 |11 |9 |10  -->
+<!-- | 7 | 10 | 11 | 8 -->
+<!-- 30in/min | 10 | 10 | 12 | 16 -->
+<!-- | 12 | 13 | 15 | 14 -->
+<p>What are the Response variable, EUs, Factors, Levels of the factors, Treatments, and Number of Replicates per treatment?</p>
+<p>Notice that many of the response values are different. What is causing them to be different?</p>
+<p><strong>Sources of Variation</strong> in the responses of an experiment:</p>
+<p><strong>Treatment effect</strong> - we hope there is an effect due to the variables we are setting</p>
+<p>Variables accounted for - We record some variables that are not of interest, but we think may have an effect on the response.</p>
+<p>Variables unaccounted for (these make up the Experimental Error or Error Variation)</p>
+<ul>
+<li>Inherent variability in experimental units - Experimental units are different!</li>
+</ul>
+<p>Example: No two people, paper towels, concrete blocks, or even lab rats are exactly the same.<br />
+Consequence: Experimental units respond differently to the same treatment</p>
+<ul>
+<li><p>Measurement error - Multiple measurements of a same experimental unit typically contain error.</p>
+<pre><code>      If the same experimental unit is measured more than once, will the value be the same?</code></pre></li>
+</ul>
+<p>Example: Blood Pressure, Break a water sample in two, measure each for bacteria\</p>
+<ul>
+<li>Variations in applying/creating treatments</li>
+</ul>
+<p>The treatment is not clearly defined, leaving room for interpretation.</p>
+<p>Example: Two researchers mix concrete, one stirs for 10 minutes and one for 20 minutes, will they come out exactly the same? Temperature is of interest but two ovens don`t heat exactly the same, etc.</p>
+<ul>
+<li>Effects from any other extraneous (or lurking) variables - Extraneous variables are those variables that are not part of the treatment, but may influence the response.</li>
+</ul>
+<p>Example: For the oven example, the experiment is done over the course of several days. There may be slight differences due to humidity changes.</p>
+<p>Example: A gardener wants to know if levels of water and fertilizer are better in terms of producing greater crop yield. The gardener decides to treat 2 greenhouses with 4 treatments (water low - fertilizer low, water high - fertilizer low, etc.). There were 2 replicates for each treatment within each greenhouse.</p>
+<p>Identify the sources of variation and experimental error (identify what type they are).</p>
+<p>No matter how hard we try, some experimental error will remain. What we can do is use good experimental design techniques to ensure our study is valid.</p>
+<p>DOE is about creating the optimal experiment to determine the effects of different treatments. Different types of experimental designs are then analyzed differently.</p>
+<p>Pillars of Experimental Design</p>
+<ul>
+<li><p>Randomization - means that the treatments are randomly allocated to the EUs.</p>
+<ul>
+<li>Every EU has a chance to get a different treatment, so helps protect the results of the analysis against a systematic influence of lurking variables.<br />
+</li>
+<li>Allows the observed responses to be regarded as a random sample.</li>
+<li>Note: Different randomization schemes lead to different statistical analyses.<br />
+</li>
+<li>Completely Randomized Design (CRD) - for t treatments, replicated <span class="math inline">\(n_t\)</span> times each, use a random number generator to assign the treatments to the EUs.<br />
+</li>
+<li>Most basic randomization design - assumes all EUs are exchangeable.</li>
+</ul></li>
+</ul>
+<p>Example: We are doing an experiment to determine the effect of nutrition (3 different diets) on weight gain in humans. How can we perform a CRD for this study?</p>
+<p>Notes about randomization:</p>
+<ul>
+<li>Similar in spirit to a SRS in the fact that it does not guarantee balance of lurking variables. However, if we have a large enough study we should balance out the lurking variables between the treatment groups.</li>
+</ul>
+<p>Randomization is different than random sampling!</p>
+<ul>
+<li>With an Random Sample, chance determines who will be included in the sample.</li>
+<li>Once we have our sample, Randomization determines which EUs get which treatments.</li>
+</ul>
+<p>Many other experimental designs! All use randomization.</p>
+<p>Replication - Repetition of an experiment using a large group of subjects to reduce chance variation in the results</p>
+<ul>
+<li>Allows us to generalize the results to the population and increases reliability of conclusions.<br />
+</li>
+<li>Allows an estimate of variability (an estimate of experimental error) not due to the treatment effect.</li>
+</ul>
+<p>Note: Replication does not mean that we measure the same EUs multiple times, this is called repeated measures. Observations from repeated measures experiments cannot usually be considered independent.</p>
+<p>Ideally as many EUs as we can afford. Think if we had 3 diets and 3 EUs. Diet 1 was better than diet 2 and diet 3, not a very reliable conclusion, perhaps person 1 just loses weight more easily. Now if 100 people at each diet and on average diet 1 was much better, more reliable conclusion.</p>
+<p>By averaging over the many observations we can reduce the effects of measurement error and error in applying/creating the treatments.</p>
+<p>Methods for accounting for/reducing experimental error</p>
+<ul>
+<li><p>Controlling Variables - holding certain variables constant across the EUs</p>
+<ul>
+<li>Decreases generalizability, but reduces experimental error.</li>
+</ul></li>
+</ul>
+<p>We’re not interested in the effects of these variables on the response. These variables affect the response in exactly the same manner, so that we don’t see the effects on the conclusions. We don`t get information on what happens at levels other than the fixed one.</p>
+<p>Example: For the 3 diet example. What variables might we control?</p>
+<ul>
+<li><p>Blocking - Divide subjects with similar characteristics into `blocks’, and then within each block, randomly assign subjects to treatment groups.</p></li>
+<li><p>Blocks - Groups of EUs sharing a common level of a confounding variable.</p></li>
+</ul>
+<p><img src="img/block.jpg" width="80%" style="display: block; margin: auto;" /></p>
+<p>Similar to controlling, but allows for increased generalizability. EUs within a block are very similar (decreases experimental error there as all the EUs in a block are affected similarly by the confounding variable). By having enough blocks to cover the range of the population you can still generalize.)</p>
+<p>Example: Two new types of material are developed (type A and type B) for use as a dash board in a car. The material must withstand high temperatures due to the sun and the greenhouse effect.<br />
+- To test which material holds up better, the manufacturer randomly selects 20 pieces of type A and 20 pieces of type B material.<br />
+- The company has 4 large ovens (oven 1, 2, 3, and 4) for testing. Each oven has 5 pieces of type A and 5 of type B randomly placed into each.<br />
+- After 24 hours, the amount of degradation is measured.</p>
+<p>What are the blocks? How many replicates do we have? How many replicates in each block?</p>
+<p>There are also methods for dealing with some explained experimental error during the analysis stage - Namely ANCOVA.</p>
+<p>These ideas are very important. Unless you are well versed in statistical methods and ideas you should consult a statistician before investing time and money in an experiment.</p>
+<blockquote>
+<p>A poorly designed study can never be saved, but a poorly analyzed one has the possibility of being reanalyzed.</p>
+</blockquote>
+<p>Open-ended Example:<br />
+Mike and John are interested in finding the optimal type of disc and the throw style on the throw distance of a disc. They consider 3 different disc types (Putter, Mid-Range and Driver) and 2 different throwing techniques (Forehand, Backhand). They gather a group of 30 people to use in the study (hopefully they are an unbiased and representative sample from their population of interest!).</p>
+<p>We want to design an experiment that will assist them.</p>
+<p>Specify the factors, treatments, experimental units, response variable, and how you would do the randomization. What other sources of variation may not be accounted for? Could you do blocking?</p>
+<p>Example: Your company has 20 different types of tires for compact cars. There are 4 types of all season tires, 6 types of snow tires, and 10 types of standard tires.</p>
+<p>The length of time the tires last is very important to customers. You are to select 60 tires, run them, and test them for wear.</p>
+<p>With a partner - Define the Population, possible Parameter of interest, Sample, and possible Statistic of interest.</p>
+<p>Then come up with a SRS, Stratified, and convenience sampling design for this problem.</p>
+<p>This class is about analyzing data. Once we have data, we need to organize it and summarize it in useful/meaningful ways.</p>
+<p>Good discussion of what makes a good sampling design revisit. Maybe a statified example like the river and selecting houses example as a quick expose of the issues with not doing a truly random sampling technique.</p>
+<p>A major goal of a study is usually to conduct statistical inference. Inference can involve determine which variables are important in relation to a response variable and/or predicting a response variable. To formally do inference we need to define the population of interest as well as <strong>parameters</strong> we want to study.</p>
+<ul>
+<li><p>Population - all the values, items, or individuals of interest</p></li>
+<li><p>Parameter - a (usually) unknown summary value about the population</p></li>
+</ul>
+<p>Ideally, we’d be able to measure every member of the population and exactly calculate the value of any population parameter. This would involved conducing a census. A census is usually not feasible. Instead we take a subset of the population and try to use these observations to make statements or claims about the population.</p>
+<ul>
+<li><p>Sample - a subset of the population we observe data on</p></li>
+<li><p>Statistic - a summary value calculated from the sample observations</p></li>
+</ul>
+<p>Example - A political scientist surveys 400 people randomly from a list of all registered voters in a particular county. He asks the people if they plan to vote in the upcoming election and 312 say they do.</p>
+<p><strong>Relate above to definitions…</strong></p>
+<p>To discuss paramters and statistics more easily, symbols are used to denote them. Luckily, there is a common notation that, for the most, is consistent across statistical literature.</p>
+<!-- Name | Parameter | Statistic | Quantity Measured -->
+<!-- -------------------------------------------------- -->
+<!-- Mean | $\mu$     | $\bar{Y}$ or $\bar{y}$ or $\bar{X}$ or $\bar{x}$ | Center or Location -->
+<!-- Proportion | $p$ or $\pi$ | $\hat{P}$ or $\hat{p}$ or $\hat{\pi}$ | Location or Frequency -->
+<!-- Standard Deviation (SD) | $\sigma$ | $S$ or $s$ | Variability or spread -->
+<!-- Variance (Var) | $\sigma^2$ | $S^2$ or $s^2$ | Variability or spread -->
+<p>Note: <span class="math inline">\(\bar{Y}=\frac{1}{n}\sum_{i=1}^{n}Y_i\)</span> and <span class="math inline">\(S^2=\frac{1}{n-1}\sum_{i=1}^{n}(Y_i-\bar{Y})^2\)</span> where <span class="math inline">\(n\)</span> is the sample size (or number of observed values in the sample). Sometimes you’ll see other notation for proportions <strong>(……. fill in and change table)</strong></p>
+<p>Question of interest will lead you to which parameter you have interest in. Careful consideration of what your study goals are will also most likely lead you to which type of data you will collect.</p>
+<p>Examples of why Observational Studies Can be Bad</p>
+<p>George Will WP column about SAT vs amount of money spent
+Pisani and Perv? many bad examples of inference</p>
+<p>Stuff about power/sample size calculation somewhere?</p>
+<div id="crd" class="section level4">
+<h4><span class="header-section-number">2.3.2.1</span> CRD</h4>
+</div>
+<div id="block" class="section level4">
+<h4><span class="header-section-number">2.3.2.2</span> Block</h4>
+</div>
+<div id="split-plot" class="section level4">
+<h4><span class="header-section-number">2.3.2.3</span> Split plot</h4>
+</div>
+<div id="strip-plot" class="section level4">
+<h4><span class="header-section-number">2.3.2.4</span> Strip plot</h4>
+</div>
+<div id="rcbsp" class="section level4">
+<h4><span class="header-section-number">2.3.2.5</span> RCBSP</h4>
+</div>
+<div id="k" class="section level4">
+<h4><span class="header-section-number">2.3.2.6</span> 2^k</h4>
+<p>…?</p>
+</div>
+</div>
+</div>
+<div id="references-and-readings" class="section level2">
+<h2><span class="header-section-number">2.4</span> References and Readings</h2>
+<p>Something about causal inference<br />
+Sampling stuff
+DOE stuff</p>
+</div>
+<div id="software-1" class="section level2">
+<h2><span class="header-section-number">2.5</span> Software</h2>
+<div id="r-1" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> R</h3>
+</div>
+<div id="sas-1" class="section level3">
+<h3><span class="header-section-number">2.5.2</span> SAS</h3>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="summarizing-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["StatisticalMethods.pdf", "StatisticalMethods.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

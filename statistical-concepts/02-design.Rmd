@@ -1,152 +1,11 @@
-### Study Purpose
-
-A major goal of a study is usually to conduct statistical inference.  Inference can involve determine which variables are important in relation to a response variable and/or predicting a response variable.  To formally do inference we need to define the population of interest as well as **parameters** we want to study.  
-
-- Population - all the values, items, or individuals of interest
-
-- Parameter - a (usually) unknown summary value about the population
-
-Ideally, we'd be able to measure every member of the population and exactly calculate the value of any population parameter.  This would involved conducing a census.  A census is usually not feasible.  Instead we take a subset of the population and try to use these observations to make statements or claims about the population.
-
-- Sample - a subset of the population we observe data on
-
-- Statistic - a summary value calculated from the sample observations
-
-(**A better visual than this**)
-
-```{r, echo = FALSE, out.width="80%", fig.align='center'}
-knitr::include_graphics("img/paradigm.png")
-```
-
-Example - A political scientist surveys 400 people randomly from a list of all registered voters in a particular county.  He asks the people if they plan to vote in the upcoming election and 312 say they do.
-
-**Relate above to definitions...**
-
-To discuss paramters and statistics more easily, symbols are used to denote them.  Luckily, there is a common notation that, for the most, is consistent across statistical literature. 
-
-<!-- Name | Parameter | Statistic | Quantity Measured -->
-<!-- -------------------------------------------------- -->
-<!-- Mean | $\mu$     | $\bar{Y}$ or $\bar{y}$ or $\bar{X}$ or $\bar{x}$ | Center or Location -->
-<!-- Proportion | $p$ or $\pi$ | $\hat{P}$ or $\hat{p}$ or $\hat{\pi}$ | Location or Frequency -->
-<!-- Standard Deviation (SD) | $\sigma$ | $S$ or $s$ | Variability or spread -->
-<!-- Variance (Var) | $\sigma^2$ | $S^2$ or $s^2$ | Variability or spread -->
-
-Note: $\bar{Y}=\frac{1}{n}\sum_{i=1}^{n}Y_i$ and $S^2=\frac{1}{n-1}\sum_{i=1}^{n}(Y_i-\bar{Y})^2$ where $n$ is the sample size (or number of observed values in the sample).  Sometimes you'll see other notation for proportions **(....... fill in and change table)**
-
-Question of interest will lead you to which parameter you have interest in.  Careful consideration of what your study goals are will also most likely lead you to which type of data you will collect.
+### Fundamentals of Designed Experiments  
 
 
-### Scales (Types) of Data:
 
-**Quantitative or Numerical variable** - A variable that is described by numerical measurements where arithmetic can be performed
-
-Subscales: 
- - Discrete - finite or countable finite number of values (# of flowers on a plant, 0, 1, 2, ...)
- - Continuous - any value in an interval is possible (Temperature, $(-459.67\deg F, \infty)$
-
-**Qualitative or Categorical variable** - A variable that is described by attributes or labels
-
-Subscales: 
- - Nominal - categories have no ordering (Male, Female) (zip codes)
- - Ordinal - can order categories (Lickert scale data) (college football rankings)
- 
-How we summarize and analyze the data will depend on which type of data we have!
-
-
-Example: SAT Performance
-
-50 total students (16 males and 34 females) where matched on socio-economic background (all had similar income). 
-
-- A study was done to examine the effect of preparation atmosphere on SAT scores.  
-- Two types of atmospheres were investigated (strict vs easy going).
-- Students were divided into two groups of 25 (12 males and 13 females in strict class and 4 males 21 females in the easy going class).
-- After a 9 week tutoring session the SAT was taken (although 1 in the strict group did not take the exam and 5 in the easy going group did not take the exam).
-
-**Questions to fill in:**
-- Determine the research question.
-- Define the population and sample.
-- Define possible parameter(s) of interest.
-- Describe the scale of measurement for gender, atmosphere, SAT score.
-- Define possible statistics that might be calculated.
-- Why might the students have been matched on socio-economic background?
-- What issues might you see with the design of this study?
-- What other variables might you collect (to explain more variability in the response)?
-
-
-To get data, we need units for our sample.  We'll discuss a few good and bad ways to obtain units.  
-
-Sampling
-
-Samples must be unbiased and representative of the population to make valid inference.
-
-**Sampleing Scheme** – the method used for selecting members of the population for the sample
-
-Some Sampling Schemes:
-
-- Simple Random Sample
-- Stratified Sample
-- Convenience Sample (Not good!)
- Many others both good and bad!
- 
-
-**Simple Random Sampling (SRS)**
-
-- Assign each member in the population a number.
-- Use a random number mechanism to select which members to use.
-
-Why bother? 
-
-Examples:
-- Service Evaluation - disgruntled customers may be more inclined to complete them. \\
-- 1936 US presidential election it was incorrectly predicted that Landon would overwhelmingly defeat Roosevelt (source: Literary Digest ).  
-
-    +	Questionnaires were mailed only to people who had both telephones and cars 
-    +	Selected sample was not representative of the population.
-
-Remark: SRS does not guarantee a “good” or “representative” sample every time.  
-
-- can get all small values or all large values
--	can get all males or all females
-
-On average we should get a representative sample.  
-
-
-**Stratified Sampling** - Divide a population into groups (strata) and select a SRS from each group. 
-
-
-Example: Academic Support is interested in offering premium movie channels to students that live in dorms.  
-This would cause each student’s housing cost to increase by \$250 a semester.  They would like to conduct a survey to gauge support of this change.
-
-How could we use a SRS? Stratified Sample? 
-
-**Convenience Sample (BAD)**  
-
-- Use most convenient group available or decide on the spot.
-- Often responses from people who choose to participate.
-
-Bad Sampling Examples?
-American Idol, SYTYCD, etc.
-ESPN.com polls, News site polls, etc.
-
-How we select our sample is important as we want to avoid biasing our results!
-There are a number of different types of data we can collect.
-- A good method must have a statistical randomness to them (i.e. must use a random mechanism!)
-- Now we're ready to talk about what to do once we have our units.
-
-
-Sampling is about getting units for your study.  Once done there are two basic types of studies:
-**Observational Study** - observe individuals and measure outcomes without influencing the responses.
-
-Ex: measuring political beliefs in using a poll, measuring yield of a crop based on rainfall
-
-**Experimental Study** - deliberately impose a treatment on individuals and observe their response. 
 
 Ex: assigning different fertilizers and irrigation method and measuring crop yield, assigning temperatures of water to tanks containing a fish and observing weight gain
 
 
-Big difference in conclusions drawn!
-- Cannot usually infer causation from observational studies, but you can from a well-designed experiment.
-- Experiments are not always feasible or ethical.  i.e. cannot assign people to smoke a pack a day or have expectant mothers drink a certain amount of alcohol.
 
 To describe the methods for creating a well-designed experiment, we first need some definitions.
 
@@ -319,33 +178,39 @@ Then come up with a SRS, Stratified, and convenience sampling design for this pr
 This class is about analyzing data.  Once we have data, we need to organize it and summarize it in useful/meaningful ways.  
 
 
-### Study Types  
-
-Ob vs exp  
-Good discussion of what makes a good sampling design.
-
-
 Good discussion of what makes a good sampling design revisit.  Maybe a statified example like the river and selecting houses example as a quick expose of the issues with not doing a truly random sampling technique.  
 
 
-Approx probabilities and quantiles vs theoretical
 
+A major goal of a study is usually to conduct statistical inference.  Inference can involve determine which variables are important in relation to a response variable and/or predicting a response variable.  To formally do inference we need to define the population of interest as well as **parameters** we want to study.  
 
-1.  Collecting Data
-Parameter/Statistic
-Census/Sample
-Biases in Samples
-Response, Nonresponse, and Selection
-Sampling Techniques
-SRS, Stratified, Cluster, and Systematic.
-Undercoverage
-Bad Surveys
+- Population - all the values, items, or individuals of interest
 
+- Parameter - a (usually) unknown summary value about the population
 
+Ideally, we'd be able to measure every member of the population and exactly calculate the value of any population parameter.  This would involved conducing a census.  A census is usually not feasible.  Instead we take a subset of the population and try to use these observations to make statements or claims about the population.
 
-### Study Conclusions
+- Sample - a subset of the population we observe data on
 
-Scope of inference stuff and what-not
+- Statistic - a summary value calculated from the sample observations
+
+Example - A political scientist surveys 400 people randomly from a list of all registered voters in a particular county.  He asks the people if they plan to vote in the upcoming election and 312 say they do.
+
+**Relate above to definitions...**
+
+To discuss paramters and statistics more easily, symbols are used to denote them.  Luckily, there is a common notation that, for the most, is consistent across statistical literature. 
+
+<!-- Name | Parameter | Statistic | Quantity Measured -->
+<!-- -------------------------------------------------- -->
+<!-- Mean | $\mu$     | $\bar{Y}$ or $\bar{y}$ or $\bar{X}$ or $\bar{x}$ | Center or Location -->
+<!-- Proportion | $p$ or $\pi$ | $\hat{P}$ or $\hat{p}$ or $\hat{\pi}$ | Location or Frequency -->
+<!-- Standard Deviation (SD) | $\sigma$ | $S$ or $s$ | Variability or spread -->
+<!-- Variance (Var) | $\sigma^2$ | $S^2$ or $s^2$ | Variability or spread -->
+
+Note: $\bar{Y}=\frac{1}{n}\sum_{i=1}^{n}Y_i$ and $S^2=\frac{1}{n-1}\sum_{i=1}^{n}(Y_i-\bar{Y})^2$ where $n$ is the sample size (or number of observed values in the sample).  Sometimes you'll see other notation for proportions **(....... fill in and change table)**
+
+Question of interest will lead you to which parameter you have interest in.  Careful consideration of what your study goals are will also most likely lead you to which type of data you will collect.
+
 
 Examples of why Observational Studies Can be Bad  
 
@@ -353,3 +218,19 @@ George Will WP column about SAT vs amount of money spent
 Pisani and Perv?  many bad examples of inference
 
 Stuff about power/sample size calculation somewhere?
+
+
+#### CRD  
+
+#### Blocks  
+
+
+#### Split plot
+
+#### Strip plot
+
+#### RCBSP  
+
+#### 2^k
+
+...?
