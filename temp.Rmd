@@ -1,0 +1,19 @@
+---
+title: "tmep"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+1. ![](img/conclude-communicate.png) Define the objective of the experiment and understand the background (Define Objective & Background)    
+2. Select appropriate response variables (Select Response)  
+3. Identify sources of variation (Determine Sources of Variation)  
+4. Choose sampling scheme and/or experimental design (Select Design)  
+5. Carry out the study (Do Study) 
+6. Statistically analyze the data (Do Statistical Analysis)  
+7. Draw conclusions from the analysis while considering limitations and the steps above as well as communicate results (Draw Conclusions & Communicate)  
+
