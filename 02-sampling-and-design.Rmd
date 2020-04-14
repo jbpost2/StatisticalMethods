@@ -187,6 +187,8 @@ Suppose we want to make inference about how well a drug works for treating acne 
 Something about causal inference  
 Sampling stuff
 DOE stuff
+Corr vs caus
+
 
 ## Software  
 

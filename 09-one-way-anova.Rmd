@@ -35,7 +35,7 @@ Learning objectives for this lesson:
 
 <!-- how important is it for this example to be truly "fixed effects"? If you're really doing fixed effects, you're typically interested in direct comparisons between treatments rather than whether there's 'at least one' differece across all the treatments? -->
 
-# Motivating example 
+## Motivating example 
 
 The United States Air Force Academy has 24 sections of Calculus I, taught by three different types of instructors:  In-uniform instructors, full-time civilian instructors, and visiting faculty. The Dean of Students wants to give students the best experience possible and make sure that all three types of instructors are doing a good job. There are plausible reasons why any one of the three could be doing well:  In-uniform instructors are all members of the Air Force, and students may be extra attention in these classes because they know that these instructors rank above them in their chain of command. On the other hand, full-time instructors have been aroudn the Academy for many years and understand the Cadets and their workloads. Alternatively, visiting facutly tend to come from prestigeous institutions and may be familiar with more recently-developed pedagogical techniques. Regardless, the Dean wants to understand if there is any variation in end-of-semester grades of classes taught by these three types of instructors. At the end of the semester, she collects the average grades from each of the 24 sections. How can she go about investigating this question? 
 
@@ -47,7 +47,7 @@ We could do the same thing, except comparing courses taught by one type of instr
 
 What we'd like instead is a single hypothesis that we could test that direclty gets at the Dean's concern about whether the three types of instructors were producing end-of-semester grades that were, on average, the same. [Need to make that motivation clearer above.]
 
-# Simple model for the data
+## Simple model for the data
 
 Narrative explanation that instructor type might matter, there shold be some variation from class to class. 
 - write some things in greek, including model without any difference by instructor type
@@ -55,24 +55,24 @@ Narrative explanation that instructor type might matter, there shold be some var
 - note that we can use Gaussian errors b/c Academy grades do actually tend to be centered around a C, particularly for classes like Calc
 - discuss model assumptions in general sense
 
-# exploratory analysis
+## exploratory analysis
 
 - course-to-course variability is expected
 - maybe show a plot of it or something
 - visualize groups using box-and-whisker plots
 
-# sources of variation
+## sources of variation
 
 Things like student population, time of day, etc. But we'll throw this all into an error term and focus on the main one, instructor type
 
-# statistical model and analysis
+## statistical model and analysis
 
 - ANVOA model explicit w/ assumptions
 - variation around overall mean w/ no groups
 - variation around group means
 - introduce idea of reference level
 
-# compare analyses
+## compare analyses
 
 - t-test methods from above
 - ANOVA method

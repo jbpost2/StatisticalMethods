@@ -1,105 +1,114 @@
 ### Fundamentals of Designed Experiments  
 
-To describe the methods for creating a well-designed experiment, we first need to recap some definitions.
+To describe the methods for creating a well-designed experiment, we first need to recap some definitions from earlier:
 
-- **Response Variable** - Variable of interest that characterizes performance or behavior.  
-- **Explanatory Variables** - Variables that determine the study conditions (can be quantitative or categorical).  
-- **Covariate** - Quantitative explanatory variable.  
-- **Factor** - Categorical explanatory variable of interest.  
-- **Level** -	The specified value of a factor.  
-- **Treatment** - A specific experimental condition, either the level of a factor (if only 1 factor) or the combinations of levels from a number of factors.  
-    + **Control Treatment** - Benchmark treatment sometimes necessary for comparison (to avoid the placebo effect).  
-- **Experimental units (EUs)** - Units on which the treatments are assigned.
+- **Response Variable** - variable(s) of interest that characterizes performance or behavior  
+- **Explanatory Variable** - variable(s) of interest with regard to their relationship with the response variable  
+- **Covariate** - Quantitative (numerical) explanatory variable (usually observed and not set by the researcher)  
+- **Factor** - explanatory variable that takes on a finite number of values (a Categorical or Qualitative variable) 
+- **Level** -	setting a factor can take on
+- **Treatment** - specific experimental condition, either the level of a factor (if only 1 factor) or the combinations of the levels from a number of factors  
+    + **Control Treatment** - benchmark treatment sometimes necessary for comparison (to avoid the placebo effect)  
+- **Experimental units (EUs)** - units on which the treatments are assigned  
+- **Observational units (OUs)** - units on which measurements are taken  
+
+There is clearly a lot of jargon to remember when learning about experimental design.  We'll do our best to remind the reader of these terms as we go along.  
+
+Before we dive into experimental designs, we should again discuss the reason we need statistical methods with a little more detail.  
+
+#### Sources of Variation  
+
+We've discussed that data is variable.  If we repeat an experimental study, even with identical conditions, we are likely to obtain different data for the response.  This has to do with the sample members being selected differently each time and possibly different units assigned a given treatment.  Let's identify the sources variation in our response.  
+
+- **Treatment effect** - an effect due to the variables assigned by the researcher (treatments) in an experiment.  
+    
+    + This is an effect we are usually hoping to see and quantify!
+
+- (Other) **Recorded Variables** - some variables that are not of interest are recorded because we may know or think they are associated with variability in the response.  
+
+    + These may be covariates measured along the way (like temperature) or a variable with only a few values like the soil type a crop is grown in.  
+
+- **Unaccounted for Variables** - everything else causing variation.  
+
+    + This variation is estimated and used as a reference with which to compare the treatment variation.  
+
+Consider a simplified example where a gardener wants to know what water (low or high) and fertilizer (A or B) conditions are better in terms of producing greater crop yield (dried weight).  
+
+- Response variable - the dried weight of the crop after growth
+- The explanatory variables are the two factors:  
+    + Water (with levels low and high)  
+    + Fertilizer (with levels A or B)  
+- Treatments:
+    + low water and fertilizer A  
+    + low water and fertilizer B  
+    + high water and fertilizer A  
+    + high water and fertilizer B  
+
+The gardener has two greenhouses each with 16 rows for growing crops.  Within each greenhouse, they randomly assign the four treatments to the 16 rows.  After 45 days, the crops are harvested, dried, and weighed.   
+
+- The experimental units are the rows within the greenhouses  
+- The observational units are all the plants grown in a given row (so we may say the row is also the OU)  
+
+The sources of variation in the dried weight of the crop are:  
+
+- Treatment variation - variation we believe we'll see in dried weight from the differences in water and fertilizer applications.  
+- Other recorded variable - greenhouse in which the crops are grown is recorded.  Greenhouse is not of interest but may play a role in the variation in dried weight.
+- Unaccounted for variables - Amount of sunlight received, temperature/humidity differentials within a greenhouse, possible differences in the method of application of the treatment (fertilizer and water), and many others may also have an association with dried crop weight.  These sources make up a sort of reference variability we can compare our treatment variation to.  
+
+The variation from unaccounted variables can generally be broken down into four cateogries:  
+
+- Inherent variability in EUs (units assigned a treatment).  
+    + No two people, paper towels, concrete blocks, or  lab rats are exactly the same so they may respond differently to the same treatment.  
+
+- Measurement error - Multiple measurements of a same experimental unit may differ.  
+    + Two blood pressure readings a few minutes apart may give different readigns or if you break a water sample in two and measure each for bacteria, you may see different measurements  
+
+- Variations in applying or creating treatments.  
+    + Occasionaly a treatment protocol is not clearly defined, leaving room for interpretation.  Perhaps applying a fertilizer before or after applying irrigation can cause a difference.
+
+- Other unknown variables sometimes called lurking variables.
+
+No matter how hard we try, some of these unaccounted for variables (and hence variation in the response) will remain. What we can do is use good experimental design techniques to try and minimize the effects of from these variables.  
+
+Good experimental designs generally have the following key attributes:
+
+- **Randomization** - treatments are randomly assigned to experimental units.
+
+This process must use a random number mechanism or software to allocate the treatments.  Randomization makes sure that every EU has a chance to get a different treatment.  This helps to protect the results of the analysis against a systematic influence of lurking variables.  For example, if a doctor is assigning drug A or B to a patient without use of a random number mechanism, they may unwittingly assign drug A to patients they deem more likely to recover due to implicit biases.  
+
+- **Replication** - multiple (independent) experimental units are assigned the same treatment.  
+
+EUs that receive the same treatment are called **replicates**.  By having replication we are able to create an estimate of variability due to our unaccounted for variables.   Comparing our treatment variation to this variation is what allows us to have faith in the reliability of our conclusions.  
+
+Note that replication does not mean that we measure the same EUs multiple times!  That is called a repeated measures design.  Observations from repeated measures experiments cannot usually be considered independent.
+
+- **Controlling Variables** - holding certain variables constant across the EUs.  
+Generally, we're not interested in the effects of these variables on the response.  These variables affect the response in exactly the same manner, so that we	don't see the effects on the conclusions. Unfortunately, we don`t get information on what happens at settings of the variables other than the fixed ones.  This decreases generalizability, but reduces overall variation.  Experimental designs such as a randomized complete block design attempt to control variables while also maintaining generalizability.  
 
 
-Reason we need statistics, notice that many of the response values are different.  What is causing them to be different?
+There are also methods for dealing with some explained experimental error during the analysis stage - Namely ANCOVA.
 
-**Sources of Variation** in the responses of an experiment:
+> A poorly designed study can never be saved, but a poorly analyzed one has the possibility of being reanalyzed.
 
-- **Treatment effect** - we hope there is an effect due to the variables we are setting
+Good discussion of what makes a good sampling design revisit.  Maybe a statified example like the river and selecting houses example as a quick expose of the issues with not doing a truly random sampling technique.  
 
-- Variables accounted for - We record some variables that are not of interest, but we think may have an effect on the response.
+Analysis in future chapters...
 
-- Variables unaccounted for (these make up the Experimental Error or Error Variation), controlled vars
+#### CRD  
 
-- **Experimental Error** - Used to describe the variation in response among EUs that are assigned the same treatment.
-
-    + Inherent variability in experimental units - Experimental units are different!  
-Example: No two people, paper towels, concrete blocks, or even lab rats are exactly the same.  
-Consequence: Experimental units respond differently to the same treatment
-		
-    + Measurement error - Multiple measurements of a same experimental unit typically contain error.  
-
-If the same experimental unit is measured more than once, will the value be the same?
-Example: Blood Pressure, Break a water sample in two, measure each for bacteria
-			
-    + Variations in applying/creating treatments  
-
-The treatment is not clearly defined, leaving room for interpretation.  
-
-Example:  Two researchers mix concrete, one stirs for 10 minutes and one for 20 minutes, will they come out exactly the same? Temperature is of interest but two ovens don`t heat exactly the same, etc.
-			
-- Effects from any other extraneous (or lurking) variables - Extraneous variables are those variables that are not part of the treatment, but may influence the response.  
-
-Example: For the oven example, the experiment is done over the course of several days.  There may be slight differences due to humidity changes.
-
-
-Example: A gardener wants to know if levels of water and fertilizer are better in terms of producing greater crop yield.  The gardener decides to treat 2 greenhouses with 4 treatments (water low - fertilizer low, water high - fertilizer low, etc.).  There were 2 replicates for each treatment within each greenhouse.  
-
-Identify the sources of variation and experimental error (identify what type they are).
-
-
-No matter how hard we try, some experimental error will remain. What we can do is use good experimental design techniques to ensure our study is valid.  
-
-DOE is about creating the optimal experiment to determine the effects of different treatments.  Different types of experimental designs are then analyzed differently.
-
-
-Pillars of Experimental Design
-
-- Randomization - means that the treatments are randomly allocated to the EUs.  
-
-    + Every EU has a chance to get a different treatment, so helps protect the results of the analysis against a systematic influence of lurking variables.  
-    + Allows the observed responses to be regarded as a random sample.
-    + Note: Different randomization schemes lead to different statistical analyses.  
     + Completely Randomized Design (CRD) - for t treatments, replicated $n_t$ times each, use a random number generator to assign the treatments to the EUs.  
     + Most basic randomization design - assumes all EUs are exchangeable.
 
 Example:  We are doing an experiment to determine the effect of nutrition (3 different diets) on weight gain in humans.  How can we perform a CRD for this study?
 
-Notes about randomization:  
 
-- Similar in spirit to a SRS in the fact that it does not guarantee balance of lurking variables.  However, if we have a large enough study we should balance out the lurking variables between the treatment groups.  
-
-Randomization is different than random sampling!  
-
-- With an Random Sample, chance determines who will be included in the sample. 
-- Once we have our sample, Randomization determines which EUs get which treatments.
-
-Many other experimental designs!  All use randomization.
-
-Replication - Repetition of an experiment using a large group of subjects to reduce chance variation in the results
-
-- **Replicate** - Name given to EUs that receive the same treatment.
-- Allows us to generalize the results to the population and increases reliability of conclusions.  
-- Allows an estimate of variability (an estimate of experimental error) not due to the treatment effect.
-
-Note: Replication does not mean that we measure the same EUs multiple times, this is called repeated measures.  Observations from repeated measures experiments cannot 	usually be considered independent.
-
-Ideally as many EUs as we can afford.  Think if we had 3 diets and 3 EUs.  Diet 1 was better than diet 2 and diet 3, not a very reliable conclusion, perhaps person 1 just loses weight more easily.  Now if 100 people at each diet and on average diet 1 was much better, more reliable conclusion.  
-
-By averaging over the many observations we can reduce the effects of measurement error and error in applying/creating the treatments.  
+Ideally we want to have as many replicates for each treatment as we can afford.   Think if we had 3 diets and 3 EUs.  Diet 1 was better than diet 2 and diet 3, not a very reliable conclusion, perhaps person 1 just loses weight more easily.  Now if 100 people at each diet and on average diet 1 was much better, more reliable conclusion.  
 
 Power and sample size calculations stuff dealt with later.  
 
-Methods for accounting for/reducing experimental error  
 
-- Controlling Variables - holding certain variables constant across the EUs
 
-    + Decreases generalizability, but reduces experimental error.  
-
-We're not interested in the effects of these variables on the response.  These variables affect the response in exactly the same manner, so that we	don't see the effects on the conclusions. We don`t get information on what happens at levels other than the fixed one.
-
-Example:  For the 3 diet example.  What variables might we control?
+#### Blocks  
 
 - Blocking - Divide subjects with similar characteristics into `blocks', and then within each block, randomly assign subjects to treatment groups.
 
@@ -119,21 +128,7 @@ Example:  Two new types of material are developed (type A and type B) for use as
 
 What are the blocks?  How many replicates do we have?  How many replicates in each block?
 
-There are also methods for dealing with some explained experimental error during the analysis stage - Namely ANCOVA.
-
-These ideas are very important.  Unless you are well versed in statistical methods and ideas you should consult a statistician before investing time and money in an experiment.  
-
-> A poorly designed study can never be saved, but a poorly analyzed one has the possibility of being reanalyzed.
-
-Good discussion of what makes a good sampling design revisit.  Maybe a statified example like the river and selecting houses example as a quick expose of the issues with not doing a truly random sampling technique.  
-
-Analysis in future chapters...
-
-#### CRD  
-
-#### Blocks  
-
-
+### Latin Squares
 #### Split plot
 
 #### Strip plot
@@ -141,6 +136,8 @@ Analysis in future chapters...
 #### RCBSP  
 
 #### 2^k
+
+#### Response Surface  
 
 ...?
 
@@ -189,3 +186,12 @@ Strat vs Block comparison
 
 
 #### Sampling Schemes vs Randomization Methods  
+
+Notes about randomization:  
+
+- CRD similar in spirit to a SRS in the fact that it does not guarantee balance of lurking variables.  However, if we have a large enough study we should balance out the lurking variables between the treatment groups.  
+
+Randomization is different than random sampling!  
+
+- With an Random Sample, chance determines who will be included in the sample. 
+- Once we have our sample, Randomization determines which EUs get which treatments.

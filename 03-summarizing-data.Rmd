@@ -2,7 +2,7 @@
 
 Basic intro stuff here.
 
-```{r, child='motivating-examples/03-temp.Rmd'}
+```{r, child='motivating-examples/03-tempex.Rmd'}
 ```
 
 
