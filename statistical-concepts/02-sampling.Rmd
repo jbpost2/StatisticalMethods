@@ -1,54 +1,50 @@
 ### Obtaining a Representative Sample  
 
-To get data, we need units for our sample.  We'll discuss a few good and bad ways to obtain units.  
+The method used to obtain the units for a sample is called the **sampling scheme**.  There are good and bad sampling schemes.  The main characteristic of a good sampling scheme is the use of a **probability sample**.  A probability sample is one where every member of the population has a known and non-zero chance of inclusion in the sample.  We'll study probability in more detail later, but a population member having a non-zero probability of inclusion simply implies, if the sampling scheme was repeated again and again, eventually every unit would be included in at least one of the samples collected.  Having inclusion probabilities known for all members of the population allows for the quantification of error associated with sample estimates.  
 
-Sampling
+A probability sample requires some **random** mechanism in order to execute the selection of population members into the sample.  However, there is a big difference between *statistical* randomness and the everyday use of randomness.  **Randomness** in everyday use usually refers to the idea that things are not known before hand.  For instance, if a sample was collected by measuring the next 15 people that passed by us on a busy street, this is random but not random in a sense that helps statistically.  Even though the members aren't known prior to collecting the sample, the method used to collect systematically excludes people that are otherwise not able to be walking down the street at the time the sample was taken.  In statistics, having randomness usually involves a **random number generator** or a software that uses one (methods also include using a random digit table or flipping a coin, but these are mostly obsolete at this point!). 
 
-Samples must be representative of the population to make valid inference.
+Let's discuss sampling techniques that utilize a probability sample (and are often executed using a random number generator).  
 
-**Sampling Scheme** – the method used for selecting members of the population for the sample
+#### Simple Random Sample
 
-Some Sampling Schemes:
+The most simplistic sampling scheme is the **simple random sample** or **SRS**, which is outlined below.  
 
-- Simple Random Sample
-- Stratified Sample
-- Convenience Sample (Not good!)
- Many others both good and bad!
- 
+If the population size is $N$ and the sample size is $n$,   
 
-#### Simple Random Sampling (SRS)  
+- Assign members of the population numbers from 1 to $N$  
+- Use a random number mechanism to select $n$ of the $N$ numbers  
+- The sample is then the population members that correspond to the selected numbers
 
-- Assign each member in the population a number.
-- Use a random number mechanism to select which members to use.
+In a SRS, every subset of size $n$ from the population has the same chance or probability of being included in the sample.  (An SRS also implies that every member of the population has probabilty $n/N$ of being included in the sample.  Again, we'll cover probabiltiy in more depth later.)  Since every population member has a known and non-zero chance of inclusion in the sample, this implies an SRS is a probability sample!    
 
-Why bother? 
+An everyday example of a process similar to a SRS is the lottery.  Many states have a pick three lottery where the population of balls consist of balls numbering zero, one, two, three, ..., nine.  The population size is $N=9$.  Three balls are then randomly selected ($n=3$) as the winning combination.  Prior to the draw, players select three numbers and can win if they have the same three numbers as those selected.  Here any combination of three numbers has the same probability of being selected ($1/\binom{10,3} = 1/120$).  
 
-Examples:
+Note that an SRS does not guarantee a representative sample every time!  
+
+For instance, suppose a university wants to determine the proportion of students that would favor a change to the bookstore.  Every student is assigned a campus ID number.  Due to time and cost constraints, the university decides to collect data on 400 students.  An SRS can be used here to select the 400 students.  The sample collected may, by random chance, contain only students from a particular college.  The larger the sample, the less likely this is.  An SRS implies that on average we should get a representative sample.  Other techniques can increase the chance of a particular sample being representative of the population (at the expense of being more complicated and sometimes needing to be analyzed in a more complicated manner).  
+
+
+#### Stratified Random Sample
+
+A **stratified random sample** is used when there are important subgroups that the researcher wants to ensure are included in a sample.  These subgroups are called **strata**.  Once the strata are determined, an SRS is often done within each strata.  
+
+Example: Academic Support is interested in offering premium movie channels to students that live in dorms.  
+This would cause each student’s housing cost to increase by \$250 a semester.  They would like to conduct a survey to gauge support of this change.
+
+
+Note that the proportion of members selected doesn't need to be constant across the strata.  Proportional sampling ideas, etc.  
+
+
+#### Some Bad Sampling Schemes
+
 - Service Evaluation - disgruntled customers may be more inclined to complete them. \\
 - 1936 US presidential election it was incorrectly predicted that Landon would overwhelmingly defeat Roosevelt (source: Literary Digest ).  
 
     +	Questionnaires were mailed only to people who had both telephones and cars 
     +	Selected sample was not representative of the population.
 
-Remark: SRS does not guarantee a “good” or “representative” sample every time.  
-
-- can get all small values or all large values
--	can get all males or all females
-
-On average we should get a representative sample.  
-
-
-#### Stratified Sampling  
-
-Divide a population into groups (strata) and select a SRS from each group. 
-
-
-Example: Academic Support is interested in offering premium movie channels to students that live in dorms.  
-This would cause each student’s housing cost to increase by \$250 a semester.  They would like to conduct a survey to gauge support of this change.
-
-How could we use a SRS? Stratified Sample? 
-
-#### Convenience Sample (BAD) 
+Convenience Sample (BAD) 
 
 - Use most convenient group available or decide on the spot.
 - Often responses from people who choose to participate.
@@ -57,16 +53,45 @@ Bad Sampling Examples?
 American Idol, SYTYCD, etc.
 ESPN.com polls, News site polls, etc.
 
-How we select our sample is important as we want to avoid biasing our results!
-There are a number of different types of data we can collect.
-- A good method must have a statistical randomness to them (i.e. must use a random mechanism!)
 
+
+
+(give quick examples)  
+- How could you do each in an example?  
+- Benefits/drawbacks of each  
+
+
+#### Why Sampling Scheme Matters - A Simulation
+
+What happens with ba techniques?  Why is 'random' not statistical random?  
+- Simulation with 200 people or something, observe proportion with something  
+- Look at how that changes the way things are observed  
+
+
+#### Practical Sampling Notes  
+
+Entire books written on proper sampling methods, dealing with writing good question prompts, etc.  
+Mention in dealing with humans (survey sampling) issues that come up more often (but occur in other places too): 
+- nonresponse bias  
+- response bias  
+- Sampling frame/undercoverage
+
+
+Sometimes just need to collect units that are avaialable (medical studies, crop experiments, etc.).  Additional out of data assumptions needed when attemtpting to make inference to entire population.  
+
+Many other good sampling schemes (cluster, sytematic, heirarchical - combinations).  References given - noted and explained when they come up.
+When does the sampling method play a role in inference technique used?  Pop size vs sample size.  Will point out cases in book where important.  
+
+
+
+#### Observational vs Experimental Studies 
 
 Sampling is about getting units for your study.  Once done there are two basic types of studies:
 **Observational Study** - observe individuals and measure outcomes without influencing the responses.
 
 Ex: measuring political beliefs in using a poll, measuring yield of a crop based on rainfall
 
+Need units for experiment but then also need an experimental design.  Sometimes can go hand in hand (strat, block).  
 Recall **Experimental Study** - deliberately impose a treatment on individuals and observe their response.  
 
 Big difference in conclusions drawn!

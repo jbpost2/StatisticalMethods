@@ -1,0 +1,43 @@
+## Motivating Example: Design - Student Assessment Volunteers  
+
+### Define Objective & Background  
+
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/defineObjective.png")
+```  
+
+### Select Response
+
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/selectResponse.png")
+``` 
+
+### Determine Sources of Variation
+
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/determineVariation.png")
+```  
+
+### Select Design
+
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/selectDesign.png")
+```  
+
+### Do Study  
+
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/conductStudy.png")
+```  
+
+### Do Statistical Analysis  
+
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/statsAnalysis.png")
+```  
+
+### Draw Conclusions & Communicate
+
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/concludeCommunicate.png")
+```  

@@ -2,6 +2,9 @@
 
 ### Define Objective & Background  
 
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/defineObjective.png")
+```  
 A nutrition scientist wanted to understand the cleanliness and food hygiene of the vendors at the North Carolina State Farmer's Market (henceforth the farmer's market).  Secondarily, she wanted to learn about vendor sales to see if there was a relationship with their cleanliness and food hygiene.  The researcher had access to the names of each vendor's business, their general purpose, and the products they sold.  
 
 The researcher needed to decide the scope of their study.  Formally, they needed to define the **population** of interest.  The population is the group of people or units of interest to the researcher.  As her interest centered around food-related businesses, she restricted to looking at the vendors which sold horticultural crops.  She hoped that conclusions made by her study could apply to all horticulture vendors at the farmer's market - thus, this is her population.  
@@ -18,6 +21,9 @@ knitr::include_graphics("img/availabilitychart-2.jpg")
 
 ### Select Response
 
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/selectResponse.png")
+```  
 The researcher needed to determine the variables to collect that would best help to answer their questions of interest.  These variables that characterize the experiment are called **response** or target variables.  
 
 To investigate the knowledge of hygiene and safety, a short questionnaire was developed to allow the vendor's head manager (or similar employee) to describe their safety protocol and knowledge:  
@@ -43,6 +49,9 @@ You can see that there are many decisions that the researcher must make in simpl
 
 ### Determine Sources of Variation
 
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/determineVariation.png")
+```  
 The response variables clearly have some relationship to other variables that could be collected.  For instance, the NUM_ITEMS variable is clearly going to be different based upon what crops the vendor sells.  The AMT variable would differ depending on the size of the vendor's inventory.  These are examples of **explanatory variables** or variables that define the study conditions.  Explanatory variables go by many names such as predictors, features, or independent variables.  
 
 **A main consideration about whether or not to record a variable is whether or not the variable would be related to a variation in a response variable.**  Since the response variables are truly what is of interest, there is really not much of a point in recording variables that likely have no relationship with it.  
@@ -69,6 +78,9 @@ For the assessment of cleanliness, she added the following question:
 
 ### Select Design
 
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/selectDesign.png")
+```  
 For this study the researchers aren't interested in doing an intervention so an observational study was being done.  The major task to consider for the observational study is how to select participants from the population.  The subset of the population we (attempt to) observe our data on is called the **sample**.  The **sample size** is the number of measurements in the sample.
 
 Ideally, we would measure every member of our population.  This is called a **census**.  If a census can be done then the value of a population's parameter can be found exactly by simply summarizing the population data.  However, conducting a census can be extremely costly or time-intensive so most of the time a census cannot be done.  This means that the information we collect would likely be different if we collected it again.  Accounting for this variability is the main reason statistical analysis is needed.  
@@ -86,6 +98,9 @@ Here they chose to do a stratified sample to make sure that they didn't leave ou
 
 ### Do Study  
 
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/conductStudy.png")
+```  
 Go and talk to chosen vendors.  May have some non-response issues.  Ideally a contingency for this should be developed when considering the sampling scheme.  
 
 **Should we talk about formalizing the other questions they want to answer here??**
@@ -95,6 +110,9 @@ Go and talk to chosen vendors.  May have some non-response issues.  Ideally a co
 
 **Should we talk about formalizing the other questions they want to answer here??**
 
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/statsAnalysis.png")
+```  
 The major goals of this study were simply to describe the vendors at the farmer's market.  In this case we can produce numerical and graphical summaries.  
 
 Careful discussion of not selecting a modeling technique based on this unless it is a pilot study or an exploratory study else we have increased our nominal type I error rate... 
@@ -108,6 +126,9 @@ Not a formal test here but comparisons of interest etc.
 
 ### Draw Conclusions & Communicate
 
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/concludeCommunicate.png")
+```  
 What actionable things have we found?  Likely some trends to investigate further.  Perhaps run an experiment to formally see if some alteration can be effective.  
 
 What can we conclude realistically from this data?  To what population are we talking?  

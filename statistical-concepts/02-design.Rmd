@@ -1,76 +1,39 @@
 ### Fundamentals of Designed Experiments  
 
+To describe the methods for creating a well-designed experiment, we first need to recap some definitions.
 
-
-
-Ex: assigning different fertilizers and irrigation method and measuring crop yield, assigning temperatures of water to tanks containing a fish and observing weight gain
-
-
-
-To describe the methods for creating a well-designed experiment, we first need some definitions.
-
-- **Response Variable** - Variable of interest that characterizes performance or behavior.
-- **Explanatory Variables** - Variables that determine the study conditions (can be quantitative or categorical).
-- **Covariate** - Quantitative explanatory variable.
-- **Factor** - Categorical explanatory variable of interest.
-- **Level** -	The specified value of a factor.
-- **Treatment** - A specific experimental condition, either the level of a factor (if only 1 factor) or the combinations of levels from a number of factors.
+- **Response Variable** - Variable of interest that characterizes performance or behavior.  
+- **Explanatory Variables** - Variables that determine the study conditions (can be quantitative or categorical).  
+- **Covariate** - Quantitative explanatory variable.  
+- **Factor** - Categorical explanatory variable of interest.  
+- **Level** -	The specified value of a factor.  
+- **Treatment** - A specific experimental condition, either the level of a factor (if only 1 factor) or the combinations of levels from a number of factors.  
+    + **Control Treatment** - Benchmark treatment sometimes necessary for comparison (to avoid the placebo effect).  
 - **Experimental units (EUs)** - Units on which the treatments are assigned.
-- **Control Treatment** - Benchmark treatment sometimes necessary for comparison (to avoid the placebo effect).
-- **Replicate** - Name given to EUs that receive the same treatment.
-- **Experimental Error** - Used to describe the variation in response among EUs that are assigned the same treatment.
 
 
-Example: A manufacturer of paper used for making grocery bags is interested in improving the tensile strength of the product.  Product engineering thinks that tensile strength is a function of the hardwood concentration in the pulp and that the range of hardwood concentrations of practical interest is between 5 and 20%.  A team of engineers responsible for the study decides to investigate four levels of hardwood concentration (see table below).  They decide to make up six test specimens at each concentration level, using a pilot plant.  All 24 specimens are tested on a laboratory tensile tester, in random order.
-
-<!-- Hardwood Concentration (%) | 1 | 2 | 3 | 4 | 5 | 6 | Average -->
-<!-- -------------------------------------------------------------- -->
-<!-- 5 | 7 | 8 |15 |11|9|10|10 -->
-<!-- 10|12|17|13|18|19|15|15.67 -->
-<!-- 15|14|18|19|17|16|18|17 -->
-<!-- 20|19|25|22|23|18|20|21.17 -->
-
-What are the response variable, experimental units, factor(s), levels of the factor(s), treatments, and number of replications per treatment?
-
-Example: A mechanical engineer is studying the surface roughness of parts produced in a metal-cutting operation.  The experiment looked at 16 parts, selected using a SRS of today’s parts.  A roughness measurement was recorded on each piece.   Two parts were randomly assigned to each combination of 
-- feed rate – 20 inches/minute or 30 inches/minute
-- depth of cut – 0.025 or 0.04 inches
-- tool angle – 15 or 25 degrees
-
-<!-- | | | Depth of Cut | -->
-<!-- | | 0.025in | | 0.04in -->
-<!-- Feed Rate | | Tool Angle | | Tool Angle -->
-<!-- | 15$\degree$ | 25$\degree$ | 15$\degree$ | 25$\degree$ -->
-<!-- 20 in/min | 9 |11 |9 |10  -->
-<!-- | 7 | 10 | 11 | 8 -->
-<!-- 30in/min | 10 | 10 | 12 | 16 -->
-<!-- | 12 | 13 | 15 | 14 -->
-
-What are the Response variable, EUs, Factors, Levels of the factors, Treatments, and Number of Replicates per treatment? 
-
-
-Notice that many of the response values are different.  What is causing them to be different?
+Reason we need statistics, notice that many of the response values are different.  What is causing them to be different?
 
 **Sources of Variation** in the responses of an experiment:
 
-**Treatment effect** - we hope there is an effect due to the variables we are setting
+- **Treatment effect** - we hope there is an effect due to the variables we are setting
 
-Variables accounted for - We record some variables that are not of interest, but we think may have an effect on the response.
+- Variables accounted for - We record some variables that are not of interest, but we think may have an effect on the response.
 
-Variables unaccounted for (these make up the Experimental Error or Error Variation)
+- Variables unaccounted for (these make up the Experimental Error or Error Variation), controlled vars
 
-- Inherent variability in experimental units - Experimental units are different!  
+- **Experimental Error** - Used to describe the variation in response among EUs that are assigned the same treatment.
 
+    + Inherent variability in experimental units - Experimental units are different!  
 Example: No two people, paper towels, concrete blocks, or even lab rats are exactly the same.  
 Consequence: Experimental units respond differently to the same treatment
 		
-- Measurement error - Multiple measurements of a same experimental unit typically contain error.  
+    + Measurement error - Multiple measurements of a same experimental unit typically contain error.  
 
-			If the same experimental unit is measured more than once, will the value be the same?
+If the same experimental unit is measured more than once, will the value be the same?
+Example: Blood Pressure, Break a water sample in two, measure each for bacteria
 			
-Example: Blood Pressure, Break a water sample in two, measure each for bacteria\\
-			
-- Variations in applying/creating treatments  
+    + Variations in applying/creating treatments  
 
 The treatment is not clearly defined, leaving room for interpretation.  
 
@@ -116,6 +79,7 @@ Many other experimental designs!  All use randomization.
 
 Replication - Repetition of an experiment using a large group of subjects to reduce chance variation in the results
 
+- **Replicate** - Name given to EUs that receive the same treatment.
 - Allows us to generalize the results to the population and increases reliability of conclusions.  
 - Allows an estimate of variability (an estimate of experimental error) not due to the treatment effect.
 
@@ -124,6 +88,8 @@ Note: Replication does not mean that we measure the same EUs multiple times, thi
 Ideally as many EUs as we can afford.  Think if we had 3 diets and 3 EUs.  Diet 1 was better than diet 2 and diet 3, not a very reliable conclusion, perhaps person 1 just loses weight more easily.  Now if 100 people at each diet and on average diet 1 was much better, more reliable conclusion.  
 
 By averaging over the many observations we can reduce the effects of measurement error and error in applying/creating the treatments.  
+
+Power and sample size calculations stuff dealt with later.  
 
 Methods for accounting for/reducing experimental error  
 
@@ -140,7 +106,7 @@ Example:  For the 3 diet example.  What variables might we control?
 - Blocks - Groups of EUs sharing a common level of a confounding variable.
 
 ```{r, echo = FALSE, fig.align='center', out.width="80%"}
-knitr::include_graphics("img/block.jpg")
+knitr::include_graphics("img/block.png")
 ```
 
 Similar to controlling, but allows for increased generalizability.  EUs within a block are very similar (decreases experimental error there as all the EUs in a block are affected similarly by the confounding variable).  By having enough blocks to cover the range of the population you can still generalize.)
@@ -159,28 +125,24 @@ These ideas are very important.  Unless you are well versed in statistical metho
 
 > A poorly designed study can never be saved, but a poorly analyzed one has the possibility of being reanalyzed.
 
-Open-ended Example:  
-Mike and John are interested in finding the optimal type of disc and the throw style on the throw distance of a disc. They consider 3 different disc types (Putter, Mid-Range and Driver) and 2 different throwing techniques (Forehand, Backhand). They gather a group of 30 people to use in the study (hopefully they are an unbiased and representative sample from their population of interest!).  
-
-We want to design an experiment that will assist them.
-
-Specify the factors, treatments, experimental units, response variable, and how you would do the randomization.  What other sources of variation may not be accounted for?  Could you do blocking?
-
-
-Example:	Your company has 20 different types of tires for compact cars. There are 4 types of all season tires, 6 types of snow tires, and 10 types of standard tires.  
-
-The length of time the tires last is very important to customers.  You are to select 60 tires, run them, and test them for wear.  
-
-With a partner - Define the Population, possible Parameter of interest, Sample, and possible Statistic of interest.  
-
-Then come up with a SRS, Stratified, and convenience sampling design for this problem.
-
-This class is about analyzing data.  Once we have data, we need to organize it and summarize it in useful/meaningful ways.  
-
-
 Good discussion of what makes a good sampling design revisit.  Maybe a statified example like the river and selecting houses example as a quick expose of the issues with not doing a truly random sampling technique.  
 
+Analysis in future chapters...
 
+#### CRD  
+
+#### Blocks  
+
+
+#### Split plot
+
+#### Strip plot
+
+#### RCBSP  
+
+#### 2^k
+
+...?
 
 A major goal of a study is usually to conduct statistical inference.  Inference can involve determine which variables are important in relation to a response variable and/or predicting a response variable.  To formally do inference we need to define the population of interest as well as **parameters** we want to study.  
 
@@ -220,17 +182,10 @@ Pisani and Perv?  many bad examples of inference
 Stuff about power/sample size calculation somewhere?
 
 
-#### CRD  
 
-#### Blocks  
+Similarities and differences between sampling and DOE randomization 
+SRS vs CRD comparison
+Strat vs Block comparison  
 
 
-#### Split plot
-
-#### Strip plot
-
-#### RCBSP  
-
-#### 2^k
-
-...?
+#### Sampling Schemes vs Randomization Methods  
