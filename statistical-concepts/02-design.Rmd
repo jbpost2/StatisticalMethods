@@ -4,7 +4,7 @@ To describe the methods for creating a well-designed experiment, we first need t
 
 - **Response Variable** - variable(s) of interest that characterizes performance or behavior  
 - **Explanatory Variable** - variable(s) of interest with regard to their relationship with the response variable  
-- **Covariate** - Quantitative (numerical) explanatory variable (usually observed and not set by the researcher)  
+- **Covariate** - Quantitative (numerical) explanatory variable (usually observed as the experiment is run and not set by the researcher)  
 - **Factor** - explanatory variable that takes on a finite number of values (a Categorical or Qualitative variable) 
 - **Level** -	setting a factor can take on
 - **Treatment** - specific experimental condition, either the level of a factor (if only 1 factor) or the combinations of the levels from a number of factors  
@@ -85,113 +85,55 @@ Note that replication does not mean that we measure the same EUs multiple times!
 - **Controlling Variables** - holding certain variables constant across the EUs.  
 Generally, we're not interested in the effects of these variables on the response.  These variables affect the response in exactly the same manner, so that we	don't see the effects on the conclusions. Unfortunately, we don`t get information on what happens at settings of the variables other than the fixed ones.  This decreases generalizability, but reduces overall variation.  Experimental designs such as a randomized complete block design attempt to control variables while also maintaining generalizability.  
 
-
-There are also methods for dealing with some explained experimental error during the analysis stage - Namely ANCOVA.
+Let's discuss some of the most used experimental designs.  We'll cover analysis for these types of experiments in future chapters.  When considering conducting an experiment, consider the advice below!
 
 > A poorly designed study can never be saved, but a poorly analyzed one has the possibility of being reanalyzed.
 
-Good discussion of what makes a good sampling design revisit.  Maybe a statified example like the river and selecting houses example as a quick expose of the issues with not doing a truly random sampling technique.  
+#### Completely Randomized Design (CRD)    
 
-Analysis in future chapters...
+A Completely Randomized Design (CRD) is the most straightforward experimental design.  Suppose the number of units in the sample is $n$ and the number of treatments is $t$.  The design uses a random number mechanism to randomly assign the $t$ treatments across the $n$ experimental units.  In a **balanced** design, the same number of units are assigned to each treatment.  The number of replicates is usually denoted by $n_t$.  
 
-#### CRD  
+This design assumes all of the EUs are **exchangeable**.  (**Should I include this here?**)
 
-    + Completely Randomized Design (CRD) - for t treatments, replicated $n_t$ times each, use a random number generator to assign the treatments to the EUs.  
-    + Most basic randomization design - assumes all EUs are exchangeable.
+For example, suppose we are doing an experiment to determine the effect of nutrition (3 different diets or treatments) on weight gain in humans.  Suppose we have 30 experimental units labeled 1, 2, ..., 30.  A random number generator can be used to reorder the numbers 1 through 30.  The first 10 numbers can then be assigned the first diet, the next 20 numbers the second diet, and the last 10 numbers the third diet.  
 
-Example:  We are doing an experiment to determine the effect of nutrition (3 different diets) on weight gain in humans.  How can we perform a CRD for this study?
+Ideally we want to have as many replicates for each treatment as we can afford.   If we had 3 diets and 3 EUs and found that the person assigned the first diet lost more weight than the person assigned to the second diet.  This is not a very reliable conclusion!  Perhaps the person assigned to the first diet naturally loses weight more easily.  However, if we had 100 people assigned to each diet and on average the first diet yieled a greater weight loss, this would be a much more reliable conclusion.  
 
+Often to determine the appropriate sample size (or sample sizes for each treatment group) a power analysis or sample size calculation is done.  These require assumptions about the population variation in some respect as well as an idea of a "difference of interest."  These topics will be covered later in the book.  
 
-Ideally we want to have as many replicates for each treatment as we can afford.   Think if we had 3 diets and 3 EUs.  Diet 1 was better than diet 2 and diet 3, not a very reliable conclusion, perhaps person 1 just loses weight more easily.  Now if 100 people at each diet and on average diet 1 was much better, more reliable conclusion.  
+#### Randomized Block Designs  
 
-Power and sample size calculations stuff dealt with later.  
+A randomized block design divides EUs with similar characteristics into 
+'blocks' or subgroups.  Within each block the treatments are then randomly assigned.  
 
+Within a block we are essentially controlling the blocking variable.  However, by conducting the design across many settings of the blocking variable, we maintain generalizability of the study.  
 
+Let's consider an example.  Two new finishes are developed (type A and type B) for use on a dash board in a car.  The material and finish must withstand high temperatures due to the sun and the greenhouse effect.  To simulate the temperatures and wear on the dashboard, the dashboards are placed into ovens for 24 hours and the amount of degradation is measured.  
 
-#### Blocks  
+The company has 4 large ovens (oven 1, 2, 3, and 4) for testing.  The manufacturer finds a random sample of 40 dashboards from the assembly line.  Ten dashboards will be placed in each oven.  Within the groups of ten assigned to the ovens, five of each treatment were randomly assigned.  
 
-- Blocking - Divide subjects with similar characteristics into `blocks', and then within each block, randomly assign subjects to treatment groups.
+The ovens act as the blocks in this experiment.  There may be some variation from oven to oven but we don't really have an interest in this variation.  
 
-- Blocks - Groups of EUs sharing a common level of a confounding variable.
+There are many other commonly used design including:  
 
-```{r, echo = FALSE, fig.align='center', out.width="80%"}
-knitr::include_graphics("img/block.png")
-```
+- Incomplete block designs
+- Latin squares designs  
+- Split plot designs  
+- Randomized complete block split plot designs  
+- Strip plot designs  
+- 2^k designs  
+- 3^k designs  
+- Response surface designs  
 
-Similar to controlling, but allows for increased generalizability.  EUs within a block are very similar (decreases experimental error there as all the EUs in a block are affected similarly by the confounding variable).  By having enough blocks to cover the range of the population you can still generalize.)
-
-
-Example:  Two new types of material are developed (type A and type B) for use as a dash board in a car.  The material must withstand high temperatures due to the sun and the greenhouse effect.  
-- To test which material holds up better, the manufacturer randomly selects 20 pieces of type A and 20 pieces of type B material.  
-- The company has 4 large ovens (oven 1, 2, 3, and 4) for testing.  Each oven has 5 pieces of type A and 5 of type B randomly placed into each.   
-- After 24 hours, the amount of degradation is measured.  
-
-What are the blocks?  How many replicates do we have?  How many replicates in each block?
-
-### Latin Squares
-#### Split plot
-
-#### Strip plot
-
-#### RCBSP  
-
-#### 2^k
-
-#### Response Surface  
-
-...?
-
-A major goal of a study is usually to conduct statistical inference.  Inference can involve determine which variables are important in relation to a response variable and/or predicting a response variable.  To formally do inference we need to define the population of interest as well as **parameters** we want to study.  
-
-- Population - all the values, items, or individuals of interest
-
-- Parameter - a (usually) unknown summary value about the population
-
-Ideally, we'd be able to measure every member of the population and exactly calculate the value of any population parameter.  This would involved conducing a census.  A census is usually not feasible.  Instead we take a subset of the population and try to use these observations to make statements or claims about the population.
-
-- Sample - a subset of the population we observe data on
-
-- Statistic - a summary value calculated from the sample observations
-
-Example - A political scientist surveys 400 people randomly from a list of all registered voters in a particular county.  He asks the people if they plan to vote in the upcoming election and 312 say they do.
-
-**Relate above to definitions...**
-
-To discuss paramters and statistics more easily, symbols are used to denote them.  Luckily, there is a common notation that, for the most, is consistent across statistical literature. 
-
-<!-- Name | Parameter | Statistic | Quantity Measured -->
-<!-- -------------------------------------------------- -->
-<!-- Mean | $\mu$     | $\bar{Y}$ or $\bar{y}$ or $\bar{X}$ or $\bar{x}$ | Center or Location -->
-<!-- Proportion | $p$ or $\pi$ | $\hat{P}$ or $\hat{p}$ or $\hat{\pi}$ | Location or Frequency -->
-<!-- Standard Deviation (SD) | $\sigma$ | $S$ or $s$ | Variability or spread -->
-<!-- Variance (Var) | $\sigma^2$ | $S^2$ or $s^2$ | Variability or spread -->
-
-Note: $\bar{Y}=\frac{1}{n}\sum_{i=1}^{n}Y_i$ and $S^2=\frac{1}{n-1}\sum_{i=1}^{n}(Y_i-\bar{Y})^2$ where $n$ is the sample size (or number of observed values in the sample).  Sometimes you'll see other notation for proportions **(....... fill in and change table)**
-
-Question of interest will lead you to which parameter you have interest in.  Careful consideration of what your study goals are will also most likely lead you to which type of data you will collect.
-
-
-Examples of why Observational Studies Can be Bad  
-
-George Will WP column about SAT vs amount of money spent
-Pisani and Perv?  many bad examples of inference
-
-Stuff about power/sample size calculation somewhere?
-
-
-
-Similarities and differences between sampling and DOE randomization 
-SRS vs CRD comparison
-Strat vs Block comparison  
+We'll cover many of these later in the book!  
 
 
 #### Sampling Schemes vs Randomization Methods  
 
-Notes about randomization:  
+Randomization applied to experimental design is different than randomization in sampling!
 
-- CRD similar in spirit to a SRS in the fact that it does not guarantee balance of lurking variables.  However, if we have a large enough study we should balance out the lurking variables between the treatment groups.  
+- In sampling, randomization is used to determine which members of the population are included in the sample.  
 
-Randomization is different than random sampling!  
+- If an experiment is being done, randomization is then used to determine which EUs get which treatments.
 
-- With an Random Sample, chance determines who will be included in the sample. 
-- Once we have our sample, Randomization determines which EUs get which treatments.
+**(Comparison of CRD, SRS and Strat, Block)**

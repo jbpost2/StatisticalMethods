@@ -82,7 +82,7 @@ The respective proportion of blue marbles found for these two samples are `r mea
 
 Now let's repeat this process!  Each time we'll record the proportion of blue marbles for each method.  In the end we can compare the two and see the differences.  Ten more of these (sample) proportions are reported below.
 
-```{r}
+```{r, echo = FALSE}
 method1 <- colMeans(replicate(10000, marblePop[sample(1:100, size = 10, replace = FALSE), 2]) == "Blue")
 method2 <- colMeans(replicate(10000, marblePop[sample(1:100, size = 10, replace = FALSE, prob = convProb), 2]) == "Blue")
 data.frame(SRS = method1[1:10], Convenience = method2[1:10], row.names = NULL)
@@ -90,10 +90,10 @@ data.frame(SRS = method1[1:10], Convenience = method2[1:10], row.names = NULL)
 
 Remember, the actual value of the population proportion is 0.4.  It can be hard to see differences between these two methods in only a few samples.  With computing power at our fingertips, let's repeat this process 10,000 times and investigate how the two sampling methods performed with regard to the true proportion of blue marbles, 0.4. The easiest way to visualize the sample proportions is by creating histograms.  In this case, the histogram will show us how many times we observed each sample proportion possible (0, 0.1, 0.2, ..., 1).  
 
-```{r}
+```{r, echo = FALSE, fig.align='center', out.width = "90%"}
 par(mfrow = c(1, 2))
-hist(method1, main = "Sample Proportions using an SRS", xlab = "Sample Proportions", breaks = seq(from = -0.025, to = 1.025, by = 0.05))
-hist(method2, main = "Sample Proportions using a Convenience Sample", xlab = "Sample Proportions", breaks = seq(from = -0.025, to = 1.025, by = 0.05))
+hist(method1, main = "Using an SRS", xlab = "Sample Proportions", breaks = seq(from = -0.025, to = 1.025, by = 0.05))
+hist(method2, main = "Using a Convenience Sample", xlab = "Sample Proportions", breaks = seq(from = -0.025, to = 1.025, by = 0.05))
 par(mfrow = c(1, 1))
 ```
 
@@ -118,11 +118,15 @@ Sometimes it isn't feasible to implement a good sampling scheme.  For instance, 
 #### Observational vs Experimental Studies 
 
 Sampling schemes are all about obtaining units from your population for your study.  Once units are selected there are two basic types of studies:  
-- **Observational Study** - observe individuals and measure outcomes without influencing the responses
+
+- **Observational Study** - observe individuals and measure outcomes without influencing the responses  
+
 - **Experimental Study** - deliberately impose a treatment on individuals and observe their response  
 
 Recall the big difference in conclusions drawn!  
+
 - Cannot usually infer causation from observational studies, but you can from a well-designed experiment  
+
 - Experiments are not always feasible or ethical.  i.e. cannot assign people to smoke a pack a day or have expectant mothers drink a certain amount of alcohol
 
 For experimental studies, a randomization technique is needed to determine which EUs obtain which units.  Sometimes this can go hand in hand with the sampling scheme (stratified random sampling and a randomized block design).  How to do this important and nuanced.  The experimental design is the topic of the next section.  

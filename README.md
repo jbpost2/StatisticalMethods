@@ -79,3 +79,12 @@ Old stuff to keep around:
  Oasis is similar.
 
 - Rebus guide to publishing open text books (so far)
+
+
+## Things to add in - just need to find where!
+
+Examples of why Observational Studies Can be Bad  
+
+George Will WP column about SAT vs amount of money spent
+Pisani and Perv?  many bad examples of inference
+

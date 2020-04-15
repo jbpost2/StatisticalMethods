@@ -241,7 +241,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.1" data-path="anova.html"><a href="anova.html#motivating-example"><i class="fa fa-check"></i><b>9.1</b> Motivating example</a></li>
 <li class="chapter" data-level="9.2" data-path="anova.html"><a href="anova.html#simple-model-for-the-data"><i class="fa fa-check"></i><b>9.2</b> Simple model for the data</a></li>
 <li class="chapter" data-level="9.3" data-path="anova.html"><a href="anova.html#exploratory-analysis"><i class="fa fa-check"></i><b>9.3</b> exploratory analysis</a></li>
-<li class="chapter" data-level="9.4" data-path="anova.html"><a href="anova.html#sources-of-variation"><i class="fa fa-check"></i><b>9.4</b> sources of variation</a></li>
+<li class="chapter" data-level="9.4" data-path="anova.html"><a href="anova.html#sources-of-variation-1"><i class="fa fa-check"></i><b>9.4</b> sources of variation</a></li>
 <li class="chapter" data-level="9.5" data-path="anova.html"><a href="anova.html#statistical-model-and-analysis"><i class="fa fa-check"></i><b>9.5</b> statistical model and analysis</a></li>
 <li class="chapter" data-level="9.6" data-path="anova.html"><a href="anova.html#compare-analyses"><i class="fa fa-check"></i><b>9.6</b> compare analyses</a></li>
 </ul></li>
@@ -641,9 +641,6 @@ A convenience sample usually implies that the sample consists of the most conven
 ## 10       33  Blue        66    Blue</code></pre>
 <p>The respective proportion of blue marbles found for these two samples are 0.6 for the SRS and 0.7 for the convenience sample.</p>
 <p>Now let’s repeat this process! Each time we’ll record the proportion of blue marbles for each method. In the end we can compare the two and see the differences. Ten more of these (sample) proportions are reported below.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">method1 &lt;-<span class="st"> </span><span class="kw">colMeans</span>(<span class="kw">replicate</span>(<span class="dv">10000</span>, marblePop[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>), <span class="dv">2</span>]) <span class="op">==</span><span class="st"> &quot;Blue&quot;</span>)
-method2 &lt;-<span class="st"> </span><span class="kw">colMeans</span>(<span class="kw">replicate</span>(<span class="dv">10000</span>, marblePop[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>, <span class="dt">prob =</span> convProb), <span class="dv">2</span>]) <span class="op">==</span><span class="st"> &quot;Blue&quot;</span>)
-<span class="kw">data.frame</span>(<span class="dt">SRS =</span> method1[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>], <span class="dt">Convenience =</span> method2[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>], <span class="dt">row.names =</span> <span class="ot">NULL</span>)</code></pre></div>
 <pre><code>##    SRS Convenience
 ## 1  0.1         0.5
 ## 2  0.4         0.7
@@ -656,11 +653,7 @@ method2 &lt;-<span class="st"> </span><span class="kw">colMeans</span>(<span cla
 ## 9  0.3         0.6
 ## 10 0.3         0.5</code></pre>
 <p>Remember, the actual value of the population proportion is 0.4. It can be hard to see differences between these two methods in only a few samples. With computing power at our fingertips, let’s repeat this process 10,000 times and investigate how the two sampling methods performed with regard to the true proportion of blue marbles, 0.4. The easiest way to visualize the sample proportions is by creating histograms. In this case, the histogram will show us how many times we observed each sample proportion possible (0, 0.1, 0.2, …, 1).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
-<span class="kw">hist</span>(method1, <span class="dt">main =</span> <span class="st">&quot;Sample Proportions using an SRS&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Sample Proportions&quot;</span>, <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="op">-</span><span class="fl">0.025</span>, <span class="dt">to =</span> <span class="fl">1.025</span>, <span class="dt">by =</span> <span class="fl">0.05</span>))
-<span class="kw">hist</span>(method2, <span class="dt">main =</span> <span class="st">&quot;Sample Proportions using a Convenience Sample&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Sample Proportions&quot;</span>, <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="op">-</span><span class="fl">0.025</span>, <span class="dt">to =</span> <span class="fl">1.025</span>, <span class="dt">by =</span> <span class="fl">0.05</span>))</code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-222-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</code></pre></div>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-222-1.png" width="90%" style="display: block; margin: auto;" /></p>
 <p>We can see there are differences in the two histograms. The histogram using the convenience sample tended to have slightly larger values for the sample proportion of blue marbles found. If we look at the overall mean of the sample proportions found using the SRS we get 0.4027, which is very close to the true value of 0.4 This means that on average the SRS method and the sample proportion are giving the correct parameter. Copare this to the convenience sample method where we get an overall mean of 0.4607, which overestimates the population parameter of 0.4.</p>
 <p>This is just a quick example of how using a poor sampling method might affect the analysis done and why we need to use a good sampling method. We ‘created’ a convenience sample here. In real life, the mechanism that underlies the convenience sample wouldn’t be known!</p>
 </div>
@@ -680,180 +673,169 @@ method2 &lt;-<span class="st"> </span><span class="kw">colMeans</span>(<span cla
 </div>
 <div id="observational-vs-experimental-studies-1" class="section level4">
 <h4><span class="header-section-number">2.4.1.6</span> Observational vs Experimental Studies</h4>
-<p>Sampling schemes are all about obtaining units from your population for your study. Once units are selected there are two basic types of studies:<br />
-- <strong>Observational Study</strong> - observe individuals and measure outcomes without influencing the responses - <strong>Experimental Study</strong> - deliberately impose a treatment on individuals and observe their response</p>
-<p>Recall the big difference in conclusions drawn!<br />
-- Cannot usually infer causation from observational studies, but you can from a well-designed experiment<br />
-- Experiments are not always feasible or ethical. i.e. cannot assign people to smoke a pack a day or have expectant mothers drink a certain amount of alcohol</p>
+<p>Sampling schemes are all about obtaining units from your population for your study. Once units are selected there are two basic types of studies:</p>
+<ul>
+<li><p><strong>Observational Study</strong> - observe individuals and measure outcomes without influencing the responses</p></li>
+<li><p><strong>Experimental Study</strong> - deliberately impose a treatment on individuals and observe their response</p></li>
+</ul>
+<p>Recall the big difference in conclusions drawn!</p>
+<ul>
+<li><p>Cannot usually infer causation from observational studies, but you can from a well-designed experiment</p></li>
+<li><p>Experiments are not always feasible or ethical. i.e. cannot assign people to smoke a pack a day or have expectant mothers drink a certain amount of alcohol</p></li>
+</ul>
 <p>For experimental studies, a randomization technique is needed to determine which EUs obtain which units. Sometimes this can go hand in hand with the sampling scheme (stratified random sampling and a randomized block design). How to do this important and nuanced. The experimental design is the topic of the next section.</p>
 </div>
 </div>
 <div id="fundamentals-of-designed-experiments" class="section level3">
 <h3><span class="header-section-number">2.4.2</span> Fundamentals of Designed Experiments</h3>
-<p>To describe the methods for creating a well-designed experiment, we first need to recap some definitions.</p>
+<p>To describe the methods for creating a well-designed experiment, we first need to recap some definitions from earlier:</p>
 <ul>
-<li><strong>Response Variable</strong> - Variable of interest that characterizes performance or behavior.<br />
+<li><strong>Response Variable</strong> - variable(s) of interest that characterizes performance or behavior<br />
 </li>
-<li><strong>Explanatory Variables</strong> - Variables that determine the study conditions (can be quantitative or categorical).<br />
+<li><strong>Explanatory Variable</strong> - variable(s) of interest with regard to their relationship with the response variable<br />
 </li>
-<li><strong>Covariate</strong> - Quantitative explanatory variable.<br />
+<li><strong>Covariate</strong> - Quantitative (numerical) explanatory variable (usually observed as the experiment is run and not set by the researcher)<br />
 </li>
-<li><strong>Factor</strong> - Categorical explanatory variable of interest.<br />
-</li>
-<li><strong>Level</strong> - The specified value of a factor.<br />
-</li>
-<li><strong>Treatment</strong> - A specific experimental condition, either the level of a factor (if only 1 factor) or the combinations of levels from a number of factors.
+<li><strong>Factor</strong> - explanatory variable that takes on a finite number of values (a Categorical or Qualitative variable)</li>
+<li><strong>Level</strong> - setting a factor can take on</li>
+<li><strong>Treatment</strong> - specific experimental condition, either the level of a factor (if only 1 factor) or the combinations of the levels from a number of factors
 <ul>
-<li><strong>Control Treatment</strong> - Benchmark treatment sometimes necessary for comparison (to avoid the placebo effect).<br />
+<li><strong>Control Treatment</strong> - benchmark treatment sometimes necessary for comparison (to avoid the placebo effect)<br />
 </li>
 </ul></li>
-<li><strong>Experimental units (EUs)</strong> - Units on which the treatments are assigned.</li>
+<li><strong>Experimental units (EUs)</strong> - units on which the treatments are assigned<br />
+</li>
+<li><strong>Observational units (OUs)</strong> - units on which measurements are taken</li>
 </ul>
-<p>Reason we need statistics, notice that many of the response values are different. What is causing them to be different?</p>
-<p><strong>Sources of Variation</strong> in the responses of an experiment:</p>
+<p>There is clearly a lot of jargon to remember when learning about experimental design. We’ll do our best to remind the reader of these terms as we go along.</p>
+<p>Before we dive into experimental designs, we should again discuss the reason we need statistical methods with a little more detail.</p>
+<div id="sources-of-variation" class="section level4">
+<h4><span class="header-section-number">2.4.2.1</span> Sources of Variation</h4>
+<p>We’ve discussed that data is variable. If we repeat an experimental study, even with identical conditions, we are likely to obtain different data for the response. This has to do with the sample members being selected differently each time and possibly different units assigned a given treatment. Let’s identify the sources variation in our response.</p>
 <ul>
-<li><p><strong>Treatment effect</strong> - we hope there is an effect due to the variables we are setting</p></li>
-<li><p>Variables accounted for - We record some variables that are not of interest, but we think may have an effect on the response.</p></li>
-<li><p>Variables unaccounted for (these make up the Experimental Error or Error Variation), controlled vars</p></li>
-<li><p><strong>Experimental Error</strong> - Used to describe the variation in response among EUs that are assigned the same treatment.</p>
+<li><p><strong>Treatment effect</strong> - an effect due to the variables assigned by the researcher (treatments) in an experiment.</p>
 <ul>
-<li><p>Inherent variability in experimental units - Experimental units are different!<br />
-Example: No two people, paper towels, concrete blocks, or even lab rats are exactly the same.<br />
-Consequence: Experimental units respond differently to the same treatment</p></li>
-<li><p>Measurement error - Multiple measurements of a same experimental unit typically contain error.</p></li>
+<li>This is an effect we are usually hoping to see and quantify!</li>
+</ul></li>
+<li><p>(Other) <strong>Recorded Variables</strong> - some variables that are not of interest are recorded because we may know or think they are associated with variability in the response.</p>
+<ul>
+<li>These may be covariates measured along the way (like temperature) or a variable with only a few values like the soil type a crop is grown in.</li>
+</ul></li>
+<li><p><strong>Unaccounted for Variables</strong> - everything else causing variation.</p>
+<ul>
+<li>This variation is estimated and used as a reference with which to compare the treatment variation.</li>
 </ul></li>
 </ul>
-<p>If the same experimental unit is measured more than once, will the value be the same? Example: Blood Pressure, Break a water sample in two, measure each for bacteria</p>
-<pre><code>+ Variations in applying/creating treatments  </code></pre>
-<p>The treatment is not clearly defined, leaving room for interpretation.</p>
-<p>Example: Two researchers mix concrete, one stirs for 10 minutes and one for 20 minutes, will they come out exactly the same? Temperature is of interest but two ovens don`t heat exactly the same, etc.</p>
+<p>Consider a simplified example where a gardener wants to know what water (low or high) and fertilizer (A or B) conditions are better in terms of producing greater crop yield (dried weight).</p>
 <ul>
-<li>Effects from any other extraneous (or lurking) variables - Extraneous variables are those variables that are not part of the treatment, but may influence the response.</li>
-</ul>
-<p>Example: For the oven example, the experiment is done over the course of several days. There may be slight differences due to humidity changes.</p>
-<p>Example: A gardener wants to know if levels of water and fertilizer are better in terms of producing greater crop yield. The gardener decides to treat 2 greenhouses with 4 treatments (water low - fertilizer low, water high - fertilizer low, etc.). There were 2 replicates for each treatment within each greenhouse.</p>
-<p>Identify the sources of variation and experimental error (identify what type they are).</p>
-<p>No matter how hard we try, some experimental error will remain. What we can do is use good experimental design techniques to ensure our study is valid.</p>
-<p>DOE is about creating the optimal experiment to determine the effects of different treatments. Different types of experimental designs are then analyzed differently.</p>
-<p>Pillars of Experimental Design</p>
+<li>Response variable - the dried weight of the crop after growth</li>
+<li>The explanatory variables are the two factors:
 <ul>
-<li><p>Randomization - means that the treatments are randomly allocated to the EUs.</p>
+<li>Water (with levels low and high)<br />
+</li>
+<li>Fertilizer (with levels A or B)<br />
+</li>
+</ul></li>
+<li>Treatments:
 <ul>
-<li>Every EU has a chance to get a different treatment, so helps protect the results of the analysis against a systematic influence of lurking variables.<br />
+<li>low water and fertilizer A<br />
 </li>
-<li>Allows the observed responses to be regarded as a random sample.</li>
-<li>Note: Different randomization schemes lead to different statistical analyses.<br />
+<li>low water and fertilizer B<br />
 </li>
-<li>Completely Randomized Design (CRD) - for t treatments, replicated <span class="math inline">\(n_t\)</span> times each, use a random number generator to assign the treatments to the EUs.<br />
+<li>high water and fertilizer A<br />
 </li>
-<li>Most basic randomization design - assumes all EUs are exchangeable.</li>
+<li>high water and fertilizer B</li>
 </ul></li>
 </ul>
-<p>Example: We are doing an experiment to determine the effect of nutrition (3 different diets) on weight gain in humans. How can we perform a CRD for this study?</p>
-<p>Notes about randomization:</p>
+<p>The gardener has two greenhouses each with 16 rows for growing crops. Within each greenhouse, they randomly assign the four treatments to the 16 rows. After 45 days, the crops are harvested, dried, and weighed.</p>
 <ul>
-<li>Similar in spirit to a SRS in the fact that it does not guarantee balance of lurking variables. However, if we have a large enough study we should balance out the lurking variables between the treatment groups.</li>
-</ul>
-<p>Randomization is different than random sampling!</p>
-<ul>
-<li>With an Random Sample, chance determines who will be included in the sample.</li>
-<li>Once we have our sample, Randomization determines which EUs get which treatments.</li>
-</ul>
-<p>Many other experimental designs! All use randomization.</p>
-<p>Replication - Repetition of an experiment using a large group of subjects to reduce chance variation in the results</p>
-<ul>
-<li><strong>Replicate</strong> - Name given to EUs that receive the same treatment.</li>
-<li>Allows us to generalize the results to the population and increases reliability of conclusions.<br />
+<li>The experimental units are the rows within the greenhouses<br />
 </li>
-<li>Allows an estimate of variability (an estimate of experimental error) not due to the treatment effect.</li>
+<li>The observational units are all the plants grown in a given row (so we may say the row is also the OU)</li>
 </ul>
-<p>Note: Replication does not mean that we measure the same EUs multiple times, this is called repeated measures. Observations from repeated measures experiments cannot usually be considered independent.</p>
-<p>Ideally as many EUs as we can afford. Think if we had 3 diets and 3 EUs. Diet 1 was better than diet 2 and diet 3, not a very reliable conclusion, perhaps person 1 just loses weight more easily. Now if 100 people at each diet and on average diet 1 was much better, more reliable conclusion.</p>
-<p>By averaging over the many observations we can reduce the effects of measurement error and error in applying/creating the treatments.</p>
-<p>Power and sample size calculations stuff dealt with later.</p>
-<p>Methods for accounting for/reducing experimental error</p>
+<p>The sources of variation in the dried weight of the crop are:</p>
 <ul>
-<li><p>Controlling Variables - holding certain variables constant across the EUs</p>
+<li>Treatment variation - variation we believe we’ll see in dried weight from the differences in water and fertilizer applications.<br />
+</li>
+<li>Other recorded variable - greenhouse in which the crops are grown is recorded. Greenhouse is not of interest but may play a role in the variation in dried weight.</li>
+<li>Unaccounted for variables - Amount of sunlight received, temperature/humidity differentials within a greenhouse, possible differences in the method of application of the treatment (fertilizer and water), and many others may also have an association with dried crop weight. These sources make up a sort of reference variability we can compare our treatment variation to.</li>
+</ul>
+<p>The variation from unaccounted variables can generally be broken down into four cateogries:</p>
 <ul>
-<li>Decreases generalizability, but reduces experimental error.</li>
+<li>Inherent variability in EUs (units assigned a treatment).
+<ul>
+<li>No two people, paper towels, concrete blocks, or lab rats are exactly the same so they may respond differently to the same treatment.</li>
 </ul></li>
-</ul>
-<p>We’re not interested in the effects of these variables on the response. These variables affect the response in exactly the same manner, so that we don’t see the effects on the conclusions. We don`t get information on what happens at levels other than the fixed one.</p>
-<p>Example: For the 3 diet example. What variables might we control?</p>
+<li>Measurement error - Multiple measurements of a same experimental unit may differ.
 <ul>
-<li><p>Blocking - Divide subjects with similar characteristics into `blocks’, and then within each block, randomly assign subjects to treatment groups.</p></li>
-<li><p>Blocks - Groups of EUs sharing a common level of a confounding variable.</p></li>
+<li>Two blood pressure readings a few minutes apart may give different readigns or if you break a water sample in two and measure each for bacteria, you may see different measurements</li>
+</ul></li>
+<li>Variations in applying or creating treatments.
+<ul>
+<li>Occasionaly a treatment protocol is not clearly defined, leaving room for interpretation. Perhaps applying a fertilizer before or after applying irrigation can cause a difference.</li>
+</ul></li>
+<li>Other unknown variables sometimes called lurking variables.</li>
 </ul>
-<p><img src="img/block.png" width="80%" style="display: block; margin: auto;" /></p>
-<p>Similar to controlling, but allows for increased generalizability. EUs within a block are very similar (decreases experimental error there as all the EUs in a block are affected similarly by the confounding variable). By having enough blocks to cover the range of the population you can still generalize.)</p>
-<p>Example: Two new types of material are developed (type A and type B) for use as a dash board in a car. The material must withstand high temperatures due to the sun and the greenhouse effect.<br />
-- To test which material holds up better, the manufacturer randomly selects 20 pieces of type A and 20 pieces of type B material.<br />
-- The company has 4 large ovens (oven 1, 2, 3, and 4) for testing. Each oven has 5 pieces of type A and 5 of type B randomly placed into each.<br />
-- After 24 hours, the amount of degradation is measured.</p>
-<p>What are the blocks? How many replicates do we have? How many replicates in each block?</p>
-<p>There are also methods for dealing with some explained experimental error during the analysis stage - Namely ANCOVA.</p>
-<p>These ideas are very important. Unless you are well versed in statistical methods and ideas you should consult a statistician before investing time and money in an experiment.</p>
+<p>No matter how hard we try, some of these unaccounted for variables (and hence variation in the response) will remain. What we can do is use good experimental design techniques to try and minimize the effects of from these variables.</p>
+<p>Good experimental designs generally have the following key attributes:</p>
+<ul>
+<li><strong>Randomization</strong> - treatments are randomly assigned to experimental units.</li>
+</ul>
+<p>This process must use a random number mechanism or software to allocate the treatments. Randomization makes sure that every EU has a chance to get a different treatment. This helps to protect the results of the analysis against a systematic influence of lurking variables. For example, if a doctor is assigning drug A or B to a patient without use of a random number mechanism, they may unwittingly assign drug A to patients they deem more likely to recover due to implicit biases.</p>
+<ul>
+<li><strong>Replication</strong> - multiple (independent) experimental units are assigned the same treatment.</li>
+</ul>
+<p>EUs that receive the same treatment are called <strong>replicates</strong>. By having replication we are able to create an estimate of variability due to our unaccounted for variables. Comparing our treatment variation to this variation is what allows us to have faith in the reliability of our conclusions.</p>
+<p>Note that replication does not mean that we measure the same EUs multiple times! That is called a repeated measures design. Observations from repeated measures experiments cannot usually be considered independent.</p>
+<ul>
+<li><strong>Controlling Variables</strong> - holding certain variables constant across the EUs.<br />
+Generally, we’re not interested in the effects of these variables on the response. These variables affect the response in exactly the same manner, so that we don’t see the effects on the conclusions. Unfortunately, we don`t get information on what happens at settings of the variables other than the fixed ones. This decreases generalizability, but reduces overall variation. Experimental designs such as a randomized complete block design attempt to control variables while also maintaining generalizability.</li>
+</ul>
+<p>Let’s discuss some of the most used experimental designs. We’ll cover analysis for these types of experiments in future chapters. When considering conducting an experiment, consider the advice below!</p>
 <blockquote>
 <p>A poorly designed study can never be saved, but a poorly analyzed one has the possibility of being reanalyzed.</p>
 </blockquote>
-<p>Good discussion of what makes a good sampling design revisit. Maybe a statified example like the river and selecting houses example as a quick expose of the issues with not doing a truly random sampling technique.</p>
-<p>Analysis in future chapters…</p>
-<div id="crd" class="section level4">
-<h4><span class="header-section-number">2.4.2.1</span> CRD</h4>
 </div>
-<div id="blocks" class="section level4">
-<h4><span class="header-section-number">2.4.2.2</span> Blocks</h4>
+<div id="completely-randomized-design-crd" class="section level4">
+<h4><span class="header-section-number">2.4.2.2</span> Completely Randomized Design (CRD)</h4>
+<p>A Completely Randomized Design (CRD) is the most straightforward experimental design. Suppose the number of units in the sample is <span class="math inline">\(n\)</span> and the number of treatments is <span class="math inline">\(t\)</span>. The design uses a random number mechanism to randomly assign the <span class="math inline">\(t\)</span> treatments across the <span class="math inline">\(n\)</span> experimental units. In a <strong>balanced</strong> design, the same number of units are assigned to each treatment. The number of replicates is usually denoted by <span class="math inline">\(n_t\)</span>.</p>
+<p>This design assumes all of the EUs are <strong>exchangeable</strong>. (<strong>Should I include this here?</strong>)</p>
+<p>For example, suppose we are doing an experiment to determine the effect of nutrition (3 different diets or treatments) on weight gain in humans. Suppose we have 30 experimental units labeled 1, 2, …, 30. A random number generator can be used to reorder the numbers 1 through 30. The first 10 numbers can then be assigned the first diet, the next 20 numbers the second diet, and the last 10 numbers the third diet.</p>
+<p>Ideally we want to have as many replicates for each treatment as we can afford. If we had 3 diets and 3 EUs and found that the person assigned the first diet lost more weight than the person assigned to the second diet. This is not a very reliable conclusion! Perhaps the person assigned to the first diet naturally loses weight more easily. However, if we had 100 people assigned to each diet and on average the first diet yieled a greater weight loss, this would be a much more reliable conclusion.</p>
+<p>Often to determine the appropriate sample size (or sample sizes for each treatment group) a power analysis or sample size calculation is done. These require assumptions about the population variation in some respect as well as an idea of a “difference of interest.” These topics will be covered later in the book.</p>
 </div>
-<div id="split-plot" class="section level4">
-<h4><span class="header-section-number">2.4.2.3</span> Split plot</h4>
-</div>
-<div id="strip-plot" class="section level4">
-<h4><span class="header-section-number">2.4.2.4</span> Strip plot</h4>
-</div>
-<div id="rcbsp" class="section level4">
-<h4><span class="header-section-number">2.4.2.5</span> RCBSP</h4>
-</div>
-<div id="k" class="section level4">
-<h4><span class="header-section-number">2.4.2.6</span> 2^k</h4>
-</div>
-<div id="response-surface" class="section level4">
-<h4><span class="header-section-number">2.4.2.7</span> Response Surface</h4>
-<p>…?</p>
-<p>A major goal of a study is usually to conduct statistical inference. Inference can involve determine which variables are important in relation to a response variable and/or predicting a response variable. To formally do inference we need to define the population of interest as well as <strong>parameters</strong> we want to study.</p>
-<ul>
-<li><p>Population - all the values, items, or individuals of interest</p></li>
-<li><p>Parameter - a (usually) unknown summary value about the population</p></li>
-</ul>
-<p>Ideally, we’d be able to measure every member of the population and exactly calculate the value of any population parameter. This would involved conducing a census. A census is usually not feasible. Instead we take a subset of the population and try to use these observations to make statements or claims about the population.</p>
-<ul>
-<li><p>Sample - a subset of the population we observe data on</p></li>
-<li><p>Statistic - a summary value calculated from the sample observations</p></li>
-</ul>
-<p>Example - A political scientist surveys 400 people randomly from a list of all registered voters in a particular county. He asks the people if they plan to vote in the upcoming election and 312 say they do.</p>
-<p><strong>Relate above to definitions…</strong></p>
-<p>To discuss paramters and statistics more easily, symbols are used to denote them. Luckily, there is a common notation that, for the most, is consistent across statistical literature.</p>
-<!-- Name | Parameter | Statistic | Quantity Measured -->
-<!-- -------------------------------------------------- -->
-<!-- Mean | $\mu$     | $\bar{Y}$ or $\bar{y}$ or $\bar{X}$ or $\bar{x}$ | Center or Location -->
-<!-- Proportion | $p$ or $\pi$ | $\hat{P}$ or $\hat{p}$ or $\hat{\pi}$ | Location or Frequency -->
-<!-- Standard Deviation (SD) | $\sigma$ | $S$ or $s$ | Variability or spread -->
-<!-- Variance (Var) | $\sigma^2$ | $S^2$ or $s^2$ | Variability or spread -->
-<p>Note: <span class="math inline">\(\bar{Y}=\frac{1}{n}\sum_{i=1}^{n}Y_i\)</span> and <span class="math inline">\(S^2=\frac{1}{n-1}\sum_{i=1}^{n}(Y_i-\bar{Y})^2\)</span> where <span class="math inline">\(n\)</span> is the sample size (or number of observed values in the sample). Sometimes you’ll see other notation for proportions <strong>(……. fill in and change table)</strong></p>
-<p>Question of interest will lead you to which parameter you have interest in. Careful consideration of what your study goals are will also most likely lead you to which type of data you will collect.</p>
-<p>Examples of why Observational Studies Can be Bad</p>
-<p>George Will WP column about SAT vs amount of money spent Pisani and Perv? many bad examples of inference</p>
-<p>Stuff about power/sample size calculation somewhere?</p>
-<p>Similarities and differences between sampling and DOE randomization SRS vs CRD comparison Strat vs Block comparison</p>
+<div id="randomized-block-designs" class="section level4">
+<h4><span class="header-section-number">2.4.2.3</span> Randomized Block Designs</h4>
+<p>A randomized block design divides EUs with similar characteristics into ‘blocks’ or subgroups. Within each block the treatments are then randomly assigned.</p>
+<p>Within a block we are essentially controlling the blocking variable. However, by conducting the design across many settings of the blocking variable, we maintain generalizability of the study.</p>
+<p>Let’s consider an example. Two new finishes are developed (type A and type B) for use on a dash board in a car. The material and finish must withstand high temperatures due to the sun and the greenhouse effect. To simulate the temperatures and wear on the dashboard, the dashboards are placed into ovens for 24 hours and the amount of degradation is measured.</p>
+<p>The company has 4 large ovens (oven 1, 2, 3, and 4) for testing. The manufacturer finds a random sample of 40 dashboards from the assembly line. Ten dashboards will be placed in each oven. Within the groups of ten assigned to the ovens, five of each treatment were randomly assigned.</p>
+<p>The ovens act as the blocks in this experiment. There may be some variation from oven to oven but we don’t really have an interest in this variation.</p>
+<p>There are many other commonly used design including:<br />
+- Incomplete block designs - Latin squares designs<br />
+- Split plot designs<br />
+- Randomized complete block split plot designs<br />
+- Strip plot designs<br />
+- 2^k designs<br />
+- 3^k designs<br />
+- Response surface designs</p>
+<p>We’ll cover many of these later in the book!</p>
 </div>
 <div id="sampling-schemes-vs-randomization-methods" class="section level4">
-<h4><span class="header-section-number">2.4.2.8</span> Sampling Schemes vs Randomization Methods</h4>
+<h4><span class="header-section-number">2.4.2.4</span> Sampling Schemes vs Randomization Methods</h4>
+<p>Randomization applied to experimental design is different than randomization in sampling!</p>
+<ul>
+<li><p>In sampling, randomization is used to determine which members of the population are included in the sample.</p></li>
+<li><p>If an experiment is being done, randomization is then used to determine which EUs get which treatments.</p></li>
+</ul>
+<p><strong>(Comparison of CRD, SRS and Strat, Block)</strong></p>
 </div>
 </div>
 </div>
 <div id="references-and-readings" class="section level2">
 <h2><span class="header-section-number">2.5</span> References and Readings</h2>
 <p>Something about causal inference<br />
-Sampling stuff DOE stuff</p>
+Sampling stuff DOE stuff Corr vs caus</p>
 </div>
 <div id="software-1" class="section level2">
 <h2><span class="header-section-number">2.6</span> Software</h2>
