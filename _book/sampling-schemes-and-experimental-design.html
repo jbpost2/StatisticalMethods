@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Sampling Schemes and Experimental Design | Statistical Methods</title>
   <meta name="description" content="Applied statistical methods book." />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17.2 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Sampling Schemes and Experimental Design | Statistical Methods" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Post, Avery, Osborne" />
 
 
-<meta name="date" content="2020-04-14" />
+<meta name="date" content="2020-04-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,41 +53,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -176,7 +201,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="summarizing-data.html"><a href="summarizing-data.html"><i class="fa fa-check"></i><b>3</b> Summarizing Data</a><ul>
-<li class="chapter" data-level="3.1" data-path="summarizing-data.html"><a href="summarizing-data.html#motivating-example-topic---name"><i class="fa fa-check"></i><b>3.1</b> Motivating Example: Topic - Name</a><ul>
+<li class="chapter" data-level="3.1" data-path="summarizing-data.html"><a href="summarizing-data.html#motivating-example-summarizing-data---california-health-interview-survey"><i class="fa fa-check"></i><b>3.1</b> Motivating Example: Summarizing Data - California Health Interview Survey</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="summarizing-data.html"><a href="summarizing-data.html#define-objective-background-2"><i class="fa fa-check"></i><b>3.1.1</b> Define Objective &amp; Background</a></li>
 <li class="chapter" data-level="3.1.2" data-path="summarizing-data.html"><a href="summarizing-data.html#select-response-2"><i class="fa fa-check"></i><b>3.1.2</b> Select Response</a></li>
 <li class="chapter" data-level="3.1.3" data-path="summarizing-data.html"><a href="summarizing-data.html#determine-sources-of-variation-2"><i class="fa fa-check"></i><b>3.1.3</b> Determine Sources of Variation</a></li>
@@ -186,9 +211,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.1.7" data-path="summarizing-data.html"><a href="summarizing-data.html#draw-conclusions-communicate-2"><i class="fa fa-check"></i><b>3.1.7</b> Draw Conclusions &amp; Communicate</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="summarizing-data.html"><a href="summarizing-data.html#statistical-ideas-and-concepts-1"><i class="fa fa-check"></i><b>3.2</b> Statistical Ideas and Concepts</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="summarizing-data.html"><a href="summarizing-data.html#study-purpose"><i class="fa fa-check"></i><b>3.2.1</b> Study Purpose</a></li>
+<li class="chapter" data-level="3.2.1" data-path="summarizing-data.html"><a href="summarizing-data.html#parameters-and-statistics"><i class="fa fa-check"></i><b>3.2.1</b> Parameters and Statistics</a></li>
 <li class="chapter" data-level="3.2.2" data-path="summarizing-data.html"><a href="summarizing-data.html#scales-types-of-data"><i class="fa fa-check"></i><b>3.2.2</b> Scales (Types) of Data:</a></li>
-<li class="chapter" data-level="3.2.3" data-path="summarizing-data.html"><a href="summarizing-data.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>3.2.3</b> Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="3.2.3" data-path="summarizing-data.html"><a href="summarizing-data.html#numerical-summaries"><i class="fa fa-check"></i><b>3.2.3</b> Numerical Summaries</a></li>
+<li class="chapter" data-level="3.2.4" data-path="summarizing-data.html"><a href="summarizing-data.html#graphical-summaries"><i class="fa fa-check"></i><b>3.2.4</b> Graphical Summaries</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="summarizing-data.html"><a href="summarizing-data.html#suggestions-for-further-readings"><i class="fa fa-check"></i><b>3.3</b> Suggestions for Further Readings</a></li>
 <li class="chapter" data-level="3.4" data-path="summarizing-data.html"><a href="summarizing-data.html#software-2"><i class="fa fa-check"></i><b>3.4</b> Software</a><ul>
@@ -282,7 +308,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="19.1" data-path="notation.html"><a href="notation.html#standard-notation"><i class="fa fa-check"></i><b>19.1</b> Standard notation</a></li>
 <li class="chapter" data-level="19.2" data-path="notation.html"><a href="notation.html#mixed-models"><i class="fa fa-check"></i><b>19.2</b> Mixed models</a></li>
 <li class="chapter" data-level="19.3" data-path="notation.html"><a href="notation.html#effects-model-representation"><i class="fa fa-check"></i><b>19.3</b> Effects model representation</a></li>
-<li class="chapter" data-level="19.4" data-path="notation.html"><a href="notation.html#estimators-vs.estimates"><i class="fa fa-check"></i><b>19.4</b> Estimators vs. Estimates</a></li>
+<li class="chapter" data-level="19.4" data-path="notation.html"><a href="notation.html#estimators-vs.-estimates"><i class="fa fa-check"></i><b>19.4</b> Estimators vs. Estimates</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -350,14 +376,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </li>
 </ul>
 </div>
- 
+
+
 <div class="definition">
 <ul>
 <li>Replication - multiple (independent) experimental units are assigned the same treatment<br />
 </li>
 </ul>
 </div>
- 
+
+
 <div class="definition">
 <ul>
 <li>Control - some study conditions are held constant to reduce variability in the response<br />
@@ -388,12 +416,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="definition">
 <p>Population - (Possibly conceptual) group of values, items, measurements, or individuals of interest</p>
 </div>
- 
+
+
 <div class="definition">
 <p>Sample - Subset of the population on which we observe data</p>
 <p>Sample Size - Number of observations in the sample</p>
 </div>
- 
+
+
 <div class="definition">
 <p>Statistical Inference - Process of using sample data to make statements or claims about a population. Two major goals of inference:<br />
 - Determining and quantifying relationships between explanatory variables and the response<br />
@@ -426,18 +456,19 @@ Figure 2.1: Scope of Inference, cite: Khan Academy
 <p>Taking this bigger picture view of the problem, we can usually follow these steps:</p>
 <p><strong>Add icons to these as well as the overall logo here </strong></p>
 <ol style="list-style-type: decimal">
-<li><img src="img/defineObjective.png" id="id" class="class" height="38" /> Define the objective of the experiment and understand the background (Define Objective &amp; Background)<br />
+<li><img src="img/defineObjective.png" id="id" class="class" style="height:0.4in" />
+Define the objective of the experiment and understand the background (Define Objective &amp; Background)<br />
 </li>
-<li><img src="img/selectResponse.png" id="id" class="class" height="38" /> Select appropriate response variables (Select Response)<br />
+<li><img src="img/selectResponse.png" id="id" class="class" style="height:0.4in" /> Select appropriate response variables (Select Response)<br />
 </li>
-<li><img src="img/determineVariation.png" id="id" class="class" height="38" /> Identify sources of variation (Determine Sources of Variation)<br />
+<li><img src="img/determineVariation.png" id="id" class="class" style="height:0.4in" /> Identify sources of variation (Determine Sources of Variation)<br />
 </li>
-<li><img src="img/selectDesign.png" id="id" class="class" height="38" /> Choose sampling scheme and/or experimental design (Select Design)<br />
+<li><img src="img/selectDesign.png" id="id" class="class" style="height:0.4in" /> Choose sampling scheme and/or experimental design (Select Design)<br />
 </li>
-<li><img src="img/conductStudy.png" id="id" class="class" height="38" /> Carry out the study (Do Study)</li>
-<li><img src="img/statsAnalysis.png" id="id" class="class" height="38" /> Statistically analyze the data (Do Statistical Analysis)<br />
+<li><img src="img/conductStudy.png" id="id" class="class" style="height:0.4in" /> Carry out the study (Do Study)</li>
+<li><img src="img/statsAnalysis.png" id="id" class="class" style="height:0.4in" /> Statistically analyze the data (Do Statistical Analysis)<br />
 </li>
-<li><img src="img/concludeCommunicate.png" id="id" class="class" height="38" /> Draw conclusions from the analysis while considering limitations and the steps above as well as communicate results (Draw Conclusions &amp; Communicate)</li>
+<li><img src="img/concludeCommunicate.png" id="id" class="class" style="height:0.4in" /> Draw conclusions from the analysis while considering limitations and the steps above as well as communicate results (Draw Conclusions &amp; Communicate)</li>
 </ol>
 <p>We’ll focus on this entire process in our chapter motivating examples. Mostly, we’ll investigate designed experiments. We attempt to tackle each major topic in this text with a problem-based approach. That is, we identify a real-world motivating example and discuss the relevant statistical ideas in the context of that problem. We then provide a discussion of the main statistical ideas and concepts and provide related references and readings. Each chapter includes with a section that outlines the use of R and SAS for implemention. Finally, where applicable, we include a section that outlines some of the mathematical concepts - this section is always optional!</p>
 </div>
@@ -446,15 +477,17 @@ Figure 2.1: Scope of Inference, cite: Khan Academy
 <h2><span class="header-section-number">2.2</span> Motivating Example: Sampling - Farmer’s Market</h2>
 <div id="define-objective-background" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Define Objective &amp; Background</h3>
-<p><img src="img/defineObjective.png" width="13%" style="float:left; padding:10px" /> A nutrition scientist wanted to understand the cleanliness and food hygiene of the vendors at the North Carolina State Farmer’s Market (henceforth the farmer’s market). Secondarily, she wanted to learn about vendor sales to see if there was a relationship with their cleanliness and food hygiene. The researcher had access to the names of each vendor’s business, their general purpose, and the products they sold.</p>
+<p><img src="img/defineObjective.png" width="13%" style="float:left; padding:10px" />
+A nutrition scientist wanted to understand the cleanliness and food hygiene of the vendors at the North Carolina State Farmer’s Market (henceforth the farmer’s market). Secondarily, she wanted to learn about vendor sales to see if there was a relationship with their cleanliness and food hygiene. The researcher had access to the names of each vendor’s business, their general purpose, and the products they sold.</p>
 <p>The researcher needed to decide the scope of their study. Formally, they needed to define the <strong>population</strong> of interest. The population is the group of people or units of interest to the researcher. As her interest centered around food-related businesses, she restricted to looking at the vendors which sold horticultural crops. She hoped that conclusions made by her study could apply to all horticulture vendors at the farmer’s market - thus, this is her population.</p>
 <p>Note: One could try to do a study at just the North Carolina State Farmer’s Market and extend the results to all farmer’s markets in the state or in the south, but that would require many assumptions to be valid.</p>
 <p>A <a href="http://www.ncagr.gov/markets/chart.htm">list of the horticultural products sold and their availability</a> is reproduced below.</p>
-<p><img src="img/availabilitychart-1.jpg" width="65%" /><img src="img/availabilitychart-2.jpg" width="65%" /></p>
+<p><img src="img/availabilitychart-1.jpg" width="65%" style="display: block; margin: auto;" /><img src="img/availabilitychart-2.jpg" width="65%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="select-response" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Select Response</h3>
-<p><img src="img/selectResponse.png" width="13%" style="float:left; padding:10px" /> The researcher needed to determine the variables to collect that would best help to answer their questions of interest. These variables that characterize the experiment are called <strong>response</strong> or target variables.</p>
+<p><img src="img/selectResponse.png" width="13%" style="float:left; padding:10px" />
+The researcher needed to determine the variables to collect that would best help to answer their questions of interest. These variables that characterize the experiment are called <strong>response</strong> or target variables.</p>
 <p>To investigate the knowledge of hygiene and safety, a short questionnaire was developed to allow the vendor’s head manager (or similar employee) to describe their safety protocol and knowledge:</p>
 <ul>
 <li>For your produce with signs that say “clean” or “washed”, what does this mean?</li>
@@ -485,7 +518,8 @@ Figure 2.1: Scope of Inference, cite: Khan Academy
 </div>
 <div id="determine-sources-of-variation" class="section level3">
 <h3><span class="header-section-number">2.2.3</span> Determine Sources of Variation</h3>
-<p><img src="img/determineVariation.png" width="13%" style="float:left; padding:10px" /> The response variables clearly have some relationship to other variables that could be collected. For instance, the NUM_ITEMS variable is clearly going to be different based upon what crops the vendor sells. The AMT variable would differ depending on the size of the vendor’s inventory. These are examples of <strong>explanatory variables</strong> or variables that define the study conditions. Explanatory variables go by many names such as predictors, features, or independent variables.</p>
+<p><img src="img/determineVariation.png" width="13%" style="float:left; padding:10px" />
+The response variables clearly have some relationship to other variables that could be collected. For instance, the NUM_ITEMS variable is clearly going to be different based upon what crops the vendor sells. The AMT variable would differ depending on the size of the vendor’s inventory. These are examples of <strong>explanatory variables</strong> or variables that define the study conditions. Explanatory variables go by many names such as predictors, features, or independent variables.</p>
 <p><strong>A main consideration about whether or not to record a variable is whether or not the variable would be related to a variation in a response variable.</strong> Since the response variables are truly what is of interest, there is really not much of a point in recording variables that likely have no relationship with it.</p>
 <p>Choosing the explanatory variables can also indicate further questions of interest. For instance, the researcher may want to compare the percent of “Yes” for the overall cleanliness score for vendors that mainly sell vegetables to those that mainly sell fruit leading to a comparison across groups being of interest. She may want to try to model the AMT of cantaloupe sold as a function of the cleanliness score.</p>
 <p>The average amount for the population or a subpopulation would be referred to as a parameter of interest. Formally, a <strong>parameter</strong> is a summary measure about a population. Common parameters investigated include a mean, proportion, median, or variance of different subgroups of the population.</p>
@@ -502,27 +536,27 @@ Figure 2.1: Scope of Inference, cite: Khan Academy
 <ul>
 <li>How many people are working?</li>
 </ul>
-<p><strong>Should we talk about formalizing the other questions they want to answer here??</strong></p>
 </div>
 <div id="select-design" class="section level3">
 <h3><span class="header-section-number">2.2.4</span> Select Design</h3>
-<p><img src="img/selectDesign.png" width="13%" style="float:left; padding:10px" /> For this study the researchers aren’t interested in doing an intervention so an observational study was being done. The major task to consider for the observational study is how to select participants from the population. The subset of the population we (attempt to) observe our data on is called the <strong>sample</strong>. The <strong>sample size</strong> is the number of measurements in the sample.</p>
+<p><img src="img/selectDesign.png" width="13%" style="float:left; padding:10px" />
+For this study the researchers aren’t interested in doing an intervention so an observational study was being done. The major task to consider for the observational study is how to select participants from the population. The subset of the population we (attempt to) observe our data on is called the <strong>sample</strong>. The <strong>sample size</strong> is the number of measurements in the sample.</p>
 <p>Ideally, we would measure every member of our population. This is called a <strong>census</strong>. If a census can be done then the value of a population’s parameter can be found exactly by simply summarizing the population data. However, conducting a census can be extremely costly or time-intensive so most of the time a census cannot be done. This means that the information we collect would likely be different if we collected it again. Accounting for this variability is the main reason statistical analysis is needed.</p>
 <p>How the researcher selects their sample is extremely important. This method is often referred to as the <strong>sampling scheme</strong>. Using a statistically valid sampling scheme is vital to the assumptions made when doing statistical inference. A valid sampling scheme implies that every member of the population has a known and non-zero chance of inclusion in the sample.</p>
-<p>There are many good ways to select the sample and many bad ways. <strong>Need to get more info about the farmer’s market to finish this part</strong> (Talk about bad first and why bad - visuals too) Talk about good and why good - visuals too.</p>
+<p>There are many good ways to select the sample and many bad ways. <strong>Need to get more info about the farmer’s market to finish this part</strong>
+(Talk about bad first and why bad - visuals too) Talk about good and why good - visuals too.</p>
 <p>This idea is further fleshed out at the end of the chapter. (reference/link this)</p>
 <p>Here they chose to do a stratified sample to make sure that they didn’t leave out any important subgroups.</p>
-<p><strong>Should we talk about formalizing the other questions they want to answer here??</strong></p>
 </div>
 <div id="do-study" class="section level3">
 <h3><span class="header-section-number">2.2.5</span> Do Study</h3>
-<p><img src="img/conductStudy.png" width="13%" style="float:left; padding:10px" /> Go and talk to chosen vendors. May have some non-response issues. Ideally a contingency for this should be developed when considering the sampling scheme.</p>
-<p><strong>Should we talk about formalizing the other questions they want to answer here??</strong></p>
+<p><img src="img/conductStudy.png" width="13%" style="float:left; padding:10px" />
+Go and talk to chosen vendors. May have some non-response issues. Ideally a contingency for this should be developed when considering the sampling scheme.</p>
 </div>
 <div id="do-statistical-analysis" class="section level3">
 <h3><span class="header-section-number">2.2.6</span> Do Statistical Analysis</h3>
-<p><strong>Should we talk about formalizing the other questions they want to answer here??</strong></p>
-<p><img src="img/statsAnalysis.png" width="13%" style="float:left; padding:10px" /> The major goals of this study were simply to describe the vendors at the farmer’s market. In this case we can produce numerical and graphical summaries.</p>
+<p><img src="img/statsAnalysis.png" width="13%" style="float:left; padding:10px" />
+The major goals of this study were simply to describe the vendors at the farmer’s market. In this case we can produce numerical and graphical summaries.</p>
 <p>Careful discussion of not selecting a modeling technique based on this unless it is a pilot study or an exploratory study else we have increased our nominal type I error rate…</p>
 <p>Spend a lot of time here talking about graphs of different types. Sample means, sample variances, etc.</p>
 <p>Discuss population curves vs sample histograms and the relationship.</p>
@@ -530,7 +564,8 @@ Figure 2.1: Scope of Inference, cite: Khan Academy
 </div>
 <div id="draw-conclusions-communicate" class="section level3">
 <h3><span class="header-section-number">2.2.7</span> Draw Conclusions &amp; Communicate</h3>
-<p><img src="img/concludeCommunicate.png" width="13%" style="float:left; padding:10px" /> What actionable things have we found? Likely some trends to investigate further. Perhaps run an experiment to formally see if some alteration can be effective.</p>
+<p><img src="img/concludeCommunicate.png" width="13%" style="float:left; padding:10px" />
+What actionable things have we found? Likely some trends to investigate further. Perhaps run an experiment to formally see if some alteration can be effective.</p>
 <p>What can we conclude realistically from this data? To what population are we talking?</p>
 </div>
 </div>
@@ -538,31 +573,43 @@ Figure 2.1: Scope of Inference, cite: Khan Academy
 <h2><span class="header-section-number">2.3</span> Motivating Example: Design - Student Assessment Volunteers</h2>
 <div id="define-objective-background-1" class="section level3">
 <h3><span class="header-section-number">2.3.1</span> Define Objective &amp; Background</h3>
-<p><img src="img/defineObjective.png" width="13%" style="float:left; padding:10px" /></p>
+<p><img src="img/defineObjective.png" width="13%" style="float:left; padding:10px" />
+The Division of Academic and Student Affairs (DASA) is charged with assessing NC State’s general education competency (or Pack Proficiencies) program. This is a set of competencies that every NC State graduate should master by the time they graduate. The five Pack Proficiencies are Critical Thinking, Creative Thinking, Oral Communication, Quantitative Literacy, and Written Communication.</p>
+<p>There competencies go hand-in-hand with the general education program, but should be reinforced throughout each major curriculum.<br />
+<img src="img/GEP-and-Gen-Ed-Diagram.png" width="70%" style="display: block; margin: auto;" /></p>
+<p>DASA assesses the quantitative literacy proficiency through a number of instruments including a standardized test that is customized for NC State. Students are assessed when they are freshman and again when they are seniors. However, it is much easier to convince freshman to take this extra (mostly voluntary) exam than it is to convince a graduating senior. As such, DASA wanted to design an experiment around an email recruitment campaign to determine if there was a type of email that was most effective in recruiting students.</p>
+<p>Discuss population as the conceptual population of all seniors that they would email about this.</p>
+<p>Discuss email types?</p>
 </div>
 <div id="select-response-1" class="section level3">
 <h3><span class="header-section-number">2.3.2</span> Select Response</h3>
-<p><img src="img/selectResponse.png" width="13%" style="float:left; padding:10px" /></p>
+<p><img src="img/selectResponse.png" width="13%" style="float:left; padding:10px" />
+Response is the proportion of students that respond positively to the email types.</p>
 </div>
 <div id="determine-sources-of-variation-1" class="section level3">
 <h3><span class="header-section-number">2.3.3</span> Determine Sources of Variation</h3>
-<p><img src="img/determineVariation.png" width="13%" style="float:left; padding:10px" /></p>
+<p><img src="img/determineVariation.png" width="13%" style="float:left; padding:10px" />
+When considering groups to send email to, DASA decided to break students up by race, … something else I need to look up.</p>
 </div>
 <div id="select-design-1" class="section level3">
 <h3><span class="header-section-number">2.3.4</span> Select Design</h3>
-<p><img src="img/selectDesign.png" width="13%" style="float:left; padding:10px" /></p>
+<p><img src="img/selectDesign.png" width="13%" style="float:left; padding:10px" />
+The design used was a randomized block design. Within each student group, the three email types were randomized.</p>
 </div>
 <div id="do-study-1" class="section level3">
 <h3><span class="header-section-number">2.3.5</span> Do Study</h3>
-<p><img src="img/conductStudy.png" width="13%" style="float:left; padding:10px" /></p>
+<p><img src="img/conductStudy.png" width="13%" style="float:left; padding:10px" />
+Emails and reminder emails sent out over a period of two months. Data collected.</p>
 </div>
 <div id="do-statistical-analysis-1" class="section level3">
 <h3><span class="header-section-number">2.3.6</span> Do Statistical Analysis</h3>
-<p><img src="img/statsAnalysis.png" width="13%" style="float:left; padding:10px" /></p>
+<p><img src="img/statsAnalysis.png" width="13%" style="float:left; padding:10px" />
+Data were analyzed to see if one email type performed better than another.</p>
 </div>
 <div id="draw-conclusions-communicate-1" class="section level3">
 <h3><span class="header-section-number">2.3.7</span> Draw Conclusions &amp; Communicate</h3>
-<p><img src="img/concludeCommunicate.png" width="13%" style="float:left; padding:10px" /></p>
+<p><img src="img/concludeCommunicate.png" width="13%" style="float:left; padding:10px" />
+The results of the study indicated… This study was used to indicate how future email campaigns might run…</p>
 </div>
 </div>
 <div id="statistical-ideas-and-concepts" class="section level2">
@@ -583,7 +630,7 @@ Figure 2.1: Scope of Inference, cite: Khan Academy
 <h3><span class="header-section-number">2.4.1</span> Obtaining a Representative Sample</h3>
 <p>The method used to obtain the units for a sample is called the <strong>sampling scheme</strong>. There are good and bad sampling schemes. The main characteristic of a good sampling scheme is the use of a <strong>probability sample</strong>. A probability sample is one where every member of the population has a known and non-zero chance of inclusion in the sample. We’ll study probability in more detail later, but a population member having a non-zero probability of inclusion simply implies, if the sampling scheme was repeated again and again, eventually every unit would be included in at least one of the samples collected. Having inclusion probabilities known for all members of the population allows for the quantification of error associated with sample estimates.</p>
 <p>A probability sample requires some <strong>random</strong> mechanism in order to execute the selection of population members into the sample. However, there is a big difference between <em>statistical</em> randomness and the everyday use of randomness. <strong>Randomness</strong> in everyday use usually refers to the idea that things are not known before hand. For instance, if a sample was collected by measuring the next 15 people that passed by us on a busy street, this is random but not random in a sense that helps statistically. Even though the members aren’t known prior to collecting the sample, the method used to collect systematically excludes people that are otherwise not able to be walking down the street at the time the sample was taken. In statistics, having randomness usually involves a <strong>random number generator</strong> or a software that uses one (methods also include using a random digit table or flipping a coin, but these are mostly obsolete at this point!).</p>
-<p>(<strong>Mention that this is likely more important when dealing with humans?? But still important in some contexts</strong>)</p>
+<p>(<strong>Mention that this is likely more important when dealing with humans?? But still important in many contexts</strong>)</p>
 <p>Let’s discuss sampling techniques that utilize a probability sample (and are often executed using a random number generator).</p>
 <div id="simple-random-sample" class="section level4">
 <h4><span class="header-section-number">2.4.1.1</span> Simple Random Sample</h4>
@@ -605,7 +652,9 @@ Figure 2.1: Scope of Inference, cite: Khan Academy
 <h4><span class="header-section-number">2.4.1.2</span> Stratified Random Sample</h4>
 <p>A <strong>stratified random sample</strong> is used when there are important subgroups that the researcher wants to ensure are included in a sample. These subgroups are called <strong>strata</strong>. Once the strata are determined, an SRS is often done within each strata.</p>
 <p>For instance, again suppose a university wants to determine the proportion of students that would favor a change to the bookstore. The officials might want to make sure that members of each college are selected into the sample since the use of the bookstore can vary substantially from major-to-major and college-to-college. This time they create 5 strata, each corresponding to a college at the university. Within each strata they conduct an SRS, selecting 80 people from each college. This gives a total sample size of 400.</p>
-<p>Note that the proportion of members selected doesn’t need to be constant across the strata. The size of the sample done in each strata might be done proportionally to the total number of students that college constitutes. For simplicity, assume the total population size was 10000. If there the five colleges had student population sizes 3000, 2500, 2000, 1500, and 1000, the proportion of students in each college would be <span class="math inline">\(3000/10000 = 0.3\)</span>, <span class="math inline">\(2500/10000 = 0.25\)</span>, <span class="math inline">\(2000/10000=0.2\)</span>, <span class="math inline">\(1500/10000=0.15\)</span>, and <span class="math inline">\(1000/10000=0.1\)</span>, respectively. Still looking to obtain a total sample of size 400, we could select <span class="math inline">\(0.3*400 = 120\)</span>, <span class="math inline">\(0.25*400 = 100\)</span>, <span class="math inline">\(0.2*400 = 80\)</span>, <span class="math inline">\(0.15*400 = 60\)</span>, and <span class="math inline">\(0.1*400 = 40\)</span> students from the each college, respectively.</p>
+<p>Note that the proportion of members selected doesn’t need to be constant across the strata. The size of the sample done in each strata might be done proportionally to the total number of students that college constitutes.</p>
+<p>For simplicity, assume the total population size was 10000. If there the five colleges had student population sizes 3000, 2500, 2000, 1500, and 1000, the proportion of students in each college would be <span class="math inline">\(3000/10000 = 0.3\)</span>, <span class="math inline">\(2500/10000 = 0.25\)</span>, <span class="math inline">\(2000/10000=0.2\)</span>, <span class="math inline">\(1500/10000=0.15\)</span>, and <span class="math inline">\(1000/10000=0.1\)</span>, respectively.</p>
+<p>Still looking to obtain a total sample of size 400, we could select <span class="math inline">\(0.3*400 = 120\)</span>, <span class="math inline">\(0.25*400 = 100\)</span>, <span class="math inline">\(0.2*400 = 80\)</span>, <span class="math inline">\(0.15*400 = 60\)</span>, and <span class="math inline">\(0.1*400 = 40\)</span> students from the each college, respectively.</p>
 <p>Sometimes a larger proportion is taken from a strata because that strata is of greater interest to the researcher.</p>
 <p><strong>(What other advantages? I think there can be some efficiency in doing this type of study but I don’t know off the top of my head and I lack my books)</strong></p>
 </div>
@@ -620,7 +669,7 @@ A convenience sample usually implies that the sample consists of the most conven
 <h4><span class="header-section-number">2.4.1.4</span> Why Sampling Scheme Matters - A Simulation</h4>
 <p>The importance of having a probability sample is paramount. To underscore the point, let’s consider what differences and issues we might see using a <strong>simulation study</strong>. A simulation study usually implies that data are generated under certain assumptions using a computer and results are found on the simulated data. Since this process is done on a computer, the process can be repeated many times and the variabilty that is inherent can be accounted for in any comparisons of resutls. Of course, the data generating process must be valid or at least reasonable in order for a simulation study to yield any useful results.</p>
 <p>Let’s conduct a simple simulation study to compare the results found when doing an SRS vs those done with a contrived convenience sample.</p>
-<p>Suppose our population consists of 100 marbles. We have interest in investigating the proportion of marbles that are blue. Since we are creating the population we will set this parameter value, making it a known quantity! Let’s make the proportion of blue marbles 0.4 (40 blue marbles).</p>
+<p>Suppose our population consists of 100 marbles. We have interest in investigating the proportion of marbles that are blue. Since we are creating the population we will set this <strong>parameter</strong> value, making it a known quantity! Let’s make the proportion of blue marbles 0.4 (40 blue marbles).</p>
 <p>A sample of size 10 will be collected using the two methods outlined below:</p>
 <ul>
 <li>Method 1: An SRS - marbles are assigned numbers 1, 2, 3, …, 100 at random. This implies the 40 blue marbles are randomly allocated across the numbers. Ten marbles are selected using a random number generator.<br />
@@ -629,32 +678,32 @@ A convenience sample usually implies that the sample consists of the most conven
 </ul>
 <p>Let’s produce a sample using each method:</p>
 <pre><code>##    SRS.Pop. Color Conv.Pop. Color.1
-## 1        51   Red         3    Blue
-## 2        96  Blue         5     Red
-## 3        62   Red        15    Blue
-## 4         1   Red        35    Blue
-## 5         3  Blue        13     Red
-## 6        82  Blue        46    Blue
-## 7        97   Red         6    Blue
-## 8        58  Blue        22    Blue
-## 9        78  Blue         7     Red
-## 10       33  Blue        66    Blue</code></pre>
-<p>The respective proportion of blue marbles found for these two samples are 0.6 for the SRS and 0.7 for the convenience sample.</p>
-<p>Now let’s repeat this process! Each time we’ll record the proportion of blue marbles for each method. In the end we can compare the two and see the differences. Ten more of these (sample) proportions are reported below.</p>
+## 1        30  Blue        20     Red
+## 2        28   Red        15    Blue
+## 3        31  Blue        14     Red
+## 4        53   Red         4     Red
+## 5        33   Red        69    Blue
+## 6        79   Red        43     Red
+## 7        94   Red         7    Blue
+## 8        55   Red         6     Red
+## 9        24   Red        34    Blue
+## 10       54  Blue         2     Red</code></pre>
+<p>The respective sample proportions of blue marbles found for these two samples are 0.3 for the SRS and 0.4 for the convenience sample.</p>
+<p>Now let’s repeat this process! Each time we’ll record the sample proportion of blue marbles for each method. In the end we can compare the two and see the differences. Ten more of these (sample) proportions are reported below.</p>
 <pre><code>##    SRS Convenience
-## 1  0.1         0.5
-## 2  0.4         0.7
-## 3  0.2         0.5
-## 4  0.5         0.5
-## 5  0.4         0.6
-## 6  0.4         0.4
-## 7  0.4         0.3
-## 8  0.7         0.4
-## 9  0.3         0.6
-## 10 0.3         0.5</code></pre>
-<p>Remember, the actual value of the population proportion is 0.4. It can be hard to see differences between these two methods in only a few samples. With computing power at our fingertips, let’s repeat this process 10,000 times and investigate how the two sampling methods performed with regard to the true proportion of blue marbles, 0.4. The easiest way to visualize the sample proportions is by creating histograms. In this case, the histogram will show us how many times we observed each sample proportion possible (0, 0.1, 0.2, …, 1).</p>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-222-1.png" width="90%" style="display: block; margin: auto;" /></p>
-<p>We can see there are differences in the two histograms. The histogram using the convenience sample tended to have slightly larger values for the sample proportion of blue marbles found. If we look at the overall mean of the sample proportions found using the SRS we get 0.4027, which is very close to the true value of 0.4 This means that on average the SRS method and the sample proportion are giving the correct parameter. Copare this to the convenience sample method where we get an overall mean of 0.4607, which overestimates the population parameter of 0.4.</p>
+## 1  0.3         0.2
+## 2  0.5         0.4
+## 3  0.5         0.3
+## 4  0.2         0.5
+## 5  0.2         0.2
+## 6  0.4         0.3
+## 7  0.5         0.7
+## 8  0.4         0.5
+## 9  0.3         0.4
+## 10 0.3         0.4</code></pre>
+<p>Remember, the actual value of the population proportion or paramter is 0.4. It can be hard to see differences between these two methods in only a few samples. With computing power at our fingertips, let’s repeat this process 10,000 times and investigate how the two sampling methods performed with regard to the true proportion of blue marbles, 0.4. The easiest way to visualize the sample proportions is by creating histograms. In this case, the histogram will show us how many times we observed each sample proportion possible (0, 0.1, 0.2, …, 1).</p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-223-1.png" width="90%" style="display: block; margin: auto;" /></p>
+<p>We can see there are differences in the two histograms. The histogram using the convenience sample tended to have slightly larger values for the sample proportion of blue marbles found. If we look at the overall mean of the sample proportions found using the SRS we get 0.4015, which is very close to the true value of 0.4 This means that on average the SRS method and the sample proportion are giving the correct parameter. Copare this to the convenience sample method where we get an overall mean of 0.454, which overestimates the population parameter of 0.4.</p>
 <p>This is just a quick example of how using a poor sampling method might affect the analysis done and why we need to use a good sampling method. We ‘created’ a convenience sample here. In real life, the mechanism that underlies the convenience sample wouldn’t be known!</p>
 </div>
 <div id="practical-sampling-notes" class="section level4">
@@ -806,19 +855,29 @@ Generally, we’re not interested in the effects of these variables on the respo
 </div>
 <div id="randomized-block-designs" class="section level4">
 <h4><span class="header-section-number">2.4.2.3</span> Randomized Block Designs</h4>
-<p>A randomized block design divides EUs with similar characteristics into ‘blocks’ or subgroups. Within each block the treatments are then randomly assigned.</p>
+<p>A randomized block design divides EUs with similar characteristics into
+‘blocks’ or subgroups. Within each block the treatments are then randomly assigned.</p>
 <p>Within a block we are essentially controlling the blocking variable. However, by conducting the design across many settings of the blocking variable, we maintain generalizability of the study.</p>
 <p>Let’s consider an example. Two new finishes are developed (type A and type B) for use on a dash board in a car. The material and finish must withstand high temperatures due to the sun and the greenhouse effect. To simulate the temperatures and wear on the dashboard, the dashboards are placed into ovens for 24 hours and the amount of degradation is measured.</p>
 <p>The company has 4 large ovens (oven 1, 2, 3, and 4) for testing. The manufacturer finds a random sample of 40 dashboards from the assembly line. Ten dashboards will be placed in each oven. Within the groups of ten assigned to the ovens, five of each treatment were randomly assigned.</p>
 <p>The ovens act as the blocks in this experiment. There may be some variation from oven to oven but we don’t really have an interest in this variation.</p>
-<p>There are many other commonly used design including:<br />
-- Incomplete block designs - Latin squares designs<br />
-- Split plot designs<br />
-- Randomized complete block split plot designs<br />
-- Strip plot designs<br />
-- 2^k designs<br />
-- 3^k designs<br />
-- Response surface designs</p>
+<p>There are many other commonly used design including:</p>
+<ul>
+<li>Incomplete block designs</li>
+<li>Latin squares designs<br />
+</li>
+<li>Split plot designs<br />
+</li>
+<li>Randomized complete block split plot designs<br />
+</li>
+<li>Strip plot designs<br />
+</li>
+<li>2^k designs<br />
+</li>
+<li>3^k designs<br />
+</li>
+<li>Response surface designs</li>
+</ul>
 <p>We’ll cover many of these later in the book!</p>
 </div>
 <div id="sampling-schemes-vs-randomization-methods" class="section level4">
@@ -835,7 +894,9 @@ Generally, we’re not interested in the effects of these variables on the respo
 <div id="references-and-readings" class="section level2">
 <h2><span class="header-section-number">2.5</span> References and Readings</h2>
 <p>Something about causal inference<br />
-Sampling stuff DOE stuff Corr vs caus</p>
+Sampling stuff
+DOE stuff
+Corr vs caus</p>
 </div>
 <div id="software-1" class="section level2">
 <h2><span class="header-section-number">2.6</span> Software</h2>
@@ -909,7 +970,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))

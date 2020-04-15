@@ -5,39 +5,59 @@
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/defineObjective.png")
 ```  
+The Division of Academic and Student Affairs (DASA) is charged with assessing NC State's general education competency (or Pack Proficiencies) program.  This is a set of competencies that every NC State graduate should master by the time they graduate.  The five Pack Proficiencies are Critical Thinking, Creative Thinking, Oral Communication, Quantitative Literacy, and Written Communication. 
+
+There competencies go hand-in-hand with the general education program, but should be reinforced throughout each major curriculum.  
+```{r, echo = FALSE, out.width = '70%', fig.align='center'}
+knitr::include_graphics("img/GEP-and-Gen-Ed-Diagram.png")
+```  
+
+DASA assesses the quantitative literacy proficiency through a number of instruments including a standardized test that is customized for NC State.  Students are assessed when they are freshman and again when they are seniors.  However, it is much easier to convince freshman to take this extra (mostly voluntary) exam than it is to convince a graduating senior.  As such, DASA wanted to design an experiment around an email recruitment campaign to determine if there was a type of email that was most effective in recruiting students.  
+
+Discuss population as the conceptual population of all seniors that they would email about this.  
+
+Discuss email types?
+
 
 ### Select Response
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/selectResponse.png")
 ``` 
+Response is the proportion of students that respond positively to the email types.  
+
 
 ### Determine Sources of Variation
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/determineVariation.png")
 ```  
+When considering groups to send email to, DASA decided to break students up by race, ... something else I need to look up.
 
 ### Select Design
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/selectDesign.png")
 ```  
+The design used was a randomized block design. Within each student group, the three email types were randomized.  
 
 ### Do Study  
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/conductStudy.png")
 ```  
+Emails and reminder emails sent out over a period of two months.  Data collected.
 
 ### Do Statistical Analysis  
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/statsAnalysis.png")
 ```  
+Data were analyzed to see if one email type performed better than another.  
 
 ### Draw Conclusions & Communicate
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/concludeCommunicate.png")
 ```  
+The results of the study indicated... This study was used to indicate how future email campaigns might run...

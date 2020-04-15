@@ -13,7 +13,7 @@ Note: One could try to do a study at just the North Carolina State Farmer's Mark
 
 A [list of the horticultural products sold and their availability](http://www.ncagr.gov/markets/chart.htm) is reproduced below.  
 
-```{r fmProducts, echo = FALSE, out.width = "65%"}
+```{r fmProducts, echo = FALSE, out.width = "65%", fig.align='center'}
 knitr::include_graphics("img/availabilitychart-1.jpg")  
 knitr::include_graphics("img/availabilitychart-2.jpg")  
 ```
@@ -73,9 +73,6 @@ For the assessment of cleanliness, she added the following question:
  - How many people are working?  
  
 
-**Should we talk about formalizing the other questions they want to answer here??**
-
-
 ### Select Design
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
@@ -94,7 +91,6 @@ This idea is further fleshed out at the end of the chapter. (reference/link this
 
 Here they chose to do a stratified sample to make sure that they didn't leave out any important subgroups.  
 
-**Should we talk about formalizing the other questions they want to answer here??**
 
 ### Do Study  
 
@@ -103,12 +99,9 @@ knitr::include_graphics("img/conductStudy.png")
 ```  
 Go and talk to chosen vendors.  May have some non-response issues.  Ideally a contingency for this should be developed when considering the sampling scheme.  
 
-**Should we talk about formalizing the other questions they want to answer here??**
 
 
 ### Do Statistical Analysis  
-
-**Should we talk about formalizing the other questions they want to answer here??**
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/statsAnalysis.png")

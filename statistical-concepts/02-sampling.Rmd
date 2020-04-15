@@ -4,7 +4,7 @@ The method used to obtain the units for a sample is called the **sampling scheme
 
 A probability sample requires some **random** mechanism in order to execute the selection of population members into the sample.  However, there is a big difference between *statistical* randomness and the everyday use of randomness.  **Randomness** in everyday use usually refers to the idea that things are not known before hand.  For instance, if a sample was collected by measuring the next 15 people that passed by us on a busy street, this is random but not random in a sense that helps statistically.  Even though the members aren't known prior to collecting the sample, the method used to collect systematically excludes people that are otherwise not able to be walking down the street at the time the sample was taken.  In statistics, having randomness usually involves a **random number generator** or a software that uses one (methods also include using a random digit table or flipping a coin, but these are mostly obsolete at this point!). 
 
-(**Mention that this is likely more important when dealing with humans?? But still important in some contexts**)  
+(**Mention that this is likely more important when dealing with humans?? But still important in many contexts**)  
 
 Let's discuss sampling techniques that utilize a probability sample (and are often executed using a random number generator).  
 
@@ -33,7 +33,11 @@ A **stratified random sample** is used when there are important subgroups that t
 
 For instance, again suppose a university wants to determine the proportion of students that would favor a change to the bookstore.  The officials might want to make sure that members of each college are selected into the sample since the use of the bookstore can vary substantially from major-to-major and college-to-college.  This time they create 5 strata, each corresponding to a college at the university.  Within each strata they conduct an SRS, selecting 80 people from each college.  This gives a total sample size of 400.  
 
-Note that the proportion of members selected doesn't need to be constant across the strata.  The size of the sample done in each strata might be done proportionally to the total number of students that college constitutes.  For simplicity, assume the total population size was 10000.  If there the five colleges had student population sizes 3000, 2500, 2000, 1500, and 1000, the proportion of students in each college would be $3000/10000 = 0.3$, $2500/10000 = 0.25$, $2000/10000=0.2$, $1500/10000=0.15$, and $1000/10000=0.1$, respectively.  Still looking to obtain a total sample of size 400, we could select $0.3*400 = 120$, $0.25*400 = 100$, $0.2*400 = 80$, $0.15*400 = 60$, and $0.1*400 = 40$ students from the each college, respectively.   
+Note that the proportion of members selected doesn't need to be constant across the strata.  The size of the sample done in each strata might be done proportionally to the total number of students that college constitutes.  
+
+For simplicity, assume the total population size was 10000.  If there the five colleges had student population sizes 3000, 2500, 2000, 1500, and 1000, the proportion of students in each college would be $3000/10000 = 0.3$, $2500/10000 = 0.25$, $2000/10000=0.2$, $1500/10000=0.15$, and $1000/10000=0.1$, respectively.  
+
+Still looking to obtain a total sample of size 400, we could select $0.3*400 = 120$, $0.25*400 = 100$, $0.2*400 = 80$, $0.15*400 = 60$, and $0.1*400 = 40$ students from the each college, respectively.   
 
 Sometimes a larger proportion is taken from a strata because that strata is of greater interest to the researcher.  
 
@@ -55,7 +59,7 @@ The importance of having a probability sample is paramount.  To underscore the p
 
 Let's conduct a simple simulation study to compare the results found when doing an SRS vs those done with a contrived convenience sample.  
 
-Suppose our population consists of 100 marbles.  We have interest in investigating the proportion of marbles that are blue.  Since we are creating the population we will set this parameter value, making it a known quantity!  Let's make the proportion of blue marbles 0.4 (40 blue marbles).  
+Suppose our population consists of 100 marbles.  We have interest in investigating the proportion of marbles that are blue.  Since we are creating the population we will set this **parameter** value, making it a known quantity!  Let's make the proportion of blue marbles 0.4 (40 blue marbles).  
 
 A sample of size 10 will be collected using the two methods outlined below:
 
@@ -78,9 +82,9 @@ names(method2) <- c("Conv Pop#", "Color")
 data.frame(method1, method2, row.names =  NULL)
 ```
 
-The respective proportion of blue marbles found for these two samples are `r mean(method1$Color == "Blue")` for the SRS and `r mean(method2$Color =="Blue")` for the convenience sample.  
+The respective sample proportions of blue marbles found for these two samples are `r mean(method1$Color == "Blue")` for the SRS and `r mean(method2$Color =="Blue")` for the convenience sample.  
 
-Now let's repeat this process!  Each time we'll record the proportion of blue marbles for each method.  In the end we can compare the two and see the differences.  Ten more of these (sample) proportions are reported below.
+Now let's repeat this process!  Each time we'll record the sample proportion of blue marbles for each method.  In the end we can compare the two and see the differences.  Ten more of these (sample) proportions are reported below.
 
 ```{r, echo = FALSE}
 method1 <- colMeans(replicate(10000, marblePop[sample(1:100, size = 10, replace = FALSE), 2]) == "Blue")
@@ -88,7 +92,7 @@ method2 <- colMeans(replicate(10000, marblePop[sample(1:100, size = 10, replace 
 data.frame(SRS = method1[1:10], Convenience = method2[1:10], row.names = NULL)
 ```
 
-Remember, the actual value of the population proportion is 0.4.  It can be hard to see differences between these two methods in only a few samples.  With computing power at our fingertips, let's repeat this process 10,000 times and investigate how the two sampling methods performed with regard to the true proportion of blue marbles, 0.4. The easiest way to visualize the sample proportions is by creating histograms.  In this case, the histogram will show us how many times we observed each sample proportion possible (0, 0.1, 0.2, ..., 1).  
+Remember, the actual value of the population proportion or paramter is 0.4.  It can be hard to see differences between these two methods in only a few samples.  With computing power at our fingertips, let's repeat this process 10,000 times and investigate how the two sampling methods performed with regard to the true proportion of blue marbles, 0.4. The easiest way to visualize the sample proportions is by creating histograms.  In this case, the histogram will show us how many times we observed each sample proportion possible (0, 0.1, 0.2, ..., 1).  
 
 ```{r, echo = FALSE, fig.align='center', out.width = "90%"}
 par(mfrow = c(1, 2))

@@ -1,22 +1,12 @@
-### Study Purpose
-
-A major goal of a study is usually to conduct statistical inference.  Inference can involve determine which variables are important in relation to a response variable and/or predicting a response variable.  To formally do inference we need to define the population of interest as well as **parameters** we want to study.  
+### Parameters and Statistics  
 
 - Population - all the values, items, or individuals of interest
 
 - Parameter - a (usually) unknown summary value about the population
 
-Ideally, we'd be able to measure every member of the population and exactly calculate the value of any population parameter.  This would involved conducing a census.  A census is usually not feasible.  Instead we take a subset of the population and try to use these observations to make statements or claims about the population.
-
 - Sample - a subset of the population we observe data on
 
 - Statistic - a summary value calculated from the sample observations
-
-(**A better visual than this**)
-
-```{r, echo = FALSE, out.width="80%", fig.align='center'}
-knitr::include_graphics("img/paradigm.png")
-```
 
 Example - A political scientist surveys 400 people randomly from a list of all registered voters in a particular county.  He asks the people if they plan to vote in the upcoming election and 312 say they do.
 
@@ -24,17 +14,14 @@ Example - A political scientist surveys 400 people randomly from a list of all r
 
 To discuss paramters and statistics more easily, symbols are used to denote them.  Luckily, there is a common notation that, for the most, is consistent across statistical literature. 
 
-<!-- Name | Parameter | Statistic | Quantity Measured -->
-<!-- -------------------------------------------------- -->
-<!-- Mean | $\mu$     | $\bar{Y}$ or $\bar{y}$ or $\bar{X}$ or $\bar{x}$ | Center or Location -->
-<!-- Proportion | $p$ or $\pi$ | $\hat{P}$ or $\hat{p}$ or $\hat{\pi}$ | Location or Frequency -->
-<!-- Standard Deviation (SD) | $\sigma$ | $S$ or $s$ | Variability or spread -->
-<!-- Variance (Var) | $\sigma^2$ | $S^2$ or $s^2$ | Variability or spread -->
+|Name                    | Parameter    | Observed Statistic       | Quantity Measured     |  
+|:-----------------------|:-------------|:-------------------------|:----------------------|  
+|Mean                    | $\mu$        | $\bar{y}$                | Center or Location    |  
+|Proportion              | $p$ or $\pi$ | $\hat{p}$ or $\hat{\pi}$ | Location or Frequency |  
+|Standard Deviation (SD) | $\sigma$     | $s$                      | Variability or spread |  
+|Variance (Var)          | $\sigma^2$   | $s^2$                    | Variability or spread |  
 
-Note: $\bar{Y}=\frac{1}{n}\sum_{i=1}^{n}Y_i$ and $S^2=\frac{1}{n-1}\sum_{i=1}^{n}(Y_i-\bar{Y})^2$ where $n$ is the sample size (or number of observed values in the sample).  Sometimes you'll see other notation for proportions **(....... fill in and change table)**
-
-Question of interest will lead you to which parameter you have interest in.  Careful consideration of what your study goals are will also most likely lead you to which type of data you will collect.
-
+Note: $\bar{y}=\frac{1}{n}\sum_{i=1}^{n}y_i$ and $s^2=\frac{1}{n-1}\sum_{i=1}^{n}(y_i-\bar{y})^2$ where $n$ is the sample size (or number of observed values in the sample).  Sometimes you'll see other notation for proportions.
 
 ### Scales (Types) of Data:
 
@@ -75,7 +62,9 @@ Example: SAT Performance
 
 
 
-**Descriptive Statistics**  
+### Numerical Summaries  
+
+Focus on this section is to talk about what summaries you'd want to create and why along with how to interpret them.  The software section discusses the creation of the summaries.  
 
 Goal of descriptive statistics is to describe the **distribution** of the data.
 
@@ -99,19 +88,17 @@ Common numerical summaries
 Common graphical summaries
 
 
-### Exploratory Data Analysis  
-
 In this chapter we'll discuss summarizing data only, not populations.  We'll calculate numerical summaries (statistics) and graphical summaries for the sample.  In the next chapter we'll relate these summaries to the population parameters and distributions.  
 
 When summarizing data we want to describe the distribution of the data. This may be a *marginal* or *univariate* summary of a single variable by itself.  
 
-```{r, echo = FALSE,  out.width = "80%", fig.align='center'}
+```{r, echo = FALSE,  out.width = "40%", fig.align='center'}
 knitr::include_graphics("img/summarizeAllF.png")
 ```
 
 However, quite often we want to look at the distribution of a variable conditional on another variable - perhaps levels of a certain factor or the treatments of an experiment - or the relationship of more than one variable together.  These would be referred to as **multivariate** summaries.  
 
-```{r, echo = FALSE,  out.width = "80%", fig.align='center'}
+```{r, echo = FALSE,  out.width = "50%", fig.align='center'}
 knitr::include_graphics("img/summarizeGroupsF.png")
 ```
 
@@ -248,7 +235,7 @@ $y_{84} = 19.9$
 
 The sample mean is then simply the sum of these values divided by the total number:
 
-$$\bar{y} = \frac{1}{n} \sum_{i=1}^{n} y_i = \frac{1}{84}\sum_{i=1}^{84}y_i = \frac{1}{84}\left(16.0 + 30.4 + 34.8 + ... + 19.9)$$
+$$\bar{y} = \frac{1}{n} \sum_{i=1}^{n} y_i = \frac{1}{84}\sum_{i=1}^{84}y_i = \frac{1}{84}\left(16.0 + 30.4 + 34.8 + ... + 19.9\right)$$
 
 This comes out to be `r mean(CO2$uptake)`.  This value represents one measure of the center or middle of the `uptake` variable's distribution.  
 
@@ -270,217 +257,207 @@ The most common measure of spread is the **standard deviation** or **variance**.
 
 
 
-Measures of linear relationship: Covariance, Correlation   
+#### Measures a Linear Relationship
 
-```{r}
+Covariance, Correlation   
+
+```{r,echo=FALSE}
 cov(CO2$conc, CO2$uptake)
 cor(CO2$conc, CO2$uptake)
 ```
 
+Should always plot!  
 
 
-
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment**
-
-
- Numerical summaries: Numerical variables  
+#### Numerical Summaries Across Subgroups   
 
 Usually want summaries for different **subgroups of data** 
 
 - Ex: Get similar uptake summaries for each **Treatment**
 
-- `dplyr` easy to use but can only return one value
-
-
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment**
-
-- `dplyr` easy to use but can only return one value
-
-Idea: 
-
-- Use `group_by` to create subgroups associated with the data frame
-
-- Use `summarize` to create basic summaries for each subgroup
-
-    
-    
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment**
-
-
-```{r}
+```{r,echo=FALSE}
 CO2 %>% group_by(Treatment) %>% 
 	summarise(avg = mean(uptake), med = median(uptake), var = var(uptake))
 ```
 
-
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
 - Ex: Get similar uptake summaries for each **Treatment** and **Concentration**
 
-```{r}
+```{r,echo=FALSE}
 CO2 %>% group_by(Treatment, conc) %>% 
 		summarise(avg = mean(uptake), med = median(uptake), var = var(uptake))
 ```
 
+Recap of common summaries
 
 
- Numerical summaries: Numerical variables  
+### Graphical Summaries  
 
-Usually want summaries for different **subgroups of data** 
+#### Barplots for Categorical Data  
 
-- Ex: Get similar uptake summaries for each **Treatment**
+Let's start by graphing categorical variables (variables in which entries are a label or attribute).  Recall that the main goal of summarizing categorical variables is to look at counts for each level or combination of levels for the variables in question.  
 
-- Built-in `aggregate()` function more general  
+Again, we'll look at the titanic data set.  
 
-
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment**
-
-- Built-in `aggregate()` function more general  
-
-- Basic use gives response (`x`) and a `list` of variables to group `by`
-
-```{r}
-aggregate(x = CO2$uptake, by = list(CO2$Treatment), FUN = summary)
+```{r,echo=FALSE}
+titanicData <- read_csv("../datasets/titanic.csv")
+titanicData
 ```
 
+To visualize a one-way table a simple bargraph can be made.  These show... 
 
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment**
-
-- Built-in `aggregate()` function more general  
-
-- Commonly used with `formula` notation!
-
-```{r}
-aggregate(uptake ~ Treatment, data = CO2, FUN = summary)
+```{r,echo = FALSE, eval = TRUE, out.width = "75%", fig.align='center'}
+ggplot(data = titanicData, aes(x = as.character(survived))) + 
+  geom_bar() + 
+  labs(x = "Survival Status", title = "Bar Plot of Survival for Titanic Passengers") + 
+  scale_x_discrete(labels = c("Died", "Survived"))
 ```
 
+To visualize a two-way table, a stacked barplot can be created.
 
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment**
-
-- Built-in `aggregate()` function more general  
-
-- Commonly used with `formula` notation!
-
-```{r, eval = FALSE}
-aggregate(uptake ~ Treatment, data = CO2, FUN = summary)
+```{r,echo = FALSE, eval = TRUE, out.width = "75%", fig.align='center'}
+ggplot(data = titanicData, aes(x = survived, fill = sex)) + 
+  geom_bar() +
+  labs(x = "Survival Status", 
+       title = "Bar Plot of Survival Status for Titanic Passengers") + 
+  scale_x_discrete(labels = c("Died", "Survived")) + 
+  scale_fill_discrete(name = "Sex", labels = c("Female","Male"))
 ```
 
-`uptake ~ Treatment` - formula notation in R  
+The **side-by-side barplot** can be created as well.
 
-- Idea: uptake (LHS) modeled by Treatment levels (RHS)
-
-
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment** and **Concentration**
-
-- Built-in `aggregate()` function more general
-
-- Commonly used with `formula` notation!
-
-```{r, eval = FALSE}
-aggregate(uptake ~ Treatment + conc, data = CO2, FUN = summary)
+```{r,echo = FALSE, eval = TRUE, out.width = "75%", fig.align='center'}
+ggplot(data = titanicData, aes(x = survived, fill = sex)) + 
+  geom_bar(position = "dodge")
 ```
 
-`uptake ~ Treatment + conc` model uptake by levels of Treatment and conc
+Filled barplots also sometimes useful.  Here the bars will be stacked and the bars will be standardized to have constant height.  This is really useful when there are an equal number of observations (or close to it) in each category on the x-axis (for instance with some Likert scale data surveys). 
 
-
-
- Numerical summaries: Numerical variables  
-
-Usually want summaries for different **subgroups of data** 
-
-- Ex: Get similar uptake summaries for each **Treatment** and **Concentration**
-
-```{r}
-aggregate(uptake ~ Treatment + conc, data = CO2, FUN = summary)
+```{r,echo = FALSE, eval = TRUE, out.width = "75%", fig.align='center'}
+ggplot(data = titanicData, aes(x = survived, fill = sex)) + 
+  geom_bar(position = "fill")
 ```
 
+Sometimes it is useful to see the same plot across the levels or settings of another variable.   
+
+```{r,echo = FALSE, eval = TRUE, out.width = "75%", fig.align='center'}
+ggplot(data = titanicData, aes(x = survived)) + 
+  geom_bar(aes(fill =sex), position = "dodge") +
+  facet_wrap(~ embarked)
+```
+
+Here we'll create a grid of plots for all `pclass` and `embarked` combinations.  
+
+```{r,echo = FALSE, eval = TRUE, out.width = "75%", fig.align='center'}
+ggplot(data = titanicData, aes(x = survived)) + 
+  geom_bar(aes(fill =sex), position = "dodge") +
+  facet_grid(pclass ~ embarked)
+```
+
+#### Histograms and Density Plots   
+
+Next we'll create common plots for numerical variables (variables in which entries are a numerical value where math can be performed).  Recall that the main goal of summarizing numerical variables is to describe the shape, center, and spread of the distribution.  Generally, this is done using a histogram, boxplot, or, in the case of two numerical variables, scatterplot.  
+
+We'll again look at the carbon dioxide (CO2) uptake data set.  
+
+```{r, echo = FALSE}
+CO2 <- tbl_df(CO2)
+CO2
+```
+
+Let's start by creating a histogram. 
+
+```{r,echo = FALSE, eval = TRUE, out.width = "75%", fig.align='center'}
+ggplot(CO2, aes(x = uptake)) +
+    geom_histogram(color = "blue", fill = "red", size = 2, binwidth = 3)
+```
+
+To create the kernel smoother plot (smoothed histogram), 
+
+```{r, echo = FALSE,  out.width = "75%", fig.align='center'}
+ggplot(CO2, aes(x = uptake)) +
+  geom_density(adjust = 0.5, alpha = 0.5, aes(fill = Treatment))
+```
+
+or
+
+```{r, echo = FALSE, out.width = "75%", fig.align='center'}
+ggplot(CO2, aes(x = uptake)) + 
+  geom_density(adjust = 0.5, alpha = 0.5, position = "stack", aes(fill = Treatment))
+```
+
+Plots can easily be overlayed, as long as they are on the same scale.
+
+```{r, echo = FALSE,  out.width = "75%", fig.align='center'}
+ggplot(CO2) + 
+  geom_histogram(aes(y = ..density.., x = uptake, fill = Treatment)) +
+  geom_density(adjust = 0.25, alpha = 0.5, position = "stack", 
+               aes(x = uptake, fill = Treatment)) 
+```
+
+#### Boxplots  
+
+boxplot  
+
+```{r, echo = FALSE,  out.width = "75%", fig.align='center'}
+g <- ggplot(CO2, aes(x = Treatment, y = uptake))
+g + geom_boxplot(fill = "grey")
+```
+
+Sometimes it is useful to overlay the data values themselves on a boxplot in order to see the shape of the distribution more clearly.  
+
+```{r, echo = FALSE,  out.width = "75%", fig.align='center'}
+ggplot(CO2, aes(x = Treatment, y = uptake)) + 
+  geom_boxplot(fill = "grey") +
+  geom_jitter(width = 0.1)
+```
+
+Across another variable
+
+```{r, echo = FALSE,  out.width = "75%", fig.align='center'}
+ggplot(CO2, aes(x = Treatment, y = uptake)) + geom_boxplot(fill = "grey") +
+  geom_jitter(width = 0.1) + facet_wrap(~ Type)
+```
+
+#### Scatterplots  
+
+Scatterplots 
+Below is a scatterplot of the `conc` and `uptake` variables. 
+
+```{r, echo = FALSE,  out.width = "75%", fig.align='center'}
+g <- ggplot(CO2, aes(x = conc, y = uptake)) 
+g + geom_point()
+```
+
+Trend lines and correlation on plot
 
 
- Recap/Next Up!
+```{r, echo = FALSE,  out.width = "75%", fig.align='center'}
+correlation <- cor(CO2$conc, CO2$uptake)
+ggplot(CO2, aes(x = conc, y = uptake)) + geom_point() +
+  geom_smooth(method = lm, col = "Red") + 
+  geom_text(x = 750, y = 10, size = 5, 
+            label = paste0("Correlation = ", round(correlation, 2)))
+```
 
-- Understand types of data and their distributions  
+Using text for the points too
 
-- Numerical summaries
+```{r, echo = FALSE,  out.width = "75%", fig.align='center'}
+ggplot(CO2, aes(x = conc, y = uptake)) + 
+  geom_text(aes(label = Plant))
+```
 
-    + Contingency Tables: `table`  
-    + Mean/Median: `mean`, `median`
-    + Standard Deviation/Variance/IQR: `sd`, `var`, `IQR` 
-    + Quantiles/Percentiles: `quantile`
+Across another variable  
 
-- Across subgroups with `dplyr::group_by` and `dplyr::summarize` or `aggregate`
+```{r, echo = FALSE, out.width = "75%", fig.align='center'}
+ggplot(CO2, aes(x = conc, y = uptake)) + 
+  geom_point(aes(color = Type), size = 2.5) +
+  facet_wrap(~ Treatment)
+```
 
-> - Graphical summaries (across subgroups)  
- 
+SOmetimes create amalgamation type graphs.  Useful but be careful not to overwhelm the reader.  
 
+```{r, echo = FALSE,  out.width = "90%", fig.align='center', message = FALSE, warning = FALSE}
+library(GGally)
+ggpairs(iris, aes(colour = Species, alpha = 0.4))
+```
 
-
-
-
-
-
-
-Table of common summaries
-
-Sample of Random Variable's realizations, sample distribution vs population, modeling ideas
-
-Summaries of distributions (center, spread, graphs)
-
-Good discussion of what makes a good sampling design revisit.  Maybe a statified example like the river and selecting houses example as a quick expose of the issues with not doing a truly random sampling technique.  
-
-
-Approx probabilities and quantiles vs theoretical
-
-
-
-2.  Graphical summaries
-Terminology (Raw data, variable, etc.)
-Categorical/Quantitative Variables
-Graphs for Categorical Data
-Graphs for Quantitative Data
-Distributions – center, spread, shape
-
-
-3.  Numerical Summaries
-Measures of central tendency (location)
-Mean, Median
-Measures of variability (spread)
-Range, SD, IQR
-Quartiles
-Properties of the mean and standard deviation
-Boxplots

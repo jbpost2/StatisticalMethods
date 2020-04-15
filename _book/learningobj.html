@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 18 Appendix - Learning Objectives | Statistical Methods</title>
   <meta name="description" content="Applied statistical methods book." />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17.2 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 18 Appendix - Learning Objectives | Statistical Methods" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Post, Avery, Osborne" />
 
 
-<meta name="date" content="2020-04-14" />
+<meta name="date" content="2020-04-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,41 +53,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -176,7 +201,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="summarizing-data.html"><a href="summarizing-data.html"><i class="fa fa-check"></i><b>3</b> Summarizing Data</a><ul>
-<li class="chapter" data-level="3.1" data-path="summarizing-data.html"><a href="summarizing-data.html#motivating-example-topic---name"><i class="fa fa-check"></i><b>3.1</b> Motivating Example: Topic - Name</a><ul>
+<li class="chapter" data-level="3.1" data-path="summarizing-data.html"><a href="summarizing-data.html#motivating-example-summarizing-data---california-health-interview-survey"><i class="fa fa-check"></i><b>3.1</b> Motivating Example: Summarizing Data - California Health Interview Survey</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="summarizing-data.html"><a href="summarizing-data.html#define-objective-background-2"><i class="fa fa-check"></i><b>3.1.1</b> Define Objective &amp; Background</a></li>
 <li class="chapter" data-level="3.1.2" data-path="summarizing-data.html"><a href="summarizing-data.html#select-response-2"><i class="fa fa-check"></i><b>3.1.2</b> Select Response</a></li>
 <li class="chapter" data-level="3.1.3" data-path="summarizing-data.html"><a href="summarizing-data.html#determine-sources-of-variation-2"><i class="fa fa-check"></i><b>3.1.3</b> Determine Sources of Variation</a></li>
@@ -186,9 +211,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.1.7" data-path="summarizing-data.html"><a href="summarizing-data.html#draw-conclusions-communicate-2"><i class="fa fa-check"></i><b>3.1.7</b> Draw Conclusions &amp; Communicate</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="summarizing-data.html"><a href="summarizing-data.html#statistical-ideas-and-concepts-1"><i class="fa fa-check"></i><b>3.2</b> Statistical Ideas and Concepts</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="summarizing-data.html"><a href="summarizing-data.html#study-purpose"><i class="fa fa-check"></i><b>3.2.1</b> Study Purpose</a></li>
+<li class="chapter" data-level="3.2.1" data-path="summarizing-data.html"><a href="summarizing-data.html#parameters-and-statistics"><i class="fa fa-check"></i><b>3.2.1</b> Parameters and Statistics</a></li>
 <li class="chapter" data-level="3.2.2" data-path="summarizing-data.html"><a href="summarizing-data.html#scales-types-of-data"><i class="fa fa-check"></i><b>3.2.2</b> Scales (Types) of Data:</a></li>
-<li class="chapter" data-level="3.2.3" data-path="summarizing-data.html"><a href="summarizing-data.html#exploratory-data-analysis"><i class="fa fa-check"></i><b>3.2.3</b> Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="3.2.3" data-path="summarizing-data.html"><a href="summarizing-data.html#numerical-summaries"><i class="fa fa-check"></i><b>3.2.3</b> Numerical Summaries</a></li>
+<li class="chapter" data-level="3.2.4" data-path="summarizing-data.html"><a href="summarizing-data.html#graphical-summaries"><i class="fa fa-check"></i><b>3.2.4</b> Graphical Summaries</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="summarizing-data.html"><a href="summarizing-data.html#suggestions-for-further-readings"><i class="fa fa-check"></i><b>3.3</b> Suggestions for Further Readings</a></li>
 <li class="chapter" data-level="3.4" data-path="summarizing-data.html"><a href="summarizing-data.html#software-2"><i class="fa fa-check"></i><b>3.4</b> Software</a><ul>
@@ -282,7 +308,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="19.1" data-path="notation.html"><a href="notation.html#standard-notation"><i class="fa fa-check"></i><b>19.1</b> Standard notation</a></li>
 <li class="chapter" data-level="19.2" data-path="notation.html"><a href="notation.html#mixed-models"><i class="fa fa-check"></i><b>19.2</b> Mixed models</a></li>
 <li class="chapter" data-level="19.3" data-path="notation.html"><a href="notation.html#effects-model-representation"><i class="fa fa-check"></i><b>19.3</b> Effects model representation</a></li>
-<li class="chapter" data-level="19.4" data-path="notation.html"><a href="notation.html#estimators-vs.estimates"><i class="fa fa-check"></i><b>19.4</b> Estimators vs. Estimates</a></li>
+<li class="chapter" data-level="19.4" data-path="notation.html"><a href="notation.html#estimators-vs.-estimates"><i class="fa fa-check"></i><b>19.4</b> Estimators vs. Estimates</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -385,18 +411,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>costs and benefits of using nonparametric approaches</li>
 </ul></li>
 <li>describe the fundamental inferential techniques of hypothesis testing and confidence intervals as well as compare and contrast their uses and interpretations</li>
-<li>identify a null and alternative for a given problem
-<ul>
-<li>interpret hypotheses</li>
-<li>characterize the test statistic under the null</li>
-<li>explain what a rejection region and be able to identify one</li>
-<li>define statistical power</li>
-<li>calculate statistical power for one- and two-sample tests of continuous and binary random variables</li>
-<li>define statistical confidence<br />
-</li>
-<li>identify when using a CI and NSHT will result in the same conclusion</li>
-<li>explain when you can use a confidence interval to test for differences (e.g., comparing a single point estimate to a threshold) and when you can’t (e.g., when you have CIs for two different means)</li>
-</ul></li>
+<li><p>identify a null and alternative for a given problem
+- interpret hypotheses
+- characterize the test statistic under the null
+- explain what a rejection region and be able to identify one
+- define statistical power
+- calculate statistical power for one- and two-sample tests of continuous and binary random variables
+- define statistical confidence<br />
+- identify when using a CI and NSHT will result in the same conclusion
+- explain when you can use a confidence interval to test for differences (e.g., comparing a single point estimate to a threshold) and when you can’t (e.g., when you have CIs for two different means)</p></li>
 <li>choose appropriate numerical summaries and graphical displays for a set of data and create these using software
 <ul>
 <li>when to use tables vs. a picture</li>
@@ -497,7 +520,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="from-st512" class="section level2">
 <h2><span class="header-section-number">18.3</span> From ST512</h2>
-<p>WE NEED TO ORGANIZE THESE UNDER DIFFERENT CHAPTERS AT SOME POINT Learning Objectives</p>
+<p>WE NEED TO ORGANIZE THESE UNDER DIFFERENT CHAPTERS AT SOME POINT
+Learning Objectives</p>
 <ol style="list-style-type: decimal">
 <li>Recognize a completely randomized design with one treatment factor and write the corresponding one-way analysis of variance model, with assumptions</li>
 <li>Estimate treatment means</li>
@@ -553,7 +577,38 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Estimate and interpret treatment means and their standard errors adjusted for covariates using SAS, Construct confidence intervals for adjusted treatment means</li>
 <li><p>Construct and estimate contrasts of treatment means adjusted for covariates and estimate the standard errors and confidence intervals of such contrasts.</p></li>
 </ol>
-<p>Analysis of variance and design of experiments Recognize each of the following types of experimental designs and determine when each type would be advantageous. 1. completely randomized design 2. randomized complete block design 3. split plot design Recognize whether factors should be considered fixed effects or random effects and explain the scope of inference for each case. Recognize whether factors are crossed or nested. For all of the designs listed and for experiments with crossed and/or nested fixed factors, random factors, or a combination of fixed and random effects, be able to 1. Write the corresponding analysis of variance model, with assumptions, and define all terms 2. Estimate treatment means and their standard errors 3. Construct the analysis of variance table, including computing degrees of freedom, sums of squares, mean squares, and F-ratios 4. Determine whether the assumptions of the model are satisfied 5. Interpret results and draw conclusions 6. Construct and estimate linear combinations of treatment means and their standard errors 7. Test hypotheses and construct confidence intervals about linear combinations of treatment means 8. Explain when and why corrections for multiple comparisons are needed, know when and how to use Tukey’s correction for all pairwise comparisons, compute Bonferroni confidence intervals 9. Create and interpret orthogonal contrasts. 10. Define and interpret main effects, simple effects and interactions 11. Use a table of expected mean squares to estimate variance components and determine appropriate F-statistics for testing effects in the analysis of variance 12. Interpret variance components and estimate and interpret the intraclass correlation coefficient. Regression and correlation Explain the appropriate use of correlations and compute the correlation coefficient, read and interpret a scatterplot and guess the correlation coefficient by examination of a scatter plot, test the hypothesis that the correlation coefficient is zero using either a t-test or the Fisher z transformation, compute confidence intervals using Fisher’s z transformation You should be able to do the following for fitting models to describe the relationships of one or several variables to a response variable. The regressor variables may be continuous or categorical or a mix of the two (e.g., analysis of covariance models) 1. Write a general linear model, including assumptions, in standard or matrix notation, and explain what all the terms and assumptions represent. Be able to handle models that contain interaction terms, polynomial terms, and dummy variables. 2. Evaluate whether the model assumptions are met 3. Fit a general linear model in SAS and interpret the output 4. Work with the general linear model in matrix form, including finding the expectation and variance of a linear combination of regression coefficients or treatment means 5. Test hypotheses and construct confidence intervals for linear combinations of the parameters 6. Construct and interpret a confidence interval for the expected value of Y at a given value of X 7. Construct and interpret a prediction interval for a new value of Y at a given value of X 8. Use extra sums of squares to test hypotheses about subsets of parameters. 9. Explain what a covariate is and how covariates are used</p>
+<p>Analysis of variance and design of experiments
+Recognize each of the following types of experimental designs and determine when each type would be advantageous.
+1. completely randomized design
+2. randomized complete block design
+3. split plot design
+Recognize whether factors should be considered fixed effects or random effects and explain the scope of inference for each case.
+Recognize whether factors are crossed or nested.
+For all of the designs listed and for experiments with crossed and/or nested fixed factors, random factors, or a combination of fixed and random effects, be able to
+1. Write the corresponding analysis of variance model, with assumptions, and define all terms
+2. Estimate treatment means and their standard errors
+3. Construct the analysis of variance table, including computing degrees of freedom, sums of squares, mean squares, and F-ratios
+4. Determine whether the assumptions of the model are satisfied
+5. Interpret results and draw conclusions
+6. Construct and estimate linear combinations of treatment means and their standard errors
+7. Test hypotheses and construct confidence intervals about linear combinations of treatment means
+8. Explain when and why corrections for multiple comparisons are needed, know when and how to use Tukey’s correction for all pairwise comparisons, compute Bonferroni confidence intervals
+9. Create and interpret orthogonal contrasts.
+10. Define and interpret main effects, simple effects and interactions
+11. Use a table of expected mean squares to estimate variance components and determine appropriate F-statistics for testing effects in the analysis of variance
+12. Interpret variance components and estimate and interpret the intraclass correlation coefficient.
+Regression and correlation
+Explain the appropriate use of correlations and compute the correlation coefficient, read and interpret a scatterplot and guess the correlation coefficient by examination of a scatter plot, test the hypothesis that the correlation coefficient is zero using either a t-test or the Fisher z transformation, compute confidence intervals using Fisher’s z transformation
+You should be able to do the following for fitting models to describe the relationships of one or several variables to a response variable. The regressor variables may be continuous or categorical or a mix of the two (e.g., analysis of covariance models)
+1. Write a general linear model, including assumptions, in standard or matrix notation, and explain what all the terms and assumptions represent. Be able to handle models that contain interaction terms, polynomial terms, and dummy variables.
+2. Evaluate whether the model assumptions are met
+3. Fit a general linear model in SAS and interpret the output
+4. Work with the general linear model in matrix form, including finding the expectation and variance of a linear combination of regression coefficients or treatment means
+5. Test hypotheses and construct confidence intervals for linear combinations of the parameters
+6. Construct and interpret a confidence interval for the expected value of Y at a given value of X
+7. Construct and interpret a prediction interval for a new value of Y at a given value of X
+8. Use extra sums of squares to test hypotheses about subsets of parameters.
+9. Explain what a covariate is and how covariates are used</p>
 </div>
 <div id="for-point-estimates-chapter" class="section level2">
 <h2><span class="header-section-number">18.4</span> For Point Estimates Chapter</h2>
@@ -629,7 +684,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
