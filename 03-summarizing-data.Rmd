@@ -14,7 +14,7 @@ Ideally, we'd be able to measure every member of the population and exactly calc
 
 (**A good visual of inference here**)  
 
-Your questions of interest will often lead you to which parameters you have interest in.  Careful consideration of study goals and the time and money you have will also most likely lead you to which type of data you will collect to best make inference on those parameters.  Other times, you must work with existing data that has already been collected.  When this is the case, the data will sometimes guide the paramters you can investigate.  
+Your questions of interest will often lead you to which parameters you have interest in.  Careful consideration of study goals and the time and money you have will also most likely lead you to which type of data you will collect to best make inference on those parameters.  Other times, you must work with existing data that has already been collected.  When this is the case, the data will sometimes guide the parameters you can investigate and ultimately the claims you can make.  
 
 ```{r, child='motivating-examples/03-summarizing-CHIS.Rmd'}
 ```

@@ -7,10 +7,10 @@ To create numerical summaries in R, you first need to determine the type of data
 
 The main goal is to describe the distribution or pattern and frequency with which you observe the variable.  For categorical variables, we used contingency tables to describe the count in each category.  In R, this is done using the `table` function.  
 
-We'll recreate the summaries of the titanic dataset (available in the file `titanic.csv` in the datasets folder).  
+We'll recreate the summaries of the titanic dataset (available in the file `titanic.csv` in the datasets folder or via the web).  
 
-```{r,echo=TRUE}
-titanicData <- read_csv("../../datasets/titanic.csv")
+```{r,echo=TRUE, message = FALSE}
+titanicData <- read_csv("https://www4.stat.ncsu.edu/~online/datasets/titanic.csv")
 titanicData
 ```
 
@@ -121,7 +121,7 @@ The `psych` package has a very nice function called `describe` that provides man
 library(psych)
 ```
 
-```{r}
+```{r, warning = FALSE}
 describe(titanicData)
 describe(CO2)
 ```

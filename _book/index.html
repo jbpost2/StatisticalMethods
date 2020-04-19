@@ -24,7 +24,7 @@
 <meta name="author" content="Post, Avery, Osborne" />
 
 
-<meta name="date" content="2020-04-15" />
+<meta name="date" content="2020-04-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -211,8 +211,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1.7" data-path="summarizing-data.html"><a href="summarizing-data.html#draw-conclusions-communicate-2"><i class="fa fa-check"></i><b>3.1.7</b> Draw Conclusions &amp; Communicate</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="summarizing-data.html"><a href="summarizing-data.html#statistical-ideas-and-concepts-1"><i class="fa fa-check"></i><b>3.2</b> Statistical Ideas and Concepts</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="summarizing-data.html"><a href="summarizing-data.html#parameters-and-statistics"><i class="fa fa-check"></i><b>3.2.1</b> Parameters and Statistics</a></li>
-<li class="chapter" data-level="3.2.2" data-path="summarizing-data.html"><a href="summarizing-data.html#scales-types-of-data"><i class="fa fa-check"></i><b>3.2.2</b> Scales (Types) of Data:</a></li>
+<li class="chapter" data-level="3.2.1" data-path="summarizing-data.html"><a href="summarizing-data.html#scales-types-of-data"><i class="fa fa-check"></i><b>3.2.1</b> Scales (Types) of Data:</a></li>
+<li class="chapter" data-level="3.2.2" data-path="summarizing-data.html"><a href="summarizing-data.html#random-variables-and-parameters"><i class="fa fa-check"></i><b>3.2.2</b> Random Variables and Parameters</a></li>
 <li class="chapter" data-level="3.2.3" data-path="summarizing-data.html"><a href="summarizing-data.html#numerical-summaries"><i class="fa fa-check"></i><b>3.2.3</b> Numerical Summaries</a></li>
 <li class="chapter" data-level="3.2.4" data-path="summarizing-data.html"><a href="summarizing-data.html#graphical-summaries"><i class="fa fa-check"></i><b>3.2.4</b> Graphical Summaries</a></li>
 </ul></li>
@@ -333,7 +333,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Statistical Methods</h1>
 <p class="author"><em>Post, Avery, Osborne</em></p>
-<p class="date"><em>2020-04-15</em></p>
+<p class="date"><em>2020-04-18</em></p>
 </div>
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
@@ -682,7 +682,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] 1 2 3
 ## 
 ## [[2]]
-## [1]  0.4899896 -2.2668136
+## [1] -1.020191 -1.125429
 ## 
 ## [[3]]
 ## [1] &quot;!&quot; &quot;?&quot;</code></pre>
@@ -692,7 +692,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] 1 2 3
 ## 
 ## $normVals
-## [1] -0.3953431 -1.1120228
+## [1] -0.7189495 -0.5011253
 ## 
 ## $punctuation
 ## [1] &quot;!&quot; &quot;?&quot;</code></pre>
@@ -1161,7 +1161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Read the package into your R session.</p>
 <div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb190-1" title="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
 <pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 3.6.2</code></pre>
-<pre><code>## -- Attaching packages --------</code></pre>
+<pre><code>## -- Attaching packages ------------------------------------------------------- tidyverse 1.3.0 --</code></pre>
 <pre><code>## v ggplot2 3.2.1     v dplyr   0.8.3
 ## v tibble  2.1.3     v stringr 1.4.0
 ## v tidyr   1.0.0     v forcats 0.4.0
@@ -1173,7 +1173,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## Warning: package &#39;dplyr&#39; was built under R version 3.6.2</code></pre>
 <pre><code>## Warning: package &#39;stringr&#39; was built under R version 3.6.2</code></pre>
 <pre><code>## Warning: package &#39;forcats&#39; was built under R version 3.6.2</code></pre>
-<pre><code>## -- Conflicts -----------------
+<pre><code>## -- Conflicts ---------------------------------------------------------- tidyverse_conflicts() --
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
 <p>You’ll likely see a message about functions being masked. This implies that one of the functions just loaded has a function under the same name as a function that already exists. If you type <code>help(filter)</code>, R will now give you an option of which <code>filter</code> to look at. R uses the most recently loaded function and “masks” the old ones. You can access specific package’s functions using <code>::</code>. This allows you to call functions without loading a full library.</p>

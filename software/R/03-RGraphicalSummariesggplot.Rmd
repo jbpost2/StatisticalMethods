@@ -215,7 +215,7 @@ Let's start by creating a histogram.  This can be done with `geom_bar`.  The eas
 
 For `geom_hist`, only `x` is really needed.  Now we'll create the histogram for the `uptake` variable.  
 
-```{r,eval = TRUE, out.width = "75%", fig.align='center'}
+```{r,eval = TRUE, out.width = "75%", fig.align='center', message = FALSE, warning = FALSE}
 g <- ggplot(CO2, aes(x = uptake))
 g + geom_histogram()
 ```
@@ -254,7 +254,7 @@ ggplot(CO2, aes(x = uptake)) +
 
 Plots can easily be overlayed, as long as they are on the same scale, by simply adding the appropriate layers.  To put the histogram on the same scale as a density, we can set `y  = ..density..` on the `geom_hist` layer.  
 
-```{r, echo = TRUE, out.width = "75%", fig.align='center'}
+```{r, echo = TRUE, out.width = "75%", fig.align='center', message = FALSE, warning = FALSE}
 ggplot(CO2) + 
   geom_histogram(aes(y = ..density.., x = uptake, fill = Treatment)) +
   geom_density(adjust = 0.25, alpha = 0.5, position = "stack", 
@@ -321,7 +321,7 @@ g + geom_point()
 
 A trend lines can be easily added with `geom_smooth`.  The default is a smoothed line.  To request the simple linear regression fit, we can use `method = lm`.  Both of these lines are added to the plot below.  
 
-```{r, echo = TRUE, out.width = "75%", fig.align='center'}
+```{r, echo = TRUE, out.width = "75%", fig.align='center', message = FALSE, warning = FALSE}
 ggplot(CO2, aes(x = conc, y = uptake)) + geom_point() +  
   geom_smooth(aes(col = "loess")) +
   geom_smooth(method = lm, aes(col = "linear")) + 

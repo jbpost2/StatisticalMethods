@@ -24,12 +24,6 @@ Let's start by graphing categorical variables (variables in which entries are a 
 
 Again, we'll look at the titanic data set.  
 
-```{r,echo=FALSE}
-titanicData <- read_csv("../../datasets/titanic.csv")
-titanicData
-```
-
-
 The function to create a barplot in R is `barplot`.  Essentially, we can just input the output from the `table` function into `barplot`!
 
 ```{r}

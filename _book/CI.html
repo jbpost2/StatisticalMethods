@@ -24,7 +24,7 @@
 <meta name="author" content="Post, Avery, Osborne" />
 
 
-<meta name="date" content="2020-04-15" />
+<meta name="date" content="2020-04-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -211,8 +211,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1.7" data-path="summarizing-data.html"><a href="summarizing-data.html#draw-conclusions-communicate-2"><i class="fa fa-check"></i><b>3.1.7</b> Draw Conclusions &amp; Communicate</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="summarizing-data.html"><a href="summarizing-data.html#statistical-ideas-and-concepts-1"><i class="fa fa-check"></i><b>3.2</b> Statistical Ideas and Concepts</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="summarizing-data.html"><a href="summarizing-data.html#parameters-and-statistics"><i class="fa fa-check"></i><b>3.2.1</b> Parameters and Statistics</a></li>
-<li class="chapter" data-level="3.2.2" data-path="summarizing-data.html"><a href="summarizing-data.html#scales-types-of-data"><i class="fa fa-check"></i><b>3.2.2</b> Scales (Types) of Data:</a></li>
+<li class="chapter" data-level="3.2.1" data-path="summarizing-data.html"><a href="summarizing-data.html#scales-types-of-data"><i class="fa fa-check"></i><b>3.2.1</b> Scales (Types) of Data:</a></li>
+<li class="chapter" data-level="3.2.2" data-path="summarizing-data.html"><a href="summarizing-data.html#random-variables-and-parameters"><i class="fa fa-check"></i><b>3.2.2</b> Random Variables and Parameters</a></li>
 <li class="chapter" data-level="3.2.3" data-path="summarizing-data.html"><a href="summarizing-data.html#numerical-summaries"><i class="fa fa-check"></i><b>3.2.3</b> Numerical Summaries</a></li>
 <li class="chapter" data-level="3.2.4" data-path="summarizing-data.html"><a href="summarizing-data.html#graphical-summaries"><i class="fa fa-check"></i><b>3.2.4</b> Graphical Summaries</a></li>
 </ul></li>
@@ -341,24 +341,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="analog-ci" class="section level3">
 <h3><span class="header-section-number">6.1.1</span> Analog CI</h3>
 <p>We can build this CI in R pretty easily by inputting the values for the sample size, <span class="math inline">\(n\)</span>, and the number of “successes” or “1”s from our binary response variable. One example from class discusses a poll of 2500 people with 400 responding “Satisfactory”. For a 90% confidence interval, we have:</p>
-<div class="sourceCode" id="cb567"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb567-1" title="1">n &lt;-<span class="st"> </span><span class="dv">2500</span></a>
-<a class="sourceLine" id="cb567-2" title="2">x &lt;-<span class="st"> </span><span class="dv">400</span></a>
-<a class="sourceLine" id="cb567-3" title="3">pihat &lt;-<span class="st"> </span>x<span class="op">/</span>n</a>
-<a class="sourceLine" id="cb567-4" title="4">alpha &lt;-<span class="st"> </span><span class="fl">0.1</span> <span class="co"># 90% CI --&gt; alpha = 1 - .9 = 0.1</span></a>
-<a class="sourceLine" id="cb567-5" title="5"></a>
-<a class="sourceLine" id="cb567-6" title="6">lower_bound &lt;-<span class="st"> </span>pihat <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(alpha<span class="op">/</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span><span class="kw">sqrt</span>((pihat <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>pihat)<span class="op">/</span>n))</a>
-<a class="sourceLine" id="cb567-7" title="7">upper_bound &lt;-<span class="st"> </span>pihat <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>alpha<span class="op">/</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span><span class="kw">sqrt</span>((pihat <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>pihat)<span class="op">/</span>n))</a>
-<a class="sourceLine" id="cb567-8" title="8"></a>
-<a class="sourceLine" id="cb567-9" title="9"><span class="kw">c</span>(lower_bound, upper_bound)</a></code></pre></div>
+<div class="sourceCode" id="cb536"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb536-1" title="1">n &lt;-<span class="st"> </span><span class="dv">2500</span></a>
+<a class="sourceLine" id="cb536-2" title="2">x &lt;-<span class="st"> </span><span class="dv">400</span></a>
+<a class="sourceLine" id="cb536-3" title="3">pihat &lt;-<span class="st"> </span>x<span class="op">/</span>n</a>
+<a class="sourceLine" id="cb536-4" title="4">alpha &lt;-<span class="st"> </span><span class="fl">0.1</span> <span class="co"># 90% CI --&gt; alpha = 1 - .9 = 0.1</span></a>
+<a class="sourceLine" id="cb536-5" title="5"></a>
+<a class="sourceLine" id="cb536-6" title="6">lower_bound &lt;-<span class="st"> </span>pihat <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(alpha<span class="op">/</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span><span class="kw">sqrt</span>((pihat <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>pihat)<span class="op">/</span>n))</a>
+<a class="sourceLine" id="cb536-7" title="7">upper_bound &lt;-<span class="st"> </span>pihat <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>alpha<span class="op">/</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span><span class="kw">sqrt</span>((pihat <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>pihat)<span class="op">/</span>n))</a>
+<a class="sourceLine" id="cb536-8" title="8"></a>
+<a class="sourceLine" id="cb536-9" title="9"><span class="kw">c</span>(lower_bound, upper_bound)</a></code></pre></div>
 <pre><code>## [1] 0.1479397 0.1720603</code></pre>
 </div>
 <div id="easy-mode" class="section level3">
 <h3><span class="header-section-number">6.1.2</span> Easy mode</h3>
 <p>But it’s much easier to just use the <code>binom</code> library, which contains the function <code>binom.confint()</code>:</p>
-<div class="sourceCode" id="cb569"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb569-1" title="1"><span class="co"># install.packages(&quot;binom&quot;)</span></a>
-<a class="sourceLine" id="cb569-2" title="2"><span class="kw">library</span>(binom)</a></code></pre></div>
+<div class="sourceCode" id="cb538"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb538-1" title="1"><span class="co"># install.packages(&quot;binom&quot;)</span></a>
+<a class="sourceLine" id="cb538-2" title="2"><span class="kw">library</span>(binom)</a></code></pre></div>
 <pre><code>## Warning: package &#39;binom&#39; was built under R version 3.6.3</code></pre>
-<div class="sourceCode" id="cb571"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb571-1" title="1"><span class="kw">binom.confint</span>(<span class="dt">x =</span> <span class="dv">400</span>, <span class="dt">n =</span> <span class="dv">2500</span>, <span class="dt">conf.level =</span> <span class="fl">0.9</span>, <span class="dt">method =</span> <span class="st">&quot;asymptotic&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb540"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb540-1" title="1"><span class="kw">binom.confint</span>(<span class="dt">x =</span> <span class="dv">400</span>, <span class="dt">n =</span> <span class="dv">2500</span>, <span class="dt">conf.level =</span> <span class="fl">0.9</span>, <span class="dt">method =</span> <span class="st">&quot;asymptotic&quot;</span>)</a></code></pre></div>
 <pre><code>##       method   x    n mean     lower     upper
 ## 1 asymptotic 400 2500 0.16 0.1479397 0.1720603</code></pre>
 <p>Much easier! But now that we’re using <code>binom.confint()</code>, we discover that we have to specify <code>method = "asymptotic"</code>. But that implies that there are alternatives! And indeed, if we just remove that statement, we see that there are almost a DOZEN different methods that <code>binom.confint()</code> will compute for you!</p>
@@ -372,12 +372,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>For one simple example, recall the assumption that we always have to make for our Normal approximation method: <span class="math inline">\(n * \hat\pi &gt; 5\)</span> and <span class="math inline">\(n * (1 - \hat\pi) &gt; 5\)</span>. This is required when we use the Normal approximation. It means we can’t build CIs for small-ish samples. But other methods don’t have this problem!</p>
 <p><code>method = "exact"</code> uses what’s called the <a href = "https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Clopper%E2%80%93Pearson_interval">Clopper-Pearson method</a>, which uses the Binomial distribution to calculate an “exact” confidence interval rather than rely on an approximation.</p>
 <p>While being “exact” sounds better than “approximate”, the truth of the matter is that the Clopper-Pearson interval is generally wider than it needs to be, meaning you get a less precise interval:</p>
-<div class="sourceCode" id="cb573"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb573-1" title="1"><span class="kw">library</span>(dplyr)</a>
-<a class="sourceLine" id="cb573-2" title="2"></a>
-<a class="sourceLine" id="cb573-3" title="3"><span class="kw">binom.confint</span>(<span class="dt">x =</span> <span class="dv">400</span>, <span class="dt">n =</span> <span class="dv">2500</span>, <span class="dt">conf.level =</span> <span class="fl">0.9</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb573-4" title="4"><span class="st">  </span><span class="kw">mutate</span>(<span class="st">`</span><span class="dt">CI Width</span><span class="st">`</span> =<span class="st"> </span>upper <span class="op">-</span><span class="st"> </span>lower) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb573-5" title="5"><span class="st">  </span><span class="kw">select</span>(method, lower, upper, <span class="st">`</span><span class="dt">CI Width</span><span class="st">`</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb573-6" title="6"><span class="st">  </span><span class="kw">arrange</span>(<span class="st">`</span><span class="dt">CI Width</span><span class="st">`</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb542"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb542-1" title="1"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb542-2" title="2"></a>
+<a class="sourceLine" id="cb542-3" title="3"><span class="kw">binom.confint</span>(<span class="dt">x =</span> <span class="dv">400</span>, <span class="dt">n =</span> <span class="dv">2500</span>, <span class="dt">conf.level =</span> <span class="fl">0.9</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb542-4" title="4"><span class="st">  </span><span class="kw">mutate</span>(<span class="st">`</span><span class="dt">CI Width</span><span class="st">`</span> =<span class="st"> </span>upper <span class="op">-</span><span class="st"> </span>lower) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb542-5" title="5"><span class="st">  </span><span class="kw">select</span>(method, lower, upper, <span class="st">`</span><span class="dt">CI Width</span><span class="st">`</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb542-6" title="6"><span class="st">  </span><span class="kw">arrange</span>(<span class="st">`</span><span class="dt">CI Width</span><span class="st">`</span>)</a></code></pre></div>
 <pre><code>##           method     lower     upper   CI Width
 ## 1          bayes 0.1480550 0.1721635 0.02410856
 ## 2        cloglog 0.1481500 0.1722628 0.02411279
@@ -400,7 +400,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">6.2.3</span> A good general-use CI</h3>
 <p>My go-to for a simple binomial confidence interval is the <a href = "https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Agresti%E2%80%93Coull_interval">Agresti-Coull method</a>, <code>method = "agresti-coull"</code>. It’s one of the weirder ones (Seriously, go look at the equation for it!), but generally performs as well or better than the competition across most scenarios. It’s more precise than <code>method = "exact"</code>, doesn’t fail in small samples like <code>method = "asymptotic"</code>, and doesn’t rely on a Bayesian approach.</p>
 
-<div class="sourceCode" id="cb575"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb575-1" title="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
+<div class="sourceCode" id="cb544"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb544-1" title="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
 </div>
 </div>
 </div>
