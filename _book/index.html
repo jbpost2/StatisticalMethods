@@ -24,7 +24,7 @@
 <meta name="author" content="Post, Avery, Osborne" />
 
 
-<meta name="date" content="2020-04-18" />
+<meta name="date" content="2020-04-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -167,8 +167,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html"><i class="fa fa-check"></i><b>2</b> Sampling Schemes and Experimental Design</a><ul>
 <li class="chapter" data-level="2.1" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#data-in-the-wild"><i class="fa fa-check"></i><b>2.1</b> Data in the Wild</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#data-from-experiments"><i class="fa fa-check"></i><b>2.1.1</b> Data from Experiments</a></li>
-<li class="chapter" data-level="2.1.2" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#data-from-observational-studies"><i class="fa fa-check"></i><b>2.1.2</b> Data from Observational Studies</a></li>
+<li class="chapter" data-level="2.1.1" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#experimental-study"><i class="fa fa-check"></i><b>2.1.1</b> Experimental Study</a></li>
+<li class="chapter" data-level="2.1.2" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#observational-studies"><i class="fa fa-check"></i><b>2.1.2</b> Observational Studies</a></li>
 <li class="chapter" data-level="2.1.3" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#observational-vs-experimental-studies"><i class="fa fa-check"></i><b>2.1.3</b> Observational vs Experimental Studies</a></li>
 <li class="chapter" data-level="2.1.4" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#the-role-of-statistics"><i class="fa fa-check"></i><b>2.1.4</b> The Role of Statistics</a></li>
 </ul></li>
@@ -191,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.7" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#draw-conclusions-communicate-1"><i class="fa fa-check"></i><b>2.3.7</b> Draw Conclusions &amp; Communicate</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#statistical-ideas-and-concepts"><i class="fa fa-check"></i><b>2.4</b> Statistical Ideas and Concepts</a><ul>
-<li class="chapter" data-level="2.4.1" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#obtaining-a-representative-sample"><i class="fa fa-check"></i><b>2.4.1</b> Obtaining a Representative Sample</a></li>
+<li class="chapter" data-level="2.4.1" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#sampling-schemes"><i class="fa fa-check"></i><b>2.4.1</b> Sampling Schemes</a></li>
 <li class="chapter" data-level="2.4.2" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#fundamentals-of-designed-experiments"><i class="fa fa-check"></i><b>2.4.2</b> Fundamentals of Designed Experiments</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#references-and-readings"><i class="fa fa-check"></i><b>2.5</b> References and Readings</a></li>
@@ -333,7 +333,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Statistical Methods</h1>
 <p class="author"><em>Post, Avery, Osborne</em></p>
-<p class="date"><em>2020-04-18</em></p>
+<p class="date"><em>2020-04-19</em></p>
 </div>
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
@@ -682,7 +682,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] 1 2 3
 ## 
 ## [[2]]
-## [1] -1.020191 -1.125429
+## [1] 0.2963588 1.1439514
 ## 
 ## [[3]]
 ## [1] &quot;!&quot; &quot;?&quot;</code></pre>
@@ -692,7 +692,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] 1 2 3
 ## 
 ## $normVals
-## [1] -0.7189495 -0.5011253
+## [1] -0.3102891  0.1256986
 ## 
 ## $punctuation
 ## [1] &quot;!&quot; &quot;?&quot;</code></pre>
@@ -1161,7 +1161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Read the package into your R session.</p>
 <div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb190-1" title="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
 <pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 3.6.2</code></pre>
-<pre><code>## -- Attaching packages ------------------------------------------------------- tidyverse 1.3.0 --</code></pre>
+<pre><code>## -- Attaching packages --------</code></pre>
 <pre><code>## v ggplot2 3.2.1     v dplyr   0.8.3
 ## v tibble  2.1.3     v stringr 1.4.0
 ## v tidyr   1.0.0     v forcats 0.4.0
@@ -1173,7 +1173,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## Warning: package &#39;dplyr&#39; was built under R version 3.6.2</code></pre>
 <pre><code>## Warning: package &#39;stringr&#39; was built under R version 3.6.2</code></pre>
 <pre><code>## Warning: package &#39;forcats&#39; was built under R version 3.6.2</code></pre>
-<pre><code>## -- Conflicts ---------------------------------------------------------- tidyverse_conflicts() --
+<pre><code>## -- Conflicts -----------------
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
 <p>You’ll likely see a message about functions being masked. This implies that one of the functions just loaded has a function under the same name as a function that already exists. If you type <code>help(filter)</code>, R will now give you an option of which <code>filter</code> to look at. R uses the most recently loaded function and “masks” the old ones. You can access specific package’s functions using <code>::</code>. This allows you to call functions without loading a full library.</p>

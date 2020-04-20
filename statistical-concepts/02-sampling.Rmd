@@ -1,18 +1,16 @@
-### Obtaining a Representative Sample  
+### Sampling Schemes 
 
-The method used to obtain the units for a sample is called the **sampling scheme**.  There are good and bad sampling schemes.  The main characteristic of a good sampling scheme is the use of a **probability sample**.  A probability sample is one where every member of the population has a known and non-zero chance of inclusion in the sample.  We'll study probability in more detail later, but a population member having a non-zero probability of inclusion simply implies, if the sampling scheme was repeated again and again, eventually every unit would be included in at least one of the samples collected.  Having inclusion probabilities known for all members of the population allows for the quantification of error associated with sample estimates.  
+The method used to obtain the units for a sample is called the **sampling scheme**.  There are good and bad sampling schemes.  The main characteristic of a good sampling scheme is the use of a **probability sample**.  A probability sample is one where every member of the population has a known and non-zero chance of inclusion in the sample.  We'll study probability in more detail later, but a population member having a non-zero probability of inclusion simply implies, if the sampling scheme was repeated again and again, eventually every unit would be included in at least one of the samples collected.  Having inclusion probabilities known for all members of the population allows for the quantification of error associated with sample estimators.  
 
-A probability sample requires some **random** mechanism in order to execute the selection of population members into the sample.  However, there is a big difference between *statistical* randomness and the everyday use of randomness.  **Randomness** in everyday use usually refers to the idea that things are not known before hand.  For instance, if a sample was collected by measuring the next 15 people that passed by us on a busy street, this is random but not random in a sense that helps statistically.  Even though the members aren't known prior to collecting the sample, the method used to collect systematically excludes people that are otherwise not able to be walking down the street at the time the sample was taken.  In statistics, having randomness usually involves a **random number generator** or a software that uses one (methods also include using a random digit table or flipping a coin, but these are mostly obsolete at this point!). 
-
-(**Mention that this is likely more important when dealing with humans?? But still important in many contexts**)  
+A probability sample requires some **random** mechanism in order to execute the selection of population members into the sample.  However, there is a big difference between *statistical* randomness and the everyday use of the term randomness.  **Randomness** in everyday use usually refers to the idea that things are not known beforehand.  For instance, if a sample was collected by measuring the next 15 people that passed by us on a busy street, there is randomness but not randomness in a sense that helps statistically.  Even though the members aren't known prior to collecting the sample, the method used to collect systematically excludes people that are otherwise not able to be walking down the street at the time the sample was taken.  In statistics, having randomness usually involves a **random number generator** or a software that uses one (methods also include using a random digit table or flipping a coin, but these are mostly obsolete at this point!).  
 
 Let's discuss sampling techniques that utilize a probability sample (and are often executed using a random number generator).  
 
 #### Simple Random Sample
 
-The most simplistic sampling scheme is the **simple random sample** or **SRS**, which is outlined below.  
+The most simplistic sampling scheme is the **simple random sample** or **SRS**.  The idea is outlined below.  
 
-If the population size is $N$ and the sample size is $n$,   
+If the population size is $N$ and the sample size is $n$:   
 
 - Assign members of the population numbers from 1 to $N$  
 - Use a random number mechanism to select $n$ of the $N$ numbers  
@@ -20,35 +18,53 @@ If the population size is $N$ and the sample size is $n$,
 
 In a SRS, every subset of size $n$ from the population has the same chance or probability of being included in the sample.  (An SRS also implies that every member of the population has probabilty $n/N$ of being included in the sample.  Again, we'll cover probabiltiy in more depth later.)  Since every population member has a known and non-zero chance of inclusion in the sample, this implies an SRS is a probability sample!    
 
-An everyday example of a process similar to a SRS is the lottery.  Many states have a pick three lottery where the population of balls consist of balls numbering zero, one, two, three, ..., nine.  The population size is $N=9$.  Three balls are then randomly selected ($n=3$) as the winning combination.  Prior to the draw, players select three numbers and can win if they have the same three numbers as those selected.  Here any combination of three numbers has the same probability of being selected ($1/\binom{10,3} = 1/120$).  
+An everyday example of a process similar to a SRS is the lottery.  Many states have a pick three lottery where the population of balls consist of balls numbering zero, one, two, three, ..., nine.  The population size is $N=10$.  Three balls are then randomly selected ($n=3$) as the winning combination.  Prior to the draw, players select three numbers and can win if they have the same three numbers as those selected.  Here any combination of three numbers has the same probability of being selected ($1/\binom{10}{3} = 1/120$).  
 
 Note that an SRS does not guarantee a representative sample every time!  
 
-For instance, suppose a university wants to determine the proportion of students that would favor a change to the bookstore.  Every student is assigned a campus ID number.  Due to time and cost constraints, the university decides to collect data on 400 students.  An SRS can be used here to select the 400 students.  The sample collected may, by random chance, contain only students from a particular college.  The larger the sample, the less likely this is.  An SRS implies that on average we should get a representative sample.  Other techniques can increase the chance of a particular sample being representative of the population (at the expense of being more complicated and sometimes needing to be analyzed in a more complicated manner).  
+For instance, suppose a university wants to determine the proportion of students that would favor a change to the bookstore.  Every student is assigned a campus ID number.  Due to time and cost constraints, the university decides to collect data on 400 students.  An SRS can be used here to select the 400 students.  The sample collected may, by random chance, contain only students from a particular college.  The larger the sample, the less likely this is.  Obtaining this type of sample doesn't mean what was done was wrong, it simply means that the sample we obtained may not be very representative.  The mathematics and probability used to analyze the sample would still be valid, however, we may be dealing with one of the 'rare' samples that give misleadign results.  An SRS does imply that on average we should get a representative sample.  Other techniques can increase the chance of a particular sample being representative of the population (at the expense of being more complicated and sometimes needing to be analyzed in a more complicated manner).  
 
+(**Visual of SRS**)
 
 #### Stratified Random Sample
 
 A **stratified random sample** is used when there are important subgroups that the researcher wants to ensure are included in a sample.  These subgroups are called **strata**.  Once the strata are determined, an SRS is often done within each strata.  
 
-For instance, again suppose a university wants to determine the proportion of students that would favor a change to the bookstore.  The officials might want to make sure that members of each college are selected into the sample since the use of the bookstore can vary substantially from major-to-major and college-to-college.  This time they create 5 strata, each corresponding to a college at the university.  Within each strata they conduct an SRS, selecting 80 people from each college.  This gives a total sample size of 400.  
+For instance, again suppose a university wants to determine the proportion of students that would favor a change to the bookstore.  The officials might want to make sure that members of each college are selected into the sample since the use of the bookstore can vary substantially from major-to-major and college-to-college.  This time they create five strata, each corresponding to a college at the university.  Within each strata they conduct an SRS, selecting 80 people from each college.  This gives a total sample size of 400.  
+
+(**Visual of stratified RS**)  
 
 Note that the proportion of members selected doesn't need to be constant across the strata.  The size of the sample done in each strata might be done proportionally to the total number of students that college constitutes.  
 
-For simplicity, assume the total population size was 10000.  If there the five colleges had student population sizes 3000, 2500, 2000, 1500, and 1000, the proportion of students in each college would be $3000/10000 = 0.3$, $2500/10000 = 0.25$, $2000/10000=0.2$, $1500/10000=0.15$, and $1000/10000=0.1$, respectively.  
+For simplicity, assume the total population size was 10000 and the five colleges had student population sizes 3000, 2500, 2000, 1500, and 1000, respectively.  The proportion of students in each college can be found as follows:
 
-Still looking to obtain a total sample of size 400, we could select $0.3*400 = 120$, $0.25*400 = 100$, $0.2*400 = 80$, $0.15*400 = 60$, and $0.1*400 = 40$ students from the each college, respectively.   
+- $3000/10000 = 0.3$  
+- $2500/10000 = 0.25$  
+- $2000/10000 = 0.2$  
+- $1500/10000 = 0.15$  
+- $1000/10000=0.1$  
 
-Sometimes a larger proportion is taken from a strata because that strata is of greater interest to the researcher.  
+Still looking to obtain a total sample of size 400, we could select 
 
-**(What other advantages?  I think there can be some efficiency in doing this type of study but I don't know off the top of my head and I lack my books)**
+- $0.3*400 = 120$  
+- $0.25*400 = 100$  
+- $0.2*400 = 80$  
+- $0.15*400 = 60$  
+- $0.1*400 = 40$  
 
-#### Some Bad Sampling Schemes
+students from the each college, respectively.   
 
-There are many "bad" types of sampling schemes used in practice.  Two examples are a **convenience (or haphazard) sample** and a **volunteer response sample**.  
-A convenience sample usually implies that the sample consists of the most convenient group available or the sample members are decided on the spot.  For example, again suppose a university wants to determine the proportion of students that would favor a change to the bookstore.  If the researcher simply went outside in between class periods and found 400 students that were walking by, this would be a convenience sample.  Again, the members of the sample are random in the everyday sense, but not in the statistical sense.  Perhaps the researcher was outside on a part of campus that mostly has classes for students in biology and chemistry.  The students here are not necessarily representative of the entire college and, certainly, there is no known probability of inclusion associated with every student.   
+Alternatively, a larger proportion may be taken from certain strata because they are of greater interest to the researcher.  
 
-A volunteer response sample is one where particpants self-select.  The members of a volunteer response sample tend to be those with a strong opinion, both positive and negative.  This type of sample is often what is done for end of semester or end of course evaluations.  The evaluations are not mandatory so, while many in the class will complete the evaluation, those with very strong opinions (both positive and neative) tend to be more likely to respond.  
+**(What other advantages?  I think there can be some efficiency in doing this type of study but I don't know off the top of my head and I lack my books.  What are the disadvantages?)**
+
+#### Examples of Bad Sampling Schemes
+
+There are many "bad" types of sampling schemes used in practice.  Two examples are a **convenience (or haphazard) sampling scheme** and a **volunteer response sampling scheme**. 
+
+A convenience sample usually implies that the sample consists of the most convenient group available or that the sample members are decided on the spot.  For example, again suppose a university wants to determine the proportion of students that would favor a change to the bookstore.  If the researcher simply went outside in between class periods and found 400 students that were walking by thier building, this would be a convenience sample.  Again, the members of the sample are random in the everyday sense, but not in the statistical sense.  Perhaps the researcher was outside on a part of campus that mostly has classes for students in biology and chemistry.  The students here are not necessarily representative of the entire college and, certainly, there is no known probability of inclusion associated with every student.  Statistical methods quantify uncertainty using probability.  Using the probabilities calculated in the analysis would require us to assume the sample was collected in a way that was at least close to randomly in the statistical sense.  This is quite unlikely to be true here!  
+
+A volunteer response sample is one where particpants self-select.  The members of a volunteer response sample tend to be those with a strong opinion, both positive and negative, and access to the study.  For example, this type of sample is often what is done for end of semester or end of course evaluations.  The evaluations are not usually mandatory so, while many in the class will complete the evaluation, those with very strong opinions (both positive and neative) tend to be more likely to respond.  In other situations such as online polls hosted by poorly run news sites, only those that are aware and able to access the site can participate.  
 
 Neither of these is a probability sample, nor do they implement a random number mechanism!  They should be avoided whenever possible.  If they are implemented, most statistical analysis methods won't really be applicable and the best thing that can be done is a simple summary of the data collected (see chapter 3).    
 
@@ -64,7 +80,7 @@ Suppose our population consists of 100 marbles.  We have interest in investigati
 A sample of size 10 will be collected using the two methods outlined below:
 
 - Method 1: An SRS - marbles are assigned numbers 1, 2, 3, ..., 100 at random.  This implies the 40 blue marbles are randomly allocated across the numbers.  Ten marbles are selected using a random number generator.  
-- Method 2: A 'convenience' sample is done.  We'll use the same labeling of the population as above.  However, units 1, 2, ..., 50 will have a higher probability of inclusion than units 51, 52, ..., 75, and units 75, 76, ..., 100 will have zero probability of being included in the sample.  
+- Method 2: A 'convenience' sample is done.  We'll use the same labeling of the population as above.  However, units 1, 2, ..., 50 will have a higher probability of inclusion than units 51, 52, ..., 75, and units 76, 77, ..., 100 will have zero probability of being included in the sample.  
 
 ```{r, echo = FALSE, eval = TRUE}
 set.seed(50)
@@ -79,20 +95,20 @@ method1 <- marblePop[sample(1:100, size = 10, replace = FALSE), ]
 method2 <- marblePop[sample(1:100, size = 10, replace = FALSE, prob = convProb), ]
 names(method1) <- c("SRS Pop#", "Color")
 names(method2) <- c("Conv Pop#", "Color")
-data.frame(method1, method2, row.names =  NULL)
+knitr::kable(data.frame(method1, method2, row.names = NULL), col.names = c("SRS - Marble Selected", "Marble Color", "Convenience - Marble Selected", "Marble Color"))
 ```
 
-The respective sample proportions of blue marbles found for these two samples are `r mean(method1$Color == "Blue")` for the SRS and `r mean(method2$Color =="Blue")` for the convenience sample.  
+The respective sample proportions of blue marbles found for these two samples are `r mean(method1$Color == "Blue")` for the SRS and `r mean(method2$Color =="Blue")` for the convenience sample.  Not much can be learned from a single run of the experiment due to the inherent variability present (new samples would yield new members selected).  
 
-Now let's repeat this process!  Each time we'll record the sample proportion of blue marbles for each method.  In the end we can compare the two and see the differences.  Ten more of these (sample) proportions are reported below.
+Let's repeat this process!  Each time we'll record the sample proportion of blue marbles for each method.  In the end we can compare the **distribution** of the sample proportion using the two methods and assess the differences.  To show the process, ten more of these (sample) proportions are reported below.
 
 ```{r, echo = FALSE}
 method1 <- colMeans(replicate(10000, marblePop[sample(1:100, size = 10, replace = FALSE), 2]) == "Blue")
 method2 <- colMeans(replicate(10000, marblePop[sample(1:100, size = 10, replace = FALSE, prob = convProb), 2]) == "Blue")
-data.frame(SRS = method1[1:10], Convenience = method2[1:10], row.names = NULL)
+knitr::kable(data.frame(SRS = method1[1:10], Convenience = method2[1:10], row.names = NULL), col.names = c("SRS Sample Proportions", "Convenience Sample Proportions"), align = c("c","c"))
 ```
 
-Remember, the actual value of the population proportion or paramter is 0.4.  It can be hard to see differences between these two methods in only a few samples.  With computing power at our fingertips, let's repeat this process 10,000 times and investigate how the two sampling methods performed with regard to the true proportion of blue marbles, 0.4. The easiest way to visualize the sample proportions is by creating histograms.  In this case, the histogram will show us how many times we observed each sample proportion possible (0, 0.1, 0.2, ..., 1).  
+Remember, the actual value of the population proportion (parameter) is 0.4.  It can be hard to see differences between these two methods in only a few samples.  With computing power at our fingertips, let's repeat this process 10,000 times and investigate how the two sampling methods performed with regard to the true proportion of blue marbles, 0.4. The easiest way to visualize the sample proportions' distributions are by creating histograms.  In this case, the histogram will show us how many times we observed each sample proportion possible (0, 0.1, 0.2, ..., 1).  
 
 ```{r, echo = FALSE, fig.align='center', out.width = "90%"}
 par(mfrow = c(1, 2))
@@ -101,40 +117,39 @@ hist(method2, main = "Using a Convenience Sample", xlab = "Sample Proportions", 
 par(mfrow = c(1, 1))
 ```
 
-We can see there are differences in the two histograms.  The histogram using the convenience sample tended to have slightly larger values for the sample proportion of blue marbles found.  If we look at the overall mean of the sample proportions found using the SRS we get `r round(mean(method1), 4)`, which is very close to the true value of 0.4  This means that on average the SRS method and the sample proportion are giving the correct parameter.  Copare this to the convenience sample method where we get an overall mean of `r round(mean(method2), 4)`, which overestimates the population parameter of 0.4.
+We can see there are differences in the two histograms.  The histogram using the convenience sample tended to have slightly larger values for the sample proportion of blue marbles found.  If we look at the overall mean of the sample proportions found using the SRS we get `r round(mean(method1), 3)`, which is very close to the true value of 0.4  This means that on average the SRS method and the sample proportion are giving the correct parameter.  Compare this to the convenience sample method where we get an overall mean of `r round(mean(method2), 3)`, which overestimates the population parameter of 0.4.  Using the convenience sample to make inference about the true proportion of blue marbles isn't wise!  
 
 This is just a quick example of how using a poor sampling method might affect the analysis done and why we need to use a good sampling method.  We 'created' a convenience sample here.  In real life, the mechanism that underlies the convenience sample wouldn't be known!  
 
 #### Practical Sampling Notes  
 
-There are many other good sampling schemes such as cluster sampling, sytematic sampling, and heirarchical sampling that can use combinations of techniques.  Some of these will be covered in the book as the come up but references are given for those interested.  There are entire books written on proper sampling methods and the myriad of issues that can come up, especially when dealing with humans.  In particular, when doing survey sampling where a list of questions are given, some issues that come up often (but occur in other places too) are:  
+There are many other good sampling schemes such as cluster sampling, sytematic sampling, and heirarchical sampling that can use combinations of techniques.  Some of these will be covered in the book as the come up and references are given at the end of the chapter for those interested.  
+
+There are entire books written on proper sampling methods and the myriad of issues that can come up, especially when dealing with humans.  In particular, when doing survey sampling (where a list of questions are given) some issues that come up often (but occur in other places too) are:  
 
 - bias in question writing - leading questions and double barreled questions to name two  
 - nonresponse bias - sample member doesn't answer or respond     
-- response bias - sample member answers a question wrong on purpose (often due to how they'll be percieved  
+- response bias - sample member answers a question wrong on purpose (often due to how they'll be percieved)  
 
-Other common issues that arise are when the list of population units called the **sampling frame** doesn't match the actual population of interest.  This is an issue called **undercoverage**.  One famous example that relates to this idea comes from the 1936 US presidential election.  *Literary Digest* incorrectly predicted that Landon would overwhelmingly defeat Roosevelt.  The prediction was based on survey results done by *Literary Digest*, however they had an issue akin to undercoverage.  They mailed questionnaires out only to people who had both telephones and cars.  This left out a large portion of the population and so the results were based on a sample that was not representative of the popoulation.
+Other common issues that arise with sampling are when the list of population units (called the **sampling frame**) doesn't match the actual population of interest.  This is an issue called **undercoverage**.  One famous example that relates to this idea comes from the 1936 US presidential election.  *Literary Digest* incorrectly predicted that Landon would overwhelmingly defeat Roosevelt.  The prediction was based on survey results done by *Literary Digest*.  The survey had an issue akin to undercoverage.  They mailed questionnaires out only to people who had both telephones and cars.  This left out a large portion of the population and so the results were based on a sample that was not representative of the popoulation.
 
-One thing to note is that the sampling method can play a role in the analysis or modeling technique used but can sometimes be ignored (assuming a probability sample was done).  When the sample size is small compared to the population size (for a SRS, one rule of thumb is $n/N < 0.05$), we often are able to make an assumption of a "random sample."  This assumption then allows for the standard modeling techniques and inference methods to be applied.  We will point out cases in book where the exact type of sampling method plays an important role.  
+Sometimes it isn't feasible to implement a good sampling scheme.  For instance, in medical studies volunteers are often used.  In a crop experiment, the fields in which crops are planted aren't usually something you can choose.  Clearly, if our population is conceptually infinite, conducting a SRS is not tenable.  In these cases, additional out of data assumptions are usually needed when attempting to make inference to entire population.  For populations that aren't human, these assumptions are often more reasonable but shouldn't be done lightly.  For example, suppose the population of interest is all bottles that may be produced by a factory.  If a sample of size 1000 is to be chosen, it is likely wise to do a SRS of bottles produces over a series of days rather than the most recent 1000 bottles produced in order to mitigate any systematic issues with the bottle creation process.  
 
-Sometimes it isn't feasible to implement a good sampling scheme.  For instance, for medical studies volunteers are often used and for a crop experiment the fields in which crops are planted aren't usually something you can choose.  In this case, collecting more explanatory variables is vital.  Additional out of data assumptions are usually needed when attemtpting to make inference to entire population.  
+Lastly, one thing to note is that the sampling method can play a role in the analysis or modeling technique used but can also sometimes be ignored (assuming a probability sample was done).  When the sample size is small compared to the population size (for a SRS, one rule of thumb is $n/N < 0.05$), we often are able to make an assumption a "random sample" was done rather than a simple random sample.  This assumption allows for standard modeling techniques and inference methods to be applied without the issue of dealing with a finite population.  We will point out cases in book where the exact type of sampling method and population size plays an important role.  
 
 #### Observational vs Experimental Studies 
 
 Sampling schemes are all about obtaining units from your population for your study.  Once units are selected there are two basic types of studies:  
 
-- **Observational Study** - observe individuals and measure outcomes without influencing the responses  
+- **Observational Study** - we observe individuals and measure outcomes without influencing the environment.  
 
-- **Experimental Study** - deliberately impose a treatment on individuals and observe their response  
+- **Experimental Study** - we deliberately impose a treatment on units and observe their response.  
 
-Recall the big difference in conclusions drawn!  
+Rememer two important points:
 
-- Cannot usually infer causation from observational studies, but you can from a well-designed experiment  
+- We cannot usually infer causation from observational studies, but we can from a well-designed experiment.  
 
-- Experiments are not always feasible or ethical.  i.e. cannot assign people to smoke a pack a day or have expectant mothers drink a certain amount of alcohol
+- Experiments are not always feasible or ethical.  That is, we cannot assign people to smoke a pack a day or have expectant mothers drink a certain amount of alcohol.
 
-For experimental studies, a randomization technique is needed to determine which EUs obtain which units.  Sometimes this can go hand in hand with the sampling scheme (stratified random sampling and a randomized block design).  How to do this important and nuanced.  The experimental design is the topic of the next section.  
-
-
-
+For experimental studies, a randomization technique is needed to determine which experimental units obtain which treatments.  Sometimes this can go hand in hand with the sampling scheme (perhaps a stratified random sampling and a randomized block design).  How to create a sound experiment is important and nuanced (and has added complexity when dealing with humans).  Experimental design is the topic of the next section.  
 
