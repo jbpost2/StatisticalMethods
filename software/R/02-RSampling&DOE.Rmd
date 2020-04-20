@@ -1,0 +1,111 @@
+In R, we can set the seed for the random number generation process using `set.seed`.  `set.seed` takes in an integer as the seed value.  Let's set our seed here using a number off the top of our head in order to get the same results each time this book is created.  
+
+```{r}
+set.seed(1310)
+```
+
+#### The `sample` Function  
+
+To do a simple random sample in R the `sample` function works quite well.  `sample` takes in a vector of elements to sample from, the sample size requested, an indicator as to whether or not replacement should be done (so that a unit could be selected more than once), and an optional vector of probabilities of inclusions.   
+
+For instance, if we had a population of 1000 units and wanted to do a simple random sample of 15, we could assign each unit in the population a number from 1 to 1000.  Next, we could run the following code:
+
+```{r}
+sample(x = 1:1000, size = 15, replace = FALSE)
+```
+
+In nonparametric bootstrap sampling (covered later), we want to sample with replacement.  This is easily done using `replace = TRUE`.  
+
+If we wanted to do a stratified random sample, we can break the population up into the strata and do a random sample in each.  We can sample proportionally or find an equal size sample from each strata using the `sample` function on each strata.  
+
+
+The `sample` function can also be used to assign treatments to experimental units.  If we assign each EU a number from one to $n$, we can create a vector consisting of all the treatments to be assigned (including replicates) and use this as the input to `sample`.   The appropriate `size` to select is the same length as the vector, $n$. 
+
+For example, suppose we had 30 units assigned numbers one to 30 and three treatments (A, B, and C) to assign to ten units each.  We could use the following code to assign treatments:
+
+```{r}
+rep(c("A", "B", "C"), each = 10)
+sample(rep(c("A", "B", "C"), each = 10), size = 30)
+```
+
+The ordering given can then be matched with the numbers given to the EUs for treatment assignment.  
+
+Doing randomization for a block design can be done similarly within each block (`sample` should be run separately for each block).  
+
+#### Farmer's Market Details  
+
+#### Student Assessment Details  
+
+#### Simulation Study Details  
+
+This section explains the code used to create the simluation study in the sampling section.  
+
+First, the seed was set in order to make the results reproducible.  Next, the 'population' is created and stored in a data frame.  The units are given numbers from one to 100 and the `sample` function is used to randomly assign 40 of these marbles to be associated with blue and 60 to be associated with red.
+
+```{r, eval = TRUE}
+set.seed(50)
+marblePop <- data.frame(popNumber = 1:100, 
+                        color = sample(c(rep("Blue", 40), rep("Red", 60)), 
+                                       size = 100, 
+                                       replace = FALSE))
+head(marblePop)
+```
+
+A contrived convenience sample probability vector was created to be associated with the 100 units.  The first 50 units each had probability 0.0185 associated with them, each of the units 51 to 75 had the probability 0.003 associated with them, and the last 25 each had zero probability associated with them.   
+```{r}
+convProb <- c(rep(0.0185, 50), rep(0.003, 25), rep(0, 25))
+convProb
+```
+
+A sample of size ten was created using the `sample` function. For the SRS, the `prob` input is left as the default.  For the convenience sample, this input is assigned the `convProb` object created previously.  A data frame was created with the two objects and outputted using the `kable` function from the `knitr` package.  `col.names` was used to assign useful names to each column.
+
+```{r}
+method1 <- marblePop[sample(1:100, size = 10, replace = FALSE), ]
+method2 <- marblePop[sample(1:100, size = 10, replace = FALSE, prob = convProb), ]
+knitr::kable(data.frame(method1, method2, row.names = NULL), 
+             col.names = c("SRS - Marble Selected", "Marble Color", "Convenience - Marble Selected", "Marble Color"))
+```
+
+The process was repeated many times using the `replicate` function.  This function is a wrapper function for `sapply` (which applies a function to each element of a list and tries to simplify the returned object) and allows for the same code to be run many times.  `replicate` produced a matrix whose columns each represent one sample of ten marbles.  The entire matrix was compared to "Blue."  The `colMeans` function was then applied to this logical object in order to find the sample proportion of blue selected in each sample (logicals are coerced to 0 and 1 for `FALSE` and `TRUE`, respectively).  
+
+```{r}
+method1 <- colMeans(
+              replicate(10000,
+                        marblePop[sample(1:100, size = 10, replace = FALSE), 2]
+                        ) == "Blue"
+              )
+method2 <- colMeans(
+               replicate(10000,
+                         marblePop[sample(1:100, size = 10, replace = FALSE, prob = convProb), 2]
+                         ) == "Blue"
+               )
+```
+
+The first ten proportions were then printed using the `kable` function again.  
+
+```{r}
+knitr::kable(data.frame(SRS = method1[1:10], Convenience = method2[1:10], row.names = NULL),
+             col.names = c("SRS Sample Proportions", "Convenience Sample Proportions"), 
+             align = c("c","c"))
+```
+
+Next, side-by-side histograms were created.  First, the `mfrow` (mf = multi-figure) graphical paramter is set so that the output will have one row of plots and two columns.  (Graphical parameters, histograms, and adding lines to plots will be discussed in chapter 3!)  Next, a histogram was created for each with vertical lines added for the true proportion and the sample proportion.  Text was also added to describe the black line.  
+
+```{r fig.align='center', out.width = "90%"}
+par(mfrow = c(1, 2))
+hist(method1, main = "Using an SRS", xlab = "Sample Proportions", 
+     breaks = seq(from = -0.025, to = 1.025, by = 0.05), col = "Green")
+abline(v = 0.4, col = "Blue", lwd = 2)
+abline(v = mean(method1), col = "Black", lwd = 2)
+text(x = 0.8, y = 2000, cex = 0.7, "Black line \n represents the \n overall mean \n of the sample \n proportions.")
+
+hist(method2, main = "Using a Convenience Sample", xlab = "Sample Proportions", 
+     breaks = seq(from = -0.025, to = 1.025, by = 0.05), col = "Green")
+abline(v = 0.4, col = "Blue", lwd = 2)
+abline(v = mean(method2), col = "Black", lwd = 2)
+text(x = 0.8, y = 2000, cex = 0.7, "Black line \n represents the \n overall mean \n of the sample \n proportions.")
+```
+
+```{r, echo = FALSE}
+par(mfrow = c(1, 1))
+```

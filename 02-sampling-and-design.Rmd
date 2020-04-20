@@ -173,14 +173,19 @@ What does it mean to have a difference in the response?  Are you interested in a
 
 Usually, these questions of interest need to be stated in terms of parameters such as the (population) mean, median, or variance.  A **parameter** is a measure about the population.  These are values that, if we could do a **census** and measure the entire population, we could calculate.  However, a census is not usually feasible due to cost constraints or the time that it would take to implement.  This implies that answers to the questions of interest that are centered around these parameter values cannot truly be known!  Instead, we take a **sample** or subset of the population that we collect our data on.  With the sample we calculate (sample) **statistics** or measures about the sample that correspond to or **estimate** the parameter.  
 
-As you may expect, a good statistical measure will 'converge' in some sense to the parameter as the **sample size**, or number of members in the sample, increases.  We'll discuss how to create an **estimator** (statistic) and properties of good estimators and in later chapters.  Often the key item that we need to know about an estimator is its (sampling) **distribution**.  The distribution of a variable or estimator is simply the pattern in which the quantity is observed.  Knowing the distribution allows us to predict the values we should see for that statistic probabilistically (at least under certain assumptions).  With an understanding of the predictabilty of an estimator we can then make statements or claims about the population's parameters with some idea of variability attached!  This idea and process of using sample data to discuss population values is the idea of **statistical inference**.  
+As you may expect, a good statistical measure will 'converge' in some sense to the parameter as the **sample size**, or number of members in the sample, increases.  We'll discuss how to create an **estimator** (statistic) and properties of good estimators in later chapters.  Often the key item that we need to know about an estimator is its (sampling) **distribution**.  The distribution of a variable or estimator is simply the pattern in which the quantity is observed.  Knowing the distribution allows us to predict the values we should see for that statistic probabilistically (at least under certain assumptions).  With an understanding of the predictabilty of an estimator we can then make statements or claims about the population's parameters with some idea of variability attached!  This idea and process of using sample data to discuss population values is the idea of **statistical inference**.  
 
+To give clarity to the ideas above, consider a simplified gas mileage example.  We want to investigate whether gas mileage differs for low and high tire pressure settings.  We could investigate this difference in a number of ways but likely we'd want to know if a 'typical' gas mileage would differ between the tire pressure settings.  Generally, we think of a typical observation as one near the middle.  This could lead to a general question about the difference between the (population) mean gas mileage for all cars driven with high tire pressure against the (population) mean gas mileage for all cars driven with low tire pressure.  Alternatively, we might want to know if the gas mileage readings are more variable under one setting or another.  This may involve a comparison of population variances or standard deviations (as these are measures of spread - we'll cover these in chapter 3).  
 
-**Quick example here to go through these ideas and give context to the visuals below.**  
 (**Visual of these difference between populations... curves might not be understandable yet though**)  
-(**Visual of estimation idea**)  
-(**Visual of inference**)  
 
+To answer either of the two questions posed above, we need to use the data collected to estimate these population parameters.  Quite often, there are intuitive estimators.  For instance, to estimate the difference in population mean gas mileages we can simply use the difference in sample mean gas mileages!  Similarly, we can compute sample variances and use those to inform us about the differences in the population variances.  
+
+(**Visual of estimation idea**)  
+
+In order to quantify uncertainty around our sample differences (or sample ratio, etc.), we require knowledge of the distribution (or pattern and frequency of observation) of the sample quantity.  This knowledge allows us to calculate probabilities (and eventually create confidence intervals or conduct hypothesis tests).  
+
+(**Visual of inference**)  
 
 Hopefully, it is somewhat clear that the quality of our sample is vital to the inferences we can make!  
 
@@ -192,6 +197,19 @@ Suppose we want to make inference about how well a drug works for treating acne 
 ```{r, child='statistical-concepts/02-design.Rmd'}
 ```
 
+### Sampling Schemes vs Experimental Design  
+
+When first learning about sampling schemes and experimental design, the randomizations applied can be confusing.  The purpose of randomization as applied to experimental design is different from the purpose of randomization in sampling!  This confusion is widespread enough to warrant its own brief discussion.  
+
+- In sampling, randomization is used to determine which members of the population are included in the sample.  
+
+- If an experiment is being done, randomization is used to determine which EUs get which treatments.
+
+When an experiment is done, if possible, both of these randomizations should occur.  
+
+There is also some confusion in the learning process due to the similarities between an SRS and a CRD as well as the similarities between a stratified random sample and a Block design.  Again, the key differences are about what the purpose of sampling is versus the purpose of the experimental design.  Sampling methods are about getting units for the sample in a sound way.  Experimental design is about assigning treatments to units in a sound way.    
+
+
 ## References and Readings  
 
 Something about causal inference  
@@ -199,8 +217,18 @@ Sampling stuff
 DOE stuff
 Corr vs caus
 
+Wald, Abraham. (1943). A Method of Estimating Plane Vulnerability Based on Damage of Survivors.
+
+Campbell MJ, Machin D. In: Medical Statistics: A Common-sense Approach , 2nd edn. Chichester: Wiley, 1993:2. (Quote about poorly designed experiment apparently is attirbuted here?)
+
 
 ## Software  
+
+We mentioned the need for random number generation or a random number mechanism for selecting units into the sample as well as assigning treatments to experimental units.  This is easily done in software such as R and SAS.  
+
+Using software, creating random numbers isn't something that can be achieved.  Instead we have sophisticated algorithms that create sequences of numbers that don't exhibit patterns.  These are called pseudo random numbers and we use these to select units or assign treatments.  
+
+These algorithms have to start somewhere.  This is called the `seed` for the algorithm.  Quite often software uses something to do with the exact time and date to determine the seed.  These makes the seed change depending on when you execute the code.  When doing random number generation, it is often preferable to be able to reproduce your results.  When this is the case, the user sets the seed for the algorithm.  
 
 ### R
 

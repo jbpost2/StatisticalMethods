@@ -24,7 +24,7 @@
 <meta name="author" content="Post, Avery, Osborne" />
 
 
-<meta name="date" content="2020-04-19" />
+<meta name="date" content="2020-04-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -193,6 +193,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#statistical-ideas-and-concepts"><i class="fa fa-check"></i><b>2.4</b> Statistical Ideas and Concepts</a><ul>
 <li class="chapter" data-level="2.4.1" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#sampling-schemes"><i class="fa fa-check"></i><b>2.4.1</b> Sampling Schemes</a></li>
 <li class="chapter" data-level="2.4.2" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#fundamentals-of-designed-experiments"><i class="fa fa-check"></i><b>2.4.2</b> Fundamentals of Designed Experiments</a></li>
+<li class="chapter" data-level="2.4.3" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#sampling-schemes-vs-experimental-design"><i class="fa fa-check"></i><b>2.4.3</b> Sampling Schemes vs Experimental Design</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#references-and-readings"><i class="fa fa-check"></i><b>2.5</b> References and Readings</a></li>
 <li class="chapter" data-level="2.6" data-path="sampling-schemes-and-experimental-design.html"><a href="sampling-schemes-and-experimental-design.html#software-1"><i class="fa fa-check"></i><b>2.6</b> Software</a><ul>
@@ -625,11 +626,13 @@ The results of the study indicated… This study was used to indicate how future
 <p>However, these questions are not clearly defined!</p>
 <p>What does it mean to have a difference in the response? Are you interested in a difference in the <em>average</em> response for members of the poulation in group A vs those in group B? The <em>median</em> response, the <em>smallest</em> or <em>largest</em> response value, or the <em>shape</em> of the <strong>distribution</strong> of values for members of the poulation in group A vs those in group B? The same detail is required in order to know what to expect with a change. Do you care about the average effect over the entire poulation by changing variable C? Or are you interested in the change in the spread in expected outcomes in the population when the change is made?</p>
 <p>Usually, these questions of interest need to be stated in terms of parameters such as the (population) mean, median, or variance. A <strong>parameter</strong> is a measure about the population. These are values that, if we could do a <strong>census</strong> and measure the entire population, we could calculate. However, a census is not usually feasible due to cost constraints or the time that it would take to implement. This implies that answers to the questions of interest that are centered around these parameter values cannot truly be known! Instead, we take a <strong>sample</strong> or subset of the population that we collect our data on. With the sample we calculate (sample) <strong>statistics</strong> or measures about the sample that correspond to or <strong>estimate</strong> the parameter.</p>
-<p>As you may expect, a good statistical measure will ‘converge’ in some sense to the parameter as the <strong>sample size</strong>, or number of members in the sample, increases. We’ll discuss how to create an <strong>estimator</strong> (statistic) and properties of good estimators and in later chapters. Often the key item that we need to know about an estimator is its (sampling) <strong>distribution</strong>. The distribution of a variable or estimator is simply the pattern in which the quantity is observed. Knowing the distribution allows us to predict the values we should see for that statistic probabilistically (at least under certain assumptions). With an understanding of the predictabilty of an estimator we can then make statements or claims about the population’s parameters with some idea of variability attached! This idea and process of using sample data to discuss population values is the idea of <strong>statistical inference</strong>.</p>
-<p><strong>Quick example here to go through these ideas and give context to the visuals below.</strong><br />
-(<strong>Visual of these difference between populations… curves might not be understandable yet though</strong>)<br />
-(<strong>Visual of estimation idea</strong>)<br />
-(<strong>Visual of inference</strong>)</p>
+<p>As you may expect, a good statistical measure will ‘converge’ in some sense to the parameter as the <strong>sample size</strong>, or number of members in the sample, increases. We’ll discuss how to create an <strong>estimator</strong> (statistic) and properties of good estimators in later chapters. Often the key item that we need to know about an estimator is its (sampling) <strong>distribution</strong>. The distribution of a variable or estimator is simply the pattern in which the quantity is observed. Knowing the distribution allows us to predict the values we should see for that statistic probabilistically (at least under certain assumptions). With an understanding of the predictabilty of an estimator we can then make statements or claims about the population’s parameters with some idea of variability attached! This idea and process of using sample data to discuss population values is the idea of <strong>statistical inference</strong>.</p>
+<p>To give clarity to the ideas above, consider a simplified gas mileage example. We want to investigate whether gas mileage differs for low and high tire pressure settings. We could investigate this difference in a number of ways but likely we’d want to know if a ‘typical’ gas mileage would differ between the tire pressure settings. Generally, we think of a typical observation as one near the middle. This could lead to a general question about the difference between the (population) mean gas mileage for all cars driven with high tire pressure against the (population) mean gas mileage for all cars driven with low tire pressure. Alternatively, we might want to know if the gas mileage readings are more variable under one setting or another. This may involve a comparison of population variances or standard deviations (as these are measures of spread - we’ll cover these in chapter 3).</p>
+<p>(<strong>Visual of these difference between populations… curves might not be understandable yet though</strong>)</p>
+<p>To answer either of the two questions posed above, we need to use the data collected to estimate these population parameters. Quite often, there are intuitive estimators. For instance, to estimate the difference in population mean gas mileages we can simply use the difference in sample mean gas mileages! Similarly, we can compute sample variances and use those to inform us about the differences in the population variances.</p>
+<p>(<strong>Visual of estimation idea</strong>)</p>
+<p>In order to quantify uncertainty around our sample differences (or sample ratio, etc.), we require knowledge of the distribution (or pattern and frequency of observation) of the sample quantity. This knowledge allows us to calculate probabilities (and eventually create confidence intervals or conduct hypothesis tests).</p>
+<p>(<strong>Visual of inference</strong>)</p>
 <p>Hopefully, it is somewhat clear that the quality of our sample is vital to the inferences we can make!</p>
 <p>Suppose we want to make inference about how well a drug works for treating acne in all people. If our sample consists mainly of people in their 20’s, assumptions and domain-specific knowledge would need to be leveraged in order to extend the results from the study to the entire population of interest. For example, it would need to be argued that people in their 20’s and teenagers, who are likely still going through puberty (among other differences), would have the same reaction to the drug. This issue can be avoided if a sample is <strong>representative</strong> of the population. The next section takes up the issue of obtaining a good sample from the population of interest.</p>
 <div id="sampling-schemes" class="section level3">
@@ -651,7 +654,7 @@ The results of the study indicated… This study was used to indicate how future
 <p>In a SRS, every subset of size <span class="math inline">\(n\)</span> from the population has the same chance or probability of being included in the sample. (An SRS also implies that every member of the population has probabilty <span class="math inline">\(n/N\)</span> of being included in the sample. Again, we’ll cover probabiltiy in more depth later.) Since every population member has a known and non-zero chance of inclusion in the sample, this implies an SRS is a probability sample!</p>
 <p>An everyday example of a process similar to a SRS is the lottery. Many states have a pick three lottery where the population of balls consist of balls numbering zero, one, two, three, …, nine. The population size is <span class="math inline">\(N=10\)</span>. Three balls are then randomly selected (<span class="math inline">\(n=3\)</span>) as the winning combination. Prior to the draw, players select three numbers and can win if they have the same three numbers as those selected. Here any combination of three numbers has the same probability of being selected (<span class="math inline">\(1/\binom{10}{3} = 1/120\)</span>).</p>
 <p>Note that an SRS does not guarantee a representative sample every time!</p>
-<p>For instance, suppose a university wants to determine the proportion of students that would favor a change to the bookstore. Every student is assigned a campus ID number. Due to time and cost constraints, the university decides to collect data on 400 students. An SRS can be used here to select the 400 students. The sample collected may, by random chance, contain only students from a particular college. The larger the sample, the less likely this is. Obtaining this type of sample doesn’t mean what was done was wrong, it simply means that the sample we obtained may not be very representative. The mathematics and probability used to analyze the sample would still be valid, however, we may be dealing with one of the ‘rare’ samples that give misleadign results. An SRS does imply that on average we should get a representative sample. Other techniques can increase the chance of a particular sample being representative of the population (at the expense of being more complicated and sometimes needing to be analyzed in a more complicated manner).</p>
+<p>For instance, suppose a university wants to determine the proportion of students that would favor a change to the bookstore. Every student is assigned a campus ID number. Due to time and cost constraints, the university decides to collect data on 400 students. An SRS can be used here to select the 400 students. The sample collected may, by random chance, contain only students from a particular college. The larger the sample, the less likely this is. Obtaining this type of sample doesn’t mean what was done was wrong, it simply means that the sample we obtained may not be very representative of the population. The mathematics and probability used to analyze the sample would still be valid, however, we may be dealing with one of the ‘rare’ samples that give atypical results. An SRS does imply that on average we should get a representative sample. Other techniques can increase the chance of any particular sample being representative of the population (at the expense of being more complicated and sometimes needing to be analyzed in a more complicated manner).</p>
 <p>(<strong>Visual of SRS</strong>)</p>
 </div>
 <div id="stratified-random-sample" class="section level4">
@@ -686,12 +689,12 @@ The results of the study indicated… This study was used to indicate how future
 </ul>
 <p>students from the each college, respectively.</p>
 <p>Alternatively, a larger proportion may be taken from certain strata because they are of greater interest to the researcher.</p>
-<p><strong>(What other advantages? I think there can be some efficiency in doing this type of study but I don’t know off the top of my head and I lack my books. What are the disadvantages?)</strong></p>
+<p>An advantage of stratified random sampling is that it can be more efficient than an SRS if the units in the strata are more similar than the overall group. This implies that the estimates for quantities will tend to be less variable in the stratified sample.</p>
 </div>
 <div id="examples-of-bad-sampling-schemes" class="section level4">
 <h4><span class="header-section-number">2.4.1.3</span> Examples of Bad Sampling Schemes</h4>
-<p>There are many “bad” types of sampling schemes used in practice. Two examples are a <strong>convenience (or haphazard) sampling scheme</strong> and a <strong>volunteer response sampling scheme</strong>.</p>
-<p>A convenience sample usually implies that the sample consists of the most convenient group available or that the sample members are decided on the spot. For example, again suppose a university wants to determine the proportion of students that would favor a change to the bookstore. If the researcher simply went outside in between class periods and found 400 students that were walking by thier building, this would be a convenience sample. Again, the members of the sample are random in the everyday sense, but not in the statistical sense. Perhaps the researcher was outside on a part of campus that mostly has classes for students in biology and chemistry. The students here are not necessarily representative of the entire college and, certainly, there is no known probability of inclusion associated with every student. Statistical methods quantify uncertainty using probability. Using the probabilities calculated in the analysis would require us to assume the sample was collected in a way that was at least close to randomly in the statistical sense. This is quite unlikely to be true here!</p>
+<p>There are many poor choices of sampling schemes that should be avoided. Two examples are a <strong>convenience</strong> (or <strong>haphazard</strong>) <strong>sampling scheme</strong> and a <strong>volunteer response sampling scheme</strong>. These both lead to <strong>sampling bias</strong> where the certain members of the population likely have higher or lower probabilities of inclusion. These probabilities are not usually known so they can’t be taken into account during analysis.</p>
+<p>A convenience sample usually implies that the sample consists of the most convenient group available or that the sample members are decided on the spot. For example, again suppose a university wants to determine the proportion of students that would favor a change to the bookstore. If the researcher simply went outside in between class periods and found 400 students that were walking by thier building, this would be a convenience sample. Again, the members of the sample are random in the everyday sense, but not in the statistical sense. Perhaps the researcher was outside on a part of campus that mostly has classes for students in biology and chemistry. The students here are not necessarily representative of the entire college and, certainly, there is no known probability of inclusion associated with every student. Statistical methods quantify uncertainty using probability. Using the probabilities calculated in the analysis would require us to assume the sample was collected in a way that we could account for probabilistically. We’re pretty unlikely to get this right!</p>
 <p>A volunteer response sample is one where particpants self-select. The members of a volunteer response sample tend to be those with a strong opinion, both positive and negative, and access to the study. For example, this type of sample is often what is done for end of semester or end of course evaluations. The evaluations are not usually mandatory so, while many in the class will complete the evaluation, those with very strong opinions (both positive and neative) tend to be more likely to respond. In other situations such as online polls hosted by poorly run news sites, only those that are aware and able to access the site can participate.</p>
 <p>Neither of these is a probability sample, nor do they implement a random number mechanism! They should be avoided whenever possible. If they are implemented, most statistical analysis methods won’t really be applicable and the best thing that can be done is a simple summary of the data collected (see chapter 3).</p>
 </div>
@@ -699,7 +702,7 @@ The results of the study indicated… This study was used to indicate how future
 <h4><span class="header-section-number">2.4.1.4</span> Why Sampling Scheme Matters - A Simulation</h4>
 <p>The importance of having a probability sample is paramount. To underscore the point, let’s consider what differences and issues we might see using a <strong>simulation study</strong>. A simulation study usually implies that data are generated under certain assumptions using a computer and results are found on the simulated data. Since this process is done on a computer, the process can be repeated many times and the variabilty that is inherent can be accounted for in any comparisons of resutls. Of course, the data generating process must be valid or at least reasonable in order for a simulation study to yield any useful results.</p>
 <p>Let’s conduct a simple simulation study to compare the results found when doing an SRS vs those done with a contrived convenience sample.</p>
-<p>Suppose our population consists of 100 marbles. We have interest in investigating the proportion of marbles that are blue. Since we are creating the population we will set this <strong>parameter</strong> value, making it a known quantity! Let’s make the proportion of blue marbles 0.4 (40 blue marbles).</p>
+<p>Suppose our population consists of 100 red and blue marbles. We have interest in investigating the proportion of marbles that are blue. Since we are creating the population we will set this <strong>parameter</strong> value, making it a known quantity! Let’s make the proportion of blue marbles 0.4 (40 blue marbles).</p>
 <p>A sample of size 10 will be collected using the two methods outlined below:</p>
 <ul>
 <li>Method 1: An SRS - marbles are assigned numbers 1, 2, 3, …, 100 at random. This implies the 40 blue marbles are randomly allocated across the numbers. Ten marbles are selected using a random number generator.<br />
@@ -839,15 +842,16 @@ The results of the study indicated… This study was used to indicate how future
 <div id="practical-sampling-notes" class="section level4">
 <h4><span class="header-section-number">2.4.1.5</span> Practical Sampling Notes</h4>
 <p>There are many other good sampling schemes such as cluster sampling, sytematic sampling, and heirarchical sampling that can use combinations of techniques. Some of these will be covered in the book as the come up and references are given at the end of the chapter for those interested.</p>
-<p>There are entire books written on proper sampling methods and the myriad of issues that can come up, especially when dealing with humans. In particular, when doing survey sampling (where a list of questions are given) some issues that come up often (but occur in other places too) are:</p>
+<p>There are entire books written on proper sampling methods along with the myriad of issues that can come up, especially when dealing with humans. In particular, when doing survey sampling (where a list of questions are given to participants) some issues that come up often (but occur in other places too) are:</p>
 <ul>
 <li>bias in question writing - leading questions and double barreled questions to name two<br />
 </li>
-<li>nonresponse bias - sample member doesn’t answer or respond<br />
+<li>nonresponse bias - sample members don’t answer or respond<br />
 </li>
-<li>response bias - sample member answers a question wrong on purpose (often due to how they’ll be percieved)</li>
+<li>response bias - sample members answer a question wrong on purpose (often due to how they’ll be percieved)</li>
 </ul>
-<p>Other common issues that arise with sampling are when the list of population units (called the <strong>sampling frame</strong>) doesn’t match the actual population of interest. This is an issue called <strong>undercoverage</strong>. One famous example that relates to this idea comes from the 1936 US presidential election. <em>Literary Digest</em> incorrectly predicted that Landon would overwhelmingly defeat Roosevelt. The prediction was based on survey results done by <em>Literary Digest</em>. The survey had an issue akin to undercoverage. They mailed questionnaires out only to people who had both telephones and cars. This left out a large portion of the population and so the results were based on a sample that was not representative of the popoulation.</p>
+<p>Another common issue that arises with sampling is when the list of population units (called the <strong>sampling frame</strong>) doesn’t match the actual population of interest. This is an issue called <strong>undercoverage</strong>. One famous example that relates to this idea comes from the 1936 US presidential election. <em>Literary Digest</em> incorrectly predicted that Landon would overwhelmingly defeat Roosevelt. The prediction was based on survey results from a sample of two million people. The survey had an issue akin to undercoverage. They mailed questionnaires out, but only to people who had both telephones and cars. This left out a large portion of the population and so the results were based on a sample that was not representative of the popoulation. Essentially, their sampling frame didn’t match the population of interest.</p>
+<p>Another thing to consider when using historical data is that there can be a bias in data collected. For instance, during world war II the British wanted to know where to place additional armor on their bombers. They had information about the planes that returned from battle and where they had damage. Abraham Wald (known for the Wald test) recommended that it was likely better to put more armor in places that weren’t as badly damaged on the returning aircraft. He reasoned that, if bullet holes were randomly dispersed on the airplane, the bombers that made it back showed where the aircraft could be hit and still function but those that didn’t make it back likely were damaged in other ways.</p>
 <p>Sometimes it isn’t feasible to implement a good sampling scheme. For instance, in medical studies volunteers are often used. In a crop experiment, the fields in which crops are planted aren’t usually something you can choose. Clearly, if our population is conceptually infinite, conducting a SRS is not tenable. In these cases, additional out of data assumptions are usually needed when attempting to make inference to entire population. For populations that aren’t human, these assumptions are often more reasonable but shouldn’t be done lightly. For example, suppose the population of interest is all bottles that may be produced by a factory. If a sample of size 1000 is to be chosen, it is likely wise to do a SRS of bottles produces over a series of days rather than the most recent 1000 bottles produced in order to mitigate any systematic issues with the bottle creation process.</p>
 <p>Lastly, one thing to note is that the sampling method can play a role in the analysis or modeling technique used but can also sometimes be ignored (assuming a probability sample was done). When the sample size is small compared to the population size (for a SRS, one rule of thumb is <span class="math inline">\(n/N &lt; 0.05\)</span>), we often are able to make an assumption a “random sample” was done rather than a simple random sample. This assumption allows for standard modeling techniques and inference methods to be applied without the issue of dealing with a finite population. We will point out cases in book where the exact type of sampling method and population size plays an important role.</p>
 </div>
@@ -863,60 +867,51 @@ The results of the study indicated… This study was used to indicate how future
 <li><p>We cannot usually infer causation from observational studies, but we can from a well-designed experiment.</p></li>
 <li><p>Experiments are not always feasible or ethical. That is, we cannot assign people to smoke a pack a day or have expectant mothers drink a certain amount of alcohol.</p></li>
 </ul>
-<p>For experimental studies, a randomization technique is needed to determine which experimental units (EUs) obtain which treatments. Sometimes this can go hand in hand with the sampling scheme (perhaps a stratified random sampling and a randomized block design). How to create a sound experiment is important and nuanced (and has added complexity when dealing with humans). Experimental design is the topic of the next section.</p>
+<p>For experimental studies, a randomization technique is needed to determine which experimental units obtain which treatments. Sometimes this can go hand in hand with the sampling scheme (perhaps a stratified random sampling and a randomized block design). How to create a sound experiment is important and nuanced (and has added complexity when dealing with humans). Experimental design is the topic of the next section.</p>
 </div>
 </div>
 <div id="fundamentals-of-designed-experiments" class="section level3">
 <h3><span class="header-section-number">2.4.2</span> Fundamentals of Designed Experiments</h3>
-<p>To describe the methods for creating a well-designed experiment, we first need to recap some definitions from earlier:</p>
+<p>To describe the methods for creating a well-designed experiment, let’s first recap some definitions from earlier:</p>
 <ul>
 <li><strong>Response Variable</strong> - variable(s) of interest that characterizes performance or behavior<br />
 </li>
 <li><strong>Explanatory Variable</strong> - variable(s) of interest with regard to their relationship with the response variable<br />
 </li>
-<li><strong>Covariate</strong> - Quantitative (numerical) explanatory variable (usually observed as the experiment is run and not set by the researcher)<br />
+<li><strong>Covariate</strong> - quantitative (numerical) explanatory variable (usually observed as the experiment is run and not set by the researcher)<br />
 </li>
 <li><strong>Factor</strong> - explanatory variable that takes on a finite number of values (a Categorical or Qualitative variable)</li>
 <li><strong>Level</strong> - setting a factor can take on</li>
 <li><strong>Treatment</strong> - specific experimental condition, either the level of a factor (if only 1 factor) or the combinations of the levels from a number of factors
 <ul>
-<li><strong>Control Treatment</strong> - benchmark treatment sometimes necessary for comparison (to avoid the placebo effect)<br />
+<li><strong>Control Treatment</strong> - benchmark treatment sometimes necessary for comparison in human experimentation (to avoid the placebo effect)<br />
 </li>
 </ul></li>
 <li><strong>Experimental units (EUs)</strong> - units on which the treatments are assigned<br />
 </li>
 <li><strong>Observational units (OUs)</strong> - units on which measurements are taken</li>
 </ul>
-<p>There is clearly a lot of jargon to remember when learning about experimental design. We’ll do our best to remind the reader of these terms as we go along.</p>
-<p>Before we dive into experimental designs, we should again discuss the reason we need statistical methods with a little more detail.</p>
+<p>There is clearly a lot of jargon to remember when learning about experimentals and their design. We’ll do our best to remind the reader of these terms as we go along.</p>
+<p>Before we dive into experimental designs, we should again discuss the reason we need statistical methods, this time with thorough consideration toward conducting an experiment.</p>
 <div id="sources-of-variation" class="section level4">
 <h4><span class="header-section-number">2.4.2.1</span> Sources of Variation</h4>
-<p>We’ve discussed that data is variable. If we repeat an experimental study, even with identical conditions, we are likely to obtain different data for the response. This has to do with the sample members being selected differently each time and possibly different units assigned a given treatment. Let’s identify the sources variation in our response.</p>
+<p>We’ve discussed that data is variable. If we repeat an experimental study, even with identical conditions, we are likely to obtain different data for the response. This has to do with the sample members being selected differently each time, units being assigned possibly different treatments, or units responding differently to a treatment. Let’s identify the sources of variation in our response.</p>
 <ul>
-<li><p><strong>Treatment effect</strong> - an effect due to the variables assigned by the researcher (treatments) in an experiment.</p>
-<ul>
-<li>This is an effect we are usually hoping to see and quantify!</li>
-</ul></li>
-<li><p>(Other) <strong>Recorded Variables</strong> - some variables that are not of interest are recorded because we may know or think they are associated with variability in the response.</p>
-<ul>
-<li>These may be covariates measured along the way (like temperature) or a variable with only a few values like the soil type a crop is grown in.</li>
-</ul></li>
-<li><p><strong>Unaccounted for Variables</strong> - everything else causing variation.</p>
-<ul>
-<li>This variation is estimated and used as a reference with which to compare the treatment variation.</li>
-</ul></li>
+<li><p><strong>Treatment effect</strong> - an effect due to the variables assigned by the researcher (treatments) in an experiment. This is an effect we are usually hoping to see and quantify!</p></li>
+<li><p>(Other) <strong>Recorded Variables</strong> - some variables that are not of interest are recorded because we may know or think they are associated with variability in the response. These may be covariates (quantitative variables) measured during a study (like temperature) or at the end of a study (tumor size). They can also be variables measured with only a few values (like the soil type a crop is grown in).</p></li>
+<li><p><strong>Unaccounted for Variables</strong> - everything else causing variation. This variation is estimated and used as a reference with which to compare the treatment variation.</p></li>
 </ul>
-<p>Consider a simplified example where a gardener wants to know what water (low or high) and fertilizer (A or B) conditions are better in terms of producing greater crop yield (dried weight).</p>
+<p>To illustrate, consider a simplified example where a gardener wants to know what water (low or high) and fertilizer (A or B) conditions may be better in terms of producing greater crop yield (dried weight) on average.</p>
 <ul>
-<li>Response variable - the dried weight of the crop after growth</li>
-<li>The explanatory variables are the two factors:
+<li>Response variable is the dried weight of the crop after growth.</li>
+<li>Explanatory variables are the two factors:
 <ul>
 <li>Water (with levels low and high)<br />
 </li>
 <li>Fertilizer (with levels A or B)<br />
 </li>
 </ul></li>
-<li>Treatments:
+<li>Treatments are:
 <ul>
 <li>low water and fertilizer A<br />
 </li>
@@ -927,72 +922,71 @@ The results of the study indicated… This study was used to indicate how future
 <li>high water and fertilizer B</li>
 </ul></li>
 </ul>
-<p>The gardener has two greenhouses each with 16 rows for growing crops. Within each greenhouse, they randomly assign the four treatments to the 16 rows. After 45 days, the crops are harvested, dried, and weighed.</p>
+<p>The gardener has two greenhouses each with 16 rows for growing crops. Within each greenhouse they randomly assign the four treatments to the 16 rows. After 45 days, the crops from each row are harvested, dried, and weighed.</p>
 <ul>
 <li>The experimental units are the rows within the greenhouses<br />
 </li>
-<li>The observational units are all the plants grown in a given row (so we may say the row is also the OU)</li>
+<li>The observational units are the rows of plants (so we may say the row is also the OU)</li>
 </ul>
 <p>The sources of variation in the dried weight of the crop are:</p>
 <ul>
 <li>Treatment variation - variation we believe we’ll see in dried weight from the differences in water and fertilizer applications.<br />
 </li>
 <li>Other recorded variable - greenhouse in which the crops are grown is recorded. Greenhouse is not of interest but may play a role in the variation in dried weight.</li>
-<li>Unaccounted for variables - Amount of sunlight received, temperature/humidity differentials within a greenhouse, possible differences in the method of application of the treatment (fertilizer and water), and many others may also have an association with dried crop weight. These sources make up a sort of reference variability we can compare our treatment variation to.</li>
+<li>Unaccounted for variables - amount of sunlight received, temperature/humidity differentials within a greenhouse, possible differences in the method of application of the treatment (fertilizer and water), and many others may also have an association with dried crop weight. These sources make up a sort of reference variability we can compare our treatment variation to. Ideally this variability is as small as possible!</li>
 </ul>
 <p>The variation from unaccounted variables can generally be broken down into four cateogries:</p>
 <ul>
-<li>Inherent variability in EUs (units assigned a treatment).
-<ul>
-<li>No two people, paper towels, concrete blocks, or lab rats are exactly the same so they may respond differently to the same treatment.</li>
-</ul></li>
-<li>Measurement error - Multiple measurements of a same experimental unit may differ.
-<ul>
-<li>Two blood pressure readings a few minutes apart may give different readigns or if you break a water sample in two and measure each for bacteria, you may see different measurements</li>
-</ul></li>
-<li>Variations in applying or creating treatments.
-<ul>
-<li>Occasionaly a treatment protocol is not clearly defined, leaving room for interpretation. Perhaps applying a fertilizer before or after applying irrigation can cause a difference.</li>
-</ul></li>
-<li>Other unknown variables sometimes called lurking variables.</li>
+<li><p>Inherent variability in EUs (units assigned a treatment). No two people, paper towels, concrete blocks, or lab rats are exactly the same so they may respond differently to the same treatment.</p></li>
+<li><p>Measurement error - Multiple measurements of a same experimental unit may differ. Two blood pressure readings a few minutes apart may give different readings or if you break a water sample in two and measure each for bacteria, you may see different measurements.</p></li>
+<li><p>Variations in applying or creating treatments. Occasionaly a treatment protocol is not clearly defined, leaving room for interpretation. Perhaps applying a fertilizer before or after applying irrigation can cause a difference. If this isn’t clearly specified, two farmer’s may do things differently.</p></li>
+<li><p>Other unknown variables sometimes called lurking variables.</p></li>
 </ul>
-<p>No matter how hard we try, some of these unaccounted for variables (and hence variation in the response) will remain. What we can do is use good experimental design techniques to try and minimize the effects of from these variables.</p>
-<p>Good experimental designs generally have the following key attributes:</p>
-<ul>
-<li><strong>Randomization</strong> - treatments are randomly assigned to experimental units.</li>
-</ul>
-<p>This process must use a random number mechanism or software to allocate the treatments. Randomization makes sure that every EU has a chance to get a different treatment. This helps to protect the results of the analysis against a systematic influence of lurking variables. For example, if a doctor is assigning drug A or B to a patient without use of a random number mechanism, they may unwittingly assign drug A to patients they deem more likely to recover due to implicit biases.</p>
-<ul>
-<li><strong>Replication</strong> - multiple (independent) experimental units are assigned the same treatment.</li>
-</ul>
-<p>EUs that receive the same treatment are called <strong>replicates</strong>. By having replication we are able to create an estimate of variability due to our unaccounted for variables. Comparing our treatment variation to this variation is what allows us to have faith in the reliability of our conclusions.</p>
-<p>Note that replication does not mean that we measure the same EUs multiple times! That is called a repeated measures design. Observations from repeated measures experiments cannot usually be considered independent.</p>
-<ul>
-<li><strong>Controlling Variables</strong> - holding certain variables constant across the EUs.<br />
-Generally, we’re not interested in the effects of these variables on the response. These variables affect the response in exactly the same manner, so that we don’t see the effects on the conclusions. Unfortunately, we don`t get information on what happens at settings of the variables other than the fixed ones. This decreases generalizability, but reduces overall variation. Experimental designs such as a randomized complete block design attempt to control variables while also maintaining generalizability.</li>
-</ul>
-<p>Let’s discuss some of the most used experimental designs. We’ll cover analysis for these types of experiments in future chapters. When considering conducting an experiment, consider the advice below!</p>
+<p>No matter how hard we try, some of these unaccounted for variables (and hence variation in the response) will remain. What we can do is use good experimental design techniques to try and minimize this variability in order to more clearly see the treatment effects.</p>
+</div>
+<div id="designing-experiments" class="section level4">
+<h4><span class="header-section-number">2.4.2.2</span> Designing Experiments</h4>
 <blockquote>
 <p>A poorly designed study can never be saved, but a poorly analyzed one has the possibility of being reanalyzed.</p>
 </blockquote>
+<p>Good experimental designs generally involve randomization, replication, and control. These are discussed in detail below.</p>
+<ul>
+<li><strong>Randomization</strong> - treatments are randomly assigned to experimental units.</li>
+</ul>
+<p>This process must use a random number mechanism or software to allocate the treatments. Randomization makes sure that every EU has a chance to get a different treatment. This helps to protect the results of the analysis against a systematic influence of lurking variables.</p>
+<p>For example, if a doctor is assigning drug A or B to a patient without use of a random number mechanism, they may unwittingly assign drug A to patients they deem more likely to recover due to implicit biases.</p>
+<p>Suppose an experimenter assigns treatment one to the first 50 bottles produced at a factory and treatment two to the next 50 bottles. There may have been an issue with the manufacturing process causing the last 50 bottles to be degraded as compared to the first 50. By not using random assignment, this underlying issue will affect the study’s results.</p>
+<ul>
+<li><strong>Replication</strong> - multiple (independent) experimental units are assigned the same treatment.</li>
+</ul>
+<p>EUs that receive the same treatment are called <strong>replicates</strong>. By having replication we are able to create an estimate of variability due to our unaccounted for variables. That is, given five replicates, the only differences between them are things not measured or accounted for. Comparing our treatment variation to this variation is what allows us to have faith in the reliability of our conclusions.</p>
+<p>Note that replication does not mean that we measure the same EUs multiple times! That is called a repeated measures. Observations from repeated measures experiments cannot usually be considered independent.</p>
+<ul>
+<li><strong>Controlling Variables</strong> - holding certain variables constant across the EUs.</li>
+</ul>
+<p>Generally, we’re not interested in the effects of these variables on the response. These variables affect the response in exactly the same manner, so that we don’t see the effects on the conclusions. Unfortunately, we don`t get information on what happens at settings of the variables other than the fixed ones. This decreases generalizability, but reduces overall variation. Experimental designs such as a randomized complete block design attempt to control variables while also maintaining generalizability.</p>
+<p>(<strong>Visual of these three concepts</strong>)</p>
+<p>Let’s discuss some of the most used experimental designs. We’ll cover analysis for these types of experiments in future chapters.</p>
 </div>
 <div id="completely-randomized-design-crd" class="section level4">
-<h4><span class="header-section-number">2.4.2.2</span> Completely Randomized Design (CRD)</h4>
-<p>A Completely Randomized Design (CRD) is the most straightforward experimental design. Suppose the number of units in the sample is <span class="math inline">\(n\)</span> and the number of treatments is <span class="math inline">\(t\)</span>. The design uses a random number mechanism to randomly assign the <span class="math inline">\(t\)</span> treatments across the <span class="math inline">\(n\)</span> experimental units. In a <strong>balanced</strong> design, the same number of units are assigned to each treatment. The number of replicates is usually denoted by <span class="math inline">\(n_t\)</span>.</p>
-<p>This design assumes all of the EUs are <strong>exchangeable</strong>. (<strong>Should I include this here?</strong>)</p>
-<p>For example, suppose we are doing an experiment to determine the effect of nutrition (3 different diets or treatments) on weight gain in humans. Suppose we have 30 experimental units labeled 1, 2, …, 30. A random number generator can be used to reorder the numbers 1 through 30. The first 10 numbers can then be assigned the first diet, the next 20 numbers the second diet, and the last 10 numbers the third diet.</p>
+<h4><span class="header-section-number">2.4.2.3</span> Completely Randomized Design (CRD)</h4>
+<p>A Completely Randomized Design (CRD) is the most straightforward experimental design. Suppose the number of units in the sample is <span class="math inline">\(n\)</span> and the number of treatments is <span class="math inline">\(t\)</span>. The design uses a random number mechanism to randomly assign the <span class="math inline">\(t\)</span> treatments across the <span class="math inline">\(n\)</span> experimental units. In a <strong>balanced</strong> design, the same number of units are assigned to each treatment. In this case, the number of replicates is usually denoted by <span class="math inline">\(n_t\)</span>. In an unbalanced design we generically have <span class="math inline">\(n_1\)</span>, <span class="math inline">\(n_2\)</span>, …, <span class="math inline">\(n_t\)</span> replicates, respecitvely (where <span class="math inline">\(n = \sum_{i=1}^{n}n_i\)</span>).</p>
+<p>Suppose we are doing an experiment to determine the effect of nutrition (3 different diets or treatments) on weight gain in humans. If we have 30 experimental units labeled 1, 2, …, 30, a random number generator can be used to reorder the numbers 1 through 30. The first 10 numbers can then be assigned the first diet, the next 20 numbers the second diet, and the last 10 numbers the third diet.</p>
 <p>Ideally we want to have as many replicates for each treatment as we can afford. If we had 3 diets and 3 EUs and found that the person assigned the first diet lost more weight than the person assigned to the second diet. This is not a very reliable conclusion! Perhaps the person assigned to the first diet naturally loses weight more easily. However, if we had 100 people assigned to each diet and on average the first diet yieled a greater weight loss, this would be a much more reliable conclusion.</p>
 <p>Often to determine the appropriate sample size (or sample sizes for each treatment group) a power analysis or sample size calculation is done. These require assumptions about the population variation in some respect as well as an idea of a “difference of interest.” These topics will be covered later in the book.</p>
 </div>
 <div id="randomized-block-designs" class="section level4">
-<h4><span class="header-section-number">2.4.2.3</span> Randomized Block Designs</h4>
+<h4><span class="header-section-number">2.4.2.4</span> Randomized Block Designs</h4>
 <p>A randomized block design divides EUs with similar characteristics into
 ‘blocks’ or subgroups. Within each block the treatments are then randomly assigned.</p>
 <p>Within a block we are essentially controlling the blocking variable. However, by conducting the design across many settings of the blocking variable, we maintain generalizability of the study.</p>
 <p>Let’s consider an example. Two new finishes are developed (type A and type B) for use on a dash board in a car. The material and finish must withstand high temperatures due to the sun and the greenhouse effect. To simulate the temperatures and wear on the dashboard, the dashboards are placed into ovens for 24 hours and the amount of degradation is measured.</p>
 <p>The company has 4 large ovens (oven 1, 2, 3, and 4) for testing. The manufacturer finds a random sample of 40 dashboards from the assembly line. Ten dashboards will be placed in each oven. Within the groups of ten assigned to the ovens, five of each treatment were randomly assigned.</p>
-<p>The ovens act as the blocks in this experiment. There may be some variation from oven to oven but we don’t really have an interest in this variation.</p>
-<p>There are many other commonly used design including:</p>
+<p>The ovens act as the blocks in this experiment. There may be some variation from oven to oven but we don’t really have an interest in this variation. If we’d only used one oven, there may be some odd characteristic of heat flow. By conducting the experiment over several ovens, we can be more confident that our findings would generalize.</p>
+</div>
+<div id="other-experimental-designs" class="section level4">
+<h4><span class="header-section-number">2.4.2.5</span> Other Experimental Designs</h4>
+<p>There are many other commonly used designs including:</p>
 <ul>
 <li>Incomplete block designs</li>
 <li>Latin squares designs<br />
@@ -1009,17 +1003,18 @@ Generally, we’re not interested in the effects of these variables on the respo
 </li>
 <li>Response surface designs</li>
 </ul>
-<p>We’ll cover many of these later in the book!</p>
+<p>For many of these, we’ll cover the ideas behind the designs as well as their analyses later in the book. Understanding how the treatments are assigned to the EUs is really important when considerting an appropriate method of analysis.</p>
 </div>
-<div id="sampling-schemes-vs-randomization-methods" class="section level4">
-<h4><span class="header-section-number">2.4.2.4</span> Sampling Schemes vs Randomization Methods</h4>
-<p>Randomization applied to experimental design is different than randomization in sampling!</p>
+</div>
+<div id="sampling-schemes-vs-experimental-design" class="section level3">
+<h3><span class="header-section-number">2.4.3</span> Sampling Schemes vs Experimental Design</h3>
+<p>When first learning about sampling schemes and experimental design, the randomizations applied can be confusing. The purpose of randomization as applied to experimental design is different from the purpose of randomization in sampling! This confusion is widespread enough to warrant its own brief discussion.</p>
 <ul>
 <li><p>In sampling, randomization is used to determine which members of the population are included in the sample.</p></li>
-<li><p>If an experiment is being done, randomization is then used to determine which EUs get which treatments.</p></li>
+<li><p>If an experiment is being done, randomization is used to determine which EUs get which treatments.</p></li>
 </ul>
-<p><strong>(Comparison of CRD, SRS and Strat, Block)</strong></p>
-</div>
+<p>When an experiment is done, if possible, both of these randomizations should occur.</p>
+<p>There is also some confusion in the learning process due to the similarities between an SRS and a CRD as well as the similarities between a stratified random sample and a Block design. Again, the key differences are about what the purpose of sampling is versus the purpose of the experimental design. Sampling methods are about getting units for the sample in a sound way. Experimental design is about assigning treatments to units in a sound way.</p>
 </div>
 </div>
 <div id="references-and-readings" class="section level2">
@@ -1028,11 +1023,230 @@ Generally, we’re not interested in the effects of these variables on the respo
 Sampling stuff
 DOE stuff
 Corr vs caus</p>
+<p>Wald, Abraham. (1943). A Method of Estimating Plane Vulnerability Based on Damage of Survivors.</p>
+<p>Campbell MJ, Machin D. In: Medical Statistics: A Common-sense Approach , 2nd edn. Chichester: Wiley, 1993:2. (Quote about poorly designed experiment apparently is attirbuted here?)</p>
 </div>
 <div id="software-1" class="section level2">
 <h2><span class="header-section-number">2.6</span> Software</h2>
+<p>We mentioned the need for random number generation or a random number mechanism for selecting units into the sample as well as assigning treatments to experimental units. This is easily done in software such as R and SAS.</p>
+<p>Using software, creating random numbers isn’t something that can be achieved. Instead we have sophisticated algorithms that create sequences of numbers that don’t exhibit patterns. These are called pseudo random numbers and we use these to select units or assign treatments.</p>
+<p>These algorithms have to start somewhere. This is called the <code>seed</code> for the algorithm. Quite often software uses something to do with the exact time and date to determine the seed. These makes the seed change depending on when you execute the code. When doing random number generation, it is often preferable to be able to reproduce your results. When this is the case, the user sets the seed for the algorithm.</p>
 <div id="r-1" class="section level3">
 <h3><span class="header-section-number">2.6.1</span> R</h3>
+<p>In R, we can set the seed for the random number generation process using <code>set.seed</code>. <code>set.seed</code> takes in an integer as the seed value. Let’s set our seed here using a number off the top of our head in order to get the same results each time this book is created.</p>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb395-1" title="1"><span class="kw">set.seed</span>(<span class="dv">1310</span>)</a></code></pre></div>
+<div id="the-sample-function" class="section level4">
+<h4><span class="header-section-number">2.6.1.1</span> The <code>sample</code> Function</h4>
+<p>To do a simple random sample in R the <code>sample</code> function works quite well. <code>sample</code> takes in a vector of elements to sample from, the sample size requested, an indicator as to whether or not replacement should be done (so that a unit could be selected more than once), and an optional vector of probabilities of inclusions.</p>
+<p>For instance, if we had a population of 1000 units and wanted to do a simple random sample of 15, we could assign each unit in the population a number from 1 to 1000. Next, we could run the following code:</p>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb396-1" title="1"><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">1000</span>, <span class="dt">size =</span> <span class="dv">15</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>##  [1] 997 693 520 452 478 603 971 640 495 489 794 369 859 879 251</code></pre>
+<p>In nonparametric bootstrap sampling (covered later), we want to sample with replacement. This is easily done using <code>replace = TRUE</code>.</p>
+<p>If we wanted to do a stratified random sample, we can break the population up into the strata and do a random sample in each. We can sample proportionally or find an equal size sample from each strata using the <code>sample</code> function on each strata.</p>
+<p>The <code>sample</code> function can also be used to assign treatments to experimental units. If we assign each EU a number from one to <span class="math inline">\(n\)</span>, we can create a vector consisting of all the treatments to be assigned (including replicates) and use this as the input to <code>sample</code>. The appropriate <code>size</code> to select is the same length as the vector, <span class="math inline">\(n\)</span>.</p>
+<p>For example, suppose we had 30 units assigned numbers one to 30 and three treatments (A, B, and C) to assign to ten units each. We could use the following code to assign treatments:</p>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb398-1" title="1"><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>), <span class="dt">each =</span> <span class="dv">10</span>)</a></code></pre></div>
+<pre><code>##  [1] &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot;
+## [20] &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot;</code></pre>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb400-1" title="1"><span class="kw">sample</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>), <span class="dt">each =</span> <span class="dv">10</span>), <span class="dt">size =</span> <span class="dv">30</span>)</a></code></pre></div>
+<pre><code>##  [1] &quot;B&quot; &quot;B&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;A&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;A&quot; &quot;C&quot;
+## [20] &quot;A&quot; &quot;C&quot; &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;A&quot; &quot;C&quot;</code></pre>
+<p>The ordering given can then be matched with the numbers given to the EUs for treatment assignment.</p>
+<p>Doing randomization for a block design can be done similarly within each block (<code>sample</code> should be run separately for each block).</p>
+</div>
+<div id="farmers-market-details" class="section level4">
+<h4><span class="header-section-number">2.6.1.2</span> Farmer’s Market Details</h4>
+</div>
+<div id="student-assessment-details" class="section level4">
+<h4><span class="header-section-number">2.6.1.3</span> Student Assessment Details</h4>
+</div>
+<div id="simulation-study-details" class="section level4">
+<h4><span class="header-section-number">2.6.1.4</span> Simulation Study Details</h4>
+<p>This section explains the code used to create the simluation study in the sampling section.</p>
+<p>First, the seed was set in order to make the results reproducible. Next, the ‘population’ is created and stored in a data frame. The units are given numbers from one to 100 and the <code>sample</code> function is used to randomly assign 40 of these marbles to be associated with blue and 60 to be associated with red.</p>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb402-1" title="1"><span class="kw">set.seed</span>(<span class="dv">50</span>)</a>
+<a class="sourceLine" id="cb402-2" title="2">marblePop &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">popNumber =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, </a>
+<a class="sourceLine" id="cb402-3" title="3">                        <span class="dt">color =</span> <span class="kw">sample</span>(<span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;Blue&quot;</span>, <span class="dv">40</span>), <span class="kw">rep</span>(<span class="st">&quot;Red&quot;</span>, <span class="dv">60</span>)), </a>
+<a class="sourceLine" id="cb402-4" title="4">                                       <span class="dt">size =</span> <span class="dv">100</span>, </a>
+<a class="sourceLine" id="cb402-5" title="5">                                       <span class="dt">replace =</span> <span class="ot">FALSE</span>))</a>
+<a class="sourceLine" id="cb402-6" title="6"><span class="kw">head</span>(marblePop)</a></code></pre></div>
+<pre><code>##   popNumber color
+## 1         1  Blue
+## 2         2   Red
+## 3         3   Red
+## 4         4   Red
+## 5         5   Red
+## 6         6   Red</code></pre>
+<p>A contrived convenience sample probability vector was created to be associated with the 100 units. The first 50 units each had probability 0.0185 associated with them, each of the units 51 to 75 had the probability 0.003 associated with them, and the last 25 each had zero probability associated with them.</p>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb404-1" title="1">convProb &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="fl">0.0185</span>, <span class="dv">50</span>), <span class="kw">rep</span>(<span class="fl">0.003</span>, <span class="dv">25</span>), <span class="kw">rep</span>(<span class="dv">0</span>, <span class="dv">25</span>))</a>
+<a class="sourceLine" id="cb404-2" title="2">convProb</a></code></pre></div>
+<pre><code>##   [1] 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185
+##  [11] 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185
+##  [21] 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185
+##  [31] 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185
+##  [41] 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185
+##  [51] 0.0030 0.0030 0.0030 0.0030 0.0030 0.0030 0.0030 0.0030 0.0030 0.0030
+##  [61] 0.0030 0.0030 0.0030 0.0030 0.0030 0.0030 0.0030 0.0030 0.0030 0.0030
+##  [71] 0.0030 0.0030 0.0030 0.0030 0.0030 0.0000 0.0000 0.0000 0.0000 0.0000
+##  [81] 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000
+##  [91] 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000</code></pre>
+<p>A sample of size ten was created using the <code>sample</code> function. For the SRS, the <code>prob</code> input is left as the default. For the convenience sample, this input is assigned the <code>convProb</code> object created previously. A data frame was created with the two objects and outputted using the <code>kable</code> function from the <code>knitr</code> package. <code>col.names</code> was used to assign useful names to each column.</p>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb406-1" title="1">method1 &lt;-<span class="st"> </span>marblePop[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>), ]</a>
+<a class="sourceLine" id="cb406-2" title="2">method2 &lt;-<span class="st"> </span>marblePop[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>, <span class="dt">prob =</span> convProb), ]</a>
+<a class="sourceLine" id="cb406-3" title="3">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">data.frame</span>(method1, method2, <span class="dt">row.names =</span> <span class="ot">NULL</span>), </a>
+<a class="sourceLine" id="cb406-4" title="4">             <span class="dt">col.names =</span> <span class="kw">c</span>(<span class="st">&quot;SRS - Marble Selected&quot;</span>, <span class="st">&quot;Marble Color&quot;</span>, <span class="st">&quot;Convenience - Marble Selected&quot;</span>, <span class="st">&quot;Marble Color&quot;</span>))</a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">SRS - Marble Selected</th>
+<th align="left">Marble Color</th>
+<th align="right">Convenience - Marble Selected</th>
+<th align="left">Marble Color</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">30</td>
+<td align="left">Blue</td>
+<td align="right">20</td>
+<td align="left">Red</td>
+</tr>
+<tr class="even">
+<td align="right">28</td>
+<td align="left">Red</td>
+<td align="right">15</td>
+<td align="left">Blue</td>
+</tr>
+<tr class="odd">
+<td align="right">31</td>
+<td align="left">Blue</td>
+<td align="right">14</td>
+<td align="left">Red</td>
+</tr>
+<tr class="even">
+<td align="right">53</td>
+<td align="left">Red</td>
+<td align="right">4</td>
+<td align="left">Red</td>
+</tr>
+<tr class="odd">
+<td align="right">33</td>
+<td align="left">Red</td>
+<td align="right">69</td>
+<td align="left">Blue</td>
+</tr>
+<tr class="even">
+<td align="right">79</td>
+<td align="left">Red</td>
+<td align="right">43</td>
+<td align="left">Red</td>
+</tr>
+<tr class="odd">
+<td align="right">94</td>
+<td align="left">Red</td>
+<td align="right">7</td>
+<td align="left">Blue</td>
+</tr>
+<tr class="even">
+<td align="right">55</td>
+<td align="left">Red</td>
+<td align="right">6</td>
+<td align="left">Red</td>
+</tr>
+<tr class="odd">
+<td align="right">24</td>
+<td align="left">Red</td>
+<td align="right">34</td>
+<td align="left">Blue</td>
+</tr>
+<tr class="even">
+<td align="right">54</td>
+<td align="left">Blue</td>
+<td align="right">2</td>
+<td align="left">Red</td>
+</tr>
+</tbody>
+</table>
+<p>The process was repeated many times using the <code>replicate</code> function. This function is a wrapper function for <code>sapply</code> (which applies a function to each element of a list and tries to simplify the returned object) and allows for the same code to be run many times. <code>replicate</code> produced a matrix whose columns each represent one sample of ten marbles. The entire matrix was compared to “Blue.” The <code>colMeans</code> function was then applied to this logical object in order to find the sample proportion of blue selected in each sample (logicals are coerced to 0 and 1 for <code>FALSE</code> and <code>TRUE</code>, respectively).</p>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb407-1" title="1">method1 &lt;-<span class="st"> </span><span class="kw">colMeans</span>(</a>
+<a class="sourceLine" id="cb407-2" title="2">              <span class="kw">replicate</span>(<span class="dv">10000</span>,</a>
+<a class="sourceLine" id="cb407-3" title="3">                        marblePop[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>), <span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb407-4" title="4">                        ) <span class="op">==</span><span class="st"> &quot;Blue&quot;</span></a>
+<a class="sourceLine" id="cb407-5" title="5">              )</a>
+<a class="sourceLine" id="cb407-6" title="6">method2 &lt;-<span class="st"> </span><span class="kw">colMeans</span>(</a>
+<a class="sourceLine" id="cb407-7" title="7">               <span class="kw">replicate</span>(<span class="dv">10000</span>,</a>
+<a class="sourceLine" id="cb407-8" title="8">                         marblePop[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>, <span class="dt">prob =</span> convProb), <span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb407-9" title="9">                         ) <span class="op">==</span><span class="st"> &quot;Blue&quot;</span></a>
+<a class="sourceLine" id="cb407-10" title="10">               )</a></code></pre></div>
+<p>The first ten proportions were then printed using the <code>kable</code> function again.</p>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb408-1" title="1">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">data.frame</span>(<span class="dt">SRS =</span> method1[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>], <span class="dt">Convenience =</span> method2[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>], <span class="dt">row.names =</span> <span class="ot">NULL</span>),</a>
+<a class="sourceLine" id="cb408-2" title="2">             <span class="dt">col.names =</span> <span class="kw">c</span>(<span class="st">&quot;SRS Sample Proportions&quot;</span>, <span class="st">&quot;Convenience Sample Proportions&quot;</span>), </a>
+<a class="sourceLine" id="cb408-3" title="3">             <span class="dt">align =</span> <span class="kw">c</span>(<span class="st">&quot;c&quot;</span>,<span class="st">&quot;c&quot;</span>))</a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="center">SRS Sample Proportions</th>
+<th align="center">Convenience Sample Proportions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0.3</td>
+<td align="center">0.2</td>
+</tr>
+<tr class="even">
+<td align="center">0.5</td>
+<td align="center">0.4</td>
+</tr>
+<tr class="odd">
+<td align="center">0.5</td>
+<td align="center">0.3</td>
+</tr>
+<tr class="even">
+<td align="center">0.2</td>
+<td align="center">0.5</td>
+</tr>
+<tr class="odd">
+<td align="center">0.2</td>
+<td align="center">0.2</td>
+</tr>
+<tr class="even">
+<td align="center">0.4</td>
+<td align="center">0.3</td>
+</tr>
+<tr class="odd">
+<td align="center">0.5</td>
+<td align="center">0.7</td>
+</tr>
+<tr class="even">
+<td align="center">0.4</td>
+<td align="center">0.5</td>
+</tr>
+<tr class="odd">
+<td align="center">0.3</td>
+<td align="center">0.4</td>
+</tr>
+<tr class="even">
+<td align="center">0.3</td>
+<td align="center">0.4</td>
+</tr>
+</tbody>
+</table>
+<p>Next, side-by-side histograms were created. First, the <code>mfrow</code> (mf = multi-figure) graphical paramter is set so that the output will have one row of plots and two columns. (Graphical parameters, histograms, and adding lines to plots will be discussed in chapter 3!) Next, a histogram was created for each with vertical lines added for the true proportion and the sample proportion. Text was also added to describe the black line.</p>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb409-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb409-2" title="2"><span class="kw">hist</span>(method1, <span class="dt">main =</span> <span class="st">&quot;Using an SRS&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Sample Proportions&quot;</span>, </a>
+<a class="sourceLine" id="cb409-3" title="3">     <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="fl">-0.025</span>, <span class="dt">to =</span> <span class="fl">1.025</span>, <span class="dt">by =</span> <span class="fl">0.05</span>), <span class="dt">col =</span> <span class="st">&quot;Green&quot;</span>)</a>
+<a class="sourceLine" id="cb409-4" title="4"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="fl">0.4</span>, <span class="dt">col =</span> <span class="st">&quot;Blue&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb409-5" title="5"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">mean</span>(method1), <span class="dt">col =</span> <span class="st">&quot;Black&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb409-6" title="6"><span class="kw">text</span>(<span class="dt">x =</span> <span class="fl">0.8</span>, <span class="dt">y =</span> <span class="dv">2000</span>, <span class="dt">cex =</span> <span class="fl">0.7</span>, <span class="st">&quot;Black line </span><span class="ch">\n</span><span class="st"> represents the </span><span class="ch">\n</span><span class="st"> overall mean </span><span class="ch">\n</span><span class="st"> of the sample </span><span class="ch">\n</span><span class="st"> proportions.&quot;</span>)</a>
+<a class="sourceLine" id="cb409-7" title="7"></a>
+<a class="sourceLine" id="cb409-8" title="8"><span class="kw">hist</span>(method2, <span class="dt">main =</span> <span class="st">&quot;Using a Convenience Sample&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Sample Proportions&quot;</span>, </a>
+<a class="sourceLine" id="cb409-9" title="9">     <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="fl">-0.025</span>, <span class="dt">to =</span> <span class="fl">1.025</span>, <span class="dt">by =</span> <span class="fl">0.05</span>), <span class="dt">col =</span> <span class="st">&quot;Green&quot;</span>)</a>
+<a class="sourceLine" id="cb409-10" title="10"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="fl">0.4</span>, <span class="dt">col =</span> <span class="st">&quot;Blue&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb409-11" title="11"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">mean</span>(method2), <span class="dt">col =</span> <span class="st">&quot;Black&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb409-12" title="12"><span class="kw">text</span>(<span class="dt">x =</span> <span class="fl">0.8</span>, <span class="dt">y =</span> <span class="dv">2000</span>, <span class="dt">cex =</span> <span class="fl">0.7</span>, <span class="st">&quot;Black line </span><span class="ch">\n</span><span class="st"> represents the </span><span class="ch">\n</span><span class="st"> overall mean </span><span class="ch">\n</span><span class="st"> of the sample </span><span class="ch">\n</span><span class="st"> proportions.&quot;</span>)</a></code></pre></div>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-232-1.png" width="90%" style="display: block; margin: auto;" /></p>
+</div>
 </div>
 <div id="sas-1" class="section level3">
 <h3><span class="header-section-number">2.6.2</span> SAS</h3>

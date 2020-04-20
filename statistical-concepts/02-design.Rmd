@@ -1,101 +1,99 @@
 ### Fundamentals of Designed Experiments  
 
-To describe the methods for creating a well-designed experiment, we first need to recap some definitions from earlier:
+To describe the methods for creating a well-designed experiment, let's first recap some definitions from earlier:
 
 - **Response Variable** - variable(s) of interest that characterizes performance or behavior  
 - **Explanatory Variable** - variable(s) of interest with regard to their relationship with the response variable  
-- **Covariate** - Quantitative (numerical) explanatory variable (usually observed as the experiment is run and not set by the researcher)  
+- **Covariate** - quantitative (numerical) explanatory variable (usually observed as the experiment is run and not set by the researcher)  
 - **Factor** - explanatory variable that takes on a finite number of values (a Categorical or Qualitative variable) 
 - **Level** -	setting a factor can take on
 - **Treatment** - specific experimental condition, either the level of a factor (if only 1 factor) or the combinations of the levels from a number of factors  
-    + **Control Treatment** - benchmark treatment sometimes necessary for comparison (to avoid the placebo effect)  
+    + **Control Treatment** - benchmark treatment sometimes necessary for comparison in human experimentation (to avoid the placebo effect)  
 - **Experimental units (EUs)** - units on which the treatments are assigned  
 - **Observational units (OUs)** - units on which measurements are taken  
 
-There is clearly a lot of jargon to remember when learning about experimental design.  We'll do our best to remind the reader of these terms as we go along.  
+There is clearly a lot of jargon to remember when learning about experimentals and their design.  We'll do our best to remind the reader of these terms as we go along.  
 
-Before we dive into experimental designs, we should again discuss the reason we need statistical methods with a little more detail.  
+Before we dive into experimental designs, we should again discuss the reason we need statistical methods, this time with thorough consideration toward conducting an experiment.  
 
 #### Sources of Variation  
 
-We've discussed that data is variable.  If we repeat an experimental study, even with identical conditions, we are likely to obtain different data for the response.  This has to do with the sample members being selected differently each time and possibly different units assigned a given treatment.  Let's identify the sources variation in our response.  
+We've discussed that data is variable.  If we repeat an experimental study, even with identical conditions, we are likely to obtain different data for the response.  This has to do with the sample members being selected differently each time, units being assigned possibly different treatments, or units responding differently to a treatment.  Let's identify the sources of variation in our response.  
 
-- **Treatment effect** - an effect due to the variables assigned by the researcher (treatments) in an experiment.  
-    
-    + This is an effect we are usually hoping to see and quantify!
+- **Treatment effect** - an effect due to the variables assigned by the researcher (treatments) in an experiment.  This is an effect we are usually hoping to see and quantify!  
 
-- (Other) **Recorded Variables** - some variables that are not of interest are recorded because we may know or think they are associated with variability in the response.  
+- (Other) **Recorded Variables** - some variables that are not of interest are recorded because we may know or think they are associated with variability in the response.  These may be covariates (quantitative variables) measured during a study (like temperature) or at the end of a study (tumor size).  They can also be variables measured with only a few values (like the soil type a crop is grown in).  
 
-    + These may be covariates measured along the way (like temperature) or a variable with only a few values like the soil type a crop is grown in.  
+- **Unaccounted for Variables** - everything else causing variation.  This variation is estimated and used as a reference with which to compare the treatment variation.  
 
-- **Unaccounted for Variables** - everything else causing variation.  
+To illustrate, consider a simplified example where a gardener wants to know what water (low or high) and fertilizer (A or B) conditions may be better in terms of producing greater crop yield (dried weight) on average.  
 
-    + This variation is estimated and used as a reference with which to compare the treatment variation.  
-
-Consider a simplified example where a gardener wants to know what water (low or high) and fertilizer (A or B) conditions are better in terms of producing greater crop yield (dried weight).  
-
-- Response variable - the dried weight of the crop after growth
-- The explanatory variables are the two factors:  
+- Response variable is the dried weight of the crop after growth.
+- Explanatory variables are the two factors:  
     + Water (with levels low and high)  
     + Fertilizer (with levels A or B)  
-- Treatments:
+- Treatments are:
     + low water and fertilizer A  
     + low water and fertilizer B  
     + high water and fertilizer A  
     + high water and fertilizer B  
 
-The gardener has two greenhouses each with 16 rows for growing crops.  Within each greenhouse, they randomly assign the four treatments to the 16 rows.  After 45 days, the crops are harvested, dried, and weighed.   
+The gardener has two greenhouses each with 16 rows for growing crops.  Within each greenhouse they randomly assign the four treatments to the 16 rows.  After 45 days, the crops from each row are harvested, dried, and weighed.   
 
 - The experimental units are the rows within the greenhouses  
-- The observational units are all the plants grown in a given row (so we may say the row is also the OU)  
+- The observational units are the rows of plants (so we may say the row is also the OU)  
 
 The sources of variation in the dried weight of the crop are:  
 
 - Treatment variation - variation we believe we'll see in dried weight from the differences in water and fertilizer applications.  
 - Other recorded variable - greenhouse in which the crops are grown is recorded.  Greenhouse is not of interest but may play a role in the variation in dried weight.
-- Unaccounted for variables - Amount of sunlight received, temperature/humidity differentials within a greenhouse, possible differences in the method of application of the treatment (fertilizer and water), and many others may also have an association with dried crop weight.  These sources make up a sort of reference variability we can compare our treatment variation to.  
+- Unaccounted for variables - amount of sunlight received, temperature/humidity differentials within a greenhouse, possible differences in the method of application of the treatment (fertilizer and water), and many others may also have an association with dried crop weight.  These sources make up a sort of reference variability we can compare our treatment variation to.  Ideally this variability is as small as possible!
 
 The variation from unaccounted variables can generally be broken down into four cateogries:  
 
-- Inherent variability in EUs (units assigned a treatment).  
-    + No two people, paper towels, concrete blocks, or  lab rats are exactly the same so they may respond differently to the same treatment.  
+- Inherent variability in EUs (units assigned a treatment).  No two people, paper towels, concrete blocks, or  lab rats are exactly the same so they may respond differently to the same treatment.  
 
-- Measurement error - Multiple measurements of a same experimental unit may differ.  
-    + Two blood pressure readings a few minutes apart may give different readigns or if you break a water sample in two and measure each for bacteria, you may see different measurements  
+- Measurement error - Multiple measurements of a same experimental unit may differ.  Two blood pressure readings a few minutes apart may give different readings or if you break a water sample in two and measure each for bacteria, you may see different measurements.  
 
-- Variations in applying or creating treatments.  
-    + Occasionaly a treatment protocol is not clearly defined, leaving room for interpretation.  Perhaps applying a fertilizer before or after applying irrigation can cause a difference.
+- Variations in applying or creating treatments.  Occasionaly a treatment protocol is not clearly defined, leaving room for interpretation.  Perhaps applying a fertilizer before or after applying irrigation can cause a difference.  If this isn't clearly specified, two farmer's may do things differently.  
 
-- Other unknown variables sometimes called lurking variables.
+- Other unknown variables sometimes called lurking variables.  
 
-No matter how hard we try, some of these unaccounted for variables (and hence variation in the response) will remain. What we can do is use good experimental design techniques to try and minimize the effects of from these variables.  
+No matter how hard we try, some of these unaccounted for variables (and hence variation in the response) will remain. What we can do is use good experimental design techniques to try and minimize this variability in order to more clearly see the treatment effects.  
 
-Good experimental designs generally have the following key attributes:
-
-- **Randomization** - treatments are randomly assigned to experimental units.
-
-This process must use a random number mechanism or software to allocate the treatments.  Randomization makes sure that every EU has a chance to get a different treatment.  This helps to protect the results of the analysis against a systematic influence of lurking variables.  For example, if a doctor is assigning drug A or B to a patient without use of a random number mechanism, they may unwittingly assign drug A to patients they deem more likely to recover due to implicit biases.  
-
-- **Replication** - multiple (independent) experimental units are assigned the same treatment.  
-
-EUs that receive the same treatment are called **replicates**.  By having replication we are able to create an estimate of variability due to our unaccounted for variables.   Comparing our treatment variation to this variation is what allows us to have faith in the reliability of our conclusions.  
-
-Note that replication does not mean that we measure the same EUs multiple times!  That is called a repeated measures design.  Observations from repeated measures experiments cannot usually be considered independent.
-
-- **Controlling Variables** - holding certain variables constant across the EUs.  
-Generally, we're not interested in the effects of these variables on the response.  These variables affect the response in exactly the same manner, so that we	don't see the effects on the conclusions. Unfortunately, we don`t get information on what happens at settings of the variables other than the fixed ones.  This decreases generalizability, but reduces overall variation.  Experimental designs such as a randomized complete block design attempt to control variables while also maintaining generalizability.  
-
-Let's discuss some of the most used experimental designs.  We'll cover analysis for these types of experiments in future chapters.  When considering conducting an experiment, consider the advice below!
+#### Designing Experiments  
 
 > A poorly designed study can never be saved, but a poorly analyzed one has the possibility of being reanalyzed.
 
+Good experimental designs generally involve randomization, replication, and control.  These are discussed in detail below.
+
+- **Randomization** - treatments are randomly assigned to experimental units.
+
+This process must use a random number mechanism or software to allocate the treatments.  Randomization makes sure that every EU has a chance to get a different treatment.  This helps to protect the results of the analysis against a systematic influence of lurking variables.  
+
+For example, if a doctor is assigning drug A or B to a patient without use of a random number mechanism, they may unwittingly assign drug A to patients they deem more likely to recover due to implicit biases.  
+
+Suppose an experimenter assigns treatment one to the first 50 bottles produced at a factory and treatment two to the next 50 bottles.  There may have been an issue with the manufacturing process causing the last 50 bottles to be degraded as compared to the first 50.  By not using random assignment, this underlying issue will affect the study's results. 
+
+- **Replication** - multiple (independent) experimental units are assigned the same treatment.  
+
+EUs that receive the same treatment are called **replicates**.  By having replication we are able to create an estimate of variability due to our unaccounted for variables.   That is, given five replicates, the only differences between them are things not measured or accounted for.  Comparing our treatment variation to this variation is what allows us to have faith in the reliability of our conclusions.  
+
+Note that replication does not mean that we measure the same EUs multiple times!  That is called a repeated measures.  Observations from repeated measures experiments cannot usually be considered independent.
+
+- **Controlling Variables** - holding certain variables constant across the EUs.  
+
+Generally, we're not interested in the effects of these variables on the response.  These variables affect the response in exactly the same manner, so that we	don't see the effects on the conclusions. Unfortunately, we don`t get information on what happens at settings of the variables other than the fixed ones.  This decreases generalizability, but reduces overall variation.  Experimental designs such as a randomized complete block design attempt to control variables while also maintaining generalizability.  
+
+(**Visual of these three concepts**)  
+
+Let's discuss some of the most used experimental designs.  We'll cover analysis for these types of experiments in future chapters.  
+
 #### Completely Randomized Design (CRD)    
 
-A Completely Randomized Design (CRD) is the most straightforward experimental design.  Suppose the number of units in the sample is $n$ and the number of treatments is $t$.  The design uses a random number mechanism to randomly assign the $t$ treatments across the $n$ experimental units.  In a **balanced** design, the same number of units are assigned to each treatment.  The number of replicates is usually denoted by $n_t$.  
+A Completely Randomized Design (CRD) is the most straightforward experimental design.  Suppose the number of units in the sample is $n$ and the number of treatments is $t$.  The design uses a random number mechanism to randomly assign the $t$ treatments across the $n$ experimental units.  In a **balanced** design, the same number of units are assigned to each treatment.  In this case, the number of replicates is usually denoted by $n_t$.  In an unbalanced design we generically have $n_1$, $n_2$, ..., $n_t$ replicates, respecitvely (where $n = \sum_{i=1}^{n}n_i$).  
 
-This design assumes all of the EUs are **exchangeable**.  (**Should I include this here?**)
-
-For example, suppose we are doing an experiment to determine the effect of nutrition (3 different diets or treatments) on weight gain in humans.  Suppose we have 30 experimental units labeled 1, 2, ..., 30.  A random number generator can be used to reorder the numbers 1 through 30.  The first 10 numbers can then be assigned the first diet, the next 20 numbers the second diet, and the last 10 numbers the third diet.  
+Suppose we are doing an experiment to determine the effect of nutrition (3 different diets or treatments) on weight gain in humans.  If we have 30 experimental units labeled 1, 2, ..., 30, a random number generator can be used to reorder the numbers 1 through 30.  The first 10 numbers can then be assigned the first diet, the next 20 numbers the second diet, and the last 10 numbers the third diet.  
 
 Ideally we want to have as many replicates for each treatment as we can afford.   If we had 3 diets and 3 EUs and found that the person assigned the first diet lost more weight than the person assigned to the second diet.  This is not a very reliable conclusion!  Perhaps the person assigned to the first diet naturally loses weight more easily.  However, if we had 100 people assigned to each diet and on average the first diet yieled a greater weight loss, this would be a much more reliable conclusion.  
 
@@ -112,9 +110,11 @@ Let's consider an example.  Two new finishes are developed (type A and type B) f
 
 The company has 4 large ovens (oven 1, 2, 3, and 4) for testing.  The manufacturer finds a random sample of 40 dashboards from the assembly line.  Ten dashboards will be placed in each oven.  Within the groups of ten assigned to the ovens, five of each treatment were randomly assigned.  
 
-The ovens act as the blocks in this experiment.  There may be some variation from oven to oven but we don't really have an interest in this variation.  
+The ovens act as the blocks in this experiment.  There may be some variation from oven to oven but we don't really have an interest in this variation.  If we'd only used one oven, there may be some odd characteristic of heat flow.  By conducting the experiment over several ovens, we can be more confident that our findings would generalize.  
 
-There are many other commonly used design including:  
+#### Other Experimental Designs  
+
+There are many other commonly used designs including:  
 
 - Incomplete block designs
 - Latin squares designs  
@@ -125,15 +125,4 @@ There are many other commonly used design including:
 - 3^k designs  
 - Response surface designs  
 
-We'll cover many of these later in the book!  
-
-
-#### Sampling Schemes vs Randomization Methods  
-
-Randomization applied to experimental design is different than randomization in sampling!
-
-- In sampling, randomization is used to determine which members of the population are included in the sample.  
-
-- If an experiment is being done, randomization is then used to determine which EUs get which treatments.
-
-**(Comparison of CRD, SRS and Strat, Block)**
+For many of these, we'll cover the ideas behind the designs as well as their analyses later in the book.  Understanding how the treatments are assigned to the EUs is really important when considerting an appropriate method of analysis.  

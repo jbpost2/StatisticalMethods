@@ -22,7 +22,7 @@ An everyday example of a process similar to a SRS is the lottery.  Many states h
 
 Note that an SRS does not guarantee a representative sample every time!  
 
-For instance, suppose a university wants to determine the proportion of students that would favor a change to the bookstore.  Every student is assigned a campus ID number.  Due to time and cost constraints, the university decides to collect data on 400 students.  An SRS can be used here to select the 400 students.  The sample collected may, by random chance, contain only students from a particular college.  The larger the sample, the less likely this is.  Obtaining this type of sample doesn't mean what was done was wrong, it simply means that the sample we obtained may not be very representative.  The mathematics and probability used to analyze the sample would still be valid, however, we may be dealing with one of the 'rare' samples that give misleadign results.  An SRS does imply that on average we should get a representative sample.  Other techniques can increase the chance of a particular sample being representative of the population (at the expense of being more complicated and sometimes needing to be analyzed in a more complicated manner).  
+For instance, suppose a university wants to determine the proportion of students that would favor a change to the bookstore.  Every student is assigned a campus ID number.  Due to time and cost constraints, the university decides to collect data on 400 students.  An SRS can be used here to select the 400 students.  The sample collected may, by random chance, contain only students from a particular college.  The larger the sample, the less likely this is.  Obtaining this type of sample doesn't mean what was done was wrong, it simply means that the sample we obtained may not be very representative of the population.  The mathematics and probability used to analyze the sample would still be valid, however, we may be dealing with one of the 'rare' samples that give atypical results.  An SRS does imply that on average we should get a representative sample.  Other techniques can increase the chance of any particular sample being representative of the population (at the expense of being more complicated and sometimes needing to be analyzed in a more complicated manner).  
 
 (**Visual of SRS**)
 
@@ -56,13 +56,14 @@ students from the each college, respectively.
 
 Alternatively, a larger proportion may be taken from certain strata because they are of greater interest to the researcher.  
 
-**(What other advantages?  I think there can be some efficiency in doing this type of study but I don't know off the top of my head and I lack my books.  What are the disadvantages?)**
+An advantage of stratified random sampling is that it can be more efficient than an SRS if the units in the strata are more similar than the overall group.  This implies that the estimates for quantities will tend to be less variable in the stratified sample.  
+
 
 #### Examples of Bad Sampling Schemes
 
-There are many "bad" types of sampling schemes used in practice.  Two examples are a **convenience (or haphazard) sampling scheme** and a **volunteer response sampling scheme**. 
+There are many poor choices of sampling schemes that should be avoided.  Two examples are a **convenience** (or **haphazard**) **sampling scheme** and a **volunteer response sampling scheme**.  These both lead to **sampling bias** where the certain members of the population likely have higher or lower probabilities of inclusion.  These probabilities are not usually known so they can't be taken into account during analysis.    
 
-A convenience sample usually implies that the sample consists of the most convenient group available or that the sample members are decided on the spot.  For example, again suppose a university wants to determine the proportion of students that would favor a change to the bookstore.  If the researcher simply went outside in between class periods and found 400 students that were walking by thier building, this would be a convenience sample.  Again, the members of the sample are random in the everyday sense, but not in the statistical sense.  Perhaps the researcher was outside on a part of campus that mostly has classes for students in biology and chemistry.  The students here are not necessarily representative of the entire college and, certainly, there is no known probability of inclusion associated with every student.  Statistical methods quantify uncertainty using probability.  Using the probabilities calculated in the analysis would require us to assume the sample was collected in a way that was at least close to randomly in the statistical sense.  This is quite unlikely to be true here!  
+A convenience sample usually implies that the sample consists of the most convenient group available or that the sample members are decided on the spot.  For example, again suppose a university wants to determine the proportion of students that would favor a change to the bookstore.  If the researcher simply went outside in between class periods and found 400 students that were walking by thier building, this would be a convenience sample.  Again, the members of the sample are random in the everyday sense, but not in the statistical sense.  Perhaps the researcher was outside on a part of campus that mostly has classes for students in biology and chemistry.  The students here are not necessarily representative of the entire college and, certainly, there is no known probability of inclusion associated with every student.  Statistical methods quantify uncertainty using probability.  Using the probabilities calculated in the analysis would require us to assume the sample was collected in a way that we could account for probabilistically.  We're pretty unlikely to get this right!  
 
 A volunteer response sample is one where particpants self-select.  The members of a volunteer response sample tend to be those with a strong opinion, both positive and negative, and access to the study.  For example, this type of sample is often what is done for end of semester or end of course evaluations.  The evaluations are not usually mandatory so, while many in the class will complete the evaluation, those with very strong opinions (both positive and neative) tend to be more likely to respond.  In other situations such as online polls hosted by poorly run news sites, only those that are aware and able to access the site can participate.  
 
@@ -75,7 +76,7 @@ The importance of having a probability sample is paramount.  To underscore the p
 
 Let's conduct a simple simulation study to compare the results found when doing an SRS vs those done with a contrived convenience sample.  
 
-Suppose our population consists of 100 marbles.  We have interest in investigating the proportion of marbles that are blue.  Since we are creating the population we will set this **parameter** value, making it a known quantity!  Let's make the proportion of blue marbles 0.4 (40 blue marbles).  
+Suppose our population consists of 100 red and blue marbles.  We have interest in investigating the proportion of marbles that are blue.  Since we are creating the population we will set this **parameter** value, making it a known quantity!  Let's make the proportion of blue marbles 0.4 (40 blue marbles).  
 
 A sample of size 10 will be collected using the two methods outlined below:
 
@@ -112,8 +113,14 @@ Remember, the actual value of the population proportion (parameter) is 0.4.  It 
 
 ```{r, echo = FALSE, fig.align='center', out.width = "90%"}
 par(mfrow = c(1, 2))
-hist(method1, main = "Using an SRS", xlab = "Sample Proportions", breaks = seq(from = -0.025, to = 1.025, by = 0.05))
-hist(method2, main = "Using a Convenience Sample", xlab = "Sample Proportions", breaks = seq(from = -0.025, to = 1.025, by = 0.05))
+hist(method1, main = "Using an SRS", xlab = "Sample Proportions", breaks = seq(from = -0.025, to = 1.025, by = 0.05), col = "Green")
+abline(v = 0.4, col = "Blue", lwd = 2)
+abline(v = mean(method1), col = "Black", lwd = 2)
+text(x = 0.8, y = 2000, cex = 0.7, "Black line \n represents the \n overall mean \n of the sample \n proportions.")
+hist(method2, main = "Using a Convenience Sample", xlab = "Sample Proportions", breaks = seq(from = -0.025, to = 1.025, by = 0.05), col = "Green")
+abline(v = 0.4, col = "Blue", lwd = 2)
+abline(v = mean(method2), col = "Black", lwd = 2)
+text(x = 0.8, y = 2000, cex = 0.7, "Black line \n represents the \n overall mean \n of the sample \n proportions.")
 par(mfrow = c(1, 1))
 ```
 
@@ -125,17 +132,20 @@ This is just a quick example of how using a poor sampling method might affect th
 
 There are many other good sampling schemes such as cluster sampling, sytematic sampling, and heirarchical sampling that can use combinations of techniques.  Some of these will be covered in the book as the come up and references are given at the end of the chapter for those interested.  
 
-There are entire books written on proper sampling methods and the myriad of issues that can come up, especially when dealing with humans.  In particular, when doing survey sampling (where a list of questions are given) some issues that come up often (but occur in other places too) are:  
+There are entire books written on proper sampling methods along with the myriad of issues that can come up, especially when dealing with humans.  In particular, when doing survey sampling (where a list of questions are given to participants) some issues that come up often (but occur in other places too) are:  
 
 - bias in question writing - leading questions and double barreled questions to name two  
-- nonresponse bias - sample member doesn't answer or respond     
-- response bias - sample member answers a question wrong on purpose (often due to how they'll be percieved)  
+- nonresponse bias - sample members don't answer or respond     
+- response bias - sample members answer a question wrong on purpose (often due to how they'll be percieved)  
 
-Other common issues that arise with sampling are when the list of population units (called the **sampling frame**) doesn't match the actual population of interest.  This is an issue called **undercoverage**.  One famous example that relates to this idea comes from the 1936 US presidential election.  *Literary Digest* incorrectly predicted that Landon would overwhelmingly defeat Roosevelt.  The prediction was based on survey results done by *Literary Digest*.  The survey had an issue akin to undercoverage.  They mailed questionnaires out only to people who had both telephones and cars.  This left out a large portion of the population and so the results were based on a sample that was not representative of the popoulation.
+Another common issue that arises with sampling is when the list of population units (called the **sampling frame**) doesn't match the actual population of interest.  This is an issue called **undercoverage**.  One famous example that relates to this idea comes from the 1936 US presidential election.  *Literary Digest* incorrectly predicted that Landon would overwhelmingly defeat Roosevelt.  The prediction was based on survey results from a sample of two million people.  The survey had an issue akin to undercoverage.  They mailed questionnaires out, but only to people who had both telephones and cars.  This left out a large portion of the population and so the results were based on a sample that was not representative of the popoulation.  Essentially, their sampling frame didn't match the population of interest.  
+
+Another thing to consider when using historical data is that there can be a bias in data collected.  For instance, during world war II the British wanted to know where to place additional armor on their bombers.  They had information about the planes that returned from battle and where they had damage.  Abraham Wald (known for the Wald test) recommended that it was likely better to put more armor in places that weren't as badly damaged on the returning aircraft.  He reasoned that, if bullet holes were randomly dispersed on the airplane, the bombers that made it back showed where the aircraft could be hit and still function but those that didn't make it back likely were damaged in other ways.  
 
 Sometimes it isn't feasible to implement a good sampling scheme.  For instance, in medical studies volunteers are often used.  In a crop experiment, the fields in which crops are planted aren't usually something you can choose.  Clearly, if our population is conceptually infinite, conducting a SRS is not tenable.  In these cases, additional out of data assumptions are usually needed when attempting to make inference to entire population.  For populations that aren't human, these assumptions are often more reasonable but shouldn't be done lightly.  For example, suppose the population of interest is all bottles that may be produced by a factory.  If a sample of size 1000 is to be chosen, it is likely wise to do a SRS of bottles produces over a series of days rather than the most recent 1000 bottles produced in order to mitigate any systematic issues with the bottle creation process.  
 
 Lastly, one thing to note is that the sampling method can play a role in the analysis or modeling technique used but can also sometimes be ignored (assuming a probability sample was done).  When the sample size is small compared to the population size (for a SRS, one rule of thumb is $n/N < 0.05$), we often are able to make an assumption a "random sample" was done rather than a simple random sample.  This assumption allows for standard modeling techniques and inference methods to be applied without the issue of dealing with a finite population.  We will point out cases in book where the exact type of sampling method and population size plays an important role.  
+
 
 #### Observational vs Experimental Studies 
 
