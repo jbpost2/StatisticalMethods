@@ -36,6 +36,70 @@ Doing randomization for a block design can be done similarly within each block (
 
 #### Student Assessment Details  
 
+This section describes the process of randomly assigning students to treatments in the student assessment example.  
+
+An excel file with a list of senior students to send emails to was obtained by DASA and read in here (with changes to account for privacy).  
+
+```{r}
+seniorData <- readxl::read_excel("../../motivating-examples/02-design-students.xlsx")
+```
+
+Just to get an idea about the data a three way contingency table was made for the `College`, `RaceEth`, and `Gender` variables (covered in chapter 3).
+
+```{r}
+table(seniorData$College, seniorData$RaceEth, seniorData$Gender)
+```
+
+After seeing this summary, it looks like there may have been a typo.  The decision was made to combine the one student that had a `RaceEth` value of `two or More Races` with students with the value `Two or More Races`.
+
+```{r}
+seniorData$RaceEth[seniorData$RaceEth == "two or More Races"] <- "Two or More Races"
+```
+
+The data was then sorted by the blocking variables.  
+
+```{r}
+seniorData <- seniorData %>% arrange(College, Gender, RaceEth)
+```
+
+Next, each EU in a block (combination of `College`, `EthRace`, and `Gender`) would be randomly allocated to treatment 1, 2, or 3, corresponding to the email types.  The number of EUs in each block was found using the `group_by` and `summarise` functions from the `dplyr` package (covered in chapter 3).  
+
+```{r}
+counts <- seniorData %>% group_by(College, Gender, RaceEth) %>% summarise(n = n()) 
+counts
+```
+
+Not every block had a count that was divisible by three so random allocation wouldn't quite be balanced.  With such a large sample size this issue was ignored.  A seed was set for reproducibility and a function written to do the work of the randomization.  The function inputs were the number of treatments (in case another experiment were to be performed with more treatments) and the number of EUs in the particular block.  The output was a random allocation of the numbers 1, 2, and 3 (treatments) for a that block.  
+
+```{r}
+set.seed(420420)
+
+allocate <- function(ntrt, count){
+	sample(rep(1:ntrt, times = ceiling(count/ntrt)))[1:count]
+}
+```
+
+The `sapply` function was used to apply this function to each of the block counts from the `counts` object created previously.  As the dataset was already sorted by the blocking groups (in the same order that the `counts` object was created), the results were simply appended to the dataset as a new column.  
+
+```{r}
+seniorData$Treatment <- unlist(sapply(X = counts$n, FUN = allocate, ntrt = 3))
+```
+
+To double check that the treatments were roughly assigned in equal proportion a four-way contingency table was produced that included the treatment assignment.  A part of that table is reproduced below.
+
+```{r}
+trtTab <- table(seniorData$Treatment, seniorData$College, seniorData$Gender, seniorData$RaceEth)
+trtTab[, , , "Two or More Races"]
+trtTab[, , , "White"]
+```
+
+The new student list with treatment assignment was then outputted to a `csv` file.  
+
+```{r, eval = FALSE}
+write_csv(x = seniorData, path = "02-design-randomization.csv")
+```
+
+
 #### Simulation Study Details  
 
 This section explains the code used to create the simluation study in the sampling section.  

@@ -130,9 +130,9 @@ This is just a quick example of how using a poor sampling method might affect th
 
 #### Practical Sampling Notes  
 
-There are many other good sampling schemes such as cluster sampling, sytematic sampling, and heirarchical sampling that can use combinations of techniques.  Some of these will be covered in the book as the come up and references are given at the end of the chapter for those interested.  
+There are many other good sampling schemes such as cluster sampling, sytematic sampling, and heirarchical sampling that can use combinations of techniques.  There are also many study designs that attempt to address issues in observational studies such as case-control, cohort, and cross-sectional designs.  Some of these will be covered in the book as the come up and references are given at the end of the chapter for those interested.  
 
-There are entire books written on proper sampling methods along with the myriad of issues that can come up, especially when dealing with humans.  In particular, when doing survey sampling (where a list of questions are given to participants) some issues that come up often (but occur in other places too) are:  
+There are entire books written on proper sampling methods along with the myriad of issues that can come up, especially when dealing with humans.  In particular, when doing survey sampling (where a list of questions are given to participants), some issues that come up often (but occur in other places too) are:  
 
 - bias in question writing - leading questions and double barreled questions to name two  
 - nonresponse bias - sample members don't answer or respond     

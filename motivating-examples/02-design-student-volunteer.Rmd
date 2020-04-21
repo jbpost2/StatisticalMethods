@@ -1,5 +1,7 @@
 ## Motivating Example: Design - Student Assessment Volunteers  
 
+In this example, we'll talk through the entire problem process but focus on aspects of experimental design.  
+
 ### Define Objective & Background  
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
@@ -7,24 +9,42 @@ knitr::include_graphics("img/defineObjective.png")
 ```  
 The Division of Academic and Student Affairs (DASA) is charged with assessing NC State's general education competency (or Pack Proficiencies) program.  This is a set of competencies that every NC State graduate should master by the time they graduate.  The five Pack Proficiencies are Critical Thinking, Creative Thinking, Oral Communication, Quantitative Literacy, and Written Communication. 
 
-There competencies go hand-in-hand with the general education program, but should be reinforced throughout each major curriculum.  
+Their competencies go hand-in-hand with the general education program, but should be reinforced throughout each major curriculum.  
 ```{r, echo = FALSE, out.width = '70%', fig.align='center'}
 knitr::include_graphics("img/GEP-and-Gen-Ed-Diagram.png")
 ```  
 
-DASA assesses the quantitative literacy proficiency through a number of instruments including a standardized test that is customized for NC State.  Students are assessed when they are freshman and again when they are seniors.  However, it is much easier to convince freshman to take this extra (mostly voluntary) exam than it is to convince a graduating senior.  As such, DASA wanted to design an experiment around an email recruitment campaign to determine if there was a type of email that was most effective in recruiting students.  
+DASA assesses the quantitative literacy proficiency through a number of instruments including a standardized test that is customized for NC State.  Students are assessed when they are freshman and again when they are seniors.  However, it is much easier to convince freshman to take this extra (mostly voluntary) exam than it is to convince a graduating senior.  
 
-Discuss population as the conceptual population of all seniors that they would email about this.  
+**DASA wanted to design an experiment around an email recruitment campaign to determine if there was a type of email that was most effective in recruiting students to sign up to take this low-stakes assessment.**
 
-Discuss email types?
+The population of interest was a conceptual population of all future seniors that they would be recruiting via email for their assessment.  There were three thoughts about students under consideration:
 
+1. Certain students might respond to school spirit pleas.  
+
+2. Certain students might be more motivated by incentives.  
+ 
+2. Certain students might be more motivated by sympathy ("We need your help!" requests).  For example, anecdotally there were a number of students that took the test in the past because they "felt sorry" for DASA or because DASA was "begging."
 
 ### Select Response
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/selectResponse.png")
 ``` 
-Response is the proportion of students that respond positively to the email types.  
+The parameters of interest were the true proportions of students that would respond positively to each of three competing email types.  The differences in these proportions would give information about the most effective campaign.  
+
+Three competing email campaigns were chosen:
+
+1. A "school spirit" type email where students were encouraged to help make NC State better.  
+
+2. A ["regret lottery"](https://sr.ithaka.org/blog/leveraging-regret-maximizing-survey-participation-at-the-duke-university-libraries/) style email.  Essentially, you will miss your chance at a prize if you don’t take this assessment! 
+
+3. A “sympathy” style email.  "NC State is counting on you, we really need your help for this to work".  
+
+A student would be assigned one of these email types to receive and these emails would be sent out multiple times over a period of time in the spring (last) semester for graduating seniors.  
+
+
+The chosen response was the number of students that responded positively to an email request (this can easily be transformed into a sample proportion and be modeled appropriately).  
 
 
 ### Determine Sources of Variation
@@ -32,32 +52,64 @@ Response is the proportion of students that respond positively to the email type
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/determineVariation.png")
 ```  
-When considering groups to send email to, DASA decided to break students up by race, ... something else I need to look up.
+As the emails would be sent out multiple times, the email period was also recorded in order to investigate any time trends with the three methods.  
+
+The following three variables weren't necessarily of interest but deemed to be possible sources of variation in the proportion that might respond:
+
+- Because the students in different colleges (Sciences, Textiles, etc.) might respond at different rates, the college the student was enrolled in was identified as an important variable (using the student's first major).  
+
+- Gender was deemed important as there was anecdotal evidence that those that identify as female were more likely to respond to the sympathy campaign.  
+
+- To account for some cultural differences, race was also identified as an important variable.  
+
 
 ### Select Design
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/selectDesign.png")
 ```  
-The design used was a randomized block design. Within each student group, the three email types were randomized.  
+The population for this study was the conceptual population of all future graduating seniors.  The sample members would be all seniors from the year the study was conducted.  
+
+As mentioned, it was decided that a student would be assigned one of these email types to receive and these emails would be sent out multiple times.  However, some students were already taking this assessment as part of a senior capstone type course.  These students would not be sent the emails.  This implied that the group used for the sample wouldn't exactly represent the population of interest (an example of sampling bias).  This smaller group was still used as it made the most practical sense.
+
+The researcher wanted to be able to assign a cause and effect relationship between email type and proportion of respondents.  When a well designed experiment is run where the experimenter manipulates the environment this can be done!  By **randomizing** the email types to students, the differences observed can reasonably be attributed to the differences imposed.  Randomization may not seem necessary but is vital!  Suppose we assigned the first third of the students the first email type, the second third the second email type, and the last third the last email type.  There may be some underlying characteristic that exists more heavily in the one of the groups.  For instance, maybe students with last names near the beginning of the alphabet would be more likely to respond since they've often been called on first during their schooling - making them more likely to respond.  This is likely not true, but by not randomizing, we risk the systematic effect of underlying variables like this.  Using randomization we can at least be assured we have not imposed this problem.  
+
+Our goal in the study is really to be able to observe and quantify any **treatment effect**.  That is, a difference in the responses due to the email type.  If we were to do random assignment of treatments to our entire group, there is a chance of having unbalanced treatment groups simply by chance alone.  For example, all students from a small college could be assigned the same email type.  This can be dealt with by **blocking** on characteristics and randomly assigning treatments within a blocks.  A block is a homogenous group of EUs.  We could block based on the combinations of the three explanatory variables noted earlier (college, gender, and race).  For instance, one block was black, female, college of sciences students.  Within each of these blocks the three email types would be randomly assigned to the students.  This is called a randomized complete block design. The word complete here implies that every block received every treatment.  By randomizing within blocks we are ensuring that the effects of the blocking variables are as equally allocated across the treatments as possible.  (How this process was done using software is included in the software section.)
+
+The last item to mention with respect to the experimental design is the idea of **replication**.  The sample size for the experiment was about 5400 yielding about 1800 replications of each treatment.  If we see a difference in the behavior of respondents across a large number replications, this gives us more confidence the results of our experiment will extend to the population.  
+
+The plan for analyzing the experiment above was to compare the three email campaigns using the overall (across all emails sent) sample proportion that responded positively.  (A secondary analysis would be to investigate the trends over time for the email campaigns but this won't be discussed further.)
+
+A plan for data collected should was made.  The data collected would be stored in an excel spreadsheet updated by DASA as the experiment ran.  
 
 ### Do Study  
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/conductStudy.png")
 ```  
-Emails and reminder emails sent out over a period of two months.  Data collected.
+Once the list of students with their assigned email type was created, DASA began their emailing campaign.  Emails were sent at nine different time periods during February.  With each time period, the proportion responding positively was recorded.  These numbers were pooled into a final talley within each block for analysis.  
 
 ### Do Statistical Analysis  
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/statsAnalysis.png")
 ```  
-Data were analyzed to see if one email type performed better than another.  
+The data was read into an appropriate software for summarization and analysis.  As a first investigation of the data, the sample proportion responding positively for each email type was summarized (without regard to the block used).  
+
+- School spirit email type: 132 of 1861 responded positively (0.071)  
+- Regret lottery email type: 116 of 1865 responsed positively (0.062)  
+- Sympathy email type: 114 of 1865 responed positively (0.061)  
+
+The data were analyzed using methods for a randomized complete block design with a binary response (covered later in the book!).  As this is a bit beyond us at this point, we'll simply consider the raw sample proportions and their differences.  The standard error (a measure of how variable the measurement is) in these sample proportions is around 0.006.
 
 ### Draw Conclusions & Communicate
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/concludeCommunicate.png")
 ```  
-The results of the study indicated... This study was used to indicate how future email campaigns might run...
+The results of a naive analysis of this study indicated that the school spirit email, on average, had a higher level of participants respond positively to the request.  However, this result was not deemed statistically significant.  That is, the difference was not large enough to show a difference when taking into account variation in the study.  
+
+The end result of this study was to conclude that the email type sent to students didn't play a very large role in whether or not students volunteered to participate.  It is unkown whether or not the senior students in capstone courses would have made a difference in the results of the study.  However, since future email campaigns wouldn't include these students anyway, the final conclusion from the study was to stick with the school spirit type email that was previously used.  
+
+
+

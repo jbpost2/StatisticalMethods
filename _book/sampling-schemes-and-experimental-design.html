@@ -24,7 +24,7 @@
 <meta name="author" content="Post, Avery, Osborne" />
 
 
-<meta name="date" content="2020-04-20" />
+<meta name="date" content="2020-04-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -574,45 +574,80 @@ What actionable things have we found? Likely some trends to investigate further.
 </div>
 <div id="motivating-example-design---student-assessment-volunteers" class="section level2">
 <h2><span class="header-section-number">2.3</span> Motivating Example: Design - Student Assessment Volunteers</h2>
+<p>In this example, we’ll talk through the entire problem process but focus on aspects of experimental design.</p>
 <div id="define-objective-background-1" class="section level3">
 <h3><span class="header-section-number">2.3.1</span> Define Objective &amp; Background</h3>
 <p><img src="img/defineObjective.png" width="13%" style="float:left; padding:10px" />
 The Division of Academic and Student Affairs (DASA) is charged with assessing NC State’s general education competency (or Pack Proficiencies) program. This is a set of competencies that every NC State graduate should master by the time they graduate. The five Pack Proficiencies are Critical Thinking, Creative Thinking, Oral Communication, Quantitative Literacy, and Written Communication.</p>
-<p>There competencies go hand-in-hand with the general education program, but should be reinforced throughout each major curriculum.<br />
+<p>Their competencies go hand-in-hand with the general education program, but should be reinforced throughout each major curriculum.<br />
 <img src="img/GEP-and-Gen-Ed-Diagram.png" width="70%" style="display: block; margin: auto;" /></p>
-<p>DASA assesses the quantitative literacy proficiency through a number of instruments including a standardized test that is customized for NC State. Students are assessed when they are freshman and again when they are seniors. However, it is much easier to convince freshman to take this extra (mostly voluntary) exam than it is to convince a graduating senior. As such, DASA wanted to design an experiment around an email recruitment campaign to determine if there was a type of email that was most effective in recruiting students.</p>
-<p>Discuss population as the conceptual population of all seniors that they would email about this.</p>
-<p>Discuss email types?</p>
+<p>DASA assesses the quantitative literacy proficiency through a number of instruments including a standardized test that is customized for NC State. Students are assessed when they are freshman and again when they are seniors. However, it is much easier to convince freshman to take this extra (mostly voluntary) exam than it is to convince a graduating senior.</p>
+<p><strong>DASA wanted to design an experiment around an email recruitment campaign to determine if there was a type of email that was most effective in recruiting students to sign up to take this low-stakes assessment.</strong></p>
+<p>The population of interest was a conceptual population of all future seniors that they would be recruiting via email for their assessment. There were three thoughts about students under consideration:</p>
+<ol style="list-style-type: decimal">
+<li><p>Certain students might respond to school spirit pleas.</p></li>
+<li><p>Certain students might be more motivated by incentives.</p></li>
+<li><p>Certain students might be more motivated by sympathy (“We need your help!” requests). For example, anecdotally there were a number of students that took the test in the past because they “felt sorry” for DASA or because DASA was “begging.”</p></li>
+</ol>
 </div>
 <div id="select-response-1" class="section level3">
 <h3><span class="header-section-number">2.3.2</span> Select Response</h3>
 <p><img src="img/selectResponse.png" width="13%" style="float:left; padding:10px" />
-Response is the proportion of students that respond positively to the email types.</p>
+The parameters of interest were the true proportions of students that would respond positively to each of three competing email types. The differences in these proportions would give information about the most effective campaign.</p>
+<p>Three competing email campaigns were chosen:</p>
+<ol style="list-style-type: decimal">
+<li><p>A “school spirit” type email where students were encouraged to help make NC State better.</p></li>
+<li><p>A <a href="https://sr.ithaka.org/blog/leveraging-regret-maximizing-survey-participation-at-the-duke-university-libraries/">“regret lottery”</a> style email. Essentially, you will miss your chance at a prize if you don’t take this assessment!</p></li>
+<li><p>A “sympathy” style email. “NC State is counting on you, we really need your help for this to work”.</p></li>
+</ol>
+<p>A student would be assigned one of these email types to receive and these emails would be sent out multiple times over a period of time in the spring (last) semester for graduating seniors.</p>
+<p>The chosen response was the number of students that responded positively to an email request (this can easily be transformed into a sample proportion and be modeled appropriately).</p>
 </div>
 <div id="determine-sources-of-variation-1" class="section level3">
 <h3><span class="header-section-number">2.3.3</span> Determine Sources of Variation</h3>
 <p><img src="img/determineVariation.png" width="13%" style="float:left; padding:10px" />
-When considering groups to send email to, DASA decided to break students up by race, … something else I need to look up.</p>
+As the emails would be sent out multiple times, the email period was also recorded in order to investigate any time trends with the three methods.</p>
+<p>The following three variables weren’t necessarily of interest but deemed to be possible sources of variation in the proportion that might respond:</p>
+<ul>
+<li><p>Because the students in different colleges (Sciences, Textiles, etc.) might respond at different rates, the college the student was enrolled in was identified as an important variable (using the student’s first major).</p></li>
+<li><p>Gender was deemed important as there was anecdotal evidence that those that identify as female were more likely to respond to the sympathy campaign.</p></li>
+<li><p>To account for some cultural differences, race was also identified as an important variable.</p></li>
+</ul>
 </div>
 <div id="select-design-1" class="section level3">
 <h3><span class="header-section-number">2.3.4</span> Select Design</h3>
 <p><img src="img/selectDesign.png" width="13%" style="float:left; padding:10px" />
-The design used was a randomized block design. Within each student group, the three email types were randomized.</p>
+The population for this study was the conceptual population of all future graduating seniors. The sample members would be all seniors from the year the study was conducted.</p>
+<p>As mentioned, it was decided that a student would be assigned one of these email types to receive and these emails would be sent out multiple times. However, some students were already taking this assessment as part of a senior capstone type course. These students would not be sent the emails. This implied that the group used for the sample wouldn’t exactly represent the population of interest (an example of sampling bias). This smaller group was still used as it made the most practical sense.</p>
+<p>The researcher wanted to be able to assign a cause and effect relationship between email type and proportion of respondents. When a well designed experiment is run where the experimenter manipulates the environment this can be done! By <strong>randomizing</strong> the email types to students, the differences observed can reasonably be attributed to the differences imposed. Randomization may not seem necessary but is vital! Suppose we assigned the first third of the students the first email type, the second third the second email type, and the last third the last email type. There may be some underlying characteristic that exists more heavily in the one of the groups. For instance, maybe students with last names near the beginning of the alphabet would be more likely to respond since they’ve often been called on first during their schooling - making them more likely to respond. This is likely not true, but by not randomizing, we risk the systematic effect of underlying variables like this. Using randomization we can at least be assured we have not imposed this problem.</p>
+<p>Our goal in the study is really to be able to observe and quantify any <strong>treatment effect</strong>. That is, a difference in the responses due to the email type. If we were to do random assignment of treatments to our entire group, there is a chance of having unbalanced treatment groups simply by chance alone. For example, all students from a small college could be assigned the same email type. This can be dealt with by <strong>blocking</strong> on characteristics and randomly assigning treatments within a blocks. A block is a homogenous group of EUs. We could block based on the combinations of the three explanatory variables noted earlier (college, gender, and race). For instance, one block was black, female, college of sciences students. Within each of these blocks the three email types would be randomly assigned to the students. This is called a randomized complete block design. The word complete here implies that every block received every treatment. By randomizing within blocks we are ensuring that the effects of the blocking variables are as equally allocated across the treatments as possible. (How this process was done using software is included in the software section.)</p>
+<p>The last item to mention with respect to the experimental design is the idea of <strong>replication</strong>. The sample size for the experiment was about 5400 yielding about 1800 replications of each treatment. If we see a difference in the behavior of respondents across a large number replications, this gives us more confidence the results of our experiment will extend to the population.</p>
+<p>The plan for analyzing the experiment above was to compare the three email campaigns using the overall (across all emails sent) sample proportion that responded positively. (A secondary analysis would be to investigate the trends over time for the email campaigns but this won’t be discussed further.)</p>
+<p>A plan for data collected should was made. The data collected would be stored in an excel spreadsheet updated by DASA as the experiment ran.</p>
 </div>
 <div id="do-study-1" class="section level3">
 <h3><span class="header-section-number">2.3.5</span> Do Study</h3>
 <p><img src="img/conductStudy.png" width="13%" style="float:left; padding:10px" />
-Emails and reminder emails sent out over a period of two months. Data collected.</p>
+Once the list of students with their assigned email type was created, DASA began their emailing campaign. Emails were sent at nine different time periods during February. With each time period, the proportion responding positively was recorded. These numbers were pooled into a final talley within each block for analysis.</p>
 </div>
 <div id="do-statistical-analysis-1" class="section level3">
 <h3><span class="header-section-number">2.3.6</span> Do Statistical Analysis</h3>
 <p><img src="img/statsAnalysis.png" width="13%" style="float:left; padding:10px" />
-Data were analyzed to see if one email type performed better than another.</p>
+The data was read into an appropriate software for summarization and analysis. As a first investigation of the data, the sample proportion responding positively for each email type was summarized (without regard to the block used).</p>
+<ul>
+<li>School spirit email type: 132 of 1861 responded positively (0.071)<br />
+</li>
+<li>Regret lottery email type: 116 of 1865 responsed positively (0.062)<br />
+</li>
+<li>Sympathy email type: 114 of 1865 responed positively (0.061)</li>
+</ul>
+<p>The data were analyzed using methods for a randomized complete block design with a binary response (covered later in the book!). As this is a bit beyond us at this point, we’ll simply consider the raw sample proportions and their differences. The standard error (a measure of how variable the measurement is) in these sample proportions is around 0.006.</p>
 </div>
 <div id="draw-conclusions-communicate-1" class="section level3">
 <h3><span class="header-section-number">2.3.7</span> Draw Conclusions &amp; Communicate</h3>
 <p><img src="img/concludeCommunicate.png" width="13%" style="float:left; padding:10px" />
-The results of the study indicated… This study was used to indicate how future email campaigns might run…</p>
+The results of a naive analysis of this study indicated that the school spirit email, on average, had a higher level of participants respond positively to the request. However, this result was not deemed statistically significant. That is, the difference was not large enough to show a difference when taking into account variation in the study.</p>
+<p>The end result of this study was to conclude that the email type sent to students didn’t play a very large role in whether or not students volunteered to participate. It is unkown whether or not the senior students in capstone courses would have made a difference in the results of the study. However, since future email campaigns wouldn’t include these students anyway, the final conclusion from the study was to stick with the school spirit type email that was previously used.</p>
 </div>
 </div>
 <div id="statistical-ideas-and-concepts" class="section level2">
@@ -841,8 +876,8 @@ The results of the study indicated… This study was used to indicate how future
 </div>
 <div id="practical-sampling-notes" class="section level4">
 <h4><span class="header-section-number">2.4.1.5</span> Practical Sampling Notes</h4>
-<p>There are many other good sampling schemes such as cluster sampling, sytematic sampling, and heirarchical sampling that can use combinations of techniques. Some of these will be covered in the book as the come up and references are given at the end of the chapter for those interested.</p>
-<p>There are entire books written on proper sampling methods along with the myriad of issues that can come up, especially when dealing with humans. In particular, when doing survey sampling (where a list of questions are given to participants) some issues that come up often (but occur in other places too) are:</p>
+<p>There are many other good sampling schemes such as cluster sampling, sytematic sampling, and heirarchical sampling that can use combinations of techniques. There are also many study designs that attempt to address issues in observational studies such as case-control, cohort, and cross-sectional designs. Some of these will be covered in the book as the come up and references are given at the end of the chapter for those interested.</p>
+<p>There are entire books written on proper sampling methods along with the myriad of issues that can come up, especially when dealing with humans. In particular, when doing survey sampling (where a list of questions are given to participants), some issues that come up often (but occur in other places too) are:</p>
 <ul>
 <li>bias in question writing - leading questions and double barreled questions to name two<br />
 </li>
@@ -1059,17 +1094,123 @@ Corr vs caus</p>
 </div>
 <div id="student-assessment-details" class="section level4">
 <h4><span class="header-section-number">2.6.1.3</span> Student Assessment Details</h4>
+<p>This section describes the process of randomly assigning students to treatments in the student assessment example.</p>
+<p>An excel file with a list of senior students to send emails to was obtained by DASA and read in here (with changes to account for privacy).</p>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb402-1" title="1">seniorData &lt;-<span class="st"> </span>readxl<span class="op">::</span><span class="kw">read_excel</span>(<span class="st">&quot;../../motivating-examples/02-design-students.xlsx&quot;</span>)</a></code></pre></div>
+<p>Just to get an idea about the data a three way contingency table was made for the <code>College</code>, <code>RaceEth</code>, and <code>Gender</code> variables (covered in chapter 3).</p>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb403-1" title="1"><span class="kw">table</span>(seniorData<span class="op">$</span>College, seniorData<span class="op">$</span>RaceEth, seniorData<span class="op">$</span>Gender)</a></code></pre></div>
+<pre><code>## , ,  = F
+## 
+##        
+##         American Indian or Alaska Native Asian Black or African American
+##   CALS                                 0    30                        17
+##   CED                                  0     5                         3
+##   CHASS                                4    28                        67
+##   CNR                                  0     5                         6
+##   COE                                  0    45                        16
+##   COS                                  1    41                        23
+##   DN                                   0     8                         1
+##   MGMT                                 1     9                        14
+##   TEX                                  0    12                        15
+##   UC                                   0     0                         0
+##        
+##         Hispanics of Any Race Native Hawaiian or Other Pacific Islander  NRA
+##   CALS                     18                                         0    7
+##   CED                       5                                         0    2
+##   CHASS                    41                                         2    6
+##   CNR                       3                                         0    1
+##   COE                      18                                         1   21
+##   COS                      20                                         0   18
+##   DN                        7                                         0    3
+##   MGMT                     15                                         0   23
+##   TEX                      15                                         0    9
+##   UC                        0                                         0    0
+##        
+##         two or More Races Two or More Races Unknown White
+##   CALS                  0                15       8   311
+##   CED                   0                 1       0    68
+##   CHASS                 0                30      13   412
+##   CNR                   0                12       1    87
+##   COE                   0                19      13   294
+##   COS                   0                13      10   236
+##   DN                    0                 6       1    50
+##   MGMT                  0                15       3   156
+##   TEX                   0                 7       4   142
+##   UC                    0                 1       0     0
+## 
+##  [ reached getOption(&quot;max.print&quot;) -- omitted 1 matrix slice(s) ]</code></pre>
+<p>After seeing this summary, it looks like there may have been a typo. The decision was made to combine the one student that had a <code>RaceEth</code> value of <code>two or More Races</code> with students with the value <code>Two or More Races</code>.</p>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb405-1" title="1">seniorData<span class="op">$</span>RaceEth[seniorData<span class="op">$</span>RaceEth <span class="op">==</span><span class="st"> &quot;two or More Races&quot;</span>] &lt;-<span class="st"> &quot;Two or More Races&quot;</span></a></code></pre></div>
+<p>The data was then sorted by the blocking variables.</p>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb406-1" title="1">seniorData &lt;-<span class="st"> </span>seniorData <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(College, Gender, RaceEth)</a></code></pre></div>
+<p>Next, each EU in a block (combination of <code>College</code>, <code>EthRace</code>, and <code>Gender</code>) would be randomly allocated to treatment 1, 2, or 3, corresponding to the email types. The number of EUs in each block was found using the <code>group_by</code> and <code>summarise</code> functions from the <code>dplyr</code> package (covered in chapter 3).</p>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb407-1" title="1">counts &lt;-<span class="st"> </span>seniorData <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(College, Gender, RaceEth) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>()) </a>
+<a class="sourceLine" id="cb407-2" title="2">counts</a></code></pre></div>
+<pre><code>## # A tibble: 139 x 4
+## # Groups:   College, Gender [20]
+##   College Gender RaceEth                       n
+##   &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;                     &lt;int&gt;
+## 1 CALS    F      Asian                        30
+## 2 CALS    F      Black or African American    17
+## 3 CALS    F      Hispanics of Any Race        18
+## 4 CALS    F      NRA                           7
+## 5 CALS    F      Two or More Races            15
+## # ... with 134 more rows</code></pre>
+<p>Not every block had a count that was divisible by three so random allocation wouldn’t quite be balanced. With such a large sample size this issue was ignored. A seed was set for reproducibility and a function written to do the work of the randomization. The function inputs were the number of treatments (in case another experiment were to be performed with more treatments) and the number of EUs in the particular block. The output was a random allocation of the numbers 1, 2, and 3 (treatments) for a that block.</p>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb409-1" title="1"><span class="kw">set.seed</span>(<span class="dv">420420</span>)</a>
+<a class="sourceLine" id="cb409-2" title="2"></a>
+<a class="sourceLine" id="cb409-3" title="3">allocate &lt;-<span class="st"> </span><span class="cf">function</span>(ntrt, count){</a>
+<a class="sourceLine" id="cb409-4" title="4">    <span class="kw">sample</span>(<span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span>ntrt, <span class="dt">times =</span> <span class="kw">ceiling</span>(count<span class="op">/</span>ntrt)))[<span class="dv">1</span><span class="op">:</span>count]</a>
+<a class="sourceLine" id="cb409-5" title="5">}</a></code></pre></div>
+<p>The <code>sapply</code> function was used to apply this function to each of the block counts from the <code>counts</code> object created previously. As the dataset was already sorted by the blocking groups (in the same order that the <code>counts</code> object was created), the results were simply appended to the dataset as a new column.</p>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb410-1" title="1">seniorData<span class="op">$</span>Treatment &lt;-<span class="st"> </span><span class="kw">unlist</span>(<span class="kw">sapply</span>(<span class="dt">X =</span> counts<span class="op">$</span>n, <span class="dt">FUN =</span> allocate, <span class="dt">ntrt =</span> <span class="dv">3</span>))</a></code></pre></div>
+<p>To double check that the treatments were roughly assigned in equal proportion a four-way contingency table was produced that included the treatment assignment. A part of that table is reproduced below.</p>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb411-1" title="1">trtTab &lt;-<span class="st"> </span><span class="kw">table</span>(seniorData<span class="op">$</span>Treatment, seniorData<span class="op">$</span>College, seniorData<span class="op">$</span>Gender, seniorData<span class="op">$</span>RaceEth)</a>
+<a class="sourceLine" id="cb411-2" title="2">trtTab[, , , <span class="st">&quot;Two or More Races&quot;</span>]</a></code></pre></div>
+<pre><code>## , ,  = F
+## 
+##    
+##     CALS CED CHASS CNR COE COS DN MGMT TEX UC
+##   1    5   1    10   4   7   4  2    5   2  0
+##   2    5   0    10   4   7   4  2    5   3  1
+##   3    5   0    10   4   5   5  2    5   2  0
+## 
+## , ,  = M
+## 
+##    
+##     CALS CED CHASS CNR COE COS DN MGMT TEX UC
+##   1    2   1     2   2  18   7  0    2   1  0
+##   2    4   0     3   3  18   6  0    2   1  0
+##   3    4   1     3   3  18   6  1    3   2  0</code></pre>
+<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb413-1" title="1">trtTab[, , , <span class="st">&quot;White&quot;</span>]</a></code></pre></div>
+<pre><code>## , ,  = F
+## 
+##    
+##     CALS CED CHASS CNR COE COS  DN MGMT TEX  UC
+##   1  104  22   138  29  98  79  16   52  48   0
+##   2  104  23   138  29  98  78  17   52  47   0
+##   3  103  23   136  29  98  79  17   52  47   0
+## 
+## , ,  = M
+## 
+##    
+##     CALS CED CHASS CNR COE COS  DN MGMT TEX  UC
+##   1   83  10    77  67 339  71  12   83  15   2
+##   2   83  10    78  68 339  69  13   83  16   3
+##   3   83   9    78  67 339  71  13   84  16   3</code></pre>
+<p>The new student list with treatment assignment was then outputted to a <code>csv</code> file.</p>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb415-1" title="1"><span class="kw">write_csv</span>(<span class="dt">x =</span> seniorData, <span class="dt">path =</span> <span class="st">&quot;02-design-randomization.csv&quot;</span>)</a></code></pre></div>
 </div>
 <div id="simulation-study-details" class="section level4">
 <h4><span class="header-section-number">2.6.1.4</span> Simulation Study Details</h4>
 <p>This section explains the code used to create the simluation study in the sampling section.</p>
 <p>First, the seed was set in order to make the results reproducible. Next, the ‘population’ is created and stored in a data frame. The units are given numbers from one to 100 and the <code>sample</code> function is used to randomly assign 40 of these marbles to be associated with blue and 60 to be associated with red.</p>
-<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb402-1" title="1"><span class="kw">set.seed</span>(<span class="dv">50</span>)</a>
-<a class="sourceLine" id="cb402-2" title="2">marblePop &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">popNumber =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, </a>
-<a class="sourceLine" id="cb402-3" title="3">                        <span class="dt">color =</span> <span class="kw">sample</span>(<span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;Blue&quot;</span>, <span class="dv">40</span>), <span class="kw">rep</span>(<span class="st">&quot;Red&quot;</span>, <span class="dv">60</span>)), </a>
-<a class="sourceLine" id="cb402-4" title="4">                                       <span class="dt">size =</span> <span class="dv">100</span>, </a>
-<a class="sourceLine" id="cb402-5" title="5">                                       <span class="dt">replace =</span> <span class="ot">FALSE</span>))</a>
-<a class="sourceLine" id="cb402-6" title="6"><span class="kw">head</span>(marblePop)</a></code></pre></div>
+<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb416-1" title="1"><span class="kw">set.seed</span>(<span class="dv">50</span>)</a>
+<a class="sourceLine" id="cb416-2" title="2">marblePop &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">popNumber =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, </a>
+<a class="sourceLine" id="cb416-3" title="3">                        <span class="dt">color =</span> <span class="kw">sample</span>(<span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;Blue&quot;</span>, <span class="dv">40</span>), <span class="kw">rep</span>(<span class="st">&quot;Red&quot;</span>, <span class="dv">60</span>)), </a>
+<a class="sourceLine" id="cb416-4" title="4">                                       <span class="dt">size =</span> <span class="dv">100</span>, </a>
+<a class="sourceLine" id="cb416-5" title="5">                                       <span class="dt">replace =</span> <span class="ot">FALSE</span>))</a>
+<a class="sourceLine" id="cb416-6" title="6"><span class="kw">head</span>(marblePop)</a></code></pre></div>
 <pre><code>##   popNumber color
 ## 1         1  Blue
 ## 2         2   Red
@@ -1078,8 +1219,8 @@ Corr vs caus</p>
 ## 5         5   Red
 ## 6         6   Red</code></pre>
 <p>A contrived convenience sample probability vector was created to be associated with the 100 units. The first 50 units each had probability 0.0185 associated with them, each of the units 51 to 75 had the probability 0.003 associated with them, and the last 25 each had zero probability associated with them.</p>
-<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb404-1" title="1">convProb &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="fl">0.0185</span>, <span class="dv">50</span>), <span class="kw">rep</span>(<span class="fl">0.003</span>, <span class="dv">25</span>), <span class="kw">rep</span>(<span class="dv">0</span>, <span class="dv">25</span>))</a>
-<a class="sourceLine" id="cb404-2" title="2">convProb</a></code></pre></div>
+<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb418-1" title="1">convProb &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="fl">0.0185</span>, <span class="dv">50</span>), <span class="kw">rep</span>(<span class="fl">0.003</span>, <span class="dv">25</span>), <span class="kw">rep</span>(<span class="dv">0</span>, <span class="dv">25</span>))</a>
+<a class="sourceLine" id="cb418-2" title="2">convProb</a></code></pre></div>
 <pre><code>##   [1] 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185
 ##  [11] 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185
 ##  [21] 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185 0.0185
@@ -1091,10 +1232,10 @@ Corr vs caus</p>
 ##  [81] 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000
 ##  [91] 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000</code></pre>
 <p>A sample of size ten was created using the <code>sample</code> function. For the SRS, the <code>prob</code> input is left as the default. For the convenience sample, this input is assigned the <code>convProb</code> object created previously. A data frame was created with the two objects and outputted using the <code>kable</code> function from the <code>knitr</code> package. <code>col.names</code> was used to assign useful names to each column.</p>
-<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb406-1" title="1">method1 &lt;-<span class="st"> </span>marblePop[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>), ]</a>
-<a class="sourceLine" id="cb406-2" title="2">method2 &lt;-<span class="st"> </span>marblePop[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>, <span class="dt">prob =</span> convProb), ]</a>
-<a class="sourceLine" id="cb406-3" title="3">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">data.frame</span>(method1, method2, <span class="dt">row.names =</span> <span class="ot">NULL</span>), </a>
-<a class="sourceLine" id="cb406-4" title="4">             <span class="dt">col.names =</span> <span class="kw">c</span>(<span class="st">&quot;SRS - Marble Selected&quot;</span>, <span class="st">&quot;Marble Color&quot;</span>, <span class="st">&quot;Convenience - Marble Selected&quot;</span>, <span class="st">&quot;Marble Color&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb420-1" title="1">method1 &lt;-<span class="st"> </span>marblePop[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>), ]</a>
+<a class="sourceLine" id="cb420-2" title="2">method2 &lt;-<span class="st"> </span>marblePop[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>, <span class="dt">prob =</span> convProb), ]</a>
+<a class="sourceLine" id="cb420-3" title="3">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">data.frame</span>(method1, method2, <span class="dt">row.names =</span> <span class="ot">NULL</span>), </a>
+<a class="sourceLine" id="cb420-4" title="4">             <span class="dt">col.names =</span> <span class="kw">c</span>(<span class="st">&quot;SRS - Marble Selected&quot;</span>, <span class="st">&quot;Marble Color&quot;</span>, <span class="st">&quot;Convenience - Marble Selected&quot;</span>, <span class="st">&quot;Marble Color&quot;</span>))</a></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -1168,20 +1309,20 @@ Corr vs caus</p>
 </tbody>
 </table>
 <p>The process was repeated many times using the <code>replicate</code> function. This function is a wrapper function for <code>sapply</code> (which applies a function to each element of a list and tries to simplify the returned object) and allows for the same code to be run many times. <code>replicate</code> produced a matrix whose columns each represent one sample of ten marbles. The entire matrix was compared to “Blue.” The <code>colMeans</code> function was then applied to this logical object in order to find the sample proportion of blue selected in each sample (logicals are coerced to 0 and 1 for <code>FALSE</code> and <code>TRUE</code>, respectively).</p>
-<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb407-1" title="1">method1 &lt;-<span class="st"> </span><span class="kw">colMeans</span>(</a>
-<a class="sourceLine" id="cb407-2" title="2">              <span class="kw">replicate</span>(<span class="dv">10000</span>,</a>
-<a class="sourceLine" id="cb407-3" title="3">                        marblePop[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>), <span class="dv">2</span>]</a>
-<a class="sourceLine" id="cb407-4" title="4">                        ) <span class="op">==</span><span class="st"> &quot;Blue&quot;</span></a>
-<a class="sourceLine" id="cb407-5" title="5">              )</a>
-<a class="sourceLine" id="cb407-6" title="6">method2 &lt;-<span class="st"> </span><span class="kw">colMeans</span>(</a>
-<a class="sourceLine" id="cb407-7" title="7">               <span class="kw">replicate</span>(<span class="dv">10000</span>,</a>
-<a class="sourceLine" id="cb407-8" title="8">                         marblePop[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>, <span class="dt">prob =</span> convProb), <span class="dv">2</span>]</a>
-<a class="sourceLine" id="cb407-9" title="9">                         ) <span class="op">==</span><span class="st"> &quot;Blue&quot;</span></a>
-<a class="sourceLine" id="cb407-10" title="10">               )</a></code></pre></div>
+<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb421-1" title="1">method1 &lt;-<span class="st"> </span><span class="kw">colMeans</span>(</a>
+<a class="sourceLine" id="cb421-2" title="2">              <span class="kw">replicate</span>(<span class="dv">10000</span>,</a>
+<a class="sourceLine" id="cb421-3" title="3">                        marblePop[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>), <span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb421-4" title="4">                        ) <span class="op">==</span><span class="st"> &quot;Blue&quot;</span></a>
+<a class="sourceLine" id="cb421-5" title="5">              )</a>
+<a class="sourceLine" id="cb421-6" title="6">method2 &lt;-<span class="st"> </span><span class="kw">colMeans</span>(</a>
+<a class="sourceLine" id="cb421-7" title="7">               <span class="kw">replicate</span>(<span class="dv">10000</span>,</a>
+<a class="sourceLine" id="cb421-8" title="8">                         marblePop[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>, <span class="dt">prob =</span> convProb), <span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb421-9" title="9">                         ) <span class="op">==</span><span class="st"> &quot;Blue&quot;</span></a>
+<a class="sourceLine" id="cb421-10" title="10">               )</a></code></pre></div>
 <p>The first ten proportions were then printed using the <code>kable</code> function again.</p>
-<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb408-1" title="1">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">data.frame</span>(<span class="dt">SRS =</span> method1[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>], <span class="dt">Convenience =</span> method2[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>], <span class="dt">row.names =</span> <span class="ot">NULL</span>),</a>
-<a class="sourceLine" id="cb408-2" title="2">             <span class="dt">col.names =</span> <span class="kw">c</span>(<span class="st">&quot;SRS Sample Proportions&quot;</span>, <span class="st">&quot;Convenience Sample Proportions&quot;</span>), </a>
-<a class="sourceLine" id="cb408-3" title="3">             <span class="dt">align =</span> <span class="kw">c</span>(<span class="st">&quot;c&quot;</span>,<span class="st">&quot;c&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb422-1" title="1">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">data.frame</span>(<span class="dt">SRS =</span> method1[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>], <span class="dt">Convenience =</span> method2[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>], <span class="dt">row.names =</span> <span class="ot">NULL</span>),</a>
+<a class="sourceLine" id="cb422-2" title="2">             <span class="dt">col.names =</span> <span class="kw">c</span>(<span class="st">&quot;SRS Sample Proportions&quot;</span>, <span class="st">&quot;Convenience Sample Proportions&quot;</span>), </a>
+<a class="sourceLine" id="cb422-3" title="3">             <span class="dt">align =</span> <span class="kw">c</span>(<span class="st">&quot;c&quot;</span>,<span class="st">&quot;c&quot;</span>))</a></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -1233,19 +1374,19 @@ Corr vs caus</p>
 </tbody>
 </table>
 <p>Next, side-by-side histograms were created. First, the <code>mfrow</code> (mf = multi-figure) graphical paramter is set so that the output will have one row of plots and two columns. (Graphical parameters, histograms, and adding lines to plots will be discussed in chapter 3!) Next, a histogram was created for each with vertical lines added for the true proportion and the sample proportion. Text was also added to describe the black line.</p>
-<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb409-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb409-2" title="2"><span class="kw">hist</span>(method1, <span class="dt">main =</span> <span class="st">&quot;Using an SRS&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Sample Proportions&quot;</span>, </a>
-<a class="sourceLine" id="cb409-3" title="3">     <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="fl">-0.025</span>, <span class="dt">to =</span> <span class="fl">1.025</span>, <span class="dt">by =</span> <span class="fl">0.05</span>), <span class="dt">col =</span> <span class="st">&quot;Green&quot;</span>)</a>
-<a class="sourceLine" id="cb409-4" title="4"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="fl">0.4</span>, <span class="dt">col =</span> <span class="st">&quot;Blue&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb409-5" title="5"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">mean</span>(method1), <span class="dt">col =</span> <span class="st">&quot;Black&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb409-6" title="6"><span class="kw">text</span>(<span class="dt">x =</span> <span class="fl">0.8</span>, <span class="dt">y =</span> <span class="dv">2000</span>, <span class="dt">cex =</span> <span class="fl">0.7</span>, <span class="st">&quot;Black line </span><span class="ch">\n</span><span class="st"> represents the </span><span class="ch">\n</span><span class="st"> overall mean </span><span class="ch">\n</span><span class="st"> of the sample </span><span class="ch">\n</span><span class="st"> proportions.&quot;</span>)</a>
-<a class="sourceLine" id="cb409-7" title="7"></a>
-<a class="sourceLine" id="cb409-8" title="8"><span class="kw">hist</span>(method2, <span class="dt">main =</span> <span class="st">&quot;Using a Convenience Sample&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Sample Proportions&quot;</span>, </a>
-<a class="sourceLine" id="cb409-9" title="9">     <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="fl">-0.025</span>, <span class="dt">to =</span> <span class="fl">1.025</span>, <span class="dt">by =</span> <span class="fl">0.05</span>), <span class="dt">col =</span> <span class="st">&quot;Green&quot;</span>)</a>
-<a class="sourceLine" id="cb409-10" title="10"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="fl">0.4</span>, <span class="dt">col =</span> <span class="st">&quot;Blue&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb409-11" title="11"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">mean</span>(method2), <span class="dt">col =</span> <span class="st">&quot;Black&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb409-12" title="12"><span class="kw">text</span>(<span class="dt">x =</span> <span class="fl">0.8</span>, <span class="dt">y =</span> <span class="dv">2000</span>, <span class="dt">cex =</span> <span class="fl">0.7</span>, <span class="st">&quot;Black line </span><span class="ch">\n</span><span class="st"> represents the </span><span class="ch">\n</span><span class="st"> overall mean </span><span class="ch">\n</span><span class="st"> of the sample </span><span class="ch">\n</span><span class="st"> proportions.&quot;</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-232-1.png" width="90%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb423-1" title="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb423-2" title="2"><span class="kw">hist</span>(method1, <span class="dt">main =</span> <span class="st">&quot;Using an SRS&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Sample Proportions&quot;</span>, </a>
+<a class="sourceLine" id="cb423-3" title="3">     <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="fl">-0.025</span>, <span class="dt">to =</span> <span class="fl">1.025</span>, <span class="dt">by =</span> <span class="fl">0.05</span>), <span class="dt">col =</span> <span class="st">&quot;Green&quot;</span>)</a>
+<a class="sourceLine" id="cb423-4" title="4"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="fl">0.4</span>, <span class="dt">col =</span> <span class="st">&quot;Blue&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb423-5" title="5"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">mean</span>(method1), <span class="dt">col =</span> <span class="st">&quot;Black&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb423-6" title="6"><span class="kw">text</span>(<span class="dt">x =</span> <span class="fl">0.8</span>, <span class="dt">y =</span> <span class="dv">2000</span>, <span class="dt">cex =</span> <span class="fl">0.7</span>, <span class="st">&quot;Black line </span><span class="ch">\n</span><span class="st"> represents the </span><span class="ch">\n</span><span class="st"> overall mean </span><span class="ch">\n</span><span class="st"> of the sample </span><span class="ch">\n</span><span class="st"> proportions.&quot;</span>)</a>
+<a class="sourceLine" id="cb423-7" title="7"></a>
+<a class="sourceLine" id="cb423-8" title="8"><span class="kw">hist</span>(method2, <span class="dt">main =</span> <span class="st">&quot;Using a Convenience Sample&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Sample Proportions&quot;</span>, </a>
+<a class="sourceLine" id="cb423-9" title="9">     <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="fl">-0.025</span>, <span class="dt">to =</span> <span class="fl">1.025</span>, <span class="dt">by =</span> <span class="fl">0.05</span>), <span class="dt">col =</span> <span class="st">&quot;Green&quot;</span>)</a>
+<a class="sourceLine" id="cb423-10" title="10"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="fl">0.4</span>, <span class="dt">col =</span> <span class="st">&quot;Blue&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb423-11" title="11"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">mean</span>(method2), <span class="dt">col =</span> <span class="st">&quot;Black&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb423-12" title="12"><span class="kw">text</span>(<span class="dt">x =</span> <span class="fl">0.8</span>, <span class="dt">y =</span> <span class="dv">2000</span>, <span class="dt">cex =</span> <span class="fl">0.7</span>, <span class="st">&quot;Black line </span><span class="ch">\n</span><span class="st"> represents the </span><span class="ch">\n</span><span class="st"> overall mean </span><span class="ch">\n</span><span class="st"> of the sample </span><span class="ch">\n</span><span class="st"> proportions.&quot;</span>)</a></code></pre></div>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-241-1.png" width="90%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="sas-1" class="section level3">
