@@ -1,5 +1,10 @@
 # Point Estimates 
 
+```{r, child='motivating-examples/04-estimation-CHIS.Rmd'}
+```
+
+
+
 <!-- General Chapter Structure -->
 <!-- - Motivating Problem/Problem Idea/What Data to Try to Collect -->
 <!-- - Explanation of what a good model might be (or maybe this goes in with the data to try and collect?) -->
@@ -29,7 +34,7 @@ Learning objectives for this lesson:
 - Understand how to estimate a quantile
 - Understand implicit assumptions for these approaches
 
-## Estiamte with means
+## Estimate with means
 
 ### Experiment background
 

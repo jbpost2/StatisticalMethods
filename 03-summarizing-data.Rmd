@@ -16,7 +16,9 @@ Ideally, we'd be able to measure every member of the population and exactly calc
 
 Your questions of interest will often lead you to which parameters you have interest in.  Careful consideration of study goals and the time and money you have will also most likely lead you to which type of data you will collect to best make inference on those parameters.  Other times, you must work with existing data that has already been collected.  When this is the case, the data will sometimes guide the parameters you can investigate and ultimately the claims you can make.  
 
-```{r, child='motivating-examples/03-summarizing-CHIS.Rmd'}
+The major goal of this chapter is to begin the discussion of how to create a meaningful summary of the data at hand.  In the motivating example below, we'll discuss the relationship between the sample data and the population in more detail.  
+
+```{r, child='motivating-examples/03-summarizing-wine.Rmd'}
 ```
 
 ## Statistical Ideas and Concepts  

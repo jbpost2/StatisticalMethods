@@ -24,7 +24,7 @@
 <meta name="author" content="Post, Avery, Osborne" />
 
 
-<meta name="date" content="2020-04-21" />
+<meta name="date" content="2020-04-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -212,10 +212,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1.7" data-path="summarizing-data.html"><a href="summarizing-data.html#draw-conclusions-communicate-2"><i class="fa fa-check"></i><b>3.1.7</b> Draw Conclusions &amp; Communicate</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="summarizing-data.html"><a href="summarizing-data.html#statistical-ideas-and-concepts-1"><i class="fa fa-check"></i><b>3.2</b> Statistical Ideas and Concepts</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="summarizing-data.html"><a href="summarizing-data.html#scales-types-of-data"><i class="fa fa-check"></i><b>3.2.1</b> Scales (Types) of Data:</a></li>
-<li class="chapter" data-level="3.2.2" data-path="summarizing-data.html"><a href="summarizing-data.html#random-variables-and-parameters"><i class="fa fa-check"></i><b>3.2.2</b> Random Variables and Parameters</a></li>
-<li class="chapter" data-level="3.2.3" data-path="summarizing-data.html"><a href="summarizing-data.html#numerical-summaries"><i class="fa fa-check"></i><b>3.2.3</b> Numerical Summaries</a></li>
-<li class="chapter" data-level="3.2.4" data-path="summarizing-data.html"><a href="summarizing-data.html#graphical-summaries"><i class="fa fa-check"></i><b>3.2.4</b> Graphical Summaries</a></li>
+<li class="chapter" data-level="3.2.1" data-path="summarizing-data.html"><a href="summarizing-data.html#numerical-summaries"><i class="fa fa-check"></i><b>3.2.1</b> Numerical Summaries</a></li>
+<li class="chapter" data-level="3.2.2" data-path="summarizing-data.html"><a href="summarizing-data.html#graphical-summaries"><i class="fa fa-check"></i><b>3.2.2</b> Graphical Summaries</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="summarizing-data.html"><a href="summarizing-data.html#suggestions-for-further-readings"><i class="fa fa-check"></i><b>3.3</b> Suggestions for Further Readings</a></li>
 <li class="chapter" data-level="3.4" data-path="summarizing-data.html"><a href="summarizing-data.html#software-2"><i class="fa fa-check"></i><b>3.4</b> Software</a><ul>
@@ -345,6 +343,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>(<strong>A good visual of inference here</strong>)</p>
 <p>Your questions of interest will often lead you to which parameters you have interest in. Careful consideration of study goals and the time and money you have will also most likely lead you to which type of data you will collect to best make inference on those parameters. Other times, you must work with existing data that has already been collected. When this is the case, the data will sometimes guide the parameters you can investigate and ultimately the claims you can make.</p>
+<p>The major goal of this chapter is to begin the discussion of how to create a meaningful summary of the data at hand. In the motivating example below, we’ll discuss the relationship between the sample data and the population in more detail.</p>
 <div id="motivating-example-summarizing-data---california-health-interview-survey" class="section level2">
 <h2><span class="header-section-number">3.1</span> Motivating Example: Summarizing Data - California Health Interview Survey</h2>
 <div id="define-objective-background-2" class="section level3">
@@ -413,58 +412,16 @@ Describe main results or takeaways to study in the future. How to present some g
 </div>
 <div id="statistical-ideas-and-concepts-1" class="section level2">
 <h2><span class="header-section-number">3.2</span> Statistical Ideas and Concepts</h2>
-<p>We’ve seen the importance of obtaining sample units in a valid way and, when applicable, using a sound experimental design. We also need to have a strong understanding of the types of data or variables we might collect. The type of data collected is inherently linked to the types of conclusions that can be drawn.</p>
-<div id="scales-types-of-data" class="section level3">
-<h3><span class="header-section-number">3.2.1</span> Scales (Types) of Data:</h3>
-<p>Consider a dataset where the rows represent observations and the columns represent variables. These variables can generally be of two main types:</p>
-<ul>
-<li><p><strong>Quantitative or Numerical variable</strong> - A variable that is described by numerical measurements where arithmetic can be performed.</p></li>
-<li><p><strong>Qualitative or Categorical variable</strong> - A variable that is described by attributes or labels.</p></li>
-</ul>
-<p>We’ll generally refer to these as numerical and categorical, respectively. Numerical variables can be further refined into two subscales:</p>
-<ul>
-<li><p>Discrete - finite or countably infinite number of values (# of cars passing through an intersection in an hour, 0, 1, 2, …)</p></li>
-<li><p>Continuous - any value in an interval is possible (Temperature, <span class="math inline">\((-459.67\deg F, \infty)\)</span></p></li>
-</ul>
-<p>Categorical variables can be refined into two subscales as well:</p>
-<ul>
-<li><p>Nominal - categories have no ordering (Male, Female) (zip codes)</p></li>
-<li><p>Ordinal - can order categories (Lickert scale data) (college football rankings)</p></li>
-</ul>
-<p>How we summarize and analyze the data will depend on which type of data we have! Fully understanding the different types of data and how they can be linked to parameters of interest is vital importance when it comes to setting your study’s goals. The two examples below give some parameters commonly looked at when conducting inference.</p>
-<p><strong>Two examples here, linking to parameters - one with mean and quantile of interest? one with proportion and odds</strong></p>
-</div>
-<div id="random-variables-and-parameters" class="section level3">
-<h3><span class="header-section-number">3.2.2</span> Random Variables and Parameters</h3>
-<p>Intro RVs and changing all variables measured to take on quantitative values. Binomial idea, multinomial for 3+ categories.</p>
-<p>Population variables have a population distribution or pattern and frequency. These are equivalently described by probability histograms, tables, or probability mass functions (PMFs) for discrete random variables. Continuous modeled by a density or probability density function (PDF). Understanding distributions is important because they allow us to find probabilities, know the average value, etc. We’ll take up population distributions in the next chapters. For now we’ll focus on describing data and sample distributions. Why?</p>
-</div>
+<p>We’ve seen the importance of obtaining sample units in a valid way and, when applicable, using a sound experimental design. We also need to have a strong understanding of the types of data or variables we might collect. The type of data collected is inherently linked to the types of parameters on which we can make inference.</p>
+<p>In this chapter we’ll focus on summarizing data, not populations. Discussion of population distributions and their summaries will be done in the next couple of chapters. However, the ideas here about what we want to describe about a sample will correspond to many of the items we want to know about for the population.</p>
 <div id="numerical-summaries" class="section level3">
-<h3><span class="header-section-number">3.2.3</span> Numerical Summaries</h3>
-<p>In this chapter we’ll discuss summarizing data only, not populations. We’ll calculate numerical summaries (statistics) and graphical summaries for the sample. In the next chapter we’ll relate these summaries to the population parameters and distributions.</p>
-<p>The focus of this section is to talk about what summaries you’d want to create and why, along with how to interpret them. The software section discusses the creation of the summaries in R and SAS.</p>
-<p>What do we want to describe? The goal of descriptive statistics is to describe the <strong>distribution</strong> of the data. That is, how the data was observed. We often want to summarize measures of location and measures of spread for the data. Combining these summaries (along with graphs) gives us a solid understanding of the variable’s distribution.</p>
-<p>Note: The things we want to describe about the sample are similar to things we want to describe about the population. Again, we’ll discuss this relation in more detail in future chapters.</p>
-<ul>
-<li><p>Measures of Location</p>
-<ul>
-<li>Sample Mean = <span class="math inline">\(\bar{Y}=\frac{\sum_{i=1}^{n}Y_i}{n}\)</span></li>
-<li>Sample Median = Middle value of the data set (50% of values to left, 50% of values to right)</li>
-<li>Sample Proportion = <span class="math inline">\(\hat{p}=\frac{\#\mbox{ of successes}}{\mbox{sample size}}\)</span></li>
-<li>Sample Quantiles or Sample Percentiles</li>
-</ul></li>
-<li><p>Measures of Spread</p>
-<ul>
-<li>Sample Variance = <span class="math inline">\(S^2 = \frac{\sum_{i=1}^{n}(Y_i-\bar{Y})^2}{n-1}\)</span></li>
-<li>Sample Standard Deviation = <span class="math inline">\(S\)</span></li>
-<li>Sample Range = <span class="math inline">\(max(Y_1,...,Y_n)-min(Y_1,...,Y_n)\)</span></li>
-<li>Inter-quartile Range = Q3-Q1</li>
-</ul></li>
-</ul>
-<p>When summarizing data we want to describe the distribution of the data. This may be a <em>marginal</em> or <em>univariate</em> summary of a single variable by itself.</p>
+<h3><span class="header-section-number">3.2.1</span> Numerical Summaries</h3>
+<p>What do we want to describe? The goal in summarizing a dataset is to describe the <strong>distribution</strong> of the data in meaningful ways. That is, describe the pattern in which the data was observed. Summaries of location and spread are the most common things to describe about the data. Combining these summaries (along with graphs) gives us a solid understanding of the variable’s distribution.</p>
+<p>A particular summary may be a <em>marginal</em> or <em>univariate</em> summary of a single variable by itself.</p>
 <p><img src="img/summarizeAllF.png" width="40%" style="display: block; margin: auto;" /></p>
 <p>However, quite often we want to look at the distribution of a variable conditional on another variable - perhaps levels of a certain factor or the treatments of an experiment - or the relationship of more than one variable together. These would be referred to as <strong>multivariate</strong> summaries.</p>
 <p><img src="img/summarizeGroupsF.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>Looking at how two variables act together, say linearly, is another type of multivariate summary.</p>
 <p>How we summarize data depends on the <strong>variable types</strong> (sometimes called <strong>variable scales</strong>) and the attribute or quantity we are trying to describe about that variable. The two major types of variables are:</p>
 <ul>
 <li>Categorical (Qualitative) variable - entries are a label or attribute<br />
@@ -473,33 +430,35 @@ Describe main results or takeaways to study in the future. How to present some g
 </ul>
 <p><img src="img/variableTypes.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>Both of these have <em>subscales</em> that are sometimes important to consider.</p>
-<p>Categorical variables can be <strong>nominal</strong> or <strong>ordinal</strong>. Nominal variables have no ordering to their categories. For example, a variable asking for your favorite pet. There is no inherent ordering to give pets. Ordinal variables have an ordering but differences between the categories are not necessarily the same. For example, Likert scale data having categories “strongly disagree,” “disagree,” “neutral,” “agree”, and “strongly agree.” There is a clear ordering here but the difference between strongly agree and agree is not necessarily the same as the difference between agree and neutral.</p>
-<p>Numerical variables can be <strong>discrete</strong> or <strong>continuous</strong>. Discrete variables take on values that can be listed out, although the list may continue on indefinitely. For example, the number of bedrooms in a house. The values (or support) for this variable are 0, 1, 2, 3, … but there is not necessarily a known upper limit. Discrete variables don’t need to take on just integers and make take on values that are irregularly spaced. A continuous variable is one in which the variable can take on any value in an interval (or union of intervals). For example, the time it takes to complete an online survey. The support for this variable would be the interval from 0 to some large number, often we’d just say infinity for the upper bound.</p>
-<p>When summarizing the variables, the main goal is to summarize the <strong>distribution</strong> or pattern and frequency with which you observe a variable. This involves slightly different summaries dependong on variable type (or combination of variable types).</p>
-<ul>
-<li><p>Categorical variable - describe relative frequency (or count) in each category</p></li>
-<li><p>Numerical variable - describe the shape, center, and spread of the distribution</p></li>
-</ul>
+<p>Categorical variables can be <strong>nominal</strong> or <strong>ordinal</strong>.</p>
+<p>Nominal variables have no ordering to their categories. For example, a variable asking for your favorite pet. There is no inherent ordering to give pets.</p>
+<p>Ordinal variables have an ordering but differences between the categories are not necessarily the same. For example, Likert scale data having categories “strongly disagree,” “disagree,” “neutral,” “agree”, and “strongly agree.” There is a clear ordering here but the difference between strongly agree and agree is not necessarily the same as the difference between agree and neutral.</p>
+<p>Numerical variables can be <strong>discrete</strong> or <strong>continuous</strong>.</p>
+<p>Discrete variables take on values that can be listed out, although the list may continue on indefinitely. For example, the number of bedrooms in a house. The values (or support) for this variable are 0, 1, 2, 3, … but there is not necessarily a known upper limit. Discrete variables don’t need to take on just integers and make take on values that are irregularly spaced.</p>
+<p>A continuous variable is one in which the variable can take on any value in an interval (or union of intervals). For example, the time it takes to complete an online survey. The support for this variable would be the interval from 0 to some large number, often we’d just say infinity for the upper bound.</p>
+<p>Again, the main goal is to summarize the <strong>distribution</strong> or pattern and frequency with which we observe a variable or variables. This involves slightly different summaries depending on variable type (or combination of variable types)!</p>
 <p>The most common numerical summaries are given below:</p>
 <ul>
-<li><p>Cateogrical</p>
+<li><p>Categorical variable</p>
 <ul>
-<li>Contingency Tables</li>
-</ul></li>
-<li><p>Numerical</p>
-<ul>
-<li>Mean/Median<br />
+<li>Contingency Tables (counts)<br />
 </li>
-<li>Standard Deviation/Variance</li>
+<li>Sample proportions</li>
+</ul></li>
+<li><p>Numerical variable</p>
+<ul>
+<li>Sample Mean/Sample Median<br />
+</li>
+<li>Quantiles/Percentiles</li>
+<li>Sample Standard Deviation/Sample Variance/Range/IQR</li>
 <li>Coefficient of Variation</li>
-<li>Quantiles/Percentiles/IQR</li>
+<li>Covariance/Correlation (Two or more numerical variables)</li>
 </ul></li>
 </ul>
-<p>These are certainly not the only summaries you might calculate!</p>
-<p><strong>This is terribe but I want to put something like it somewhere…</strong> If you have two or more categorical variables, contingency tables are still the summary to use. If you have one numerical and one or more categorical variable, you’ll often calculate the numerical summaries for each combination of categorical variables levels. If you have multiple numerical variables you’ll usually calculate the covariance or correlation, which measures the linear relationship between pairs of variables. This can also be done for different settings of categorical variables as well.</p>
-<p>Next, we’ll go through the details of how these summaries are calculated and how to interpret them.</p>
+<p>Again, we may calculate these summaries for a single variable or while taking into account multiple variables. If you have one numerical and one or more categorical variable, you’ll often calculate the numerical summaries for each combination of categorical variables levels.</p>
+<p>Next, we’ll go through the definitions of these summaries and how to interpret them. Details on how to compute these summaries with software is left to the software section of the chapter.</p>
 <div id="contingency-tables-for-categorical-variables" class="section level4">
-<h4><span class="header-section-number">3.2.3.1</span> Contingency Tables for Categorical Variables</h4>
+<h4><span class="header-section-number">3.2.1.1</span> Contingency Tables for Categorical Variables</h4>
 <p>Let’s start by summarizing a categorical variable (entries are a label or attribute) from a dataset on the titanic passengers. The dataset describes attributes of passengers on the titanic. The variables we’ll investigate are</p>
 <ul>
 <li>embarked (where journey started)<br />
@@ -581,7 +540,7 @@ Describe main results or takeaways to study in the future. How to present some g
 </tr>
 </tbody>
 </table>
-<p>A contingency table simply shows the frequency or count (sometimes proportion) of observations falling into the categories of the variable. If we are looking at one variable by itself, the table is called a <strong>one-way contingency tables</strong>.</p>
+<p>A contingency table simply shows the sample <strong>frequency</strong> or sample <strong>count</strong> (sometimes sample <strong>proportion</strong>) of observations falling into the categories of the variable. If we are looking at one variable by itself, the table is called a <strong>one-way contingency tables</strong>.</p>
 <p>A one-way contingency table for the <code>embarked</code> variable:</p>
 <table>
 <thead>
@@ -825,13 +784,35 @@ Describe main results or takeaways to study in the future. How to present some g
 </table>
 <p>We see that, of males that embarked at the Queenstown port, 56 died and 7 survived.</p>
 <p>Again, contingency tables or n-way tables are the most common summary for combinations of categorical variables. They are important because they allow us to summarize how often categories, or combinations of categories, were observed in a dataset.</p>
-<p><strong>Not sure if I want to include all of this below…, especially for this data set since the population is the sample… Also I should talk about that above probably…</strong></p>
-<p>We might also want to know the relative frequency or sample proportion of obsrervations falling into each category (or combination of categories). This can be done by dividing each entry by the sample size, <span class="math inline">\(n\)</span> (the total number of observations).</p>
-<p>Generically, we might say the categories have a probability or proportion associated with them for the population. For the embarked variable we’d have…
-Probabilities interpreted as the long-run relative frequency of occurrence. Maybe discuss indicator variables for the two with character strings for labels…</p>
+<p>We might also want to know the relative frequency or sample proportion of observations falling into each category (or combination of categories). This can be done by dividing each entry by the sample size for the current table (the total number of observations in the table). For example, below is a table with sample proportions corresponding to the two-way table between <code>survived</code> and <code>embarked</code>.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Cherbourg</th>
+<th align="right">Queenstown</th>
+<th align="right">Southampton</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Died</td>
+<td align="right">0.092</td>
+<td align="right">0.060</td>
+<td align="right">0.467</td>
+</tr>
+<tr class="even">
+<td>Survived</td>
+<td align="right">0.115</td>
+<td align="right">0.034</td>
+<td align="right">0.233</td>
+</tr>
+</tbody>
+</table>
+<p>From this we can glean information like 0.467 or 46.7% of people that died embarked from the Southampton port.</p>
 </div>
 <div id="measures-of-location-and-spread-for-numerical-variables" class="section level4">
-<h4><span class="header-section-number">3.2.3.2</span> Measures of Location and Spread for Numerical Variables</h4>
+<h4><span class="header-section-number">3.2.1.2</span> Measures of Location and Spread for Numerical Variables</h4>
 <p>Recall that a numerical variable is one whose entries are a numerical value where math can be performed. The major things we want to describe about a numerical variable’s distribution are the shape, center, and spread. Shape is best left to graphical summaries like a histogram or density plot. We’ll cover these shortly.</p>
 <p>Let’s consider a dataset about an experiment on carbon dioxide (CO2) uptake in grass. The three variables we’ll investigate are:</p>
 <ul>
@@ -963,24 +944,73 @@ Probabilities interpreted as the long-run relative frequency of occurrence. Mayb
 </tbody>
 </table>
 <div id="measuring-location" class="section level5">
-<h5><span class="header-section-number">3.2.3.2.1</span> Measuring Location</h5>
-<p>Measuring center is important because…</p>
+<h5><span class="header-section-number">3.2.1.2.1</span> Measuring Location</h5>
+<p>Measuring center is important because we often want to talk about a ‘typical’ value, especially when comparing across groups. The most common measures of center are the mean and median.</p>
 <p>The mean of the <code>uptake</code> variable can be calculated to help summarize the center of the <code>uptake</code> variable’s distribution.</p>
-<p>The sample mean is then simply the sum of these values divided by the total number:</p>
+<p>The sample mean is simply the sum of these values divided by the total number:</p>
 <p><span class="math display">\[\bar{y} = \frac{1}{n} \sum_{i=1}^{n} y_i = \frac{1}{84}\sum_{i=1}^{84}y_i = \frac{1}{84}\left(16.0 + 30.4 + 34.8 + ... + 19.9\right)\]</span></p>
 <p>This comes out to be 27.21. This value represents one measure of the center or middle of the <code>uptake</code> variable’s distribution.</p>
-<p>As the actual data values are used in this calculation, one or two very large or small numbers can have a large influence on the value of the sample mean. To counter this, you can calculate a more robust measure called a <strong>trimmed mean</strong>. This involves removing the highest and lowest values and then calculating the mean with the remaining values. For instance, a 5% trimmed mean drops the lowest and highest 5% of data values and then finds the mean with the remaining values.<br />
-Here 0.05*84 = 4.2. This means we should drop off the lowest four and highest four values and then calculate the mean with the remaining 76 values. The 5% trimmed mean comes out to be 27.25. This is another measure of the center of the <code>uptake</code> variable’s distribution.</p>
-<p>Another common measure of center is the median. The median involves sorting the data from largest to smallest and reporting the middle value (if there is an odd number of data points) or the average of the two middle values (if there is an even number of data points). You may notice that having very large or small values in the data set do not matter as much for calculation of the median. The largest value for <code>uptake</code> could be replaced by 10000 and the median wouldn’t change. For this reason, the median is also referred to as a robust estimate of the center of the <code>uptake</code> variable’s distribution. The value of the median here is 28.3.</p>
-<p>Other measures of location are quantiles or percentiles of the distribution.</p>
-<p>Explanation…
-Q1, Median, Q3
-Examples…</p>
-<p>Min and max too</p>
-<p>Usually want summaries for different <strong>subgroups of data</strong></p>
+<p>As the actual data values are used in this calculation, one or two very large or small numbers can have a large influence on the value of the sample mean. To counter this, you can calculate a more robust measure called a <strong>trimmed mean</strong>. This involves removing the highest and lowest values and then calculating the mean with the remaining values. For instance, a 5% trimmed mean drops the lowest and highest 5% of data values and then finds the mean with the remaining values.</p>
+<p>Here 0.05*84 = 4.2. This means we should drop off the lowest four and highest four values and then calculate the mean with the remaining 76 values. The 5% trimmed mean comes out to be 27.25. This is another measure of the center of the <code>uptake</code> variable’s distribution.</p>
+<p>The last common measure of center is the median. The median involves sorting the data from largest to smallest and reporting the middle value (if there is an odd number of data points) or the average of the two middle values (if there is an even number of data points). You may notice that having very large or small values in the data set do not matter as much for calculation of the median. The largest value for <code>uptake</code> could be replaced by 10000 and the median wouldn’t change. For this reason, the median is also referred to as a robust estimate of the center of the <code>uptake</code> variable’s distribution. The value of the sample median here is 28.3. Unfortunately, there isn’t a really a common notation used for the sample median as there is with the sample mean. We’ll label the sample median as <span class="math inline">\(\hat{y}_{0.5}\)</span> = 28.3.</p>
+<p>Other measures of location are quantiles or percentiles of the distribution. The <span class="math inline">\(p^{th}\)</span> quantile of a distribution is the the value of the variable, <span class="math inline">\(y_{p}\)</span>, that has <span class="math inline">\(100*p\)</span> percent of the distribution to the left of it. <span class="math inline">\(y_{p}\)</span> is also called the <span class="math inline">\(100*p\)</span> percentile. We are finding sample quantiles here so we’re finding the value from the sorted data set that has at least <span class="math inline">\(100*p\)</span>% of the distribution to the left of it. The sample median is the sample 0.5 quantile or <span class="math inline">\(\hat{y}_{0.5}\)</span>. Other commonly investigated quantiles are the</p>
 <ul>
-<li>Ex: Get similar uptake summaries for each <strong>Treatment</strong></li>
+<li><span class="math inline">\(min(y_1, y_2, ..., y_n)\)</span>, minimum (smallest value)</li>
+<li><span class="math inline">\(\hat{y}_{0.25} = Q_1\)</span>, the 1st quartile of the data (25% of the data below it)</li>
+<li><span class="math inline">\(\hat{y}_{0.5} = Q_2\)</span>, the median and 2nd quartile of the data (50% of the data below it)</li>
+<li><span class="math inline">\(\hat{y}_{0.75} = Q_3\)</span>, the 3rd quartile of the data (75% of the data below it)</li>
+<li><span class="math inline">\(max(y_1, y_2, ..., y_n)\)</span>, maximum (largest value)</li>
 </ul>
+<p>Sample quantiles are not necessarily uniquely defined. Since we have a finite sample size we can’t usually get exactly <span class="math inline">\(100*p\)</span>% of the data smaller than a data value. How to determine an appropriate value for a quantile is best left to software.</p>
+<p>Let’s find the (sample) minimum, maximum, and quartiles (often called the <strong>five-number summary</strong>) for the <code>uptake</code> variable.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Minimum</td>
+<td align="right">7.700</td>
+</tr>
+<tr class="even">
+<td>1st Quartile</td>
+<td align="right">17.900</td>
+</tr>
+<tr class="odd">
+<td>Median</td>
+<td align="right">28.300</td>
+</tr>
+<tr class="even">
+<td>3rd Quartile</td>
+<td align="right">37.125</td>
+</tr>
+<tr class="odd">
+<td>Maximum</td>
+<td align="right">45.500</td>
+</tr>
+</tbody>
+</table>
+<p>The smallest <code>uptake</code> variable is 7.7, the <code>uptake</code> value with approximatley 25% of the data below it is 17.9, and so on.</p>
+</div>
+<div id="measuring-spread" class="section level5">
+<h5><span class="header-section-number">3.2.1.2.2</span> Measuring Spread</h5>
+<p>Measuring spread is important because we need to know how much variability we are seeing for a variable (or statistic) in order to account for it. We also need to be able to compare variability for a variable between subgroups. The most common measures of spread are the variance, standard deviation, and Interquartile range (IQR).</p>
+<p>The <strong>sample variance</strong> and <strong>sample standard deviation</strong> both give a measure of spread of the data about the sample mean. <span class="math inline">\(s^2\)</span> is used to denote the (observed) sample variance and <span class="math inline">\(s\)</span> the (observed) sample standard deviation. The formula for the sample variance is</p>
+<p><span class="math display">\[s^2 = \frac{1}{n-1}\sum_{i=1}^{n}\left(y_i-\bar{y}\right)^2\]</span>
+and the sample standard deviation is simply the square root of the sample variance</p>
+<p><span class="math display">\[s = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}\left(y_i-\bar{y}\right)^2}\]</span></p>
+<p>If values the data values are very close to their mean, the differences are very small. If the values are very spread out the differences will be much larger. When these differences are squared they all become positive. We sum the squared difference and divide by <span class="math inline">\(n-1\)</span> (we’ll talk about why <span class="math inline">\(n-1\)</span> and not <span class="math inline">\(n\)</span> in chapter 4). By dividing by <span class="math inline">\(n-1\)</span> we are essentially taking the average squared difference between the data values and the mean. Hopefully, this makes it clear that this quantity will be larger for datasets that are more spread out and smaller for those that are not!</p>
+<p>You may notice that the sample variance is in squared units of the <span class="math inline">\(y\)</span> variable. This makes the sample variance harder to interpret. The sample standard deviation is in the same units as the data.</p>
+<p>We can find the sample variance for the <code>uptake</code> variable as follows (recall the mean is 27.21):</p>
+<p><span class="math display">\[s^2 = \frac{1}{84-1}\sum_{i=1}^{n}\left(y_i - 27.21\right)^2 = \frac{1}{83}\left((16-27.21)^2+(30.4-27.21)^2+...+ (19.9-27.21)^2\right)\]</span></p>
+<p>This comes out to 116.95. The sample standard deivation is then 10.81. We would say that 10.81 is the typical distance an <code>uptake</code> value lies from its mean.</p>
+<p>Another common measure of spread is the sample range. This is simply the maximium value minus the minimum value. For the <code>uptake</code> variable the range is 37.8. Of course larger values of the range imply more spread.</p>
+<p>The sample IQR is another measure of spread and it is just the range between the 1st and 3rd sample quartiles (<span class="math inline">\(IQR = Q_3 - Q_1\)</span>). This gives the spread of the middle 50% of the data. For the <code>uptake</code> variable the IQR is 19.225.</p>
+<p>In most cases we don’t simply want to summarize one numerical variable in the dataset. Usually we want summaries for different <strong>subgroups of the data</strong>.</p>
+<p>We can obtain similar <code>uptake</code> summaries for each <code>Treatment</code> level:</p>
 <table>
 <thead>
 <tr class="header">
@@ -1011,9 +1041,7 @@ Examples…</p>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>Ex: Get similar uptake summaries for each <strong>Treatment</strong> and <strong>Concentration</strong></li>
-</ul>
+<p>This allows for easy comparison of the sample statistics for the <code>uptake</code> variable for each <code>Treatment</code>. Similarly, statistics can be found for each <code>Treatment</code> and <code>conc</code> combination:</p>
 <table>
 <thead>
 <tr class="header">
@@ -1156,83 +1184,120 @@ Examples…</p>
 </tbody>
 </table>
 </div>
-<div id="measuring-spread" class="section level5">
-<h5><span class="header-section-number">3.2.3.2.2</span> Measuring Spread</h5>
-<p>Why do we care…</p>
-<p>The most common measure of spread is the <strong>standard deviation</strong> or <strong>variance</strong>.</p>
-<p>116.9515132
-10.8144123</p>
-<p>19.225</p>
-</div>
 </div>
 <div id="measures-a-linear-relationship" class="section level4">
-<h4><span class="header-section-number">3.2.3.3</span> Measures a Linear Relationship</h4>
-<p>Why do we care…</p>
-<p>Covariance, Correlation</p>
-<pre><code>## [1] 1552.687</code></pre>
-<pre><code>## [1] 0.4851774</code></pre>
-<p>Should always plot!</p>
-<p>Recap of common summaries</p>
+<h4><span class="header-section-number">3.2.1.3</span> Measures a Linear Relationship</h4>
+<p>When considering more than one numerical variable, we want to describe their <strong>joint distribution</strong> or how they are observed together. The most simplistic relationship describing how the the two variables are observed together is a linear relationship. If we can say that two variables have a ‘strong’ positive linear relationship we know that when we observe larger values of one variable we tend to see larger values of the other variable. This can be useful in many ways, including prediction.</p>
+<p>Two measures of the lienar relationship between variables are covariance and correlation. The formula for the (observed) sample covariance between a variable <span class="math inline">\(y\)</span> and <span class="math inline">\(x\)</span> is given by</p>
+<p><span class="math display">\[\hat{\sigma}_{XY} = s_{XY} = \frac{1}{n}\sum_{i=1}^{n}(y_i-\bar{y})(x_i-\bar{x})\]</span></p>
+<p>Larger values of this sample statistic imply a positive linear relationship and highly negative values indicate a negative linear relationship.</p>
+<p>Why does this measure the linear relationship? Suppose we have a positive relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. This implies we should tend to see larger values of <span class="math inline">\(x\)</span> when we see larger values of <span class="math inline">\(y\)</span> and we should tend to see maller values of <span class="math inline">\(x\)</span> when we see smaller values of <span class="math inline">\(y\)</span>. If <span class="math inline">\(y_1\)</span> and <span class="math inline">\(x_1\)</span> are both larger than their mean, the product of <span class="math inline">\((y_1-\bar{y})(x_1-\bar{y})\)</span> is positive. Similarly, if <span class="math inline">\(y_2\)</span> and <span class="math inline">\(x_2\)</span> are both less than their mean, <span class="math inline">\((y_2-\bar{y})(x_2-\bar{y})\)</span> is positive. When we sum this product for pairs of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> that follow this linear relationship, the value of the sum increases. If there was a negative linear relationship, we’d see these products tending to be negative and the value of the sum would become larger in magnitude (but negative).</p>
+<p>The issue with looking at covariance is that the resulting value has units that are the product of the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> units. This can be difficult to interpret. Instead, the correlation is often used. This is very similar to covariance but is unitless and must take on values between -1 and 1, inclusive. The formula for correlation is</p>
+<p><span class="math display">\[\hat{\rho}_{XY} = r_{XY} = \frac{s_{XY}}{s_{X}s_{Y}} = \frac{\frac{1}{n}\sum_{i=1}^{n}(y_i-\bar{y})(x_i-\bar{x})}{\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}\left(x_i-\bar{x}\right)^2}\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}\left(y_i-\bar{y}\right)^2}}\]</span></p>
+<p>This is simply the sample covariance divided by the sample standard deviations for both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. Remember that the standard deviation is in the units of the variable. This shows that correlation is unitless. The Cauchy-Schwarz inequality can be used to show this value can at most be 1 and at its smallest be -1. These values only occur if there is an exact linear relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+<p>For the <code>CO2</code> uptake dataset, let’s find the covariance and correlation between <code>uptake</code> and <code>conc</code>. Recall we labeled the observations for the <code>conc</code> with <span class="math inline">\(x_{1i}\)</span>, <span class="math inline">\(i = 1, 2, ..., 84\)</span>. The sample mean of the <code>conc</code> variable is 435.</p>
+<p><span class="math display">\[s_{XY} = \frac{1}{84}\sum_{i=1}^{84}(y_i-27.21)(x_i-435) = \frac{1}{84}\sum_{i=1}^{84}\left((16-27.21)(95-435)+(30.4-27.21)(175-435) + ... + (18-27.21)(1000-435) \right)\]</span></p>
+<p>The sample covariance between <code>uptake</code> and <code>conc</code> comes out to 1552.69. This shows a possible positive linear relationship, but is it a ‘strong’ relationship? The value is in <span class="math inline">\((umol/m^2 sec)*(ml/L)\)</span> units… Let’s look at the correlation instead! The sample standard deviation for the <code>conc</code> variable is 295.92.</p>
+<p><span class="math display">\[\rho_{XY} = \frac{1552.69}{10.81*295.92} = 0.485\]</span></p>
+<p>This would usually be interpreted as a moderate positive linear relationship (although what constitutes weak, moderate, and strong is quite often problem dependent).</p>
+<p>Looking at correlation and covariance should always be done while plotting the relationship with a scatterplot. This will be discussed shortly.</p>
 </div>
 </div>
 <div id="graphical-summaries" class="section level3">
-<h3><span class="header-section-number">3.2.4</span> Graphical Summaries</h3>
+<h3><span class="header-section-number">3.2.2</span> Graphical Summaries</h3>
+<p>As with numerical summaries, the type of graph that is appropriate to summarize a variable, or the relationship between variables, depends on the variable type(s).</p>
+<p>The most common graphical summaries are given below:</p>
+<ul>
+<li><p>Categorical variable(s)</p>
+<ul>
+<li>Bargraphs</li>
+</ul></li>
+<li><p>Numerical variable</p>
+<ul>
+<li>Histogram<br />
+</li>
+<li>Density Plot</li>
+<li>Boxplot (usually across the values of a categorical variable)</li>
+</ul></li>
+<li><p>Two numerical variables</p>
+<ul>
+<li>Scatterplot</li>
+</ul></li>
+</ul>
+<p>For the numerical variable plots, we’ll also look at how to incorporate information from other variables (both numerical and categorical) as well.</p>
 <div id="barplots-for-categorical-data" class="section level4">
-<h4><span class="header-section-number">3.2.4.1</span> Barplots for Categorical Data</h4>
+<h4><span class="header-section-number">3.2.2.1</span> Barplots for Categorical Data</h4>
 <p>Let’s start by graphing categorical variables (variables in which entries are a label or attribute). Recall that the main goal of summarizing categorical variables is to look at counts for each level or combination of levels for the variables in question.</p>
 <p>Again, we’ll look at the titanic data set. To visualize a one-way table a simple bargraph can be made.</p>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-266-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-267-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>As you can likely tell, this gives a visual of the counts represented by the heights of the bars rather than the raw count of the contingency table.</p>
 <p>To visualize a two-way table, a stacked barplot can be created.</p>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-267-1.png" width="75%" style="display: block; margin: auto;" /></p>
-<p>Interpret…</p>
-<p>The <strong>side-by-side barplot</strong> can be created as an alternative visual of the two-way table.</p>
 <p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-268-1.png" width="75%" style="display: block; margin: auto;" /></p>
-<p>Interp…</p>
-<p>Filled barplots also sometimes useful. Here the bars will be stacked and the bars will be standardized to have constant height. This is really useful when there are an equal number of observations (or close to it) in each category on the x-axis (for instance with some Likert scale data surveys).</p>
+<p>This shows the counts for each <code>Sex</code> category using colors within the bars. This can be really useful to roughly see if a relationship is constant across the variables. Here we can clearly see that the survivors had a higher proportion of females than than group that didn’t survive.</p>
+<p>The <strong>side-by-side barplot</strong> can be created as an alternative visual of the two-way table.</p>
 <p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-269-1.png" width="75%" style="display: block; margin: auto;" /></p>
-<p>Interpret…</p>
-<p>Of course, sometimes it is useful to see the same plot across the levels or settings of another variable. The plots below…</p>
+<p>This is simply another way to visualize the two-way table. This more clearly allows us to see the counts for each subgroup.</p>
+<p>Filled barplots also sometimes useful. Here the bars will be stacked and the bars will be standardized to have constant height. This is really useful when there are an equal number of observations (or close to it) in each category on the x-axis (for instance with some Likert scale data surveys).</p>
 <p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-270-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>This shows that the proportions in each group more clearly, however we lose information about the difference in number of observations in each group.</p>
+<p>Of course, sometimes it is useful to see the same plot across the levels or settings of another variable. This can help us to visualize a three-way contingency table.</p>
+<pre><code>## Warning: The labeller API has been updated. Labellers taking `variable`and
+## `value` arguments are now deprecated. See labellers documentation.</code></pre>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-271-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>These plots allow us to see the relationship between all three categorical variables in the titanic dataset. We can see that the relationships are roughly similar across all three ports: there were fewer females than males that died from each port and there were more females than males that survived.</p>
 </div>
 <div id="histograms-and-density-plots" class="section level4">
-<h4><span class="header-section-number">3.2.4.2</span> Histograms and Density Plots</h4>
-<p>Next we’ll create common plots for numerical variables (variables in which entries are a numerical value where math can be performed). Recall that the main goal of summarizing numerical variables is to describe the shape, center, and spread of the distribution. Generally, this is done using a histogram, boxplot, or, in the case of two numerical variables, scatterplot.</p>
-<p>We’ll again look at the carbon dioxide (CO2) uptake data set. Let’s start by creating a histogram. A histogram …</p>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-271-1.png" width="75%" style="display: block; margin: auto;" /></p>
-<p>Interpret…</p>
-<p>Issue with histograms is their variability (quick example). Alternative is the kernel smoothed plot. These…</p>
+<h4><span class="header-section-number">3.2.2.2</span> Histograms and Density Plots</h4>
+<p>Next we’ll create common plots for numerical variables (variables in which entries are a numerical value where math can be performed). Recall that the main goal of summarizing numerical variables is to describe the shape, center, and spread of the distribution. Generally, this is done using a histogram, a boxplot, or, in the case of two numerical variables, a scatterplot.</p>
+<p>We’ll again look at the carbon dioxide (<code>CO2</code>) uptake data set. Let’s start by creating a histogram. To create a histogram, the x-axis must split up into equal width bins. The counts in each bin then determine the heights of the bars to be plotted (similar to a bargraph). The bars can also be standardized so that the total area of the bars is one. This makes the histogram into a density histogram and is useful when we want to overlay a probability density function (PDF) on top of the histogram. PDFs are population models for observing variables. Let’s create a histogram for the <code>uptake</code> variable.</p>
 <p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-272-1.png" width="75%" style="display: block; margin: auto;" /></p>
-<p>Interpret…</p>
-<p>or</p>
+<p>Software will usually define the width of the bars automatically (but allow us to change it if we’d like) so we won’t discuss that here. From the histogram we can see that there are a lot of <code>uptake</code> values between 10 and 20 and from about 26 to 44.</p>
+<p>When describing a histogram we usually want to talk about the modality and the skewness or symmetry. The shape of the distribution appears to be bimodal. A mode is the most commonly occurring value in a dataset. When we intrepret a histogram, we use mode to represent an area where the histogram is higher. We have two higher areas here so we would say the distribution is bimodal (these modes don’t need to be of the same height generally).</p>
+<p>This distribution isn’t symmetric. If it were we could fold it in half down the middle and the two sides would line up. Left and right skewness imply that values are more spread out on one side than the other (skewed left implies more spread out on the left). Skewness is easier to discuss on a unimodal (one mode) histogram. We likely wouldn’t discuss the skewness of the above plot.</p>
+<p>One issue with histograms is that they are highly variable. That is, if we choose a different width for the bins we can see quite different shapes in the histograms.</p>
 <p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-273-1.png" width="75%" style="display: block; margin: auto;" /></p>
-<p>Interpret…</p>
-<p>Plots can easily be overlayed, as long as they are on the same scale.</p>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-274-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>Above is a similar histogram as before but with a smaller width for the bins. Here, there sort of looks as though there may be four modes…</p>
+<p>An alternative to the histogram is the kernel density smoothed plot. These use a ‘kernel’ or weighting function to create a smooth curve using ‘local’ points rather than use discrete bins. The visual below describes how a normal distribution (covered later) weight can be applied to each point to create a smooth graph.</p>
+<p><img src="img/kernel.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>The curve heights are all added together in order to get the final curve height. Where there are more points the overall curve is much higher. There is still a bandwidth that needs to be chosen to determine what weight to give points nearby but the kernel desnity plot tends to be less variable than a histogram.</p>
+<p>Below is a kernel density plot for the <code>uptake</code> variable.</p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-275-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>Again, we can see the bimodal nature of the uptake variable. Often it is useful to color the region by the contributions of <code>uptake</code> from another variable.</p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-276-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>Here we can see how the <code>uptake</code> observations are related to <code>Treatment</code>. There are a higher proportion of smaller <code>uptake</code> values for the <code>chilled</code> group than the <code>nonchilled</code> group.</p>
 </div>
 <div id="boxplots" class="section level4">
-<h4><span class="header-section-number">3.2.4.3</span> Boxplots</h4>
-<p>boxplot</p>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-275-1.png" width="75%" style="display: block; margin: auto;" /></p>
-<p>Sometimes it is useful to overlay the data values themselves on a boxplot in order to see the shape of the distribution more clearly.</p>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-276-1.png" width="75%" style="display: block; margin: auto;" /></p>
-<p>Across another variable</p>
+<h4><span class="header-section-number">3.2.2.3</span> Boxplots</h4>
+<p>A boxplot is another common graph to help understand the distribution of a numerical vairable. The boxplot essentially gives a visual of the five-number summary (min, <span class="math inline">\(Q_1\)</span>, median, <span class="math inline">\(Q_3\)</span>, and max).</p>
 <p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-277-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>The line (or whisker) coming out of the bottom of the boxes starts at the minimum value observed and the line at the top ends at the maximum value observed. The difference in these values is the sample range. The start and end of the box correspond to the sample quartiles <span class="math inline">\(Q_1\)</span> and <span class="math inline">\(Q_3\)</span>, respectively. The width of the box represents the sample IQR. The line in the middle of the box represents the sample median. Sometimes a sybmol will also appear in the box. This usually corresponds to the sample mean. The lines may also have points further past them. These are points designated as possible ‘outliers’ or unusual data points. Often a value more than <span class="math inline">\(1.5*IQR\)</span> above the third quartile or <span class="math inline">\(1.5*IQR\)</span> below the first quartile are identified as outliers. We’ll discuss outliers a bit more later on.</p>
+<p>The boxplot can be used to investigate skewness and symmetry of the distribution. For instance, we can see that, for the chilled group, the data is more spread out for larger values. This implies the distribution of <code>uptake</code> for the <code>chilled</code> treatment group is skewed right (or positively skewed).</p>
+<p>The main problem with looking at boxplots is that there is no idea about the modality of the distribution. It is sometimes useful to overlay the data values themselves on the boxplots in order to see the shape of the distribution more clearly.</p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-278-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>If there is another categorical variable that we’d like to see the relationship with, we can recreate these same plots for each setting of the other variable. Below are the same boxplots with points overlayed, but now split depending on the <code>Type</code> (origin) of grass.</p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-279-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>Interestingly, we can see that the distributions of <code>uptake</code> values for the <code>chilled</code> treatment groups are both somewhat skewed left. We saw that the variable was skewed right previously!. This is an example of what is called <strong>Simpson’s Paradox</strong>. Simpson’s paradox occurs when the relationship for aggregated data is different than the relationship seen when the data isn’t aggregated.</p>
 </div>
 <div id="scatterplots" class="section level4">
-<h4><span class="header-section-number">3.2.4.4</span> Scatterplots</h4>
-<p>Scatterplots
-Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variables.</p>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-278-1.png" width="75%" style="display: block; margin: auto;" /></p>
-<p>Trend lines and correlation on plot</p>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-279-1.png" width="75%" style="display: block; margin: auto;" /></p>
-<p>Using text for the points too</p>
+<h4><span class="header-section-number">3.2.2.4</span> Scatterplots</h4>
+<p>The best plot to visualize the distribution between two numerical variables is the scatterplot. A scatterplot has an <span class="math inline">\(x-y\)</span> plane and places a point on that plane corresponding to each pair of data values for the two variables considered.</p>
+<p>Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variables.</p>
 <p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-280-1.png" width="75%" style="display: block; margin: auto;" /></p>
-<p>Across another variable</p>
+<p>Here we can see that the distribution seems to follow some sort of logarithmic relationship.</p>
+<p>Often we like to add a <strong>trend line</strong> to the graph to help see the relationship more clearly. For instance, a linear trend line can be found (simple linear regression line) and the sample correlation shown as well.</p>
 <p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-281-1.png" width="75%" style="display: block; margin: auto;" /></p>
-<p>Sometimes create amalgamation type graphs. Useful but be careful not to overwhelm the reader.</p>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-282-1.png" width="90%" style="display: block; margin: auto;" /></p>
+<p>This clearly isn’t a good fit as the lower portion of the line doesn’t go through any of the points. A smoothed line can be used instead.</p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-282-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>This line does a much better job representing the relationship of the average <code>uptake</code> value at a particular value of <code>conc</code>.</p>
+<p>Points can be colored to display the relationship with another variable in the dataset.<br />
+<img src="StatisticalMethods_files/figure-html/unnamed-chunk-283-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>We can see that the grass whose origin was <code>Quebec</code> tended to have higher <code>uptake</code> values but the relationship between <code>conc</code> and <code>uptake</code> is similar for both <code>Type</code>s or origins of the grass.</p>
+<p>Note: If another numerical variable was in the dataset, we could include that variable in this plot by using that variable to determine the size (or color) of the points.</p>
+<p>It is often useful to create the scatterplot for different settings of a categorical variable as well.</p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-284-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>This gives us some further information about the relationships. The chilled group seems to have a larger difference between <code>Type</code>s of grass but the relationship structure still seems to hold.</p>
+<p>Hopefully, you can see the usefulness in creating both numerical and graphical summaries to help understand the distributions of variables and the relationships that exist in the data.</p>
+<p>Remember, in this chapter we are only describing sample data and sample distributions. Usually we assume that the data is coming from some population. The population values for a variable will also have a distribution and similar summaries we can make. We’ll investigate this more clearly in the next few chapters.</p>
 </div>
 </div>
 </div>
@@ -1257,8 +1322,8 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 </ul>
 <p>The main goal is to describe the distribution or pattern and frequency with which you observe the variable. For categorical variables, we used contingency tables to describe the count in each category. In R, this is done using the <code>table</code> function.</p>
 <p>We’ll recreate the summaries of the titanic dataset (available in the file <code>titanic.csv</code> in the datasets folder or via the web).</p>
-<div class="sourceCode" id="cb427"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb427-1" title="1">titanicData &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://www4.stat.ncsu.edu/~online/datasets/titanic.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb427-2" title="2">titanicData</a></code></pre></div>
+<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb425-1" title="1">titanicData &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://www4.stat.ncsu.edu/~online/datasets/titanic.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb425-2" title="2">titanicData</a></code></pre></div>
 <pre><code>## # A tibble: 1,310 x 14
 ##   pclass survived name  sex      age sibsp parch ticket  fare cabin embarked
 ##    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   
@@ -1278,36 +1343,36 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 <li>sex (Male or Female)</li>
 </ul>
 <p>To create the <strong>one-way contingency tables</strong>, we simply pass the column of interest to the <code>table</code> function.</p>
-<div class="sourceCode" id="cb429"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb429-1" title="1"><span class="kw">table</span>(titanicData<span class="op">$</span>embarked)</a></code></pre></div>
+<div class="sourceCode" id="cb427"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb427-1" title="1"><span class="kw">table</span>(titanicData<span class="op">$</span>embarked)</a></code></pre></div>
 <pre><code>## 
 ##   C   Q   S 
 ## 270 123 914</code></pre>
-<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb431-1" title="1"><span class="kw">table</span>(titanicData<span class="op">$</span>survived)</a></code></pre></div>
+<div class="sourceCode" id="cb429"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb429-1" title="1"><span class="kw">table</span>(titanicData<span class="op">$</span>survived)</a></code></pre></div>
 <pre><code>## 
 ##   0   1 
 ## 809 500</code></pre>
-<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb433-1" title="1"><span class="kw">table</span>(titanicData<span class="op">$</span>sex)</a></code></pre></div>
+<div class="sourceCode" id="cb431"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb431-1" title="1"><span class="kw">table</span>(titanicData<span class="op">$</span>sex)</a></code></pre></div>
 <pre><code>## 
 ## female   male 
 ##    466    843</code></pre>
 <p>To create a <strong>two-way contingency table</strong>, we can pass the columns of interest from the dataset.</p>
-<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb435-1" title="1"><span class="kw">table</span>(titanicData<span class="op">$</span>survived, titanicData<span class="op">$</span>sex)</a></code></pre></div>
+<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb433-1" title="1"><span class="kw">table</span>(titanicData<span class="op">$</span>survived, titanicData<span class="op">$</span>sex)</a></code></pre></div>
 <pre><code>##    
 ##     female male
 ##   0    127  682
 ##   1    339  161</code></pre>
-<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb437-1" title="1"><span class="kw">table</span>(titanicData<span class="op">$</span>survived, titanicData<span class="op">$</span>embarked)</a></code></pre></div>
+<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb435-1" title="1"><span class="kw">table</span>(titanicData<span class="op">$</span>survived, titanicData<span class="op">$</span>embarked)</a></code></pre></div>
 <pre><code>##    
 ##       C   Q   S
 ##   0 120  79 610
 ##   1 150  44 304</code></pre>
-<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb439-1" title="1"><span class="kw">table</span>(titanicData<span class="op">$</span>sex, titanicData<span class="op">$</span>embarked)</a></code></pre></div>
+<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb437-1" title="1"><span class="kw">table</span>(titanicData<span class="op">$</span>sex, titanicData<span class="op">$</span>embarked)</a></code></pre></div>
 <pre><code>##         
 ##            C   Q   S
 ##   female 113  60 291
 ##   male   157  63 623</code></pre>
 <p>This same process can continue to create an <strong>n-way contingency table</strong>.</p>
-<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb441-1" title="1"><span class="kw">table</span>(titanicData<span class="op">$</span>sex, titanicData<span class="op">$</span>embarked, titanicData<span class="op">$</span>survived)</a></code></pre></div>
+<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb439-1" title="1"><span class="kw">table</span>(titanicData<span class="op">$</span>sex, titanicData<span class="op">$</span>embarked, titanicData<span class="op">$</span>survived)</a></code></pre></div>
 <pre><code>## , ,  = 0
 ## 
 ##         
@@ -1322,39 +1387,46 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 ##   female 102  37 198
 ##   male    48   7 106</code></pre>
 <p>These table objects in R are actually arrays - the extension of a matrix to more than two dimensions.</p>
-<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb443-1" title="1">tab &lt;-<span class="st"> </span><span class="kw">table</span>(titanicData<span class="op">$</span>sex, titanicData<span class="op">$</span>embarked, titanicData<span class="op">$</span>survived)</a>
-<a class="sourceLine" id="cb443-2" title="2"><span class="kw">str</span>(tab)</a></code></pre></div>
+<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb441-1" title="1">tab &lt;-<span class="st"> </span><span class="kw">table</span>(titanicData<span class="op">$</span>sex, titanicData<span class="op">$</span>embarked, titanicData<span class="op">$</span>survived)</a>
+<a class="sourceLine" id="cb441-2" title="2"><span class="kw">str</span>(tab)</a></code></pre></div>
 <pre><code>##  &#39;table&#39; int [1:2, 1:3, 1:2] 11 109 23 56 93 517 102 48 37 7 ...
 ##  - attr(*, &quot;dimnames&quot;)=List of 3
 ##   ..$ : chr [1:2] &quot;female&quot; &quot;male&quot;
 ##   ..$ : chr [1:3] &quot;C&quot; &quot;Q&quot; &quot;S&quot;
 ##   ..$ : chr [1:2] &quot;0&quot; &quot;1&quot;</code></pre>
 <p>You can obtain <strong>conditional</strong> bivariate info by supplying an index.</p>
-<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb445-1" title="1"><span class="co">#returns embarked vs survived table for females</span></a>
-<a class="sourceLine" id="cb445-2" title="2">tab[<span class="dv">1</span>, , ]</a></code></pre></div>
+<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb443-1" title="1"><span class="co">#returns embarked vs survived table for females</span></a>
+<a class="sourceLine" id="cb443-2" title="2">tab[<span class="dv">1</span>, , ]</a></code></pre></div>
 <pre><code>##    
 ##       0   1
 ##   C  11 102
 ##   Q  23  37
 ##   S  93 198</code></pre>
-<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb447-1" title="1"><span class="co">#returns embarked vs survived table for males</span></a>
-<a class="sourceLine" id="cb447-2" title="2">tab[<span class="dv">2</span>, , ]</a></code></pre></div>
+<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb445-1" title="1"><span class="co">#returns embarked vs survived table for males</span></a>
+<a class="sourceLine" id="cb445-2" title="2">tab[<span class="dv">2</span>, , ]</a></code></pre></div>
 <pre><code>##    
 ##       0   1
 ##   C 109  48
 ##   Q  56   7
 ##   S 517 106</code></pre>
-<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb449-1" title="1"><span class="co">#returns survived vs sex table for embarked &quot;C&quot;</span></a>
-<a class="sourceLine" id="cb449-2" title="2">tab[, <span class="dv">1</span>, ]</a></code></pre></div>
+<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb447-1" title="1"><span class="co">#returns survived vs sex table for embarked &quot;C&quot;</span></a>
+<a class="sourceLine" id="cb447-2" title="2">tab[, <span class="dv">1</span>, ]</a></code></pre></div>
 <pre><code>##         
 ##            0   1
 ##   female  11 102
 ##   male   109  48</code></pre>
 <p>We can also obtain <strong>conditional</strong> univariate info too!</p>
-<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb451-1" title="1"><span class="co">#Survived status for males that embarked at &quot;Q&quot;</span></a>
-<a class="sourceLine" id="cb451-2" title="2">tab[<span class="dv">2</span>, <span class="dv">2</span>, ]</a></code></pre></div>
+<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb449-1" title="1"><span class="co">#Survived status for males that embarked at &quot;Q&quot;</span></a>
+<a class="sourceLine" id="cb449-2" title="2">tab[<span class="dv">2</span>, <span class="dv">2</span>, ]</a></code></pre></div>
 <pre><code>##  0  1 
 ## 56  7</code></pre>
+<p>To create a table with sample proportions, we can divide by the total sum of the table counts.</p>
+<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb451-1" title="1">surEmbTab &lt;-<span class="st"> </span><span class="kw">table</span>(titanicData<span class="op">$</span>survived, titanicData<span class="op">$</span>embarked)</a>
+<a class="sourceLine" id="cb451-2" title="2"><span class="kw">round</span>(surEmbTab<span class="op">/</span><span class="kw">sum</span>(surEmbTab), <span class="dv">3</span>)</a></code></pre></div>
+<pre><code>##    
+##         C     Q     S
+##   0 0.092 0.060 0.467
+##   1 0.115 0.034 0.233</code></pre>
 <p>For numerical variables, recall that we want to describe the shape, center, and spread of the variable’s distribution.</p>
 <p>Recall the carbon dioxide (CO2) uptake data set</p>
 <ul>
@@ -1549,25 +1621,25 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 ##   0   1 
 ## 809 500</code></pre>
 <div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb491-1" title="1"><span class="kw">barplot</span>(<span class="kw">table</span>(titanicData<span class="op">$</span>survived))</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-305-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-308-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>To visualize a two-way table, a stacked barplot can be created. Again, we simply pass a two-way table to the <code>barplot</code> function.</p>
 <div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb492-1" title="1">twoTable &lt;-<span class="st"> </span><span class="kw">table</span>(titanicData<span class="op">$</span>survived, titanicData<span class="op">$</span>sex)</a></code></pre></div>
 <div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb493-1" title="1"><span class="kw">barplot</span>(twoTable)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-307-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-310-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Of course, a legend is needed. Common arguments to <code>barplot</code> include:</p>
 <ul>
 <li><code>legend = TRUE</code></li>
 <li>`args.legend = list(title = “…”)</li>
 </ul>
 <div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb494-1" title="1"><span class="kw">barplot</span>(twoTable, <span class="dt">legend =</span> <span class="ot">TRUE</span>, <span class="dt">args.legend =</span> <span class="kw">list</span>(<span class="dt">title=</span><span class="st">&quot;Survived&quot;</span>))</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-308-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-311-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>To create a <strong>Side-by-side barplot</strong>, simply pass a two-way table to <code>barplot</code> with an additional input of <code>beside = TRUE</code>.</p>
 <div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb495-1" title="1"><span class="kw">barplot</span>(twoTable, <span class="dt">beside =</span> <span class="ot">TRUE</span>, <span class="dt">legend =</span> <span class="ot">TRUE</span>, <span class="dt">args.legend=</span><span class="kw">list</span>(<span class="dt">title=</span><span class="st">&quot;Survived&quot;</span>))</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-309-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-312-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>The legend can be specified more clearly by providing a character vector corresponding to the values of the first variable given to the <code>table</code> function.</p>
 <div class="sourceCode" id="cb496"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb496-1" title="1"><span class="kw">barplot</span>(twoTable, <span class="dt">beside =</span> <span class="ot">TRUE</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Died&quot;</span>, <span class="st">&quot;Survived&quot;</span>),</a>
 <a class="sourceLine" id="cb496-2" title="2">        <span class="dt">args.legend=</span><span class="kw">list</span>(<span class="dt">title=</span><span class="st">&quot;Survived&quot;</span>))</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-310-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-313-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>To visualize a three-way table, we essentially want to recreate this plot for each setting of the third variable. This is a little difficult in <code>Base R</code> and will be taken up in the <code>ggplot</code> section.</p>
 <p>Next we’ll create common plots for numerical variables (variables in which entries are a numerical value where math can be performed). Recall that the main goal of summarizing numerical variables is to describe the shape, center, and spread of the distribution. Generally, this is done using a histogram, boxplot, or, in the case of two numerical variables, scatterplot.</p>
 <p>The general process for creating these plots using <code>Base R</code>:</p>
@@ -1587,14 +1659,14 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 ## # ... with 79 more rows</code></pre>
 <p>The <code>hist</code> function creates a histogram and its main argument is a numeric vector.</p>
 <div class="sourceCode" id="cb498"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb498-1" title="1"><span class="kw">hist</span>(CO2<span class="op">$</span>uptake)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-312-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-315-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>There are many ways to modify the histogram. Some common things to change would be the title (<code>main</code>), the bin calculation (<code>breaks</code>), and perhaps the color of the bars (<code>col</code>).</p>
 <div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb499-1" title="1"><span class="kw">hist</span>(CO2<span class="op">$</span>uptake, <span class="dt">main =</span> <span class="st">&quot;Histogram of Uptake Values&quot;</span>, <span class="dt">breaks =</span> <span class="dv">15</span>, <span class="dt">col =</span> <span class="st">&quot;Red&quot;</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-313-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-316-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Often there is a value that you’d like to highlight by adding a line. This can be done using the <code>abline</code> function (<code>lty</code> specifies line type, <code>lwd</code> the line width, <code>col</code> the color, etc. - see <code>help(par)</code> for more information). <code>abline</code> will add a line to the most recently created plot.</p>
 <div class="sourceCode" id="cb500"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb500-1" title="1"><span class="kw">hist</span>(CO2<span class="op">$</span>uptake, <span class="dt">main =</span> <span class="st">&quot;Histogram of Uptake Values&quot;</span>, <span class="dt">breaks =</span> <span class="dv">15</span>, <span class="dt">col =</span> <span class="st">&quot;Red&quot;</span>)</a>
 <a class="sourceLine" id="cb500-2" title="2"><span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">mean</span>(CO2<span class="op">$</span>uptake), <span class="dt">lwd =</span> <span class="dv">3</span>, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;Blue&quot;</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-314-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-317-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>A kernel plot (or smoothed histogram plot) can be created by using the <code>plot</code> function on the output created by the <code>density</code> function. <code>density</code> will comput kernel density estimates, by default using the normal distribution for weighting. As with <code>hist</code>, we pass <code>density</code> the numeric vector of interest.</p>
 <div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb501-1" title="1"><span class="kw">density</span>(CO2<span class="op">$</span>uptake)</a></code></pre></div>
 <pre><code>## 
@@ -1611,22 +1683,22 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 ##  3rd Qu.:42.068   3rd Qu.:2.649e-02  
 ##  Max.   :57.537   Max.   :3.095e-02</code></pre>
 <div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb503-1" title="1"><span class="kw">plot</span>(<span class="kw">density</span>(CO2<span class="op">$</span>uptake), <span class="dt">lwd =</span> <span class="dv">3</span>, <span class="dt">col =</span> <span class="st">&quot;Blue&quot;</span>, <span class="dt">lty =</span> <span class="dv">3</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-315-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-318-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>To overlay a kernel smoother on top of a histogram, we first create a histogram and specify <code>freq = FALSE</code> in order to put the histogram on the same scale as a density plot. Then, we use <code>lines</code> instead of <code>plot</code> on the output of the <code>density</code> call. <code>lines</code> is a function similar to <code>abline</code> in that it will overlay a (more general) ‘line’ on the most recently created plot.</p>
 <div class="sourceCode" id="cb504"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb504-1" title="1"><span class="kw">hist</span>(CO2<span class="op">$</span>uptake, <span class="dt">main =</span> <span class="st">&quot;Histogram of Uptake Values&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;Red&quot;</span>, <span class="dt">freq =</span> <span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb504-2" title="2"><span class="kw">lines</span>(<span class="kw">density</span>(CO2<span class="op">$</span>uptake), <span class="dt">lwd =</span> <span class="dv">3</span>, <span class="dt">col =</span> <span class="st">&quot;Blue&quot;</span>, <span class="dt">lty =</span> <span class="dv">3</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-316-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-319-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>To create a boxplot, use the <code>boxplot</code> function. We can specify a single numeric vector as the argument. This will create a single boxplot. To create side-by-side boxplots, the formula notation we’ve used before comes in handy! If we want a boxplot of the <code>uptake</code> variable for each level of the <code>Treatment</code> variable, we pass <code>boxplot</code> <code>uptake ~ Treatment</code> and specify the data set being used (<code>main</code> again will change the title).</p>
 <div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb505-1" title="1"><span class="kw">boxplot</span>(uptake <span class="op">~</span><span class="st"> </span>Treatment, <span class="dt">data =</span> CO2, <span class="dt">main =</span> <span class="st">&quot;Boxplot of Uptake by Treatment&quot;</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-317-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-320-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>It is easy to change the orientation using the <code>horizontal</code> argument.</p>
 <div class="sourceCode" id="cb506"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb506-1" title="1"><span class="kw">boxplot</span>(uptake <span class="op">~</span><span class="st"> </span>Treatment, <span class="dt">data =</span> CO2, </a>
 <a class="sourceLine" id="cb506-2" title="2">        <span class="dt">main =</span> <span class="st">&quot;Boxplot of Uptake by Treatment&quot;</span>, <span class="dt">horizontal =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-318-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-321-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Most of the graphical parameters used previously can be changed here too because <code>boxplot</code> has the ellipsis argument <code>...</code>.</p>
 <div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb507-1" title="1"><span class="kw">boxplot</span>(uptake <span class="op">~</span><span class="st"> </span>Treatment, <span class="dt">data =</span> CO2, </a>
 <a class="sourceLine" id="cb507-2" title="2">        <span class="dt">main =</span> <span class="st">&quot;Boxplot of Uptake by Treatment&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;Grey&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-319-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-322-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>The ellipsis argument exists in many functions including <code>hist</code>, <code>boxplot</code>, <code>abline</code>, <code>lines</code>, and <code>plot</code> This argument means additional arguments not named in the inputs of the function being called can be passed. These arguments may be used by function calls within one of these functions! You can see the code used in each function by running the function with no <code>()</code> after it.</p>
 <div class="sourceCode" id="cb508"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb508-1" title="1">read_csv</a></code></pre></div>
 <pre><code>## function (file, col_names = TRUE, col_types = NULL, locale = default_locale(), 
@@ -1642,7 +1714,7 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 ##         comment = comment, n_max = n_max, guess_max = guess_max, 
 ##         progress = progress)
 ## }
-## &lt;bytecode: 0x0000000019ea38e0&gt;
+## &lt;bytecode: 0x0000000019f41100&gt;
 ## &lt;environment: namespace:readr&gt;</code></pre>
 <p>Some functions are ‘generic’ such as <code>mean</code> and <code>plot</code>. You need to know which mean or plot method you are trying to get the code. <code>plot.default</code> is the default!</p>
 <div class="sourceCode" id="cb510"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb510-1" title="1">plot.default</a></code></pre></div>
@@ -1695,7 +1767,7 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 ##             ...)
 ##     invisible()
 ## }
-## &lt;bytecode: 0x000000001a392658&gt;
+## &lt;bytecode: 0x000000001a38e6d0&gt;
 ## &lt;environment: namespace:graphics&gt;</code></pre>
 <p>Here you can see that some of the functions called by <code>plot.default</code> also have the <code>...</code> argument being used. This is why the arguments like <code>lty</code> and <code>col</code> can be used even though they aren’t always named in the function inputs explicity. When working with <code>Base R</code> graphics, getting to know the graphical parameters (see <code>help(par)</code>) is important!</p>
 <p>The <code>plot</code> function itself is very flexible. General use:</p>
@@ -1712,12 +1784,12 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 </ul>
 <p>To create a basic scatterplot, just specify two numeric vectors of the same length.</p>
 <div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb512-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> CO2<span class="op">$</span>conc, <span class="dt">y =</span> CO2<span class="op">$</span>uptake) </a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-322-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-325-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>By default the <code>plot</code> type is ‘p’ for points but many types of plots can be made by changing the <code>type</code> argument. The labels on the axis can be changed using <code>xlab</code> and <code>ylab</code>, the title with <code>main</code>, the plotting character <code>pch</code>, etc.</p>
 <div class="sourceCode" id="cb513"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb513-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> CO2<span class="op">$</span>conc, <span class="dt">y =</span> CO2<span class="op">$</span>uptake, <span class="dt">xlab =</span> <span class="st">&quot;Concentration&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Uptake&quot;</span>,</a>
 <a class="sourceLine" id="cb513-2" title="2">     <span class="dt">main =</span> <span class="st">&quot;Scatter Plot of Concentration and Uptake&quot;</span>, <span class="dt">pch =</span> <span class="dv">2</span>,</a>
 <a class="sourceLine" id="cb513-3" title="3">     <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="kw">max</span>(CO2<span class="op">$</span>uptake)))</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-323-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-326-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>To change the plotting symbol (or color, etc.) based on another variable, create appropriate vectors that match the length of the data. For instance, we can create a <code>symbol</code> column on our data frame that is <code>3</code> if the <code>Treatment</code> is ‘chilled’ and <code>2</code> if not. This symbol column is of course the same length as the data. If we pass the <code>pch</code> argument <code>symbol</code>, <code>plot</code> will assign the plotting character <code>3</code> to chilled observations and <code>2</code> if not.</p>
 <div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb514-1" title="1">CO2<span class="op">$</span>symbol &lt;-<span class="st"> </span><span class="kw">ifelse</span>(CO2<span class="op">$</span>Treatment <span class="op">==</span><span class="st"> &quot;chilled&quot;</span>, <span class="dv">3</span>, <span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb514-2" title="2"><span class="kw">select</span>(CO2, uptake, Treatment, symbol)</a></code></pre></div>
@@ -1731,21 +1803,21 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 ## 5   35.3 nonchilled      2
 ## # ... with 79 more rows</code></pre>
 <div class="sourceCode" id="cb516"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb516-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> CO2<span class="op">$</span>conc, <span class="dt">y =</span> CO2<span class="op">$</span>uptake, <span class="dt">pch =</span> CO2<span class="op">$</span>symbol)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-324-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-327-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>To instruct the reader of the plot, a legend should be added. A manual legend can be created with <code>legend</code>. You can use keywords to specify its location or give an <code>x</code>-<code>y</code> pair. As with the legend for <code>barplot</code>, we can specify the names that display. To match the plot, we should specify the <code>pch</code> corresponding to the levels in the same manner (this would be the same if we changed the color too!).</p>
 <div class="sourceCode" id="cb517"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb517-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> CO2<span class="op">$</span>conc, <span class="dt">y =</span> CO2<span class="op">$</span>uptake, <span class="dt">pch =</span> CO2<span class="op">$</span>symbol)</a>
 <a class="sourceLine" id="cb517-2" title="2"><span class="kw">legend</span>(<span class="dt">x =</span> <span class="dv">810</span>, <span class="dt">y =</span> <span class="dv">18</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Chilled&quot;</span>, <span class="st">&quot;Non-Chilled&quot;</span>), <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">2</span>))</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-325-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-328-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb518"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb518-1" title="1"><span class="co">#Note that colors specified as integers come from the `palette` function </span></a>
 <a class="sourceLine" id="cb518-2" title="2"><span class="co">#2 is &#39;red&#39; and 3 is &#39;green3&#39;</span></a>
 <a class="sourceLine" id="cb518-3" title="3"><span class="kw">plot</span>(<span class="dt">x =</span> CO2<span class="op">$</span>conc, <span class="dt">y =</span> CO2<span class="op">$</span>uptake, <span class="dt">col =</span> CO2<span class="op">$</span>symbol)</a>
 <a class="sourceLine" id="cb518-4" title="4"><span class="kw">legend</span>(<span class="dt">x =</span> <span class="dv">810</span>, <span class="dt">y =</span> <span class="dv">18</span>, <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;Chilled&quot;</span>, <span class="st">&quot;Non-Chilled&quot;</span>), <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">2</span>))</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-325-2.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-328-2.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Plots can be adorned using <code>abline</code>, <code>lines</code>, and <code>text</code> to name a few. For instance, a trend line can be added with <code>abline</code>. We’ll use <code>lm</code> and our formula notation to fit a simple linear regression model (covered later) and <code>abline</code> knows how to plot an object of class <code>lm</code>.</p>
 <div class="sourceCode" id="cb519"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb519-1" title="1"><span class="kw">plot</span>(<span class="dt">x =</span> CO2<span class="op">$</span>conc, <span class="dt">y =</span> CO2<span class="op">$</span>uptake, <span class="dt">xlab =</span> <span class="st">&quot;Concentration&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Uptake&quot;</span>,</a>
 <a class="sourceLine" id="cb519-2" title="2">     <span class="dt">main =</span> <span class="st">&quot;Scatter Plot of Concentration and Uptake&quot;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="kw">max</span>(CO2<span class="op">$</span>uptake)))</a>
 <a class="sourceLine" id="cb519-3" title="3"><span class="kw">abline</span>(<span class="kw">lm</span>(uptake <span class="op">~</span><span class="st"> </span>conc, <span class="dt">data =</span> CO2), <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;Blue&quot;</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-326-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-329-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>When adding text, the <code>text</code> function can be used. <code>paste</code> or <code>paste0</code> can come in handy. These functions ‘paste’ together strings. <code>paste</code> allows the user to specify the character that separates the pasted together strings and <code>paste0</code> is a special case where there is no separating character.</p>
 <div class="sourceCode" id="cb520"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb520-1" title="1"><span class="kw">paste</span>(<span class="st">&quot;Hi&quot;</span>, <span class="st">&quot;What&quot;</span>, <span class="st">&quot;Is&quot;</span>, <span class="st">&quot;Going&quot;</span>, <span class="st">&quot;On&quot;</span>, <span class="st">&quot;?&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;Hi What Is Going On ?&quot;</code></pre>
@@ -1760,20 +1832,20 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 <a class="sourceLine" id="cb526-4" title="4"><span class="kw">abline</span>(<span class="kw">lm</span>(uptake <span class="op">~</span><span class="st"> </span>conc, <span class="dt">data =</span> CO2), <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;Blue&quot;</span>)</a>
 <a class="sourceLine" id="cb526-5" title="5"><span class="kw">text</span>(<span class="dt">x =</span> <span class="dv">750</span>, <span class="dt">y =</span> <span class="dv">10</span>, <span class="dt">cex =</span> <span class="dv">2</span>, </a>
 <a class="sourceLine" id="cb526-6" title="6">     <span class="dt">label =</span> <span class="kw">paste0</span>(<span class="st">&quot;Correlation = &quot;</span>, <span class="kw">round</span>(correlation, <span class="dv">2</span>)))</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-328-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-331-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>To plot character strings instead of points, <code>text</code> can be used after creating an ‘empty’ <code>plot</code> call. <code>plot</code> should be called and the plotting window set, but the values to plot should be <code>NULL</code> (a special object in R used for things that are undefined). Next, call the text function using the usual <code>x</code>-<code>y</code> coordinates along with a <code>label</code> vector the same length as the data. For example, we could plot the <code>Plant</code> for each data point instead of a symbol.</p>
 <div class="sourceCode" id="cb527"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb527-1" title="1"><span class="kw">plot</span>(<span class="ot">NULL</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="kw">min</span>(CO2<span class="op">$</span>conc), <span class="kw">max</span>(CO2<span class="op">$</span>conc)), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="kw">min</span>(CO2<span class="op">$</span>uptake), <span class="kw">max</span>(CO2<span class="op">$</span>uptake)), </a>
 <a class="sourceLine" id="cb527-2" title="2">     <span class="dt">main =</span> <span class="st">&quot;Scatter Plot of Concentration and Uptake&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Conc&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Uptake&quot;</span>)</a>
 <a class="sourceLine" id="cb527-3" title="3"><span class="kw">text</span>(<span class="dt">x =</span> CO2<span class="op">$</span>conc, <span class="dt">y =</span> CO2<span class="op">$</span>uptake, <span class="dt">label =</span> CO2<span class="op">$</span>Plant)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-329-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-332-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Note that you could specify a single character value for <code>label</code> and the plot would still work. This is because R ‘recycles’ the value. This is a powerful but dangerous aspect of R.</p>
 <div class="sourceCode" id="cb528"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb528-1" title="1"><span class="kw">plot</span>(<span class="ot">NULL</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="kw">min</span>(CO2<span class="op">$</span>conc), <span class="kw">max</span>(CO2<span class="op">$</span>conc)), <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="kw">min</span>(CO2<span class="op">$</span>uptake), <span class="kw">max</span>(CO2<span class="op">$</span>uptake)), </a>
 <a class="sourceLine" id="cb528-2" title="2">     <span class="dt">main =</span> <span class="st">&quot;Scatter Plot of Concentration and Uptake&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Conc&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;Uptake&quot;</span>)</a>
 <a class="sourceLine" id="cb528-3" title="3"><span class="kw">text</span>(<span class="dt">x =</span> CO2<span class="op">$</span>conc, <span class="dt">y =</span> CO2<span class="op">$</span>uptake, <span class="dt">label =</span> <span class="st">&quot;S&quot;</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-330-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-333-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>The last <code>Base R</code> plot functionality we’ll mention is the <code>pairs</code> function. This function creates basic plots for all pairs of variables when given a data frame.</p>
 <div class="sourceCode" id="cb529"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb529-1" title="1"><span class="kw">pairs</span>(iris[, <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-331-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-334-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>To recap <code>Base R</code> plotting:</p>
 <ul>
 <li><p>Barplot (<code>barplot</code> on a <code>table</code> object)</p></li>
@@ -1809,10 +1881,10 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 <p>To create a barplot we can use <code>ggplot + geom_bar</code>. To start, we create a base plotting object with <code>ggplot</code>. Here we can specify attributes of the plot in the <code>aes</code> function. For instance, to create a vertical bar chart we can specify the cateogrical variable of interest as <code>x</code>. Let’s do this for the <code>survived</code> variable from the titanic data set. <code>survived</code> is actually stored as a <code>dbl</code> or double in the dataset since it is coded as a 0/1 variable. The plots will look better if we explicity change this as a <code>factor</code> first.</p>
 <div class="sourceCode" id="cb530"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb530-1" title="1">titanicData<span class="op">$</span>survived &lt;-<span class="st"> </span><span class="kw">as.factor</span>(titanicData<span class="op">$</span>survived)</a>
 <a class="sourceLine" id="cb530-2" title="2"><span class="kw">ggplot</span>(<span class="dt">data =</span> titanicData, <span class="kw">aes</span>(<span class="dt">x =</span> survived))</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-332-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-335-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Notice that no plot is made! We haven’t added a <code>geom</code> or <code>stat</code> layer yet. These are generally what you add in order to actually see something created with the plot. The base plotting object just let’s you specify global attributes like what goes on the x-axis. Having the cheat sheet nearby is highly recommend when learning to use <code>ggplot</code>! The <code>geom</code> layer we want to add is <code>geom_bar</code>.</p>
 <div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb531-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> titanicData, <span class="kw">aes</span>(<span class="dt">x =</span> survived)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-333-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-336-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>The usual practice is to save the base object and then add to it. For instance:</p>
 <div class="sourceCode" id="cb532"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb532-1" title="1">g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> titanicData, <span class="kw">aes</span>(<span class="dt">x =</span> survived))</a>
 <a class="sourceLine" id="cb532-2" title="2">g <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</a></code></pre></div>
@@ -1836,13 +1908,13 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 <div class="sourceCode" id="cb534"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb534-1" title="1">titanicData &lt;-<span class="st"> </span>titanicData <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">drop_na</span>(survived, sex, embarked)</a>
 <a class="sourceLine" id="cb534-2" title="2">g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> titanicData, <span class="kw">aes</span>(<span class="dt">x =</span> survived))</a>
 <a class="sourceLine" id="cb534-3" title="3">g <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-336-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-339-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Next, we can add better labels and a title by adding the appropriate layers (new layers –&gt; see cheat sheet!). The layers we want here are <code>labs</code> to set the title and <code>x</code> (or <code>y</code>) labels. To change the names on the legend we need to look at the <code>scale_x_discrete</code> layer. This is because the <code>aes</code> value’s scale we are trying to modify is ‘x’ and we are doing so for a layer with a ‘discrete’ variable (their word for categorical).</p>
 <div class="sourceCode" id="cb535"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb535-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> titanicData, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">as.character</span>(survived))) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb535-2" title="2"><span class="st">  </span><span class="kw">geom_bar</span>() <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb535-3" title="3"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Survival Status&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Bar Plot of Survival for Titanic Passengers&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb535-4" title="4"><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Died&quot;</span>, <span class="st">&quot;Survived&quot;</span>))</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-337-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-340-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>A <strong>stacked barplot</strong> can be created by using the <code>fill</code> aesthetic and the same process.</p>
 <ul>
 <li>Create base object<br />
@@ -1853,7 +1925,7 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 </ul>
 <p>The truly wonderful things about <code>ggplot</code> are the automatic assignment of colors, the creation of legends, and things of that nature for <code>aes</code> elements. This takes a lot of work from the user. Note: the <code>group</code> aestethic does not automatically generate a legend.</p>
 <div class="sourceCode" id="cb536"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb536-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> titanicData, <span class="kw">aes</span>(<span class="dt">x =</span> survived, <span class="dt">fill =</span> sex)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-338-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-341-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Again, we can add custom labels by adding more layers.</p>
 <div class="sourceCode" id="cb537"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb537-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> titanicData, <span class="kw">aes</span>(<span class="dt">x =</span> survived, <span class="dt">fill =</span> sex)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb537-2" title="2"><span class="st">  </span><span class="kw">geom_bar</span>() <span class="op">+</span></a>
@@ -1861,7 +1933,7 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 <a class="sourceLine" id="cb537-4" title="4">       <span class="dt">title =</span> <span class="st">&quot;Bar Plot of Survival Status for Titanic Passengers&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb537-5" title="5"><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Died&quot;</span>, <span class="st">&quot;Survived&quot;</span>)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb537-6" title="6"><span class="st">  </span><span class="kw">scale_fill_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Sex&quot;</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>,<span class="st">&quot;Male&quot;</span>))</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-339-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-342-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Notice the similar adjustment for the scale using <code>scale_*_discrete</code>. For our aestethics, we set <code>aes(x = survived, fill = sex)</code>. This means if we want to change one of those auto-generated scales we should use <code>scale_aes-value_discrete</code>.</p>
 <blockquote>
 <p><code>scale_x_discrete(labels = c("Died", "Survived"))</code>
@@ -1874,7 +1946,7 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 <a class="sourceLine" id="cb538-4" title="4"><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Died&quot;</span>, <span class="st">&quot;Survived&quot;</span>)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb538-5" title="5"><span class="st">  </span><span class="kw">scale_fill_discrete</span>(<span class="dt">name =</span> <span class="st">&quot;Sex&quot;</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Female&quot;</span>,<span class="st">&quot;Male&quot;</span>)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb538-6" title="6"><span class="st">  </span><span class="kw">coord_flip</span>()</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-340-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-343-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>One thing that can be quite confusing when you are first using the <code>ggplot</code> function is that most geoms have a corresponding stat that can be used instead. For instance, look at the help for <code>geom_bar</code>:</p>
 <p><code>geom_bar(mapping = NULL, data = NULL, stat = "count",   position = "stack", ..., width = NULL, binwidth = NULL, na.rm = FALSE,   show.legend = NA, inherit.aes = TRUE)</code></p>
 <p>There is a <code>stat = "count"</code> default argument there. An equivalent plot could be create using a <code>stat</code> layer instead.</p>
@@ -1884,7 +1956,7 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 <div class="sourceCode" id="cb540"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb540-1" title="1">sumData &lt;-<span class="st"> </span>titanicData <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(survived, sex) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">count =</span> <span class="kw">n</span>())</a>
 <a class="sourceLine" id="cb540-2" title="2"><span class="kw">ggplot</span>(sumData, <span class="kw">aes</span>(<span class="dt">x =</span> survived, <span class="dt">y =</span> count, <span class="dt">fill =</span> sex)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb540-3" title="3"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-342-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-345-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>The <strong>side-by-side barplot</strong> can be created using the <code>position</code> aesthetic. <code>position</code> has the following values:</p>
 <ul>
 <li><code>dodge</code> for side-by-side bar plot<br />
@@ -1898,27 +1970,27 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 <p>As the value of this aestethic doesn’t depend on the data, we do not place this argument in the <code>aes</code> function.</p>
 <div class="sourceCode" id="cb541"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb541-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> titanicData, <span class="kw">aes</span>(<span class="dt">x =</span> survived, <span class="dt">fill =</span> sex)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb541-2" title="2"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-343-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-346-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>If we use <code>position = fill</code> the bars will be stacked and the bars will be standardized to have constant height. This is really useful when there are an equal number of observations (or close to it) in each category on the x-axis (for instance with some Likert scale data surveys).</p>
 <div class="sourceCode" id="cb542"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb542-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> titanicData, <span class="kw">aes</span>(<span class="dt">x =</span> survived, <span class="dt">fill =</span> sex)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb542-2" title="2"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;fill&quot;</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-344-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-347-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Where else does <code>ggplot</code> shine? What if we want to make the same type of barplot for each <code>embarked</code> value? Here we can use <strong>faceting</strong>! This is just another layer on the plot call.</p>
 <p><code>facet_wrap(~ var)</code> creates a plot for each setting of the variable <code>var</code>. You can specify <code>nrow</code> and <code>ncol</code> or let R figure it out.</p>
 <div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb543-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> titanicData, <span class="kw">aes</span>(<span class="dt">x =</span> survived)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb543-2" title="2"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">fill =</span>sex), <span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb543-3" title="3"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>embarked)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-345-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-348-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p><code>facet_grid(var1 ~ var2)</code> creates a grid of plots for each combination of the variables <code>var1</code> and <code>var2</code>. <code>var1</code> values go across rows and <code>var2</code> values go across columns. To have side-by-side or a vertical column of plots use <code>. ~ var2</code> or <code>var1 ~ .</code>, respectively.</p>
 <div class="sourceCode" id="cb544"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb544-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> titanicData, <span class="kw">aes</span>(<span class="dt">x =</span> survived)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb544-2" title="2"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">fill =</span>sex), <span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb544-3" title="3"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>embarked)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-346-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-349-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Here we’ll create a grid of plots for all <code>pclass</code> and <code>embarked</code> combinations (so easy!).</p>
 <div class="sourceCode" id="cb545"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb545-1" title="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> titanicData, <span class="kw">aes</span>(<span class="dt">x =</span> survived)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb545-2" title="2"><span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">fill =</span>sex), <span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb545-3" title="3"><span class="st">  </span><span class="kw">facet_grid</span>(pclass <span class="op">~</span><span class="st"> </span>embarked)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-347-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-350-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Below is a recap of creating a barplot with <code>ggplot</code>:</p>
 <ul>
 <li><p>Use <code>ggplot(data = ...) + geom_bar(aes(x = ...))</code></p></li>
@@ -1951,10 +2023,10 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 <p>For <code>geom_hist</code>, only <code>x</code> is really needed. Now we’ll create the histogram for the <code>uptake</code> variable.</p>
 <div class="sourceCode" id="cb546"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb546-1" title="1">g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(CO2, <span class="kw">aes</span>(<span class="dt">x =</span> uptake))</a>
 <a class="sourceLine" id="cb546-2" title="2">g <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>()</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-348-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-351-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>We might modify a few attributes of the plot that are not dependent on the data. Remember, these generally are set outside of the <code>aes</code> function.</p>
 <div class="sourceCode" id="cb547"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb547-1" title="1">g <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">binwidth =</span> <span class="dv">3</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-349-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-352-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>To create the kernel smoother plot (smoothed histogram), we use the <code>geom_density</code> layer. The common <code>aes</code> values from the cheat sheet are:</p>
 <blockquote>
 <p><code>c + geom_density(kernel = "gaussian")</code></p>
@@ -1964,21 +2036,21 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 </blockquote>
 <p>As with <code>geom_hist</code>, only <code>x =</code> is really needed. The kernel smoother for the <code>uptake</code> variable is created below.</p>
 <div class="sourceCode" id="cb548"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb548-1" title="1"><span class="kw">ggplot</span>(CO2, <span class="kw">aes</span>(<span class="dt">x =</span> uptake)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_density</span>()</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-350-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-353-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>This is not a pretty plot. The <code>fill</code> aesthetic is usually used with <code>geom_density</code>. Here, we’ll fill by the <code>Treatment</code> variable. We’ll also change the <code>alpha</code> (transparency value, between 0 and 1) and the <code>adjust</code> (modify the kernel density calculations - 0.5 implies half the default bandwidth) aestethics.</p>
 <div class="sourceCode" id="cb549"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb549-1" title="1"><span class="kw">ggplot</span>(CO2, <span class="kw">aes</span>(<span class="dt">x =</span> uptake)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb549-2" title="2"><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">adjust =</span> <span class="fl">0.5</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="kw">aes</span>(<span class="dt">fill =</span> Treatment))</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-351-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-354-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>We may wish to stack the two density estimates on top of each other. Recall the <code>position</code> aestethic and the choices of <code>dodge</code>, <code>jitter</code>, <code>fill</code>, and <code>stack</code>.</p>
 <div class="sourceCode" id="cb550"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb550-1" title="1"><span class="kw">ggplot</span>(CO2, <span class="kw">aes</span>(<span class="dt">x =</span> uptake)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb550-2" title="2"><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">adjust =</span> <span class="fl">0.5</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="dt">position =</span> <span class="st">&quot;stack&quot;</span>, <span class="kw">aes</span>(<span class="dt">fill =</span> Treatment))</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-352-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-355-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Plots can easily be overlayed, as long as they are on the same scale, by simply adding the appropriate layers. To put the histogram on the same scale as a density, we can set <code>y  = ..density..</code> on the <code>geom_hist</code> layer.</p>
 <div class="sourceCode" id="cb551"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb551-1" title="1"><span class="kw">ggplot</span>(CO2) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb551-2" title="2"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y =</span> ..density.., <span class="dt">x =</span> uptake, <span class="dt">fill =</span> Treatment)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb551-3" title="3"><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">adjust =</span> <span class="fl">0.25</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="dt">position =</span> <span class="st">&quot;stack&quot;</span>, </a>
 <a class="sourceLine" id="cb551-4" title="4">               <span class="kw">aes</span>(<span class="dt">x =</span> uptake, <span class="dt">fill =</span> Treatment)) </a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-353-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-356-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>For these two plots, you can see it is a little beneficial to set global <code>aes()</code> options here. This would allow for an easy change of the <code>fill</code> variable for all layers!</p>
 <div class="sourceCode" id="cb552"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb552-1" title="1"><span class="kw">ggplot</span>(CO2, <span class="kw">aes</span>(<span class="dt">x =</span> uptake, <span class="dt">fill =</span> Treatment)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb552-2" title="2"><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y =</span> ..density..)) <span class="op">+</span></a>
@@ -1993,21 +2065,21 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 <p>For <code>geom_boxplot</code>, only <code>x =, y =</code> are really needed. To create a single vertical boxplot, use <code>x = ""</code>. We’ll create side-by-side boxplots of <code>uptake</code> for each <code>Treatment</code> level.</p>
 <div class="sourceCode" id="cb553"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb553-1" title="1">g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(CO2, <span class="kw">aes</span>(<span class="dt">x =</span> Treatment, <span class="dt">y =</span> uptake))</a>
 <a class="sourceLine" id="cb553-2" title="2">g <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>(<span class="dt">fill =</span> <span class="st">&quot;grey&quot;</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-355-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-358-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Sometimes it is useful to overlay the data values themselves on a boxplot in order to see the shape of the distribution more clearly. This can be done using the <code>geom_jitter</code> layer. The <code>width</code> argument sets how widely the points are scattered (1 = width of box).</p>
 <div class="sourceCode" id="cb554"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb554-1" title="1"><span class="kw">ggplot</span>(CO2, <span class="kw">aes</span>(<span class="dt">x =</span> Treatment, <span class="dt">y =</span> uptake)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb554-2" title="2"><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">fill =</span> <span class="st">&quot;grey&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb554-3" title="3"><span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">width =</span> <span class="fl">0.1</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-356-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-359-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Note that the order of the layers is important!</p>
 <div class="sourceCode" id="cb555"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb555-1" title="1"><span class="kw">ggplot</span>(CO2, <span class="kw">aes</span>(<span class="dt">x =</span> Treatment, <span class="dt">y =</span> uptake)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb555-2" title="2"><span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">width =</span> <span class="fl">0.1</span>) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb555-3" title="3"><span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">fill =</span> <span class="st">&quot;grey&quot;</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-357-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-360-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>If we wanted to create these same side-by-side boxplots for each value of another variable, we can again use faceting. For instance, we can use <code>facet_wrap</code> with the <code>Type</code> variable.</p>
 <div class="sourceCode" id="cb556"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb556-1" title="1"><span class="kw">ggplot</span>(CO2, <span class="kw">aes</span>(<span class="dt">x =</span> Treatment, <span class="dt">y =</span> uptake)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>(<span class="dt">fill =</span> <span class="st">&quot;grey&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb556-2" title="2"><span class="st">  </span><span class="kw">geom_jitter</span>(<span class="dt">width =</span> <span class="fl">0.1</span>) <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>Type)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-358-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-361-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Scatterplots can be created using <code>geom_point</code>. The common <code>aes</code> values from the cheat sheet are:</p>
 <blockquote>
 <p><code>e + geom_point()</code>
@@ -2017,14 +2089,14 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 <p>Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variables.</p>
 <div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb557-1" title="1">g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(CO2, <span class="kw">aes</span>(<span class="dt">x =</span> conc, <span class="dt">y =</span> uptake)) </a>
 <a class="sourceLine" id="cb557-2" title="2">g <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-359-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-362-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>A trend lines can be easily added with <code>geom_smooth</code>. The default is a smoothed line. To request the simple linear regression fit, we can use <code>method = lm</code>. Both of these lines are added to the plot below.</p>
 <div class="sourceCode" id="cb558"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb558-1" title="1"><span class="kw">ggplot</span>(CO2, <span class="kw">aes</span>(<span class="dt">x =</span> conc, <span class="dt">y =</span> uptake)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st">  </span></a>
 <a class="sourceLine" id="cb558-2" title="2"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(<span class="dt">col =</span> <span class="st">&quot;loess&quot;</span>)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb558-3" title="3"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> lm, <span class="kw">aes</span>(<span class="dt">col =</span> <span class="st">&quot;linear&quot;</span>)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb558-4" title="4"><span class="st">  </span><span class="kw">scale_colour_manual</span>(<span class="dt">name =</span> <span class="st">&#39;Smoother&#39;</span>, <span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&#39;loess&#39;</span> =<span class="st"> &#39;purple&#39;</span>, <span class="st">&#39;linear&#39;</span> =<span class="st"> &#39;red&#39;</span>), </a>
 <a class="sourceLine" id="cb558-5" title="5">                      <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&#39;GAM&#39;</span>, <span class="st">&#39;Linear&#39;</span>), <span class="dt">guide =</span> <span class="st">&#39;legend&#39;</span>)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-360-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-363-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>You may notice something a bit odd in the call above. The value of <code>col</code> (color) was set inside the <code>aes</code> function even though it was not set to a value corresponding to the data set. This is an exception to that rule. If you want to utilize <code>ggplot</code>‘s automatic creation of legends, you can use the method above where labels are given to the color for each line (’loess’ and ‘linear’, respectively). <code>scale_colour_manual</code> is then used to create the legend. Notice the <code>values</code> being set assign colors to the lines here.</p>
 <p>Text can also be added to the plot with <code>geom_text</code>. The correlation is added to the plot in a similar way to how it was done in the <code>Base R</code> section. The <code>size</code> argument being set to a value larger than 1 makes the text bigger.</p>
 <div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb559-1" title="1">correlation &lt;-<span class="st"> </span><span class="kw">cor</span>(CO2<span class="op">$</span>conc, CO2<span class="op">$</span>uptake)</a>
@@ -2032,20 +2104,20 @@ Below is a scatterplot of the <code>conc</code> and <code>uptake</code> variable
 <a class="sourceLine" id="cb559-3" title="3"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> lm, <span class="dt">col =</span> <span class="st">&quot;Red&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb559-4" title="4"><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">x =</span> <span class="dv">750</span>, <span class="dt">y =</span> <span class="dv">10</span>, <span class="dt">size =</span> <span class="dv">5</span>, </a>
 <a class="sourceLine" id="cb559-5" title="5">            <span class="dt">label =</span> <span class="kw">paste0</span>(<span class="st">&quot;Correlation = &quot;</span>, <span class="kw">round</span>(correlation, <span class="dv">2</span>)))</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-361-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-364-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Using text for the points is very easy with <code>geom_text</code>. Just use this layer with a <code>label</code> variable.</p>
 <div class="sourceCode" id="cb560"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb560-1" title="1"><span class="kw">ggplot</span>(CO2, <span class="kw">aes</span>(<span class="dt">x =</span> conc, <span class="dt">y =</span> uptake)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb560-2" title="2"><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> Plant))</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-362-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-365-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Again, if we want to create similar scatterplots for each value of another variable, we can do so with faceting. (Note: the <code>cut</code> function is very useful for categorizing a numeric variable.) Here we create similar scatterplots for each level of the <code>Treatment</code> variable.</p>
 <div class="sourceCode" id="cb561"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb561-1" title="1"><span class="kw">ggplot</span>(CO2, <span class="kw">aes</span>(<span class="dt">x =</span> conc, <span class="dt">y =</span> uptake)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb561-2" title="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> Type), <span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb561-3" title="3"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>Treatment)</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-363-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-366-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Lastly, we saw the useful <code>pairs</code> function from <code>Base R</code>. There are many extension packages for <code>ggplot</code> that give great functionality. The <code>GGally</code> package has a function called <code>ggpairs</code> that is similar to pairs but retains the same syntax and functionality of <code>ggplot</code>. Remember to install the package if you haven’t done so and then read it in with the library command (or call the function directly using <code>::</code>).</p>
 <div class="sourceCode" id="cb562"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb562-1" title="1"><span class="kw">library</span>(GGally)</a>
 <a class="sourceLine" id="cb562-2" title="2"><span class="kw">ggpairs</span>(iris, <span class="kw">aes</span>(<span class="dt">colour =</span> Species, <span class="dt">alpha =</span> <span class="fl">0.4</span>))</a></code></pre></div>
-<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-364-1.png" width="90%" style="display: block; margin: auto;" /></p>
+<p><img src="StatisticalMethods_files/figure-html/unnamed-chunk-367-1.png" width="90%" style="display: block; margin: auto;" /></p>
 <p>To recap numerical variable plots using <code>ggplot</code>, the most common <code>geom</code>s are:</p>
 <ul>
 <li><p>Histogram (<code>geom_hist</code>), Density (<code>geom_density</code>)</p></li>

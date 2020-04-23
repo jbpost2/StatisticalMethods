@@ -1,60 +1,12 @@
-We've seen the importance of obtaining sample units in a valid way and, when applicable, using a sound experimental design. We also need to have a strong understanding of the types of data or variables we might collect.  The type of data collected is inherently linked to the types of conclusions that can be drawn.  
+We've seen the importance of obtaining sample units in a valid way and, when applicable, using a sound experimental design. We also need to have a strong understanding of the types of data or variables we might collect.  The type of data collected is inherently linked to the types of parameters on which we can make inference.  
 
-### Scales (Types) of Data:
-
-Consider a dataset where the rows represent observations and the columns represent variables.  These variables can generally be of two main types: 
-
-- **Quantitative or Numerical variable** - A variable that is described by numerical measurements where arithmetic can be performed.
-
-- **Qualitative or Categorical variable** - A variable that is described by attributes or labels.
-
-We'll generally refer to these as numerical and categorical, respectively.  Numerical variables can be further refined into two subscales: 
-
-- Discrete - finite or countably infinite number of values (# of cars passing through an intersection in an hour, 0, 1, 2, ...)  
- 
-- Continuous - any value in an interval is possible (Temperature, $(-459.67\deg F, \infty)$
-
-Categorical variables can be refined into two subscales as well:
-
-- Nominal - categories have no ordering (Male, Female) (zip codes)
-
-- Ordinal - can order categories (Lickert scale data) (college football rankings)
- 
-How we summarize and analyze the data will depend on which type of data we have!  Fully understanding the different types of data and how they can be linked to parameters of interest is vital importance when it comes to setting your study's goals.  The two examples below give some parameters commonly looked at when conducting inference.  
-
-**Two examples here, linking to parameters - one with mean and quantile of interest? one with proportion and odds**
-
-### Random Variables and Parameters  
-
-Intro RVs and changing all variables measured to take on quantitative values.  Binomial idea, multinomial for 3+ categories.
-
-Population variables have a population distribution or pattern and frequency.  These are equivalently described by probability histograms, tables, or probability mass functions (PMFs) for discrete random variables.  Continuous modeled by a density or probability density function (PDF).  Understanding distributions is important because they allow us to find probabilities, know the average value, etc.   We'll take up population distributions in the next chapters.  For now we'll focus on describing data and sample distributions.  Why?
+In this chapter we'll focus on summarizing data, not populations.  Discussion of population distributions and their summaries will be done in the next couple of chapters.  However, the ideas here about what we want to describe about a sample will correspond to many of the items we want to know about for the population.  
 
 ### Numerical Summaries  
 
-In this chapter we'll discuss summarizing data only, not populations.  We'll calculate numerical summaries (statistics) and graphical summaries for the sample.  In the next chapter we'll relate these summaries to the population parameters and distributions.  
+What do we want to describe?  The goal in summarizing a dataset is to describe the **distribution** of the data in meaningful ways.  That is, describe the pattern in which the data was observed.  Summaries of location and spread are the most common things to describe about the data.  Combining these summaries (along with graphs) gives us a solid understanding of the variable's distribution.  
 
-The focus of this section is to talk about what summaries you'd want to create and why, along with how to interpret them.  The software section discusses the creation of the summaries in R and SAS.  
-
-What do we want to describe?  The goal of descriptive statistics is to describe the **distribution** of the data.  That is, how the data was observed.  We often want to summarize measures of location and measures of spread for the data.  Combining these summaries (along with graphs) gives us a solid understanding of the variable's distribution.  
-
-Note: The things we want to describe about the sample are similar to things we want to describe about the population.  Again, we'll discuss this relation in more detail in future chapters.  
-
-- Measures of Location  
-
-    + Sample Mean = $\bar{Y}=\frac{\sum_{i=1}^{n}Y_i}{n}$
-    + Sample Median = Middle value of the data set (50% of values to left, 50% of values to right)
-    + Sample Proportion = $\hat{p}=\frac{\#\mbox{ of successes}}{\mbox{sample size}}$
-    + Sample Quantiles or Sample Percentiles
-
-- Measures of Spread
-
-    + Sample Variance = $S^2 = \frac{\sum_{i=1}^{n}(Y_i-\bar{Y})^2}{n-1}$
-    + Sample Standard Deviation = $S$
-    + Sample Range = $max(Y_1,...,Y_n)-min(Y_1,...,Y_n)$
-    + Inter-quartile Range = Q3-Q1
-
-When summarizing data we want to describe the distribution of the data. This may be a *marginal* or *univariate* summary of a single variable by itself.  
+A particular summary may be a *marginal* or *univariate* summary of a single variable by itself.  
 
 ```{r, echo = FALSE,  out.width = "40%", fig.align='center'}
 knitr::include_graphics("img/summarizeAllF.png")
@@ -65,6 +17,8 @@ However, quite often we want to look at the distribution of a variable condition
 ```{r, echo = FALSE,  out.width = "50%", fig.align='center'}
 knitr::include_graphics("img/summarizeGroupsF.png")
 ```
+
+Looking at how two variables act together, say linearly, is another type of multivariate summary.  
 
 How we summarize data depends on the **variable types** (sometimes called **variable scales**) and the attribute or quantity we are trying to describe about that variable.  The two major types of variables are: 
 
@@ -77,34 +31,38 @@ knitr::include_graphics("img/variableTypes.png")
 
 Both of these have *subscales* that are sometimes important to consider.  
 
-Categorical variables can be **nominal** or **ordinal**.  Nominal variables have no ordering to their categories.  For example, a variable asking for your favorite pet.  There is no inherent ordering to give pets.  Ordinal variables have an ordering but differences between the categories are not necessarily the same.  For example, Likert scale data having categories "strongly disagree," "disagree," "neutral," "agree", and "strongly agree."  There is a clear ordering here but the difference between strongly agree and agree is not necessarily the same as the difference between agree and neutral.  
+Categorical variables can be **nominal** or **ordinal**.  
 
-Numerical variables can be **discrete** or **continuous**.  Discrete variables take on values that can be listed out, although the list may continue on indefinitely.  For example, the number of bedrooms in a house.  The values (or support) for this variable are 0, 1, 2, 3, ... but there is not necessarily a known upper limit.  Discrete variables don't need to take on just integers and make take on values that are irregularly spaced.  A continuous variable is one in which the variable can take on any value in an interval (or union of intervals).  For example, the time it takes to complete an online survey.  The support for this variable would be the interval from 0 to some large number, often we'd just say infinity for the upper bound.  
+Nominal variables have no ordering to their categories.  For example, a variable asking for your favorite pet.  There is no inherent ordering to give pets.  
 
-When summarizing the variables, the main goal is to summarize the **distribution** or pattern and frequency with which you observe a variable.  This involves slightly different summaries dependong on variable type (or combination of variable types).  
+Ordinal variables have an ordering but differences between the categories are not necessarily the same.  For example, Likert scale data having categories "strongly disagree," "disagree," "neutral," "agree", and "strongly agree."  There is a clear ordering here but the difference between strongly agree and agree is not necessarily the same as the difference between agree and neutral.  
 
-- Categorical variable - describe relative frequency (or count) in each category
+Numerical variables can be **discrete** or **continuous**.  
 
-- Numerical variable - describe the shape, center, and spread of the distribution
+Discrete variables take on values that can be listed out, although the list may continue on indefinitely.  For example, the number of bedrooms in a house.  The values (or support) for this variable are 0, 1, 2, 3, ... but there is not necessarily a known upper limit.  Discrete variables don't need to take on just integers and make take on values that are irregularly spaced.  
+
+A continuous variable is one in which the variable can take on any value in an interval (or union of intervals).  For example, the time it takes to complete an online survey.  The support for this variable would be the interval from 0 to some large number, often we'd just say infinity for the upper bound.  
+
+Again, the main goal is to summarize the **distribution** or pattern and frequency with which we observe a variable or variables.  This involves slightly different summaries depending on variable type (or combination of variable types)!  
 
 The most common numerical summaries are given below:
 
-- Cateogrical  
+- Categorical variable  
 
-    + Contingency Tables  
+    + Contingency Tables (counts)  
+    + Sample proportions  
     
-- Numerical  
+- Numerical variable   
 
-    + Mean/Median  
-    + Standard Deviation/Variance
+    + Sample Mean/Sample Median  
+    + Quantiles/Percentiles
+    + Sample Standard Deviation/Sample Variance/Range/IQR
     + Coefficient of Variation
-    + Quantiles/Percentiles/IQR
-    
-These are certainly not the only summaries you might calculate!  
+    + Covariance/Correlation (Two or more numerical variables)
 
-**This is terribe but I want to put something like it somewhere...** If you have two or more categorical variables, contingency tables are still the summary to use.  If you have one numerical and one or more categorical variable, you'll often calculate the numerical summaries for each combination of categorical variables levels.  If you have multiple numerical variables you'll usually calculate the covariance or correlation, which measures the linear relationship between pairs of variables.  This can also be done for different settings of categorical variables as well.   
+Again, we may calculate these summaries for a single variable or while taking into account multiple variables.  If you have one numerical and one or more categorical variable, you'll often calculate the numerical summaries for each combination of categorical variables levels.  
 
-Next, we'll go through the details of how these summaries are calculated and how to interpret them.  
+Next, we'll go through the definitions of these summaries and how to interpret them.  Details on how to compute these summaries with software is left to the software section of the chapter.  
 
 #### Contingency Tables for Categorical Variables  
 
@@ -121,7 +79,7 @@ titanicData <- read_csv("../datasets/titanic.csv")
 knitr::kable(select(titanicData, name, survived, sex, embarked) %>% head(10))
 ```
 
-A contingency table simply shows the frequency or count (sometimes proportion) of observations falling into the categories of the variable.  If we are looking at one variable by itself, the table is called a **one-way contingency tables**.
+A contingency table simply shows the sample **frequency** or sample **count** (sometimes sample **proportion**) of observations falling into the categories of the variable.  If we are looking at one variable by itself, the table is called a **one-way contingency tables**.
 
 A one-way contingency table for the `embarked` variable:   
 
@@ -179,7 +137,7 @@ With this summary we can easily see the relationship between these **pairs** of 
 
 This idea can be extended to included combinations of as many categorical variables as desired. Generally these are called **n-way contingency tables**.  The major issue with going beyond two- or three-way tables is the difficulty in displaying the information in a easy to digest manner.  Consider the three-way table between `sex`, `embarked`, and `survived` created below.  
 
-```{r, echo = FALSE}
+```{r echo = FALSE}
 tab <- table(titanicData$sex, titanicData$embarked, titanicData$survived)
 dimnames(tab) <- list(c("Female", "Male"), c("Cherbourg", "Queenstown", "Southampton"), c("Died", "Survived"))
 knitr::kable(tab, col.names = c("Sex", "Port", "Status", "Frequency"))
@@ -197,12 +155,15 @@ We see that, of males that embarked at the Queenstown port, 56 died and 7 surviv
 
 Again, contingency tables or n-way tables are the most common summary for combinations of categorical variables.  They are important because they allow us to summarize how often categories, or combinations of categories, were observed in a dataset.  
 
-**Not sure if I want to include all of this below..., especially for this data set since the population is the sample... Also I should talk about that above probably...**  
+We might also want to know the relative frequency or sample proportion of observations falling into each category (or combination of categories).  This can be done by dividing each entry by the sample size for the current table (the total number of observations in the table).  For example, below is a table with sample proportions corresponding to the two-way table between `survived` and `embarked`.  
 
-We might also want to know the relative frequency or sample proportion of obsrervations falling into each category (or combination of categories).  This can be done by dividing each entry by the sample size, $n$ (the total number of observations).  
+```{r, echo = FALSE}
+surEmbTab <- table(titanicData$survived, titanicData$embarked)
+dimnames(surEmbTab) <- list(c("Died", "Survived"), c("Cherbourg", "Queenstown", "Southampton"))
+knitr::kable(round(surEmbTab/sum(surEmbTab), 3))
+```
 
-Generically, we might say the categories have a probability or proportion associated with them for the population.  For the embarked variable we'd have...
-Probabilities interpreted as the long-run relative frequency of occurrence.  Maybe discuss indicator variables for the two with character strings for labels...
+From this we can glean information like 0.467 or 46.7% of people that died embarked from the Southampton port.  
 
 #### Measures of Location and Spread for Numerical Variables  
 
@@ -234,39 +195,78 @@ In the next section we'll discuss formulae for calculating some of the summaries
 
 ##### Measuring Location  
 
-Measuring center is important because... 
+Measuring center is important because we often want to talk about a 'typical' value, especially when comparing across groups.  The most common measures of center are the mean and median.  
 
 The mean of the `uptake` variable can be calculated to help summarize the center of the `uptake` variable's distribution.  
 
-The sample mean is then simply the sum of these values divided by the total number:
+The sample mean is simply the sum of these values divided by the total number:
 
 $$\bar{y} = \frac{1}{n} \sum_{i=1}^{n} y_i = \frac{1}{84}\sum_{i=1}^{84}y_i = \frac{1}{84}\left(16.0 + 30.4 + 34.8 + ... + 19.9\right)$$
 
 This comes out to be `r round(mean(CO2$uptake), 2)`.  This value represents one measure of the center or middle of the `uptake` variable's distribution.  
 
 As the actual data values are used in this calculation, one or two very large or small numbers can have a large influence on the value of the sample mean.  To counter this, you can calculate a more robust measure called a **trimmed mean**.  This involves removing the highest and lowest values and then calculating the mean with the remaining values.  For instance, a 5% trimmed mean drops the lowest and highest 5% of data values and then finds the mean with the remaining values.  
+
 Here 0.05\*84 = `r 0.05*84`.  This means we should drop off the lowest four and highest four values and then calculate the mean with the remaining 76 values.  The 5% trimmed mean comes out to be `r round(mean(CO2$uptake, trim = 0.05), 2)`.  This is another measure of the center of the `uptake` variable's distribution.  
 
-Another common measure of center is the median.  The median involves sorting the data from largest to smallest and reporting the middle value (if there is an odd number of data points) or the average of the two middle values (if there is an even number of data points).  You may notice that having very large or small values in the data set do not matter as much for calculation of the median.  The largest value for `uptake` could be replaced by 10000 and the median wouldn't change.  For this reason, the median is also referred to as a robust estimate of the center of the `uptake` variable's distribution.  The value of the median here is `r median(CO2$uptake)`.   
+The last common measure of center is the median.  The median involves sorting the data from largest to smallest and reporting the middle value (if there is an odd number of data points) or the average of the two middle values (if there is an even number of data points).  You may notice that having very large or small values in the data set do not matter as much for calculation of the median.  The largest value for `uptake` could be replaced by 10000 and the median wouldn't change.  For this reason, the median is also referred to as a robust estimate of the center of the `uptake` variable's distribution.  The value of the sample median here is `r median(CO2$uptake)`.  Unfortunately, there isn't a really a common notation used for the sample median as there is with the sample mean.  We'll label the sample median as $\hat{y}_{0.5}$ = `r median(CO2$uptake)`.
 
-Other measures of location are quantiles or percentiles of the distribution.  
+Other measures of location are quantiles or percentiles of the distribution.  The $p^{th}$ quantile of a distribution is the the value of the variable, $y_{p}$, that has $100*p$ percent of the distribution to the left of it.  $y_{p}$ is also called the $100*p$ percentile.  We are finding sample quantiles here so we're finding the value from the sorted data set that has at least $100*p$% of the distribution to the left of it.  The sample median is the sample 0.5 quantile or $\hat{y}_{0.5}$.  Other commonly investigated quantiles are the
 
-Explanation... 
-Q1, Median, Q3
-Examples...
+- $min(y_1, y_2, ..., y_n)$, minimum (smallest value)
+- $\hat{y}_{0.25} = Q_1$, the 1st quartile of the data (25% of the data below it)
+- $\hat{y}_{0.5} = Q_2$, the median and 2nd quartile of the data (50% of the data below it)
+- $\hat{y}_{0.75} = Q_3$, the 3rd quartile of the data (75% of the data below it)
+- $max(y_1, y_2, ..., y_n)$, maximum (largest value)  
 
-Min and max too  
+Sample quantiles are not necessarily uniquely defined.  Since we have a finite sample size we can't usually get exactly $100*p$% of the data smaller than a data value.  How to determine an appropriate value for a quantile is best left to software.  
 
-Usually want summaries for different **subgroups of data** 
+Let's find the (sample) minimum, maximum, and quartiles (often called the **five-number summary**) for the `uptake` variable.
 
-- Ex: Get similar uptake summaries for each **Treatment**
+```{r, echo = FALSE}
+fiveNum <- as.matrix(summary(CO2$uptake)[-4])
+dimnames(fiveNum)[[1]] <- c("Minimum", "1st Quartile", "Median", "3rd Quartile", "Maximum")
+knitr::kable(fiveNum, col.names = "Value")
+```
+
+The smallest `uptake` variable is 7.7, the `uptake` value with approximatley 25% of the data below it is 17.9, and so on.  
+
+##### Measuring Spread  
+
+Measuring spread is important because we need to know how much variability we are seeing for a variable (or statistic) in order to account for it.  We also need to be able to compare variability for a variable between subgroups.  The most common measures of spread are the variance, standard deviation, and Interquartile range (IQR).  
+
+The **sample variance** and **sample standard deviation** both give a measure of spread of the data about the sample mean.  $s^2$ is used to denote the (observed) sample variance and $s$ the (observed) sample standard deviation.  The formula for the sample variance is 
+
+$$s^2 = \frac{1}{n-1}\sum_{i=1}^{n}\left(y_i-\bar{y}\right)^2$$
+and the sample standard deviation is simply the square root of the sample variance
+
+$$s = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}\left(y_i-\bar{y}\right)^2}$$
+
+If values the data values are very close to their mean, the differences are very small.  If the values are very spread out the differences will be much larger.  When these differences are squared they all become positive.  We sum the squared difference and divide by $n-1$ (we'll talk about why $n-1$ and not $n$ in chapter 4).  By dividing by $n-1$ we are essentially taking the average squared difference between the data values and the mean.  Hopefully, this makes it clear that this quantity will be larger for datasets that are more spread out and smaller for those that are not!  
+
+You may notice that the sample variance is in squared units of the $y$ variable.  This makes the sample variance harder to interpret.  The sample standard deviation is in the same units as the data.  
+
+We can find the sample variance for the `uptake` variable as follows (recall the mean is `r round(mean(CO2$uptake), 2)`):
+
+$$s^2 = \frac{1}{84-1}\sum_{i=1}^{n}\left(y_i - 27.21\right)^2 = \frac{1}{83}\left((16-27.21)^2+(30.4-27.21)^2+...+ (19.9-27.21)^2\right)$$
+
+This comes out to `r round(var(CO2$uptake), 2)`.  The sample standard deivation is then `r round(sd(CO2$uptake), 2)`.  We would say that `r round(sd(CO2$uptake), 2)` is the typical distance an `uptake` value lies from its mean.  
+
+Another common measure of spread is the sample range.  This is simply the maximium value minus the minimum value.  For the `uptake` variable the range is `r max(CO2$uptake) - min(CO2$uptake)`.  Of course larger values of the range imply more spread.  
+
+The sample IQR is another measure of spread and it is just the range between the 1st and 3rd sample quartiles ($IQR = Q_3 - Q_1$).  This gives the spread of the middle 50% of the data.  For the `uptake` variable the IQR is `r IQR(CO2$uptake)`.   
+
+
+In most cases we don't simply want to summarize one numerical variable in the dataset.  Usually we want summaries for different **subgroups of the data**.  
+
+We can obtain similar `uptake` summaries for each `Treatment` level:
 
 ```{r,echo=FALSE}
 CO2 %>% group_by(Treatment) %>% 
 	summarise(Avg = mean(uptake), Median = median(uptake), SD = sd(uptake), Q1 = quantile(uptake, 0.25), Max = max(uptake)) %>% knitr::kable(digits = 2)
 ```
 
-- Ex: Get similar uptake summaries for each **Treatment** and **Concentration**
+This allows for easy comparison of the sample statistics for the `uptake` variable for each `Treatment`.  Similarly, statistics can be found for each `Treatment` and `conc` combination:
 
 ```{r,echo=FALSE}
 CO2 %>% group_by(Treatment, conc) %>% 
@@ -274,38 +274,58 @@ CO2 %>% group_by(Treatment, conc) %>%
 ```
 
 
-
-##### Measuring Spread  
-
-Why do we care...
-
-The most common measure of spread is the **standard deviation** or **variance**.  
-
-`r var(CO2$uptake)`
-`r sd(CO2$uptake)`
-
-
-`r IQR(CO2$uptake)`
-
-
-
 #### Measures a Linear Relationship
 
-Why do we care...
+When considering more than one numerical variable, we want to describe their **joint distribution** or how they are observed together.  The most simplistic relationship describing how the the two variables are observed together is a linear relationship.  If we can say that two variables have a 'strong' positive linear relationship we know that when we observe larger values of one variable we tend to see larger values of the other variable.  This can be useful in many ways, including prediction.  
 
-Covariance, Correlation   
+Two measures of the lienar relationship between variables are covariance and correlation.  The formula for the (observed) sample covariance between a variable $y$ and $x$ is given by
 
-```{r,echo=FALSE}
-cov(CO2$conc, CO2$uptake)
-cor(CO2$conc, CO2$uptake)
-```
+$$\hat{\sigma}_{XY} = s_{XY} = \frac{1}{n}\sum_{i=1}^{n}(y_i-\bar{y})(x_i-\bar{x})$$
 
-Should always plot!  
+Larger values of this sample statistic imply a positive linear relationship and highly negative values indicate a negative linear relationship.  
 
-Recap of common summaries
+Why does this measure the linear relationship?  Suppose we have a positive relationship between $x$ and $y$.  This implies we should tend to see larger values of $x$ when we see larger values of $y$ and we should tend to see maller values of $x$ when we see smaller values of $y$.  If $y_1$ and $x_1$ are both larger than their mean, the product of $(y_1-\bar{y})(x_1-\bar{y})$ is positive.  Similarly, if $y_2$ and $x_2$ are both less than their mean, $(y_2-\bar{y})(x_2-\bar{y})$ is positive.  When we sum this product for pairs of $x$ and $y$ that follow this linear relationship, the value of the sum increases.  If there was a negative linear relationship, we'd see these products tending to be negative and the value of the sum would become larger in magnitude (but negative).
 
+The issue with looking at covariance is that the resulting value has units that are the product of the $x$ and $y$ units.  This can be difficult to interpret.  Instead, the correlation is often used.  This is very similar to covariance but is unitless and must take on values between -1 and 1, inclusive.  The formula for correlation is 
+
+$$\hat{\rho}_{XY} = r_{XY} = \frac{s_{XY}}{s_{X}s_{Y}} = \frac{\frac{1}{n}\sum_{i=1}^{n}(y_i-\bar{y})(x_i-\bar{x})}{\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}\left(x_i-\bar{x}\right)^2}\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}\left(y_i-\bar{y}\right)^2}}$$
+
+This is simply the sample covariance divided by the sample standard deviations for both $x$ and $y$.  Remember that the standard deviation is in the units of the variable.  This shows that correlation is unitless.  The Cauchy-Schwarz inequality can be used to show this value can at most be 1 and at its smallest be -1.  These values only occur if there is an exact linear relationship between $x$ and $y$.  
+
+For the `CO2` uptake dataset, let's find the covariance and correlation between `uptake` and `conc`.  Recall we labeled the observations for the `conc` with $x_{1i}$, $i = 1, 2, ..., 84$.  The sample mean of the `conc` variable is `r mean(CO2$conc)`.
+
+$$s_{XY} = \frac{1}{84}\sum_{i=1}^{84}(y_i-27.21)(x_i-435)$$
+$$= \frac{1}{84}\sum_{i=1}^{84}\left((16-27.21)(95-435)+(30.4-27.21)(175-435) + ... + (18-27.21)(1000-435) \right)$$
+
+The sample covariance between `uptake` and `conc` comes out to `r round(cov(CO2$conc, CO2$uptake),2)`.  This shows a possible positive linear relationship, but is it a 'strong' relationship?  The value is in $(umol/m^2 sec)*(ml/L)$ units...  Let's look at the correlation instead!  The sample standard deviation for the `conc` variable is `r round(sd(CO2$conc), 2)`.  
+
+$$\rho_{XY} = \frac{1552.69}{10.81*295.92} = 0.485$$
+
+This would usually be interpreted as a moderate positive linear relationship (although what constitutes weak, moderate, and strong is quite often problem dependent).  
+
+Looking at correlation and covariance should always be done while plotting the relationship with a scatterplot.  This will be discussed shortly. 
 
 ### Graphical Summaries  
+
+As with numerical summaries, the type of graph that is appropriate to summarize a variable, or the relationship between variables, depends on the variable type(s).  
+
+The most common graphical summaries are given below:
+
+- Categorical variable(s)  
+
+    + Bargraphs  
+    
+- Numerical variable  
+    
+    + Histogram  
+    + Density Plot
+    + Boxplot (usually across the values of a categorical variable)  
+
+- Two numerical variables  
+
+    + Scatterplot 
+    
+For the numerical variable plots, we'll also look at how to incorporate information from other variables (both numerical and categorical) as well.  
 
 #### Barplots for Categorical Data  
 
@@ -314,6 +334,7 @@ Let's start by graphing categorical variables (variables in which entries are a 
 Again, we'll look at the titanic data set.  To visualize a one-way table a simple bargraph can be made. 
 
 ```{r,echo = FALSE, eval = TRUE, out.width = "75%", fig.align='center'}
+titanicData$survived <- as.factor(titanicData$survived)
 titanicData <- titanicData %>% drop_na(sex, survived, embarked)
 ggplot(data = titanicData, aes(x = as.character(survived))) + 
   geom_bar() + 
@@ -325,94 +346,127 @@ As you can likely tell, this gives a visual of the counts represented by the hei
 
 To visualize a two-way table, a stacked barplot can be created.
 
-```{r,echo = FALSE, eval = TRUE, out.width = "75%", fig.align='center'}
+```{r,echo = FALSE, eval = TRUE, out.width = "75%", fig.align='center', warning = FALSE, message = FALSE}
 ggplot(data = titanicData, aes(x = survived, fill = sex)) + 
   geom_bar() +
   labs(x = "Survival Status", 
-       title = "Bar Plot of Survival Status for Titanic Passengers") + 
+       title = "Stacked Bar Plot of Survival Status for Titanic Passengers") + 
   scale_x_discrete(labels = c("Died", "Survived")) + 
   scale_fill_discrete(name = "Sex", labels = c("Female","Male"))
 ```
 
-Interpret... 
+This shows the counts for each `Sex` category using colors within the bars.  This can be really useful to roughly see if a relationship is constant across the variables.  Here we can clearly see that the survivors had a higher proportion of females than than group that didn't survive.  
 
 The **side-by-side barplot** can be created as an alternative visual of the two-way table.  
 
 ```{r,echo = FALSE, eval = TRUE, out.width = "75%", fig.align='center'}
 ggplot(data = titanicData, aes(x = survived, fill = sex)) + 
-  geom_bar(position = "dodge")
+  geom_bar(position = "dodge") +
+    labs(x = "Survival Status", 
+       title = "Side-by-side Bar Plot of Survival Status for Titanic Passengers") + 
+  scale_x_discrete(labels = c("Died", "Survived")) + 
+  scale_fill_discrete(name = "Sex", labels = c("Female","Male"))
 ```
 
-Interp... 
-
+This is simply another way to visualize the two-way table.  This more clearly allows us to see the counts for each subgroup.  
 
 Filled barplots also sometimes useful.  Here the bars will be stacked and the bars will be standardized to have constant height.  This is really useful when there are an equal number of observations (or close to it) in each category on the x-axis (for instance with some Likert scale data surveys). 
 
 ```{r,echo = FALSE, eval = TRUE, out.width = "75%", fig.align='center'}
 ggplot(data = titanicData, aes(x = survived, fill = sex)) + 
-  geom_bar(position = "fill")
+  geom_bar(position = "fill")+
+    labs(x = "Survival Status", 
+       title = "Filled Bar Plot of Survival Status for Titanic Passengers") + 
+  scale_x_discrete(labels = c("Died", "Survived")) + 
+  scale_fill_discrete(name = "Sex", labels = c("Female","Male"))
 ```
 
-Interpret...  
+This shows that the proportions in each group more clearly, however we lose information about the difference in number of observations in each group.  
 
-Of course, sometimes it is useful to see the same plot across the levels or settings of another variable.  The plots below... 
+Of course, sometimes it is useful to see the same plot across the levels or settings of another variable.  This can help us to visualize a three-way contingency table.   
 
 ```{r,echo = FALSE, eval = TRUE, out.width = "75%", fig.align='center'}
+embarkedNames <- list(C = "Cherbourg", Q = "Queenstown", S = "Southampton")
+embarkedLabeler <- function(variable, value){
+  return(embarkedNames[value])
+}
 ggplot(data = titanicData, aes(x = survived)) + 
   geom_bar(aes(fill =sex), position = "dodge") +
-  facet_wrap(~ embarked)
+  facet_wrap(~ embarked, labeller = embarkedLabeler) +
+      labs(x = "Survival Status", 
+       title = "Side-by-side Bar Plots of Survival Status for Titanic Passengers") + 
+  scale_x_discrete(labels = c("Died", "Survived")) + 
+  scale_fill_discrete(name = "Sex", labels = c("Female","Male"))
 ```
+
+These plots allow us to see the relationship between all three categorical variables in the titanic dataset.  We can see that the relationships are roughly similar across all three ports: there were fewer females than males that died from each port and there were more females than males that survived.  
 
 #### Histograms and Density Plots   
 
-Next we'll create common plots for numerical variables (variables in which entries are a numerical value where math can be performed).  Recall that the main goal of summarizing numerical variables is to describe the shape, center, and spread of the distribution.  Generally, this is done using a histogram, boxplot, or, in the case of two numerical variables, scatterplot.  
+Next we'll create common plots for numerical variables (variables in which entries are a numerical value where math can be performed).  Recall that the main goal of summarizing numerical variables is to describe the shape, center, and spread of the distribution.  Generally, this is done using a histogram, a boxplot, or, in the case of two numerical variables, a scatterplot.  
 
-We'll again look at the carbon dioxide (CO2) uptake data set.  Let's start by creating a histogram. A histogram ...
+We'll again look at the carbon dioxide (`CO2`) uptake data set.  Let's start by creating a histogram. To create a histogram, the x-axis must split up into equal width bins.  The counts in each bin then determine the heights of the bars to be plotted (similar to a bargraph).  The bars can also be standardized so that the total area of the bars is one.  This makes the histogram into a density histogram and is useful when we want to overlay a probability density function (PDF) on top of the histogram.  PDFs are population models for observing variables.  Let's create a histogram for the `uptake` variable.  
 
 ```{r,echo = FALSE, eval = TRUE, out.width = "75%", fig.align='center'}
 ggplot(CO2, aes(x = uptake)) +
-    geom_histogram(color = "blue", fill = "red", size = 2, binwidth = 3)
+    geom_histogram(color = "black", fill = "blue", size = 2, binwidth = 3) +
+  labs(title = "Histogram of Uptake")
 ```
 
-Interpret... 
+Software will usually define the width of the bars automatically (but allow us to change it if we'd like) so we won't discuss that here.  From the histogram we can see that there are a lot of `uptake` values between 10 and 20 and from about 26 to 44.  
 
-Issue with histograms is their variability (quick example).  Alternative is the kernel smoothed plot.  These... 
+When describing a histogram we usually want to talk about the modality and the skewness or symmetry.  The shape of the distribution appears to be bimodal.  A mode is the most commonly occurring value in a dataset.  When we intrepret a histogram, we use mode to represent an area where the histogram is higher.  We have two higher areas here so we would say the distribution is bimodal (these modes don't need to be of the same height generally).  
+
+This distribution isn't symmetric.  If it were we could fold it in half down the middle and the two sides would line up.  Left and right skewness imply that values are more spread out on one side than the other (skewed left implies more spread out on the left).  Skewness is easier to discuss on a unimodal (one mode) histogram.  We likely wouldn't discuss the skewness of the above plot.  
+
+One issue with histograms is that they are highly variable.  That is, if we choose a different width for the bins we can see quite different shapes in the histograms.  
+
+```{r,echo = FALSE, eval = TRUE, out.width = "75%", fig.align='center'}
+ggplot(CO2, aes(x = uptake)) +
+    geom_histogram(color = "black", fill = "blue", size = 2, binwidth = 2) +
+  labs(title = "Histogram of Uptake")
+```
+
+Above is a similar histogram as before but with a smaller width for the bins.  Here, there sort of looks as though there may be four modes...  
+
+An alternative to the histogram is the kernel density smoothed plot.  These use a 'kernel' or weighting function to create a smooth curve using 'local' points rather than use discrete bins.  The visual below describes how a normal distribution (covered later) weight can be applied to each point to create a smooth graph.
+
+```{r, echo = FALSE, fig.align='center', out.width="75%", fig.cap="Don't remember where I got this but need to find out or recreate similar"}
+knitr::include_graphics("img/kernel.png")
+```
+
+The curve heights are all added together in order to get the final curve height.  Where there are more points the overall curve is much higher.  There is still a bandwidth that needs to be chosen to determine what weight to give points nearby but the kernel desnity plot tends to be less variable than a histogram.  
+
+Below is a kernel density plot for the `uptake` variable.  
 
 ```{r, echo = FALSE,  out.width = "75%", fig.align='center'}
 ggplot(CO2, aes(x = uptake)) +
-  geom_density(adjust = 0.5, alpha = 0.5, aes(fill = Treatment))
+  geom_density(adjust = 0.5, alpha = 0.5, fill = "Blue")
 ```
 
-Interpret... 
-
-or
+Again, we can see the bimodal nature of the uptake variable.  Often it is useful to color the region by the contributions of `uptake` from another variable.  
 
 ```{r, echo = FALSE, out.width = "75%", fig.align='center'}
 ggplot(CO2, aes(x = uptake)) + 
   geom_density(adjust = 0.5, alpha = 0.5, position = "stack", aes(fill = Treatment))
 ```
 
-Interpret... 
-
-Plots can easily be overlayed, as long as they are on the same scale.
-
-```{r, echo = FALSE,  out.width = "75%", fig.align='center'}
-ggplot(CO2) + 
-  geom_histogram(aes(y = ..density.., x = uptake, fill = Treatment)) +
-  geom_density(adjust = 0.25, alpha = 0.5, position = "stack", 
-               aes(x = uptake, fill = Treatment)) 
-```
+Here we can see how the `uptake` observations are related to `Treatment`.  There are a higher proportion of smaller `uptake` values for the `chilled` group than the `nonchilled` group.  
 
 #### Boxplots  
 
-boxplot  
+A boxplot is another common graph to help understand the distribution of a numerical vairable.  The boxplot essentially gives a visual of the five-number summary (min, $Q_1$, median, $Q_3$, and max).
 
 ```{r, echo = FALSE,  out.width = "75%", fig.align='center'}
 g <- ggplot(CO2, aes(x = Treatment, y = uptake))
-g + geom_boxplot(fill = "grey")
+g + geom_boxplot(fill = "grey") + labs(title = "Boxplot of uptake by Treatment")
 ```
 
-Sometimes it is useful to overlay the data values themselves on a boxplot in order to see the shape of the distribution more clearly.  
+The line (or whisker) coming out of the bottom of the boxes starts at the minimum value observed and the line at the top ends at the maximum value observed.  The difference in these values is the sample range.  The start and end of the box correspond to the sample quartiles $Q_1$ and $Q_3$, respectively.  The width of the box represents the sample IQR.  The line in the middle of the box represents the sample median.  Sometimes a sybmol will also appear in the box.  This usually corresponds to the sample mean.  The lines may also have points further past them.  These are points designated as possible 'outliers' or unusual data points.  Often a value more than $1.5*IQR$ above the third quartile or $1.5*IQR$ below the first quartile are identified as outliers.  We'll discuss outliers a bit more later on.  
+
+The boxplot can be used to investigate skewness and symmetry of the distribution.  For instance, we can see that, for the chilled group, the data is more spread out for larger values.  This implies the distribution of `uptake` for the `chilled` treatment group is skewed right (or positively skewed).  
+
+The main problem with looking at boxplots is that there is no idea about the modality of the distribution.  It is sometimes useful to overlay the data values themselves on the boxplots in order to see the shape of the distribution more clearly.  
 
 ```{r, echo = FALSE,  out.width = "75%", fig.align='center'}
 ggplot(CO2, aes(x = Treatment, y = uptake)) + 
@@ -420,42 +474,64 @@ ggplot(CO2, aes(x = Treatment, y = uptake)) +
   geom_jitter(width = 0.1)
 ```
 
-Across another variable
+If there is another categorical variable that we'd like to see the relationship with, we can recreate these same plots for each setting of the other variable.  Below are the same boxplots with points overlayed, but now split depending on the `Type` (origin) of grass.  
 
 ```{r, echo = FALSE,  out.width = "75%", fig.align='center'}
 ggplot(CO2, aes(x = Treatment, y = uptake)) + geom_boxplot(fill = "grey") +
   geom_jitter(width = 0.1) + facet_wrap(~ Type)
 ```
 
+Interestingly, we can see that the distributions of `uptake` values for the `chilled` treatment groups are both somewhat skewed left.  We saw that the variable was skewed right previously!.  This is an example of what is called **Simpson's Paradox**.  Simpson's paradox occurs when the relationship for aggregated data is different than the relationship seen when the data isn't aggregated.  
+
+
 #### Scatterplots  
 
-Scatterplots 
+The best plot to visualize the distribution between two numerical variables is the scatterplot.  A scatterplot has an $x-y$ plane and places a point on that plane corresponding to each pair of data values for the two variables considered.  
+
 Below is a scatterplot of the `conc` and `uptake` variables. 
 
 ```{r, echo = FALSE,  out.width = "75%", fig.align='center'}
 g <- ggplot(CO2, aes(x = conc, y = uptake)) 
-g + geom_point()
+g + geom_point() + labs(title = "Scatterplot")
 ```
 
-Trend lines and correlation on plot
+Here we can see that the distribution seems to follow some sort of logarithmic relationship.  
 
+Often we like to add a **trend line** to the graph to help see the relationship more clearly.  For instance, a linear trend line can be found (simple linear regression line) and the sample correlation shown as well.  
 
 ```{r, echo = FALSE,  out.width = "75%", fig.align='center'}
 correlation <- cor(CO2$conc, CO2$uptake)
 ggplot(CO2, aes(x = conc, y = uptake)) + geom_point() +
   geom_smooth(method = lm, col = "Red") + 
   geom_text(x = 750, y = 10, size = 5, 
-            label = paste0("Correlation = ", round(correlation, 2)))
+            label = paste0("Correlation = ", round(correlation, 2))) + 
+  labs(title = "Scatterplot with Simple Linear Regression Fit")
 ```
 
-Using text for the points too
+This clearly isn't a good fit as the lower portion of the line doesn't go through any of the points.  A smoothed line can be used instead.  
 
-```{r, echo = FALSE,  out.width = "75%", fig.align='center'}
+```{r, echo = FALSE,  out.width = "75%", fig.align='center', warning = FALSE, message = FALSE}
+correlation <- cor(CO2$conc, CO2$uptake)
+ggplot(CO2, aes(x = conc, y = uptake)) + geom_point() +
+  geom_smooth(col = "Red") + 
+  geom_text(x = 750, y = 10, size = 5, 
+            label = paste0("Correlation = ", round(correlation, 2))) + 
+  labs(title = "Scatterplot with Simple Linear Regression Fit")
+```
+
+This line does a much better job representing the relationship of the average `uptake` value at a particular value of `conc`.  
+
+Points can be colored to display the relationship with another variable in the dataset.  
+```{r, echo = FALSE, out.width = "75%", fig.align='center'}
 ggplot(CO2, aes(x = conc, y = uptake)) + 
-  geom_text(aes(label = Plant))
+  geom_point(aes(color = Type), size = 2.5)
 ```
 
-Across another variable  
+We can see that the grass whose origin was `Quebec` tended to have higher `uptake` values but the relationship between `conc` and `uptake` is similar for both `Type`s or origins of the grass.  
+
+Note: If another numerical variable was in the dataset, we could include that variable in this plot by using that variable to determine the size (or color) of the points.  
+
+It is often useful to create the scatterplot for different settings of a categorical variable as well.  
 
 ```{r, echo = FALSE, out.width = "75%", fig.align='center'}
 ggplot(CO2, aes(x = conc, y = uptake)) + 
@@ -463,10 +539,8 @@ ggplot(CO2, aes(x = conc, y = uptake)) +
   facet_wrap(~ Treatment)
 ```
 
-Sometimes create amalgamation type graphs.  Useful but be careful not to overwhelm the reader.  
+This gives us some further information about the relationships.  The chilled group seems to have a larger difference between `Type`s of grass but the relationship structure still seems to hold.  
 
-```{r, echo = FALSE,  out.width = "90%", fig.align='center', message = FALSE, warning = FALSE}
-library(GGally)
-ggpairs(iris, aes(colour = Species, alpha = 0.4))
-```
+Hopefully, you can see the usefulness in creating both numerical and graphical summaries to help understand the distributions of variables and the relationships that exist in the data.  
 
+Remember, in this chapter we are only describing sample data and sample distributions.  Usually we assume that the data is coming from some population.  The population values for a variable will also have a distribution and similar summaries we can make.  We'll investigate this more clearly in the next few chapters.  

@@ -1,1 +1,18 @@
 ### Topic Name
+
+
+How we summarize and analyze the data will depend on which type of data we have!  Fully understanding the different types of data and how they can be linked to parameters of interest is vital importance when it comes to deciding your study's goals.  
+
+
+Population variables have a population distribution or pattern and frequency.  These are equivalently described by probability histograms, tables, or probability mass functions (PMFs) for discrete random variables.  Continuous modeled by a density or probability density function (PDF).  Understanding distributions is important because they allow us to find probabilities, know the average value, etc.   We'll take up population distributions in the next chapters.  For now we'll focus on describing data and sample distributions.  Why?
+
+**Two examples here, linking population distributions, parameters, with data collected - sample distributions, and statistics  - one with mean and quantile of interest? one with proportion and odds**
+
+
+Intro RVs and changing all variables measured to take on quantitative values.  Binomial idea, multinomial for 3+ categories.
+
+
+Generically, we might say the categories have a probability or proportion associated with them for the population.  For the embarked variable we'd have...
+Probabilities interpreted as the long-run relative frequency of occurrence.  Maybe discuss indicator variables for the two with character strings for labels...
+
+For categorical variables we'll often want to use an **indicator variable** in place of actual variable with character values.  An indicator variable is one that takes on 0 or 1.  The value of 1 indicates something is true.  Consider the `Treatment` variable.   We can create an indicator variable that is 1 if the `Treatment` variable is `chilled` and 0 if it is `nonchilled`.  

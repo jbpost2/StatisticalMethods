@@ -1,94 +1,55 @@
-## Motivating Example: Summarizing Data - California Health Interview Survey
+## Motivating Example: Summarizing Data - Wine Quality 
 
 ### Define Objective & Background  
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/defineObjective.png")
 ```  
-Look at the California Health Interview Survey (CHIS).  Describe the idea of the survey.  For our purpose we'll imagine the dataset itself is the population of interest.  We will take a sample from that population to investigate and summarize as well as compare to the truth.  
 
-&nbsp;  
 
-&nbsp;  
-
-&nbsp;  
-
-&nbsp;  
 
 ### Select Response
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/selectResponse.png")
 ``` 
-Response is really certain variables in the dataset, maybe BMI or some other health related statistic we want to study.   
 
-&nbsp;  
+ 
 
-&nbsp;  
-
-&nbsp;  
-
-&nbsp;  
 
 ### Determine Sources of Variation
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/determineVariation.png")
 ```  
-Sources of variation include height, weight, ethnicity, etc.  Going to take those into account.  
 
-&nbsp;  
 
-&nbsp;  
 
-&nbsp;  
-
-&nbsp;  
 
 ### Select Design
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/selectDesign.png")
 ```  
-Design will be to do a SRS and do an observational study - basically an exploration study.  (Maybe also do an Stratified one and compare the results?  Maybe that should be left as an exercise.)  
 
-&nbsp;  
 
-&nbsp;  
 
-&nbsp;  
-
-&nbsp;  
 
 ### Do Study  
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/conductStudy.png")
 ```  
-Pretend that we got 100% response rate and all that good stuff.  Maybe discuss the idea of missingness here but probably not the right time.  
 
-&nbsp;  
 
-&nbsp;  
 
-&nbsp;  
-
-&nbsp;  
 
 ### Do Statistical Analysis  
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/statsAnalysis.png")
 ```  
-Main analysis is just to summarize the data set.  As an exercise we will compare the sample to the population since we actually know it here.  
 
-&nbsp;  
-
-&nbsp;  
-
-&nbsp;  
-
-&nbsp;  
 
 ### Draw Conclusions & Communicate
 
@@ -96,11 +57,3 @@ Main analysis is just to summarize the data set.  As an exercise we will compare
 knitr::include_graphics("img/concludeCommunicate.png")
 ```  
 Describe main results or takeaways to study in the future.  How to present some graphs as well (i.e. don't just put a graph, it must be described and meaningful or don't report it).  Appropriate use of titles and labels too.  
-
-&nbsp;  
-
-&nbsp;  
-
-&nbsp;  
-
-&nbsp;  

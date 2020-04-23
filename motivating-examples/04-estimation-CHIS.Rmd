@@ -1,0 +1,87 @@
+## Motivating Example: Estimation - California Health Interview Survey
+
+### Define Objective & Background  
+
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/defineObjective.png")
+```  
+Look at the California Health Interview Survey (CHIS).  Describe the idea of the survey.  For our purpose we'll imagine the dataset itself is the population of interest.  We will take a sample from that population to investigate and summarize as well as compare to the truth.  
+
+Goal of this example is to focus on the summarization of the sample.  We'll be able to compare the summarizations to the actual population since we'll have those items.  
+
+### Select Response
+
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/selectResponse.png")
+``` 
+Response is really certain variables in the dataset, maybe BMI or some other health related statistic we want to study.   
+
+&nbsp;  
+
+&nbsp;  
+
+
+### Determine Sources of Variation
+
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/determineVariation.png")
+```  
+Sources of variation include height, weight, ethnicity, etc.  Going to take those into account.  
+
+don't really get to choose here but the data included has these things.  
+
+
+&nbsp;  
+
+
+### Select Design
+
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/selectDesign.png")
+```  
+Design will be to do a SRS and do an observational study.  (Maybe also do an Stratified one and compare the results?  Maybe that should be left as an exercise.)  
+
+&nbsp;  
+
+&nbsp;  
+
+### Do Study  
+
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/conductStudy.png")
+```  
+Pretend that we got 100% response rate and all that good stuff.  Maybe discuss the idea of missingness here but probably not the right time.  
+
+&nbsp;  
+
+&nbsp;  
+
+
+### Do Statistical Analysis  
+
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/statsAnalysis.png")
+```  
+Main analysis is to estimate parameters.  Discuss parameters and their estimators/estimates.  
+
+&nbsp;  
+
+&nbsp;  
+
+&nbsp;  
+
+&nbsp;  
+
+### Draw Conclusions & Communicate
+
+```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics("img/concludeCommunicate.png")
+```  
+
+&nbsp;  
+
+&nbsp;  
+
+&nbsp;  
+
+&nbsp;  
