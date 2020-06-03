@@ -2,15 +2,15 @@
 
 ## Data in the Wild  
 
-Data is a collection of information about a group of individuals or units.  Most often we have a number of variables, or measures of interest, that we observe on each individual or unit.  The collection of information is called a dataset.  Data is ubiquitous in today's society.  Healthcare, marketing, history, biology, ... almost every field has data for which a sound statistical analysis can glean useful insights.  However, the quality of data varies greatly from study to study and this implies the conclusions which you can draw from a study vary as well.  Let's jump in!
+**Data** is a collection of information about a group of individuals or units.  Most often we have a number of variables, or measures of interest, that we observe on each individual or unit.  The collection of information is called a **dataset**.  Data is ubiquitous in today's society.  Healthcare, marketing, history, biology, ... almost every field has data for which a sound statistical analysis can glean useful insights.  However, the quality of data varies greatly from study to study and this implies the conclusions which you can draw from a study vary as well.  Let's jump in!
 
 (**Put visual of a dataset here**)  
 
 ### Experimental Study  
 
-Some data comes from a well-designed experiment where a researcher uses sound principles to select units for the study and conduct interventions.  
+Some data comes from well-designed experiments where a researcher uses sound principles to select units for the study and then conduct interventions in the hope of observing differences.  
 
-For example, a mechanical engineer wanted to determine which variables influence gas mileage of a certain year and model of a car.  Gas mileage would be referred to as the **response** variable for this study since it characterized the performance of interest.  
+For example, a mechanical engineer wanted to determine which variables influence gas mileage of a certain year and model of a car.  Gas mileage would be referred to as the **response** variable since it characterized the performance of interest in the study.  
 
 After careful consideration, the engineer chose to investigate a few **explanatory variables** they believed were associated with the response.  They wanted to learn about the relationship between gas mileage and the factors below.  A **factor** is an explanatory variable that takes on a finite number of values, called levels, set by the researcher.  
 
@@ -20,18 +20,18 @@ Study factors (**levels** of each factor are given in parentheses):
 - Octane rating of fuel (regular, midgrade, premium)  
 - Type of driving (defensive, aggressive)
 
-They also chose to **control** or hold constant the following variables during the execution of the study:  
+They also chose to **control** or hold constant the following explanatory variables during the execution of the study:  
 
 - Weather conditions  
 - Route  
 - Tire type  
 - Past car usage
 
-The engineer randomly selected a **sample** of 24 cars from the assembly line for that year and model of car (we'll learn more about the importance of selecting a representative sample of cars shortly).  Software was used to randomly assign a **treatment** to each of the 24 cars.  A treatment is a particular combination of the factor levels.  For instance, low tire pressure, regular octane fuel, and defensive driving was a treatment.  The cars would be called the **experimental units** (EUs) as they are the unit the treatments are assigned to.  
+The engineer used software to randomly selected a **sample** of 48 cars from the assembly line for that year and model of car (we'll learn more about the importance of selecting a representative sample of cars shortly).  Software was also used to randomly assign a **treatment** to each of the 48 cars.  A treatment is a particular combination of the factor levels.  For instance, low tire pressure, regular octane fuel, and defensive driving was one of the 12 (2x3x2) treatments in this experiment.  The cars would be called the **experimental units** (EUs) as a car is the unit a treatment is assigned to.  
 
-The experiment was run and the gas mileage found for each car.  As the car was measured, we'd refer to the car as the **observational unit** (OU).  
+The experiment was run and the gas mileage found for each car.  As the car was measured, we'd refer to the car as the **observational unit** (OU).  Often EUs and OUs are the same, but not always.
 
-The key thing that makes this study an **experimental study** is the active role the research plays in manipulating the environment.  Here, the researcher uses random assignment of treatments to the EUs.  
+The key thing that makes this study an **experimental study** is the active role the researcher played in manipulating the environment.  Here, this occurred when the researcher used random assignment of treatments to the EUs.  
 
 ```{block2, type = 'definition'}
 
@@ -43,21 +43,31 @@ Experimental Study - researchers manipulate the conditions in which the study is
 
 This short description exhibits three important concepts in experimental design that we'll come back to many times.  
 
-Pillars of experimental design: (Put an outer block around this)   
+Experimental design fundamentals: 
 
 ```{block2, type = 'definition'}
 
  - Randomization - treatments are randomly assigned to experimental units   
+
+    + helps to eliminate systematic bias in an experiment  
 
 ```
 ```{block2, type = 'definition'}
 
  - Replication - multiple (independent) experimental units are assigned the same treatment  
 
+    + Four replicates in the above study (12 treatments x 4 replicates = 48 total experimental units)  
+
+    + More replications allow us to have more confidence in our study conclusions  
+
 ```
 ```{block2, type = 'definition'}
 
- - Control - some study conditions are held constant to reduce variability in the response    
+ - Control - some study conditions are held constant or are otherwise taken into account in order to reduce variability in the response    
+
+    + By holding the weather conditions, route, tire type, and past car usage constant, we lessen the amount of variability observed in the gas mileage   
+
+     + This makes it easier to see differences due to our treatments
 
 ```
 
@@ -65,9 +75,9 @@ Pillars of experimental design: (Put an outer block around this)
 
 Some data comes from an observational study where the researcher collects data without imposing any changes.   
 
-For example, an economist wanted to investigate the effects of recently added tariffs on agricultural products to the amount and value of such products that are traded between the United States and Asia.  This study had two **response** variables, the amount and value of each product traded between the two parties.  
+For example, an economist wanted to investigate the effects of recently added tariffs on agricultural products to the amount and value of such products that were traded between the United States and Asia.  This study had two **response** variables, the amount and value of each product traded between the two parties.  
 
-In order to take into account seasonal variation and time of year, the economist decided to compare the two response variables from the current year - 6 months worth of data - against the values of the two response variables during the same 6 month periods for each of the past 5 years.  The year variable associated with a measurement was an **explanatory variable**.  Alternatively, the year variable could have also been labeled to take on one of two values: no-tariff (past years' data) or tariff (current year's data).  
+In order to take into account seasonal variation and time of year, the economist decided to compare the two response variables from the current year - 6 months worth of data - against the values of the two response variables during the same 6 month periods for each of the past 5 years.  The year variable associated with a measurement was an **explanatory variable**.  Alternatively, the year variable could have been labeled to take on one of two values: no-tariff (past years' data) or tariff (current year's data).  
 
 The researcher obtained the data from the census bureau and conducted their analysis.  
 
@@ -85,9 +95,13 @@ Observational Study - researchers collect data without imposing any changes on t
 
 You may have noticed that both example studies had some things in common.  For instance, both studies had **response** variables that characterize the performance of the study in some sense.  Importantly, these response variables had variation.  That is, observing the variable is non-deterministic even under seemingly identical situations.  Accounting for, and dealing with, this variation is at the heart of the reason statistical methods are needed!  
 
-There were also **explanatory variables** that the researcher was interested in with regard to their relationship with the response variable.  Determining and quantifying these relationships is often the major goal of a study.  
+There were also **explanatory variables** that the researcher was interested in with regard to their relationship with the response variable.  Determining the importance of these relationships is often the major goal of a study.  
 
-Both studies also hoped to make statements or conclusions about a larger group using data from a subset of that larger group.  This idea is referred to as **statistical inference**.  More formally the group of values, items, measurements, or individuals of interest defines the **population** of interest and the data collected on that group represents the **sample**.  The number of observations in the sample is referred to as the **sample size**. For the gas mileage example, the population was all cars of the year and make in question, the sample was the data collected on the 24 cars, and the sample size was 24.  For the tariff example, the population was all future agricultural products traded between the United States and Asia, the sample was the information from the six years of trade data, and the sample size is six.  The two populations mentioned here differ in that the car population is a **real, finite population** and the trade population is a **conceptual, infinite population**.  As long as a finite population is large relative to the sample size, the differences tend not to be important.  We'll discuss these ideas in more detail as they arise.  
+Both studies also hoped to make statements or conclusions about a larger group using data from a subset of that larger group.  This idea is referred to as **statistical inference**.  More formally the group of values, items, measurements, or individuals of interest defines the **population** and the data collected on that group represents the **sample**.  The number of observations in the sample is referred to as the **sample size**.  
+
+For the gas mileage example, the population was all cars of the year and make in question, the sample was the data collected on the 48 cars, and the sample size was 48.  For the tariff example, the population was all future agricultural products traded between the United States and Asia, the sample was the information from the six years of trade data, and the sample size was six - although one might count each product type as a separate observation, yielding a larger sample size.  
+
+The two populations mentioned here differ in that the car population is a **real, finite population** and the trade population is a **conceptual, infinite population**.  As long as a finite population is large relative to the sample size, the differences tend not to be important.  We'll discuss these ideas in more detail as they arise.  
 
 ```{block2, type = "definition"}
 
@@ -98,24 +112,29 @@ Population - (Possibly conceptual) group of values, items, measurements, or indi
 
 Sample - Subset of the population on which we observe data  
 
-Sample Size - Number of observations in the sample
+Sample Size (often denoted by n) - Number of observations in the sample
 
 ```
 ```{block2, type = "definition"}
 
-Statistical Inference - Process of using sample data to make statements or claims about a population.  Two major goals of inference:  
-- Determining and quantifying relationships between explanatory variables and the response  
-- Predicting the response for some setting of explanatory variables.  
+Statistical Inference - Process of using sample data to make statements or claims about a population.  
+
+Two major goals of inference:  
+  
+- Determining the importance of relationships between explanatory variables and the response variable(s) 
+
+- Predicting the response variable(s) for some settings of explanatory variables  
 
 ```
 
-Both of these studies had to determine how to obtain their observations.  For the experiment, 24 cars were used.  For the observational study, six years of data were collected.  How this data is collected can be extremely important in terms of the types of conclusions that can be made.  Data should be **representative** of the population in which the researcher hopes to make inference.  If not, the conclusions made are likely invalid or in need of qualifications.  We'll discuss the idea of what makes a good or bad **sampling scheme** later in the chapter.  
+Both of these studies had to determine how to obtain their observations.  How this data is collected can be extremely important in terms of the types of conclusions that can be made.  
 
-The major difference between the two studies was the active (experimental) and passive (observational) roles played by the researcher.  This difference is also of vital importance to the types of conclusions that can be made from the study.  A well-designed experiment can often allow the researcher to infer **causation** to the treatments, whereas an observational study cannot imply causation using soley the data.  
+Data should be **representative** of the population in which the researcher hopes to make statistical inference.  If not, the conclusions made are likely invalid or in need of qualifications.  We'll discuss the idea of what makes a good or bad **sampling scheme** later in the chapter.  
+
+The major difference between the two studies was the active (experimental) and passive (observational) roles played by the researcher.  This difference is also of vital importance to the types of conclusions that can be made from the study.  A well-designed experiment can often allow the researcher to infer **causation** to the treatments, whereas an observational study cannot imply causation using soley the data.  For the gas mileage example, we may be able to conclude that combinations of Tire pressure and Type of driving cause differences in gas mileage while Octane rating of fuel does not cause a change.  Making a causation argument for the observational study wouldn't be valid based on the statistical analysis only.  
 
 The conclusions a researcher can make based on how the data were collected and the type of study are outlined in the table below.  
 
-**Redo this table with our own wording**
 ```{r scope, out.width="80%", fig.cap="Scope of Inference, cite: Khan Academy", echo = FALSE, fig.align='center'}
 knitr::include_graphics("img/ScopeOfInferenceTable.png")
 ```
@@ -148,11 +167,11 @@ Define the objective of the experiment and understand the background (Define Obj
 4. ![](img/selectDesign.png){#id .class height=0.4in} Choose sampling scheme and/or experimental design (Select Design)  
 5. ![](img/conductStudy.png){#id .class height=0.4in} Carry out the study (Do Study) 
 6. ![](img/statsAnalysis.png){#id .class height=0.4in} Statistically analyze the data (Do Statistical Analysis)  
-7. ![](img/concludeCommunicate.png){#id .class height=0.4in} Draw conclusions from the analysis while considering limitations and the steps above as well as communicate results (Draw Conclusions & Communicate)  
+7. ![](img/concludeCommunicate.png){#id .class height=0.4in} Draw conclusions from the analysis while considering limitations and communicate results (Draw Conclusions & Communicate)  
 
 **overall logo here** 
 
-We'll focus on this entire process in our chapter motivating examples.  Mostly, we'll investigate designed experiments.  We attempt to tackle each major topic in this text with a problem-based approach.  That is, we identify a real-world (or close to it) motivating example and discuss the relevant statistical ideas in the context of that problem.  We then provide a discussion of the main statistical ideas and concepts along with enough mathemathics to fully comprehend the material.  Related references and readings are also provided.  Each chapter includes with a section that outlines the use of R and SAS for implemention.  Finally, where applicable, we include a section dives deeper into the mathematics behind the concepts - this section is always optional!  
+We'll focus on this entire process in our chapter motivating examples.  Mostly, we'll investigate designed experiments.  We attempt to tackle each major topic in this text with a problem-based approach.  That is, we identify a real-world (or close to it) motivating example and discuss the relevant statistical ideas in the context of that problem.  We then provide a discussion of the main statistical ideas and concepts along with enough mathemathics to fully comprehend the material.  Related references and readings are also provided.  Each chapter includes with a section that outlines the use of R and SAS for implemention.  Finally, where applicable, we include a section that dives deeper into the mathematics behind the concepts - this section is always optional!  
 
 ```{r, child='motivating-examples/02-sampling-farmer-market.Rmd'}
 ```

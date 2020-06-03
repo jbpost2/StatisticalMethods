@@ -1,4 +1,4 @@
-## Motivating Example: Sampling - Farmer's Market   
+## Motivating Example: Sampling Scheme - Farmer's Market   
 
 ### Define Objective & Background  
 

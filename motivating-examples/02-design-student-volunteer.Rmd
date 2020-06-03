@@ -1,4 +1,4 @@
-## Motivating Example: Design - Student Assessment Volunteers  
+## Motivating Example: Experimental Design - Student Assessment Volunteers  
 
 In this example, we'll talk through the entire problem process but focus on aspects of experimental design.  
 
