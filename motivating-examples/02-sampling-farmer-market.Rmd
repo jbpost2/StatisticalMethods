@@ -5,7 +5,7 @@
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/defineObjective.png")
 ```  
-A nutrition scientist wanted to understand the cleanliness and food hygiene of the vendors at the North Carolina State Farmer's Market (henceforth the farmer's market).  Secondarily, she wanted to learn about vendor sales to see if there was a relationship with their cleanliness and food hygiene.  The researcher had access to the names of each vendor's business, their general purpose, and the products they sold.  
+A nutrition scientist wanted to understand the cleanliness and food hygiene of the vendors at the North Carolina State Farmer's Market (henceforth the farmer's market).  Secondarily, she wanted to learn about vendor sales to see if there was a relationship with their cleanliness and food hygiene.  The researcher had access to the names of each vendor's business, their general purpose, and the products they sold via the [farmer's market website](https://www.ncagr.gov/markets/facilities/markets/raleigh/).  
 
 The researcher needed to decide the scope of their study.  Formally, they needed to define the **population** of interest.  The population is the group of people or units of interest to the researcher.  As her interest centered around food-related businesses, she restricted to looking at the vendors which sold horticultural crops.  She hoped that conclusions made by her study could apply to all horticulture vendors at the farmer's market - thus, this is her population.  
 
