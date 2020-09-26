@@ -5,9 +5,9 @@
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/defineObjective.png")
 ```  
-A nutrition scientist wanted to understand the cleanliness and food hygiene of the vendors at the North Carolina State Farmer's Market (henceforth the farmer's market).  Secondarily, she wanted to learn about vendor sales to see if there was a relationship with their cleanliness and food hygiene.  The researcher had access to the names of each vendor's business, their general purpose, and the products they sold via the [farmer's market website](https://www.ncagr.gov/markets/facilities/markets/raleigh/).  
+A nutrition scientist wanted to understand the cleanliness practices and food hygiene knowledge of the vendors at the North Carolina State Farmer's Market (henceforth the farmer's market).  Secondarily, she wanted to learn about vendor sales to see if there was a relationship with their cleanliness practices and food hygiene knowledge.  For this example, we will only focus on the primary goal.  The researcher had access to the names of each vendor's business, the products they sold, the agricultural groups to which they belonged, and the types of services they provided (grow, ship, pack, etc.) their general purpose, and the products they sold.  
 
-The researcher needed to decide the scope of their study.  Formally, they needed to define the **population** of interest.  The population is the group of people or units of interest to the researcher.  As her interest centered around food-related businesses, she restricted to looking at the vendors which sold horticultural crops.  She hoped that conclusions made by her study could apply to all horticulture vendors at the farmer's market - thus, this is her population.  
+The researcher needed to decide the scope of their study.  Formally, they needed to define the **population** of interest.  The population is the group of people or units of interest to the researcher.  As her interest centered around food-related businesses, she restricted to looking at the vendors which sold horticultural crops.  She hoped that conclusions made by her study could apply to the population consisting of all horticulture vendors at the farmer's market.  
 
 Note: One could try to do a study at just the North Carolina State Farmer's Market and extend the results to all farmer's markets in the state or in the south, but that would require many assumptions to be valid.  
 
@@ -28,33 +28,22 @@ The researcher needed to determine the variables to collect that would best help
 
 To investigate the knowledge of hygiene and safety, a short questionnaire was developed to allow the vendor's head manager (or similar employee) to describe their safety protocol and knowledge:  
 
- - For your produce with signs that say "clean" or "washed", what does this mean?
- - How are the foods transported to the market? eg: refrigerated/closed storage  
- - What food safety risks do you as a vendor worry about?  
- - Do you require one-use gloves to be used?  (Yes or No)  
- - Do you designate a person in charge of money transactions? (Yes or No)  
+ - Q1: For your produce with signs that say "clean" or "washed," what does this mean?
+ - Q2: How are the foods transported to the market? eg: refrigerated/closed storage  
+ - Q3: What food safety risks do you as a vendor worry about?  
+ - Q4: Do you require one-use gloves to be used?  (Yes or No)  
+ - Q5: Do you designate a person in charge of money transactions? (Yes or No)  
 
-The researcher also planned to do an assessment of the cleanliness of each vendor's station at different times.  Her team would pick 30 days during the summer in which they'd walk through the vendor stations and collect the following information:  
-
- - Overall is the station clean (Yes or No)  
- - Is anyone smoking around the food products? (Yes or No)  
- - Are tables covered? (Yes or No)  If so, what is the material?  
- - Do employees appear to be clean? (Yes or No)  
- - Are one-use gloves used? (Yes or No)  
- - Is there a designated person in charge of money transactions (Yes or No)  
- 
-She noted that there is a yearly cycle to the products sold and decided to collect vendors sales information by looking at the (AMT) amount sold in the last year (in dollars), the (PURCHASE) total number of purchases made in the last year, and the (NUM_ITEMS) total number of items sold in the last year.  For the last variable, they had to decide how to measure the number of items sold for the different types of crops.  For most of the crops looking at the total weight (in lbs) sold made sense.  But, for some, other measures were needed.  For example, for sweet corn the number of ears sold would be recorded.  
-
-You can see that there are many decisions that the researcher must make in simply deciding the response variables to collect!  A poor choice here can make or break a study.
+All of these variables could be considered response variables to be analyzed.  Some, like the binary Yes or No variables, would be somewhat straightforward to analyze.  Others, like Q1, would require a qualitative analysis or the question would need to be categorized or rated in order to use standard quantitative analyses.  
 
 ### Determine Sources of Variation
 
 ```{r, echo = FALSE, out.width = '13%', out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics("img/determineVariation.png")
 ```  
-The response variables clearly have some relationship to other variables that could be collected.  For instance, the NUM_ITEMS variable is clearly going to be different based upon what crops the vendor sells.  The AMT variable would differ depending on the size of the vendor's inventory.  These are examples of **explanatory variables** or variables that define the study conditions.  Explanatory variables go by many names such as predictors, features, or independent variables.  
+The response variables likely have some relationship to other variables that could be collected.  For instance, Q3 (what food safety risks do you worry about) may differ depending on the type of produce sold.  This is an example of an **explanatory variable** or variable that defines the study conditions.  Explanatory variables go by many names such as predictors, features, or independent variables.  
 
-**A main consideration about whether or not to record a variable is whether or not the variable would be related to a variation in a response variable.**  Since the response variables are truly what is of interest, there is really not much of a point in recording variables that likely have no relationship with it.  
+**A main consideration about whether or not to record a variable is whether or not the variable would be related to variation in a response variable.**  Since the response variables are truly what is of interest, there is really not much of a point in recording variables that likely have no relationship with it.  
 
 Choosing the explanatory variables can also indicate further questions of interest.  For instance, the researcher may want to compare the percent of "Yes" for the overall cleanliness score for vendors that mainly sell vegetables to those that mainly sell fruit leading to a comparison across groups being of interest.  She may want to try to model the AMT of cantaloupe sold as a function of the cleanliness score.  
 
